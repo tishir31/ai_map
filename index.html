@@ -1042,7 +1042,18 @@ const defaultData = {
 "Accordance Legal": { desc: "AI legal research.", cat: "Legal Tech", hq: "San Francisco, CA", val: "$25M", domain: "accordancelegal.com", rel: ["Harvey", "Casetext"] }
 };
 
-let data = JSON.parse(localStorage.getItem('aimap')) || JSON.parse(JSON.stringify(defaultData));
+// Version check - reset localStorage if default data has more companies (data was updated)
+const DATA_VERSION = 2; // Increment this when adding companies
+const storedVersion = localStorage.getItem('aimap_version');
+let data;
+if (storedVersion !== String(DATA_VERSION)) {
+    // Data version changed, use fresh default data
+    data = JSON.parse(JSON.stringify(defaultData));
+    localStorage.setItem('aimap_version', DATA_VERSION);
+    localStorage.setItem('aimap', JSON.stringify(data));
+} else {
+    data = JSON.parse(localStorage.getItem('aimap')) || JSON.parse(JSON.stringify(defaultData));
+}
 const save = () => { localStorage.setItem('aimap', JSON.stringify(data)); document.getElementById('count').textContent = Object.keys(data).length; };
 
 const map = document.getElementById('map');
