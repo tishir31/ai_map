@@ -8,64 +8,38 @@
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
-        :root {
-            --primary: #2563eb;
-            --primary-light: #3b82f6;
-            --accent: #8b5cf6;
-            --bg-start: #f0f7ff;
-            --bg-end: #e8f4fc;
-            --text: #1e293b;
-            --text-muted: #64748b;
-            --glass: rgba(255, 255, 255, 0.7);
-            --glass-border: rgba(255, 255, 255, 0.9);
-            --shadow: rgba(37, 99, 235, 0.1);
-        }
-
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
             min-height: 100vh;
-            color: var(--text);
             overflow: hidden;
-            -webkit-font-smoothing: antialiased;
-            background: linear-gradient(135deg, var(--bg-start) 0%, var(--bg-end) 50%, #f5f0ff 100%);
+            background: #030712;
+            color: #fff;
         }
 
         #app {
             position: fixed;
             inset: 0;
             background:
-                radial-gradient(ellipse 120% 80% at 0% 0%, rgba(37, 99, 235, 0.08) 0%, transparent 50%),
-                radial-gradient(ellipse 80% 60% at 100% 100%, rgba(139, 92, 246, 0.08) 0%, transparent 50%),
-                radial-gradient(ellipse 60% 50% at 50% 0%, rgba(59, 130, 246, 0.05) 0%, transparent 40%);
+                radial-gradient(ellipse 80% 50% at 50% -20%, rgba(59, 130, 246, 0.15), transparent),
+                radial-gradient(ellipse 60% 40% at 80% 80%, rgba(139, 92, 246, 0.1), transparent),
+                radial-gradient(ellipse 50% 30% at 20% 90%, rgba(6, 182, 212, 0.08), transparent);
         }
 
-        /* Animated gradient orbs */
-        .orb {
+        /* Particle canvas background */
+        #particles {
             position: fixed;
-            border-radius: 50%;
-            filter: blur(80px);
-            opacity: 0.4;
+            inset: 0;
             pointer-events: none;
-            animation: float 20s ease-in-out infinite;
-        }
-        .orb-1 { width: 600px; height: 600px; background: linear-gradient(135deg, #3b82f6, #8b5cf6); top: -200px; left: -200px; }
-        .orb-2 { width: 500px; height: 500px; background: linear-gradient(135deg, #06b6d4, #3b82f6); bottom: -150px; right: -150px; animation-delay: -7s; }
-        .orb-3 { width: 300px; height: 300px; background: linear-gradient(135deg, #a855f7, #ec4899); top: 50%; left: 50%; transform: translate(-50%, -50%); animation-delay: -14s; opacity: 0.2; }
-
-        @keyframes float {
-            0%, 100% { transform: translate(0, 0) scale(1); }
-            33% { transform: translate(30px, -30px) scale(1.05); }
-            66% { transform: translate(-20px, 20px) scale(0.95); }
         }
 
-        /* Grid pattern overlay */
-        .grid-pattern {
+        /* Grid lines */
+        .grid {
             position: fixed;
             inset: 0;
             background-image:
-                linear-gradient(rgba(37, 99, 235, 0.03) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(37, 99, 235, 0.03) 1px, transparent 1px);
-            background-size: 50px 50px;
+                linear-gradient(rgba(59, 130, 246, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(59, 130, 246, 0.03) 1px, transparent 1px);
+            background-size: 60px 60px;
             pointer-events: none;
         }
 
@@ -73,35 +47,29 @@
 
         /* Header */
         .header {
-            top: 28px;
+            top: 24px;
             left: 50%;
             transform: translateX(-50%);
             text-align: center;
         }
 
         .header h1 {
-            font-size: 28px;
-            font-weight: 700;
-            letter-spacing: -1px;
-            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+            font-size: 20px;
+            font-weight: 600;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            background: linear-gradient(90deg, #3b82f6, #06b6d4, #8b5cf6);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-            margin-bottom: 4px;
-        }
-
-        .header p {
-            font-size: 13px;
-            color: var(--text-muted);
-            font-weight: 400;
         }
 
         /* Search */
         .search-wrap {
-            top: 95px;
+            top: 70px;
             left: 50%;
             transform: translateX(-50%);
-            width: 440px;
+            width: 360px;
             max-width: 90vw;
         }
 
@@ -111,50 +79,47 @@
 
         .search-box input {
             width: 100%;
-            padding: 16px 20px 16px 48px;
-            font-size: 15px;
+            padding: 14px 18px 14px 46px;
+            font-size: 14px;
             font-family: inherit;
-            background: var(--glass);
-            border: 1px solid var(--glass-border);
-            border-radius: 16px;
-            color: var(--text);
+            background: rgba(15, 23, 42, 0.8);
+            border: 1px solid rgba(59, 130, 246, 0.3);
+            border-radius: 12px;
+            color: #fff;
             outline: none;
             transition: all 0.3s ease;
-            box-shadow: 0 4px 24px var(--shadow), 0 1px 3px rgba(0,0,0,0.05);
-            backdrop-filter: blur(20px);
+            backdrop-filter: blur(10px);
         }
 
         .search-box input:focus {
-            background: rgba(255,255,255,0.9);
-            border-color: var(--primary-light);
-            box-shadow: 0 4px 32px rgba(37, 99, 235, 0.15), 0 0 0 3px rgba(59, 130, 246, 0.1);
+            border-color: #3b82f6;
+            box-shadow: 0 0 20px rgba(59, 130, 246, 0.3), 0 0 40px rgba(59, 130, 246, 0.1);
         }
 
-        .search-box input::placeholder { color: var(--text-muted); }
+        .search-box input::placeholder { color: rgba(148, 163, 184, 0.6); }
 
         .search-box svg {
             position: absolute;
             left: 16px;
             top: 50%;
             transform: translateY(-50%);
-            width: 20px;
-            height: 20px;
-            color: var(--primary);
-            opacity: 0.6;
+            width: 18px;
+            height: 18px;
+            color: #3b82f6;
         }
 
         .dropdown {
             position: absolute;
-            top: calc(100% + 10px);
+            top: calc(100% + 8px);
             left: 0;
             right: 0;
-            background: var(--glass);
-            border: 1px solid var(--glass-border);
-            border-radius: 16px;
+            background: rgba(15, 23, 42, 0.95);
+            border: 1px solid rgba(59, 130, 246, 0.3);
+            border-radius: 12px;
             overflow: hidden;
             display: none;
             backdrop-filter: blur(20px);
-            box-shadow: 0 10px 40px var(--shadow), 0 4px 12px rgba(0,0,0,0.05);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
         }
 
         .dropdown.open { display: block; }
@@ -163,57 +128,45 @@
             display: flex;
             align-items: center;
             gap: 12px;
-            padding: 14px 16px;
+            padding: 12px 16px;
             cursor: pointer;
-            transition: all 0.2s ease;
-            border-bottom: 1px solid rgba(37, 99, 235, 0.06);
+            transition: all 0.2s;
+            border-bottom: 1px solid rgba(59, 130, 246, 0.1);
         }
 
         .dropdown-item:last-child { border-bottom: none; }
-        .dropdown-item:hover { background: rgba(37, 99, 235, 0.06); }
+        .dropdown-item:hover { background: rgba(59, 130, 246, 0.15); }
 
         .dropdown-item .logo {
-            width: 36px;
-            height: 36px;
-            border-radius: 10px;
-            background: linear-gradient(135deg, #f0f7ff, #e8f4fc);
+            width: 32px;
+            height: 32px;
+            border-radius: 8px;
+            background: rgba(59, 130, 246, 0.2);
             display: flex;
             align-items: center;
             justify-content: center;
             overflow: hidden;
-            flex-shrink: 0;
-            border: 1px solid rgba(37, 99, 235, 0.1);
         }
 
-        .dropdown-item .logo img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .dropdown-item .logo span {
-            font-size: 12px;
-            font-weight: 600;
-            color: var(--primary);
-        }
-
-        .dropdown-item .info { flex: 1; min-width: 0; }
-        .dropdown-item .name { font-size: 14px; font-weight: 500; color: var(--text); }
-        .dropdown-item .cat { font-size: 12px; color: var(--text-muted); margin-top: 2px; }
-        .dropdown-item .val { font-size: 12px; font-weight: 600; color: #059669; }
+        .dropdown-item .logo img { width: 100%; height: 100%; object-fit: cover; }
+        .dropdown-item .logo span { font-size: 11px; font-weight: 600; color: #3b82f6; }
+        .dropdown-item .info { flex: 1; }
+        .dropdown-item .name { font-size: 14px; font-weight: 500; }
+        .dropdown-item .cat { font-size: 11px; color: rgba(148, 163, 184, 0.7); margin-top: 2px; }
+        .dropdown-item .val { font-size: 12px; font-weight: 600; color: #06b6d4; }
 
         /* Info Panel */
         .panel {
-            bottom: 32px;
-            right: 32px;
-            width: 360px;
-            background: var(--glass);
-            border: 1px solid var(--glass-border);
-            border-radius: 20px;
-            padding: 24px;
+            bottom: 24px;
+            left: 24px;
+            width: 320px;
+            background: rgba(15, 23, 42, 0.9);
+            border: 1px solid rgba(59, 130, 246, 0.3);
+            border-radius: 16px;
+            padding: 20px;
             display: none;
             backdrop-filter: blur(20px);
-            box-shadow: 0 10px 50px var(--shadow), 0 4px 16px rgba(0,0,0,0.04);
+            box-shadow: 0 0 30px rgba(59, 130, 246, 0.2);
         }
 
         .panel.open { display: block; }
@@ -221,176 +174,144 @@
         .panel-header {
             display: flex;
             align-items: center;
-            gap: 16px;
-            margin-bottom: 16px;
+            gap: 14px;
+            margin-bottom: 14px;
         }
 
         .panel-logo {
-            width: 56px;
-            height: 56px;
-            border-radius: 14px;
-            background: linear-gradient(135deg, #fff, #f0f7ff);
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            background: rgba(59, 130, 246, 0.2);
             display: flex;
             align-items: center;
             justify-content: center;
             overflow: hidden;
-            flex-shrink: 0;
-            border: 1px solid rgba(37, 99, 235, 0.1);
-            box-shadow: 0 2px 8px rgba(37, 99, 235, 0.08);
+            border: 1px solid rgba(59, 130, 246, 0.3);
         }
 
         .panel-logo img { width: 100%; height: 100%; object-fit: cover; }
-        .panel-logo span { font-size: 18px; font-weight: 600; color: var(--primary); }
+        .panel-logo span { font-size: 16px; font-weight: 600; color: #3b82f6; }
 
-        .panel-title h3 { font-size: 18px; font-weight: 600; color: var(--text); margin-bottom: 4px; }
-        .panel-title .val { font-size: 14px; font-weight: 600; color: #059669; }
-        .panel-title .val.na { color: var(--text-muted); }
+        .panel-title h3 { font-size: 16px; font-weight: 600; }
+        .panel-title .val { font-size: 13px; font-weight: 600; color: #06b6d4; margin-top: 2px; }
+        .panel-title .val.na { color: rgba(148, 163, 184, 0.5); }
 
         .panel p {
-            font-size: 14px;
-            line-height: 1.65;
-            color: var(--text-muted);
-            margin-bottom: 16px;
+            font-size: 13px;
+            line-height: 1.6;
+            color: rgba(148, 163, 184, 0.8);
+            margin-bottom: 14px;
         }
 
-        .panel-meta {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            flex-wrap: wrap;
-        }
+        .panel-meta { display: flex; gap: 8px; flex-wrap: wrap; }
 
         .tag {
-            font-size: 11px;
+            font-size: 10px;
             font-weight: 500;
-            padding: 6px 12px;
-            border-radius: 8px;
-            background: rgba(37, 99, 235, 0.08);
-            color: var(--text-muted);
-        }
-
-        .tag.cat {
-            background: linear-gradient(135deg, rgba(37, 99, 235, 0.12), rgba(139, 92, 246, 0.12));
-            color: var(--primary);
+            padding: 5px 10px;
+            border-radius: 6px;
+            background: rgba(59, 130, 246, 0.15);
+            color: #60a5fa;
+            border: 1px solid rgba(59, 130, 246, 0.3);
         }
 
         /* Stats */
         .stats {
-            top: 32px;
-            left: 32px;
+            bottom: 24px;
+            right: 24px;
+            text-align: right;
         }
 
         .stats .num {
-            font-size: 36px;
+            font-size: 48px;
             font-weight: 700;
-            letter-spacing: -1.5px;
-            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+            letter-spacing: -2px;
+            background: linear-gradient(135deg, #3b82f6, #06b6d4);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            background-clip: text;
         }
 
         .stats .label {
-            font-size: 12px;
-            color: var(--text-muted);
-            margin-top: 2px;
-            font-weight: 500;
+            font-size: 11px;
+            color: rgba(148, 163, 184, 0.6);
+            text-transform: uppercase;
+            letter-spacing: 2px;
         }
 
-        /* Admin */
-        .admin-btn {
-            top: 32px;
-            right: 32px;
-            padding: 12px 20px;
-            font-size: 13px;
-            font-family: inherit;
-            font-weight: 500;
-            background: var(--glass);
-            border: 1px solid var(--glass-border);
-            border-radius: 12px;
-            color: var(--text);
-            cursor: pointer;
-            transition: all 0.25s ease;
-            box-shadow: 0 2px 10px var(--shadow);
-        }
-
-        .admin-btn:hover {
-            background: #fff;
-            box-shadow: 0 4px 20px var(--shadow);
-            transform: translateY(-1px);
-        }
-
-        /* Map Container */
+        /* Map */
         #map {
             position: absolute;
             inset: 0;
             overflow: hidden;
         }
 
-        .node {
+        /* Company labels - music-map style */
+        .company {
             position: absolute;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
             cursor: pointer;
             transition: all 0.3s ease;
-            background: #fff;
-            border: 2px solid rgba(37, 99, 235, 0.1);
-            overflow: hidden;
-            box-shadow: 0 4px 20px rgba(37, 99, 235, 0.08), 0 2px 6px rgba(0,0,0,0.04);
+            white-space: nowrap;
+            transform: translate(-50%, -50%);
         }
 
-        .node:hover {
-            transform: scale(1.12);
-            box-shadow: 0 8px 40px rgba(37, 99, 235, 0.2), 0 4px 12px rgba(0,0,0,0.08);
-            border-color: var(--primary-light);
-            z-index: 50 !important;
+        .company .name {
+            font-weight: 500;
+            transition: all 0.3s ease;
+            text-shadow: 0 0 30px rgba(0,0,0,1), 0 0 15px rgba(0,0,0,0.9);
+            color: rgba(255, 255, 255, 0.85);
         }
 
-        .node.center {
-            background: linear-gradient(135deg, #fff 0%, #f5faff 100%);
-            border: 2px solid var(--primary-light);
-            box-shadow: 0 8px 50px rgba(37, 99, 235, 0.25), 0 0 0 4px rgba(59, 130, 246, 0.1);
+        .company:hover .name {
+            color: #60a5fa !important;
+            text-shadow: 0 0 20px rgba(59, 130, 246, 0.8), 0 0 40px rgba(59, 130, 246, 0.4);
         }
 
-        .node img {
-            width: 70%;
-            height: 70%;
-            object-fit: contain;
-            border-radius: 4px;
-        }
-
-        .node span {
-            font-size: 9px;
-            font-weight: 600;
-            color: var(--text);
-            text-align: center;
-            padding: 4px;
-            line-height: 1.2;
-        }
-
-        .node.center span {
-            font-size: 11px;
+        .company.center .name {
+            font-size: 32px !important;
             font-weight: 700;
-            color: var(--primary);
+            color: #fff !important;
+            text-shadow: 0 0 30px rgba(59, 130, 246, 0.8), 0 0 60px rgba(59, 130, 246, 0.4);
         }
 
+        /* Connection lines */
         .connection {
             position: absolute;
             pointer-events: none;
-            height: 2px;
+            height: 1px;
             transform-origin: left center;
-            background: linear-gradient(90deg, rgba(59, 130, 246, 0.4) 0%, rgba(139, 92, 246, 0.15) 100%);
-            border-radius: 1px;
+            background: linear-gradient(90deg, rgba(59, 130, 246, 0.4), rgba(59, 130, 246, 0));
         }
 
-        /* Modal */
+        /* Manage button */
+        .admin-btn {
+            top: 24px;
+            right: 24px;
+            padding: 10px 16px;
+            font-size: 12px;
+            font-family: inherit;
+            font-weight: 500;
+            background: rgba(15, 23, 42, 0.8);
+            border: 1px solid rgba(59, 130, 246, 0.3);
+            border-radius: 8px;
+            color: rgba(148, 163, 184, 0.8);
+            cursor: pointer;
+            transition: all 0.2s;
+            backdrop-filter: blur(10px);
+        }
+
+        .admin-btn:hover {
+            border-color: #3b82f6;
+            color: #fff;
+            box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
+        }
+
+        /* Modal styles */
         .modal-bg {
             position: fixed;
             inset: 0;
-            background: rgba(15, 23, 42, 0.6);
-            backdrop-filter: blur(12px);
+            background: rgba(3, 7, 18, 0.9);
+            backdrop-filter: blur(8px);
             z-index: 200;
             display: none;
             align-items: center;
@@ -400,201 +321,157 @@
         .modal-bg.open { display: flex; }
 
         .modal {
-            background: #fff;
-            border: 1px solid rgba(37, 99, 235, 0.1);
-            border-radius: 20px;
-            width: 520px;
+            background: rgba(15, 23, 42, 0.95);
+            border: 1px solid rgba(59, 130, 246, 0.3);
+            border-radius: 16px;
+            width: 500px;
             max-width: 90vw;
             max-height: 80vh;
             overflow: hidden;
-            display: flex;
-            flex-direction: column;
-            box-shadow: 0 25px 80px rgba(37, 99, 235, 0.2), 0 10px 30px rgba(0,0,0,0.1);
         }
 
         .modal-head {
-            padding: 20px 24px;
-            border-bottom: 1px solid rgba(37, 99, 235, 0.08);
+            padding: 16px 20px;
+            border-bottom: 1px solid rgba(59, 130, 246, 0.2);
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
 
-        .modal-head h2 { font-size: 17px; font-weight: 600; color: var(--text); }
+        .modal-head h2 { font-size: 15px; font-weight: 600; }
 
         .modal-close {
             background: none;
             border: none;
-            color: var(--text-muted);
-            font-size: 22px;
+            color: rgba(148, 163, 184, 0.6);
+            font-size: 20px;
             cursor: pointer;
-            padding: 4px 8px;
-            transition: color 0.2s;
         }
 
-        .modal-close:hover { color: var(--text); }
+        .modal-close:hover { color: #fff; }
 
-        .modal-body {
-            padding: 24px;
-            overflow-y: auto;
-        }
+        .modal-body { padding: 20px; overflow-y: auto; max-height: 60vh; }
 
-        .tabs {
-            display: flex;
-            gap: 8px;
-            margin-bottom: 20px;
-        }
+        .tabs { display: flex; gap: 8px; margin-bottom: 16px; }
 
         .tab {
-            padding: 10px 16px;
-            font-size: 13px;
+            padding: 8px 14px;
+            font-size: 12px;
             font-family: inherit;
-            font-weight: 500;
             background: transparent;
-            border: 1px solid rgba(37, 99, 235, 0.15);
-            border-radius: 10px;
-            color: var(--text-muted);
+            border: 1px solid rgba(59, 130, 246, 0.2);
+            border-radius: 6px;
+            color: rgba(148, 163, 184, 0.7);
             cursor: pointer;
-            transition: all 0.2s ease;
         }
 
-        .tab:hover { border-color: var(--primary-light); color: var(--primary); }
-        .tab.active { background: var(--primary); color: #fff; border-color: var(--primary); }
+        .tab:hover { border-color: rgba(59, 130, 246, 0.4); }
+        .tab.active { background: #3b82f6; color: #fff; border-color: #3b82f6; }
 
         .tab-content { display: none; }
         .tab-content.active { display: block; }
 
-        .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+        .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
 
-        .field { margin-bottom: 16px; }
+        .field { margin-bottom: 12px; }
 
         .field label {
             display: block;
-            font-size: 11px;
-            font-weight: 600;
-            color: var(--text-muted);
-            margin-bottom: 8px;
+            font-size: 10px;
+            font-weight: 500;
+            color: rgba(148, 163, 184, 0.6);
+            margin-bottom: 6px;
             text-transform: uppercase;
             letter-spacing: 0.5px;
         }
 
         .field input, .field textarea, .field select {
             width: 100%;
-            padding: 12px 14px;
-            font-size: 14px;
+            padding: 10px 12px;
+            font-size: 13px;
             font-family: inherit;
-            background: #f8fafc;
-            border: 1px solid rgba(37, 99, 235, 0.12);
-            border-radius: 10px;
-            color: var(--text);
+            background: rgba(30, 41, 59, 0.5);
+            border: 1px solid rgba(59, 130, 246, 0.2);
+            border-radius: 8px;
+            color: #fff;
             outline: none;
-            transition: all 0.2s ease;
         }
 
         .field input:focus, .field textarea:focus, .field select:focus {
-            border-color: var(--primary-light);
-            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
-            background: #fff;
+            border-color: #3b82f6;
         }
 
-        .field textarea { resize: vertical; min-height: 80px; }
+        .field textarea { resize: vertical; min-height: 60px; }
+        .field select option { background: #1e293b; }
 
         .btn {
-            padding: 12px 20px;
-            font-size: 14px;
+            padding: 10px 16px;
+            font-size: 13px;
             font-family: inherit;
             font-weight: 500;
-            border-radius: 10px;
+            border-radius: 8px;
             cursor: pointer;
-            transition: all 0.2s ease;
             border: none;
         }
 
-        .btn-primary {
-            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
-            color: #fff;
-            box-shadow: 0 2px 10px rgba(37, 99, 235, 0.25);
-        }
-        .btn-primary:hover {
-            box-shadow: 0 4px 20px rgba(37, 99, 235, 0.35);
-            transform: translateY(-1px);
-        }
+        .btn-primary { background: #3b82f6; color: #fff; }
+        .btn-primary:hover { background: #2563eb; }
 
         .btn-ghost {
             background: transparent;
-            border: 1px solid rgba(37, 99, 235, 0.2);
-            color: var(--text-muted);
+            border: 1px solid rgba(59, 130, 246, 0.3);
+            color: rgba(148, 163, 184, 0.8);
         }
 
-        .btn-ghost:hover { background: rgba(37, 99, 235, 0.06); color: var(--primary); border-color: var(--primary-light); }
+        .btn-ghost:hover { border-color: #3b82f6; color: #fff; }
 
-        .actions { display: flex; gap: 12px; justify-content: flex-end; margin-top: 20px; }
+        .actions { display: flex; gap: 10px; justify-content: flex-end; margin-top: 16px; }
 
         .list {
-            border: 1px solid rgba(37, 99, 235, 0.1);
-            border-radius: 12px;
-            max-height: 280px;
+            border: 1px solid rgba(59, 130, 246, 0.2);
+            border-radius: 8px;
+            max-height: 250px;
             overflow-y: auto;
-            background: #f8fafc;
         }
 
         .list-item {
-            padding: 14px 16px;
+            padding: 10px 12px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            border-bottom: 1px solid rgba(37, 99, 235, 0.06);
+            border-bottom: 1px solid rgba(59, 130, 246, 0.1);
             cursor: pointer;
-            transition: all 0.2s ease;
-            background: #fff;
         }
 
-        .list-item:last-child { border-bottom: none; }
-        .list-item:hover { background: rgba(37, 99, 235, 0.04); }
-
-        .list-item .name { font-size: 14px; font-weight: 500; color: var(--text); }
-        .list-item .cat { font-size: 12px; color: var(--text-muted); margin-top: 2px; }
-
-        .list-item button {
-            background: none;
-            border: none;
-            color: var(--text-muted);
-            cursor: pointer;
-            font-size: 14px;
-            transition: color 0.2s;
-        }
-
+        .list-item:hover { background: rgba(59, 130, 246, 0.1); }
+        .list-item .name { font-size: 13px; }
+        .list-item .cat { font-size: 11px; color: rgba(148, 163, 184, 0.5); }
+        .list-item button { background: none; border: none; color: rgba(148, 163, 184, 0.5); cursor: pointer; }
         .list-item button:hover { color: #ef4444; }
 
-        .export-btns { display: flex; gap: 12px; flex-wrap: wrap; }
-
-        #tab-data p { color: var(--text-muted); }
+        .export-btns { display: flex; gap: 10px; flex-wrap: wrap; }
 
         @media (max-width: 768px) {
             .stats { display: none; }
-            .panel { left: 16px; right: 16px; width: auto; bottom: 16px; }
-            .admin-btn { top: auto; bottom: 16px; right: 16px; }
-            .orb { opacity: 0.2; }
+            .panel { left: 12px; right: 12px; width: auto; bottom: 12px; }
+            .admin-btn { top: auto; bottom: 12px; right: 12px; }
         }
     </style>
 </head>
 <body>
     <div id="app">
-        <div class="orb orb-1"></div>
-        <div class="orb orb-2"></div>
-        <div class="orb orb-3"></div>
-        <div class="grid-pattern"></div>
+        <canvas id="particles"></canvas>
+        <div class="grid"></div>
         <div id="map"></div>
 
         <div class="header ui">
             <h1>AI Map</h1>
-            <p>Explore the AI company landscape</p>
         </div>
 
         <div class="search-wrap ui">
             <div class="search-box">
                 <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
-                <input type="text" id="search" placeholder="Search companies..." autocomplete="off">
+                <input type="text" id="search" placeholder="Search AI companies..." autocomplete="off">
             </div>
             <div class="dropdown" id="dropdown"></div>
         </div>
@@ -609,7 +486,7 @@
             </div>
             <p id="panel-desc"></p>
             <div class="panel-meta">
-                <span class="tag cat" id="panel-cat"></span>
+                <span class="tag" id="panel-cat"></span>
                 <span class="tag" id="panel-hq"></span>
             </div>
         </div>
@@ -663,16 +540,16 @@
                 </div>
 
                 <div class="tab-content" id="tab-edit">
-                    <div class="field"><input type="text" id="edit-search" placeholder="Search..."></div>
+                    <div class="field"><input type="text" id="edit-search" placeholder="Search to edit..."></div>
                     <div class="list" id="company-list"></div>
                 </div>
 
                 <div class="tab-content" id="tab-data">
-                    <p style="color:rgba(255,255,255,0.5);font-size:13px;margin-bottom:16px;">Export or import company data as JSON.</p>
+                    <p style="color:rgba(148,163,184,0.6);font-size:12px;margin-bottom:14px;">Export or import company data.</p>
                     <div class="export-btns">
                         <button class="btn btn-ghost" id="export-btn">Export JSON</button>
-                        <label class="btn btn-ghost" style="cursor:pointer;">Import JSON<input type="file" id="import-file" accept=".json" style="display:none;"></label>
-                        <button class="btn btn-ghost" id="reset-btn">Reset Default</button>
+                        <label class="btn btn-ghost" style="cursor:pointer;">Import<input type="file" id="import-file" accept=".json" style="display:none;"></label>
+                        <button class="btn btn-ghost" id="reset-btn">Reset</button>
                     </div>
                 </div>
             </div>
@@ -719,33 +596,58 @@
     </div>
 
 <script>
-const catColors = {
-    "Foundation Models": "#8b5cf6", "Image Generation": "#ec4899", "Video Generation": "#f472b6",
-    "Audio AI": "#f97316", "Music AI": "#f59e0b", "Code & Dev Tools": "#3b82f6", "AI Agents": "#6366f1",
-    "Neo Cloud": "#14b8a6", "Hardware": "#10b981", "Data & Vector DB": "#06b6d4", "MLOps": "#0ea5e9",
-    "Conversational AI": "#f43f5e", "Contact Center": "#e11d48", "Customer Support": "#be185d",
-    "Enterprise Search": "#22c55e", "Enterprise AI": "#16a34a", "Legal Tech": "#a855f7",
-    "Healthcare AI": "#d946ef", "Drug Discovery": "#c026d3", "Finance AI": "#0891b2",
-    "Marketing AI": "#7c3aed", "HR Tech": "#9333ea", "Security AI": "#dc2626",
-    "Education": "#2563eb", "Robotics": "#059669", "Autonomous Vehicles": "#047857", "Physical AI": "#10b981"
+// Category similarity matrix
+const catGroups = {
+    "models": ["Foundation Models", "AI Agents"],
+    "creative": ["Image Generation", "Video Generation", "Audio AI", "Music AI"],
+    "dev": ["Code & Dev Tools", "MLOps", "Data & Vector DB"],
+    "infra": ["Neo Cloud", "Hardware"],
+    "conversation": ["Conversational AI", "Contact Center", "Customer Support"],
+    "enterprise": ["Enterprise AI", "Enterprise Search", "Legal Tech", "Finance AI", "Marketing AI", "HR Tech"],
+    "health": ["Healthcare AI", "Drug Discovery"],
+    "security": ["Security AI"],
+    "edu": ["Education"],
+    "physical": ["Robotics", "Autonomous Vehicles"]
 };
 
-const catSim = {
-    "Foundation Models": ["AI Agents", "Enterprise AI"],
-    "Image Generation": ["Video Generation", "Audio AI", "Music AI"],
-    "Video Generation": ["Image Generation", "Audio AI"],
-    "Audio AI": ["Music AI", "Video Generation"],
-    "Code & Dev Tools": ["AI Agents", "MLOps"],
-    "AI Agents": ["Code & Dev Tools", "Enterprise AI", "Foundation Models"],
-    "Neo Cloud": ["Hardware", "Data & Vector DB"],
-    "Hardware": ["Neo Cloud"],
-    "Conversational AI": ["Contact Center", "Customer Support"],
-    "Contact Center": ["Conversational AI", "Customer Support"],
-    "Customer Support": ["Conversational AI", "AI Agents"],
-    "Enterprise AI": ["Foundation Models", "Enterprise Search"],
-    "Robotics": ["Autonomous Vehicles", "Hardware"],
-    "Autonomous Vehicles": ["Robotics"]
-};
+function getGroup(cat) {
+    for (let g in catGroups) {
+        if (catGroups[g].includes(cat)) return g;
+    }
+    return null;
+}
+
+// Calculate similarity between two companies (0-1)
+function similarity(a, b) {
+    if (!data[a] || !data[b]) return 0.1;
+    if (a === b) return 1;
+
+    let score = 0;
+    const ca = data[a], cb = data[b];
+
+    // Direct relationship (highest weight)
+    if ((ca.rel || []).includes(b) || (cb.rel || []).includes(a)) {
+        score += 0.5;
+    }
+
+    // Same category
+    if (ca.cat === cb.cat) {
+        score += 0.35;
+    }
+    // Same group
+    else if (getGroup(ca.cat) === getGroup(cb.cat)) {
+        score += 0.15;
+    }
+
+    // Shared relationships
+    const relA = new Set(ca.rel || []);
+    const relB = new Set(cb.rel || []);
+    let shared = 0;
+    relA.forEach(r => { if (relB.has(r)) shared++; });
+    score += Math.min(shared * 0.05, 0.15);
+
+    return Math.min(score, 1);
+}
 
 const defaultData = {
 "OpenAI": { desc: "Creator of GPT-4, ChatGPT, DALL-E. Leading AI research lab.", cat: "Foundation Models", hq: "San Francisco, CA", val: "$157B", domain: "openai.com", rel: ["Anthropic", "Google DeepMind", "Meta AI", "xAI", "Mistral AI", "Microsoft"] },
@@ -757,421 +659,166 @@ const defaultData = {
 "Cohere": { desc: "Enterprise LLM company. Embeddings specialist.", cat: "Foundation Models", hq: "Toronto, Canada", val: "$5.5B", domain: "cohere.com", rel: ["OpenAI", "Anthropic", "AI21 Labs", "Writer"] },
 "AI21 Labs": { desc: "Creator of Jurassic models.", cat: "Foundation Models", hq: "Tel Aviv, Israel", val: "$1.4B", domain: "ai21.com", rel: ["Cohere", "OpenAI", "Writer"] },
 "Inflection AI": { desc: "Creator of Pi assistant.", cat: "Foundation Models", hq: "Palo Alto, CA", val: "$4B", domain: "inflection.ai", rel: ["Anthropic", "OpenAI", "Character.AI"] },
-"Character.AI": { desc: "AI chatbot platform for characters.", cat: "Foundation Models", hq: "Palo Alto, CA", val: "$1B", domain: "character.ai", rel: ["Inflection AI", "OpenAI"] },
+"Character.AI": { desc: "AI chatbot platform for characters.", cat: "Foundation Models", hq: "Palo Alto, CA", val: "$1B", domain: "character.ai", rel: ["Inflection AI", "OpenAI", "Replika"] },
 "SSI": { desc: "Safe Superintelligence by Ilya Sutskever.", cat: "Foundation Models", hq: "Palo Alto, CA", val: "$5B", domain: "ssi.inc", rel: ["OpenAI", "Anthropic"] },
 "Reka": { desc: "Multimodal AI models.", cat: "Foundation Models", hq: "London, UK", val: "$500M", domain: "reka.ai", rel: ["Anthropic", "Mistral AI"] },
 "Writer": { desc: "Enterprise AI for content.", cat: "Foundation Models", hq: "San Francisco, CA", val: "$1.9B", domain: "writer.com", rel: ["Cohere", "AI21 Labs", "Jasper"] },
-"Zhipu AI": { desc: "China's leading foundation model company.", cat: "Foundation Models", hq: "Beijing, China", val: "$3B", domain: "zhipuai.cn", rel: ["Baidu", "01.AI"] },
+"Zhipu AI": { desc: "China's leading foundation model company.", cat: "Foundation Models", hq: "Beijing, China", val: "$3B", domain: "zhipuai.cn", rel: ["Baidu", "01.AI", "DeepSeek"] },
 "01.AI": { desc: "Yi models by Kai-Fu Lee.", cat: "Foundation Models", hq: "Beijing, China", val: "$1B", domain: "01.ai", rel: ["Zhipu AI", "Baidu"] },
 "Baidu": { desc: "ERNIE Bot. Chinese AI leader.", cat: "Foundation Models", hq: "Beijing, China", val: "$35B", domain: "baidu.com", rel: ["Alibaba Cloud", "Zhipu AI"] },
 "Alibaba Cloud": { desc: "Qwen models.", cat: "Foundation Models", hq: "Hangzhou, China", val: "Alibaba", domain: "alibabacloud.com", rel: ["Baidu", "Zhipu AI"] },
+"DeepSeek": { desc: "Chinese AI lab, powerful open models.", cat: "Foundation Models", hq: "Hangzhou, China", val: "$2B", domain: "deepseek.com", rel: ["Mistral AI", "Zhipu AI", "01.AI"] },
+"Moonshot AI": { desc: "Kimi chatbot, long context.", cat: "Foundation Models", hq: "Beijing, China", val: "$3B", domain: "moonshot.cn", rel: ["Zhipu AI", "DeepSeek"] },
+"MiniMax": { desc: "Chinese multimodal AI.", cat: "Foundation Models", hq: "Shanghai, China", val: "$2.5B", domain: "minimaxi.com", rel: ["Zhipu AI", "DeepSeek"] },
 
 "Midjourney": { desc: "AI image generation. Exceptional quality.", cat: "Image Generation", hq: "San Francisco, CA", val: "$10B", domain: "midjourney.com", rel: ["Stability AI", "Adobe Firefly", "Leonardo.AI", "Ideogram"] },
 "Stability AI": { desc: "Stable Diffusion. Open-source pioneer.", cat: "Image Generation", hq: "London, UK", val: "$1B", domain: "stability.ai", rel: ["Midjourney", "Runway", "Black Forest Labs"] },
-"Adobe Firefly": { desc: "Adobe's generative AI.", cat: "Image Generation", hq: "San Jose, CA", val: "Adobe", domain: "adobe.com", rel: ["Midjourney", "Canva"] },
+"Adobe Firefly": { desc: "Adobe's generative AI.", cat: "Image Generation", hq: "San Jose, CA", val: "Adobe", domain: "adobe.com", rel: ["Midjourney", "Canva", "Figma"] },
 "Leonardo.AI": { desc: "AI image platform.", cat: "Image Generation", hq: "Sydney, Australia", val: "$500M", domain: "leonardo.ai", rel: ["Midjourney", "Stability AI"] },
 "Ideogram": { desc: "AI image with text rendering.", cat: "Image Generation", hq: "Toronto, Canada", val: "$580M", domain: "ideogram.ai", rel: ["Midjourney", "Stability AI"] },
 "Black Forest Labs": { desc: "FLUX models.", cat: "Image Generation", hq: "Freiburg, Germany", val: "$1B", domain: "blackforestlabs.ai", rel: ["Stability AI", "Midjourney"] },
 "PhotoRoom": { desc: "AI background removal.", cat: "Image Generation", hq: "Paris, France", val: "$500M", domain: "photoroom.com", rel: ["Canva", "Adobe Firefly"] },
 
-"Runway": { desc: "AI video generation. Gen-3.", cat: "Video Generation", hq: "New York, NY", val: "$4B", domain: "runwayml.com", rel: ["Pika", "Luma AI", "HeyGen"] },
+"Runway": { desc: "AI video generation. Gen-3.", cat: "Video Generation", hq: "New York, NY", val: "$4B", domain: "runwayml.com", rel: ["Pika", "Luma AI", "HeyGen", "Stability AI"] },
 "Pika": { desc: "Text-to-video AI.", cat: "Video Generation", hq: "Palo Alto, CA", val: "$470M", domain: "pika.art", rel: ["Runway", "Luma AI"] },
 "Luma AI": { desc: "Dream Machine.", cat: "Video Generation", hq: "Palo Alto, CA", val: "$500M", domain: "lumalabs.ai", rel: ["Runway", "Pika"] },
 "HeyGen": { desc: "AI avatar videos.", cat: "Video Generation", hq: "Los Angeles, CA", val: "$500M", domain: "heygen.com", rel: ["Synthesia", "D-ID"] },
 "Synthesia": { desc: "Enterprise AI video.", cat: "Video Generation", hq: "London, UK", val: "$2.1B", domain: "synthesia.io", rel: ["HeyGen", "D-ID"] },
 "D-ID": { desc: "Talking avatars.", cat: "Video Generation", hq: "Tel Aviv, Israel", val: "$400M", domain: "d-id.com", rel: ["HeyGen", "Synthesia"] },
-"Captions": { desc: "AI video editing.", cat: "Video Generation", hq: "New York, NY", val: "$500M", domain: "captions.ai", rel: ["Descript", "Runway"] },
+"Higgsfield": { desc: "AI video avatars.", cat: "Video Generation", hq: "Palo Alto, CA", val: "$100M", domain: "higgsfield.ai", rel: ["HeyGen", "Synthesia"] },
 
-"ElevenLabs": { desc: "AI voice synthesis leader.", cat: "Audio AI", hq: "New York, NY", val: "$3B", domain: "elevenlabs.io", rel: ["Resemble AI", "Descript"] },
+"ElevenLabs": { desc: "AI voice synthesis leader.", cat: "Audio AI", hq: "New York, NY", val: "$3B", domain: "elevenlabs.io", rel: ["Resemble AI", "Descript", "Suno"] },
 "Suno": { desc: "AI music from text.", cat: "Music AI", hq: "Cambridge, MA", val: "$500M", domain: "suno.com", rel: ["Udio", "ElevenLabs"] },
 "Udio": { desc: "AI music generation.", cat: "Music AI", hq: "New York, NY", val: "$200M", domain: "udio.com", rel: ["Suno", "ElevenLabs"] },
 "Descript": { desc: "AI audio/video editing.", cat: "Audio AI", hq: "San Francisco, CA", val: "$553M", domain: "descript.com", rel: ["ElevenLabs", "Runway"] },
 "Deepgram": { desc: "Speech recognition.", cat: "Audio AI", hq: "San Francisco, CA", val: "$300M", domain: "deepgram.com", rel: ["AssemblyAI", "ElevenLabs"] },
 "AssemblyAI": { desc: "Speech-to-text API.", cat: "Audio AI", hq: "San Francisco, CA", val: "$300M", domain: "assemblyai.com", rel: ["Deepgram", "Otter.ai"] },
-"Otter.ai": { desc: "Meeting transcription.", cat: "Audio AI", hq: "Mountain View, CA", val: "$400M", domain: "otter.ai", rel: ["Fireflies.ai", "AssemblyAI"] },
+"Otter.ai": { desc: "Meeting transcription.", cat: "Audio AI", hq: "Mountain View, CA", val: "$400M", domain: "otter.ai", rel: ["Fireflies.ai", "AssemblyAI", "Granola"] },
+"Resemble AI": { desc: "Voice cloning.", cat: "Audio AI", hq: "San Francisco, CA", val: "$100M", domain: "resemble.ai", rel: ["ElevenLabs", "Descript"] },
+"Granola": { desc: "AI meeting notes.", cat: "Audio AI", hq: "San Francisco, CA", val: "$50M", domain: "granola.so", rel: ["Otter.ai", "Fireflies.ai"] },
+"Fireflies.ai": { desc: "Meeting assistant.", cat: "Audio AI", hq: "San Francisco, CA", val: "$100M", domain: "fireflies.ai", rel: ["Otter.ai", "Granola"] },
 
 "GitHub Copilot": { desc: "AI pair programmer.", cat: "Code & Dev Tools", hq: "San Francisco, CA", val: "Microsoft", domain: "github.com", rel: ["Cursor", "Codeium", "Replit"] },
-"Cursor": { desc: "AI-native code editor.", cat: "Code & Dev Tools", hq: "San Francisco, CA", val: "$2.6B", domain: "cursor.com", rel: ["GitHub Copilot", "Codeium", "Windsurf"] },
+"Cursor": { desc: "AI-native code editor.", cat: "Code & Dev Tools", hq: "San Francisco, CA", val: "$2.6B", domain: "cursor.com", rel: ["GitHub Copilot", "Codeium", "Windsurf", "Lovable"] },
 "Codeium": { desc: "Free AI code completion.", cat: "Code & Dev Tools", hq: "Mountain View, CA", val: "$1.25B", domain: "codeium.com", rel: ["GitHub Copilot", "Cursor"] },
-"Replit": { desc: "AI-powered online IDE.", cat: "Code & Dev Tools", hq: "San Francisco, CA", val: "$1.16B", domain: "replit.com", rel: ["Cursor", "Vercel"] },
+"Replit": { desc: "AI-powered online IDE.", cat: "Code & Dev Tools", hq: "San Francisco, CA", val: "$1.16B", domain: "replit.com", rel: ["Cursor", "Vercel", "Lovable"] },
 "Tabnine": { desc: "AI code with privacy.", cat: "Code & Dev Tools", hq: "Tel Aviv, Israel", val: "$400M", domain: "tabnine.com", rel: ["GitHub Copilot", "Codeium"] },
 "Sourcegraph": { desc: "AI code search.", cat: "Code & Dev Tools", hq: "San Francisco, CA", val: "$2.6B", domain: "sourcegraph.com", rel: ["GitHub Copilot", "Cursor"] },
 "Magic": { desc: "AI coding, unlimited context.", cat: "Code & Dev Tools", hq: "San Francisco, CA", val: "$1.5B", domain: "magic.dev", rel: ["Cursor", "Cognition AI"] },
-"Vercel": { desc: "Frontend cloud with AI.", cat: "Code & Dev Tools", hq: "San Francisco, CA", val: "$3.25B", domain: "vercel.com", rel: ["Replit", "GitHub Copilot"] },
+"Vercel": { desc: "Frontend cloud with AI.", cat: "Code & Dev Tools", hq: "San Francisco, CA", val: "$3.25B", domain: "vercel.com", rel: ["Replit", "Supabase"] },
 "Poolside": { desc: "AI for software dev.", cat: "Code & Dev Tools", hq: "San Francisco, CA", val: "$3B", domain: "poolside.ai", rel: ["Magic", "Cursor"] },
-"Augment": { desc: "Enterprise AI coding.", cat: "Code & Dev Tools", hq: "Palo Alto, CA", val: "$977M", domain: "augmentcode.com", rel: ["GitHub Copilot", "Cursor"] },
+"Lovable": { desc: "AI app builder.", cat: "Code & Dev Tools", hq: "San Francisco, CA", val: "$200M", domain: "lovable.dev", rel: ["Cursor", "Replit"] },
+"Windsurf": { desc: "AI code editor.", cat: "Code & Dev Tools", hq: "Palo Alto, CA", val: "$3B", domain: "codeium.com", rel: ["Cursor", "Codeium"] },
+"Harness": { desc: "DevOps AI platform.", cat: "Code & Dev Tools", hq: "San Francisco, CA", val: "$3.7B", domain: "harness.io", rel: ["GitHub Copilot", "Datadog"] },
 
-"Cognition AI": { desc: "Devin, AI software engineer.", cat: "AI Agents", hq: "San Francisco, CA", val: "$2B", domain: "cognition.ai", rel: ["Adept", "OpenAI"] },
+"Cognition AI": { desc: "Devin, AI software engineer.", cat: "AI Agents", hq: "San Francisco, CA", val: "$2B", domain: "cognition.ai", rel: ["Adept", "OpenAI", "Magic"] },
 "Sierra": { desc: "AI agents by Bret Taylor.", cat: "AI Agents", hq: "San Francisco, CA", val: "$4.5B", domain: "sierra.ai", rel: ["Intercom", "Ada"] },
 "Adept": { desc: "AI that takes actions.", cat: "AI Agents", hq: "San Francisco, CA", val: "$1B", domain: "adept.ai", rel: ["Cognition AI", "OpenAI"] },
 "11x": { desc: "AI digital workers.", cat: "AI Agents", hq: "San Francisco, CA", val: "$350M", domain: "11x.ai", rel: ["Artisan", "Outreach"] },
 "Artisan": { desc: "AI employees for sales.", cat: "AI Agents", hq: "San Francisco, CA", val: "$250M", domain: "artisan.co", rel: ["11x", "Outreach"] },
-"Decagon": { desc: "AI customer support.", cat: "AI Agents", hq: "San Francisco, CA", val: "$100M", domain: "decagon.ai", rel: ["Sierra", "Intercom"] },
 
 "CoreWeave": { desc: "AI-focused GPU cloud.", cat: "Neo Cloud", hq: "Roseland, NJ", val: "$35B", domain: "coreweave.com", rel: ["Lambda Labs", "Together AI", "Crusoe"] },
 "Lambda Labs": { desc: "GPU cloud for AI.", cat: "Neo Cloud", hq: "San Francisco, CA", val: "$1.5B", domain: "lambdalabs.com", rel: ["CoreWeave", "Together AI"] },
 "Crusoe": { desc: "Sustainable AI cloud.", cat: "Neo Cloud", hq: "San Francisco, CA", val: "$10B", domain: "crusoe.ai", rel: ["CoreWeave", "Lambda Labs"] },
-"Together AI": { desc: "Open-source AI cloud.", cat: "Neo Cloud", hq: "San Francisco, CA", val: "$1.3B", domain: "together.ai", rel: ["Hugging Face", "Fireworks AI"] },
+"Together AI": { desc: "Open-source AI cloud.", cat: "Neo Cloud", hq: "San Francisco, CA", val: "$1.3B", domain: "together.ai", rel: ["Hugging Face", "Fireworks AI", "Meta AI"] },
 "Fireworks AI": { desc: "Fast AI inference.", cat: "Neo Cloud", hq: "Menlo Park, CA", val: "$552M", domain: "fireworks.ai", rel: ["Together AI", "Groq"] },
-"Modal": { desc: "Serverless GPU.", cat: "Neo Cloud", hq: "San Francisco, CA", val: "$150M", domain: "modal.com", rel: ["Together AI", "Replicate"] },
+"Modal": { desc: "Serverless GPU.", cat: "Neo Cloud", hq: "San Francisco, CA", val: "$150M", domain: "modal.com", rel: ["Together AI", "Replicate", "Baseten"] },
 "Replicate": { desc: "Run AI models via API.", cat: "Neo Cloud", hq: "San Francisco, CA", val: "$350M", domain: "replicate.com", rel: ["Hugging Face", "Together AI"] },
-"Anyscale": { desc: "Creators of Ray.", cat: "Neo Cloud", hq: "San Francisco, CA", val: "$1B", domain: "anyscale.com", rel: ["Databricks", "Together AI"] },
+"Baseten": { desc: "ML model deployment.", cat: "Neo Cloud", hq: "San Francisco, CA", val: "$200M", domain: "baseten.co", rel: ["Replicate", "Modal"] },
+"Fal": { desc: "Fast AI inference.", cat: "Neo Cloud", hq: "San Francisco, CA", val: "$100M", domain: "fal.ai", rel: ["Replicate", "Modal"] },
 
 "NVIDIA": { desc: "GPU leader. Powers AI.", cat: "Hardware", hq: "Santa Clara, CA", val: "$3.4T", domain: "nvidia.com", rel: ["AMD", "Cerebras", "Groq"] },
 "AMD": { desc: "GPU competitor. MI300.", cat: "Hardware", hq: "Santa Clara, CA", val: "$208B", domain: "amd.com", rel: ["NVIDIA", "Intel"] },
-"Groq": { desc: "Ultra-fast LPU chips.", cat: "Hardware", hq: "Mountain View, CA", val: "$2.8B", domain: "groq.com", rel: ["Cerebras", "NVIDIA"] },
+"Groq": { desc: "Ultra-fast LPU chips.", cat: "Hardware", hq: "Mountain View, CA", val: "$2.8B", domain: "groq.com", rel: ["Cerebras", "NVIDIA", "Fireworks AI"] },
 "Cerebras": { desc: "Wafer-scale AI chips.", cat: "Hardware", hq: "Sunnyvale, CA", val: "$4.3B", domain: "cerebras.net", rel: ["Groq", "NVIDIA"] },
 "SambaNova": { desc: "Enterprise AI systems.", cat: "Hardware", hq: "Palo Alto, CA", val: "$5.1B", domain: "sambanova.ai", rel: ["Cerebras", "Groq"] },
-"Tenstorrent": { desc: "AI chips by Jim Keller.", cat: "Hardware", hq: "Toronto, Canada", val: "$1B", domain: "tenstorrent.com", rel: ["Cerebras", "Groq"] },
 
 "Pinecone": { desc: "Vector database leader.", cat: "Data & Vector DB", hq: "New York, NY", val: "$750M", domain: "pinecone.io", rel: ["Weaviate", "Chroma"] },
 "Weaviate": { desc: "Open-source vector DB.", cat: "Data & Vector DB", hq: "Amsterdam, Netherlands", val: "$200M", domain: "weaviate.io", rel: ["Pinecone", "Chroma"] },
 "Scale AI": { desc: "AI data labeling.", cat: "Data & Vector DB", hq: "San Francisco, CA", val: "$14B", domain: "scale.com", rel: ["Labelbox", "Snorkel"] },
 "Databricks": { desc: "Data lakehouse with AI.", cat: "Data & Vector DB", hq: "San Francisco, CA", val: "$62B", domain: "databricks.com", rel: ["Snowflake", "Scale AI"] },
 "Snowflake": { desc: "Data cloud with AI.", cat: "Data & Vector DB", hq: "Bozeman, MT", val: "$56B", domain: "snowflake.com", rel: ["Databricks", "Microsoft"] },
+"MongoDB": { desc: "Document database.", cat: "Data & Vector DB", hq: "New York, NY", val: "$17B", domain: "mongodb.com", rel: ["Pinecone", "Snowflake"] },
+"Supabase": { desc: "Open-source Firebase.", cat: "Data & Vector DB", hq: "San Francisco, CA", val: "$2B", domain: "supabase.com", rel: ["Neon", "MongoDB", "Vercel"] },
+"Neon": { desc: "Serverless Postgres.", cat: "Data & Vector DB", hq: "San Francisco, CA", val: "$1B", domain: "neon.tech", rel: ["Supabase", "MongoDB"] },
 
-"Hugging Face": { desc: "AI model hub.", cat: "MLOps", hq: "New York, NY", val: "$4.5B", domain: "huggingface.co", rel: ["Meta AI", "Together AI"] },
+"Hugging Face": { desc: "AI model hub.", cat: "MLOps", hq: "New York, NY", val: "$4.5B", domain: "huggingface.co", rel: ["Meta AI", "Together AI", "Replicate"] },
 "Weights & Biases": { desc: "ML experiment tracking.", cat: "MLOps", hq: "San Francisco, CA", val: "$1.25B", domain: "wandb.ai", rel: ["Scale AI", "Hugging Face"] },
 "LangChain": { desc: "LLM app framework.", cat: "MLOps", hq: "San Francisco, CA", val: "$200M", domain: "langchain.com", rel: ["LlamaIndex", "Pinecone"] },
+"LlamaIndex": { desc: "LLM data framework.", cat: "MLOps", hq: "San Francisco, CA", val: "$150M", domain: "llamaindex.ai", rel: ["LangChain", "Pinecone"] },
+"n8n": { desc: "Workflow automation.", cat: "MLOps", hq: "Berlin, Germany", val: "$200M", domain: "n8n.io", rel: ["LangChain", "Temporal"] },
+"Braintrust": { desc: "AI evaluation platform.", cat: "MLOps", hq: "San Francisco, CA", val: "$100M", domain: "braintrustdata.com", rel: ["Weights & Biases", "LangChain"] },
 
-"Kore.ai": { desc: "Enterprise conversational AI.", cat: "Conversational AI", hq: "Orlando, FL", val: "$1B", domain: "kore.ai", rel: ["Uniphore", "Yellow.ai"] },
-"Uniphore": { desc: "Contact center AI.", cat: "Conversational AI", hq: "Palo Alto, CA", val: "$2.5B", domain: "uniphore.com", rel: ["Kore.ai", "LivePerson"] },
-"LivePerson": { desc: "Conversational AI.", cat: "Conversational AI", hq: "New York, NY", val: "$300M", domain: "liveperson.com", rel: ["Kore.ai", "Zendesk"] },
-"Yellow.ai": { desc: "Enterprise chatbots.", cat: "Conversational AI", hq: "San Mateo, CA", val: "$1.1B", domain: "yellow.ai", rel: ["Kore.ai", "Cognigy"] },
-"Gupshup": { desc: "Messaging platform.", cat: "Conversational AI", hq: "San Francisco, CA", val: "$1.4B", domain: "gupshup.io", rel: ["Yellow.ai", "Twilio"] },
-"SoundHound": { desc: "Voice AI platform.", cat: "Conversational AI", hq: "Santa Clara, CA", val: "$1.5B", domain: "soundhound.com", rel: ["Uniphore", "Kore.ai"] },
-
-"NICE": { desc: "Contact center platform.", cat: "Contact Center", hq: "Hoboken, NJ", val: "$12B", domain: "nice.com", rel: ["Genesys", "Five9"] },
-"Genesys": { desc: "Cloud contact center.", cat: "Contact Center", hq: "Menlo Park, CA", val: "$5B", domain: "genesys.com", rel: ["NICE", "Talkdesk"] },
-"Five9": { desc: "Cloud contact center.", cat: "Contact Center", hq: "San Ramon, CA", val: "$3B", domain: "five9.com", rel: ["NICE", "Genesys"] },
-"Talkdesk": { desc: "AI contact center.", cat: "Contact Center", hq: "San Francisco, CA", val: "$10B", domain: "talkdesk.com", rel: ["NICE", "Genesys"] },
-"Observe.ai": { desc: "Contact center AI.", cat: "Contact Center", hq: "San Francisco, CA", val: "$304M", domain: "observe.ai", rel: ["Uniphore", "Cresta"] },
-"Cresta": { desc: "Real-time agent AI.", cat: "Contact Center", hq: "San Francisco, CA", val: "$400M", domain: "cresta.com", rel: ["Observe.ai", "NICE"] },
-
-"Intercom": { desc: "AI customer service.", cat: "Customer Support", hq: "San Francisco, CA", val: "$1.3B", domain: "intercom.com", rel: ["Zendesk", "Sierra"] },
-"Zendesk": { desc: "Customer service AI.", cat: "Customer Support", hq: "San Francisco, CA", val: "$10.2B", domain: "zendesk.com", rel: ["Intercom", "Freshworks"] },
-"Ada": { desc: "AI customer automation.", cat: "Customer Support", hq: "Toronto, Canada", val: "$1.2B", domain: "ada.cx", rel: ["Intercom", "Sierra"] },
-"Freshworks": { desc: "Business software AI.", cat: "Customer Support", hq: "San Mateo, CA", val: "$5B", domain: "freshworks.com", rel: ["Zendesk", "Intercom"] },
-
+"Perplexity": { desc: "AI search engine.", cat: "Enterprise Search", hq: "San Francisco, CA", val: "$9B", domain: "perplexity.ai", rel: ["OpenAI", "Google", "Glean"] },
 "Glean": { desc: "Enterprise AI search.", cat: "Enterprise Search", hq: "Palo Alto, CA", val: "$4.6B", domain: "glean.com", rel: ["Perplexity", "Coveo"] },
-"Perplexity": { desc: "AI search engine.", cat: "Enterprise Search", hq: "San Francisco, CA", val: "$9B", domain: "perplexity.ai", rel: ["OpenAI", "Google"] },
 "Hebbia": { desc: "AI knowledge work.", cat: "Enterprise Search", hq: "New York, NY", val: "$700M", domain: "hebbia.ai", rel: ["Glean", "Perplexity"] },
-"Algolia": { desc: "Search API.", cat: "Enterprise Search", hq: "San Francisco, CA", val: "$2.25B", domain: "algolia.com", rel: ["Coveo", "Elastic"] },
 
-"Harvey": { desc: "AI for law firms.", cat: "Legal Tech", hq: "San Francisco, CA", val: "$5B", domain: "harvey.ai", rel: ["EvenUp", "Ironclad"] },
+"Harvey": { desc: "AI for law firms.", cat: "Legal Tech", hq: "San Francisco, CA", val: "$5B", domain: "harvey.ai", rel: ["EvenUp", "Ironclad", "Casetext"] },
 "EvenUp": { desc: "Personal injury AI.", cat: "Legal Tech", hq: "San Francisco, CA", val: "$1B", domain: "evenuplaw.com", rel: ["Harvey", "Spellbook"] },
 "Ironclad": { desc: "Contract management.", cat: "Legal Tech", hq: "San Francisco, CA", val: "$3.2B", domain: "ironcladapp.com", rel: ["Harvey", "DocuSign"] },
-"Relativity": { desc: "eDiscovery with AI.", cat: "Legal Tech", hq: "Chicago, IL", val: "$3.6B", domain: "relativity.com", rel: ["Harvey", "Everlaw"] },
+"Everlaw": { desc: "Litigation platform.", cat: "Legal Tech", hq: "Oakland, CA", val: "$2B", domain: "everlaw.com", rel: ["Harvey", "Relativity"] },
 
-"Abridge": { desc: "Clinical documentation.", cat: "Healthcare AI", hq: "Pittsburgh, PA", val: "$5.3B", domain: "abridge.com", rel: ["Ambience", "Suki"] },
+"Abridge": { desc: "Clinical documentation.", cat: "Healthcare AI", hq: "Pittsburgh, PA", val: "$5.3B", domain: "abridge.com", rel: ["Ambience", "Suki", "Nuance"] },
 "Ambience": { desc: "Healthcare AI docs.", cat: "Healthcare AI", hq: "San Francisco, CA", val: "$800M", domain: "ambience.healthcare", rel: ["Abridge", "Suki"] },
 "Tempus": { desc: "Precision medicine.", cat: "Healthcare AI", hq: "Chicago, IL", val: "$6.1B", domain: "tempus.com", rel: ["Recursion", "PathAI"] },
-"PathAI": { desc: "AI pathology.", cat: "Healthcare AI", hq: "Boston, MA", val: "$600M", domain: "pathai.com", rel: ["Tempus", "Paige"] },
+"Nuance": { desc: "Healthcare speech AI.", cat: "Healthcare AI", hq: "Burlington, MA", val: "Microsoft", domain: "nuance.com", rel: ["Microsoft", "Abridge"] },
 
 "Recursion": { desc: "AI drug discovery.", cat: "Drug Discovery", hq: "Salt Lake City, UT", val: "$3.5B", domain: "recursion.com", rel: ["Insilico Medicine", "Isomorphic Labs"] },
 "Insilico Medicine": { desc: "AI drug discovery.", cat: "Drug Discovery", hq: "Hong Kong", val: "$895M", domain: "insilico.com", rel: ["Recursion", "BenevolentAI"] },
 "Isomorphic Labs": { desc: "Alphabet drug AI.", cat: "Drug Discovery", hq: "London, UK", val: "Alphabet", domain: "isomorphiclabs.com", rel: ["Google DeepMind", "Recursion"] },
-"Schrödinger": { desc: "Computational drug.", cat: "Drug Discovery", hq: "New York, NY", val: "$3B", domain: "schrodinger.com", rel: ["Recursion", "Insilico Medicine"] },
 
-"AlphaSense": { desc: "Market intelligence.", cat: "Finance AI", hq: "New York, NY", val: "$4B", domain: "alpha-sense.com", rel: ["Bloomberg", "Hebbia"] },
-"Stripe": { desc: "Payments with AI.", cat: "Finance AI", hq: "San Francisco, CA", val: "$70B", domain: "stripe.com", rel: ["Plaid", "Brex"] },
+"Stripe": { desc: "Payments with AI.", cat: "Finance AI", hq: "San Francisco, CA", val: "$70B", domain: "stripe.com", rel: ["Plaid", "Brex", "Ramp"] },
 "Plaid": { desc: "Financial data.", cat: "Finance AI", hq: "San Francisco, CA", val: "$13.4B", domain: "plaid.com", rel: ["Stripe", "Ramp"] },
 "Ramp": { desc: "AI expense mgmt.", cat: "Finance AI", hq: "New York, NY", val: "$7.65B", domain: "ramp.com", rel: ["Brex", "Stripe"] },
 "Brex": { desc: "AI corporate cards.", cat: "Finance AI", hq: "San Francisco, CA", val: "$12.3B", domain: "brex.com", rel: ["Ramp", "Stripe"] },
 "Klarna": { desc: "BNPL with AI.", cat: "Finance AI", hq: "Stockholm, Sweden", val: "$14.6B", domain: "klarna.com", rel: ["Stripe", "Affirm"] },
+"AlphaSense": { desc: "Market intelligence.", cat: "Finance AI", hq: "New York, NY", val: "$4B", domain: "alpha-sense.com", rel: ["Bloomberg", "Hebbia"] },
 
 "Gong": { desc: "Revenue intelligence.", cat: "Marketing AI", hq: "San Francisco, CA", val: "$7.25B", domain: "gong.io", rel: ["Clari", "6sense"] },
 "6sense": { desc: "Account-based marketing.", cat: "Marketing AI", hq: "San Francisco, CA", val: "$5.2B", domain: "6sense.com", rel: ["Demandbase", "Gong"] },
-"ZoomInfo": { desc: "B2B data platform.", cat: "Marketing AI", hq: "Vancouver, WA", val: "$9.5B", domain: "zoominfo.com", rel: ["Apollo", "Clay"] },
 "Clay": { desc: "AI data enrichment.", cat: "Marketing AI", hq: "New York, NY", val: "$1.3B", domain: "clay.com", rel: ["Apollo", "ZoomInfo"] },
 "HubSpot": { desc: "CRM with AI.", cat: "Marketing AI", hq: "Cambridge, MA", val: "$31B", domain: "hubspot.com", rel: ["Salesforce", "Intercom"] },
-"Canva": { desc: "Design with AI.", cat: "Marketing AI", hq: "Sydney, Australia", val: "$26B", domain: "canva.com", rel: ["Adobe Firefly", "Figma"] },
-"Jasper": { desc: "AI marketing content.", cat: "Marketing AI", hq: "Austin, TX", val: "$1.5B", domain: "jasper.ai", rel: ["Writer", "Copy.ai"] },
-"Outreach": { desc: "Sales engagement.", cat: "Marketing AI", hq: "Seattle, WA", val: "$4.4B", domain: "outreach.io", rel: ["Gong", "Salesloft"] },
-"Apollo": { desc: "Sales intelligence.", cat: "Marketing AI", hq: "San Francisco, CA", val: "$1.6B", domain: "apollo.io", rel: ["ZoomInfo", "Clay"] },
+"Canva": { desc: "Design with AI.", cat: "Marketing AI", hq: "Sydney, Australia", val: "$26B", domain: "canva.com", rel: ["Adobe Firefly", "Figma", "Gamma"] },
+"Jasper": { desc: "AI marketing content.", cat: "Marketing AI", hq: "Austin, TX", val: "$1.5B", domain: "jasper.ai", rel: ["Writer", "Copy.ai", "Typeface"] },
+"Gamma": { desc: "AI presentations.", cat: "Marketing AI", hq: "San Francisco, CA", val: "$500M", domain: "gamma.app", rel: ["Canva", "Figma"] },
+"Typeface": { desc: "Enterprise content AI.", cat: "Marketing AI", hq: "San Francisco, CA", val: "$1B", domain: "typeface.ai", rel: ["Jasper", "Writer"] },
+"Figma": { desc: "Design with AI.", cat: "Marketing AI", hq: "San Francisco, CA", val: "Adobe", domain: "figma.com", rel: ["Canva", "Adobe Firefly"] },
 
-"Eightfold AI": { desc: "Talent intelligence.", cat: "HR Tech", hq: "Santa Clara, CA", val: "$2.1B", domain: "eightfold.ai", rel: ["Phenom", "Beamery"] },
-"Phenom": { desc: "Talent experience.", cat: "HR Tech", hq: "Ambler, PA", val: "$1.7B", domain: "phenom.com", rel: ["Eightfold AI", "Beamery"] },
-"Beamery": { desc: "Talent lifecycle.", cat: "HR Tech", hq: "London, UK", val: "$800M", domain: "beamery.com", rel: ["Eightfold AI", "Phenom"] },
+"Intercom": { desc: "AI customer service.", cat: "Customer Support", hq: "San Francisco, CA", val: "$1.3B", domain: "intercom.com", rel: ["Zendesk", "Sierra"] },
+"Zendesk": { desc: "Customer service AI.", cat: "Customer Support", hq: "San Francisco, CA", val: "$10.2B", domain: "zendesk.com", rel: ["Intercom", "Freshworks"] },
+"Ada": { desc: "AI customer automation.", cat: "Customer Support", hq: "Toronto, Canada", val: "$1.2B", domain: "ada.cx", rel: ["Intercom", "Sierra"] },
 
 "Wiz": { desc: "Cloud security.", cat: "Security AI", hq: "New York, NY", val: "$32B", domain: "wiz.io", rel: ["CrowdStrike", "Orca Security"] },
 "CrowdStrike": { desc: "Endpoint security.", cat: "Security AI", hq: "Austin, TX", val: "$75B", domain: "crowdstrike.com", rel: ["SentinelOne", "Wiz"] },
 "SentinelOne": { desc: "AI cybersecurity.", cat: "Security AI", hq: "Mountain View, CA", val: "$7.5B", domain: "sentinelone.com", rel: ["CrowdStrike", "Palo Alto Networks"] },
 "Palo Alto Networks": { desc: "Cybersecurity AI.", cat: "Security AI", hq: "Santa Clara, CA", val: "$110B", domain: "paloaltonetworks.com", rel: ["CrowdStrike", "Fortinet"] },
-"Abnormal Security": { desc: "AI email security.", cat: "Security AI", hq: "San Francisco, CA", val: "$5.1B", domain: "abnormalsecurity.com", rel: ["CrowdStrike", "Proofpoint"] },
-"Snyk": { desc: "Developer security.", cat: "Security AI", hq: "Boston, MA", val: "$7.4B", domain: "snyk.io", rel: ["GitHub Copilot", "Veracode"] },
 
-"Duolingo": { desc: "AI language learning.", cat: "Education", hq: "Pittsburgh, PA", val: "$12.5B", domain: "duolingo.com", rel: ["Khan Academy", "Coursera"] },
+"Duolingo": { desc: "AI language learning.", cat: "Education", hq: "Pittsburgh, PA", val: "$12.5B", domain: "duolingo.com", rel: ["Khan Academy", "Speak"] },
 "Khan Academy": { desc: "Khanmigo AI tutor.", cat: "Education", hq: "Mountain View, CA", val: "Non-profit", domain: "khanacademy.org", rel: ["Duolingo", "Coursera"] },
-"Coursera": { desc: "Online learning.", cat: "Education", hq: "Mountain View, CA", val: "$2B", domain: "coursera.org", rel: ["Khan Academy", "Brilliant"] },
-"Brilliant": { desc: "STEM learning.", cat: "Education", hq: "San Francisco, CA", val: "$800M", domain: "brilliant.org", rel: ["Khan Academy", "Duolingo"] },
+"Speak": { desc: "AI language learning.", cat: "Education", hq: "San Francisco, CA", val: "$500M", domain: "speak.com", rel: ["Duolingo", "Brilliant"] },
+"Sana": { desc: "Enterprise learning AI.", cat: "Education", hq: "Stockholm, Sweden", val: "$500M", domain: "sana.ai", rel: ["Coursera", "Khan Academy"] },
 
-"Figure": { desc: "Humanoid robots.", cat: "Robotics", hq: "Sunnyvale, CA", val: "$2.6B", domain: "figure.ai", rel: ["Physical Intelligence", "1X Technologies"] },
-"Physical Intelligence": { desc: "Robot foundation models.", cat: "Robotics", hq: "San Francisco, CA", val: "$2.4B", domain: "physicalintelligence.company", rel: ["Figure", "Covariant"] },
+"Figure": { desc: "Humanoid robots.", cat: "Robotics", hq: "Sunnyvale, CA", val: "$2.6B", domain: "figure.ai", rel: ["Physical Intelligence", "1X Technologies", "Boston Dynamics"] },
+"Physical Intelligence": { desc: "Robot foundation models.", cat: "Robotics", hq: "San Francisco, CA", val: "$2.4B", domain: "physicalintelligence.company", rel: ["Figure", "Covariant", "Skild AI"] },
 "1X Technologies": { desc: "OpenAI-backed robots.", cat: "Robotics", hq: "Moss, Norway", val: "$500M", domain: "1x.tech", rel: ["Figure", "Agility Robotics"] },
-"Agility Robotics": { desc: "Digit humanoid.", cat: "Robotics", hq: "Corvallis, OR", val: "$1B", domain: "agilityrobotics.com", rel: ["Figure", "Boston Dynamics"] },
 "Boston Dynamics": { desc: "Spot & Atlas robots.", cat: "Robotics", hq: "Waltham, MA", val: "Hyundai", domain: "bostondynamics.com", rel: ["Figure", "Agility Robotics"] },
-"Covariant": { desc: "AI robotic arms.", cat: "Robotics", hq: "Emeryville, CA", val: "$625M", domain: "covariant.ai", rel: ["Physical Intelligence", "Berkshire Grey"] },
-"Skydio": { desc: "Autonomous drones.", cat: "Robotics", hq: "San Mateo, CA", val: "$2.2B", domain: "skydio.com", rel: ["Zipline", "DJI"] },
-"Zipline": { desc: "Delivery drones.", cat: "Robotics", hq: "South San Francisco, CA", val: "$4.2B", domain: "flyzipline.com", rel: ["Skydio", "Wing"] },
-"Sanctuary AI": { desc: "Phoenix humanoid.", cat: "Robotics", hq: "Vancouver, Canada", val: "$500M", domain: "sanctuary.ai", rel: ["Figure", "1X Technologies"] },
+"Skild AI": { desc: "Robot foundation models.", cat: "Robotics", hq: "Pittsburgh, PA", val: "$300M", domain: "skild.ai", rel: ["Physical Intelligence", "Figure"] },
 
 "Waymo": { desc: "Robotaxi leader.", cat: "Autonomous Vehicles", hq: "Mountain View, CA", val: "$45B", domain: "waymo.com", rel: ["Zoox", "Aurora", "Cruise"] },
 "Zoox": { desc: "Amazon's robotaxi.", cat: "Autonomous Vehicles", hq: "Foster City, CA", val: "Amazon", domain: "zoox.com", rel: ["Waymo", "Aurora"] },
 "Aurora": { desc: "Autonomous trucking.", cat: "Autonomous Vehicles", hq: "Pittsburgh, PA", val: "$4B", domain: "aurora.tech", rel: ["Waymo", "Kodiak"] },
-"Nuro": { desc: "Autonomous delivery.", cat: "Autonomous Vehicles", hq: "Mountain View, CA", val: "$8.6B", domain: "nuro.ai", rel: ["Waymo", "Zoox"] },
 "Cruise": { desc: "GM autonomous.", cat: "Autonomous Vehicles", hq: "San Francisco, CA", val: "GM", domain: "getcruise.com", rel: ["Waymo", "Aurora"] },
-"Mobileye": { desc: "Intel autonomous.", cat: "Autonomous Vehicles", hq: "Jerusalem, Israel", val: "$16B", domain: "mobileye.com", rel: ["NVIDIA", "Waymo"] },
-"Pony.ai": { desc: "Autonomous vehicles.", cat: "Autonomous Vehicles", hq: "Fremont, CA", val: "$8.5B", domain: "pony.ai", rel: ["Waymo", "WeRide"] },
-"Waabi": { desc: "AI autonomous trucks.", cat: "Autonomous Vehicles", hq: "Toronto, Canada", val: "$500M", domain: "waabi.ai", rel: ["Aurora", "Kodiak"] },
 
-"Microsoft": { desc: "OpenAI investor. Copilot.", cat: "Enterprise AI", hq: "Redmond, WA", val: "$3.1T", domain: "microsoft.com", rel: ["OpenAI", "GitHub Copilot", "Google"] },
+"Microsoft": { desc: "OpenAI investor. Copilot.", cat: "Enterprise AI", hq: "Redmond, WA", val: "$3.1T", domain: "microsoft.com", rel: ["OpenAI", "GitHub Copilot", "Google", "Nuance"] },
 "Amazon": { desc: "AWS Bedrock. Anthropic.", cat: "Enterprise AI", hq: "Seattle, WA", val: "$2.1T", domain: "amazon.com", rel: ["Microsoft", "Google", "Anthropic"] },
 "Google": { desc: "Gemini everywhere.", cat: "Enterprise AI", hq: "Mountain View, CA", val: "$2T", domain: "google.com", rel: ["Microsoft", "OpenAI", "Google DeepMind"] },
 "Salesforce": { desc: "Einstein AI CRM.", cat: "Enterprise AI", hq: "San Francisco, CA", val: "$280B", domain: "salesforce.com", rel: ["Microsoft", "HubSpot"] },
+"Palantir": { desc: "Data analytics AI.", cat: "Enterprise AI", hq: "Denver, CO", val: "$55B", domain: "palantir.com", rel: ["Databricks", "Snowflake", "C3.ai"] },
 "ServiceNow": { desc: "Enterprise workflow.", cat: "Enterprise AI", hq: "Santa Clara, CA", val: "$185B", domain: "servicenow.com", rel: ["Salesforce", "Workday"] },
-"SAP": { desc: "Enterprise AI.", cat: "Enterprise AI", hq: "Walldorf, Germany", val: "$270B", domain: "sap.com", rel: ["Oracle", "Microsoft"] },
-"Oracle": { desc: "Database and cloud.", cat: "Enterprise AI", hq: "Austin, TX", val: "$380B", domain: "oracle.com", rel: ["SAP", "Microsoft"] },
-"Notion": { desc: "Productivity AI.", cat: "Enterprise AI", hq: "San Francisco, CA", val: "$10B", domain: "notion.so", rel: ["Coda", "Glean"] },
-"Palantir": { desc: "Data analytics AI.", cat: "Enterprise AI", hq: "Denver, CO", val: "$55B", domain: "palantir.com", rel: ["Databricks", "Snowflake"] },
-"UiPath": { desc: "RPA with AI.", cat: "Enterprise AI", hq: "New York, NY", val: "$8B", domain: "uipath.com", rel: ["Automation Anywhere", "Microsoft"] },
-
-"Automation Anywhere": { desc: "Enterprise RPA.", cat: "Enterprise AI", hq: "San Jose, CA", val: "$6.8B", domain: "automationanywhere.com", rel: ["UiPath", "Microsoft"] },
-"Workday": { desc: "HR with AI.", cat: "Enterprise AI", hq: "Pleasanton, CA", val: "$75B", domain: "workday.com", rel: ["ServiceNow", "SAP"] },
-"Datadog": { desc: "Monitoring with AI.", cat: "MLOps", hq: "New York, NY", val: "$40B", domain: "datadoghq.com", rel: ["Splunk", "Elastic"] },
-"Splunk": { desc: "Data analytics.", cat: "MLOps", hq: "San Francisco, CA", val: "Cisco", domain: "splunk.com", rel: ["Datadog", "Elastic"] },
-"Elastic": { desc: "Search with AI.", cat: "Enterprise Search", hq: "Mountain View, CA", val: "$10B", domain: "elastic.co", rel: ["Algolia", "Splunk"] },
-"Twilio": { desc: "Communications API.", cat: "Conversational AI", hq: "San Francisco, CA", val: "$11B", domain: "twilio.com", rel: ["Gupshup", "Vonage"] },
-"DocuSign": { desc: "E-signature AI.", cat: "Legal Tech", hq: "San Francisco, CA", val: "$13B", domain: "docusign.com", rel: ["Ironclad", "Adobe"] },
-"Figma": { desc: "Design with AI.", cat: "Marketing AI", hq: "San Francisco, CA", val: "Adobe", domain: "figma.com", rel: ["Canva", "Adobe Firefly"] },
-"Coda": { desc: "Docs with AI.", cat: "Enterprise AI", hq: "San Francisco, CA", val: "$1.4B", domain: "coda.io", rel: ["Notion", "Airtable"] },
-"Airtable": { desc: "Database with AI.", cat: "Enterprise AI", hq: "San Francisco, CA", val: "$11B", domain: "airtable.com", rel: ["Notion", "Coda"] },
-
-"Copy.ai": { desc: "AI copywriting.", cat: "Marketing AI", hq: "Memphis, TN", val: "$250M", domain: "copy.ai", rel: ["Jasper", "Writer"] },
-"Runway ML": { desc: "Creative AI tools.", cat: "Video Generation", hq: "New York, NY", val: "$4B", domain: "runwayml.com", rel: ["Runway", "Pika"] },
-"Suki": { desc: "AI physician assistant.", cat: "Healthcare AI", hq: "Redwood City, CA", val: "$400M", domain: "suki.ai", rel: ["Abridge", "Ambience"] },
-"Paige": { desc: "AI pathology.", cat: "Healthcare AI", hq: "New York, NY", val: "$1B", domain: "paige.ai", rel: ["PathAI", "Tempus"] },
-"BenevolentAI": { desc: "AI drug discovery.", cat: "Drug Discovery", hq: "London, UK", val: "$1.5B", domain: "benevolent.ai", rel: ["Recursion", "Insilico Medicine"] },
-"Exscientia": { desc: "AI drug design.", cat: "Drug Discovery", hq: "Oxford, UK", val: "$2B", domain: "exscientia.ai", rel: ["Recursion", "BenevolentAI"] },
-"Atomwise": { desc: "AI drug discovery.", cat: "Drug Discovery", hq: "San Francisco, CA", val: "$600M", domain: "atomwise.com", rel: ["Recursion", "Insilico Medicine"] },
-"XtalPi": { desc: "AI pharma research.", cat: "Drug Discovery", hq: "Cambridge, MA", val: "$1.9B", domain: "xtalpi.com", rel: ["Schrödinger", "Atomwise"] },
-
-"Moveworks": { desc: "Enterprise IT support AI.", cat: "Enterprise AI", hq: "Mountain View, CA", val: "$2.1B", domain: "moveworks.com", rel: ["ServiceNow", "Glean"] },
-"Labelbox": { desc: "Data labeling platform.", cat: "Data & Vector DB", hq: "San Francisco, CA", val: "$500M", domain: "labelbox.com", rel: ["Scale AI", "Snorkel"] },
-"Snorkel": { desc: "Data-centric AI.", cat: "Data & Vector DB", hq: "Redwood City, CA", val: "$1B", domain: "snorkel.ai", rel: ["Scale AI", "Labelbox"] },
-"Chroma": { desc: "Open-source vector DB.", cat: "Data & Vector DB", hq: "San Francisco, CA", val: "$200M", domain: "trychroma.com", rel: ["Pinecone", "Weaviate"] },
-"Qdrant": { desc: "Vector search engine.", cat: "Data & Vector DB", hq: "Berlin, Germany", val: "$100M", domain: "qdrant.tech", rel: ["Pinecone", "Weaviate"] },
-"Milvus": { desc: "Vector database.", cat: "Data & Vector DB", hq: "Redwood City, CA", val: "$100M", domain: "milvus.io", rel: ["Pinecone", "Qdrant"] },
-
-"LlamaIndex": { desc: "LLM data framework.", cat: "MLOps", hq: "San Francisco, CA", val: "$150M", domain: "llamaindex.ai", rel: ["LangChain", "Pinecone"] },
-"Determined AI": { desc: "ML training platform.", cat: "MLOps", hq: "San Francisco, CA", val: "HPE", domain: "determined.ai", rel: ["Weights & Biases", "MLflow"] },
-"Comet ML": { desc: "ML experiment tracking.", cat: "MLOps", hq: "New York, NY", val: "$200M", domain: "comet.com", rel: ["Weights & Biases", "MLflow"] },
-"Neptune.ai": { desc: "ML metadata store.", cat: "MLOps", hq: "Warsaw, Poland", val: "$100M", domain: "neptune.ai", rel: ["Weights & Biases", "Comet ML"] },
-"Tecton": { desc: "Feature platform.", cat: "MLOps", hq: "San Francisco, CA", val: "$500M", domain: "tecton.ai", rel: ["Databricks", "Feast"] },
-
-"Resemble AI": { desc: "Voice cloning.", cat: "Audio AI", hq: "San Francisco, CA", val: "$100M", domain: "resemble.ai", rel: ["ElevenLabs", "Descript"] },
-"Murf AI": { desc: "AI voice generator.", cat: "Audio AI", hq: "San Francisco, CA", val: "$50M", domain: "murf.ai", rel: ["ElevenLabs", "Resemble AI"] },
-"Speechify": { desc: "Text-to-speech.", cat: "Audio AI", hq: "San Francisco, CA", val: "$500M", domain: "speechify.com", rel: ["ElevenLabs", "Murf AI"] },
-"LOVO": { desc: "AI voice & video.", cat: "Audio AI", hq: "Berkeley, CA", val: "$100M", domain: "lovo.ai", rel: ["ElevenLabs", "Murf AI"] },
-"Fireflies.ai": { desc: "Meeting assistant.", cat: "Audio AI", hq: "San Francisco, CA", val: "$100M", domain: "fireflies.ai", rel: ["Otter.ai", "Fathom"] },
-"Fathom": { desc: "Meeting recorder.", cat: "Audio AI", hq: "San Francisco, CA", val: "$50M", domain: "fathom.video", rel: ["Fireflies.ai", "Otter.ai"] },
-"Rev": { desc: "Transcription services.", cat: "Audio AI", hq: "Austin, TX", val: "$300M", domain: "rev.com", rel: ["AssemblyAI", "Otter.ai"] },
-
-"Artlist": { desc: "AI music for creators.", cat: "Music AI", hq: "Tel Aviv, Israel", val: "$300M", domain: "artlist.io", rel: ["Suno", "Udio"] },
-"Boomy": { desc: "AI song creation.", cat: "Music AI", hq: "San Francisco, CA", val: "$50M", domain: "boomy.com", rel: ["Suno", "Udio"] },
-"Soundraw": { desc: "AI music generator.", cat: "Music AI", hq: "Tokyo, Japan", val: "$50M", domain: "soundraw.io", rel: ["Suno", "Boomy"] },
-"Aiva": { desc: "AI music composer.", cat: "Music AI", hq: "Luxembourg", val: "$20M", domain: "aiva.ai", rel: ["Suno", "Boomy"] },
-
-"Clari": { desc: "Revenue platform.", cat: "Marketing AI", hq: "Sunnyvale, CA", val: "$2.6B", domain: "clari.com", rel: ["Gong", "6sense"] },
-"Demandbase": { desc: "B2B marketing.", cat: "Marketing AI", hq: "San Francisco, CA", val: "$1.5B", domain: "demandbase.com", rel: ["6sense", "ZoomInfo"] },
-"Salesloft": { desc: "Sales engagement.", cat: "Marketing AI", hq: "Atlanta, GA", val: "$2.3B", domain: "salesloft.com", rel: ["Outreach", "Gong"] },
-"Drift": { desc: "Conversational marketing.", cat: "Marketing AI", hq: "Boston, MA", val: "Salesloft", domain: "drift.com", rel: ["Intercom", "HubSpot"] },
-"Highspot": { desc: "Sales enablement.", cat: "Marketing AI", hq: "Seattle, WA", val: "$3.5B", domain: "highspot.com", rel: ["Seismic", "Gong"] },
-"Seismic": { desc: "Sales enablement.", cat: "Marketing AI", hq: "San Diego, CA", val: "$3B", domain: "seismic.com", rel: ["Highspot", "Gong"] },
-"Sendoso": { desc: "Direct mail platform.", cat: "Marketing AI", hq: "San Francisco, CA", val: "$640M", domain: "sendoso.com", rel: ["6sense", "Demandbase"] },
-
-"Persado": { desc: "AI marketing language.", cat: "Marketing AI", hq: "New York, NY", val: "$270M", domain: "persado.com", rel: ["Jasper", "Copy.ai"] },
-"Phrasee": { desc: "AI marketing copy.", cat: "Marketing AI", hq: "London, UK", val: "$100M", domain: "phrasee.co", rel: ["Persado", "Jasper"] },
-"Pattern89": { desc: "AI ad creative.", cat: "Marketing AI", hq: "Indianapolis, IN", val: "$50M", domain: "pattern89.com", rel: ["Persado", "Phrasee"] },
-"Albert AI": { desc: "AI marketing.", cat: "Marketing AI", hq: "Tel Aviv, Israel", val: "$100M", domain: "albert.ai", rel: ["Persado", "6sense"] },
-
-"Lilt": { desc: "AI translation.", cat: "Enterprise AI", hq: "San Francisco, CA", val: "$200M", domain: "lilt.com", rel: ["DeepL", "Unbabel"] },
-"DeepL": { desc: "Neural translation.", cat: "Enterprise AI", hq: "Cologne, Germany", val: "$2B", domain: "deepl.com", rel: ["Google", "Lilt"] },
-"Unbabel": { desc: "AI translation.", cat: "Enterprise AI", hq: "San Francisco, CA", val: "$200M", domain: "unbabel.com", rel: ["Lilt", "DeepL"] },
-
-"SoundHound AI": { desc: "Voice AI platform.", cat: "Conversational AI", hq: "Santa Clara, CA", val: "$1.5B", domain: "soundhound.com", rel: ["Kore.ai", "Uniphore"] },
-"Voiceflow": { desc: "Conversational AI design.", cat: "Conversational AI", hq: "Toronto, Canada", val: "$100M", domain: "voiceflow.com", rel: ["Kore.ai", "Yellow.ai"] },
-"Rasa": { desc: "Open-source chatbots.", cat: "Conversational AI", hq: "San Francisco, CA", val: "$200M", domain: "rasa.com", rel: ["Kore.ai", "Voiceflow"] },
-"Cognigy": { desc: "Conversational AI.", cat: "Conversational AI", hq: "Düsseldorf, Germany", val: "$175M", domain: "cognigy.com", rel: ["Yellow.ai", "Kore.ai"] },
-"Boost.ai": { desc: "Enterprise chatbots.", cat: "Conversational AI", hq: "Stavanger, Norway", val: "$100M", domain: "boost.ai", rel: ["Cognigy", "Yellow.ai"] },
-
-"Dialpad": { desc: "AI communications.", cat: "Contact Center", hq: "San Francisco, CA", val: "$2.2B", domain: "dialpad.com", rel: ["Five9", "Talkdesk"] },
-"Aircall": { desc: "Cloud phone system.", cat: "Contact Center", hq: "New York, NY", val: "$1B", domain: "aircall.io", rel: ["Dialpad", "Five9"] },
-"CloudTalk": { desc: "Call center software.", cat: "Contact Center", hq: "Bratislava, Slovakia", val: "$100M", domain: "cloudtalk.io", rel: ["Aircall", "Dialpad"] },
-"Convoso": { desc: "Outbound contact center.", cat: "Contact Center", hq: "Los Angeles, CA", val: "$150M", domain: "convoso.com", rel: ["Five9", "NICE"] },
-
-"Help Scout": { desc: "Customer support.", cat: "Customer Support", hq: "Boston, MA", val: "$400M", domain: "helpscout.com", rel: ["Intercom", "Zendesk"] },
-"Front": { desc: "Shared inbox.", cat: "Customer Support", hq: "San Francisco, CA", val: "$1.7B", domain: "front.com", rel: ["Intercom", "Zendesk"] },
-"Gorgias": { desc: "E-commerce support.", cat: "Customer Support", hq: "San Francisco, CA", val: "$710M", domain: "gorgias.com", rel: ["Zendesk", "Freshworks"] },
-"Kustomer": { desc: "CRM platform.", cat: "Customer Support", hq: "New York, NY", val: "Meta", domain: "kustomer.com", rel: ["Zendesk", "Intercom"] },
-"Gladly": { desc: "Customer service.", cat: "Customer Support", hq: "San Francisco, CA", val: "$800M", domain: "gladly.com", rel: ["Zendesk", "Kustomer"] },
-
-"Coveo": { desc: "AI search platform.", cat: "Enterprise Search", hq: "Quebec City, Canada", val: "$1.5B", domain: "coveo.com", rel: ["Algolia", "Glean"] },
-"Yext": { desc: "Digital presence.", cat: "Enterprise Search", hq: "New York, NY", val: "$800M", domain: "yext.com", rel: ["Algolia", "Coveo"] },
-"Lucidworks": { desc: "Search platform.", cat: "Enterprise Search", hq: "San Francisco, CA", val: "$200M", domain: "lucidworks.com", rel: ["Elastic", "Algolia"] },
-
-"Spellbook": { desc: "Contract drafting AI.", cat: "Legal Tech", hq: "Toronto, Canada", val: "$200M", domain: "spellbook.legal", rel: ["Harvey", "EvenUp"] },
-"Casetext": { desc: "Legal research AI.", cat: "Legal Tech", hq: "San Francisco, CA", val: "Thomson Reuters", domain: "casetext.com", rel: ["Harvey", "Relativity"] },
-"Everlaw": { desc: "Litigation platform.", cat: "Legal Tech", hq: "Oakland, CA", val: "$2B", domain: "everlaw.com", rel: ["Relativity", "Harvey"] },
-"Robin AI": { desc: "Contract review.", cat: "Legal Tech", hq: "London, UK", val: "$100M", domain: "robinai.com", rel: ["Harvey", "Spellbook"] },
-"Luminance": { desc: "Legal AI.", cat: "Legal Tech", hq: "London, UK", val: "$500M", domain: "luminance.com", rel: ["Harvey", "Ironclad"] },
-
-"Viz.ai": { desc: "Clinical AI.", cat: "Healthcare AI", hq: "San Francisco, CA", val: "$1.2B", domain: "viz.ai", rel: ["Tempus", "Aidoc"] },
-"Aidoc": { desc: "Radiology AI.", cat: "Healthcare AI", hq: "Tel Aviv, Israel", val: "$800M", domain: "aidoc.com", rel: ["Viz.ai", "PathAI"] },
-"Olive AI": { desc: "Healthcare automation.", cat: "Healthcare AI", hq: "Columbus, OH", val: "$4B", domain: "oliveai.com", rel: ["UiPath", "Abridge"] },
-"Butterfly Network": { desc: "AI ultrasound.", cat: "Healthcare AI", hq: "Burlington, MA", val: "$800M", domain: "butterflynetwork.com", rel: ["Viz.ai", "Tempus"] },
-"Rad AI": { desc: "Radiology reporting.", cat: "Healthcare AI", hq: "Berkeley, CA", val: "$150M", domain: "radai.com", rel: ["Aidoc", "Viz.ai"] },
-"Nuance": { desc: "Healthcare speech AI.", cat: "Healthcare AI", hq: "Burlington, MA", val: "Microsoft", domain: "nuance.com", rel: ["Microsoft", "Abridge"] },
-"Notable": { desc: "Healthcare automation.", cat: "Healthcare AI", hq: "San Mateo, CA", val: "$500M", domain: "notablehealth.com", rel: ["Olive AI", "Abridge"] },
-
-"C3.ai": { desc: "Enterprise AI apps.", cat: "Enterprise AI", hq: "Redwood City, CA", val: "$3B", domain: "c3.ai", rel: ["Palantir", "Databricks"] },
-"DataRobot": { desc: "AutoML platform.", cat: "MLOps", hq: "Boston, MA", val: "$6B", domain: "datarobot.com", rel: ["H2O.ai", "Databricks"] },
-"H2O.ai": { desc: "Open-source AutoML.", cat: "MLOps", hq: "Mountain View, CA", val: "$1.6B", domain: "h2o.ai", rel: ["DataRobot", "Databricks"] },
-"Alteryx": { desc: "Analytics automation.", cat: "MLOps", hq: "Irvine, CA", val: "$5B", domain: "alteryx.com", rel: ["Datadog", "Databricks"] },
-
-"Intel": { desc: "AI accelerators.", cat: "Hardware", hq: "Santa Clara, CA", val: "$140B", domain: "intel.com", rel: ["NVIDIA", "AMD"] },
-"Graphcore": { desc: "IPU for AI.", cat: "Hardware", hq: "Bristol, UK", val: "$2B", domain: "graphcore.ai", rel: ["Cerebras", "Groq"] },
-"Mythic": { desc: "Analog AI chips.", cat: "Hardware", hq: "Austin, TX", val: "$270M", domain: "mythic.ai", rel: ["Cerebras", "Tenstorrent"] },
-"Hailo": { desc: "Edge AI processors.", cat: "Hardware", hq: "Tel Aviv, Israel", val: "$1B", domain: "hailo.ai", rel: ["NVIDIA", "Intel"] },
-"Recogni": { desc: "Vision AI chips.", cat: "Hardware", hq: "San Jose, CA", val: "$200M", domain: "recogni.com", rel: ["Hailo", "Mobileye"] },
-"d-Matrix": { desc: "AI inference chips.", cat: "Hardware", hq: "Santa Clara, CA", val: "$200M", domain: "d-matrix.ai", rel: ["Groq", "Cerebras"] },
-"Lightmatter": { desc: "Photonic AI chips.", cat: "Hardware", hq: "Boston, MA", val: "$700M", domain: "lightmatter.co", rel: ["Cerebras", "Groq"] },
-"Rain AI": { desc: "Brain-inspired AI chips.", cat: "Hardware", hq: "San Francisco, CA", val: "$100M", domain: "rain.ai", rel: ["Cerebras", "Lightmatter"] },
-"Esperanto": { desc: "RISC-V AI chips.", cat: "Hardware", hq: "Mountain View, CA", val: "$200M", domain: "esperanto.ai", rel: ["Tenstorrent", "Cerebras"] },
-"Untether AI": { desc: "High-performance AI chips.", cat: "Hardware", hq: "Toronto, Canada", val: "$200M", domain: "untether.ai", rel: ["Tenstorrent", "Cerebras"] },
-
-"Kodiak": { desc: "Autonomous trucks.", cat: "Autonomous Vehicles", hq: "Mountain View, CA", val: "$1B", domain: "kodiak.ai", rel: ["Aurora", "Waabi"] },
-"TuSimple": { desc: "Autonomous trucking.", cat: "Autonomous Vehicles", hq: "San Diego, CA", val: "$500M", domain: "tusimple.com", rel: ["Aurora", "Kodiak"] },
-"Gatik": { desc: "B2B autonomous.", cat: "Autonomous Vehicles", hq: "Palo Alto, CA", val: "$500M", domain: "gatik.ai", rel: ["Nuro", "Aurora"] },
-"Plus": { desc: "Autonomous trucks.", cat: "Autonomous Vehicles", hq: "Cupertino, CA", val: "$3B", domain: "plus.ai", rel: ["Aurora", "TuSimple"] },
-"Embark": { desc: "Self-driving trucks.", cat: "Autonomous Vehicles", hq: "San Francisco, CA", val: "$300M", domain: "embarktrucks.com", rel: ["Aurora", "Kodiak"] },
-"WeRide": { desc: "Autonomous mobility.", cat: "Autonomous Vehicles", hq: "Guangzhou, China", val: "$5B", domain: "weride.ai", rel: ["Pony.ai", "Waymo"] },
-"Momenta": { desc: "Autonomous driving.", cat: "Autonomous Vehicles", hq: "Beijing, China", val: "$1B", domain: "momenta.ai", rel: ["Pony.ai", "WeRide"] },
-"Aptiv": { desc: "Automotive tech.", cat: "Autonomous Vehicles", hq: "Dublin, Ireland", val: "$25B", domain: "aptiv.com", rel: ["Mobileye", "Waymo"] },
-"Wing": { desc: "Drone delivery.", cat: "Robotics", hq: "Palo Alto, CA", val: "Alphabet", domain: "wing.com", rel: ["Zipline", "Skydio"] },
-"DJI": { desc: "Drone leader.", cat: "Robotics", hq: "Shenzhen, China", val: "$15B", domain: "dji.com", rel: ["Skydio", "Wing"] },
-
-"Berkshire Grey": { desc: "Warehouse robotics.", cat: "Robotics", hq: "Bedford, MA", val: "$300M", domain: "berkshiregrey.com", rel: ["Covariant", "Locus Robotics"] },
-"Locus Robotics": { desc: "Warehouse robots.", cat: "Robotics", hq: "Wilmington, MA", val: "$1B", domain: "locusrobotics.com", rel: ["Berkshire Grey", "6 River Systems"] },
-"6 River Systems": { desc: "Fulfillment robots.", cat: "Robotics", hq: "Waltham, MA", val: "Shopify", domain: "6river.com", rel: ["Locus Robotics", "Berkshire Grey"] },
-"Symbotic": { desc: "Warehouse automation.", cat: "Robotics", hq: "Wilmington, MA", val: "$5B", domain: "symbotic.com", rel: ["Berkshire Grey", "Locus Robotics"] },
-"Sarcos": { desc: "Industrial exoskeletons.", cat: "Robotics", hq: "Salt Lake City, UT", val: "$300M", domain: "sarcos.com", rel: ["Boston Dynamics", "Figure"] },
-"Nuro": { desc: "Autonomous delivery.", cat: "Robotics", hq: "Mountain View, CA", val: "$8.6B", domain: "nuro.ai", rel: ["Waymo", "Gatik"] },
-"Serve Robotics": { desc: "Sidewalk delivery.", cat: "Robotics", hq: "Los Angeles, CA", val: "$400M", domain: "serverobotics.com", rel: ["Nuro", "Starship"] },
-"Starship Technologies": { desc: "Delivery robots.", cat: "Robotics", hq: "San Francisco, CA", val: "$500M", domain: "starship.xyz", rel: ["Serve Robotics", "Nuro"] },
-
-"Forethought": { desc: "Customer support AI.", cat: "Customer Support", hq: "San Francisco, CA", val: "$500M", domain: "forethought.ai", rel: ["Ada", "Sierra"] },
-"Assembled": { desc: "Workforce management.", cat: "Customer Support", hq: "San Francisco, CA", val: "$200M", domain: "assembled.com", rel: ["Zendesk", "NICE"] },
-"Proofpoint": { desc: "Email security.", cat: "Security AI", hq: "Sunnyvale, CA", val: "$12.3B", domain: "proofpoint.com", rel: ["Abnormal Security", "Mimecast"] },
-"Mimecast": { desc: "Email security.", cat: "Security AI", hq: "Lexington, MA", val: "$5.8B", domain: "mimecast.com", rel: ["Proofpoint", "Abnormal Security"] },
-"Fortinet": { desc: "Network security.", cat: "Security AI", hq: "Sunnyvale, CA", val: "$70B", domain: "fortinet.com", rel: ["Palo Alto Networks", "CrowdStrike"] },
-"Zscaler": { desc: "Cloud security.", cat: "Security AI", hq: "San Jose, CA", val: "$30B", domain: "zscaler.com", rel: ["Wiz", "Palo Alto Networks"] },
-"Veracode": { desc: "App security.", cat: "Security AI", hq: "Burlington, MA", val: "$2.5B", domain: "veracode.com", rel: ["Snyk", "Checkmarx"] },
-"Checkmarx": { desc: "App security testing.", cat: "Security AI", hq: "Ramat Gan, Israel", val: "$1.15B", domain: "checkmarx.com", rel: ["Snyk", "Veracode"] },
-"Orca Security": { desc: "Cloud security.", cat: "Security AI", hq: "Tel Aviv, Israel", val: "$1.8B", domain: "orca.security", rel: ["Wiz", "Lacework"] },
-"Lacework": { desc: "Cloud security.", cat: "Security AI", hq: "San Jose, CA", val: "$8.3B", domain: "lacework.com", rel: ["Wiz", "Orca Security"] },
-"Darktrace": { desc: "Cyber AI defense.", cat: "Security AI", hq: "Cambridge, UK", val: "$4B", domain: "darktrace.com", rel: ["CrowdStrike", "SentinelOne"] },
-"Vectra AI": { desc: "Threat detection.", cat: "Security AI", hq: "San Jose, CA", val: "$1.2B", domain: "vectra.ai", rel: ["Darktrace", "CrowdStrike"] },
-
-"Synthesize": { desc: "AI data platform.", cat: "Data & Vector DB", hq: "San Francisco, CA", val: "$200M", domain: "synthesized.io", rel: ["Mostly AI", "Gretel"] },
-"Mostly AI": { desc: "Synthetic data.", cat: "Data & Vector DB", hq: "Vienna, Austria", val: "$100M", domain: "mostly.ai", rel: ["Synthesize", "Gretel"] },
-"Gretel": { desc: "Synthetic data.", cat: "Data & Vector DB", hq: "San Diego, CA", val: "$350M", domain: "gretel.ai", rel: ["Mostly AI", "Scale AI"] },
-"Tonic.ai": { desc: "Test data.", cat: "Data & Vector DB", hq: "San Francisco, CA", val: "$100M", domain: "tonic.ai", rel: ["Gretel", "Mostly AI"] },
-
-"Age of Learning": { desc: "Educational AI.", cat: "Education", hq: "Glendale, CA", val: "$3B", domain: "ageoflearning.com", rel: ["Duolingo", "Khan Academy"] },
-"Quizlet": { desc: "AI learning tools.", cat: "Education", hq: "San Francisco, CA", val: "$1B", domain: "quizlet.com", rel: ["Duolingo", "Coursera"] },
-"Chegg": { desc: "Student AI help.", cat: "Education", hq: "Santa Clara, CA", val: "$700M", domain: "chegg.com", rel: ["Quizlet", "Coursera"] },
-"Photomath": { desc: "Math solver AI.", cat: "Education", hq: "Zagreb, Croatia", val: "Google", domain: "photomath.com", rel: ["Brilliant", "Khan Academy"] },
-"Squirrel AI": { desc: "Adaptive learning.", cat: "Education", hq: "Shanghai, China", val: "$1B", domain: "squirrelai.com", rel: ["Duolingo", "Age of Learning"] },
-"Carnegie Learning": { desc: "Math AI tutoring.", cat: "Education", hq: "Pittsburgh, PA", val: "$500M", domain: "carnegielearning.com", rel: ["Khan Academy", "Age of Learning"] },
-
-"Affirm": { desc: "BNPL platform.", cat: "Finance AI", hq: "San Francisco, CA", val: "$8B", domain: "affirm.com", rel: ["Klarna", "Stripe"] },
-"Marqeta": { desc: "Card issuing.", cat: "Finance AI", hq: "Oakland, CA", val: "$4B", domain: "marqeta.com", rel: ["Stripe", "Plaid"] },
-"Adyen": { desc: "Payments platform.", cat: "Finance AI", hq: "Amsterdam, Netherlands", val: "$45B", domain: "adyen.com", rel: ["Stripe", "Checkout.com"] },
-"Checkout.com": { desc: "Payments processing.", cat: "Finance AI", hq: "London, UK", val: "$40B", domain: "checkout.com", rel: ["Adyen", "Stripe"] },
-"Melio": { desc: "B2B payments.", cat: "Finance AI", hq: "New York, NY", val: "$2B", domain: "meliopayments.com", rel: ["Ramp", "Brex"] },
-"Divvy": { desc: "Expense management.", cat: "Finance AI", hq: "Draper, UT", val: "Bill.com", domain: "getdivvy.com", rel: ["Ramp", "Brex"] },
-"Tipalti": { desc: "Payables automation.", cat: "Finance AI", hq: "San Mateo, CA", val: "$8.3B", domain: "tipalti.com", rel: ["Ramp", "Melio"] },
-"Airwallex": { desc: "Global payments.", cat: "Finance AI", hq: "Melbourne, Australia", val: "$5.5B", domain: "airwallex.com", rel: ["Wise", "Checkout.com"] },
-"Wise": { desc: "International transfers.", cat: "Finance AI", hq: "London, UK", val: "$9B", domain: "wise.com", rel: ["Airwallex", "Stripe"] },
-"Upstart": { desc: "AI lending.", cat: "Finance AI", hq: "San Mateo, CA", val: "$2.5B", domain: "upstart.com", rel: ["Affirm", "SoFi"] },
-"SoFi": { desc: "Digital finance.", cat: "Finance AI", hq: "San Francisco, CA", val: "$8.5B", domain: "sofi.com", rel: ["Upstart", "Chime"] },
-"Chime": { desc: "Digital banking.", cat: "Finance AI", hq: "San Francisco, CA", val: "$25B", domain: "chime.com", rel: ["SoFi", "Affirm"] },
-"Mercury": { desc: "Startup banking.", cat: "Finance AI", hq: "San Francisco, CA", val: "$1.6B", domain: "mercury.com", rel: ["Brex", "Ramp"] },
-
-"Windsurf": { desc: "AI code editor.", cat: "Code & Dev Tools", hq: "Palo Alto, CA", val: "$3B", domain: "codeium.com", rel: ["Cursor", "Codeium"] },
-"Codium AI": { desc: "Test generation.", cat: "Code & Dev Tools", hq: "Tel Aviv, Israel", val: "$200M", domain: "codium.ai", rel: ["GitHub Copilot", "Tabnine"] },
-
-"DeepSeek": { desc: "Chinese AI lab, powerful open models.", cat: "Foundation Models", hq: "Hangzhou, China", val: "$2B", domain: "deepseek.com", rel: ["Mistral AI", "Zhipu AI", "01.AI"] },
-"Moonshot AI": { desc: "Kimi chatbot, long context.", cat: "Foundation Models", hq: "Beijing, China", val: "$3B", domain: "moonshot.cn", rel: ["Zhipu AI", "DeepSeek"] },
-"MiniMax": { desc: "Chinese multimodal AI.", cat: "Foundation Models", hq: "Shanghai, China", val: "$2.5B", domain: "minimaxi.com", rel: ["Zhipu AI", "DeepSeek"] },
-"Gamma": { desc: "AI presentations and docs.", cat: "Marketing AI", hq: "San Francisco, CA", val: "$500M", domain: "gamma.app", rel: ["Canva", "Figma"] },
-"Higgsfield": { desc: "AI video avatars.", cat: "Video Generation", hq: "Palo Alto, CA", val: "$100M", domain: "higgsfield.ai", rel: ["HeyGen", "Synthesia"] },
-"Lovable": { desc: "AI app builder.", cat: "Code & Dev Tools", hq: "San Francisco, CA", val: "$200M", domain: "lovable.dev", rel: ["Cursor", "Replit"] },
-"Replika": { desc: "AI companion chatbot.", cat: "Conversational AI", hq: "San Francisco, CA", val: "$300M", domain: "replika.com", rel: ["Character.AI", "Inflection AI"] },
-"Speak": { desc: "AI language learning.", cat: "Education", hq: "San Francisco, CA", val: "$500M", domain: "speak.com", rel: ["Duolingo", "Brilliant"] },
-"Curai Health": { desc: "AI primary care.", cat: "Healthcare AI", hq: "San Francisco, CA", val: "$300M", domain: "curaihealth.com", rel: ["Abridge", "Notable"] },
-"Function Health": { desc: "AI health testing.", cat: "Healthcare AI", hq: "Austin, TX", val: "$200M", domain: "functionhealth.com", rel: ["Tempus", "Curai Health"] },
-"Monarch": { desc: "AI personal finance.", cat: "Finance AI", hq: "San Francisco, CA", val: "$400M", domain: "monarchmoney.com", rel: ["Ramp", "Mercury"] },
-"Wispr Flow": { desc: "Voice-to-text AI.", cat: "Audio AI", hq: "San Francisco, CA", val: "$100M", domain: "wispr.ai", rel: ["Otter.ai", "Speechify"] },
-"Superwhisper": { desc: "macOS voice dictation.", cat: "Audio AI", hq: "Remote", val: "$10M", domain: "superwhisper.com", rel: ["Wispr Flow", "Otter.ai"] },
-"Matic": { desc: "Home cleaning robot.", cat: "Robotics", hq: "Mountain View, CA", val: "$100M", domain: "maticrobots.com", rel: ["Figure", "Boston Dynamics"] },
-"Skild AI": { desc: "Robot foundation models.", cat: "Robotics", hq: "Pittsburgh, PA", val: "$300M", domain: "skild.ai", rel: ["Physical Intelligence", "Figure"] },
-
-"OpenHands": { desc: "Open-source AI coding.", cat: "Code & Dev Tools", hq: "Open Source", val: "N/A", domain: "all-hands.dev", rel: ["Cursor", "Cognition AI"] },
-"Graphite": { desc: "Code review automation.", cat: "Code & Dev Tools", hq: "San Francisco, CA", val: "$100M", domain: "graphite.dev", rel: ["GitHub Copilot", "Sourcegraph"] },
-"Meticulous": { desc: "AI testing automation.", cat: "Code & Dev Tools", hq: "San Francisco, CA", val: "$50M", domain: "meticulous.ai", rel: ["Codium AI", "GitHub Copilot"] },
-"n8n": { desc: "Workflow automation.", cat: "MLOps", hq: "Berlin, Germany", val: "$200M", domain: "n8n.io", rel: ["LangChain", "Temporal"] },
-"OpenRouter": { desc: "LLM API gateway.", cat: "MLOps", hq: "San Francisco, CA", val: "$50M", domain: "openrouter.ai", rel: ["Together AI", "Fireworks AI"] },
-"Fal": { desc: "Fast AI inference.", cat: "Neo Cloud", hq: "San Francisco, CA", val: "$100M", domain: "fal.ai", rel: ["Replicate", "Modal"] },
-"Braintrust": { desc: "AI evaluation platform.", cat: "MLOps", hq: "San Francisco, CA", val: "$100M", domain: "braintrustdata.com", rel: ["Weights & Biases", "LangChain"] },
-"MongoDB": { desc: "Document database.", cat: "Data & Vector DB", hq: "New York, NY", val: "$17B", domain: "mongodb.com", rel: ["Pinecone", "Snowflake"] },
-"Neon": { desc: "Serverless Postgres.", cat: "Data & Vector DB", hq: "San Francisco, CA", val: "$1B", domain: "neon.tech", rel: ["Supabase", "MongoDB"] },
-"Supabase": { desc: "Open-source Firebase.", cat: "Data & Vector DB", hq: "San Francisco, CA", val: "$2B", domain: "supabase.com", rel: ["Neon", "MongoDB"] },
-"Temporal": { desc: "Workflow orchestration.", cat: "MLOps", hq: "Bellevue, WA", val: "$1.5B", domain: "temporal.io", rel: ["n8n", "Anyscale"] },
-"Baseten": { desc: "ML model deployment.", cat: "Neo Cloud", hq: "San Francisco, CA", val: "$200M", domain: "baseten.co", rel: ["Replicate", "Modal"] },
-"Granola": { desc: "AI meeting notes.", cat: "Audio AI", hq: "San Francisco, CA", val: "$50M", domain: "granola.so", rel: ["Otter.ai", "Fireflies.ai"] },
-"Fyxer": { desc: "AI email assistant.", cat: "Enterprise AI", hq: "London, UK", val: "$50M", domain: "fyxer.ai", rel: ["Glean", "Notion"] },
-
-"Actively AI": { desc: "AI customer success.", cat: "Customer Support", hq: "San Francisco, CA", val: "$50M", domain: "actively.ai", rel: ["Intercom", "Zendesk"] },
-"Obsidian Security": { desc: "Identity threat detection.", cat: "Security AI", hq: "Newport Beach, CA", val: "$500M", domain: "obsidiansecurity.com", rel: ["Wiz", "CrowdStrike"] },
-"Harness": { desc: "DevOps AI platform.", cat: "Code & Dev Tools", hq: "San Francisco, CA", val: "$3.7B", domain: "harness.io", rel: ["GitHub Copilot", "Datadog"] },
-"Eleos Health": { desc: "Mental health AI.", cat: "Healthcare AI", hq: "Tel Aviv, Israel", val: "$100M", domain: "eleos.health", rel: ["Abridge", "Ambience"] },
-"Eve": { desc: "AI legal assistant.", cat: "Legal Tech", hq: "San Francisco, CA", val: "$50M", domain: "eveai.com", rel: ["Harvey", "Casetext"] },
-"Rillet": { desc: "AI accounting.", cat: "Finance AI", hq: "San Francisco, CA", val: "$25M", domain: "rillet.com", rel: ["Ramp", "Brex"] },
-"Numeric": { desc: "AI for finance teams.", cat: "Finance AI", hq: "San Francisco, CA", val: "$30M", domain: "numeric.io", rel: ["Rillet", "Ramp"] },
-"Clerk": { desc: "Authentication platform.", cat: "Code & Dev Tools", hq: "San Francisco, CA", val: "$500M", domain: "clerk.com", rel: ["Supabase", "Vercel"] },
-"Goodfire": { desc: "AI interpretability.", cat: "MLOps", hq: "San Francisco, CA", val: "$50M", domain: "goodfire.ai", rel: ["Anthropic", "OpenAI"] },
-"Heidi Health": { desc: "AI medical scribe.", cat: "Healthcare AI", hq: "Melbourne, Australia", val: "$100M", domain: "heidihealth.com", rel: ["Abridge", "Ambience"] },
-"Astrix": { desc: "Non-human identity security.", cat: "Security AI", hq: "Tel Aviv, Israel", val: "$100M", domain: "astrix.security", rel: ["Wiz", "Obsidian Security"] },
-"Sana": { desc: "Enterprise learning AI.", cat: "Education", hq: "Stockholm, Sweden", val: "$500M", domain: "sana.ai", rel: ["Coursera", "Khan Academy"] },
-"Typeface": { desc: "Enterprise content AI.", cat: "Marketing AI", hq: "San Francisco, CA", val: "$1B", domain: "typeface.ai", rel: ["Jasper", "Writer"] },
-"Squint": { desc: "AR work instructions.", cat: "Enterprise AI", hq: "San Francisco, CA", val: "$50M", domain: "squint.ai", rel: ["Moveworks", "ServiceNow"] },
-
-"Intuit": { desc: "QuickBooks, TurboTax AI.", cat: "Finance AI", hq: "Mountain View, CA", val: "$180B", domain: "intuit.com", rel: ["Stripe", "Ramp"] },
+"Notion": { desc: "Productivity AI.", cat: "Enterprise AI", hq: "San Francisco, CA", val: "$10B", domain: "notion.so", rel: ["Coda", "Glean", "Atlassian"] },
 "Atlassian": { desc: "Jira, Confluence AI.", cat: "Enterprise AI", hq: "Sydney, Australia", val: "$50B", domain: "atlassian.com", rel: ["Notion", "Microsoft"] },
-"Bloomberg": { desc: "Financial data AI.", cat: "Finance AI", hq: "New York, NY", val: "Private", domain: "bloomberg.com", rel: ["AlphaSense", "Palantir"] },
-"Walmart": { desc: "Retail AI (Wallaby).", cat: "Enterprise AI", hq: "Bentonville, AR", val: "$680B", domain: "walmart.com", rel: ["Amazon", "Microsoft"] },
-
-"Flora": { desc: "AI focus app.", cat: "Education", hq: "Shanghai, China", val: "$50M", domain: "flora.appfinca.com", rel: ["Duolingo", "Brilliant"] },
-"Prosper": { desc: "AI learning for kids.", cat: "Education", hq: "San Francisco, CA", val: "$30M", domain: "prospereducation.com", rel: ["Khan Academy", "Duolingo"] },
-"Swish": { desc: "AI basketball training.", cat: "Education", hq: "Los Angeles, CA", val: "$20M", domain: "swishhoops.ai", rel: ["Duolingo", "Speak"] },
-"Fauna": { desc: "Serverless database.", cat: "Data & Vector DB", hq: "San Francisco, CA", val: "$100M", domain: "fauna.com", rel: ["MongoDB", "Supabase"] },
-"Ash": { desc: "AI health testing.", cat: "Healthcare AI", hq: "San Francisco, CA", val: "$50M", domain: "ash.health", rel: ["Function Health", "Curai Health"] },
-"Inception Labs": { desc: "Diffusion AI models.", cat: "Foundation Models", hq: "San Francisco, CA", val: "$100M", domain: "inceptionlabs.ai", rel: ["Stability AI", "OpenAI"] },
-"Peregrine": { desc: "AI for public safety.", cat: "Enterprise AI", hq: "San Francisco, CA", val: "$100M", domain: "peregrine.ai", rel: ["Palantir", "C3.ai"] },
-"Accordance": { desc: "AI legal research.", cat: "Legal Tech", hq: "San Francisco, CA", val: "$30M", domain: "accordancelegal.com", rel: ["Harvey", "Everlaw"] },
-"Agency": { desc: "AI for government.", cat: "Enterprise AI", hq: "San Francisco, CA", val: "$50M", domain: "agency.gov", rel: ["Palantir", "Peregrine"] }
+"Replika": { desc: "AI companion chatbot.", cat: "Conversational AI", hq: "San Francisco, CA", val: "$300M", domain: "replika.com", rel: ["Character.AI", "Inflection AI"] },
+"Intuit": { desc: "QuickBooks AI.", cat: "Finance AI", hq: "Mountain View, CA", val: "$180B", domain: "intuit.com", rel: ["Stripe", "Ramp"] }
 };
 
 let data = JSON.parse(localStorage.getItem('aimap')) || JSON.parse(JSON.stringify(defaultData));
@@ -1179,7 +826,7 @@ const save = () => { localStorage.setItem('aimap', JSON.stringify(data)); docume
 
 const map = document.getElementById('map');
 const panel = document.getElementById('panel');
-let center = null, nodes = [], conns = [];
+let center = null;
 
 function logoUrl(d) { return d ? `logos/${d.replace(/[^a-zA-Z0-9.-]/g, '_')}.png` : ''; }
 
@@ -1191,90 +838,204 @@ function showPanel(name) {
     document.getElementById('panel-hq').textContent = c.hq || 'N/A';
     const valEl = document.getElementById('panel-val');
     valEl.textContent = c.val || 'N/A';
-    valEl.className = 'val' + ((!c.val || c.val === 'NA') ? ' na' : '');
+    valEl.className = 'val' + ((!c.val || c.val === 'N/A') ? ' na' : '');
     const logo = document.getElementById('panel-logo');
     const url = logoUrl(c.domain);
     logo.innerHTML = url ? `<img src="${url}" onerror="this.parentElement.innerHTML='<span>${name.slice(0,2)}</span>'">` : `<span>${name.slice(0,2)}</span>`;
     panel.classList.add('open');
 }
 
-function getSim(a, b) {
-    if (!data[a] || !data[b]) return 0.3;
-    if (data[a].cat === data[b].cat) return 1;
-    if ((catSim[data[a].cat] || []).includes(data[b].cat)) return 0.7;
-    if ((data[a].rel || []).includes(b) || (data[b].rel || []).includes(a)) return 0.9;
-    return 0.3;
+// Get all related companies with similarity scores
+function getRelatedCompanies(centerName, maxCount = 25) {
+    const scores = {};
+    const c = data[centerName];
+    if (!c) return [];
+
+    // Calculate similarity for all companies
+    Object.keys(data).forEach(name => {
+        if (name !== centerName) {
+            scores[name] = similarity(centerName, name);
+        }
+    });
+
+    // Sort by similarity and take top N
+    return Object.entries(scores)
+        .sort((a, b) => b[1] - a[1])
+        .slice(0, maxCount)
+        .map(([name, sim]) => ({ name, sim }));
+}
+
+// Collision detection helper
+function checkCollision(x, y, width, height, placed) {
+    const padding = 15; // Extra spacing between labels
+    for (const rect of placed) {
+        if (x < rect.x + rect.w + padding &&
+            x + width + padding > rect.x &&
+            y < rect.y + rect.h + padding &&
+            y + height + padding > rect.y) {
+            return true;
+        }
+    }
+    return false;
+}
+
+// Keep position within screen bounds
+function clampToScreen(x, y, width, height) {
+    const margin = 20;
+    const minX = margin + width/2;
+    const maxX = window.innerWidth - margin - width/2;
+    const minY = 140 + height/2; // Account for search bar
+    const maxY = window.innerHeight - margin - height/2;
+
+    return {
+        x: Math.max(minX, Math.min(maxX, x)),
+        y: Math.max(minY, Math.min(maxY, y))
+    };
+}
+
+// Find position without collision
+function findPosition(baseX, baseY, width, height, placed, maxAttempts = 50) {
+    // Clamp to screen first
+    let { x: clampedX, y: clampedY } = clampToScreen(baseX, baseY, width, height);
+
+    // Try the clamped position first
+    if (!checkCollision(clampedX - width/2, clampedY - height/2, width, height, placed)) {
+        return { x: clampedX, y: clampedY };
+    }
+
+    // Try spiraling outward to find a free spot
+    for (let attempt = 1; attempt <= maxAttempts; attempt++) {
+        const spiralRadius = attempt * 25;
+        const angleStep = (Math.PI * 2) / 12;
+
+        for (let a = 0; a < Math.PI * 2; a += angleStep) {
+            const testX = clampedX + Math.cos(a) * spiralRadius;
+            const testY = clampedY + Math.sin(a) * spiralRadius;
+
+            // Clamp test position to screen
+            const clamped = clampToScreen(testX, testY, width, height);
+
+            if (!checkCollision(clamped.x - width/2, clamped.y - height/2, width, height, placed)) {
+                return clamped;
+            }
+        }
+    }
+
+    // Fallback: return clamped position anyway
+    return { x: clampedX, y: clampedY };
 }
 
 function render(centerName) {
     center = centerName;
     map.innerHTML = '';
-    nodes = []; conns = [];
     if (!data[centerName]) return;
 
-    const c = data[centerName];
-    const cx = window.innerWidth / 2, cy = window.innerHeight / 2;
-    const baseR = Math.min(window.innerWidth, window.innerHeight) * 0.25;
+    const cx = window.innerWidth / 2;
+    const cy = window.innerHeight / 2;
 
-    // Center node
-    const centerNode = createNode(centerName, cx, cy, 90, true);
-    nodes.push({ el: centerNode, x: cx, y: cy, name: centerName });
+    // Use more of the screen
+    const maxX = window.innerWidth * 0.4;
+    const maxY = window.innerHeight * 0.38;
 
-    // Tier 1
-    const rel = (c.rel || []).filter(n => data[n]);
-    rel.forEach((name, i) => {
-        const sim = getSim(centerName, name);
-        const dist = baseR * (1.2 - sim * 0.4);
-        const angle = (i / rel.length) * Math.PI * 2 - Math.PI / 2;
-        const x = cx + Math.cos(angle) * dist;
-        const y = cy + Math.sin(angle) * dist;
-        const node = createNode(name, x, y, 64, false);
-        nodes.push({ el: node, x, y, name, sim });
-        conns.push(createConn(cx, cy, x, y, sim));
-    });
+    // Get related companies - fewer for clarity
+    const related = getRelatedCompanies(centerName, 22);
 
-    // Tier 2
-    const t2 = new Set();
-    rel.forEach(r => { if (data[r]) (data[r].rel || []).forEach(rr => { if (rr !== centerName && !rel.includes(rr) && data[rr]) t2.add(rr); }); });
-    Array.from(t2).slice(0, 14).forEach((name, i) => {
-        const sim = getSim(centerName, name);
-        const dist = baseR * (1.9 - sim * 0.3);
-        const angle = (i / 14) * Math.PI * 2 - Math.PI / 2 + 0.3;
-        const x = cx + Math.cos(angle) * dist;
-        const y = cy + Math.sin(angle) * dist;
-        const node = createNode(name, x, y, 48, false);
-        nodes.push({ el: node, x, y, name, sim });
+    // Track placed label positions for collision detection
+    const placed = [];
+
+    // Create center label first
+    createLabel(centerName, cx, cy, true);
+    placed.push({ x: cx - 100, y: cy - 25, w: 200, h: 50 }); // Reserve center space
+
+    // Seed random with center name for consistent layout
+    const seed = centerName.split('').reduce((a, c) => a + c.charCodeAt(0), 0);
+    const seededRandom = (i) => {
+        const x = Math.sin(seed + i * 9999) * 10000;
+        return x - Math.floor(x);
+    };
+
+    // Position related companies based on similarity
+    related.forEach((item, i) => {
+        const { name, sim } = item;
+
+        // Distance: inverse of similarity (more similar = closer)
+        // Higher similarity = closer to center
+        const minDist = 100; // Don't get too close to center
+        const simFactor = 1 - Math.pow(sim, 0.7); // Non-linear for better spread
+        const baseDistance = minDist + simFactor * Math.min(maxX, maxY) * 1.5;
+
+        // Angle: use seeded randomness for organic feel, influenced by category
+        const catHash = data[name].cat.split('').reduce((a, c) => a + c.charCodeAt(0), 0);
+        const baseAngle = seededRandom(i) * Math.PI * 2;
+        const catInfluence = (catHash % 6) * (Math.PI / 3); // Group by category somewhat
+        const angle = baseAngle + catInfluence * 0.3;
+
+        // Calculate base position with organic variation
+        const jitterX = (seededRandom(i + 100) - 0.5) * 80;
+        const jitterY = (seededRandom(i + 200) - 0.5) * 80;
+
+        let baseX = cx + Math.cos(angle) * baseDistance + jitterX;
+        let baseY = cy + Math.sin(angle) * baseDistance + jitterY;
+
+        // Size based on similarity
+        const fontSize = 11 + sim * 8;
+
+        // Estimate label width
+        const estimatedWidth = name.length * fontSize * 0.55;
+        const estimatedHeight = fontSize * 1.3;
+
+        // Find position without collision
+        const pos = findPosition(baseX, baseY, estimatedWidth, estimatedHeight, placed);
+
+        // Add to placed list
+        placed.push({
+            x: pos.x - estimatedWidth/2,
+            y: pos.y - estimatedHeight/2,
+            w: estimatedWidth,
+            h: estimatedHeight
+        });
+
+        // Opacity based on similarity
+        const opacity = 0.5 + sim * 0.5;
+
+        createLabel(name, pos.x, pos.y, false, fontSize, opacity, sim);
+
+        // Draw connection line only for very related companies
+        if (sim > 0.4) {
+            createConnection(cx, cy, pos.x, pos.y, sim);
+        }
     });
 
     showPanel(centerName);
 }
 
-function createNode(name, x, y, size, isCenter) {
-    const c = data[name];
+function createLabel(name, x, y, isCenter, fontSize = 14, opacity = 1, sim = 1) {
     const el = document.createElement('div');
-    el.className = 'node' + (isCenter ? ' center' : '');
-    el.style.width = el.style.height = size + 'px';
-    el.style.left = (x - size/2) + 'px';
-    el.style.top = (y - size/2) + 'px';
-    el.style.zIndex = isCenter ? 20 : 10;
+    el.className = 'company' + (isCenter ? ' center' : '');
+    el.style.left = x + 'px';
+    el.style.top = y + 'px';
 
-    const url = logoUrl(c?.domain);
-    if (url) {
-        const img = document.createElement('img');
-        img.src = url;
-        img.onerror = () => { el.innerHTML = `<span>${name.length > 8 ? name.slice(0,7)+'…' : name}</span>`; };
-        el.appendChild(img);
-    } else {
-        el.innerHTML = `<span>${name.length > 8 ? name.slice(0,7)+'…' : name}</span>`;
+    const span = document.createElement('span');
+    span.className = 'name';
+    span.textContent = name;
+
+    if (!isCenter) {
+        span.style.fontSize = fontSize + 'px';
+        // Whiter text - more similar = brighter
+        const brightness = 70 + sim * 25; // 70-95% brightness
+        const saturation = 5 + (1 - sim) * 15; // Less saturated = more white, further away slightly blue tinted
+        span.style.color = `hsl(210, ${saturation}%, ${brightness}%)`;
+        span.style.opacity = opacity;
     }
 
+    el.appendChild(span);
     el.onclick = () => render(name);
     el.onmouseenter = () => showPanel(name);
     map.appendChild(el);
     return el;
 }
 
-function createConn(x1, y1, x2, y2, sim) {
+function createConnection(x1, y1, x2, y2, sim) {
     const el = document.createElement('div');
     el.className = 'connection';
     const len = Math.hypot(x2-x1, y2-y1);
@@ -1283,10 +1044,74 @@ function createConn(x1, y1, x2, y2, sim) {
     el.style.left = x1 + 'px';
     el.style.top = y1 + 'px';
     el.style.transform = `rotate(${angle}deg)`;
-    el.style.opacity = sim * 0.6;
-    map.appendChild(el);
+    el.style.opacity = sim * 0.25; // More subtle connections
+    map.insertBefore(el, map.firstChild);
     return el;
 }
+
+// Particle animation
+const canvas = document.getElementById('particles');
+const ctx = canvas.getContext('2d');
+let particles = [];
+
+function initParticles() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+    particles = [];
+    const count = Math.floor((canvas.width * canvas.height) / 15000);
+    for (let i = 0; i < count; i++) {
+        particles.push({
+            x: Math.random() * canvas.width,
+            y: Math.random() * canvas.height,
+            vx: (Math.random() - 0.5) * 0.3,
+            vy: (Math.random() - 0.5) * 0.3,
+            size: Math.random() * 2 + 1
+        });
+    }
+}
+
+function animateParticles() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    particles.forEach(p => {
+        p.x += p.vx;
+        p.y += p.vy;
+        if (p.x < 0) p.x = canvas.width;
+        if (p.x > canvas.width) p.x = 0;
+        if (p.y < 0) p.y = canvas.height;
+        if (p.y > canvas.height) p.y = 0;
+
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+        ctx.fillStyle = 'rgba(59, 130, 246, 0.5)';
+        ctx.fill();
+    });
+
+    // Draw connections between nearby particles
+    ctx.strokeStyle = 'rgba(59, 130, 246, 0.1)';
+    ctx.lineWidth = 0.5;
+    for (let i = 0; i < particles.length; i++) {
+        for (let j = i + 1; j < particles.length; j++) {
+            const dx = particles[i].x - particles[j].x;
+            const dy = particles[i].y - particles[j].y;
+            const dist = Math.sqrt(dx * dx + dy * dy);
+            if (dist < 100) {
+                ctx.beginPath();
+                ctx.moveTo(particles[i].x, particles[i].y);
+                ctx.lineTo(particles[j].x, particles[j].y);
+                ctx.globalAlpha = 1 - dist / 100;
+                ctx.stroke();
+            }
+        }
+    }
+    ctx.globalAlpha = 1;
+
+    requestAnimationFrame(animateParticles);
+}
+
+initParticles();
+animateParticles();
+window.addEventListener('resize', () => { initParticles(); render(center || 'OpenAI'); });
 
 // Search
 const searchInput = document.getElementById('search');
@@ -1295,10 +1120,10 @@ const dropdown = document.getElementById('dropdown');
 searchInput.addEventListener('input', e => {
     const q = e.target.value.toLowerCase().trim();
     if (q.length < 1) { dropdown.classList.remove('open'); return; }
-    const matches = Object.keys(data).filter(n => n.toLowerCase().includes(q)).sort((a,b) => {
+    const matches = Object.keys(data).filter(n => n.toLowerCase().includes(q)).sort((a, b) => {
         const as = a.toLowerCase().startsWith(q), bs = b.toLowerCase().startsWith(q);
         return as && !bs ? -1 : !as && bs ? 1 : a.localeCompare(b);
-    }).slice(0, 6);
+    }).slice(0, 8);
 
     if (matches.length) {
         dropdown.innerHTML = matches.map(n => {
@@ -1316,138 +1141,120 @@ searchInput.addEventListener('input', e => {
 
 searchInput.addEventListener('keydown', e => {
     if (e.key === 'Enter') {
-        const m = Object.keys(data).find(n => n.toLowerCase() === searchInput.value.trim().toLowerCase());
-        if (m) { render(m); searchInput.value = ''; dropdown.classList.remove('open'); }
+        const first = dropdown.querySelector('.dropdown-item');
+        if (first) { render(first.dataset.name); dropdown.classList.remove('open'); searchInput.value = ''; searchInput.blur(); }
     }
-    if (e.key === 'Escape') { dropdown.classList.remove('open'); searchInput.blur(); }
 });
 
 dropdown.addEventListener('click', e => {
     const item = e.target.closest('.dropdown-item');
-    if (item) { render(item.dataset.name); searchInput.value = ''; dropdown.classList.remove('open'); }
+    if (item) { render(item.dataset.name); dropdown.classList.remove('open'); searchInput.value = ''; }
 });
 
 document.addEventListener('click', e => { if (!e.target.closest('.search-wrap')) dropdown.classList.remove('open'); });
 
-// Admin
+// Admin modal
 const modal = document.getElementById('modal');
 const editModal = document.getElementById('edit-modal');
 
-document.getElementById('admin-btn').onclick = () => { modal.classList.add('open'); updateList(); };
+document.getElementById('admin-btn').onclick = () => { modal.classList.add('open'); renderList(); };
 document.getElementById('modal-close').onclick = () => modal.classList.remove('open');
 document.getElementById('edit-close').onclick = () => editModal.classList.remove('open');
 modal.onclick = e => { if (e.target === modal) modal.classList.remove('open'); };
 editModal.onclick = e => { if (e.target === editModal) editModal.classList.remove('open'); };
 
-document.querySelectorAll('.tab').forEach(t => {
-    t.onclick = () => {
-        document.querySelectorAll('.tab').forEach(x => x.classList.remove('active'));
-        document.querySelectorAll('.tab-content').forEach(x => x.classList.remove('active'));
-        t.classList.add('active');
-        document.getElementById('tab-' + t.dataset.tab).classList.add('active');
+document.querySelectorAll('.tab').forEach(tab => {
+    tab.onclick = () => {
+        document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+        document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+        tab.classList.add('active');
+        document.getElementById('tab-' + tab.dataset.tab).classList.add('active');
     };
+});
+
+function renderList(filter = '') {
+    const list = document.getElementById('company-list');
+    const items = Object.keys(data).filter(n => n.toLowerCase().includes(filter.toLowerCase())).sort();
+    list.innerHTML = items.map(n => `<div class="list-item" data-name="${n}"><div><div class="name">${n}</div><div class="cat">${data[n].cat}</div></div><button>&times;</button></div>`).join('');
+}
+
+document.getElementById('edit-search').oninput = e => renderList(e.target.value);
+
+document.getElementById('company-list').addEventListener('click', e => {
+    const item = e.target.closest('.list-item');
+    if (!item) return;
+    const name = item.dataset.name;
+    if (e.target.tagName === 'BUTTON') {
+        if (confirm(`Delete ${name}?`)) { delete data[name]; save(); renderList(); render(center || 'OpenAI'); }
+    } else {
+        const c = data[name];
+        document.getElementById('edit-orig').value = name;
+        document.getElementById('edit-name').value = name;
+        document.getElementById('edit-domain').value = c.domain || '';
+        document.getElementById('edit-cat').value = c.cat;
+        document.getElementById('edit-desc').value = c.desc;
+        document.getElementById('edit-hq').value = c.hq || '';
+        document.getElementById('edit-val').value = c.val || '';
+        document.getElementById('edit-rel').value = (c.rel || []).join(', ');
+        editModal.classList.add('open');
+    }
 });
 
 document.getElementById('add-btn').onclick = () => {
     const name = document.getElementById('add-name').value.trim();
-    const domain = document.getElementById('add-domain').value.trim();
-    const cat = document.getElementById('add-cat').value;
-    const desc = document.getElementById('add-desc').value.trim();
-    const hq = document.getElementById('add-hq').value.trim();
-    const val = document.getElementById('add-val').value.trim();
-    const rel = document.getElementById('add-rel').value.split(',').map(s => s.trim()).filter(s => s);
-    if (!name || !desc) { alert('Name and description required'); return; }
-    data[name] = { desc, cat, hq: hq || 'N/A', val: val || 'N/A', domain, rel };
-    save();
+    if (!name || data[name]) return alert(data[name] ? 'Company exists' : 'Enter name');
+    data[name] = {
+        desc: document.getElementById('add-desc').value.trim() || 'AI company',
+        cat: document.getElementById('add-cat').value,
+        hq: document.getElementById('add-hq').value.trim(),
+        val: document.getElementById('add-val').value.trim(),
+        domain: document.getElementById('add-domain').value.trim(),
+        rel: document.getElementById('add-rel').value.split(',').map(s => s.trim()).filter(Boolean)
+    };
+    save(); render(name);
     ['add-name','add-domain','add-desc','add-hq','add-val','add-rel'].forEach(id => document.getElementById(id).value = '');
-    alert('Added!');
-    updateList();
 };
-
-function updateList(filter = '') {
-    const list = document.getElementById('company-list');
-    const filtered = Object.keys(data).filter(n => n.toLowerCase().includes(filter.toLowerCase())).sort();
-    list.innerHTML = filtered.slice(0, 80).map(n => `<div class="list-item" data-name="${n}"><div><div class="name">${n}</div><div class="cat">${data[n].cat}</div></div><button>Edit</button></div>`).join('');
-}
-
-document.getElementById('edit-search').oninput = e => updateList(e.target.value);
-document.getElementById('company-list').onclick = e => {
-    const item = e.target.closest('.list-item');
-    if (item) openEdit(item.dataset.name);
-};
-
-function openEdit(name) {
-    const c = data[name]; if (!c) return;
-    document.getElementById('edit-orig').value = name;
-    document.getElementById('edit-name').value = name;
-    document.getElementById('edit-domain').value = c.domain || '';
-    document.getElementById('edit-cat').value = c.cat;
-    document.getElementById('edit-desc').value = c.desc;
-    document.getElementById('edit-hq').value = c.hq || '';
-    document.getElementById('edit-val').value = c.val || '';
-    document.getElementById('edit-rel').value = (c.rel || []).join(', ');
-    editModal.classList.add('open');
-}
 
 document.getElementById('save-btn').onclick = () => {
     const orig = document.getElementById('edit-orig').value;
     const name = document.getElementById('edit-name').value.trim();
-    const domain = document.getElementById('edit-domain').value.trim();
-    const cat = document.getElementById('edit-cat').value;
-    const desc = document.getElementById('edit-desc').value.trim();
-    const hq = document.getElementById('edit-hq').value.trim();
-    const val = document.getElementById('edit-val').value.trim();
-    const rel = document.getElementById('edit-rel').value.split(',').map(s => s.trim()).filter(s => s);
-    if (!name || !desc) { alert('Name and description required'); return; }
-    if (orig !== name) delete data[orig];
-    data[name] = { desc, cat, hq: hq || 'N/A', val: val || 'N/A', domain, rel };
-    save();
-    editModal.classList.remove('open');
-    updateList();
-    if (center === orig || center === name) render(name);
+    if (!name) return;
+    if (name !== orig) { delete data[orig]; }
+    data[name] = {
+        desc: document.getElementById('edit-desc').value.trim(),
+        cat: document.getElementById('edit-cat').value,
+        hq: document.getElementById('edit-hq').value.trim(),
+        val: document.getElementById('edit-val').value.trim(),
+        domain: document.getElementById('edit-domain').value.trim(),
+        rel: document.getElementById('edit-rel').value.split(',').map(s => s.trim()).filter(Boolean)
+    };
+    save(); editModal.classList.remove('open'); renderList(); render(center || 'OpenAI');
 };
 
 document.getElementById('delete-btn').onclick = () => {
     const name = document.getElementById('edit-orig').value;
-    if (confirm(`Delete ${name}?`)) {
-        delete data[name]; save();
-        editModal.classList.remove('open');
-        updateList();
-        if (center === name) render('OpenAI');
-    }
+    if (confirm(`Delete ${name}?`)) { delete data[name]; save(); editModal.classList.remove('open'); renderList(); render('OpenAI'); }
 };
 
 document.getElementById('export-btn').onclick = () => {
     const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
-    const a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = 'ai-map.json'; a.click();
+    const a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = 'aimap-data.json'; a.click();
 };
 
 document.getElementById('import-file').onchange = e => {
     const file = e.target.files[0]; if (!file) return;
     const reader = new FileReader();
-    reader.onload = ev => {
-        try {
-            const imp = JSON.parse(ev.target.result);
-            if (confirm(`Import ${Object.keys(imp).length} companies?`)) {
-                Object.assign(data, imp); save(); updateList(); alert('Imported!');
-            }
-        } catch { alert('Invalid JSON'); }
-    };
+    reader.onload = ev => { try { data = JSON.parse(ev.target.result); save(); render(center || 'OpenAI'); alert('Imported!'); } catch { alert('Invalid JSON'); } };
     reader.readAsText(file);
 };
 
 document.getElementById('reset-btn').onclick = () => {
-    if (confirm('Reset to default?')) {
-        data = JSON.parse(JSON.stringify(defaultData)); save(); updateList(); render('OpenAI'); alert('Reset!');
-    }
+    if (confirm('Reset to default data?')) { data = JSON.parse(JSON.stringify(defaultData)); save(); render('OpenAI'); }
 };
 
-window.addEventListener('resize', () => { if (center) render(center); });
-
 // Init
-document.getElementById('count').textContent = Object.keys(data).length;
-const starters = ['OpenAI', 'Anthropic', 'NVIDIA', 'Cursor', 'Midjourney', 'Waymo'];
-render(starters[Math.floor(Math.random() * starters.length)]);
+save();
+render('OpenAI');
 </script>
 </body>
 </html>
