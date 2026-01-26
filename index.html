@@ -284,6 +284,229 @@
             border: 1px solid rgba(59, 130, 246, 0.3);
         }
 
+        /* Website link button */
+        .website-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            margin-top: 12px;
+            padding: 8px 14px;
+            font-size: 12px;
+            font-weight: 500;
+            color: #60a5fa;
+            background: rgba(59, 130, 246, 0.15);
+            border: 1px solid rgba(59, 130, 246, 0.3);
+            border-radius: 8px;
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+
+        .website-link:hover {
+            background: rgba(59, 130, 246, 0.25);
+            border-color: #3b82f6;
+            color: #fff;
+        }
+
+        .website-link svg {
+            width: 14px;
+            height: 14px;
+        }
+
+        /* Feed Sidebars */
+        .feed-sidebar {
+            position: fixed;
+            top: 70px;
+            width: 320px;
+            max-height: calc(100vh - 100px);
+            background: rgba(15, 23, 42, 0.9);
+            border: 1px solid rgba(59, 130, 246, 0.3);
+            border-radius: 16px;
+            backdrop-filter: blur(20px);
+            box-shadow: 0 0 30px rgba(59, 130, 246, 0.15);
+            z-index: 90;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+
+        .feed-sidebar.left {
+            left: 24px;
+        }
+
+        .feed-sidebar.right {
+            right: 24px;
+        }
+
+        .feed-sidebar.collapsed {
+            transform: translateX(-110%);
+            opacity: 0;
+        }
+
+        .feed-sidebar.right.collapsed {
+            transform: translateX(110%);
+        }
+
+        .feed-header {
+            padding: 14px 16px;
+            border-bottom: 1px solid rgba(59, 130, 246, 0.2);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-shrink: 0;
+        }
+
+        .feed-header h3 {
+            font-size: 13px;
+            font-weight: 600;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .feed-header h3 svg {
+            width: 16px;
+            height: 16px;
+            color: #3b82f6;
+        }
+
+        .feed-toggle {
+            background: none;
+            border: none;
+            color: rgba(148, 163, 184, 0.6);
+            cursor: pointer;
+            padding: 4px;
+            border-radius: 4px;
+            transition: all 0.2s;
+        }
+
+        .feed-toggle:hover {
+            color: #fff;
+            background: rgba(59, 130, 246, 0.2);
+        }
+
+        .feed-content {
+            flex: 1;
+            overflow-y: auto;
+            padding: 12px;
+        }
+
+        .feed-content::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .feed-content::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        .feed-content::-webkit-scrollbar-thumb {
+            background: rgba(59, 130, 246, 0.3);
+            border-radius: 3px;
+        }
+
+        .news-item {
+            padding: 12px;
+            border-radius: 10px;
+            background: rgba(30, 41, 59, 0.5);
+            margin-bottom: 10px;
+            transition: all 0.2s;
+            border: 1px solid transparent;
+        }
+
+        .news-item:hover {
+            background: rgba(59, 130, 246, 0.1);
+            border-color: rgba(59, 130, 246, 0.2);
+        }
+
+        .news-item a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .news-source {
+            font-size: 10px;
+            font-weight: 600;
+            color: #3b82f6;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 6px;
+        }
+
+        .news-title {
+            font-size: 13px;
+            font-weight: 500;
+            color: #e2e8f0;
+            line-height: 1.4;
+            margin-bottom: 6px;
+        }
+
+        .news-time {
+            font-size: 11px;
+            color: rgba(148, 163, 184, 0.6);
+        }
+
+        .news-loading, .feed-error {
+            text-align: center;
+            padding: 40px 20px;
+            color: rgba(148, 163, 184, 0.6);
+            font-size: 13px;
+        }
+
+        .feed-error {
+            color: rgba(239, 68, 68, 0.8);
+        }
+
+        /* Feed toggle buttons (when collapsed) */
+        .feed-show-btn {
+            position: fixed;
+            top: 70px;
+            width: 40px;
+            height: 40px;
+            background: rgba(15, 23, 42, 0.9);
+            border: 1px solid rgba(59, 130, 246, 0.3);
+            border-radius: 10px;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            color: #3b82f6;
+            backdrop-filter: blur(10px);
+            z-index: 89;
+            transition: all 0.2s;
+        }
+
+        .feed-show-btn:hover {
+            background: rgba(59, 130, 246, 0.2);
+            border-color: #3b82f6;
+        }
+
+        .feed-show-btn.left {
+            left: 24px;
+        }
+
+        .feed-show-btn.right {
+            right: 24px;
+        }
+
+        .feed-show-btn.visible {
+            display: flex;
+        }
+
+        .feed-show-btn svg {
+            width: 18px;
+            height: 18px;
+        }
+
+        /* Twitter embed container */
+        .twitter-container {
+            min-height: 400px;
+        }
+
+        .twitter-container iframe {
+            border-radius: 8px !important;
+        }
+
         /* Stats */
         .stats {
             bottom: 24px;
@@ -523,6 +746,17 @@
             .stats { display: none; }
             .panel { left: 12px; right: 12px; width: auto; bottom: 12px; }
             .admin-btn { top: auto; bottom: 12px; right: 12px; }
+            .feed-sidebar { display: none; }
+            .feed-show-btn { display: none !important; }
+        }
+
+        @media (max-width: 1200px) {
+            .feed-sidebar { width: 280px; }
+        }
+
+        @media (max-width: 1000px) {
+            .feed-sidebar.left { display: none; }
+            .feed-show-btn.left { display: none !important; }
         }
     </style>
 </head>
@@ -547,7 +781,7 @@
         <div class="search-wrap ui">
             <div class="search-box">
                 <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
-                <input type="text" id="search" placeholder="Search AI companies..." autocomplete="off">
+                <input type="text" id="search" placeholder="Search AI companies... (press /)" autocomplete="off">
             </div>
             <div class="dropdown" id="dropdown"></div>
         </div>
@@ -565,12 +799,68 @@
                 <span class="tag" id="panel-cat"></span>
                 <span class="tag" id="panel-hq"></span>
             </div>
+            <a href="#" target="_blank" rel="noopener" class="website-link" id="panel-website">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+                Visit Website
+            </a>
         </div>
 
         <div class="stats ui">
             <div class="num" id="count">0</div>
             <div class="label">AI Companies</div>
         </div>
+
+        <!-- News Feed Sidebar -->
+        <div class="feed-sidebar left" id="news-feed">
+            <div class="feed-header">
+                <h3>
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z"/></svg>
+                    AI News (48h)
+                </h3>
+                <button class="feed-toggle" id="news-toggle" title="Hide news feed">
+                    <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 19l-7-7 7-7m8 14l-7-7 7-7"/></svg>
+                </button>
+            </div>
+            <div class="feed-content" id="news-content">
+                <div class="news-loading">Loading AI news...</div>
+            </div>
+        </div>
+
+        <!-- News Show Button (when collapsed) -->
+        <button class="feed-show-btn left" id="news-show" title="Show news feed">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z"/></svg>
+        </button>
+
+        <!-- X/Twitter Feed Sidebar -->
+        <div class="feed-sidebar right" id="twitter-feed">
+            <div class="feed-header">
+                <h3>
+                    <svg fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                    AI on X
+                </h3>
+                <button class="feed-toggle" id="twitter-toggle" title="Hide X feed">
+                    <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 5l7 7-7 7M5 5l7 7-7 7"/></svg>
+                </button>
+            </div>
+            <div class="feed-content" id="twitter-content">
+                <div class="twitter-container">
+                    <a class="twitter-timeline"
+                       data-theme="dark"
+                       data-chrome="noheader nofooter noborders transparent"
+                       data-height="600"
+                       href="https://twitter.com/i/lists/1884014252050538496">
+                       Loading tweets...</a>
+                </div>
+                <p style="font-size: 11px; color: rgba(148,163,184,0.5); margin-top: 12px; text-align: center;">
+                    Create your own <a href="https://twitter.com/i/lists" target="_blank" style="color: #3b82f6;">Twitter List</a> of AI accounts to customize this feed
+                </p>
+            </div>
+        </div>
+
+        <!-- Twitter Show Button (when collapsed) -->
+        <button class="feed-show-btn right" id="twitter-show" title="Show X feed">
+            <svg fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        </button>
 
         <button class="admin-btn ui" id="admin-btn">Manage</button>
     </div>
@@ -1125,7 +1415,7 @@ const defaultData = {
 };
 
 // Version check - reset localStorage if default data has more companies (data was updated)
-const DATA_VERSION = 4; // Increment this when adding companies or updating valuations
+const DATA_VERSION = 5; // Increment this when adding companies or updating valuations
 const storedVersion = localStorage.getItem('aimap_version');
 let data;
 if (storedVersion !== String(DATA_VERSION)) {
@@ -1156,6 +1446,14 @@ function showPanel(name) {
     const logo = document.getElementById('panel-logo');
     const url = logoUrl(c.domain);
     logo.innerHTML = url ? `<img src="${url}" onerror="this.parentElement.innerHTML='<span>${name.slice(0,2)}</span>'">` : `<span>${name.slice(0,2)}</span>`;
+    // Website link
+    const websiteLink = document.getElementById('panel-website');
+    if (c.domain) {
+        websiteLink.href = 'https://' + c.domain;
+        websiteLink.style.display = 'inline-flex';
+    } else {
+        websiteLink.style.display = 'none';
+    }
     panel.classList.add('open');
 }
 
@@ -1662,6 +1960,168 @@ document.getElementById('import-file').onchange = e => {
 document.getElementById('reset-btn').onclick = () => {
     if (confirm('Reset to default data?')) { data = JSON.parse(JSON.stringify(defaultData)); save(); render('OpenAI'); }
 };
+
+// "/" keyboard shortcut to focus search
+document.addEventListener('keydown', (e) => {
+    // Check if user is not in an input/textarea
+    if (e.key === '/' && !['INPUT', 'TEXTAREA', 'SELECT'].includes(document.activeElement.tagName)) {
+        e.preventDefault();
+        document.getElementById('search').focus();
+    }
+});
+
+// Feed sidebar toggle functionality
+const newsFeed = document.getElementById('news-feed');
+const newsToggle = document.getElementById('news-toggle');
+const newsShow = document.getElementById('news-show');
+const twitterFeed = document.getElementById('twitter-feed');
+const twitterToggle = document.getElementById('twitter-toggle');
+const twitterShow = document.getElementById('twitter-show');
+
+newsToggle.onclick = () => {
+    newsFeed.classList.add('collapsed');
+    newsShow.classList.add('visible');
+    localStorage.setItem('newsFeedCollapsed', 'true');
+};
+
+newsShow.onclick = () => {
+    newsFeed.classList.remove('collapsed');
+    newsShow.classList.remove('visible');
+    localStorage.setItem('newsFeedCollapsed', 'false');
+};
+
+twitterToggle.onclick = () => {
+    twitterFeed.classList.add('collapsed');
+    twitterShow.classList.add('visible');
+    localStorage.setItem('twitterFeedCollapsed', 'true');
+};
+
+twitterShow.onclick = () => {
+    twitterFeed.classList.remove('collapsed');
+    twitterShow.classList.remove('visible');
+    localStorage.setItem('twitterFeedCollapsed', 'false');
+};
+
+// Restore feed states
+if (localStorage.getItem('newsFeedCollapsed') === 'true') {
+    newsFeed.classList.add('collapsed');
+    newsShow.classList.add('visible');
+}
+if (localStorage.getItem('twitterFeedCollapsed') === 'true') {
+    twitterFeed.classList.add('collapsed');
+    twitterShow.classList.add('visible');
+}
+
+// News feed loading
+const NEWS_SOURCES = [
+    { name: 'TechCrunch', url: 'https://techcrunch.com/category/artificial-intelligence/feed/', keywords: ['AI', 'artificial intelligence', 'OpenAI', 'Anthropic', 'GPT', 'LLM', 'machine learning'] },
+    { name: 'The Verge', url: 'https://www.theverge.com/ai-artificial-intelligence/rss/index.xml', keywords: [] },
+    { name: 'VentureBeat', url: 'https://venturebeat.com/category/ai/feed/', keywords: [] },
+    { name: 'Ars Technica', url: 'https://feeds.arstechnica.com/arstechnica/technology-lab', keywords: ['AI', 'artificial intelligence', 'OpenAI', 'Anthropic', 'GPT', 'LLM', 'machine learning', 'neural'] }
+];
+
+const RSS_PROXY = 'https://api.rss2json.com/v1/api.json?rss_url=';
+
+async function loadNewsFeed() {
+    const newsContent = document.getElementById('news-content');
+    const allNews = [];
+    const now = Date.now();
+    const fortyEightHours = 48 * 60 * 60 * 1000;
+
+    try {
+        const promises = NEWS_SOURCES.map(async (source) => {
+            try {
+                const res = await fetch(RSS_PROXY + encodeURIComponent(source.url));
+                const data = await res.json();
+                if (data.status === 'ok' && data.items) {
+                    return data.items
+                        .filter(item => {
+                            const pubDate = new Date(item.pubDate).getTime();
+                            const isRecent = (now - pubDate) < fortyEightHours;
+                            if (!isRecent) return false;
+                            // Filter by keywords if specified
+                            if (source.keywords.length > 0) {
+                                const text = (item.title + ' ' + (item.description || '')).toLowerCase();
+                                return source.keywords.some(kw => text.includes(kw.toLowerCase()));
+                            }
+                            return true;
+                        })
+                        .map(item => ({
+                            source: source.name,
+                            title: item.title,
+                            link: item.link,
+                            pubDate: new Date(item.pubDate)
+                        }));
+                }
+                return [];
+            } catch (e) {
+                console.warn('Failed to load feed:', source.name, e);
+                return [];
+            }
+        });
+
+        const results = await Promise.all(promises);
+        results.forEach(items => allNews.push(...items));
+
+        // Sort by date (newest first)
+        allNews.sort((a, b) => b.pubDate - a.pubDate);
+
+        if (allNews.length === 0) {
+            newsContent.innerHTML = '<div class="news-loading">No AI news in the last 48 hours. Check back later!</div>';
+            return;
+        }
+
+        // Display news (limit to 20)
+        const displayNews = allNews.slice(0, 20);
+        newsContent.innerHTML = displayNews.map(item => {
+            const timeAgo = getTimeAgo(item.pubDate);
+            return `
+                <div class="news-item">
+                    <a href="${item.link}" target="_blank" rel="noopener">
+                        <div class="news-source">${item.source}</div>
+                        <div class="news-title">${item.title}</div>
+                        <div class="news-time">${timeAgo}</div>
+                    </a>
+                </div>
+            `;
+        }).join('');
+
+    } catch (e) {
+        console.error('News feed error:', e);
+        newsContent.innerHTML = '<div class="feed-error">Failed to load news. Try refreshing.</div>';
+    }
+}
+
+function getTimeAgo(date) {
+    const seconds = Math.floor((Date.now() - date.getTime()) / 1000);
+    if (seconds < 60) return 'Just now';
+    const minutes = Math.floor(seconds / 60);
+    if (minutes < 60) return `${minutes}m ago`;
+    const hours = Math.floor(minutes / 60);
+    if (hours < 24) return `${hours}h ago`;
+    const days = Math.floor(hours / 24);
+    return `${days}d ago`;
+}
+
+// Load Twitter widget
+function loadTwitterWidget() {
+    if (window.twttr) {
+        window.twttr.widgets.load();
+    } else {
+        const script = document.createElement('script');
+        script.src = 'https://platform.twitter.com/widgets.js';
+        script.async = true;
+        script.charset = 'utf-8';
+        document.body.appendChild(script);
+    }
+}
+
+// Init feeds
+loadNewsFeed();
+loadTwitterWidget();
+
+// Refresh news every 30 minutes
+setInterval(loadNewsFeed, 30 * 60 * 1000);
 
 // Init
 save();
