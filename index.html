@@ -98,15 +98,22 @@
 
         .search-box input::placeholder { color: rgba(148, 163, 184, 0.6); }
 
-        /* Category Filter */
-        .filter-wrap {
+        /* Filter Bar */
+        .filter-bar {
             top: 24px;
             left: 24px;
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .filter-wrap {
+            position: relative;
         }
 
         .filter-btn {
-            padding: 10px 16px;
-            font-size: 12px;
+            padding: 8px 14px;
+            font-size: 11px;
             font-family: inherit;
             font-weight: 500;
             background: rgba(15, 23, 42, 0.8);
@@ -118,7 +125,8 @@
             backdrop-filter: blur(10px);
             display: flex;
             align-items: center;
-            gap: 8px;
+            gap: 6px;
+            white-space: nowrap;
         }
 
         .filter-btn:hover {
@@ -126,17 +134,23 @@
             color: #fff;
         }
 
+        .filter-btn.active {
+            background: rgba(59, 130, 246, 0.2);
+            border-color: #3b82f6;
+            color: #60a5fa;
+        }
+
         .filter-btn svg {
-            width: 14px;
-            height: 14px;
+            width: 12px;
+            height: 12px;
         }
 
         .filter-dropdown {
             position: absolute;
             top: calc(100% + 8px);
             left: 0;
-            min-width: 200px;
-            max-height: 400px;
+            min-width: 180px;
+            max-height: 350px;
             overflow-y: auto;
             background: rgba(15, 23, 42, 0.95);
             border: 1px solid rgba(59, 130, 246, 0.3);
@@ -150,8 +164,8 @@
         .filter-dropdown.open { display: block; }
 
         .filter-item {
-            padding: 10px 14px;
-            font-size: 13px;
+            padding: 9px 12px;
+            font-size: 12px;
             cursor: pointer;
             transition: all 0.2s;
             border-bottom: 1px solid rgba(59, 130, 246, 0.1);
@@ -163,7 +177,32 @@
         .filter-item:last-child { border-bottom: none; }
         .filter-item:hover { background: rgba(59, 130, 246, 0.15); }
         .filter-item.active { background: rgba(59, 130, 246, 0.2); color: #4facfe; }
-        .filter-item .count { font-size: 11px; color: rgba(148, 163, 184, 0.5); }
+        .filter-item .count { font-size: 10px; color: rgba(148, 163, 184, 0.5); }
+
+        .clear-filters {
+            padding: 8px 14px;
+            font-size: 11px;
+            font-family: inherit;
+            font-weight: 500;
+            background: rgba(239, 68, 68, 0.15);
+            border: 1px solid rgba(239, 68, 68, 0.3);
+            border-radius: 8px;
+            color: rgba(239, 68, 68, 0.8);
+            cursor: pointer;
+            transition: all 0.2s;
+            display: none;
+        }
+
+        .clear-filters.visible {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .clear-filters:hover {
+            background: rgba(239, 68, 68, 0.25);
+            color: #ef4444;
+        }
 
         .search-box svg {
             position: absolute;
@@ -638,6 +677,89 @@
             margin: 12px 0 8px;
         }
 
+        .x-account-selector {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 12px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid rgba(59, 130, 246, 0.15);
+        }
+
+        .x-account-selector select {
+            flex: 1;
+            padding: 8px 12px;
+            font-size: 12px;
+            font-family: inherit;
+            background: rgba(30, 41, 59, 0.8);
+            border: 1px solid rgba(59, 130, 246, 0.3);
+            border-radius: 6px;
+            color: #fff;
+            outline: none;
+            cursor: pointer;
+        }
+
+        .x-account-selector select:focus {
+            border-color: #3b82f6;
+        }
+
+        .x-account-selector button {
+            padding: 8px 10px;
+            background: rgba(59, 130, 246, 0.2);
+            border: 1px solid rgba(59, 130, 246, 0.3);
+            border-radius: 6px;
+            color: #60a5fa;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .x-account-selector button:hover {
+            background: rgba(59, 130, 246, 0.3);
+            color: #fff;
+        }
+
+        #x-timeline-container {
+            min-height: 300px;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        #x-timeline-container .twitter-timeline {
+            border-radius: 8px !important;
+        }
+
+        #x-manage-panel {
+            padding-top: 12px;
+            border-top: 1px solid rgba(59, 130, 246, 0.15);
+            margin-top: 12px;
+        }
+
+        .x-manage-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 12px;
+        }
+
+        .x-manage-header span {
+            font-size: 11px;
+            font-weight: 600;
+            color: rgba(148, 163, 184, 0.6);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .x-manage-header button {
+            font-size: 11px;
+            background: none;
+            border: none;
+            color: #3b82f6;
+            cursor: pointer;
+        }
+
+        .x-manage-header button:hover {
+            text-decoration: underline;
+        }
+
         /* Stats */
         .stats {
             bottom: 24px;
@@ -901,12 +1023,39 @@
             <h1>AI Map</h1>
         </div>
 
-        <div class="filter-wrap ui">
-            <button class="filter-btn" id="filter-btn">
-                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.293A1 1 0 013 6.586V4z"/></svg>
-                <span id="filter-label">All Categories</span>
+        <div class="filter-bar ui">
+            <div class="filter-wrap">
+                <button class="filter-btn" id="filter-cat-btn">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 10h16M4 14h16M4 18h16"/></svg>
+                    <span id="filter-cat-label">Category</span>
+                </button>
+                <div class="filter-dropdown" id="filter-cat-dropdown"></div>
+            </div>
+            <div class="filter-wrap">
+                <button class="filter-btn" id="filter-country-btn">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 21v-4m0 0V5a2 2 0 012-2h6.5l1 1H21l-3 6 3 6h-8.5l-1-1H5a2 2 0 00-2 2zm9-13.5V9"/></svg>
+                    <span id="filter-country-label">Country</span>
+                </button>
+                <div class="filter-dropdown" id="filter-country-dropdown"></div>
+            </div>
+            <div class="filter-wrap">
+                <button class="filter-btn" id="filter-region-btn">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                    <span id="filter-region-label">Region</span>
+                </button>
+                <div class="filter-dropdown" id="filter-region-dropdown"></div>
+            </div>
+            <div class="filter-wrap">
+                <button class="filter-btn" id="filter-val-btn">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                    <span id="filter-val-label">Valuation</span>
+                </button>
+                <div class="filter-dropdown" id="filter-val-dropdown"></div>
+            </div>
+            <button class="clear-filters" id="clear-filters">
+                <svg width="12" height="12" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+                Clear
             </button>
-            <div class="filter-dropdown" id="filter-dropdown"></div>
         </div>
 
         <div class="search-wrap ui">
@@ -974,11 +1123,20 @@
                 </button>
             </div>
             <div class="feed-content" id="twitter-content">
-                <div class="add-account-form">
-                    <input type="text" id="add-x-handle" placeholder="@handle or username">
-                    <button id="add-x-btn">Add</button>
+                <div class="x-account-selector">
+                    <select id="x-account-select"></select>
+                    <button id="manage-x-accounts" title="Manage accounts">
+                        <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/></svg>
+                    </button>
                 </div>
-                <div id="x-accounts-list"></div>
+                <div id="x-timeline-container"></div>
+                <div id="x-manage-panel" style="display:none;">
+                    <div class="add-account-form">
+                        <input type="text" id="add-x-handle" placeholder="@handle">
+                        <button id="add-x-btn">Add</button>
+                    </div>
+                    <div id="x-accounts-list"></div>
+                </div>
             </div>
         </div>
 
@@ -1540,7 +1698,7 @@ const defaultData = {
 };
 
 // Version check - reset localStorage if default data has more companies (data was updated)
-const DATA_VERSION = 6; // Increment this when adding companies or updating valuations
+const DATA_VERSION = 7; // Increment this when adding companies or updating valuations
 const storedVersion = localStorage.getItem('aimap_version');
 let data;
 if (storedVersion !== String(DATA_VERSION)) {
@@ -1591,8 +1749,8 @@ function getRelatedCompanies(centerName, maxCount = 25, filterCat = null) {
     // Calculate similarity for all companies
     Object.keys(data).forEach(name => {
         if (name !== centerName) {
-            // Filter by category if specified
-            if (filterCat && data[name].cat !== filterCat) return;
+            // Apply all active filters
+            if (typeof matchesFilters === 'function' && !matchesFilters(data[name])) return;
             scores[name] = similarity(centerName, name);
         }
     });
@@ -1677,7 +1835,7 @@ function render(centerName) {
     const maxY = window.innerHeight * 0.38;
 
     // Get related companies - fewer for clarity
-    const related = getRelatedCompanies(centerName, 22, activeCategory);
+    const related = getRelatedCompanies(centerName, 22);
 
     // Track placed label positions for collision detection
     const placed = [];
@@ -1852,54 +2010,221 @@ initParticles();
 animateParticles();
 window.addEventListener('resize', () => { initParticles(); render(center || 'OpenAI'); });
 
-// Category Filter
-let activeCategory = null;
-const filterBtn = document.getElementById('filter-btn');
-const filterDropdown = document.getElementById('filter-dropdown');
-const filterLabel = document.getElementById('filter-label');
+// Multi-Filter System
+const filters = {
+    category: null,
+    country: null,
+    region: null,
+    valuation: null
+};
 
-function getCategories() {
-    const cats = {};
-    Object.values(data).forEach(c => {
-        cats[c.cat] = (cats[c.cat] || 0) + 1;
-    });
-    return Object.entries(cats).sort((a, b) => b[1] - a[1]);
+// Parse HQ to get country
+function parseCountry(hq) {
+    if (!hq) return 'Unknown';
+    const parts = hq.split(',').map(s => s.trim());
+    const last = parts[parts.length - 1];
+    // Map state abbreviations to USA
+    if (/^[A-Z]{2}$/.test(last) && ['CA', 'NY', 'TX', 'WA', 'MA', 'PA', 'IL', 'CO', 'VA', 'NJ', 'GA', 'FL', 'NC', 'OR', 'AZ', 'MD', 'UT', 'TN', 'MO', 'IN', 'OH', 'MI', 'MN', 'WI'].includes(last)) {
+        return 'USA';
+    }
+    return last;
 }
 
-function renderFilterDropdown() {
-    const cats = getCategories();
-    const total = Object.keys(data).length;
-    filterDropdown.innerHTML = `
-        <div class="filter-item ${!activeCategory ? 'active' : ''}" data-cat="">
-            <span>All Categories</span>
+// Region mappings
+const REGION_MAP = {
+    'USA': 'North America',
+    'Canada': 'North America',
+    'UK': 'Europe',
+    'France': 'Europe',
+    'Germany': 'Europe',
+    'Netherlands': 'Europe',
+    'Sweden': 'Europe',
+    'Norway': 'Europe',
+    'Ireland': 'Europe',
+    'Poland': 'Europe',
+    'Austria': 'Europe',
+    'Slovakia': 'Europe',
+    'Israel': 'Middle East',
+    'China': 'Asia',
+    'Japan': 'Asia',
+    'Australia': 'Oceania',
+    'Luxembourg': 'Europe'
+};
+
+function getRegion(country) {
+    return REGION_MAP[country] || 'Other';
+}
+
+// Parse valuation to number (in billions)
+function parseValuation(val) {
+    if (!val || val === 'N/A') return null;
+    // Handle "Parent Company" style values
+    if (!val.startsWith('$')) return null;
+    const num = parseFloat(val.replace(/[$,]/g, ''));
+    if (val.includes('T')) return num * 1000;
+    if (val.includes('B')) return num;
+    if (val.includes('M')) return num / 1000;
+    return num;
+}
+
+// Valuation ranges
+const VAL_RANGES = [
+    { label: 'Under $100M', min: 0, max: 0.1 },
+    { label: '$100M - $1B', min: 0.1, max: 1 },
+    { label: '$1B - $10B', min: 1, max: 10 },
+    { label: '$10B - $50B', min: 10, max: 50 },
+    { label: '$50B - $100B', min: 50, max: 100 },
+    { label: 'Over $100B', min: 100, max: Infinity }
+];
+
+function getValuationRange(val) {
+    const num = parseValuation(val);
+    if (num === null) return null;
+    for (const range of VAL_RANGES) {
+        if (num >= range.min && num < range.max) return range.label;
+    }
+    return null;
+}
+
+// Get unique values for each filter
+function getFilterOptions(type) {
+    const counts = {};
+    Object.values(data).forEach(c => {
+        let value;
+        if (type === 'category') value = c.cat;
+        else if (type === 'country') value = parseCountry(c.hq);
+        else if (type === 'region') value = getRegion(parseCountry(c.hq));
+        else if (type === 'valuation') value = getValuationRange(c.val);
+        if (value) counts[value] = (counts[value] || 0) + 1;
+    });
+    // Sort appropriately
+    if (type === 'valuation') {
+        return VAL_RANGES.map(r => [r.label, counts[r.label] || 0]).filter(([_, c]) => c > 0);
+    }
+    return Object.entries(counts).sort((a, b) => b[1] - a[1]);
+}
+
+// Check if company matches all active filters
+function matchesFilters(company) {
+    if (filters.category && company.cat !== filters.category) return false;
+    if (filters.country && parseCountry(company.hq) !== filters.country) return false;
+    if (filters.region && getRegion(parseCountry(company.hq)) !== filters.region) return false;
+    if (filters.valuation && getValuationRange(company.val) !== filters.valuation) return false;
+    return true;
+}
+
+// Get filtered company count
+function getFilteredCount() {
+    return Object.values(data).filter(matchesFilters).length;
+}
+
+// Filter elements
+const filterCatBtn = document.getElementById('filter-cat-btn');
+const filterCatDropdown = document.getElementById('filter-cat-dropdown');
+const filterCatLabel = document.getElementById('filter-cat-label');
+
+const filterCountryBtn = document.getElementById('filter-country-btn');
+const filterCountryDropdown = document.getElementById('filter-country-dropdown');
+const filterCountryLabel = document.getElementById('filter-country-label');
+
+const filterRegionBtn = document.getElementById('filter-region-btn');
+const filterRegionDropdown = document.getElementById('filter-region-dropdown');
+const filterRegionLabel = document.getElementById('filter-region-label');
+
+const filterValBtn = document.getElementById('filter-val-btn');
+const filterValDropdown = document.getElementById('filter-val-dropdown');
+const filterValLabel = document.getElementById('filter-val-label');
+
+const clearFiltersBtn = document.getElementById('clear-filters');
+
+function renderFilterDropdown(type, dropdown, currentValue) {
+    const options = getFilterOptions(type);
+    const total = type === 'category' ? Object.keys(data).length : options.reduce((s, [_, c]) => s + c, 0);
+    const allLabel = type === 'category' ? 'All Categories' : type === 'country' ? 'All Countries' : type === 'region' ? 'All Regions' : 'All Valuations';
+
+    dropdown.innerHTML = `
+        <div class="filter-item ${!currentValue ? 'active' : ''}" data-value="">
+            <span>${allLabel}</span>
             <span class="count">${total}</span>
         </div>
-        ${cats.map(([cat, count]) => `
-            <div class="filter-item ${activeCategory === cat ? 'active' : ''}" data-cat="${cat}">
-                <span>${cat}</span>
+        ${options.map(([val, count]) => `
+            <div class="filter-item ${currentValue === val ? 'active' : ''}" data-value="${val}">
+                <span>${val}</span>
                 <span class="count">${count}</span>
             </div>
         `).join('')}
     `;
 }
 
-filterBtn.onclick = () => {
-    renderFilterDropdown();
-    filterDropdown.classList.toggle('open');
+function updateFilterButtons() {
+    // Update button styles and labels
+    filterCatBtn.classList.toggle('active', !!filters.category);
+    filterCatLabel.textContent = filters.category || 'Category';
+
+    filterCountryBtn.classList.toggle('active', !!filters.country);
+    filterCountryLabel.textContent = filters.country || 'Country';
+
+    filterRegionBtn.classList.toggle('active', !!filters.region);
+    filterRegionLabel.textContent = filters.region || 'Region';
+
+    filterValBtn.classList.toggle('active', !!filters.valuation);
+    filterValLabel.textContent = filters.valuation || 'Valuation';
+
+    // Show/hide clear button
+    const hasFilters = filters.category || filters.country || filters.region || filters.valuation;
+    clearFiltersBtn.classList.toggle('visible', hasFilters);
+}
+
+function closeAllDropdowns() {
+    [filterCatDropdown, filterCountryDropdown, filterRegionDropdown, filterValDropdown].forEach(d => d.classList.remove('open'));
+}
+
+// Set up filter button handlers
+function setupFilter(btn, dropdown, type, label) {
+    btn.onclick = (e) => {
+        e.stopPropagation();
+        const wasOpen = dropdown.classList.contains('open');
+        closeAllDropdowns();
+        if (!wasOpen) {
+            renderFilterDropdown(type, dropdown, filters[type]);
+            dropdown.classList.add('open');
+        }
+    };
+
+    dropdown.addEventListener('click', e => {
+        const item = e.target.closest('.filter-item');
+        if (item) {
+            filters[type] = item.dataset.value || null;
+            updateFilterButtons();
+            dropdown.classList.remove('open');
+            render(center || 'OpenAI');
+        }
+    });
+}
+
+setupFilter(filterCatBtn, filterCatDropdown, 'category', filterCatLabel);
+setupFilter(filterCountryBtn, filterCountryDropdown, 'country', filterCountryLabel);
+setupFilter(filterRegionBtn, filterRegionDropdown, 'region', filterRegionLabel);
+setupFilter(filterValBtn, filterValDropdown, 'valuation', filterValLabel);
+
+clearFiltersBtn.onclick = () => {
+    filters.category = null;
+    filters.country = null;
+    filters.region = null;
+    filters.valuation = null;
+    updateFilterButtons();
+    render(center || 'OpenAI');
 };
 
-filterDropdown.addEventListener('click', e => {
-    const item = e.target.closest('.filter-item');
-    if (item) {
-        activeCategory = item.dataset.cat || null;
-        filterLabel.textContent = activeCategory || 'All Categories';
-        filterDropdown.classList.remove('open');
-        render(center || 'OpenAI');
-    }
+document.addEventListener('click', e => {
+    if (!e.target.closest('.filter-wrap')) closeAllDropdowns();
 });
 
-document.addEventListener('click', e => {
-    if (!e.target.closest('.filter-wrap')) filterDropdown.classList.remove('open');
+// Legacy compatibility - activeCategory now uses filters
+let activeCategory = null;
+Object.defineProperty(window, 'activeCategory', {
+    get() { return filters.category; },
+    set(v) { filters.category = v; }
 });
 
 // Search
@@ -1914,10 +2239,8 @@ searchInput.addEventListener('input', e => {
 
     let matches = Object.keys(data).filter(n => n.toLowerCase().includes(q));
 
-    // Filter by category if active
-    if (activeCategory) {
-        matches = matches.filter(n => data[n].cat === activeCategory);
-    }
+    // Apply all active filters
+    matches = matches.filter(n => matchesFilters(data[n]));
 
     matches = matches.sort((a, b) => {
         const as = a.toLowerCase().startsWith(q), bs = b.toLowerCase().startsWith(q);
@@ -2251,20 +2574,21 @@ function getTimeAgo(date) {
 const DEFAULT_X_ACCOUNTS = [
     { handle: 'sama', name: 'Sam Altman', role: 'CEO, OpenAI' },
     { handle: 'DarioAmodei', name: 'Dario Amodei', role: 'CEO, Anthropic' },
-    { handle: 'kaborat', name: 'Andrej Karpathy', role: 'AI Researcher' },
+    { handle: 'karpathy', name: 'Andrej Karpathy', role: 'AI Researcher' },
     { handle: 'ylecun', name: 'Yann LeCun', role: 'Chief AI Scientist, Meta' },
-    { handle: 'ilonamikhael', name: 'Ilya Sutskever', role: 'Co-founder, SSI' },
     { handle: 'demaborish', name: 'Demis Hassabis', role: 'CEO, DeepMind' },
-    { handle: 'elaboratio', name: 'Elon Musk', role: 'CEO, xAI' },
+    { handle: 'elonmusk', name: 'Elon Musk', role: 'CEO, xAI' },
     { handle: 'satikiram', name: 'Satya Nadella', role: 'CEO, Microsoft' },
     { handle: 'JensenHuang', name: 'Jensen Huang', role: 'CEO, NVIDIA' },
-    { handle: 'emirorat', name: 'Emad Mostaque', role: 'Founder, Stability AI' },
-    { handle: 'AravSri', name: 'Aravind Srinivas', role: 'CEO, Perplexity' },
-    { handle: 'RKaplanAI', name: 'Reginald Kaplan', role: 'AI Researcher' },
-    { handle: 'goodfellow_ian', name: 'Ian Goodfellow', role: 'AI Researcher' },
+    { handle: 'AravSrinivas', name: 'Aravind Srinivas', role: 'CEO, Perplexity' },
     { handle: 'fchollet', name: 'François Chollet', role: 'Creator of Keras' },
-    { handle: 'swyx', name: 'Shawn Wang', role: 'AI Thought Leader' }
+    { handle: 'swyx', name: 'Shawn Wang', role: 'AI Thought Leader' },
+    { handle: 'bindureddy', name: 'Bindu Reddy', role: 'CEO, Abacus.AI' },
+    { handle: 'emaborish', name: 'Emad Mostaque', role: 'Founder, Stability AI' }
 ];
+
+let currentXAccount = null;
+let showingManagePanel = false;
 
 function getXAccounts() {
     const stored = localStorage.getItem('xAccounts');
@@ -2282,25 +2606,77 @@ function saveXAccounts(accounts) {
     localStorage.setItem('xAccounts', JSON.stringify(accounts));
 }
 
-function renderXAccounts() {
+function getCurrentXAccount() {
+    const stored = localStorage.getItem('currentXAccount');
+    const accounts = getXAccounts();
+    if (stored && accounts.some(a => a.handle === stored)) {
+        return stored;
+    }
+    return accounts.length > 0 ? accounts[0].handle : null;
+}
+
+function setCurrentXAccount(handle) {
+    localStorage.setItem('currentXAccount', handle);
+    currentXAccount = handle;
+}
+
+// Populate account selector dropdown
+function renderXAccountSelector() {
+    const select = document.getElementById('x-account-select');
+    const accounts = getXAccounts();
+    currentXAccount = getCurrentXAccount();
+
+    select.innerHTML = accounts.map(acc =>
+        `<option value="${acc.handle}" ${acc.handle === currentXAccount ? 'selected' : ''}>@${acc.handle} - ${acc.name}</option>`
+    ).join('');
+}
+
+// Load Twitter timeline for selected account
+function loadXTimeline(handle) {
+    const container = document.getElementById('x-timeline-container');
+
+    // Clear previous timeline
+    container.innerHTML = `
+        <a class="twitter-timeline"
+           data-theme="dark"
+           data-chrome="noheader nofooter noborders transparent"
+           data-height="450"
+           data-tweet-limit="10"
+           href="https://twitter.com/${handle}">
+           Loading tweets from @${handle}...</a>
+    `;
+
+    // Reload Twitter widget
+    if (window.twttr && window.twttr.widgets) {
+        window.twttr.widgets.load(container);
+    }
+}
+
+// Render manage panel with account list
+function renderXAccountsList() {
     const container = document.getElementById('x-accounts-list');
     const accounts = getXAccounts();
 
-    container.innerHTML = accounts.map((acc, idx) => `
-        <div class="x-account" data-index="${idx}">
-            <div class="x-account-avatar">
-                <img src="https://unavatar.io/twitter/${acc.handle}" alt="${acc.name}" onerror="this.style.display='none'">
-            </div>
-            <div class="x-account-info">
-                <div class="x-account-name">${acc.name}</div>
-                <div class="x-account-handle">@${acc.handle}${acc.role ? ' · ' + acc.role : ''}</div>
-            </div>
-            <a href="https://x.com/${acc.handle}" target="_blank" rel="noopener" class="x-account-link">View</a>
-            <button class="x-account-remove" data-index="${idx}" title="Remove">
-                <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
-            </button>
+    container.innerHTML = `
+        <div class="x-manage-header">
+            <span>Accounts (${accounts.length})</span>
+            <button onclick="resetXAccounts()">Reset to Default</button>
         </div>
-    `).join('');
+        ${accounts.map((acc, idx) => `
+            <div class="x-account" data-index="${idx}">
+                <div class="x-account-avatar">
+                    <img src="https://unavatar.io/twitter/${acc.handle}" alt="${acc.name}" onerror="this.style.display='none'">
+                </div>
+                <div class="x-account-info">
+                    <div class="x-account-name">${acc.name}</div>
+                    <div class="x-account-handle">@${acc.handle}</div>
+                </div>
+                <button class="x-account-remove" data-index="${idx}" title="Remove">
+                    <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+                </button>
+            </div>
+        `).join('')}
+    `;
 
     // Add remove handlers
     container.querySelectorAll('.x-account-remove').forEach(btn => {
@@ -2310,9 +2686,21 @@ function renderXAccounts() {
             const accounts = getXAccounts();
             accounts.splice(idx, 1);
             saveXAccounts(accounts);
-            renderXAccounts();
+            renderXAccountsList();
+            renderXAccountSelector();
         };
     });
+}
+
+function resetXAccounts() {
+    if (confirm('Reset to default accounts?')) {
+        localStorage.removeItem('xAccounts');
+        localStorage.removeItem('currentXAccount');
+        renderXAccountSelector();
+        renderXAccountsList();
+        currentXAccount = getCurrentXAccount();
+        loadXTimeline(currentXAccount);
+    }
 }
 
 function addXAccount(handle) {
@@ -2327,10 +2715,33 @@ function addXAccount(handle) {
 
     accounts.unshift({ handle: handle, name: handle, role: '' });
     saveXAccounts(accounts);
-    renderXAccounts();
+    renderXAccountsList();
+    renderXAccountSelector();
 }
 
-// X account form handler
+function toggleManagePanel() {
+    const panel = document.getElementById('x-manage-panel');
+    const timeline = document.getElementById('x-timeline-container');
+    showingManagePanel = !showingManagePanel;
+
+    if (showingManagePanel) {
+        panel.style.display = 'block';
+        timeline.style.display = 'none';
+        renderXAccountsList();
+    } else {
+        panel.style.display = 'none';
+        timeline.style.display = 'block';
+    }
+}
+
+// Event handlers
+document.getElementById('x-account-select').onchange = (e) => {
+    setCurrentXAccount(e.target.value);
+    loadXTimeline(e.target.value);
+};
+
+document.getElementById('manage-x-accounts').onclick = toggleManagePanel;
+
 document.getElementById('add-x-btn').onclick = () => {
     const input = document.getElementById('add-x-handle');
     addXAccount(input.value);
@@ -2345,9 +2756,27 @@ document.getElementById('add-x-handle').onkeydown = (e) => {
     }
 };
 
+// Load Twitter widget script
+function loadTwitterScript() {
+    if (!document.getElementById('twitter-wjs')) {
+        const script = document.createElement('script');
+        script.id = 'twitter-wjs';
+        script.src = 'https://platform.twitter.com/widgets.js';
+        script.async = true;
+        script.charset = 'utf-8';
+        document.body.appendChild(script);
+    }
+}
+
 // Init feeds
 loadNewsFeed();
-renderXAccounts();
+loadTwitterScript();
+renderXAccountSelector();
+currentXAccount = getCurrentXAccount();
+if (currentXAccount) {
+    // Delay to let Twitter script load
+    setTimeout(() => loadXTimeline(currentXAccount), 500);
+}
 
 // Refresh news every 30 minutes
 setInterval(loadNewsFeed, 30 * 60 * 1000);
