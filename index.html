@@ -98,6 +98,73 @@
 
         .search-box input::placeholder { color: rgba(148, 163, 184, 0.6); }
 
+        /* Category Filter */
+        .filter-wrap {
+            top: 24px;
+            left: 24px;
+        }
+
+        .filter-btn {
+            padding: 10px 16px;
+            font-size: 12px;
+            font-family: inherit;
+            font-weight: 500;
+            background: rgba(15, 23, 42, 0.8);
+            border: 1px solid rgba(59, 130, 246, 0.3);
+            border-radius: 8px;
+            color: rgba(148, 163, 184, 0.8);
+            cursor: pointer;
+            transition: all 0.2s;
+            backdrop-filter: blur(10px);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .filter-btn:hover {
+            border-color: #3b82f6;
+            color: #fff;
+        }
+
+        .filter-btn svg {
+            width: 14px;
+            height: 14px;
+        }
+
+        .filter-dropdown {
+            position: absolute;
+            top: calc(100% + 8px);
+            left: 0;
+            min-width: 200px;
+            max-height: 400px;
+            overflow-y: auto;
+            background: rgba(15, 23, 42, 0.95);
+            border: 1px solid rgba(59, 130, 246, 0.3);
+            border-radius: 12px;
+            display: none;
+            backdrop-filter: blur(20px);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+            z-index: 150;
+        }
+
+        .filter-dropdown.open { display: block; }
+
+        .filter-item {
+            padding: 10px 14px;
+            font-size: 13px;
+            cursor: pointer;
+            transition: all 0.2s;
+            border-bottom: 1px solid rgba(59, 130, 246, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .filter-item:last-child { border-bottom: none; }
+        .filter-item:hover { background: rgba(59, 130, 246, 0.15); }
+        .filter-item.active { background: rgba(59, 130, 246, 0.2); color: #4facfe; }
+        .filter-item .count { font-size: 11px; color: rgba(148, 163, 184, 0.5); }
+
         .search-box svg {
             position: absolute;
             left: 16px;
@@ -135,7 +202,8 @@
         }
 
         .dropdown-item:last-child { border-bottom: none; }
-        .dropdown-item:hover { background: rgba(59, 130, 246, 0.15); }
+        .dropdown-item:hover, .dropdown-item.active { background: rgba(59, 130, 246, 0.15); }
+        .dropdown-item.active { background: rgba(59, 130, 246, 0.25); }
 
         .dropdown-item .logo {
             width: 32px;
@@ -468,6 +536,14 @@
             <h1>AI Map</h1>
         </div>
 
+        <div class="filter-wrap ui">
+            <button class="filter-btn" id="filter-btn">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.293A1 1 0 013 6.586V4z"/></svg>
+                <span id="filter-label">All Categories</span>
+            </button>
+            <div class="filter-dropdown" id="filter-dropdown"></div>
+        </div>
+
         <div class="search-wrap ui">
             <div class="search-box">
                 <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
@@ -654,7 +730,7 @@ const defaultData = {
 "Anthropic": { desc: "AI safety company, creator of Claude. Enterprise AI leader.", cat: "Foundation Models", hq: "San Francisco, CA", val: "$61B", domain: "anthropic.com", rel: ["OpenAI", "Google DeepMind", "Cohere", "xAI", "Amazon"] },
 "Google DeepMind": { desc: "Created Gemini, AlphaFold, AlphaGo. AI research pioneer.", cat: "Foundation Models", hq: "London, UK", val: "Alphabet", domain: "deepmind.google", rel: ["OpenAI", "Anthropic", "Meta AI", "Microsoft"] },
 "Meta AI": { desc: "Created open-source LLaMA models.", cat: "Foundation Models", hq: "Menlo Park, CA", val: "Meta", domain: "ai.meta.com", rel: ["Mistral AI", "Hugging Face", "Together AI", "OpenAI"] },
-"xAI": { desc: "Elon Musk's AI company. Creator of Grok.", cat: "Foundation Models", hq: "Palo Alto, CA", val: "$50B", domain: "x.ai", rel: ["OpenAI", "Anthropic", "Google DeepMind"] },
+"xAI": { desc: "Elon Musk's AI company. Creator of Grok.", cat: "Foundation Models", hq: "Palo Alto, CA", val: "$230B", domain: "x.ai", rel: ["OpenAI", "Anthropic", "Google DeepMind"] },
 "Mistral AI": { desc: "French AI startup. Leading open-weight models.", cat: "Foundation Models", hq: "Paris, France", val: "$6.2B", domain: "mistral.ai", rel: ["Meta AI", "Hugging Face", "Together AI", "Cohere"] },
 "Cohere": { desc: "Enterprise LLM company. Embeddings specialist.", cat: "Foundation Models", hq: "Toronto, Canada", val: "$5.5B", domain: "cohere.com", rel: ["OpenAI", "Anthropic", "AI21 Labs", "Writer"] },
 "AI21 Labs": { desc: "Creator of Jurassic models.", cat: "Foundation Models", hq: "Tel Aviv, Israel", val: "$1.4B", domain: "ai21.com", rel: ["Cohere", "OpenAI", "Writer"] },
@@ -683,7 +759,7 @@ const defaultData = {
 "Pika": { desc: "Text-to-video AI.", cat: "Video Generation", hq: "Palo Alto, CA", val: "$470M", domain: "pika.art", rel: ["Runway", "Luma AI"] },
 "Luma AI": { desc: "Dream Machine.", cat: "Video Generation", hq: "Palo Alto, CA", val: "$500M", domain: "lumalabs.ai", rel: ["Runway", "Pika"] },
 "HeyGen": { desc: "AI avatar videos.", cat: "Video Generation", hq: "Los Angeles, CA", val: "$500M", domain: "heygen.com", rel: ["Synthesia", "D-ID"] },
-"Synthesia": { desc: "Enterprise AI video.", cat: "Video Generation", hq: "London, UK", val: "$2.1B", domain: "synthesia.io", rel: ["HeyGen", "D-ID"] },
+"Synthesia": { desc: "Enterprise AI video.", cat: "Video Generation", hq: "London, UK", val: "$4B", domain: "synthesia.io", rel: ["HeyGen", "D-ID"] },
 "D-ID": { desc: "Talking avatars.", cat: "Video Generation", hq: "Tel Aviv, Israel", val: "$400M", domain: "d-id.com", rel: ["HeyGen", "Synthesia"] },
 "Higgsfield": { desc: "AI video avatars.", cat: "Video Generation", hq: "Palo Alto, CA", val: "$100M", domain: "higgsfield.ai", rel: ["HeyGen", "Synthesia"] },
 
@@ -691,7 +767,7 @@ const defaultData = {
 "Suno": { desc: "AI music from text.", cat: "Music AI", hq: "Cambridge, MA", val: "$500M", domain: "suno.com", rel: ["Udio", "ElevenLabs"] },
 "Udio": { desc: "AI music generation.", cat: "Music AI", hq: "New York, NY", val: "$200M", domain: "udio.com", rel: ["Suno", "ElevenLabs"] },
 "Descript": { desc: "AI audio/video editing.", cat: "Audio AI", hq: "San Francisco, CA", val: "$553M", domain: "descript.com", rel: ["ElevenLabs", "Runway"] },
-"Deepgram": { desc: "Speech recognition.", cat: "Audio AI", hq: "San Francisco, CA", val: "$300M", domain: "deepgram.com", rel: ["AssemblyAI", "ElevenLabs"] },
+"Deepgram": { desc: "Speech recognition.", cat: "Audio AI", hq: "San Francisco, CA", val: "$1.3B", domain: "deepgram.com", rel: ["AssemblyAI", "ElevenLabs"] },
 "AssemblyAI": { desc: "Speech-to-text API.", cat: "Audio AI", hq: "San Francisco, CA", val: "$300M", domain: "assemblyai.com", rel: ["Deepgram", "Otter.ai"] },
 "Otter.ai": { desc: "Meeting transcription.", cat: "Audio AI", hq: "Mountain View, CA", val: "$400M", domain: "otter.ai", rel: ["Fireflies.ai", "AssemblyAI", "Granola"] },
 "Resemble AI": { desc: "Voice cloning.", cat: "Audio AI", hq: "San Francisco, CA", val: "$100M", domain: "resemble.ai", rel: ["ElevenLabs", "Descript"] },
@@ -724,7 +800,7 @@ const defaultData = {
 "Fireworks AI": { desc: "Fast AI inference.", cat: "Neo Cloud", hq: "Menlo Park, CA", val: "$552M", domain: "fireworks.ai", rel: ["Together AI", "Groq"] },
 "Modal": { desc: "Serverless GPU.", cat: "Neo Cloud", hq: "San Francisco, CA", val: "$150M", domain: "modal.com", rel: ["Together AI", "Replicate", "Baseten"] },
 "Replicate": { desc: "Run AI models via API.", cat: "Neo Cloud", hq: "San Francisco, CA", val: "$350M", domain: "replicate.com", rel: ["Hugging Face", "Together AI"] },
-"Baseten": { desc: "ML model deployment.", cat: "Neo Cloud", hq: "San Francisco, CA", val: "$200M", domain: "baseten.co", rel: ["Replicate", "Modal"] },
+"Baseten": { desc: "ML model deployment.", cat: "Neo Cloud", hq: "San Francisco, CA", val: "$5B", domain: "baseten.co", rel: ["Replicate", "Modal"] },
 "Fal": { desc: "Fast AI inference.", cat: "Neo Cloud", hq: "San Francisco, CA", val: "$100M", domain: "fal.ai", rel: ["Replicate", "Modal"] },
 
 "NVIDIA": { desc: "GPU leader. Powers AI.", cat: "Hardware", hq: "Santa Clara, CA", val: "$3.4T", domain: "nvidia.com", rel: ["AMD", "Cerebras", "Groq"] },
@@ -802,7 +878,7 @@ const defaultData = {
 "Physical Intelligence": { desc: "Robot foundation models.", cat: "Robotics", hq: "San Francisco, CA", val: "$2.4B", domain: "physicalintelligence.company", rel: ["Figure", "Covariant", "Skild AI"] },
 "1X Technologies": { desc: "OpenAI-backed robots.", cat: "Robotics", hq: "Moss, Norway", val: "$500M", domain: "1x.tech", rel: ["Figure", "Agility Robotics"] },
 "Boston Dynamics": { desc: "Spot & Atlas robots.", cat: "Robotics", hq: "Waltham, MA", val: "Hyundai", domain: "bostondynamics.com", rel: ["Figure", "Agility Robotics"] },
-"Skild AI": { desc: "Robot foundation models.", cat: "Robotics", hq: "Pittsburgh, PA", val: "$300M", domain: "skild.ai", rel: ["Physical Intelligence", "Figure"] },
+"Skild AI": { desc: "Robot foundation models.", cat: "Robotics", hq: "Pittsburgh, PA", val: "$14B", domain: "skild.ai", rel: ["Physical Intelligence", "Figure"] },
 
 "Waymo": { desc: "Robotaxi leader.", cat: "Autonomous Vehicles", hq: "Mountain View, CA", val: "$45B", domain: "waymo.com", rel: ["Zoox", "Aurora", "Cruise"] },
 "Zoox": { desc: "Amazon's robotaxi.", cat: "Autonomous Vehicles", hq: "Foster City, CA", val: "Amazon", domain: "zoox.com", rel: ["Waymo", "Aurora"] },
@@ -1039,11 +1115,17 @@ const defaultData = {
 "Ash Health": { desc: "AI men's health.", cat: "Healthcare AI", hq: "San Francisco, CA", val: "$50M", domain: "ash.health", rel: ["Function Health", "Curai"] },
 "Inception Labs": { desc: "Diffusion AI research.", cat: "Foundation Models", hq: "San Francisco, CA", val: "$100M", domain: "inceptionlabs.ai", rel: ["Stability AI", "Midjourney"] },
 "Peregrine": { desc: "AI defense tech.", cat: "Enterprise AI", hq: "Los Angeles, CA", val: "$100M", domain: "peregrine.ai", rel: ["Palantir", "Anduril"] },
-"Accordance Legal": { desc: "AI legal research.", cat: "Legal Tech", hq: "San Francisco, CA", val: "$25M", domain: "accordancelegal.com", rel: ["Harvey", "Casetext"] }
+"Accordance Legal": { desc: "AI legal research.", cat: "Legal Tech", hq: "San Francisco, CA", val: "$25M", domain: "accordancelegal.com", rel: ["Harvey", "Casetext"] },
+
+// January 2026 additions
+"Ricursive Intelligence": { desc: "AI-driven semiconductor design. Created by AlphaChip founders.", cat: "Hardware", hq: "San Francisco, CA", val: "$4B", domain: "ricursive.ai", rel: ["NVIDIA", "Cerebras", "Groq"] },
+"OpenEvidence": { desc: "ChatGPT for doctors. AI clinical decisions.", cat: "Healthcare AI", hq: "Miami, FL", val: "$12B", domain: "openevidence.com", rel: ["Abridge", "Ambience", "Tempus"] },
+"LMArena": { desc: "Platform for evaluating AI models.", cat: "MLOps", hq: "San Francisco, CA", val: "$1.7B", domain: "lmarena.ai", rel: ["Weights & Biases", "Braintrust", "Hugging Face"] },
+"Ivo": { desc: "AI contract review platform.", cat: "Legal Tech", hq: "San Francisco, CA", val: "$355M", domain: "ivo.ai", rel: ["Harvey", "Ironclad", "Casetext"] }
 };
 
 // Version check - reset localStorage if default data has more companies (data was updated)
-const DATA_VERSION = 2; // Increment this when adding companies
+const DATA_VERSION = 3; // Increment this when adding companies
 const storedVersion = localStorage.getItem('aimap_version');
 let data;
 if (storedVersion !== String(DATA_VERSION)) {
@@ -1078,7 +1160,7 @@ function showPanel(name) {
 }
 
 // Get all related companies with similarity scores
-function getRelatedCompanies(centerName, maxCount = 25) {
+function getRelatedCompanies(centerName, maxCount = 25, filterCat = null) {
     const scores = {};
     const c = data[centerName];
     if (!c) return [];
@@ -1086,6 +1168,8 @@ function getRelatedCompanies(centerName, maxCount = 25) {
     // Calculate similarity for all companies
     Object.keys(data).forEach(name => {
         if (name !== centerName) {
+            // Filter by category if specified
+            if (filterCat && data[name].cat !== filterCat) return;
             scores[name] = similarity(centerName, name);
         }
     });
@@ -1170,7 +1254,7 @@ function render(centerName) {
     const maxY = window.innerHeight * 0.38;
 
     // Get related companies - fewer for clarity
-    const related = getRelatedCompanies(centerName, 22);
+    const related = getRelatedCompanies(centerName, 22, activeCategory);
 
     // Track placed label positions for collision detection
     const placed = [];
@@ -1345,23 +1429,83 @@ initParticles();
 animateParticles();
 window.addEventListener('resize', () => { initParticles(); render(center || 'OpenAI'); });
 
+// Category Filter
+let activeCategory = null;
+const filterBtn = document.getElementById('filter-btn');
+const filterDropdown = document.getElementById('filter-dropdown');
+const filterLabel = document.getElementById('filter-label');
+
+function getCategories() {
+    const cats = {};
+    Object.values(data).forEach(c => {
+        cats[c.cat] = (cats[c.cat] || 0) + 1;
+    });
+    return Object.entries(cats).sort((a, b) => b[1] - a[1]);
+}
+
+function renderFilterDropdown() {
+    const cats = getCategories();
+    const total = Object.keys(data).length;
+    filterDropdown.innerHTML = `
+        <div class="filter-item ${!activeCategory ? 'active' : ''}" data-cat="">
+            <span>All Categories</span>
+            <span class="count">${total}</span>
+        </div>
+        ${cats.map(([cat, count]) => `
+            <div class="filter-item ${activeCategory === cat ? 'active' : ''}" data-cat="${cat}">
+                <span>${cat}</span>
+                <span class="count">${count}</span>
+            </div>
+        `).join('')}
+    `;
+}
+
+filterBtn.onclick = () => {
+    renderFilterDropdown();
+    filterDropdown.classList.toggle('open');
+};
+
+filterDropdown.addEventListener('click', e => {
+    const item = e.target.closest('.filter-item');
+    if (item) {
+        activeCategory = item.dataset.cat || null;
+        filterLabel.textContent = activeCategory || 'All Categories';
+        filterDropdown.classList.remove('open');
+        render(center || 'OpenAI');
+    }
+});
+
+document.addEventListener('click', e => {
+    if (!e.target.closest('.filter-wrap')) filterDropdown.classList.remove('open');
+});
+
 // Search
 const searchInput = document.getElementById('search');
 const dropdown = document.getElementById('dropdown');
+let selectedIndex = -1;
 
 searchInput.addEventListener('input', e => {
     const q = e.target.value.toLowerCase().trim();
+    selectedIndex = -1;
     if (q.length < 1) { dropdown.classList.remove('open'); return; }
-    const matches = Object.keys(data).filter(n => n.toLowerCase().includes(q)).sort((a, b) => {
+
+    let matches = Object.keys(data).filter(n => n.toLowerCase().includes(q));
+
+    // Filter by category if active
+    if (activeCategory) {
+        matches = matches.filter(n => data[n].cat === activeCategory);
+    }
+
+    matches = matches.sort((a, b) => {
         const as = a.toLowerCase().startsWith(q), bs = b.toLowerCase().startsWith(q);
         return as && !bs ? -1 : !as && bs ? 1 : a.localeCompare(b);
     }).slice(0, 8);
 
     if (matches.length) {
-        dropdown.innerHTML = matches.map(n => {
+        dropdown.innerHTML = matches.map((n, i) => {
             const c = data[n];
             const url = logoUrl(c.domain);
-            return `<div class="dropdown-item" data-name="${n}">
+            return `<div class="dropdown-item" data-name="${n}" data-index="${i}">
                 <div class="logo">${url ? `<img src="${url}" onerror="this.parentElement.innerHTML='<span>${n.slice(0,2)}</span>'">` : `<span>${n.slice(0,2)}</span>`}</div>
                 <div class="info"><div class="name">${n}</div><div class="cat">${c.cat}</div></div>
                 ${c.val ? `<div class="val">${c.val}</div>` : ''}
@@ -1372,18 +1516,53 @@ searchInput.addEventListener('input', e => {
 });
 
 searchInput.addEventListener('keydown', e => {
-    if (e.key === 'Enter') {
-        const first = dropdown.querySelector('.dropdown-item');
-        if (first) { render(first.dataset.name); dropdown.classList.remove('open'); searchInput.value = ''; searchInput.blur(); }
+    const items = dropdown.querySelectorAll('.dropdown-item');
+    if (!items.length) return;
+
+    if (e.key === 'ArrowDown') {
+        e.preventDefault();
+        selectedIndex = Math.min(selectedIndex + 1, items.length - 1);
+        updateSelection(items);
+    } else if (e.key === 'ArrowUp') {
+        e.preventDefault();
+        selectedIndex = Math.max(selectedIndex - 1, 0);
+        updateSelection(items);
+    } else if (e.key === 'Enter') {
+        e.preventDefault();
+        const selected = selectedIndex >= 0 ? items[selectedIndex] : items[0];
+        if (selected) {
+            render(selected.dataset.name);
+            dropdown.classList.remove('open');
+            searchInput.value = '';
+            searchInput.blur();
+        }
+    } else if (e.key === 'Escape') {
+        dropdown.classList.remove('open');
+        selectedIndex = -1;
     }
 });
+
+function updateSelection(items) {
+    items.forEach((item, i) => {
+        item.classList.toggle('active', i === selectedIndex);
+    });
+    // Scroll into view if needed
+    if (selectedIndex >= 0 && items[selectedIndex]) {
+        items[selectedIndex].scrollIntoView({ block: 'nearest' });
+    }
+}
 
 dropdown.addEventListener('click', e => {
     const item = e.target.closest('.dropdown-item');
     if (item) { render(item.dataset.name); dropdown.classList.remove('open'); searchInput.value = ''; }
 });
 
-document.addEventListener('click', e => { if (!e.target.closest('.search-wrap')) dropdown.classList.remove('open'); });
+document.addEventListener('click', e => {
+    if (!e.target.closest('.search-wrap')) {
+        dropdown.classList.remove('open');
+        selectedIndex = -1;
+    }
+});
 
 // Admin modal
 const modal = document.getElementById('modal');
