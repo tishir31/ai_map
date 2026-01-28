@@ -765,11 +765,128 @@
         #x-timeline-container {
             min-height: 300px;
             border-radius: 8px;
-            overflow: hidden;
+            overflow-y: auto;
+            max-height: calc(100vh - 280px);
+        }
+
+        .x-tweet-item {
+            padding: 12px;
+            border-bottom: 1px solid rgba(71, 85, 105, 0.3);
+            transition: background 0.2s;
+        }
+
+        .x-tweet-item:hover {
+            background: rgba(71, 85, 105, 0.2);
+        }
+
+        .x-tweet-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 8px;
+        }
+
+        .x-tweet-avatar {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+
+        .x-tweet-author {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .x-tweet-name {
+            color: #fff;
+            font-weight: 600;
+            font-size: 13px;
+        }
+
+        .x-tweet-handle-time {
+            color: rgba(148, 163, 184, 0.6);
+            font-size: 11px;
+        }
+
+        .x-tweet-text {
+            color: rgba(226, 232, 240, 0.9);
+            font-size: 13px;
+            line-height: 1.5;
+            margin-bottom: 8px;
+            word-wrap: break-word;
+        }
+
+        .x-tweet-text a {
+            color: #3b82f6;
+            text-decoration: none;
+        }
+
+        .x-tweet-text a:hover {
+            text-decoration: underline;
+        }
+
+        .x-tweet-media img {
+            width: 100%;
+            max-height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 8px;
+        }
+
+        .x-tweet-metrics {
+            display: flex;
+            gap: 16px;
+            align-items: center;
+        }
+
+        .x-tweet-metric {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            color: rgba(148, 163, 184, 0.5);
+            font-size: 11px;
+        }
+
+        .x-tweet-metric svg {
+            width: 14px;
+            height: 14px;
+        }
+
+        .x-tweet-link {
+            margin-left: auto;
+            color: rgba(148, 163, 184, 0.5);
+            text-decoration: none;
+            font-size: 11px;
+            padding: 2px 8px;
+            border-radius: 4px;
+            transition: all 0.2s;
+        }
+
+        .x-tweet-link:hover {
+            color: #3b82f6;
+            background: rgba(59, 130, 246, 0.1);
+        }
+
+        .x-feed-status {
+            padding: 8px 12px;
+            font-size: 10px;
+            color: rgba(148, 163, 184, 0.4);
+            text-align: center;
+            border-top: 1px solid rgba(71, 85, 105, 0.2);
+        }
+
+        .x-loading {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 40px;
+            color: rgba(148, 163, 184, 0.5);
+            font-size: 13px;
         }
 
         .x-featured-account {
-            margin-bottom: 16px;
+            margin-bottom: 12px;
         }
 
         .x-featured-link {
@@ -4437,6 +4554,7 @@ const DEFAULT_X_ACCOUNTS = [
 
 let currentXAccount = null;
 let showingManagePanel = false;
+let cachedTweets = null;
 
 function getXAccounts() {
     const stored = localStorage.getItem('xAccounts');
@@ -4474,43 +4592,152 @@ function renderXAccountSelector() {
     const accounts = getXAccounts();
     currentXAccount = getCurrentXAccount();
 
-    select.innerHTML = accounts.map(acc =>
-        `<option value="${acc.handle}" ${acc.handle === currentXAccount ? 'selected' : ''}>@${acc.handle} - ${acc.name}</option>`
-    ).join('');
+    select.innerHTML = '<option value="all">All Accounts</option>' +
+        accounts.map(acc =>
+            `<option value="${acc.handle}" ${acc.handle === currentXAccount ? 'selected' : ''}>@${acc.handle} - ${acc.name}</option>`
+        ).join('');
 }
 
-// Show AI accounts to follow on X
+function formatTimeAgo(timestamp) {
+    if (!timestamp) return '';
+    const now = new Date();
+    const then = new Date(timestamp);
+    const diff = Math.floor((now - then) / 1000);
+    if (diff < 60) return 'just now';
+    if (diff < 3600) return Math.floor(diff / 60) + 'm';
+    if (diff < 86400) return Math.floor(diff / 3600) + 'h';
+    if (diff < 604800) return Math.floor(diff / 86400) + 'd';
+    if (diff < 2592000) return Math.floor(diff / 604800) + 'w';
+    return then.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
+}
+
+function formatNumber(n) {
+    if (!n) return '0';
+    if (n >= 1000000) return (n / 1000000).toFixed(1) + 'M';
+    if (n >= 1000) return (n / 1000).toFixed(1) + 'K';
+    return n.toString();
+}
+
+function renderTweetHTML(tweet) {
+    const avatarSrc = tweet.avatar || `https://unavatar.io/twitter/${tweet.handle}`;
+    const timeAgo = formatTimeAgo(tweet.timestamp);
+
+    // Make URLs in text clickable
+    let text = tweet.text.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+    text = text.replace(/(https?:\/\/[^\s]+)/g, '<a href="$1" target="_blank" rel="noopener">$1</a>');
+    text = text.replace(/@(\w+)/g, '<a href="https://x.com/$1" target="_blank" rel="noopener">@$1</a>');
+
+    const mediaHTML = (tweet.media && tweet.media.length > 0) ?
+        `<div class="x-tweet-media">${tweet.media.map(m =>
+            `<img src="${m.url}" alt="" loading="lazy" onerror="this.style.display='none'">`
+        ).join('')}</div>` : '';
+
+    return `
+        <div class="x-tweet-item">
+            <div class="x-tweet-header">
+                <img class="x-tweet-avatar" src="${avatarSrc}" alt="" onerror="this.style.opacity='0.3'">
+                <div class="x-tweet-author">
+                    <span class="x-tweet-name">${tweet.name}</span>
+                    <span class="x-tweet-handle-time">@${tweet.handle} · ${timeAgo}</span>
+                </div>
+            </div>
+            <div class="x-tweet-text">${text}</div>
+            ${mediaHTML}
+            <div class="x-tweet-metrics">
+                <span class="x-tweet-metric">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+                    ${formatNumber(tweet.replies)}
+                </span>
+                <span class="x-tweet-metric">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 1l4 4-4 4"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/><path d="M7 23l-4-4 4-4"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/></svg>
+                    ${formatNumber(tweet.retweets)}
+                </span>
+                <span class="x-tweet-metric">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+                    ${formatNumber(tweet.likes)}
+                </span>
+                <a class="x-tweet-link" href="${tweet.url}" target="_blank" rel="noopener">View on X</a>
+            </div>
+        </div>
+    `;
+}
+
+// Load tweets from tweets.json and display them
+async function loadTweetsData() {
+    const container = document.getElementById('x-timeline-container');
+    container.innerHTML = '<div class="x-loading">Loading tweets...</div>';
+
+    try {
+        const resp = await fetch('tweets.json?t=' + Date.now());
+        if (!resp.ok) throw new Error('Failed to load');
+        const data = await resp.json();
+        cachedTweets = data;
+        loadXTimeline(currentXAccount || 'all');
+    } catch (e) {
+        // Fallback to account cards if no tweets.json
+        cachedTweets = { tweets: [], updated: '' };
+        loadXTimeline(currentXAccount || 'all');
+    }
+}
+
+// Show tweets for selected account (or all)
 function loadXTimeline(handle) {
     const container = document.getElementById('x-timeline-container');
     const accounts = getXAccounts();
 
-    // Find current account info
-    const currentAcc = accounts.find(a => a.handle === handle) || { name: handle, handle: handle };
-
-    container.innerHTML = `
-        <div class="x-featured-account">
-            <a href="https://x.com/${handle}" target="_blank" rel="noopener" class="x-featured-link">
-                <img src="https://unavatar.io/twitter/${handle}" alt="@${handle}" onerror="this.style.opacity='0.5'">
-                <div class="x-featured-info">
-                    <span class="x-featured-name">${currentAcc.name}</span>
-                    <span class="x-featured-handle">@${handle}</span>
-                </div>
-                <span class="x-featured-btn">View on X</span>
-            </a>
-        </div>
-        <div class="x-accounts-section">
-            <div class="x-section-title">AI Voices to Follow</div>
-            <div class="x-accounts-grid">
-                ${accounts.filter(a => a.handle !== handle).slice(0, 8).map(acc => `
-                    <a href="https://x.com/${acc.handle}" target="_blank" rel="noopener" class="x-account-card" title="${acc.name}">
-                        <img src="https://unavatar.io/twitter/${acc.handle}" alt="${acc.name}" onerror="this.style.opacity='0.3'">
-                        <span class="x-card-name">${acc.name.split(' ')[0]}</span>
-                        <span class="x-card-handle">@${acc.handle}</span>
-                    </a>
-                `).join('')}
+    if (!cachedTweets || cachedTweets.tweets.length === 0) {
+        // Fallback: show account cards if no tweets available
+        const currentAcc = accounts.find(a => a.handle === handle) || accounts[0] || { name: 'AI', handle: 'OpenAI' };
+        container.innerHTML = `
+            <div class="x-featured-account">
+                <a href="https://x.com/${currentAcc.handle}" target="_blank" rel="noopener" class="x-featured-link">
+                    <img src="https://unavatar.io/twitter/${currentAcc.handle}" alt="@${currentAcc.handle}" onerror="this.style.opacity='0.5'">
+                    <div class="x-featured-info">
+                        <span class="x-featured-name">${currentAcc.name}</span>
+                        <span class="x-featured-handle">@${currentAcc.handle}</span>
+                    </div>
+                    <span class="x-featured-btn">View on X</span>
+                </a>
             </div>
-        </div>
-    `;
+            <div class="x-accounts-section">
+                <div class="x-section-title">AI Voices to Follow</div>
+                <div class="x-accounts-grid">
+                    ${accounts.filter(a => a.handle !== currentAcc.handle).slice(0, 8).map(acc => `
+                        <a href="https://x.com/${acc.handle}" target="_blank" rel="noopener" class="x-account-card" title="${acc.name}">
+                            <img src="https://unavatar.io/twitter/${acc.handle}" alt="${acc.name}" onerror="this.style.opacity='0.3'">
+                            <span class="x-card-name">${acc.name.split(' ')[0]}</span>
+                            <span class="x-card-handle">@${acc.handle}</span>
+                        </a>
+                    `).join('')}
+                </div>
+            </div>
+        `;
+        return;
+    }
+
+    // Filter tweets
+    let tweets = cachedTweets.tweets;
+    if (handle && handle !== 'all') {
+        tweets = tweets.filter(t => t.handle.toLowerCase() === handle.toLowerCase());
+    }
+
+    // Build the tweet feed
+    const tweetsHTML = tweets.slice(0, 20).map(t => renderTweetHTML(t)).join('');
+
+    const updatedTime = cachedTweets.updated ?
+        new Date(cachedTweets.updated).toLocaleString('en-US', { month: 'short', day: 'numeric', hour: 'numeric', minute: '2-digit' }) : '';
+
+    container.innerHTML = tweetsHTML +
+        (updatedTime ? `<div class="x-feed-status">Last updated: ${updatedTime} · ${cachedTweets.tweets.length} tweets cached</div>` : '');
+
+    if (tweets.length === 0) {
+        container.innerHTML = `
+            <div class="x-loading" style="flex-direction:column;gap:8px;">
+                <span>No tweets cached for @${handle}</span>
+                <a href="https://x.com/${handle}" target="_blank" rel="noopener" style="color:#3b82f6;font-size:12px;">View on X</a>
+            </div>
+        `;
+    }
 }
 
 // Render manage panel with account list
@@ -4621,9 +4848,7 @@ document.getElementById('add-x-handle').onkeydown = (e) => {
 loadNewsFeed();
 renderXAccountSelector();
 currentXAccount = getCurrentXAccount();
-if (currentXAccount) {
-    loadXTimeline(currentXAccount);
-}
+loadTweetsData();
 
 // Refresh news every 30 minutes
 setInterval(loadNewsFeed, 30 * 60 * 1000);
