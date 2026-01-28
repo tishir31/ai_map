@@ -351,6 +351,51 @@
             height: 14px;
         }
 
+        .panel-actions {
+            display: flex;
+            gap: 8px;
+            margin-top: 12px;
+        }
+
+        .panel-actions .website-link {
+            margin-top: 0;
+        }
+
+        .favorite-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 8px 14px;
+            font-size: 12px;
+            font-weight: 500;
+            font-family: inherit;
+            color: #fbbf24;
+            background: rgba(251, 191, 36, 0.1);
+            border: 1px solid rgba(251, 191, 36, 0.3);
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .favorite-btn:hover {
+            background: rgba(251, 191, 36, 0.2);
+            border-color: #fbbf24;
+        }
+
+        .favorite-btn.active {
+            background: rgba(251, 191, 36, 0.25);
+            border-color: #fbbf24;
+        }
+
+        .favorite-btn.active svg {
+            fill: #fbbf24;
+        }
+
+        .favorite-btn svg {
+            width: 14px;
+            height: 14px;
+        }
+
         /* Feed Sidebars */
         .feed-sidebar {
             position: fixed;
@@ -723,8 +768,117 @@
             overflow: hidden;
         }
 
-        #x-timeline-container .twitter-timeline {
-            border-radius: 8px !important;
+        .x-featured-account {
+            margin-bottom: 16px;
+        }
+
+        .x-featured-link {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 14px;
+            background: rgba(59, 130, 246, 0.1);
+            border: 1px solid rgba(59, 130, 246, 0.3);
+            border-radius: 12px;
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+
+        .x-featured-link:hover {
+            background: rgba(59, 130, 246, 0.2);
+            border-color: #3b82f6;
+        }
+
+        .x-featured-link img {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            border: 2px solid rgba(59, 130, 246, 0.4);
+        }
+
+        .x-featured-info {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .x-featured-name {
+            color: #fff;
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        .x-featured-handle {
+            color: rgba(148, 163, 184, 0.7);
+            font-size: 12px;
+        }
+
+        .x-featured-btn {
+            padding: 6px 12px;
+            background: #3b82f6;
+            border-radius: 16px;
+            color: #fff;
+            font-size: 11px;
+            font-weight: 500;
+        }
+
+        .x-accounts-section {
+            padding-top: 12px;
+        }
+
+        .x-section-title {
+            font-size: 11px;
+            font-weight: 600;
+            color: rgba(148, 163, 184, 0.6);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 10px;
+        }
+
+        .x-accounts-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 8px;
+        }
+
+        .x-account-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 10px 4px;
+            background: rgba(71, 85, 105, 0.3);
+            border-radius: 8px;
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+
+        .x-account-card:hover {
+            background: rgba(71, 85, 105, 0.5);
+            transform: translateY(-2px);
+        }
+
+        .x-account-card img {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            margin-bottom: 4px;
+        }
+
+        .x-card-name {
+            color: #fff;
+            font-size: 10px;
+            font-weight: 500;
+            text-align: center;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            max-width: 100%;
+        }
+
+        .x-card-handle {
+            color: rgba(148, 163, 184, 0.5);
+            font-size: 9px;
+            display: none;
         }
 
         #x-manage-panel {
@@ -788,6 +942,7 @@
             position: absolute;
             inset: 0;
             overflow: hidden;
+            transform-origin: center center;
         }
 
         /* Company labels - music-map style */
@@ -825,6 +980,571 @@
             height: 1px;
             transform-origin: left center;
             background: linear-gradient(90deg, rgba(59, 130, 246, 0.4), rgba(59, 130, 246, 0));
+        }
+
+        /* Category colors */
+        .company[data-cat="Foundation Models"] .name { color: #f472b6 !important; }
+        .company[data-cat="Image Generation"] .name { color: #fb923c !important; }
+        .company[data-cat="Video Generation"] .name { color: #facc15 !important; }
+        .company[data-cat="Audio AI"] .name, .company[data-cat="Music AI"] .name { color: #a78bfa !important; }
+        .company[data-cat="Code & Dev Tools"] .name { color: #34d399 !important; }
+        .company[data-cat="AI Agents"] .name { color: #60a5fa !important; }
+        .company[data-cat="Healthcare AI"] .name, .company[data-cat="Drug Discovery"] .name { color: #f87171 !important; }
+        .company[data-cat="Finance AI"] .name { color: #4ade80 !important; }
+        .company[data-cat="Enterprise AI"] .name { color: #38bdf8 !important; }
+        .company[data-cat="Security AI"] .name { color: #fb7185 !important; }
+        .company[data-cat="Robotics"] .name, .company[data-cat="Autonomous Vehicles"] .name { color: #c084fc !important; }
+        .company[data-cat="Neo Cloud"] .name, .company[data-cat="Hardware"] .name { color: #2dd4bf !important; }
+        .company[data-cat="Data & Vector DB"] .name, .company[data-cat="MLOps"] .name { color: #818cf8 !important; }
+        .company[data-cat="Marketing AI"] .name { color: #fbbf24 !important; }
+        .company[data-cat="Legal Tech"] .name { color: #94a3b8 !important; }
+        .company[data-cat="Education"] .name { color: #22d3ee !important; }
+        .company[data-cat="HR Tech"] .name { color: #e879f9 !important; }
+        .company.center .name { color: #fff !important; }
+
+        /* Favorite star */
+        .company .star {
+            position: absolute;
+            top: -8px;
+            right: -12px;
+            font-size: 12px;
+            opacity: 0;
+            transition: opacity 0.2s;
+            cursor: pointer;
+        }
+        .company:hover .star { opacity: 0.5; }
+        .company .star.active { opacity: 1; color: #fbbf24; }
+        .company .star:hover { opacity: 1; transform: scale(1.2); }
+
+        /* Toolbar */
+        .toolbar {
+            position: fixed;
+            bottom: 24px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 8px;
+            z-index: 100;
+            padding: 8px 12px;
+            background: rgba(51, 65, 85, 0.8);
+            border: 1px solid rgba(100, 116, 139, 0.4);
+            border-radius: 12px;
+            backdrop-filter: blur(10px);
+        }
+
+        .toolbar-btn {
+            padding: 8px 14px;
+            font-size: 12px;
+            font-family: inherit;
+            font-weight: 500;
+            background: rgba(71, 85, 105, 0.5);
+            border: 1px solid rgba(100, 116, 139, 0.3);
+            border-radius: 8px;
+            color: rgba(203, 213, 225, 0.9);
+            cursor: pointer;
+            transition: all 0.2s;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .toolbar-btn:hover {
+            background: rgba(59, 130, 246, 0.3);
+            border-color: #3b82f6;
+            color: #fff;
+        }
+
+        .toolbar-btn.active {
+            background: rgba(59, 130, 246, 0.4);
+            border-color: #3b82f6;
+            color: #60a5fa;
+        }
+
+        .toolbar-btn svg { width: 14px; height: 14px; }
+
+        /* Keyboard shortcuts modal */
+        .shortcuts-modal {
+            position: fixed;
+            inset: 0;
+            background: rgba(3, 7, 18, 0.9);
+            backdrop-filter: blur(8px);
+            z-index: 300;
+            display: none;
+            align-items: center;
+            justify-content: center;
+        }
+        .shortcuts-modal.open { display: flex; }
+
+        .shortcuts-content {
+            background: rgba(51, 65, 85, 0.95);
+            border: 1px solid rgba(100, 116, 139, 0.5);
+            border-radius: 16px;
+            padding: 24px;
+            max-width: 400px;
+            width: 90%;
+        }
+
+        .shortcuts-content h2 {
+            font-size: 16px;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .shortcut-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px 0;
+            border-bottom: 1px solid rgba(100, 116, 139, 0.2);
+        }
+
+        .shortcut-key {
+            background: rgba(71, 85, 105, 0.5);
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-family: monospace;
+            font-size: 12px;
+        }
+
+        /* Analytics modal */
+        .analytics-modal {
+            position: fixed;
+            inset: 0;
+            background: rgba(3, 7, 18, 0.9);
+            backdrop-filter: blur(8px);
+            z-index: 300;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            overflow-y: auto;
+            padding: 40px 20px;
+        }
+        .analytics-modal.open { display: flex; }
+
+        .analytics-content {
+            background: rgba(51, 65, 85, 0.95);
+            border: 1px solid rgba(100, 116, 139, 0.5);
+            border-radius: 16px;
+            padding: 24px;
+            max-width: 800px;
+            width: 95%;
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+
+        .analytics-content h2 {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+
+        .stat-card {
+            background: rgba(71, 85, 105, 0.4);
+            border-radius: 12px;
+            padding: 16px;
+            text-align: center;
+        }
+
+        .stat-card .value {
+            font-size: 28px;
+            font-weight: 700;
+            color: #60a5fa;
+        }
+
+        .stat-card .label {
+            font-size: 12px;
+            color: rgba(148, 163, 184, 0.8);
+            margin-top: 4px;
+        }
+
+        .top-list {
+            margin-bottom: 20px;
+        }
+
+        .top-list h3 {
+            font-size: 14px;
+            margin-bottom: 12px;
+            color: #94a3b8;
+        }
+
+        .top-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px 12px;
+            background: rgba(71, 85, 105, 0.3);
+            border-radius: 6px;
+            margin-bottom: 6px;
+            font-size: 13px;
+        }
+
+        .top-item .rank {
+            color: #60a5fa;
+            font-weight: 600;
+            margin-right: 8px;
+        }
+
+        .category-bars {
+            margin-top: 16px;
+        }
+
+        .category-bar {
+            display: flex;
+            align-items: center;
+            margin-bottom: 8px;
+            font-size: 12px;
+        }
+
+        .category-bar .cat-name {
+            width: 140px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .category-bar .bar-wrap {
+            flex: 1;
+            height: 20px;
+            background: rgba(71, 85, 105, 0.3);
+            border-radius: 4px;
+            overflow: hidden;
+            margin: 0 10px;
+        }
+
+        .category-bar .bar {
+            height: 100%;
+            background: linear-gradient(90deg, #3b82f6, #60a5fa);
+            border-radius: 4px;
+        }
+
+        .category-bar .count {
+            width: 40px;
+            text-align: right;
+            color: #94a3b8;
+        }
+
+        /* Compare modal */
+        .compare-modal {
+            position: fixed;
+            inset: 0;
+            background: rgba(3, 7, 18, 0.9);
+            backdrop-filter: blur(8px);
+            z-index: 300;
+            display: none;
+            align-items: center;
+            justify-content: center;
+        }
+        .compare-modal.open { display: flex; }
+
+        .compare-content {
+            background: rgba(51, 65, 85, 0.95);
+            border: 1px solid rgba(100, 116, 139, 0.5);
+            border-radius: 16px;
+            padding: 24px;
+            max-width: 700px;
+            width: 95%;
+        }
+
+        .compare-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+            margin-top: 16px;
+        }
+
+        .compare-card {
+            background: rgba(71, 85, 105, 0.4);
+            border-radius: 12px;
+            padding: 16px;
+            position: relative;
+        }
+
+        .compare-card .remove-btn {
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            background: none;
+            border: none;
+            color: #94a3b8;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .compare-card h4 {
+            font-size: 14px;
+            margin-bottom: 12px;
+            color: #fff;
+        }
+
+        .compare-card .metric {
+            display: flex;
+            justify-content: space-between;
+            padding: 6px 0;
+            font-size: 12px;
+            border-bottom: 1px solid rgba(100, 116, 139, 0.2);
+        }
+
+        .compare-card .metric:last-child { border-bottom: none; }
+        .compare-card .metric .label { color: #94a3b8; }
+        .compare-card .metric .value { color: #fff; font-weight: 500; }
+
+        .compare-header, .analytics-header, .shortcuts-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 16px;
+        }
+
+        .compare-header h3, .analytics-header h3, .shortcuts-header h3 {
+            font-size: 16px;
+            font-weight: 600;
+        }
+
+        .compare-close, .analytics-close, .shortcuts-close {
+            background: none;
+            border: none;
+            color: #94a3b8;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        .compare-close:hover, .analytics-close:hover, .shortcuts-close:hover { color: #fff; }
+
+        .compare-hint {
+            color: rgba(148, 163, 184, 0.7);
+            font-size: 13px;
+            margin-bottom: 16px;
+        }
+
+        .compare-selected {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            margin-bottom: 16px;
+        }
+
+        .compare-chip {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(59, 130, 246, 0.2);
+            border: 1px solid rgba(59, 130, 246, 0.4);
+            border-radius: 20px;
+            padding: 6px 12px;
+            font-size: 12px;
+            color: #60a5fa;
+        }
+
+        .compare-chip button {
+            background: none;
+            border: none;
+            color: #60a5fa;
+            cursor: pointer;
+            font-size: 14px;
+            padding: 0;
+        }
+
+        .compare-table {
+            margin: 16px 0;
+        }
+
+        .compare-table table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .compare-table th, .compare-table td {
+            padding: 10px 12px;
+            text-align: left;
+            border-bottom: 1px solid rgba(100, 116, 139, 0.3);
+            font-size: 12px;
+        }
+
+        .compare-table th {
+            background: rgba(59, 130, 246, 0.1);
+            color: #60a5fa;
+            font-weight: 600;
+        }
+
+        .compare-table td:first-child {
+            color: #94a3b8;
+            font-weight: 500;
+        }
+
+        .compare-actions {
+            display: flex;
+            justify-content: flex-end;
+            margin-top: 16px;
+        }
+
+        .analytics-section {
+            margin-top: 24px;
+        }
+
+        .analytics-section h4 {
+            font-size: 14px;
+            color: #94a3b8;
+            margin-bottom: 12px;
+        }
+
+        .stat-value {
+            font-size: 28px;
+            font-weight: 700;
+            color: #60a5fa;
+        }
+
+        .stat-label {
+            font-size: 11px;
+            color: rgba(148, 163, 184, 0.8);
+            margin-top: 4px;
+            text-transform: uppercase;
+        }
+
+        .cat-bar-item, .region-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 8px;
+            font-size: 12px;
+        }
+
+        .cat-bar-label, .region-label {
+            width: 120px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            color: #cbd5e1;
+        }
+
+        .cat-bar-track, .region-bar-track {
+            flex: 1;
+            height: 18px;
+            background: rgba(71, 85, 105, 0.4);
+            border-radius: 4px;
+            overflow: hidden;
+            margin: 0 10px;
+        }
+
+        .cat-bar-fill, .region-bar-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #3b82f6, #60a5fa);
+            border-radius: 4px;
+            transition: width 0.3s ease;
+        }
+
+        .cat-bar-count, .region-count {
+            width: 35px;
+            text-align: right;
+            color: #94a3b8;
+        }
+
+        .top-item {
+            display: flex;
+            align-items: center;
+            padding: 8px 12px;
+            background: rgba(71, 85, 105, 0.3);
+            border-radius: 6px;
+            margin-bottom: 6px;
+            font-size: 13px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .top-item:hover {
+            background: rgba(59, 130, 246, 0.2);
+        }
+
+        .top-rank {
+            color: #60a5fa;
+            font-weight: 700;
+            width: 24px;
+        }
+
+        .top-name {
+            flex: 1;
+            color: #fff;
+        }
+
+        .top-val {
+            color: #34d399;
+            font-weight: 500;
+        }
+
+        .favorite-star {
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            color: #fbbf24;
+            font-size: 12px;
+            cursor: pointer;
+            text-shadow: 0 0 8px rgba(251, 191, 36, 0.5);
+        }
+
+        /* Zoom controls */
+        .zoom-controls {
+            position: fixed;
+            bottom: 80px;
+            right: 24px;
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            z-index: 100;
+        }
+
+        .zoom-btn {
+            width: 36px;
+            height: 36px;
+            background: rgba(51, 65, 85, 0.8);
+            border: 1px solid rgba(100, 116, 139, 0.4);
+            border-radius: 8px;
+            color: #fff;
+            font-size: 18px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s;
+        }
+
+        .zoom-btn:hover {
+            background: rgba(59, 130, 246, 0.3);
+            border-color: #3b82f6;
+        }
+
+        /* Mobile responsive */
+        @media (max-width: 768px) {
+            .feed-sidebar { display: none !important; }
+            .feed-show-btn { display: none !important; }
+            .toolbar {
+                bottom: 12px;
+                padding: 6px 8px;
+                gap: 4px;
+            }
+            .toolbar-btn {
+                padding: 6px 10px;
+                font-size: 11px;
+            }
+            .toolbar-btn span { display: none; }
+            .panel {
+                left: 12px;
+                right: 12px;
+                width: auto;
+                bottom: 70px;
+            }
+            .filter-bar {
+                top: auto;
+                bottom: 70px;
+                left: 12px;
+                right: 12px;
+                justify-content: center;
+            }
+            .search-wrap { width: 90%; }
+            .header h1 { font-size: 16px; }
         }
 
         /* Manage button */
@@ -1079,10 +1799,16 @@
                 <span class="tag" id="panel-cat"></span>
                 <span class="tag" id="panel-hq"></span>
             </div>
-            <a href="#" target="_blank" rel="noopener" class="website-link" id="panel-website">
-                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
-                Visit Website
-            </a>
+            <div class="panel-actions">
+                <a href="#" target="_blank" rel="noopener" class="website-link" id="panel-website">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+                    Visit Website
+                </a>
+                <button class="favorite-btn" id="panel-favorite">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"/></svg>
+                    <span id="favorite-text">Add to Favorites</span>
+                </button>
+            </div>
         </div>
 
         <div class="stats ui">
@@ -1146,6 +1872,111 @@
         </button>
 
         <button class="admin-btn ui" id="admin-btn">Manage</button>
+
+        <!-- Bottom Toolbar -->
+        <div class="toolbar ui">
+            <button class="toolbar-btn" id="surprise-btn" title="Random company">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                <span>Surprise me</span>
+            </button>
+            <button class="toolbar-btn" id="favorites-btn" title="Show favorites">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"/></svg>
+                <span>Favorites</span>
+            </button>
+            <button class="toolbar-btn" id="compare-btn" title="Compare companies">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
+                <span>Compare</span>
+            </button>
+            <button class="toolbar-btn" id="analytics-btn" title="View analytics">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
+                <span>Analytics</span>
+            </button>
+            <button class="toolbar-btn" id="export-csv-btn" title="Export to CSV">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+                <span>Export</span>
+            </button>
+            <button class="toolbar-btn" id="shortcuts-btn" title="Keyboard shortcuts (?)">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                <span>Shortcuts</span>
+            </button>
+        </div>
+
+        <!-- Zoom Controls -->
+        <div class="zoom-controls ui">
+            <button class="zoom-btn" id="zoom-in" title="Zoom in (+)">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7"/></svg>
+            </button>
+            <span class="zoom-level" id="zoom-level">100%</span>
+            <button class="zoom-btn" id="zoom-out" title="Zoom out (-)">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM13 10H7"/></svg>
+            </button>
+            <button class="zoom-btn" id="zoom-reset" title="Reset zoom">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>
+            </button>
+        </div>
+    </div>
+
+    <!-- Keyboard Shortcuts Modal -->
+    <div class="shortcuts-modal" id="shortcuts-modal">
+        <div class="shortcuts-content">
+            <div class="shortcuts-header">
+                <h3>Keyboard Shortcuts</h3>
+                <button class="shortcuts-close" id="shortcuts-close">&times;</button>
+            </div>
+            <div class="shortcuts-list">
+                <div class="shortcut-item"><kbd>/</kbd><span>Focus search</span></div>
+                <div class="shortcut-item"><kbd>?</kbd><span>Show shortcuts</span></div>
+                <div class="shortcut-item"><kbd>Esc</kbd><span>Close panels/modals</span></div>
+                <div class="shortcut-item"><kbd>R</kbd><span>Random company</span></div>
+                <div class="shortcut-item"><kbd>F</kbd><span>Toggle favorites filter</span></div>
+                <div class="shortcut-item"><kbd>A</kbd><span>Open analytics</span></div>
+                <div class="shortcut-item"><kbd>C</kbd><span>Compare mode</span></div>
+                <div class="shortcut-item"><kbd>+</kbd><span>Zoom in</span></div>
+                <div class="shortcut-item"><kbd>-</kbd><span>Zoom out</span></div>
+                <div class="shortcut-item"><kbd>0</kbd><span>Reset zoom</span></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Analytics Modal -->
+    <div class="analytics-modal" id="analytics-modal">
+        <div class="analytics-content">
+            <div class="analytics-header">
+                <h3>AI Map Analytics</h3>
+                <button class="analytics-close" id="analytics-close">&times;</button>
+            </div>
+            <div class="stats-grid" id="stats-grid">
+                <!-- Stats will be populated by JS -->
+            </div>
+            <div class="analytics-section">
+                <h4>Top Categories</h4>
+                <div class="category-bars" id="category-bars"></div>
+            </div>
+            <div class="analytics-section">
+                <h4>Top 10 by Valuation</h4>
+                <div class="top-list" id="top-valuations"></div>
+            </div>
+            <div class="analytics-section">
+                <h4>Companies by Region</h4>
+                <div class="region-chart" id="region-chart"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Compare Modal -->
+    <div class="compare-modal" id="compare-modal">
+        <div class="compare-content">
+            <div class="compare-header">
+                <h3>Compare Companies</h3>
+                <button class="compare-close" id="compare-close">&times;</button>
+            </div>
+            <p class="compare-hint">Select 2-3 companies to compare. Click on companies in the map or search.</p>
+            <div class="compare-selected" id="compare-selected"></div>
+            <div class="compare-table" id="compare-table"></div>
+            <div class="compare-actions">
+                <button class="btn btn-ghost" id="compare-clear">Clear Selection</button>
+            </div>
+        </div>
     </div>
 
     <div class="modal-bg" id="modal">
@@ -2399,10 +3230,235 @@ const map = document.getElementById('map');
 const panel = document.getElementById('panel');
 let center = null;
 
+// New feature variables
+let favorites = new Set(JSON.parse(localStorage.getItem('aimap_favorites') || '[]'));
+let compareMode = false;
+let compareSelected = new Set();
+let currentZoom = 1;
+let showingFavoritesOnly = false;
+
+// Save favorites to localStorage
+function saveFavorites() {
+    localStorage.setItem('aimap_favorites', JSON.stringify([...favorites]));
+}
+
+// Toggle favorite status
+function toggleFavorite(name) {
+    if (favorites.has(name)) {
+        favorites.delete(name);
+    } else {
+        favorites.add(name);
+    }
+    saveFavorites();
+    if (center) render(center); // Re-render to update stars
+}
+
+// Random company selection
+function surpriseMe() {
+    const companies = Object.keys(data);
+    const randomName = companies[Math.floor(Math.random() * companies.length)];
+    render(randomName);
+}
+
+// Export to CSV
+function exportToCSV() {
+    const headers = ['Name', 'Category', 'Description', 'HQ', 'Valuation', 'Website', 'Related'];
+    const rows = Object.entries(data).map(([name, info]) => [
+        name,
+        info.cat || '',
+        (info.desc || '').replace(/"/g, '""'),
+        info.hq || '',
+        info.val || '',
+        info.domain || '',
+        (info.rel || []).join('; ')
+    ]);
+
+    const csv = [headers.join(','), ...rows.map(r => r.map(c => `"${c}"`).join(','))].join('\n');
+    const blob = new Blob([csv], { type: 'text/csv' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'ai-map-companies.csv';
+    a.click();
+    URL.revokeObjectURL(url);
+}
+
+// Toggle compare mode
+function toggleCompareMode() {
+    compareMode = !compareMode;
+    document.getElementById('compare-btn').classList.toggle('active', compareMode);
+    document.getElementById('compare-modal').classList.toggle('open', compareMode);
+    if (!compareMode) {
+        compareSelected.clear();
+        updateCompareDisplay();
+    }
+}
+
+// Toggle company selection for compare
+function toggleCompareSelection(name) {
+    if (compareSelected.has(name)) {
+        compareSelected.delete(name);
+    } else if (compareSelected.size < 3) {
+        compareSelected.add(name);
+    }
+    updateCompareDisplay();
+}
+
+// Update compare modal display
+function updateCompareDisplay() {
+    const selectedDiv = document.getElementById('compare-selected');
+    const tableDiv = document.getElementById('compare-table');
+
+    selectedDiv.innerHTML = [...compareSelected].map(name => `
+        <div class="compare-chip">
+            ${name}
+            <button onclick="toggleCompareSelection('${name}')">&times;</button>
+        </div>
+    `).join('');
+
+    if (compareSelected.size >= 2) {
+        const companies = [...compareSelected];
+        tableDiv.innerHTML = `
+            <table>
+                <tr><th></th>${companies.map(n => `<th>${n}</th>`).join('')}</tr>
+                <tr><td>Category</td>${companies.map(n => `<td>${data[n]?.cat || 'N/A'}</td>`).join('')}</tr>
+                <tr><td>HQ</td>${companies.map(n => `<td>${data[n]?.hq || 'N/A'}</td>`).join('')}</tr>
+                <tr><td>Valuation</td>${companies.map(n => `<td>${data[n]?.val || 'N/A'}</td>`).join('')}</tr>
+                <tr><td>Description</td>${companies.map(n => `<td>${data[n]?.desc || 'N/A'}</td>`).join('')}</tr>
+            </table>
+        `;
+    } else {
+        tableDiv.innerHTML = '<p class="compare-hint">Select at least 2 companies</p>';
+    }
+}
+
+// Parse valuation string to number
+function parseValuation(val) {
+    if (!val || val === 'N/A') return 0;
+    const match = val.match(/\$?([\d.]+)\s*(T|B|M|K)?/i);
+    if (!match) return 0;
+    const num = parseFloat(match[1]);
+    const unit = (match[2] || '').toUpperCase();
+    const multipliers = { 'T': 1e12, 'B': 1e9, 'M': 1e6, 'K': 1e3 };
+    return num * (multipliers[unit] || 1);
+}
+
+// Show analytics
+function showAnalytics() {
+    const modal = document.getElementById('analytics-modal');
+    modal.classList.add('open');
+
+    const companies = Object.entries(data);
+    const totalCompanies = companies.length;
+
+    // Category counts
+    const catCounts = {};
+    companies.forEach(([_, info]) => {
+        catCounts[info.cat] = (catCounts[info.cat] || 0) + 1;
+    });
+
+    // Region counts
+    const regionCounts = { 'US': 0, 'Europe': 0, 'Asia': 0, 'Other': 0 };
+    const usStates = ['CA', 'NY', 'MA', 'TX', 'WA', 'CO', 'PA', 'IL', 'VA', 'GA', 'NC', 'FL', 'AZ', 'UT'];
+    const euCountries = ['UK', 'Germany', 'France', 'Netherlands', 'Sweden', 'Switzerland', 'Ireland', 'Spain', 'Italy', 'Finland', 'Norway', 'Denmark', 'Austria', 'Belgium', 'Poland', 'Estonia'];
+    const asiaCountries = ['China', 'Japan', 'Korea', 'India', 'Singapore', 'Israel', 'Taiwan', 'Hong Kong', 'Indonesia', 'Vietnam', 'Thailand'];
+
+    companies.forEach(([_, info]) => {
+        const hq = info.hq || '';
+        if (usStates.some(s => hq.includes(s)) || hq.includes('US')) regionCounts['US']++;
+        else if (euCountries.some(c => hq.includes(c))) regionCounts['Europe']++;
+        else if (asiaCountries.some(c => hq.includes(c))) regionCounts['Asia']++;
+        else regionCounts['Other']++;
+    });
+
+    // Top valuations
+    const valuations = companies
+        .map(([name, info]) => ({ name, val: parseValuation(info.val), display: info.val }))
+        .filter(c => c.val > 0)
+        .sort((a, b) => b.val - a.val)
+        .slice(0, 10);
+
+    // Total market cap
+    const totalValuation = valuations.reduce((sum, c) => sum + c.val, 0);
+
+    // Stats grid
+    document.getElementById('stats-grid').innerHTML = `
+        <div class="stat-card"><div class="stat-value">${totalCompanies}</div><div class="stat-label">Total Companies</div></div>
+        <div class="stat-card"><div class="stat-value">${Object.keys(catCounts).length}</div><div class="stat-label">Categories</div></div>
+        <div class="stat-card"><div class="stat-value">${favorites.size}</div><div class="stat-label">Favorites</div></div>
+        <div class="stat-card"><div class="stat-value">$${(totalValuation / 1e12).toFixed(1)}T</div><div class="stat-label">Total Valuation</div></div>
+    `;
+
+    // Category bars
+    const sortedCats = Object.entries(catCounts).sort((a, b) => b[1] - a[1]);
+    const maxCat = sortedCats[0]?.[1] || 1;
+    document.getElementById('category-bars').innerHTML = sortedCats.map(([cat, count]) => `
+        <div class="cat-bar-item">
+            <div class="cat-bar-label">${cat}</div>
+            <div class="cat-bar-track">
+                <div class="cat-bar-fill" style="width: ${(count / maxCat) * 100}%"></div>
+            </div>
+            <div class="cat-bar-count">${count}</div>
+        </div>
+    `).join('');
+
+    // Top valuations
+    document.getElementById('top-valuations').innerHTML = valuations.map((c, i) => `
+        <div class="top-item" onclick="render('${c.name}')">
+            <span class="top-rank">${i + 1}</span>
+            <span class="top-name">${c.name}</span>
+            <span class="top-val">${c.display}</span>
+        </div>
+    `).join('');
+
+    // Region chart
+    const maxRegion = Math.max(...Object.values(regionCounts));
+    document.getElementById('region-chart').innerHTML = Object.entries(regionCounts).map(([region, count]) => `
+        <div class="region-item">
+            <div class="region-label">${region}</div>
+            <div class="region-bar-track">
+                <div class="region-bar-fill" style="width: ${(count / maxRegion) * 100}%"></div>
+            </div>
+            <div class="region-count">${count}</div>
+        </div>
+    `).join('');
+}
+
+// Zoom functions
+function zoomIn() {
+    currentZoom = Math.min(currentZoom + 0.2, 2);
+    applyZoom();
+}
+
+function zoomOut() {
+    currentZoom = Math.max(currentZoom - 0.2, 0.4);
+    applyZoom();
+}
+
+function resetZoom() {
+    currentZoom = 1;
+    applyZoom();
+}
+
+function applyZoom() {
+    map.style.transform = `scale(${currentZoom})`;
+    document.getElementById('zoom-level').textContent = Math.round(currentZoom * 100) + '%';
+}
+
+// Toggle favorites filter
+function toggleFavoritesFilter() {
+    showingFavoritesOnly = !showingFavoritesOnly;
+    document.getElementById('favorites-btn').classList.toggle('active', showingFavoritesOnly);
+    if (center) render(center);
+}
+
 function logoUrl(d) { return d ? `logos/${d.replace(/[^a-zA-Z0-9.-]/g, '_')}.png` : ''; }
+
+let currentPanelCompany = null;
 
 function showPanel(name) {
     const c = data[name]; if (!c) return;
+    currentPanelCompany = name;
     document.getElementById('panel-name').textContent = name;
     document.getElementById('panel-desc').textContent = c.desc;
     document.getElementById('panel-cat').textContent = c.cat;
@@ -2421,6 +3477,12 @@ function showPanel(name) {
     } else {
         websiteLink.style.display = 'none';
     }
+    // Update favorite button
+    const favBtn = document.getElementById('panel-favorite');
+    const favText = document.getElementById('favorite-text');
+    const isFav = favorites.has(name);
+    favBtn.classList.toggle('active', isFav);
+    favText.textContent = isFav ? 'Remove from Favorites' : 'Add to Favorites';
     panel.classList.add('open');
 }
 
@@ -2435,6 +3497,8 @@ function getRelatedCompanies(centerName, maxCount = 25, filterCat = null) {
         if (name !== centerName) {
             // Apply all active filters
             if (typeof matchesFilters === 'function' && !matchesFilters(data[name])) return;
+            // Filter by favorites if enabled
+            if (showingFavoritesOnly && !favorites.has(name)) return;
             scores[name] = similarity(centerName, name);
         }
     });
@@ -2596,6 +3660,20 @@ function createLabel(name, x, y, isCenter, fontSize = 14, opacity = 1, sim = 1) 
     el.style.left = x + 'px';
     el.style.top = y + 'px';
 
+    // Add category data attribute for color coding
+    if (data[name]) {
+        el.setAttribute('data-cat', data[name].cat);
+    }
+
+    // Add favorite star if in watchlist
+    if (favorites.has(name)) {
+        const star = document.createElement('span');
+        star.className = 'favorite-star';
+        star.innerHTML = '&#9733;';
+        star.onclick = (e) => { e.stopPropagation(); toggleFavorite(name); };
+        el.appendChild(star);
+    }
+
     const span = document.createElement('span');
     span.className = 'name';
     span.textContent = name;
@@ -2610,7 +3688,13 @@ function createLabel(name, x, y, isCenter, fontSize = 14, opacity = 1, sim = 1) 
     }
 
     el.appendChild(span);
-    el.onclick = () => render(name);
+    el.onclick = () => {
+        if (compareMode) {
+            toggleCompareSelection(name);
+        } else {
+            render(name);
+        }
+    };
     el.onmouseenter = () => showPanel(name);
     map.appendChild(el);
     return el;
@@ -3093,14 +4177,94 @@ document.getElementById('reset-btn').onclick = () => {
     if (confirm('Reset to default data?')) { data = JSON.parse(JSON.stringify(defaultData)); save(); render('OpenAI'); }
 };
 
-// "/" keyboard shortcut to focus search
+// Keyboard shortcuts
 document.addEventListener('keydown', (e) => {
     // Check if user is not in an input/textarea
-    if (e.key === '/' && !['INPUT', 'TEXTAREA', 'SELECT'].includes(document.activeElement.tagName)) {
-        e.preventDefault();
-        document.getElementById('search').focus();
+    const isTyping = ['INPUT', 'TEXTAREA', 'SELECT'].includes(document.activeElement.tagName);
+
+    if (e.key === 'Escape') {
+        // Close any open modals
+        document.getElementById('shortcuts-modal').classList.remove('open');
+        document.getElementById('analytics-modal').classList.remove('open');
+        if (compareMode) toggleCompareMode();
+        panel.classList.remove('open');
+        return;
+    }
+
+    if (isTyping) return;
+
+    switch(e.key) {
+        case '/':
+            e.preventDefault();
+            document.getElementById('search').focus();
+            break;
+        case '?':
+            e.preventDefault();
+            document.getElementById('shortcuts-modal').classList.toggle('open');
+            break;
+        case 'r':
+        case 'R':
+            e.preventDefault();
+            surpriseMe();
+            break;
+        case 'f':
+        case 'F':
+            e.preventDefault();
+            toggleFavoritesFilter();
+            break;
+        case 'a':
+        case 'A':
+            e.preventDefault();
+            showAnalytics();
+            break;
+        case 'c':
+        case 'C':
+            e.preventDefault();
+            toggleCompareMode();
+            break;
+        case '+':
+        case '=':
+            e.preventDefault();
+            zoomIn();
+            break;
+        case '-':
+        case '_':
+            e.preventDefault();
+            zoomOut();
+            break;
+        case '0':
+            e.preventDefault();
+            resetZoom();
+            break;
     }
 });
+
+// Toolbar button event listeners
+document.getElementById('surprise-btn').onclick = surpriseMe;
+document.getElementById('favorites-btn').onclick = toggleFavoritesFilter;
+document.getElementById('compare-btn').onclick = toggleCompareMode;
+document.getElementById('analytics-btn').onclick = showAnalytics;
+document.getElementById('export-csv-btn').onclick = exportToCSV;
+document.getElementById('shortcuts-btn').onclick = () => document.getElementById('shortcuts-modal').classList.toggle('open');
+
+// Zoom controls
+document.getElementById('zoom-in').onclick = zoomIn;
+document.getElementById('zoom-out').onclick = zoomOut;
+document.getElementById('zoom-reset').onclick = resetZoom;
+
+// Modal close buttons
+document.getElementById('shortcuts-close').onclick = () => document.getElementById('shortcuts-modal').classList.remove('open');
+document.getElementById('analytics-close').onclick = () => document.getElementById('analytics-modal').classList.remove('open');
+document.getElementById('compare-close').onclick = toggleCompareMode;
+document.getElementById('compare-clear').onclick = () => { compareSelected.clear(); updateCompareDisplay(); };
+
+// Panel favorite button
+document.getElementById('panel-favorite').onclick = () => {
+    if (currentPanelCompany) {
+        toggleFavorite(currentPanelCompany);
+        showPanel(currentPanelCompany); // Update button state
+    }
+};
 
 // Feed sidebar toggle functionality
 const newsFeed = document.getElementById('news-feed');
@@ -3315,25 +4479,38 @@ function renderXAccountSelector() {
     ).join('');
 }
 
-// Load Twitter timeline for selected account
+// Show AI accounts to follow on X
 function loadXTimeline(handle) {
     const container = document.getElementById('x-timeline-container');
+    const accounts = getXAccounts();
 
-    // Clear previous timeline
+    // Find current account info
+    const currentAcc = accounts.find(a => a.handle === handle) || { name: handle, handle: handle };
+
     container.innerHTML = `
-        <a class="twitter-timeline"
-           data-theme="dark"
-           data-chrome="noheader nofooter noborders transparent"
-           data-height="450"
-           data-tweet-limit="10"
-           href="https://twitter.com/${handle}">
-           Loading tweets from @${handle}...</a>
+        <div class="x-featured-account">
+            <a href="https://x.com/${handle}" target="_blank" rel="noopener" class="x-featured-link">
+                <img src="https://unavatar.io/twitter/${handle}" alt="@${handle}" onerror="this.style.opacity='0.5'">
+                <div class="x-featured-info">
+                    <span class="x-featured-name">${currentAcc.name}</span>
+                    <span class="x-featured-handle">@${handle}</span>
+                </div>
+                <span class="x-featured-btn">View on X</span>
+            </a>
+        </div>
+        <div class="x-accounts-section">
+            <div class="x-section-title">AI Voices to Follow</div>
+            <div class="x-accounts-grid">
+                ${accounts.filter(a => a.handle !== handle).slice(0, 8).map(acc => `
+                    <a href="https://x.com/${acc.handle}" target="_blank" rel="noopener" class="x-account-card" title="${acc.name}">
+                        <img src="https://unavatar.io/twitter/${acc.handle}" alt="${acc.name}" onerror="this.style.opacity='0.3'">
+                        <span class="x-card-name">${acc.name.split(' ')[0]}</span>
+                        <span class="x-card-handle">@${acc.handle}</span>
+                    </a>
+                `).join('')}
+            </div>
+        </div>
     `;
-
-    // Reload Twitter widget
-    if (window.twttr && window.twttr.widgets) {
-        window.twttr.widgets.load(container);
-    }
 }
 
 // Render manage panel with account list
@@ -3440,26 +4617,12 @@ document.getElementById('add-x-handle').onkeydown = (e) => {
     }
 };
 
-// Load Twitter widget script
-function loadTwitterScript() {
-    if (!document.getElementById('twitter-wjs')) {
-        const script = document.createElement('script');
-        script.id = 'twitter-wjs';
-        script.src = 'https://platform.twitter.com/widgets.js';
-        script.async = true;
-        script.charset = 'utf-8';
-        document.body.appendChild(script);
-    }
-}
-
 // Init feeds
 loadNewsFeed();
-loadTwitterScript();
 renderXAccountSelector();
 currentXAccount = getCurrentXAccount();
 if (currentXAccount) {
-    // Delay to let Twitter script load
-    setTimeout(() => loadXTimeline(currentXAccount), 500);
+    loadXTimeline(currentXAccount);
 }
 
 // Refresh news every 30 minutes
