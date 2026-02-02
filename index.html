@@ -2036,7 +2036,163 @@
             background: rgba(139, 92, 246, 0.2);
             color: #fff;
         }
+        /* === Gmail Sync Styles === */
+        #gmail-sync-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 8px 14px;
+            font-size: 12px;
+            font-weight: 500;
+            font-family: inherit;
+            color: #34d399;
+            background: rgba(16, 185, 129, 0.15);
+            border: 1px solid rgba(16, 185, 129, 0.3);
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        #gmail-sync-btn:hover {
+            background: rgba(16, 185, 129, 0.25);
+            border-color: #10b981;
+            color: #fff;
+        }
+        #gmail-sync-btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+        #gmail-sync-btn svg {
+            width: 14px;
+            height: 14px;
+        }
+        #gmail-sync-config {
+            display: none;
+            margin-top: 10px;
+            padding: 10px;
+            background: rgba(30, 41, 59, 0.6);
+            border: 1px solid rgba(16, 185, 129, 0.2);
+            border-radius: 8px;
+        }
+        #gmail-sync-config.visible { display: block; }
+        #gmail-sync-config label {
+            font-size: 11px;
+            color: rgba(148, 163, 184, 0.8);
+            display: block;
+            margin-bottom: 4px;
+        }
+        #gmail-client-id {
+            width: 100%;
+            padding: 8px 10px;
+            font-size: 12px;
+            font-family: monospace;
+            background: rgba(15, 23, 42, 0.8);
+            border: 1px solid rgba(100, 116, 139, 0.4);
+            border-radius: 6px;
+            color: #e2e8f0;
+            outline: none;
+        }
+        #gmail-client-id:focus { border-color: #10b981; }
+        #gmail-save-cid {
+            margin-top: 6px;
+            padding: 6px 12px;
+            font-size: 11px;
+            font-family: inherit;
+            color: #34d399;
+            background: rgba(16, 185, 129, 0.15);
+            border: 1px solid rgba(16, 185, 129, 0.3);
+            border-radius: 6px;
+            cursor: pointer;
+        }
+        #gmail-save-cid:hover { background: rgba(16, 185, 129, 0.3); }
+        #gmail-sync-status {
+            display: none;
+            margin-top: 10px;
+            padding: 10px;
+            background: rgba(30, 41, 59, 0.6);
+            border: 1px solid rgba(16, 185, 129, 0.2);
+            border-radius: 8px;
+            font-size: 12px;
+            color: rgba(203, 213, 225, 0.9);
+        }
+        #gmail-sync-status.visible { display: block; }
+        .gmail-spinner {
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            border: 2px solid rgba(16, 185, 129, 0.3);
+            border-top-color: #34d399;
+            border-radius: 50%;
+            animation: ai-spin 0.6s linear infinite;
+            margin-right: 6px;
+            vertical-align: middle;
+        }
+        #gmail-preview {
+            display: none;
+            margin-top: 10px;
+            max-height: 300px;
+            overflow-y: auto;
+            background: rgba(15, 23, 42, 0.6);
+            border: 1px solid rgba(16, 185, 129, 0.2);
+            border-radius: 8px;
+            padding: 10px;
+        }
+        #gmail-preview.visible { display: block; }
+        #gmail-preview::-webkit-scrollbar { width: 5px; }
+        #gmail-preview::-webkit-scrollbar-thumb { background: rgba(16, 185, 129, 0.3); border-radius: 3px; }
+        .gmail-preview-item {
+            padding: 6px 0;
+            border-bottom: 1px solid rgba(100, 116, 139, 0.15);
+            font-size: 11px;
+            line-height: 1.5;
+        }
+        .gmail-preview-item:last-child { border-bottom: none; }
+        .gmail-preview-item .company-name {
+            font-weight: 600;
+            color: #34d399;
+        }
+        .gmail-preview-item .action-tag {
+            font-size: 10px;
+            padding: 1px 6px;
+            border-radius: 4px;
+            font-weight: 600;
+            margin-left: 6px;
+        }
+        .gmail-preview-item .action-tag.new {
+            background: rgba(16, 185, 129, 0.2);
+            color: #34d399;
+        }
+        .gmail-preview-item .action-tag.update {
+            background: rgba(59, 130, 246, 0.2);
+            color: #60a5fa;
+        }
+        .gmail-preview-actions {
+            margin-top: 10px;
+            display: flex;
+            gap: 8px;
+        }
+        .gmail-preview-actions button {
+            padding: 7px 14px;
+            font-size: 12px;
+            font-family: inherit;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 500;
+        }
+        #gmail-apply-btn {
+            color: #fff;
+            background: rgba(16, 185, 129, 0.3);
+            border: 1px solid #10b981;
+        }
+        #gmail-apply-btn:hover { background: rgba(16, 185, 129, 0.5); }
+        #gmail-cancel-btn {
+            color: rgba(148, 163, 184, 0.8);
+            background: rgba(51, 65, 85, 0.4);
+            border: 1px solid rgba(100, 116, 139, 0.3);
+        }
+        #gmail-cancel-btn:hover { background: rgba(51, 65, 85, 0.6); }
+
     </style>
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
 </head>
 <body>
     <div id="app">
@@ -2351,6 +2507,20 @@
                         <label class="btn btn-ghost" style="cursor:pointer;">Import<input type="file" id="import-file" accept=".json" style="display:none;"></label>
                         <button class="btn btn-ghost" id="reset-btn">Reset</button>
                     </div>
+                    <div style="margin-top:14px;border-top:1px solid rgba(100,116,139,0.15);padding-top:14px;">
+                        <p style="color:rgba(148,163,184,0.6);font-size:12px;margin-bottom:10px;">Sync fundraising data from The Information newsletters.</p>
+                        <button id="gmail-sync-btn">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="22,4 12,13 2,4"/></svg>
+                            Sync from Gmail
+                        </button>
+                        <div id="gmail-sync-config">
+                            <label>Google OAuth2 Client ID</label>
+                            <input type="text" id="gmail-client-id" placeholder="xxxx.apps.googleusercontent.com">
+                            <button id="gmail-save-cid">Save &amp; Connect</button>
+                        </div>
+                        <div id="gmail-sync-status"></div>
+                        <div id="gmail-preview"></div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -2450,7 +2620,7 @@ function similarity(a, b) {
 }
 
 const defaultData = {
-"OpenAI": { desc: "Creator of GPT-4, ChatGPT, DALL-E. Leading AI research lab.", cat: "Foundation Models", hq: "San Francisco, CA", val: "$500B", domain: "openai.com", rel: ["Anthropic", "Google DeepMind", "Meta AI", "xAI", "Mistral AI", "Microsoft"] },
+"OpenAI": { desc: "Creator of GPT-4, ChatGPT, DALL-E. Leading AI research lab.", cat: "Foundation Models", hq: "San Francisco, CA", val: "$750B discussed", domain: "openai.com", rel: ["Anthropic", "Google DeepMind", "Meta AI", "xAI", "Mistral AI", "Microsoft"] },
 "Anthropic": { desc: "AI safety company, creator of Claude. Enterprise AI leader.", cat: "Foundation Models", hq: "San Francisco, CA", val: "$350B", domain: "anthropic.com", rel: ["OpenAI", "Google DeepMind", "Cohere", "xAI", "Amazon"] },
 "Google DeepMind": { desc: "Created Gemini, AlphaFold, AlphaGo. AI research pioneer.", cat: "Foundation Models", hq: "London, UK", val: "Alphabet", domain: "deepmind.google", rel: ["OpenAI", "Anthropic", "Meta AI", "Microsoft"] },
 "Meta AI": { desc: "Created open-source LLaMA models.", cat: "Foundation Models", hq: "Menlo Park, CA", val: "Meta", domain: "ai.meta.com", rel: ["Mistral AI", "Hugging Face", "Together AI", "OpenAI"] },
@@ -2468,7 +2638,7 @@ const defaultData = {
 "Baidu": { desc: "ERNIE Bot. Chinese AI leader.", cat: "Foundation Models", hq: "Beijing, China", val: "$35B", domain: "baidu.com", rel: ["Alibaba Cloud", "Zhipu AI"] },
 "Alibaba Cloud": { desc: "Qwen models.", cat: "Foundation Models", hq: "Hangzhou, China", val: "Alibaba", domain: "alibabacloud.com", rel: ["Baidu", "Zhipu AI"] },
 "DeepSeek": { desc: "Chinese AI lab, powerful open models.", cat: "Foundation Models", hq: "Hangzhou, China", val: "$2B", domain: "deepseek.com", rel: ["Mistral AI", "Zhipu AI", "01.AI"] },
-"Moonshot AI": { desc: "Kimi chatbot, long context.", cat: "Foundation Models", hq: "Beijing, China", val: "$3B", domain: "moonshot.cn", rel: ["Zhipu AI", "DeepSeek"] },
+"Moonshot AI": { desc: "Kimi chatbot, long context.", cat: "Foundation Models", hq: "Beijing, China", val: "~$4B", domain: "moonshot.cn", rel: ["Zhipu AI", "DeepSeek"] },
 "MiniMax": { desc: "Chinese multimodal AI.", cat: "Foundation Models", hq: "Shanghai, China", val: "$2.5B", domain: "minimaxi.com", rel: ["Zhipu AI", "DeepSeek"] },
 
 "Midjourney": { desc: "AI image generation. Exceptional quality.", cat: "Image Generation", hq: "San Francisco, CA", val: "$10.5B", domain: "midjourney.com", rel: ["Stability AI", "Adobe Firefly", "Leonardo.AI", "Ideogram"] },
@@ -2476,12 +2646,12 @@ const defaultData = {
 "Adobe Firefly": { desc: "Adobe's generative AI.", cat: "Image Generation", hq: "San Jose, CA", val: "Adobe", domain: "adobe.com", rel: ["Midjourney", "Canva", "Figma"] },
 "Leonardo.AI": { desc: "AI image platform.", cat: "Image Generation", hq: "Sydney, Australia", val: "$500M", domain: "leonardo.ai", rel: ["Midjourney", "Stability AI"] },
 "Ideogram": { desc: "AI image with text rendering.", cat: "Image Generation", hq: "Toronto, Canada", val: "$580M", domain: "ideogram.ai", rel: ["Midjourney", "Stability AI"] },
-"Black Forest Labs": { desc: "FLUX models.", cat: "Image Generation", hq: "Freiburg, Germany", val: "$1B", domain: "blackforestlabs.ai", rel: ["Stability AI", "Midjourney"] },
+"Black Forest Labs": { desc: "FLUX models.", cat: "Image Generation", hq: "Freiburg, Germany", val: "$3.25B", domain: "blackforestlabs.ai", rel: ["Stability AI", "Midjourney"] },
 "PhotoRoom": { desc: "AI background removal.", cat: "Image Generation", hq: "Paris, France", val: "$500M", domain: "photoroom.com", rel: ["Canva", "Adobe Firefly"] },
 
 "Runway": { desc: "AI video generation. Gen-3.", cat: "Video Generation", hq: "New York, NY", val: "$4B", domain: "runwayml.com", rel: ["Pika", "Luma AI", "HeyGen", "Stability AI"] },
 "Pika": { desc: "Text-to-video AI.", cat: "Video Generation", hq: "Palo Alto, CA", val: "$900M", domain: "pika.art", rel: ["Runway", "Luma AI"] },
-"Luma AI": { desc: "Dream Machine.", cat: "Video Generation", hq: "Palo Alto, CA", val: "$3.2B", domain: "lumalabs.ai", rel: ["Runway", "Pika"] },
+"Luma AI": { desc: "Dream Machine.", cat: "Video Generation", hq: "Palo Alto, CA", val: "$4B", domain: "lumalabs.ai", rel: ["Runway", "Pika"] },
 "HeyGen": { desc: "AI avatar videos.", cat: "Video Generation", hq: "Los Angeles, CA", val: "$500M", domain: "heygen.com", rel: ["Synthesia", "D-ID"] },
 "Synthesia": { desc: "Enterprise AI video.", cat: "Video Generation", hq: "London, UK", val: "$4B", domain: "synthesia.io", rel: ["HeyGen", "D-ID"] },
 "D-ID": { desc: "Talking avatars.", cat: "Video Generation", hq: "Tel Aviv, Israel", val: "$400M", domain: "d-id.com", rel: ["HeyGen", "Synthesia"] },
@@ -2507,9 +2677,9 @@ const defaultData = {
 "Magic": { desc: "AI coding, unlimited context.", cat: "Code & Dev Tools", hq: "San Francisco, CA", val: "$1.5B", domain: "magic.dev", rel: ["Cursor", "Cognition AI"] },
 "Vercel": { desc: "Frontend cloud with AI.", cat: "Code & Dev Tools", hq: "San Francisco, CA", val: "$3.25B", domain: "vercel.com", rel: ["Replit", "Supabase"] },
 "Poolside": { desc: "AI for software dev.", cat: "Code & Dev Tools", hq: "San Francisco, CA", val: "$12B", domain: "poolside.ai", rel: ["Magic", "Cursor"] },
-"Lovable": { desc: "AI app builder.", cat: "Code & Dev Tools", hq: "San Francisco, CA", val: "$200M", domain: "lovable.dev", rel: ["Cursor", "Replit"] },
+"Lovable": { desc: "AI app builder.", cat: "Code & Dev Tools", hq: "San Francisco, CA", val: "$6.6B", domain: "lovable.dev", rel: ["Cursor", "Replit"] },
 "Windsurf": { desc: "AI code editor. Acquired by Cognition.", cat: "Code & Dev Tools", hq: "Palo Alto, CA", val: "Cognition", domain: "codeium.com", rel: ["Cursor", "Codeium", "Cognition AI"] },
-"Harness": { desc: "DevOps AI platform.", cat: "Code & Dev Tools", hq: "San Francisco, CA", val: "$3.7B", domain: "harness.io", rel: ["GitHub Copilot", "Datadog"] },
+"Harness": { desc: "DevOps AI platform.", cat: "Code & Dev Tools", hq: "San Francisco, CA", val: "$5.5B", domain: "harness.io", rel: ["GitHub Copilot", "Datadog"] },
 
 "Cognition AI": { desc: "Devin, AI software engineer. Acquired Windsurf.", cat: "AI Agents", hq: "San Francisco, CA", val: "$10.2B", domain: "cognition.ai", rel: ["Adept", "OpenAI", "Magic"] },
 "Sierra": { desc: "AI agents by Bret Taylor.", cat: "AI Agents", hq: "San Francisco, CA", val: "$10B", domain: "sierra.ai", rel: ["Intercom", "Ada"] },
@@ -2525,7 +2695,7 @@ const defaultData = {
 "Modal": { desc: "Serverless GPU.", cat: "Neo Cloud", hq: "San Francisco, CA", val: "$150M", domain: "modal.com", rel: ["Together AI", "Replicate", "Baseten"] },
 "Replicate": { desc: "Run AI models via API.", cat: "Neo Cloud", hq: "San Francisco, CA", val: "$350M", domain: "replicate.com", rel: ["Hugging Face", "Together AI"] },
 "Baseten": { desc: "ML model deployment.", cat: "Neo Cloud", hq: "San Francisco, CA", val: "$5B", domain: "baseten.co", rel: ["Replicate", "Modal"] },
-"Fal": { desc: "Fast AI inference.", cat: "Neo Cloud", hq: "San Francisco, CA", val: "$100M", domain: "fal.ai", rel: ["Replicate", "Modal"] },
+"Fal": { desc: "Fast AI inference.", cat: "Neo Cloud", hq: "San Francisco, CA", val: "$4.5B", domain: "fal.ai", rel: ["Replicate", "Modal"] },
 
 "NVIDIA": { desc: "GPU leader. Powers AI.", cat: "Hardware", hq: "Santa Clara, CA", val: "$4.57T", domain: "nvidia.com", rel: ["AMD", "Cerebras", "Groq"] },
 "AMD": { desc: "GPU competitor. MI300.", cat: "Hardware", hq: "Santa Clara, CA", val: "$423B", domain: "amd.com", rel: ["NVIDIA", "Intel"] },
@@ -2542,7 +2712,7 @@ const defaultData = {
 "Supabase": { desc: "Open-source Firebase.", cat: "Data & Vector DB", hq: "San Francisco, CA", val: "$2B", domain: "supabase.com", rel: ["Neon", "MongoDB", "Vercel"] },
 "Neon": { desc: "Serverless Postgres.", cat: "Data & Vector DB", hq: "San Francisco, CA", val: "$1B", domain: "neon.tech", rel: ["Supabase", "MongoDB"] },
 
-"Hugging Face": { desc: "AI model hub.", cat: "MLOps", hq: "New York, NY", val: "$4.5B", domain: "huggingface.co", rel: ["Meta AI", "Together AI", "Replicate"] },
+"Hugging Face": { desc: "AI model hub.", cat: "MLOps", hq: "New York, NY", val: "$7B", domain: "huggingface.co", rel: ["Meta AI", "Together AI", "Replicate"] },
 "Weights & Biases": { desc: "ML experiment tracking.", cat: "MLOps", hq: "San Francisco, CA", val: "$1.25B", domain: "wandb.ai", rel: ["Scale AI", "Hugging Face"] },
 "LangChain": { desc: "LLM app framework.", cat: "MLOps", hq: "San Francisco, CA", val: "$200M", domain: "langchain.com", rel: ["LlamaIndex", "Pinecone"] },
 "LlamaIndex": { desc: "LLM data framework.", cat: "MLOps", hq: "San Francisco, CA", val: "$150M", domain: "llamaindex.ai", rel: ["LangChain", "Pinecone"] },
@@ -2576,7 +2746,7 @@ const defaultData = {
 
 "Gong": { desc: "Revenue intelligence.", cat: "Marketing AI", hq: "San Francisco, CA", val: "$7.25B", domain: "gong.io", rel: ["Clari", "6sense"] },
 "6sense": { desc: "Account-based marketing.", cat: "Marketing AI", hq: "San Francisco, CA", val: "$5.2B", domain: "6sense.com", rel: ["Demandbase", "Gong"] },
-"Clay": { desc: "AI data enrichment.", cat: "Marketing AI", hq: "New York, NY", val: "$1.3B", domain: "clay.com", rel: ["Apollo", "ZoomInfo"] },
+"Clay": { desc: "AI data enrichment.", cat: "Marketing AI", hq: "New York, NY", val: "$5B", domain: "clay.com", rel: ["Apollo", "ZoomInfo"] },
 "HubSpot": { desc: "CRM with AI.", cat: "Marketing AI", hq: "Cambridge, MA", val: "$18.2B", domain: "hubspot.com", rel: ["Salesforce", "Intercom"] },
 "Canva": { desc: "Design with AI.", cat: "Marketing AI", hq: "Sydney, Australia", val: "$42B", domain: "canva.com", rel: ["Adobe Firefly", "Figma", "Gamma"] },
 "Jasper": { desc: "AI marketing content.", cat: "Marketing AI", hq: "Austin, TX", val: "$1.5B", domain: "jasper.ai", rel: ["Writer", "Copy.ai", "Typeface"] },
@@ -2602,9 +2772,9 @@ const defaultData = {
 "Physical Intelligence": { desc: "Robot foundation models.", cat: "Robotics", hq: "San Francisco, CA", val: "$5.6B", domain: "physicalintelligence.company", rel: ["Figure", "Covariant", "Skild AI"] },
 "1X Technologies": { desc: "OpenAI-backed robots.", cat: "Robotics", hq: "Moss, Norway", val: "$500M", domain: "1x.tech", rel: ["Figure", "Agility Robotics"] },
 "Boston Dynamics": { desc: "Spot & Atlas robots.", cat: "Robotics", hq: "Waltham, MA", val: "Hyundai", domain: "bostondynamics.com", rel: ["Figure", "Agility Robotics"] },
-"Skild AI": { desc: "Robot foundation models.", cat: "Robotics", hq: "Pittsburgh, PA", val: "$14B", domain: "skild.ai", rel: ["Physical Intelligence", "Figure"] },
+"Skild AI": { desc: "Robot foundation models.", cat: "Robotics", hq: "Pittsburgh, PA", val: "$14B+", domain: "skild.ai", rel: ["Physical Intelligence", "Figure"] },
 
-"Waymo": { desc: "Robotaxi leader.", cat: "Autonomous Vehicles", hq: "Mountain View, CA", val: "$100B", domain: "waymo.com", rel: ["Zoox", "Aurora", "Cruise"] },
+"Waymo": { desc: "Robotaxi leader.", cat: "Autonomous Vehicles", hq: "Mountain View, CA", val: "$100B+ discussed", domain: "waymo.com", rel: ["Zoox", "Aurora", "Cruise"] },
 "Zoox": { desc: "Amazon's robotaxi.", cat: "Autonomous Vehicles", hq: "Foster City, CA", val: "Amazon", domain: "zoox.com", rel: ["Waymo", "Aurora"] },
 "Aurora": { desc: "Autonomous trucking.", cat: "Autonomous Vehicles", hq: "Pittsburgh, PA", val: "$4B", domain: "aurora.tech", rel: ["Waymo", "Kodiak"] },
 "Cruise": { desc: "GM autonomous.", cat: "Autonomous Vehicles", hq: "San Francisco, CA", val: "GM", domain: "getcruise.com", rel: ["Waymo", "Aurora"] },
@@ -2623,7 +2793,7 @@ const defaultData = {
 // Additional companies to reach 370+
 "Captions": { desc: "AI video captions & editing.", cat: "Video Generation", hq: "New York, NY", val: "$500M", domain: "captions.ai", rel: ["Descript", "Runway"] },
 "Augment Code": { desc: "AI coding assistant.", cat: "Code & Dev Tools", hq: "Palo Alto, CA", val: "$252M", domain: "augmentcode.com", rel: ["Cursor", "GitHub Copilot"] },
-"Decagon": { desc: "AI customer support agents.", cat: "Customer Support", hq: "San Francisco, CA", val: "$100M", domain: "decagon.ai", rel: ["Sierra", "Intercom"] },
+"Decagon": { desc: "AI customer support agents.", cat: "Customer Support", hq: "San Francisco, CA", val: "$4.5B", domain: "decagon.ai", rel: ["Sierra", "Intercom"] },
 "Anyscale": { desc: "Ray framework for AI.", cat: "Neo Cloud", hq: "San Francisco, CA", val: "$1B", domain: "anyscale.com", rel: ["Together AI", "Modal"] },
 "Tenstorrent": { desc: "AI chip company.", cat: "Hardware", hq: "Toronto, Canada", val: "$1B", domain: "tenstorrent.com", rel: ["Cerebras", "Groq"] },
 "Kore.ai": { desc: "Conversational AI platform.", cat: "Conversational AI", hq: "Orlando, FL", val: "$500M", domain: "kore.ai", rel: ["Yellow.ai", "Rasa"] },
@@ -2656,7 +2826,7 @@ const defaultData = {
 "Agility Robotics": { desc: "Bipedal robots.", cat: "Robotics", hq: "Corvallis, OR", val: "$600M", domain: "agilityrobotics.com", rel: ["Figure", "Boston Dynamics"] },
 "Covariant": { desc: "AI for robotic picking.", cat: "Robotics", hq: "Emeryville, CA", val: "$625M", domain: "covariant.ai", rel: ["Physical Intelligence", "Berkshire Grey"] },
 "Skydio": { desc: "Autonomous drones.", cat: "Robotics", hq: "San Mateo, CA", val: "$2.2B", domain: "skydio.com", rel: ["DJI", "Wing"] },
-"Zipline": { desc: "Drone delivery.", cat: "Robotics", hq: "South San Francisco, CA", val: "$4.2B", domain: "flyzipline.com", rel: ["Wing", "Nuro"] },
+"Zipline": { desc: "Drone delivery.", cat: "Robotics", hq: "South San Francisco, CA", val: "$7.6B", domain: "flyzipline.com", rel: ["Wing", "Nuro"] },
 "Sanctuary AI": { desc: "Humanoid robots.", cat: "Robotics", hq: "Vancouver, Canada", val: "$500M", domain: "sanctuary.ai", rel: ["Figure", "1X Technologies"] },
 "Nuro": { desc: "Autonomous delivery.", cat: "Autonomous Vehicles", hq: "Mountain View, CA", val: "$8.6B", domain: "nuro.ai", rel: ["Waymo", "Starship"] },
 "Mobileye": { desc: "ADAS and AV tech.", cat: "Autonomous Vehicles", hq: "Jerusalem, Israel", val: "$16B", domain: "mobileye.com", rel: ["Waymo", "Aurora"] },
@@ -2681,7 +2851,7 @@ const defaultData = {
 "Exscientia": { desc: "AI drug design.", cat: "Drug Discovery", hq: "Oxford, UK", val: "$1.5B", domain: "exscientia.ai", rel: ["Recursion", "Schrödinger"] },
 "Atomwise": { desc: "AI drug discovery.", cat: "Drug Discovery", hq: "San Francisco, CA", val: "$500M", domain: "atomwise.com", rel: ["Recursion", "Insilico Medicine"] },
 "XtalPi": { desc: "AI pharma research.", cat: "Drug Discovery", hq: "Cambridge, MA", val: "$1B", domain: "xtalpi.com", rel: ["Schrödinger", "Atomwise"] },
-"Moveworks": { desc: "AI IT support.", cat: "Enterprise AI", hq: "Mountain View, CA", val: "$2.1B", domain: "moveworks.com", rel: ["ServiceNow", "Glean"] },
+"Moveworks": { desc: "AI IT support.", cat: "Enterprise AI", hq: "Mountain View, CA", val: "$2.85B", domain: "moveworks.com", rel: ["ServiceNow", "Glean"] },
 "Labelbox": { desc: "AI data labeling.", cat: "MLOps", hq: "San Francisco, CA", val: "$500M", domain: "labelbox.com", rel: ["Scale AI", "Snorkel"] },
 "Snorkel": { desc: "Data-centric AI.", cat: "MLOps", hq: "Palo Alto, CA", val: "$1B", domain: "snorkel.ai", rel: ["Scale AI", "Labelbox"] },
 "Chroma": { desc: "Open-source vector DB.", cat: "Data & Vector DB", hq: "San Francisco, CA", val: "$100M", domain: "trychroma.com", rel: ["Pinecone", "Weaviate"] },
@@ -2950,7 +3120,7 @@ const defaultData = {
 "AbCellera": { desc: "AI antibody discovery.", cat: "Healthcare AI", hq: "Vancouver, Canada", val: "$4B", domain: "abcellera.com", rel: ["Generate Biomedicines", "Recursion", "Insitro"] },
 "Iambic": { desc: "AI drug design.", cat: "Healthcare AI", hq: "San Francisco, CA", val: "$100M", domain: "iambic.ai", rel: ["Recursion", "Insitro", "Isomorphic Labs"] },
 "EvolutionaryScale": { desc: "AI protein models.", cat: "Healthcare AI", hq: "New York, NY", val: "$500M", domain: "evolutionaryscale.ai", rel: ["Isomorphic Labs", "Generate Biomedicines", "Recursion"] },
-"Chai Discovery": { desc: "AI drug discovery.", cat: "Healthcare AI", hq: "San Francisco, CA", val: "$250M", domain: "chaidiscovery.com", rel: ["Recursion", "Insitro", "Isomorphic Labs"] },
+"Chai Discovery": { desc: "AI drug discovery.", cat: "Healthcare AI", hq: "San Francisco, CA", val: "$1.3B", domain: "chaidiscovery.com", rel: ["Recursion", "Insitro", "Isomorphic Labs"] },
 "Profluent": { desc: "AI protein engineering.", cat: "Healthcare AI", hq: "Berkeley, CA", val: "$200M", domain: "profluent.bio", rel: ["Generate Biomedicines", "EvolutionaryScale", "Isomorphic Labs"] },
 "BigHat": { desc: "AI antibody design.", cat: "Healthcare AI", hq: "San Mateo, CA", val: "$150M", domain: "bighatbio.com", rel: ["AbCellera", "Generate Biomedicines", "Recursion"] },
 "Causaly": { desc: "AI biomedical research.", cat: "Healthcare AI", hq: "London, UK", val: "$100M", domain: "causaly.com", rel: ["Tempus", "Owkin", "Recursion"] },
@@ -3067,7 +3237,7 @@ const defaultData = {
 "Starburst": { desc: "Data analytics AI.", cat: "Data & Vector DB", hq: "Boston, MA", val: "$3.4B", domain: "starburst.io", rel: ["Databricks", "Snowflake", "Trino"] },
 "Dremio": { desc: "Data lakehouse.", cat: "Data & Vector DB", hq: "Santa Clara, CA", val: "$2B", domain: "dremio.com", rel: ["Databricks", "Snowflake", "Starburst"] },
 "SingleStore": { desc: "Real-time database.", cat: "Data & Vector DB", hq: "San Francisco, CA", val: "$940M", domain: "singlestore.com", rel: ["Snowflake", "Databricks", "MongoDB"] },
-"ClickHouse": { desc: "Real-time analytics DB.", cat: "Data & Vector DB", hq: "San Francisco, CA", val: "$2B", domain: "clickhouse.com", rel: ["SingleStore", "Snowflake", "Databricks"] },
+"ClickHouse": { desc: "Real-time analytics DB.", cat: "Data & Vector DB", hq: "San Francisco, CA", val: "$15B", domain: "clickhouse.com", rel: ["SingleStore", "Snowflake", "Databricks"] },
 "Timescale": { desc: "Time-series database.", cat: "Data & Vector DB", hq: "New York, NY", val: "$500M", domain: "timescale.com", rel: ["ClickHouse", "MongoDB", "PostgreSQL"] },
 "QuestDB": { desc: "Time-series analytics.", cat: "Data & Vector DB", hq: "London, UK", val: "$100M", domain: "questdb.io", rel: ["Timescale", "ClickHouse", "MongoDB"] },
 "Marqo": { desc: "Tensor search engine.", cat: "Data & Vector DB", hq: "Melbourne, Australia", val: "$50M", domain: "marqo.ai", rel: ["Pinecone", "Weaviate", "Qdrant"] },
@@ -3232,7 +3402,7 @@ const defaultData = {
 "Bird": { desc: "Communications platform.", cat: "Customer Support", hq: "Amsterdam, Netherlands", val: "$800M", domain: "bird.com", rel: ["Twilio", "Infobip", "Gupshup"] },
 "Freshchat": { desc: "AI messaging.", cat: "Customer Support", hq: "San Mateo, CA", val: "Freshworks", domain: "freshworks.com", rel: ["Freshworks", "Intercom", "Zendesk"] },
 "Acquire": { desc: "Customer engagement AI.", cat: "Customer Support", hq: "San Francisco, CA", val: "$50M", domain: "acquire.io", rel: ["Intercom", "Drift", "Zendesk"] },
-"Qualified": { desc: "Conversational marketing.", cat: "Customer Support", hq: "San Francisco, CA", val: "$200M", domain: "qualified.com", rel: ["Drift", "Intercom", "6sense"] },
+"Qualified": { desc: "Conversational marketing.", cat: "Customer Support", hq: "San Francisco, CA", val: "$1B-$1.5B", domain: "qualified.com", rel: ["Drift", "Intercom", "6sense"] },
 "Chili Piper": { desc: "Meeting scheduling AI.", cat: "Customer Support", hq: "New York, NY", val: "$500M", domain: "chilipiper.com", rel: ["Calendly", "Drift", "HubSpot"] },
 "Calendly": { desc: "Scheduling with AI.", cat: "Customer Support", hq: "Atlanta, GA", val: "$3B", domain: "calendly.com", rel: ["Chili Piper", "HubSpot", "Zoom"] },
 
@@ -3530,10 +3700,149 @@ const defaultData = {
 "Tradeshift": { desc: "Supply chain network.", cat: "Enterprise AI", hq: "San Francisco, CA", val: "$1.1B", domain: "tradeshift.com", rel: ["Coupa", "SAP Ariba", "Taulia"] },
 "Taulia": { desc: "Working capital AI.", cat: "Enterprise AI", hq: "San Francisco, CA", val: "SAP", domain: "taulia.com", rel: ["Tradeshift", "SAP Ariba", "Coupa"] },
 "C2FO": { desc: "Working capital market.", cat: "Enterprise AI", hq: "Leawood, KS", val: "$1B", domain: "c2fo.com", rel: ["Taulia", "Tradeshift", "SAP Ariba"] }
+,
+    "Humans&": { desc: "Developing human-centric AI tools for enterprises.", cat: "Enterprise AI", hq: "", val: "$4.48B", domain: "", rel: [] },
+    "Eon": { desc: "Helps companies back up their data on the cloud.", cat: "Neo Cloud", hq: "", val: "$4B", domain: "", rel: [] },
+    "Ricursive Technologies": { desc: "AI lab building AI that can improve and design semiconductor chips.", cat: "Hardware", hq: "Palo Alto, CA", val: "$4B", domain: "", rel: [] },
+    "Celestial AI": { desc: "Photonics startup using light to move data between chips faster than electrical signals.", cat: "Hardware", hq: "", val: "$3.25B", domain: "", rel: [] },
+    "Parloa": { desc: "AI-powered customer service automation platform.", cat: "Contact Center", hq: "", val: "$3B", domain: "", rel: [] },
+    "DayOne Data Centers": { desc: "Operates data centers in Finland and Asia for AI workloads.", cat: "Neo Cloud", hq: "Finland", val: "$2B+", domain: "", rel: [] },
+    "Global Technical Realty": { desc: "European data center developer expanding across the continent.", cat: "Neo Cloud", hq: "Europe", val: "$1.9B", domain: "", rel: [] },
+    "Flapping Airplanes": { desc: "AI neolab focused on training models in more data-efficient ways.", cat: "Foundation Models", hq: "", val: "$1.5B", domain: "", rel: [] },
+    "Harmonic": { desc: "Developing math-based AI models for reasoning and problem-solving.", cat: "Foundation Models", hq: "", val: "$1.45B", domain: "", rel: [] },
+    "Applied Compute": { desc: "Uses reinforcement learning to customize AI models, founded by ex-OpenAI researchers.", cat: "MLOps", hq: "", val: "$1.3B", domain: "", rel: [] },
+    "Tandem": { desc: "Uses AI to automate pharmacy paperwork and administrative tasks.", cat: "Healthcare AI", hq: "", val: "$1B", domain: "", rel: [] },
+    "Serval": { desc: "Develops AI tools to automate tasks for IT teams.", cat: "Enterprise AI", hq: "", val: "$1B", domain: "", rel: [] },
+    "Resolve AI": { desc: "Developing an AI tool for maintaining and managing software systems.", cat: "Code & Dev Tools", hq: "", val: "$1B", domain: "", rel: [] },
+    "LiveKit": { desc: "Develops infrastructure for real-time AI voice and video applications.", cat: "Conversational AI", hq: "", val: "$1B", domain: "", rel: [] },
+    "Aaru": { desc: "Uses AI to simulate customer behavior for companies.", cat: "Enterprise AI", hq: "", val: "~$1B", domain: "", rel: [] },
+    "StepFun": { desc: "Develops large language models and partners with smartphone brands.", cat: "Foundation Models", hq: "China", val: "$700M+", domain: "", rel: [] },
+    "Moore Threads": { desc: "Chinese chip designer blacklisted by the U.S., developing AI GPUs.", cat: "Hardware", hq: "China", val: "53.7B yuan (~$7.5B)", domain: "", rel: [] },
+    "Inferact": { desc: "AI inference startup founded by the creators of the popular open-source vLLM project.", cat: "MLOps", hq: "", val: "$800M", domain: "", rel: [] },
+    "Manus": { desc: "Chinese AI agent startup acquired by Meta Platforms.", cat: "AI Agents", hq: "Singapore (originally China)", val: "$2B+", domain: "", rel: [] },
+    "Veza": { desc: "Software that helps companies see which employees and AI agents have access to customer data.", cat: "Security AI", hq: "", val: "$1B-$1.5B", domain: "", rel: [] },
+    "Torch": { desc: "One-year-old AI healthcare app acquired by OpenAI.", cat: "Healthcare AI", hq: "", val: "~$100M", domain: "", rel: [] },
+    "Hatch": { desc: "AI agent startup acquired by Yelp for roughly 12x annual recurring revenue.", cat: "AI Agents", hq: "", val: "$300M", domain: "", rel: [] },
+    "Limitless": { desc: "Develops wearable AI devices including a clip-on Pendant for recording and AI assistance.", cat: "Hardware", hq: "", val: "", domain: "", rel: [] },
+    "Confluent": { desc: "Data streaming company that helps manage real-time data streams used in AI models.", cat: "Data & Vector DB", hq: "", val: "$11B", domain: "", rel: [] },
+    "Observe Inc.": { desc: "App monitoring startup in talks to be acquired by Snowflake.", cat: "MLOps", hq: "", val: "~$1B", domain: "", rel: [] },
+    "XConn Technologies": { desc: "Provides hardware to connect chips to each other in data centers.", cat: "Hardware", hq: "", val: "$540M", domain: "", rel: [] },
+    "Gradium": { desc: "French startup developing AI voice and audio language models.", cat: "Audio AI", hq: "France", val: "$70M", domain: "", rel: [] },
+    "Antithesis": { desc: "Helps companies test their software to find bugs using advanced testing techniques.", cat: "Code & Dev Tools", hq: "", val: "$105M", domain: "", rel: [] },
+    "Flex": { desc: "Offers AI financial tools to mid-sized business owners.", cat: "Finance AI", hq: "San Francisco, CA", val: "$500M", domain: "", rel: [] },
+    "Vinci": { desc: "Provides AI for hardware design and chip development.", cat: "Hardware", hq: "", val: "$46M", domain: "", rel: [] },
+    "Yoodli": { desc: "AI-powered learning startup using AI-generated roleplays for communication skills.", cat: "Education", hq: "Seattle, WA", val: "$40M", domain: "", rel: [] },
+    "Supper": { desc: "AI-powered startup designed to clean enterprise data.", cat: "Data & Vector DB", hq: "New York, NY", val: "$11M", domain: "", rel: [] },
+    "Kargo": { desc: "Uses AI to monitor inbound and outbound freight in the supply chain.", cat: "Enterprise AI", hq: "San Francisco, CA", val: "$42M", domain: "", rel: [] },
+    "Generative Bionics": { desc: "Developing humanoid robots for various applications.", cat: "Robotics", hq: "", val: "$81M", domain: "", rel: [] },
+    "Duve": { desc: "Provides AI-based software for hotels to manage bookings.", cat: "Enterprise AI", hq: "", val: "$60M", domain: "", rel: [] },
+    "Datarails": { desc: "Offers AI-powered FP&A (financial planning and analysis) software.", cat: "Finance AI", hq: "", val: "$70M", domain: "", rel: [] },
+    "Unbox Robotics": { desc: "Develops warehouse robots for logistics automation.", cat: "Robotics", hq: "", val: "$28M", domain: "", rel: [] },
+    "Emergent": { desc: "Provides AI for developing apps.", cat: "Code & Dev Tools", hq: "", val: "$300M", domain: "", rel: [] },
+    "Angle Health": { desc: "AI-powered healthcare benefits startup.", cat: "Healthcare AI", hq: "", val: "$134M", domain: "", rel: [] },
+    "Axiado": { desc: "Provides cybersecurity software for data centers.", cat: "Security AI", hq: "", val: "$100M", domain: "", rel: [] },
+    "Zafran Security": { desc: "Uses AI to analyze companies\' cybersecurity vulnerabilities.", cat: "Security AI", hq: "", val: "$60M", domain: "", rel: [] },
+    "PermitFlow": { desc: "AI-powered permit application and management startup for construction.", cat: "Enterprise AI", hq: "New York, NY", val: "$54M", domain: "", rel: [] },
+    "WithCoverage": { desc: "AI-powered insurance broker.", cat: "Finance AI", hq: "", val: "$42M", domain: "", rel: [] },
+    "Juvena Therapeutics": { desc: "AI-powered regenerative biologics company developing therapeutic proteins.", cat: "Drug Discovery", hq: "Redwood City, CA", val: "$33.5M", domain: "", rel: [] },
+    "Converge Bio": { desc: "Helps pharma and biotech companies develop drugs faster using generative AI trained on molecular data.", cat: "Drug Discovery", hq: "Boston / Tel Aviv", val: "$25M", domain: "", rel: [] },
+    "Hupo": { desc: "AI sales coaching startup.", cat: "Marketing AI", hq: "", val: "$10M", domain: "", rel: [] },
+    "Profluent Bio": { desc: "Using AI to design proteins for therapeutic and industrial applications.", cat: "Drug Discovery", hq: "", val: "$106M", domain: "", rel: [] },
+    "Amperesand": { desc: "Develops power infrastructure for AI data centers.", cat: "Neo Cloud", hq: "Singapore", val: "$80M", domain: "", rel: [] },
+    "Sunday": { desc: "Developing a two-armed robot on a rolling base to help with household chores.", cat: "Robotics", hq: "", val: "$35M", domain: "", rel: [] },
+    "Modern Life": { desc: "AI-powered life insurance brokerage.", cat: "Finance AI", hq: "New York, NY", val: "$20M", domain: "", rel: [] },
+    "Automat": { desc: "Uses AI to automate workflows for enterprises.", cat: "AI Agents", hq: "San Francisco, CA", val: "$15.5M", domain: "", rel: [] },
+    "onepot AI": { desc: "Uses AI to develop small molecules for drug discovery.", cat: "Drug Discovery", hq: "San Francisco, CA", val: "$13M", domain: "", rel: [] },
+    "Poly": { desc: "Helps people store, browse, research and organize their files with AI.", cat: "Enterprise AI", hq: "San Francisco, CA", val: "$8M", domain: "", rel: [] },
+    "alphaXiv": { desc: "Curates AI research, benchmarks and models.", cat: "Enterprise AI", hq: "San Francisco, CA", val: "$7M", domain: "", rel: [] },
+    "Articul8": { desc: "Provides software to allow companies to make their own AI applications.", cat: "Enterprise AI", hq: "", val: "$500M+", domain: "", rel: [] },
+    "Ankar": { desc: "Uses AI to help companies draft patent applications.", cat: "Legal Tech", hq: "", val: "$20M", domain: "", rel: [] },
+    "Arcads.ai": { desc: "Uses AI to generate marketing videos.", cat: "Marketing AI", hq: "San Francisco, CA", val: "$16M", domain: "", rel: [] },
+    "Oboe": { desc: "AI-powered learning startup.", cat: "Education", hq: "", val: "$16M", domain: "", rel: [] },
+    "Runware": { desc: "AI inference startup for image, video and audio generation.", cat: "Image Generation", hq: "London, UK", val: "$50M", domain: "", rel: [] },
+    "Deep Robotics": { desc: "Develops humanoid robots and robot dogs.", cat: "Robotics", hq: "China", val: "$70M+", domain: "", rel: [] },
+    "Factify": { desc: "Developing an alternative to PDF file formats optimized for AI.", cat: "Enterprise AI", hq: "", val: "$73M", domain: "", rel: [] },
+    "Outtake": { desc: "Develops cybersecurity software to prevent against AI impersonation.", cat: "Security AI", hq: "", val: "$40M", domain: "", rel: [] },
+    "Slice": { desc: "Develops AI software to help companies with equity compliance.", cat: "Enterprise AI", hq: "", val: "$25M", domain: "", rel: [] },
+    "Modelence": { desc: "Develops infrastructure tools for vibe-coding.", cat: "Code & Dev Tools", hq: "", val: "$3M", domain: "", rel: [] },
+    "RobCo": { desc: "German developer of robots for manufacturing.", cat: "Robotics", hq: "Germany", val: "$100M", domain: "", rel: [] },
+    "Photonic": { desc: "Develops technology for quantum computing.", cat: "Hardware", hq: "", val: "$130M", domain: "", rel: [] },
+    "San Francisco Compute": { desc: "Provides a marketplace for AI compute resources.", cat: "Neo Cloud", hq: "San Francisco, CA", val: "$40M", domain: "", rel: [] },
+    "Clover Security": { desc: "Uses AI to detect cybersecurity vulnerabilities.", cat: "Security AI", hq: "", val: "$36M", domain: "", rel: [] },
+    "Gravis Robotics": { desc: "Equips construction equipment with sensors to work autonomously.", cat: "Robotics", hq: "", val: "$23M", domain: "", rel: [] },
+    "Nevis": { desc: "Develops AI tools for financial advisors.", cat: "Finance AI", hq: "", val: "$35M", domain: "", rel: [] },
+    "Tutor Intelligence": { desc: "Develops AI-powered robots for warehouses.", cat: "Robotics", hq: "", val: "$34M", domain: "", rel: [] },
+    "Raindrop": { desc: "Monitoring startup for AI agents.", cat: "AI Agents", hq: "San Francisco, CA", val: "$15M", domain: "", rel: [] },
+    "Jeeva AI": { desc: "Develops AI tools for salespeople.", cat: "Marketing AI", hq: "San Francisco, CA", val: "$9M", domain: "", rel: [] },
+    "PolyAI": { desc: "AI-powered customer support chatbot for enterprises.", cat: "Contact Center", hq: "", val: "$86M", domain: "", rel: [] },
+    "Mirelo": { desc: "Uses AI to add soundtracks to videos.", cat: "Audio AI", hq: "Berlin, Germany", val: "$41M", domain: "", rel: [] },
+    "Solve Intelligence": { desc: "Develops AI tools to help lawyers apply for patents.", cat: "Legal Tech", hq: "", val: "$40M", domain: "", rel: [] },
+    "Outset": { desc: "Uses AI to chat with customers and measure customer satisfaction.", cat: "Enterprise AI", hq: "", val: "$30M", domain: "", rel: [] },
+    "NestAI": { desc: "Developing autonomous military equipment.", cat: "Enterprise AI", hq: "", val: "$115M", domain: "", rel: [] },
+    "Flexion": { desc: "Develops software for humanoid robots.", cat: "Robotics", hq: "", val: "$50M", domain: "", rel: [] },
+    "Sorcero": { desc: "Uses AI to help pharmaceutical companies analyze information.", cat: "Healthcare AI", hq: "", val: "$42.5M", domain: "", rel: [] },
+    "Numerai": { desc: "Hedge fund that uses crowd-sourced AI trading strategies.", cat: "Finance AI", hq: "", val: "$500M", domain: "", rel: [] },
+    "Momentic": { desc: "Software testing startup using AI.", cat: "Code & Dev Tools", hq: "", val: "$15M", domain: "", rel: [] },
+    "Annie": { desc: "Makes AI assistants for dental practices.", cat: "Healthcare AI", hq: "Lehi, UT", val: "$4M", domain: "", rel: [] },
+    "Range": { desc: "AI-powered wealth management platform.", cat: "Finance AI", hq: "", val: "$60M", domain: "", rel: [] },
+    "Carrion": { desc: "Uses AI-powered cameras to monitor factories for quality control.", cat: "Enterprise AI", hq: "", val: "$18M", domain: "", rel: [] },
+    "CoPlane": { desc: "Develops AI software to streamline back office operations.", cat: "Enterprise AI", hq: "San Francisco, CA", val: "$14M", domain: "", rel: [] },
+    "Vention": { desc: "Provides AI software for designing and operating industrial equipment.", cat: "Robotics", hq: "Canada", val: "$110M", domain: "", rel: [] },
+    "Glyde": { desc: "AI-powered brokerage platform.", cat: "Finance AI", hq: "", val: "$60M", domain: "", rel: [] },
+    "Summarize": { desc: "Uses AI to help lawyers manage contacts.", cat: "Legal Tech", hq: "", val: "$50M", domain: "", rel: [] },
+    "Compa": { desc: "Develops AI for enterprise compensation teams.", cat: "HR Tech", hq: "Newport Beach, CA", val: "$35M", domain: "", rel: [] },
+    "Fulcrum": { desc: "Develops AI for insurance brokerages.", cat: "Finance AI", hq: "San Francisco, CA", val: "$25M", domain: "", rel: [] },
+    "BoldVoice": { desc: "AI-powered voice coaching startup for non-native English speakers.", cat: "Education", hq: "New York, NY", val: "$21M", domain: "", rel: [] },
+    "Limy": { desc: "Helps companies show up in AI search engines.", cat: "Marketing AI", hq: "New York, NY", val: "$10M", domain: "", rel: [] },
+    "Risotto": { desc: "AI-powered IT help desk startup.", cat: "Enterprise AI", hq: "San Francisco, CA", val: "$10M", domain: "", rel: [] },
+    "Mytra": { desc: "Robotics startup for warehouse automation.", cat: "Robotics", hq: "", val: "$120M", domain: "", rel: [] },
+    "Listen Labs": { desc: "Helps companies conduct AI-powered customer interviews.", cat: "Enterprise AI", hq: "San Francisco, CA", val: "$69M", domain: "", rel: [] },
+    "Novee": { desc: "Uses AI for security penetration testing.", cat: "Security AI", hq: "", val: "$51.5M", domain: "", rel: [] },
+    "Depthfirst": { desc: "Uses AI to find cybersecurity vulnerabilities.", cat: "Security AI", hq: "", val: "$40M", domain: "", rel: [] },
+    "Sakana": { desc: "Japanese AI startup developing novel AI architectures.", cat: "Foundation Models", hq: "Japan", val: "$2.5B", domain: "", rel: [] },
+    "Orbital": { desc: "Uses AI to identify real estate risk.", cat: "Enterprise AI", hq: "New York, NY", val: "$60M", domain: "", rel: [] },
+    "Jelou": { desc: "Uses AI to automate financial transactions.", cat: "Finance AI", hq: "New York, NY", val: "$10M", domain: "", rel: [] },
+    "Symbiotic Security": { desc: "AI coding startup focused on secure code development.", cat: "Code & Dev Tools", hq: "Brooklyn, NY", val: "$10M", domain: "", rel: [] },
+    "Blockit": { desc: "AI calendar scheduling app.", cat: "Enterprise AI", hq: "", val: "$5M", domain: "", rel: [] },
+    "DeepWay": { desc: "Develops self-driving technology for trucking.", cat: "Autonomous Vehicles", hq: "China", val: "$173M", domain: "", rel: [] },
+    "Zocks": { desc: "Provides AI for financial advisors.", cat: "Finance AI", hq: "", val: "$45M", domain: "", rel: [] },
+    "Pace": { desc: "Agentic insurance startup using AI agents for insurance workflows.", cat: "Finance AI", hq: "", val: "$10M", domain: "", rel: [] },
+    "SpotDraft": { desc: "Develops on-device contract review tech for regulated legal workflows.", cat: "Legal Tech", hq: "", val: "$8M", domain: "", rel: [] },
+    "Midship": { desc: "Builds AI for accounting fraud testing.", cat: "Finance AI", hq: "San Francisco, CA", val: "$4.2M", domain: "", rel: [] },
+    "Upscale AI": { desc: "Provides networking equipment for AI data centers.", cat: "Neo Cloud", hq: "", val: "$200M", domain: "", rel: [] },
+    "Zanskar": { desc: "Uses AI to search for geothermal energy sources.", cat: "Enterprise AI", hq: "", val: "$115M", domain: "", rel: [] },
+    "AheadComputing": { desc: "Designs CPU chips for AI data centers.", cat: "Hardware", hq: "", val: "$30M", domain: "", rel: [] },
+    "Adaptive Security": { desc: "Provides cybersecurity software to protect against AI-powered attacks.", cat: "Security AI", hq: "New York, NY", val: "$81M", domain: "", rel: [] },
+    "Echo": { desc: "Uses AI to make certain open source software more secure.", cat: "Security AI", hq: "Tel Aviv, Israel", val: "$35M", domain: "", rel: [] },
+    "Sequence": { desc: "Uses AI to automate billing and invoice processes.", cat: "Finance AI", hq: "", val: "$20M", domain: "", rel: [] },
+    "Leona Health": { desc: "Uses AI to help doctors communicate with patients on WhatsApp.", cat: "Healthcare AI", hq: "", val: "$14M", domain: "", rel: [] },
+    "Nirvana": { desc: "AI-powered commercial insurance company.", cat: "Finance AI", hq: "San Francisco, CA", val: "$100M", domain: "", rel: [] },
+    "Enlightra": { desc: "Develops technology to accelerate communication between AI chips.", cat: "Hardware", hq: "Lausanne, Switzerland", val: "$15M", domain: "", rel: [] },
+    "Lyte": { desc: "Developing perception technology for robots.", cat: "Robotics", hq: "", val: "$107M+ (total since founding)", domain: "", rel: [] },
+    "Axion": { desc: "Uses AI to monitor manufacturing for product defects.", cat: "Enterprise AI", hq: "", val: "$37M", domain: "", rel: [] },
+    "Valerie Health": { desc: "Develops an AI front office for doctors\' offices.", cat: "Healthcare AI", hq: "", val: "$30M", domain: "", rel: [] },
+    "FuriosaAI": { desc: "Designs AI chips for inference and training workloads.", cat: "Hardware", hq: "South Korea", val: "$300-$500M (raising)", domain: "", rel: [] },
+    "XBuild": { desc: "Develops AI-powered roofing proposal software.", cat: "Enterprise AI", hq: "San Francisco, CA", val: "$19M", domain: "", rel: [] },
+    "Kargo.ai": { desc: "Provides computer vision software to warehouses for monitoring freight.", cat: "Enterprise AI", hq: "", val: "$42M", domain: "", rel: [] },
+    "Lemon Slice": { desc: "Develops AI models to generate videos of characters from images.", cat: "Video Generation", hq: "", val: "$10.5M", domain: "", rel: [] },
+    "Dazzle AI": { desc: "AI startup founded by former Yahoo CEO Marissa Mayer.", cat: "Enterprise AI", hq: "", val: "$35M", domain: "", rel: [] },
+    "LizzyAI": { desc: "AI-powered talent interviewing company.", cat: "HR Tech", hq: "New York, NY", val: "$5M", domain: "", rel: [] },
+    "Hark": { desc: "New AI lab founded by Figure AI CEO Brett Adcock, hiring former Apple and Meta engineers.", cat: "Foundation Models", hq: "", val: "$100M (personal capital from Brett Adcock)", domain: "", rel: [] },
+    "DigitalBridge": { desc: "Publicly-traded investor in data center companies, acquired by SoftBank.", cat: "Neo Cloud", hq: "", val: "$4B including debt", domain: "", rel: [] },
+    "Norm AI": { desc: "AI startup that handles compliance for enterprises.", cat: "Enterprise AI", hq: "", val: "$50M", domain: "", rel: [] },
+    "SchedMD": { desc: "Develops Slurm, open source software for managing computing jobs across AI chip clusters.", cat: "MLOps", hq: "", val: "", domain: "", rel: [] },
+    "Cerebras Systems": { desc: "AI chip startup; OpenAI will purchase 750 MW of computing power through 2028.", cat: "Hardware", hq: "", val: "$10B+ computing deal with OpenAI", domain: "", rel: [] },
+    "Hexus": { desc: "Builds tools for creating product demos, videos and guides; acquired by legal AI startup Harvey.", cat: "Code & Dev Tools", hq: "", val: "", domain: "", rel: [] },
+    "Bun": { desc: "Coding tools startup; Anthropic\'s first outright acquisition.", cat: "Code & Dev Tools", hq: "", val: "", domain: "", rel: [] },
+    "General Agents": { desc: "One-year old startup focused on computer-using AI agents, acquired by Jeff Bezos\' AI startup.", cat: "AI Agents", hq: "", val: "", domain: "", rel: [] },
+    "Human Native": { desc: "AI data marketplace acquired by Cloudflare.", cat: "Data & Vector DB", hq: "", val: "", domain: "", rel: [] },
+    "InfiniGrow": { desc: "AI marketing analytics firm acquired by Amplitude.", cat: "Marketing AI", hq: "", val: "", domain: "", rel: [] },
+    "Songkick": { desc: "Concert ticket discovery platform acquired by AI music startup Suno from Warner Music Group.", cat: "Music AI", hq: "", val: "", domain: "", rel: [] },
+    "Cleanlab": { desc: "Data label-auditing startup acquired by data labeling company Handshake.", cat: "Data & Vector DB", hq: "", val: "", domain: "", rel: [] }
 };
 
 // Version check - reset localStorage if default data has more companies (data was updated)
-const DATA_VERSION = 8; // Increment this when adding companies or updating valuations
+const DATA_VERSION = 9; // Increment this when adding companies or updating valuations
 const storedVersion = localStorage.getItem('aimap_version');
 let data;
 if (storedVersion !== String(DATA_VERSION)) {
@@ -5307,6 +5616,344 @@ loadTweetsData();
 
 // Refresh news every 30 minutes
 setInterval(loadNewsFeed, 30 * 60 * 1000);
+
+// === Gmail Newsletter Sync ===
+(function() {
+    const GMAIL_CID_KEY = 'aimap_gmail_client_id';
+    const syncBtn = document.getElementById('gmail-sync-btn');
+    const configDiv = document.getElementById('gmail-sync-config');
+    const clientIdInput = document.getElementById('gmail-client-id');
+    const saveCidBtn = document.getElementById('gmail-save-cid');
+    const statusDiv = document.getElementById('gmail-sync-status');
+    const previewDiv = document.getElementById('gmail-preview');
+    let gmailAccessToken = null;
+    let pendingMerge = null;
+
+    function getClientId() { return localStorage.getItem(GMAIL_CID_KEY) || ''; }
+    function setClientId(v) { localStorage.setItem(GMAIL_CID_KEY, v.trim()); }
+
+    function showStatus(msg, spinner) {
+        statusDiv.classList.add('visible');
+        statusDiv.innerHTML = (spinner ? '<span class="gmail-spinner"></span>' : '') + msg;
+    }
+    function hideStatus() { statusDiv.classList.remove('visible'); statusDiv.innerHTML = ''; }
+
+    // Load saved client ID
+    clientIdInput.value = getClientId();
+
+    saveCidBtn.onclick = () => {
+        const cid = clientIdInput.value.trim();
+        if (!cid) return;
+        setClientId(cid);
+        configDiv.classList.remove('visible');
+        startOAuth(cid);
+    };
+
+    syncBtn.onclick = () => {
+        const cid = getClientId();
+        if (!cid) {
+            configDiv.classList.add('visible');
+            clientIdInput.focus();
+            return;
+        }
+        startOAuth(cid);
+    };
+
+    function startOAuth(clientId) {
+        if (typeof google === 'undefined' || !google.accounts) {
+            showStatus('Google Identity Services not loaded. Check your internet connection and refresh.', false);
+            return;
+        }
+        syncBtn.disabled = true;
+        showStatus('Requesting Gmail access...', true);
+        const tokenClient = google.accounts.oauth2.initTokenClient({
+            client_id: clientId,
+            scope: 'https://www.googleapis.com/auth/gmail.readonly',
+            callback: (resp) => {
+                if (resp.error) {
+                    showStatus('Auth failed: ' + (resp.error_description || resp.error), false);
+                    syncBtn.disabled = false;
+                    return;
+                }
+                gmailAccessToken = resp.access_token;
+                runGmailSync();
+            }
+        });
+        tokenClient.requestAccessToken();
+    }
+
+    async function gmailFetch(url) {
+        const res = await fetch(url, { headers: { Authorization: 'Bearer ' + gmailAccessToken } });
+        if (!res.ok) throw new Error('Gmail API error: ' + res.status);
+        return res.json();
+    }
+
+    async function runGmailSync() {
+        try {
+            previewDiv.classList.remove('visible');
+            previewDiv.innerHTML = '';
+
+            // Step 1: Search for emails
+            showStatus('Searching Gmail for newsletters...', true);
+            const queries = [
+                'from:stephanie@theinformation.com newer_than:12m',
+                'from:newsletters@theinformation.com subject:palazzolo newer_than:12m'
+            ];
+            const messageIds = new Set();
+            for (const q of queries) {
+                let pageToken = '';
+                do {
+                    const url = `https://gmail.googleapis.com/gmail/v1/users/me/messages?q=${encodeURIComponent(q)}&maxResults=100` + (pageToken ? `&pageToken=${pageToken}` : '');
+                    const result = await gmailFetch(url);
+                    if (result.messages) {
+                        result.messages.forEach(m => messageIds.add(m.id));
+                    }
+                    pageToken = result.nextPageToken || '';
+                } while (pageToken);
+            }
+
+            if (messageIds.size === 0) {
+                showStatus('No matching newsletters found. Make sure Stephanie Palazzolo\'s newsletters are in your Gmail.', false);
+                syncBtn.disabled = false;
+                return;
+            }
+
+            showStatus(`Found ${messageIds.size} emails. Fetching content...`, true);
+
+            // Step 2: Fetch email bodies
+            const emails = [];
+            let fetchCount = 0;
+            for (const id of messageIds) {
+                fetchCount++;
+                if (fetchCount % 5 === 0) {
+                    showStatus(`Fetching email ${fetchCount}/${messageIds.size}...`, true);
+                }
+                const msg = await gmailFetch(`https://gmail.googleapis.com/gmail/v1/users/me/messages/${id}?format=full`);
+                const body = extractBody(msg);
+                const dateHeader = (msg.payload?.headers || []).find(h => h.name.toLowerCase() === 'date');
+                if (body) {
+                    emails.push({ id, body, date: dateHeader ? dateHeader.value : '' });
+                }
+            }
+
+            if (emails.length === 0) {
+                showStatus('Fetched emails but could not extract content.', false);
+                syncBtn.disabled = false;
+                return;
+            }
+
+            showStatus(`Extracted ${emails.length} email bodies. Parsing with AI...`, true);
+
+            // Step 3: Parse with Gemini in batches
+            const BATCH_SIZE = 4;
+            const BATCH_DELAY = 7000;
+            const allEntries = [];
+            for (let i = 0; i < emails.length; i += BATCH_SIZE) {
+                const batch = emails.slice(i, i + BATCH_SIZE);
+                const batchNum = Math.floor(i / BATCH_SIZE) + 1;
+                const totalBatches = Math.ceil(emails.length / BATCH_SIZE);
+                showStatus(`Parsing with AI (batch ${batchNum}/${totalBatches})...`, true);
+
+                const emailTexts = batch.map((e, idx) => {
+                    const clean = stripHtml(e.body).slice(-4000);
+                    return `--- EMAIL ${idx + 1} (date: ${e.date}) ---\n${clean}`;
+                }).join('\n\n');
+
+                const prompt = `Extract ALL AI startup fundraising and valuation data from these newsletter excerpts. For each company mentioned with funding, valuation, or investment data, extract:
+- name: company name (exact)
+- val: valuation or funding amount (e.g. "$1.5B valuation" or "$200M Series C")
+- funding: specific funding amount if separate from valuation (e.g. "$50M")
+- round: round type (Seed, Series A, B, C, etc.)
+- investors: key investors (comma separated)
+- cat: best matching category from: Foundation Models, Image Generation, Video Generation, Audio AI, Music AI, Code & Dev Tools, AI Agents, Neo Cloud, Hardware, Data & Vector DB, MLOps, Conversational AI, Contact Center, Customer Support, Enterprise Search, Enterprise AI, Legal Tech, Healthcare AI, Drug Discovery, Finance AI, Marketing AI, HR Tech, Security AI, Education, Robotics, Autonomous Vehicles
+- hq: headquarters if mentioned
+- desc: one-sentence description of what the company does
+- date: date mentioned or email date (YYYY-MM-DD format)
+
+Return ONLY a JSON array. If no fundraising data found, return [].
+
+${emailTexts}`;
+
+                try {
+                    const raw = await callGemini(prompt, 3);
+                    const jsonMatch = raw.match(/\[[\s\S]*\]/);
+                    if (jsonMatch) {
+                        const parsed = JSON.parse(jsonMatch[0]);
+                        allEntries.push(...parsed);
+                    }
+                } catch (err) {
+                    console.warn('Gemini batch error:', err);
+                }
+
+                if (i + BATCH_SIZE < emails.length) {
+                    await new Promise(r => setTimeout(r, BATCH_DELAY));
+                }
+            }
+
+            if (allEntries.length === 0) {
+                showStatus('No fundraising data found in the newsletters.', false);
+                syncBtn.disabled = false;
+                return;
+            }
+
+            // Step 4: Deduplicate (latest per company)
+            const deduped = deduplicateEntries(allEntries);
+            showStatus(`Found ${allEntries.length} entries, ${deduped.length} unique companies. Preparing preview...`, true);
+
+            // Step 5: Prepare merge preview
+            prepareMergePreview(deduped);
+
+        } catch (err) {
+            console.error('Gmail sync error:', err);
+            showStatus('Error: ' + err.message, false);
+            syncBtn.disabled = false;
+        }
+    }
+
+    function extractBody(msg) {
+        const parts = [];
+        function walk(part) {
+            if (part.mimeType === 'text/html' && part.body?.data) {
+                parts.push({ type: 'html', data: part.body.data });
+            } else if (part.mimeType === 'text/plain' && part.body?.data) {
+                parts.push({ type: 'plain', data: part.body.data });
+            }
+            if (part.parts) part.parts.forEach(walk);
+        }
+        walk(msg.payload);
+        const best = parts.find(p => p.type === 'html') || parts.find(p => p.type === 'plain');
+        if (!best) return '';
+        return atob(best.data.replace(/-/g, '+').replace(/_/g, '/'));
+    }
+
+    function stripHtml(html) {
+        const tmp = document.createElement('div');
+        tmp.innerHTML = html;
+        return tmp.textContent || tmp.innerText || '';
+    }
+
+    function deduplicateEntries(entries) {
+        // Sort by date descending so latest comes first
+        entries.sort((a, b) => {
+            const da = a.date ? new Date(a.date) : new Date(0);
+            const db = b.date ? new Date(b.date) : new Date(0);
+            return db - da;
+        });
+        const seen = new Map();
+        for (const e of entries) {
+            const key = (e.name || '').trim().toLowerCase();
+            if (!key) continue;
+            if (!seen.has(key)) {
+                seen.set(key, e);
+            }
+        }
+        return Array.from(seen.values());
+    }
+
+    function findExistingCompany(name) {
+        const lower = name.trim().toLowerCase();
+        for (const key of Object.keys(data)) {
+            if (key.toLowerCase() === lower) return key;
+        }
+        return null;
+    }
+
+    function prepareMergePreview(entries) {
+        const updates = [];
+        const additions = [];
+
+        for (const e of entries) {
+            const existing = findExistingCompany(e.name);
+            if (existing) {
+                const valStr = e.val || e.funding || '';
+                if (valStr && valStr !== data[existing].val) {
+                    updates.push({ name: existing, oldVal: data[existing].val || '—', newVal: valStr, entry: e });
+                }
+            } else {
+                additions.push(e);
+            }
+        }
+
+        pendingMerge = { updates, additions };
+
+        let html = `<div style="font-size:12px;font-weight:600;color:#34d399;margin-bottom:8px;">${updates.length} updated, ${additions.length} new companies</div>`;
+
+        if (updates.length > 0) {
+            html += '<div style="margin-bottom:8px;font-size:11px;color:rgba(148,163,184,0.7);">Updates:</div>';
+            for (const u of updates) {
+                html += `<div class="gmail-preview-item"><span class="company-name">${u.name}</span><span class="action-tag update">UPDATE</span><br><span style="color:rgba(148,163,184,0.6);">${u.oldVal} → ${u.newVal}</span></div>`;
+            }
+        }
+        if (additions.length > 0) {
+            html += '<div style="margin-bottom:8px;margin-top:8px;font-size:11px;color:rgba(148,163,184,0.7);">New companies:</div>';
+            for (const a of additions) {
+                const val = a.val || a.funding || '';
+                html += `<div class="gmail-preview-item"><span class="company-name">${a.name}</span><span class="action-tag new">NEW</span>${val ? ' — ' + val : ''}${a.cat ? ' <span style="color:rgba(148,163,184,0.5);">(' + a.cat + ')</span>' : ''}</div>`;
+            }
+        }
+
+        if (updates.length === 0 && additions.length === 0) {
+            html += '<div style="color:rgba(148,163,184,0.6);font-size:12px;">No changes to apply — your data is up to date.</div>';
+            showStatus('Sync complete. No new data found.', false);
+            syncBtn.disabled = false;
+            previewDiv.innerHTML = html;
+            previewDiv.classList.add('visible');
+            return;
+        }
+
+        html += `<div class="gmail-preview-actions">
+            <button id="gmail-apply-btn">Apply ${updates.length + additions.length} Changes</button>
+            <button id="gmail-cancel-btn">Cancel</button>
+        </div>`;
+
+        previewDiv.innerHTML = html;
+        previewDiv.classList.add('visible');
+        showStatus('Review changes below, then click Apply.', false);
+        syncBtn.disabled = false;
+
+        document.getElementById('gmail-apply-btn').onclick = applyMerge;
+        document.getElementById('gmail-cancel-btn').onclick = () => {
+            previewDiv.classList.remove('visible');
+            previewDiv.innerHTML = '';
+            hideStatus();
+            pendingMerge = null;
+        };
+    }
+
+    function applyMerge() {
+        if (!pendingMerge) return;
+        const { updates, additions } = pendingMerge;
+
+        for (const u of updates) {
+            data[u.name].val = u.newVal;
+        }
+
+        for (const a of additions) {
+            const name = (a.name || '').trim();
+            if (!name) continue;
+            data[name] = {
+                desc: a.desc || '',
+                cat: a.cat || 'Enterprise AI',
+                hq: a.hq || '',
+                val: a.val || a.funding || '',
+                domain: '',
+                rel: []
+            };
+        }
+
+        save();
+        if (center) render(center);
+
+        previewDiv.innerHTML = `<div style="color:#34d399;font-size:12px;font-weight:500;padding:8px 0;">Applied ${updates.length} updates and ${additions.length} new companies. Total: ${Object.keys(data).length} companies.</div>`;
+        showStatus('Sync complete!', false);
+        pendingMerge = null;
+
+        setTimeout(() => {
+            previewDiv.classList.remove('visible');
+            hideStatus();
+        }, 5000);
+    }
+})();
 
 // Init
 save();
