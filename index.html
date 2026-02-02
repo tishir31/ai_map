@@ -5051,33 +5051,43 @@ document.getElementById('add-x-handle').onkeydown = (e) => {
 const GEMINI_API_KEY = 'AIzaSyDuKAdvbCVslFOG31VYNa3B9fYKiiXzGFs';
 const GEMINI_MODEL = 'gemini-2.0-flash-lite';
 
-async function callGemini(prompt) {
-    const res = await fetch(
-        `https://generativelanguage.googleapis.com/v1beta/models/${GEMINI_MODEL}:generateContent?key=${GEMINI_API_KEY}`,
-        {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({
-                contents: [{ parts: [{ text: prompt }] }],
-                generationConfig: { temperature: 0.7, maxOutputTokens: 1024 }
-            })
+async function callGemini(prompt, maxRetries = 3) {
+    for (let attempt = 0; attempt <= maxRetries; attempt++) {
+        const res = await fetch(
+            `https://generativelanguage.googleapis.com/v1beta/models/${GEMINI_MODEL}:generateContent?key=${GEMINI_API_KEY}`,
+            {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    contents: [{ parts: [{ text: prompt }] }],
+                    generationConfig: { temperature: 0.7, maxOutputTokens: 1024 }
+                })
+            }
+        );
+        const json = await res.json();
+        // Rate limited — wait and retry
+        if (res.status === 429 && attempt < maxRetries) {
+            const retryMatch = json?.error?.message?.match(/retry in ([\d.]+)s/i);
+            const waitSec = retryMatch ? Math.ceil(parseFloat(retryMatch[1])) + 2 : (attempt + 1) * 20;
+            console.warn(`Gemini rate limited, retrying in ${waitSec}s (attempt ${attempt + 1}/${maxRetries})`);
+            await new Promise(r => setTimeout(r, waitSec * 1000));
+            continue;
         }
-    );
-    const json = await res.json();
-    if (!res.ok) {
-        const msg = json?.error?.message || `HTTP ${res.status}`;
-        console.error('Gemini API error:', json);
-        throw new Error(msg);
+        if (!res.ok) {
+            const msg = json?.error?.message || `HTTP ${res.status}`;
+            console.error('Gemini API error:', json);
+            throw new Error(msg);
+        }
+        if (json.candidates?.[0]?.finishReason === 'SAFETY') {
+            throw new Error('Response blocked by safety filter');
+        }
+        const text = json.candidates?.[0]?.content?.parts?.[0]?.text;
+        if (!text) {
+            console.error('Gemini unexpected response:', json);
+            throw new Error('No text in API response');
+        }
+        return text;
     }
-    if (json.candidates?.[0]?.finishReason === 'SAFETY') {
-        throw new Error('Response blocked by safety filter');
-    }
-    const text = json.candidates?.[0]?.content?.parts?.[0]?.text;
-    if (!text) {
-        console.error('Gemini unexpected response:', json);
-        throw new Error('No text in API response');
-    }
-    return text;
 }
 
 // --- Feature 1: AI Company Summary ---
@@ -5182,7 +5192,7 @@ async function curateNews(articles) {
         return;
     }
 
-    container.innerHTML = '<div class="curated-loading"><span class="ai-spinner"></span> Curating with AI...</div>';
+    container.innerHTML = '<div class="curated-loading"><span class="ai-spinner"></span> Curating with AI...<br><span style="font-size:11px;opacity:0.6">May take up to a minute if rate limited</span></div>';
 
     try {
         const articleList = articles.slice(0, 25).map((a, i) =>
