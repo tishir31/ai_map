@@ -1848,6 +1848,194 @@
             .feed-sidebar.left { display: none; }
             .feed-show-btn.left { display: none !important; }
         }
+
+        /* AI Summary Button & Content */
+        #ai-summary-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 8px 14px;
+            font-size: 12px;
+            font-weight: 500;
+            font-family: inherit;
+            color: #a78bfa;
+            background: rgba(139, 92, 246, 0.15);
+            border: 1px solid rgba(139, 92, 246, 0.3);
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        #ai-summary-btn:hover {
+            background: rgba(139, 92, 246, 0.25);
+            border-color: #8b5cf6;
+            color: #fff;
+        }
+        #ai-summary-btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+        #ai-summary-btn svg {
+            width: 14px;
+            height: 14px;
+        }
+        #ai-summary-content {
+            margin-top: 12px;
+            display: none;
+        }
+        #ai-summary-content.visible {
+            display: block;
+        }
+        .ai-summary-text {
+            font-size: 12px;
+            line-height: 1.7;
+            color: rgba(203, 213, 225, 0.9);
+            background: rgba(30, 41, 59, 0.5);
+            border: 1px solid rgba(139, 92, 246, 0.2);
+            border-radius: 10px;
+            padding: 14px;
+            max-height: 250px;
+            overflow-y: auto;
+        }
+        .ai-summary-text::-webkit-scrollbar { width: 5px; }
+        .ai-summary-text::-webkit-scrollbar-thumb { background: rgba(139, 92, 246, 0.3); border-radius: 3px; }
+        .ai-summary-label {
+            font-size: 10px;
+            font-weight: 600;
+            color: #a78bfa;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 8px;
+        }
+
+        /* AI Spinner */
+        .ai-spinner {
+            display: inline-block;
+            width: 14px;
+            height: 14px;
+            border: 2px solid rgba(139, 92, 246, 0.3);
+            border-top-color: #a78bfa;
+            border-radius: 50%;
+            animation: ai-spin 0.6s linear infinite;
+        }
+        @keyframes ai-spin {
+            to { transform: rotate(360deg); }
+        }
+
+        /* News Feed Tabs */
+        .news-tabs {
+            display: flex;
+            gap: 0;
+            padding: 0 12px;
+            border-bottom: 1px solid rgba(59, 130, 246, 0.15);
+            flex-shrink: 0;
+        }
+        .news-tab {
+            flex: 1;
+            padding: 10px 8px;
+            font-size: 11px;
+            font-weight: 600;
+            font-family: inherit;
+            text-align: center;
+            background: none;
+            border: none;
+            border-bottom: 2px solid transparent;
+            color: rgba(148, 163, 184, 0.6);
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .news-tab:hover {
+            color: rgba(148, 163, 184, 0.9);
+        }
+        .news-tab.active {
+            color: #60a5fa;
+            border-bottom-color: #3b82f6;
+        }
+        .news-tab .tab-icon {
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            margin-right: 4px;
+            vertical-align: -1px;
+        }
+        #ai-curated-content {
+            display: none;
+            flex: 1;
+            overflow-y: auto;
+            padding: 12px;
+        }
+        #ai-curated-content::-webkit-scrollbar { width: 6px; }
+        #ai-curated-content::-webkit-scrollbar-track { background: transparent; }
+        #ai-curated-content::-webkit-scrollbar-thumb { background: rgba(139, 92, 246, 0.3); border-radius: 3px; }
+        #ai-curated-content.visible {
+            display: block;
+        }
+        .curated-item {
+            padding: 12px;
+            border-radius: 10px;
+            background: rgba(71, 85, 105, 0.4);
+            margin-bottom: 10px;
+            border: 1px solid rgba(139, 92, 246, 0.2);
+            transition: all 0.2s;
+        }
+        .curated-item:hover {
+            background: rgba(71, 85, 105, 0.6);
+            border-color: rgba(139, 92, 246, 0.4);
+        }
+        .curated-item a {
+            text-decoration: none;
+            color: inherit;
+        }
+        .curated-rank {
+            display: inline-block;
+            font-size: 10px;
+            font-weight: 700;
+            color: #a78bfa;
+            background: rgba(139, 92, 246, 0.15);
+            padding: 2px 7px;
+            border-radius: 4px;
+            margin-right: 6px;
+        }
+        .curated-title {
+            font-size: 13px;
+            font-weight: 500;
+            color: #e2e8f0;
+            line-height: 1.4;
+            margin-bottom: 6px;
+        }
+        .curated-summary {
+            font-size: 11px;
+            line-height: 1.5;
+            color: rgba(148, 163, 184, 0.8);
+            margin-bottom: 6px;
+        }
+        .curated-meta {
+            font-size: 10px;
+            color: rgba(148, 163, 184, 0.5);
+        }
+        .curated-loading {
+            text-align: center;
+            padding: 40px 20px;
+            color: rgba(168, 139, 250, 0.7);
+            font-size: 13px;
+        }
+        .curated-refresh {
+            display: block;
+            margin: 8px auto;
+            padding: 6px 16px;
+            font-size: 11px;
+            font-weight: 500;
+            font-family: inherit;
+            color: #a78bfa;
+            background: rgba(139, 92, 246, 0.1);
+            border: 1px solid rgba(139, 92, 246, 0.3);
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .curated-refresh:hover {
+            background: rgba(139, 92, 246, 0.2);
+            color: #fff;
+        }
     </style>
 </head>
 <body>
@@ -1925,6 +2113,14 @@
                     <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"/></svg>
                     <span id="favorite-text">Add to Favorites</span>
                 </button>
+                <button id="ai-summary-btn">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
+                    Ask AI
+                </button>
+            </div>
+            <div id="ai-summary-content">
+                <div class="ai-summary-label">AI Summary</div>
+                <div class="ai-summary-text" id="ai-summary-text"></div>
             </div>
         </div>
 
@@ -1944,8 +2140,15 @@
                     <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 19l-7-7 7-7m8 14l-7-7 7-7"/></svg>
                 </button>
             </div>
+            <div class="news-tabs">
+                <button class="news-tab active" id="tab-latest">Latest</button>
+                <button class="news-tab" id="tab-curated">AI Curated</button>
+            </div>
             <div class="feed-content" id="news-content">
                 <div class="news-loading">Loading AI news...</div>
+            </div>
+            <div id="ai-curated-content">
+                <div class="curated-loading"><span class="ai-spinner"></span> Curating with AI...</div>
             </div>
         </div>
 
@@ -4841,6 +5044,232 @@ document.getElementById('add-x-handle').onkeydown = (e) => {
         const input = document.getElementById('add-x-handle');
         addXAccount(input.value);
         input.value = '';
+    }
+};
+
+// === Gemini AI Integration ===
+const GEMINI_API_KEY = 'AIzaSyDuKAdvbCVslFOG31VYNa3B9fYKiiXzGFs';
+const GEMINI_MODEL = 'gemini-2.0-flash';
+
+async function callGemini(prompt) {
+    const res = await fetch(
+        `https://generativelanguage.googleapis.com/v1beta/models/${GEMINI_MODEL}:generateContent?key=${GEMINI_API_KEY}`,
+        {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                contents: [{ parts: [{ text: prompt }] }]
+            })
+        }
+    );
+    if (!res.ok) throw new Error(`Gemini API error: ${res.status}`);
+    const json = await res.json();
+    return json.candidates?.[0]?.content?.parts?.[0]?.text || 'No response from AI.';
+}
+
+// --- Feature 1: AI Company Summary ---
+const aiSummaryCache = JSON.parse(localStorage.getItem('aiSummaryCache') || '{}');
+
+function saveAiSummaryCache() {
+    localStorage.setItem('aiSummaryCache', JSON.stringify(aiSummaryCache));
+}
+
+async function generateCompanySummary(companyName) {
+    const btn = document.getElementById('ai-summary-btn');
+    const contentDiv = document.getElementById('ai-summary-content');
+    const textDiv = document.getElementById('ai-summary-text');
+
+    // Check cache first
+    if (aiSummaryCache[companyName]) {
+        textDiv.innerHTML = aiSummaryCache[companyName];
+        contentDiv.classList.add('visible');
+        return;
+    }
+
+    // Show loading state
+    btn.disabled = true;
+    btn.innerHTML = '<span class="ai-spinner"></span> Thinking...';
+    contentDiv.classList.add('visible');
+    textDiv.innerHTML = '<span class="ai-spinner"></span> Generating summary...';
+
+    try {
+        const c = data[companyName];
+        const related = (c.related || []).slice(0, 5).join(', ');
+        const prompt = `You are an AI industry analyst. Write a concise but informative summary about the AI company "${companyName}".
+
+Known details:
+- Description: ${c.desc || 'N/A'}
+- Category: ${c.cat || 'N/A'}
+- Valuation/Revenue: ${c.val || 'N/A'}
+- Headquarters: ${c.hq || 'N/A'}
+- Key relationships/competitors: ${related || 'N/A'}
+
+Cover these points in 3-5 short paragraphs:
+1. What the company does and its core products/services
+2. Key recent developments or milestones
+3. Competitive position in the AI landscape
+4. Why this company matters for the future of AI
+
+Keep it factual, concise, and under 200 words. Use plain text, no markdown headers.`;
+
+        const result = await callGemini(prompt);
+        const formatted = result.replace(/\n\n/g, '<br><br>').replace(/\n/g, '<br>');
+        aiSummaryCache[companyName] = formatted;
+        saveAiSummaryCache();
+        textDiv.innerHTML = formatted;
+    } catch (err) {
+        console.error('AI Summary error:', err);
+        textDiv.innerHTML = 'Failed to generate summary. Please try again.';
+    } finally {
+        btn.disabled = false;
+        btn.innerHTML = '<svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg> Ask AI';
+    }
+}
+
+document.getElementById('ai-summary-btn').onclick = () => {
+    if (currentPanelCompany) generateCompanySummary(currentPanelCompany);
+};
+
+// --- Feature 2: AI-Curated News ---
+let cachedCuratedNews = null;
+let curatedTimestamp = 0;
+const CURATED_CACHE_MS = 30 * 60 * 1000; // 30 minutes
+let loadedNewsArticles = []; // store articles after RSS load
+
+// Patch loadNewsFeed to capture articles for curation
+const _originalLoadNewsFeed = loadNewsFeed;
+loadNewsFeed = async function() {
+    await _originalLoadNewsFeed();
+    // Extract loaded articles from DOM
+    const items = document.querySelectorAll('#news-content .news-item');
+    loadedNewsArticles = Array.from(items).map(el => {
+        const a = el.querySelector('a');
+        return {
+            source: el.querySelector('.news-source')?.textContent || '',
+            title: el.querySelector('.news-title')?.textContent || '',
+            link: a?.href || '',
+            time: el.querySelector('.news-time')?.textContent || ''
+        };
+    });
+    // Auto-curate if we haven't recently
+    if (loadedNewsArticles.length > 0 && (Date.now() - curatedTimestamp > CURATED_CACHE_MS)) {
+        curateNews(loadedNewsArticles);
+    }
+};
+
+async function curateNews(articles) {
+    const container = document.getElementById('ai-curated-content');
+
+    // Check memory cache
+    if (cachedCuratedNews && (Date.now() - curatedTimestamp < CURATED_CACHE_MS)) {
+        container.innerHTML = cachedCuratedNews;
+        return;
+    }
+
+    container.innerHTML = '<div class="curated-loading"><span class="ai-spinner"></span> Curating with AI...</div>';
+
+    try {
+        const articleList = articles.slice(0, 25).map((a, i) =>
+            `${i + 1}. [${a.source}] ${a.title}`
+        ).join('\n');
+
+        const prompt = `You are an AI news editor. From these recent AI news headlines, select the 8-10 most important and impactful ones. Rank them by importance.
+
+Articles:
+${articleList}
+
+For each selected article, respond in this exact format (one per line):
+RANK|ORIGINAL_NUMBER|One or two sentence summary explaining why this matters
+
+Example:
+1|3|This matters because it shows a major shift in AI regulation that could affect the entire industry.
+
+Rules:
+- ORIGINAL_NUMBER must match the article number from the list above
+- Keep summaries concise and insightful
+- Focus on significance and impact
+- Only output the ranked lines, nothing else`;
+
+        const result = await callGemini(prompt);
+        const lines = result.trim().split('\n').filter(l => l.includes('|'));
+
+        let html = '';
+        for (const line of lines) {
+            const parts = line.split('|');
+            if (parts.length < 3) continue;
+            const rank = parts[0].trim();
+            const origNum = parseInt(parts[1].trim()) - 1;
+            const summary = parts.slice(2).join('|').trim();
+            const article = articles[origNum];
+            if (!article) continue;
+
+            html += `
+                <div class="curated-item">
+                    <a href="${article.link}" target="_blank" rel="noopener">
+                        <div class="curated-title"><span class="curated-rank">#${rank}</span>${article.title}</div>
+                        <div class="curated-summary">${summary}</div>
+                        <div class="curated-meta">${article.source} &middot; ${article.time}</div>
+                    </a>
+                </div>`;
+        }
+
+        if (!html) {
+            html = '<div class="curated-loading">Could not curate articles. Try refreshing.</div>';
+        }
+
+        html += '<button class="curated-refresh" id="curated-refresh-btn">Refresh Curation</button>';
+        container.innerHTML = html;
+        cachedCuratedNews = html;
+        curatedTimestamp = Date.now();
+
+        document.getElementById('curated-refresh-btn')?.addEventListener('click', () => {
+            cachedCuratedNews = null;
+            curatedTimestamp = 0;
+            if (loadedNewsArticles.length > 0) curateNews(loadedNewsArticles);
+        });
+    } catch (err) {
+        console.error('News curation error:', err);
+        container.innerHTML = '<div class="curated-loading">Failed to curate news. <button class="curated-refresh" onclick="cachedCuratedNews=null;curatedTimestamp=0;curateNews(loadedNewsArticles)">Retry</button></div>';
+    }
+}
+
+// News tab switching
+const tabLatest = document.getElementById('tab-latest');
+const tabCurated = document.getElementById('tab-curated');
+const newsContentDiv = document.getElementById('news-content');
+const curatedContentDiv = document.getElementById('ai-curated-content');
+
+tabLatest.onclick = () => {
+    tabLatest.classList.add('active');
+    tabCurated.classList.remove('active');
+    newsContentDiv.style.display = '';
+    curatedContentDiv.classList.remove('visible');
+};
+
+tabCurated.onclick = () => {
+    tabCurated.classList.add('active');
+    tabLatest.classList.remove('active');
+    newsContentDiv.style.display = 'none';
+    curatedContentDiv.classList.add('visible');
+    // Trigger curation if needed
+    if (loadedNewsArticles.length > 0 && !cachedCuratedNews) {
+        curateNews(loadedNewsArticles);
+    }
+};
+
+// Update showPanel to reset AI summary for new company
+const _originalShowPanel = showPanel;
+showPanel = function(name) {
+    _originalShowPanel(name);
+    const contentDiv = document.getElementById('ai-summary-content');
+    const textDiv = document.getElementById('ai-summary-text');
+    // If cached, show it; otherwise hide
+    if (aiSummaryCache[name]) {
+        textDiv.innerHTML = aiSummaryCache[name];
+        contentDiv.classList.add('visible');
+    } else {
+        contentDiv.classList.remove('visible');
+        textDiv.innerHTML = '';
     }
 };
 
