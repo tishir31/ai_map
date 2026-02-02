@@ -5058,13 +5058,26 @@ async function callGemini(prompt) {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
-                contents: [{ parts: [{ text: prompt }] }]
+                contents: [{ parts: [{ text: prompt }] }],
+                generationConfig: { temperature: 0.7, maxOutputTokens: 1024 }
             })
         }
     );
-    if (!res.ok) throw new Error(`Gemini API error: ${res.status}`);
     const json = await res.json();
-    return json.candidates?.[0]?.content?.parts?.[0]?.text || 'No response from AI.';
+    if (!res.ok) {
+        const msg = json?.error?.message || `HTTP ${res.status}`;
+        console.error('Gemini API error:', json);
+        throw new Error(msg);
+    }
+    if (json.candidates?.[0]?.finishReason === 'SAFETY') {
+        throw new Error('Response blocked by safety filter');
+    }
+    const text = json.candidates?.[0]?.content?.parts?.[0]?.text;
+    if (!text) {
+        console.error('Gemini unexpected response:', json);
+        throw new Error('No text in API response');
+    }
+    return text;
 }
 
 // --- Feature 1: AI Company Summary ---
@@ -5151,9 +5164,12 @@ loadNewsFeed = async function() {
             time: el.querySelector('.news-time')?.textContent || ''
         };
     });
-    // Auto-curate if we haven't recently
-    if (loadedNewsArticles.length > 0 && (Date.now() - curatedTimestamp > CURATED_CACHE_MS)) {
-        curateNews(loadedNewsArticles);
+    // Update curated tab hint if articles available
+    if (loadedNewsArticles.length > 0) {
+        const container = document.getElementById('ai-curated-content');
+        if (!cachedCuratedNews) {
+            container.innerHTML = '<div class="curated-loading">Click here to curate top stories with AI</div>';
+        }
     }
 };
 
@@ -5229,7 +5245,7 @@ Rules:
         });
     } catch (err) {
         console.error('News curation error:', err);
-        container.innerHTML = '<div class="curated-loading">Failed to curate news. <button class="curated-refresh" onclick="cachedCuratedNews=null;curatedTimestamp=0;curateNews(loadedNewsArticles)">Retry</button></div>';
+        container.innerHTML = `<div class="curated-loading">Failed to curate news: ${err.message}<br><button class="curated-refresh" onclick="cachedCuratedNews=null;curatedTimestamp=0;curateNews(loadedNewsArticles)">Retry</button></div>`;
     }
 }
 
