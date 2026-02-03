@@ -1346,6 +1346,141 @@
             color: #94a3b8;
         }
 
+        /* Data Explorer modal */
+        .datatable-modal {
+            position: fixed;
+            inset: 0;
+            background: rgba(3, 7, 18, 0.95);
+            backdrop-filter: blur(8px);
+            z-index: 300;
+            display: none;
+            flex-direction: column;
+            padding: 20px;
+        }
+        .datatable-modal.open { display: flex; }
+        .datatable-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 16px;
+            flex-shrink: 0;
+        }
+        .datatable-header h2 {
+            font-size: 18px;
+            font-weight: 600;
+        }
+        .datatable-close {
+            background: none;
+            border: none;
+            color: #94a3b8;
+            font-size: 28px;
+            cursor: pointer;
+            padding: 0 8px;
+        }
+        .datatable-close:hover { color: #fff; }
+        .datatable-controls {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 12px;
+            flex-wrap: wrap;
+            align-items: center;
+            flex-shrink: 0;
+        }
+        .datatable-search {
+            flex: 1;
+            min-width: 200px;
+            max-width: 300px;
+            padding: 10px 14px;
+            font-size: 13px;
+            font-family: inherit;
+            background: rgba(51, 65, 85, 0.6);
+            border: 1px solid rgba(100, 116, 139, 0.4);
+            border-radius: 8px;
+            color: #fff;
+            outline: none;
+        }
+        .datatable-search:focus { border-color: #3b82f6; }
+        .datatable-filter {
+            padding: 8px 12px;
+            font-size: 12px;
+            font-family: inherit;
+            background: rgba(51, 65, 85, 0.6);
+            border: 1px solid rgba(100, 116, 139, 0.4);
+            border-radius: 8px;
+            color: #e2e8f0;
+            cursor: pointer;
+        }
+        .datatable-count {
+            font-size: 12px;
+            color: rgba(148, 163, 184, 0.6);
+            margin-left: auto;
+        }
+        .datatable-wrap {
+            flex: 1;
+            overflow: auto;
+            border: 1px solid rgba(100, 116, 139, 0.2);
+            border-radius: 10px;
+            background: rgba(15, 23, 42, 0.5);
+        }
+        .datatable-wrap::-webkit-scrollbar { width: 8px; height: 8px; }
+        .datatable-wrap::-webkit-scrollbar-thumb { background: rgba(100, 116, 139, 0.3); border-radius: 4px; }
+        .datatable {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 12px;
+        }
+        .datatable th {
+            position: sticky;
+            top: 0;
+            background: rgba(51, 65, 85, 0.95);
+            padding: 12px 14px;
+            text-align: left;
+            font-weight: 600;
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: rgba(148, 163, 184, 0.8);
+            border-bottom: 1px solid rgba(100, 116, 139, 0.3);
+            cursor: pointer;
+            user-select: none;
+            white-space: nowrap;
+        }
+        .datatable th:hover { color: #fff; background: rgba(71, 85, 105, 0.9); }
+        .datatable th.sorted-asc::after { content: ' ▲'; color: #3b82f6; }
+        .datatable th.sorted-desc::after { content: ' ▼'; color: #3b82f6; }
+        .datatable td {
+            padding: 10px 14px;
+            border-bottom: 1px solid rgba(100, 116, 139, 0.1);
+            color: rgba(203, 213, 225, 0.9);
+            max-width: 300px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+        .datatable tr:hover td { background: rgba(59, 130, 246, 0.05); }
+        .datatable td.name-cell {
+            font-weight: 600;
+            color: #60a5fa;
+            cursor: pointer;
+        }
+        .datatable td.name-cell:hover { text-decoration: underline; }
+        .datatable td.val-cell {
+            font-weight: 600;
+            color: #34d399;
+        }
+        .datatable td.cat-cell {
+            padding: 4px 8px;
+        }
+        .datatable .cat-badge {
+            display: inline-block;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 10px;
+            font-weight: 600;
+            background: rgba(139, 92, 246, 0.15);
+            color: #a78bfa;
+        }
+
         /* Compare modal */
         .compare-modal {
             position: fixed;
@@ -2375,6 +2510,10 @@
                 <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
                 <span>Shortcuts</span>
             </button>
+            <button class="toolbar-btn" id="datatable-btn" title="Data Explorer">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M3 14h18m-9-4v8m-7 0h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
+                <span>Data</span>
+            </button>
         </div>
 
         <!-- Zoom Controls -->
@@ -2411,6 +2550,47 @@
                 <div class="shortcut-item"><kbd>-</kbd><span>Zoom out</span></div>
                 <div class="shortcut-item"><kbd>0</kbd><span>Reset zoom</span></div>
             </div>
+        </div>
+    </div>
+
+    <!-- Data Explorer Modal -->
+    <div class="datatable-modal" id="datatable-modal">
+        <div class="datatable-header">
+            <h2>Data Explorer</h2>
+            <button class="datatable-close" id="datatable-close">&times;</button>
+        </div>
+        <div class="datatable-controls">
+            <input type="text" class="datatable-search" id="datatable-search" placeholder="Search companies...">
+            <select class="datatable-filter" id="datatable-cat-filter">
+                <option value="">All Categories</option>
+            </select>
+            <select class="datatable-filter" id="datatable-hq-filter">
+                <option value="">All Locations</option>
+            </select>
+            <select class="datatable-filter" id="datatable-val-filter">
+                <option value="">All Valuations</option>
+                <option value="100B+">$100B+</option>
+                <option value="10B+">$10B+</option>
+                <option value="1B+">$1B+</option>
+                <option value="100M+">$100M+</option>
+                <option value="<100M">Under $100M</option>
+                <option value="none">No Valuation</option>
+            </select>
+            <span class="datatable-count" id="datatable-count"></span>
+        </div>
+        <div class="datatable-wrap">
+            <table class="datatable" id="datatable">
+                <thead>
+                    <tr>
+                        <th data-col="name">Company</th>
+                        <th data-col="cat">Category</th>
+                        <th data-col="val">Valuation</th>
+                        <th data-col="hq">Location</th>
+                        <th data-col="desc">Description</th>
+                    </tr>
+                </thead>
+                <tbody id="datatable-body"></tbody>
+            </table>
         </div>
     </div>
 
@@ -5506,7 +5686,51 @@ const GEMINI_MODEL = 'gemini-2.5-flash-lite';
 function getGeminiKey() { return localStorage.getItem('aimap_gemini_key') || ''; }
 function setGeminiKey(k) { localStorage.setItem('aimap_gemini_key', k.trim()); }
 
+// Check if we're on Vercel (has /api/gemini endpoint)
+let useGeminiProxy = null; // null = not checked, true/false = checked
+async function checkGeminiProxy() {
+    if (useGeminiProxy !== null) return useGeminiProxy;
+    try {
+        const res = await fetch('/api/gemini', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ prompt: 'test' }) });
+        // If we get 200 or 500 (configured but error), proxy exists
+        useGeminiProxy = res.status !== 404;
+    } catch {
+        useGeminiProxy = false;
+    }
+    return useGeminiProxy;
+}
+
 async function callGemini(prompt, maxRetries = 3) {
+    // Try proxy first (Vercel deployment with server-side key)
+    const hasProxy = await checkGeminiProxy();
+
+    if (hasProxy) {
+        // Use serverless proxy - key is stored in Vercel environment
+        for (let attempt = 0; attempt <= maxRetries; attempt++) {
+            const res = await fetch('/api/gemini', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ prompt, model: GEMINI_MODEL })
+            });
+            const json = await res.json();
+
+            if (res.status === 429 && attempt < maxRetries) {
+                const waitSec = (attempt + 1) * 20;
+                console.warn(`Gemini rate limited via proxy, retrying in ${waitSec}s`);
+                await new Promise(r => setTimeout(r, waitSec * 1000));
+                continue;
+            }
+            if (!res.ok) {
+                throw new Error(json?.error || `HTTP ${res.status}`);
+            }
+            if (!json.text) {
+                throw new Error('No text in proxy response');
+            }
+            return json.text;
+        }
+    }
+
+    // Fallback: direct API call with user-provided key (local dev)
     if (!getGeminiKey()) throw new Error('Gemini API key not configured. Go to Manage → Data tab to enter your key.');
     for (let attempt = 0; attempt <= maxRetries; attempt++) {
         const res = await fetch(
@@ -6244,6 +6468,180 @@ ${emailTexts}`;
             hideStatus();
         }, 5000);
     }
+})();
+
+// === Data Explorer ===
+(function() {
+    const modal = document.getElementById('datatable-modal');
+    const closeBtn = document.getElementById('datatable-close');
+    const searchInput = document.getElementById('datatable-search');
+    const catFilter = document.getElementById('datatable-cat-filter');
+    const hqFilter = document.getElementById('datatable-hq-filter');
+    const valFilter = document.getElementById('datatable-val-filter');
+    const tbody = document.getElementById('datatable-body');
+    const countEl = document.getElementById('datatable-count');
+    const headers = document.querySelectorAll('#datatable th');
+
+    let sortCol = 'name';
+    let sortDir = 'asc';
+    let filteredData = [];
+
+    // Open modal
+    document.getElementById('datatable-btn').onclick = () => {
+        modal.classList.add('open');
+        populateFilters();
+        renderTable();
+    };
+
+    // Close modal
+    closeBtn.onclick = () => modal.classList.remove('open');
+    modal.onclick = (e) => { if (e.target === modal) modal.classList.remove('open'); };
+
+    // Populate category and HQ filters
+    function populateFilters() {
+        const cats = new Set();
+        const hqs = new Set();
+        Object.values(data).forEach(c => {
+            if (c.cat) cats.add(c.cat);
+            if (c.hq) {
+                // Extract country/state from "City, State" or "City, Country"
+                const parts = c.hq.split(',').map(p => p.trim());
+                if (parts.length > 1) hqs.add(parts[parts.length - 1]);
+                else if (parts[0]) hqs.add(parts[0]);
+            }
+        });
+
+        catFilter.innerHTML = '<option value="">All Categories</option>' +
+            [...cats].sort().map(c => `<option value="${c}">${c}</option>`).join('');
+
+        hqFilter.innerHTML = '<option value="">All Locations</option>' +
+            [...hqs].sort().map(h => `<option value="${h}">${h}</option>`).join('');
+    }
+
+    // Parse valuation to number for sorting/filtering
+    function parseVal(val) {
+        if (!val || val === 'N/A') return 0;
+        const match = val.match(/\$?([\d.]+)\s*(T|B|M|K)?/i);
+        if (!match) return 0;
+        let num = parseFloat(match[1]);
+        const unit = (match[2] || '').toUpperCase();
+        if (unit === 'T') num *= 1000000000000;
+        else if (unit === 'B') num *= 1000000000;
+        else if (unit === 'M') num *= 1000000;
+        else if (unit === 'K') num *= 1000;
+        return num;
+    }
+
+    // Filter and sort data
+    function getFilteredData() {
+        const search = searchInput.value.toLowerCase().trim();
+        const cat = catFilter.value;
+        const hq = hqFilter.value;
+        const val = valFilter.value;
+
+        let results = Object.entries(data).map(([name, c]) => ({
+            name, ...c, valNum: parseVal(c.val)
+        }));
+
+        // Apply filters
+        if (search) {
+            results = results.filter(r =>
+                r.name.toLowerCase().includes(search) ||
+                (r.desc && r.desc.toLowerCase().includes(search)) ||
+                (r.cat && r.cat.toLowerCase().includes(search))
+            );
+        }
+        if (cat) results = results.filter(r => r.cat === cat);
+        if (hq) results = results.filter(r => r.hq && r.hq.includes(hq));
+        if (val) {
+            if (val === '100B+') results = results.filter(r => r.valNum >= 100e9);
+            else if (val === '10B+') results = results.filter(r => r.valNum >= 10e9);
+            else if (val === '1B+') results = results.filter(r => r.valNum >= 1e9);
+            else if (val === '100M+') results = results.filter(r => r.valNum >= 100e6);
+            else if (val === '<100M') results = results.filter(r => r.valNum > 0 && r.valNum < 100e6);
+            else if (val === 'none') results = results.filter(r => r.valNum === 0);
+        }
+
+        // Sort
+        results.sort((a, b) => {
+            let av, bv;
+            if (sortCol === 'val') {
+                av = a.valNum; bv = b.valNum;
+            } else {
+                av = (a[sortCol] || '').toLowerCase();
+                bv = (b[sortCol] || '').toLowerCase();
+            }
+            if (av < bv) return sortDir === 'asc' ? -1 : 1;
+            if (av > bv) return sortDir === 'asc' ? 1 : -1;
+            return 0;
+        });
+
+        return results;
+    }
+
+    // Render table
+    function renderTable() {
+        filteredData = getFilteredData();
+        countEl.textContent = `${filteredData.length} companies`;
+
+        // Update header sort indicators
+        headers.forEach(th => {
+            th.classList.remove('sorted-asc', 'sorted-desc');
+            if (th.dataset.col === sortCol) {
+                th.classList.add(sortDir === 'asc' ? 'sorted-asc' : 'sorted-desc');
+            }
+        });
+
+        // Render rows
+        tbody.innerHTML = filteredData.map(r => `
+            <tr>
+                <td class="name-cell" data-name="${r.name}">${r.name}</td>
+                <td class="cat-cell"><span class="cat-badge">${r.cat || '—'}</span></td>
+                <td class="val-cell">${r.val || '—'}</td>
+                <td>${r.hq || '—'}</td>
+                <td title="${(r.desc || '').replace(/"/g, '&quot;')}">${r.desc || '—'}</td>
+            </tr>
+        `).join('');
+
+        // Click on name to navigate
+        tbody.querySelectorAll('.name-cell').forEach(cell => {
+            cell.onclick = () => {
+                modal.classList.remove('open');
+                render(cell.dataset.name);
+            };
+        });
+    }
+
+    // Sort on header click
+    headers.forEach(th => {
+        th.onclick = () => {
+            const col = th.dataset.col;
+            if (sortCol === col) {
+                sortDir = sortDir === 'asc' ? 'desc' : 'asc';
+            } else {
+                sortCol = col;
+                sortDir = col === 'val' ? 'desc' : 'asc'; // Default desc for valuation
+            }
+            renderTable();
+        };
+    });
+
+    // Filter changes
+    searchInput.oninput = renderTable;
+    catFilter.onchange = renderTable;
+    hqFilter.onchange = renderTable;
+    valFilter.onchange = renderTable;
+
+    // Keyboard shortcut: D for data explorer
+    document.addEventListener('keydown', e => {
+        if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA' || e.target.tagName === 'SELECT') return;
+        if (e.key.toLowerCase() === 'd' && !e.ctrlKey && !e.metaKey) {
+            e.preventDefault();
+            modal.classList.add('open');
+            populateFilters();
+            renderTable();
+        }
+    });
 })();
 
 // Init
