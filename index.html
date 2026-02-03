@@ -2501,6 +2501,14 @@
                 </div>
 
                 <div class="tab-content" id="tab-data">
+                    <div style="margin-bottom:14px;padding:10px;background:rgba(30,41,59,0.6);border:1px solid rgba(139,92,246,0.2);border-radius:8px;">
+                        <label style="font-size:11px;color:rgba(148,163,184,0.8);display:block;margin-bottom:4px;">Gemini API Key <span style="color:rgba(148,163,184,0.4);">(required for AI features)</span></label>
+                        <div style="display:flex;gap:6px;">
+                            <input type="password" id="gemini-key-input" placeholder="AIzaSy..." style="flex:1;padding:8px 10px;font-size:12px;font-family:monospace;background:rgba(15,23,42,0.8);border:1px solid rgba(100,116,139,0.4);border-radius:6px;color:#e2e8f0;outline:none;">
+                            <button id="gemini-key-save" style="padding:6px 12px;font-size:11px;font-family:inherit;color:#a78bfa;background:rgba(139,92,246,0.15);border:1px solid rgba(139,92,246,0.3);border-radius:6px;cursor:pointer;">Save</button>
+                        </div>
+                        <div id="gemini-key-status" style="font-size:11px;margin-top:4px;color:rgba(148,163,184,0.5);"></div>
+                    </div>
                     <p style="color:rgba(148,163,184,0.6);font-size:12px;margin-bottom:14px;">Export or import company data.</p>
                     <div class="export-btns">
                         <button class="btn btn-ghost" id="export-btn">Export JSON</button>
@@ -5357,13 +5365,15 @@ document.getElementById('add-x-handle').onkeydown = (e) => {
 };
 
 // === Gemini AI Integration ===
-const GEMINI_API_KEY = 'AIzaSyDuKAdvbCVslFOG31VYNa3B9fYKiiXzGFs';
 const GEMINI_MODEL = 'gemini-2.5-flash-lite';
+function getGeminiKey() { return localStorage.getItem('aimap_gemini_key') || ''; }
+function setGeminiKey(k) { localStorage.setItem('aimap_gemini_key', k.trim()); }
 
 async function callGemini(prompt, maxRetries = 3) {
+    if (!getGeminiKey()) throw new Error('Gemini API key not configured. Go to Manage → Data tab to enter your key.');
     for (let attempt = 0; attempt <= maxRetries; attempt++) {
         const res = await fetch(
-            `https://generativelanguage.googleapis.com/v1beta/models/${GEMINI_MODEL}:generateContent?key=${GEMINI_API_KEY}`,
+            `https://generativelanguage.googleapis.com/v1beta/models/${GEMINI_MODEL}:generateContent?key=${getGeminiKey()}`,
             {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
@@ -5398,6 +5408,26 @@ async function callGemini(prompt, maxRetries = 3) {
         return text;
     }
 }
+
+// --- Gemini Key Config UI ---
+(function() {
+    const inp = document.getElementById('gemini-key-input');
+    const btn = document.getElementById('gemini-key-save');
+    const status = document.getElementById('gemini-key-status');
+    const saved = getGeminiKey();
+    if (saved) {
+        inp.value = saved;
+        status.textContent = 'Key saved.';
+        status.style.color = '#34d399';
+    }
+    btn.onclick = () => {
+        const k = inp.value.trim();
+        if (!k) return;
+        setGeminiKey(k);
+        status.textContent = 'Key saved.';
+        status.style.color = '#34d399';
+    };
+})();
 
 // --- Feature 1: AI Company Summary ---
 const aiSummaryCache = JSON.parse(localStorage.getItem('aiSummaryCache') || '{}');
