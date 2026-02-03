@@ -9,6 +9,7 @@ Usage:
 
 import json
 import re
+import os
 import ssl
 import time
 import urllib.request
@@ -42,10 +43,11 @@ HEADERS = {
     "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
 }
 
-# SSL context - disable verification for macOS compatibility
-SSL_CTX = ssl.create_default_context()
-SSL_CTX.check_hostname = False
-SSL_CTX.verify_mode = ssl.CERT_NONE
+# SSL context (allow opt-out via ALLOW_INSECURE_SSL=1)
+if os.getenv("ALLOW_INSECURE_SSL") == "1":
+    SSL_CTX = ssl._create_unverified_context()
+else:
+    SSL_CTX = ssl.create_default_context()
 
 
 def fetch_url(url, timeout=15):

@@ -1120,7 +1120,7 @@
         .company.center .name { color: #fff !important; }
 
         /* Favorite star */
-        .company .star {
+        .company .favorite-star {
             position: absolute;
             top: -8px;
             right: -12px;
@@ -1129,9 +1129,9 @@
             transition: opacity 0.2s;
             cursor: pointer;
         }
-        .company:hover .star { opacity: 0.5; }
-        .company .star.active { opacity: 1; color: #fbbf24; }
-        .company .star:hover { opacity: 1; transform: scale(1.2); }
+        .company:hover .favorite-star { opacity: 0.5; }
+        .company .favorite-star.active { opacity: 1; color: #fbbf24; }
+        .company .favorite-star:hover { opacity: 1; transform: scale(1.2); }
 
         /* Toolbar */
         .toolbar {
@@ -3946,31 +3946,66 @@ function updateCompareDisplay() {
     const selectedDiv = document.getElementById('compare-selected');
     const tableDiv = document.getElementById('compare-table');
 
-    selectedDiv.innerHTML = [...compareSelected].map(name => `
-        <div class="compare-chip">
-            ${name}
-            <button onclick="toggleCompareSelection('${name}')">&times;</button>
-        </div>
-    `).join('');
+    selectedDiv.innerHTML = '';
+    [...compareSelected].forEach(name => {
+        const chip = document.createElement('div');
+        chip.className = 'compare-chip';
+        chip.textContent = name;
+        const btn = document.createElement('button');
+        btn.textContent = '×';
+        btn.onclick = () => toggleCompareSelection(name);
+        chip.appendChild(btn);
+        selectedDiv.appendChild(chip);
+    });
 
     if (compareSelected.size >= 2) {
         const companies = [...compareSelected];
-        tableDiv.innerHTML = `
-            <table>
-                <tr><th></th>${companies.map(n => `<th>${n}</th>`).join('')}</tr>
-                <tr><td>Category</td>${companies.map(n => `<td>${data[n]?.cat || 'N/A'}</td>`).join('')}</tr>
-                <tr><td>HQ</td>${companies.map(n => `<td>${data[n]?.hq || 'N/A'}</td>`).join('')}</tr>
-                <tr><td>Valuation</td>${companies.map(n => `<td>${data[n]?.val || 'N/A'}</td>`).join('')}</tr>
-                <tr><td>Description</td>${companies.map(n => `<td>${data[n]?.desc || 'N/A'}</td>`).join('')}</tr>
-            </table>
-        `;
+        const table = document.createElement('table');
+        const header = document.createElement('tr');
+        header.appendChild(document.createElement('th'));
+        companies.forEach(n => {
+            const th = document.createElement('th');
+            th.textContent = n;
+            header.appendChild(th);
+        });
+        table.appendChild(header);
+
+        const rows = [
+            ['Category', 'cat'],
+            ['HQ', 'hq'],
+            ['Valuation', 'val'],
+            ['Description', 'desc']
+        ];
+        rows.forEach(([label, key]) => {
+            const tr = document.createElement('tr');
+            const tdLabel = document.createElement('td');
+            tdLabel.textContent = label;
+            tr.appendChild(tdLabel);
+            companies.forEach(n => {
+                const td = document.createElement('td');
+                td.textContent = data[n]?.[key] || 'N/A';
+                tr.appendChild(td);
+            });
+            table.appendChild(tr);
+        });
+        tableDiv.innerHTML = '';
+        tableDiv.appendChild(table);
     } else {
         tableDiv.innerHTML = '<p class="compare-hint">Select at least 2 companies</p>';
     }
 }
 
-// Parse valuation string to number
-function parseValuation(val) {
+function escapeHTML(value) {
+    return String(value ?? '')
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#39;');
+}
+
+// Parse valuation string to number (absolute dollars)
+function parseValuationDollars(val) {
     if (!val || val === 'N/A') return 0;
     const match = val.match(/\$?([\d.]+)\s*(T|B|M|K)?/i);
     if (!match) return 0;
@@ -4010,13 +4045,16 @@ function showAnalytics() {
 
     // Top valuations
     const valuations = companies
-        .map(([name, info]) => ({ name, val: parseValuation(info.val), display: info.val }))
+        .map(([name, info]) => ({ name, val: parseValuationDollars(info.val), display: info.val }))
         .filter(c => c.val > 0)
         .sort((a, b) => b.val - a.val)
         .slice(0, 10);
 
-    // Total market cap
-    const totalValuation = valuations.reduce((sum, c) => sum + c.val, 0);
+    // Total market cap across all companies with parseable valuations
+    const totalValuation = companies
+        .map(([_, info]) => parseValuationDollars(info.val))
+        .filter(v => v > 0)
+        .reduce((sum, v) => sum + v, 0);
 
     // Stats grid
     document.getElementById('stats-grid').innerHTML = `
@@ -4040,13 +4078,30 @@ function showAnalytics() {
     `).join('');
 
     // Top valuations
-    document.getElementById('top-valuations').innerHTML = valuations.map((c, i) => `
-        <div class="top-item" onclick="render('${c.name}')">
-            <span class="top-rank">${i + 1}</span>
-            <span class="top-name">${c.name}</span>
-            <span class="top-val">${c.display}</span>
-        </div>
-    `).join('');
+    const topValuations = document.getElementById('top-valuations');
+    topValuations.innerHTML = '';
+    valuations.forEach((c, i) => {
+        const item = document.createElement('div');
+        item.className = 'top-item';
+        item.onclick = () => render(c.name);
+
+        const rank = document.createElement('span');
+        rank.className = 'top-rank';
+        rank.textContent = String(i + 1);
+
+        const name = document.createElement('span');
+        name.className = 'top-name';
+        name.textContent = c.name;
+
+        const val = document.createElement('span');
+        val.className = 'top-val';
+        val.textContent = c.display || '';
+
+        item.appendChild(rank);
+        item.appendChild(name);
+        item.appendChild(val);
+        topValuations.appendChild(item);
+    });
 
     // Region chart
     const maxRegion = Math.max(...Object.values(regionCounts));
@@ -4105,7 +4160,22 @@ function showPanel(name) {
     valEl.className = 'val' + ((!c.val || c.val === 'N/A') ? ' na' : '');
     const logo = document.getElementById('panel-logo');
     const url = logoUrl(c.domain);
-    logo.innerHTML = url ? `<img src="${url}" onerror="this.parentElement.innerHTML='<span>${name.slice(0,2)}</span>'">` : `<span>${name.slice(0,2)}</span>`;
+    logo.innerHTML = '';
+    if (url) {
+        const img = document.createElement('img');
+        img.src = url;
+        img.onerror = () => {
+            logo.innerHTML = '';
+            const fallback = document.createElement('span');
+            fallback.textContent = name.slice(0, 2);
+            logo.appendChild(fallback);
+        };
+        logo.appendChild(img);
+    } else {
+        const fallback = document.createElement('span');
+        fallback.textContent = name.slice(0, 2);
+        logo.appendChild(fallback);
+    }
     // Website link
     const websiteLink = document.getElementById('panel-website');
     if (c.domain) {
@@ -4305,7 +4375,7 @@ function createLabel(name, x, y, isCenter, fontSize = 14, opacity = 1, sim = 1) 
     // Add favorite star if in watchlist
     if (favorites.has(name)) {
         const star = document.createElement('span');
-        star.className = 'favorite-star';
+        star.className = 'favorite-star active';
         star.innerHTML = '&#9733;';
         star.onclick = (e) => { e.stopPropagation(); toggleFavorite(name); };
         el.appendChild(star);
@@ -4461,7 +4531,7 @@ function getRegion(country) {
 }
 
 // Parse valuation to number (in billions)
-function parseValuation(val) {
+function parseValuationBillions(val) {
     if (!val || val === 'N/A') return null;
     // Handle "Parent Company" style values
     if (!val.startsWith('$')) return null;
@@ -4483,7 +4553,7 @@ const VAL_RANGES = [
 ];
 
 function getValuationRange(val) {
-    const num = parseValuation(val);
+    const num = parseValuationBillions(val);
     if (num === null) return null;
     for (const range of VAL_RANGES) {
         if (num >= range.min && num < range.max) return range.label;
@@ -4653,15 +4723,57 @@ searchInput.addEventListener('input', e => {
     }).slice(0, 8);
 
     if (matches.length) {
-        dropdown.innerHTML = matches.map((n, i) => {
+        dropdown.innerHTML = '';
+        matches.forEach((n, i) => {
             const c = data[n];
             const url = logoUrl(c.domain);
-            return `<div class="dropdown-item" data-name="${n}" data-index="${i}">
-                <div class="logo">${url ? `<img src="${url}" onerror="this.parentElement.innerHTML='<span>${n.slice(0,2)}</span>'">` : `<span>${n.slice(0,2)}</span>`}</div>
-                <div class="info"><div class="name">${n}</div><div class="cat">${c.cat}</div></div>
-                ${c.val ? `<div class="val">${c.val}</div>` : ''}
-            </div>`;
-        }).join('');
+
+            const item = document.createElement('div');
+            item.className = 'dropdown-item';
+            item.dataset.name = n;
+            item.dataset.index = String(i);
+
+            const logo = document.createElement('div');
+            logo.className = 'logo';
+            if (url) {
+                const img = document.createElement('img');
+                img.src = url;
+                img.onerror = () => {
+                    logo.innerHTML = '';
+                    const span = document.createElement('span');
+                    span.textContent = n.slice(0, 2);
+                    logo.appendChild(span);
+                };
+                logo.appendChild(img);
+            } else {
+                const span = document.createElement('span');
+                span.textContent = n.slice(0, 2);
+                logo.appendChild(span);
+            }
+
+            const info = document.createElement('div');
+            info.className = 'info';
+            const name = document.createElement('div');
+            name.className = 'name';
+            name.textContent = n;
+            const cat = document.createElement('div');
+            cat.className = 'cat';
+            cat.textContent = c.cat || '';
+            info.appendChild(name);
+            info.appendChild(cat);
+
+            item.appendChild(logo);
+            item.appendChild(info);
+
+            if (c.val) {
+                const val = document.createElement('div');
+                val.className = 'val';
+                val.textContent = c.val;
+                item.appendChild(val);
+            }
+
+            dropdown.appendChild(item);
+        });
         dropdown.classList.add('open');
     } else dropdown.classList.remove('open');
 });
@@ -4737,7 +4849,7 @@ document.querySelectorAll('.tab').forEach(tab => {
 function renderList(filter = '') {
     const list = document.getElementById('company-list');
     const items = Object.keys(data).filter(n => n.toLowerCase().includes(filter.toLowerCase())).sort();
-    list.innerHTML = items.map(n => `<div class="list-item" data-name="${n}"><div><div class="name">${n}</div><div class="cat">${data[n].cat}</div></div><button>&times;</button></div>`).join('');
+    list.innerHTML = items.map(n => `<div class="list-item" data-name="${escapeHTML(n)}"><div><div class="name">${escapeHTML(n)}</div><div class="cat">${escapeHTML(data[n].cat || '')}</div></div><button>&times;</button></div>`).join('');
 }
 
 document.getElementById('edit-search').oninput = e => renderList(e.target.value);
@@ -5020,27 +5132,52 @@ async function loadNewsFeed() {
         });
 
         if (diversified.length === 0) {
-            newsContent.innerHTML = '<div class="news-loading">No AI news in the last 48 hours. Check back later!</div>';
+            newsContent.innerHTML = '';
+            const empty = document.createElement('div');
+            empty.className = 'news-loading';
+            empty.textContent = 'No AI news in the last 48 hours. Check back later!';
+            newsContent.appendChild(empty);
             return;
         }
 
         const displayNews = diversified.slice(0, 25);
-        newsContent.innerHTML = displayNews.map(item => {
+        newsContent.innerHTML = '';
+        displayNews.forEach(item => {
             const timeAgo = getTimeAgo(item.pubDate);
-            return `
-                <div class="news-item">
-                    <a href="${item.link}" target="_blank" rel="noopener">
-                        <div class="news-source">${item.source}</div>
-                        <div class="news-title">${item.title}</div>
-                        <div class="news-time">${timeAgo}</div>
-                    </a>
-                </div>
-            `;
-        }).join('');
+            const wrap = document.createElement('div');
+            wrap.className = 'news-item';
+
+            const link = document.createElement('a');
+            link.href = item.link;
+            link.target = '_blank';
+            link.rel = 'noopener';
+
+            const source = document.createElement('div');
+            source.className = 'news-source';
+            source.textContent = item.source;
+
+            const title = document.createElement('div');
+            title.className = 'news-title';
+            title.textContent = item.title;
+
+            const time = document.createElement('div');
+            time.className = 'news-time';
+            time.textContent = timeAgo;
+
+            link.appendChild(source);
+            link.appendChild(title);
+            link.appendChild(time);
+            wrap.appendChild(link);
+            newsContent.appendChild(wrap);
+        });
 
     } catch (e) {
         console.error('News feed error:', e);
-        newsContent.innerHTML = '<div class="feed-error">Failed to load news. Try refreshing.</div>';
+        newsContent.innerHTML = '';
+        const error = document.createElement('div');
+        error.className = 'feed-error';
+        error.textContent = 'Failed to load news. Try refreshing.';
+        newsContent.appendChild(error);
     }
 }
 
@@ -5114,7 +5251,7 @@ function renderXAccountSelector() {
 
     select.innerHTML = '<option value="all">All Accounts</option>' +
         accounts.map(acc =>
-            `<option value="${acc.handle}" ${acc.handle === currentXAccount ? 'selected' : ''}>@${acc.handle} - ${acc.name}</option>`
+            `<option value="${escapeHTML(acc.handle)}" ${acc.handle === currentXAccount ? 'selected' : ''}>@${escapeHTML(acc.handle)} - ${escapeHTML(acc.name)}</option>`
         ).join('');
 }
 
@@ -5143,7 +5280,7 @@ function renderTweetHTML(tweet) {
     const timeAgo = formatTimeAgo(tweet.timestamp);
 
     // Make URLs in text clickable
-    let text = tweet.text.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+    let text = escapeHTML(tweet.text);
     text = text.replace(/(https?:\/\/[^\s]+)/g, '<a href="$1" target="_blank" rel="noopener">$1</a>');
     text = text.replace(/@(\w+)/g, '<a href="https://x.com/$1" target="_blank" rel="noopener">@$1</a>');
 
@@ -5157,8 +5294,8 @@ function renderTweetHTML(tweet) {
             <div class="x-tweet-header">
                 <img class="x-tweet-avatar" src="${avatarSrc}" alt="" onerror="this.style.opacity='0.3'">
                 <div class="x-tweet-author">
-                    <span class="x-tweet-name">${tweet.name}</span>
-                    <span class="x-tweet-handle-time">@${tweet.handle} · ${timeAgo}</span>
+                    <span class="x-tweet-name">${escapeHTML(tweet.name)}</span>
+                    <span class="x-tweet-handle-time">@${escapeHTML(tweet.handle)} · ${timeAgo}</span>
                 </div>
             </div>
             <div class="x-tweet-text">${text}</div>
@@ -5211,10 +5348,10 @@ function loadXTimeline(handle) {
         container.innerHTML = `
             <div class="x-featured-account">
                 <a href="https://x.com/${currentAcc.handle}" target="_blank" rel="noopener" class="x-featured-link">
-                    <img src="https://unavatar.io/twitter/${currentAcc.handle}" alt="@${currentAcc.handle}" onerror="this.style.opacity='0.5'">
+                    <img src="https://unavatar.io/twitter/${currentAcc.handle}" alt="@${escapeHTML(currentAcc.handle)}" onerror="this.style.opacity='0.5'">
                     <div class="x-featured-info">
-                        <span class="x-featured-name">${currentAcc.name}</span>
-                        <span class="x-featured-handle">@${currentAcc.handle}</span>
+                        <span class="x-featured-name">${escapeHTML(currentAcc.name)}</span>
+                        <span class="x-featured-handle">@${escapeHTML(currentAcc.handle)}</span>
                     </div>
                     <span class="x-featured-btn">View on X</span>
                 </a>
@@ -5224,9 +5361,9 @@ function loadXTimeline(handle) {
                 <div class="x-accounts-grid">
                     ${accounts.filter(a => a.handle !== currentAcc.handle).slice(0, 8).map(acc => `
                         <a href="https://x.com/${acc.handle}" target="_blank" rel="noopener" class="x-account-card" title="${acc.name}">
-                            <img src="https://unavatar.io/twitter/${acc.handle}" alt="${acc.name}" onerror="this.style.opacity='0.3'">
-                            <span class="x-card-name">${acc.name.split(' ')[0]}</span>
-                            <span class="x-card-handle">@${acc.handle}</span>
+                            <img src="https://unavatar.io/twitter/${acc.handle}" alt="${escapeHTML(acc.name)}" onerror="this.style.opacity='0.3'">
+                            <span class="x-card-name">${escapeHTML(acc.name.split(' ')[0])}</span>
+                            <span class="x-card-handle">@${escapeHTML(acc.handle)}</span>
                         </a>
                     `).join('')}
                 </div>
@@ -5276,8 +5413,8 @@ function renderXAccountsList() {
                     <img src="https://unavatar.io/twitter/${acc.handle}" alt="${acc.name}" onerror="this.style.display='none'">
                 </div>
                 <div class="x-account-info">
-                    <div class="x-account-name">${acc.name}</div>
-                    <div class="x-account-handle">@${acc.handle}</div>
+                    <div class="x-account-name">${escapeHTML(acc.name)}</div>
+                    <div class="x-account-handle">@${escapeHTML(acc.handle)}</div>
                 </div>
                 <button class="x-account-remove" data-index="${idx}" title="Remove">
                     <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
@@ -5456,7 +5593,7 @@ async function generateCompanySummary(companyName) {
 
     try {
         const c = data[companyName];
-        const related = (c.related || []).slice(0, 5).join(', ');
+        const related = (c.rel || []).slice(0, 5).join(', ');
         const prompt = `You are an AI industry analyst. Write a concise but informative summary about the AI company "${companyName}".
 
 Known details:
@@ -5558,7 +5695,10 @@ Rules:
         const result = await callGemini(prompt);
         const lines = result.trim().split('\n').filter(l => l.includes('|'));
 
-        let html = '';
+        container.innerHTML = '';
+        const fragment = document.createDocumentFragment();
+        let hasItems = false;
+
         for (const line of lines) {
             const parts = line.split('|');
             if (parts.length < 3) continue;
@@ -5568,33 +5708,80 @@ Rules:
             const article = articles[origNum];
             if (!article) continue;
 
-            html += `
-                <div class="curated-item">
-                    <a href="${article.link}" target="_blank" rel="noopener">
-                        <div class="curated-title"><span class="curated-rank">#${rank}</span>${article.title}</div>
-                        <div class="curated-summary">${summary}</div>
-                        <div class="curated-meta">${article.source} &middot; ${article.time}</div>
-                    </a>
-                </div>`;
+            hasItems = true;
+            const item = document.createElement('div');
+            item.className = 'curated-item';
+
+            const link = document.createElement('a');
+            link.href = article.link;
+            link.target = '_blank';
+            link.rel = 'noopener';
+
+            const title = document.createElement('div');
+            title.className = 'curated-title';
+            const rankSpan = document.createElement('span');
+            rankSpan.className = 'curated-rank';
+            rankSpan.textContent = `#${rank}`;
+            const titleText = document.createTextNode(article.title);
+            title.appendChild(rankSpan);
+            title.appendChild(titleText);
+
+            const summaryDiv = document.createElement('div');
+            summaryDiv.className = 'curated-summary';
+            summaryDiv.textContent = summary;
+
+            const meta = document.createElement('div');
+            meta.className = 'curated-meta';
+            meta.textContent = `${article.source} · ${article.time}`;
+
+            link.appendChild(title);
+            link.appendChild(summaryDiv);
+            link.appendChild(meta);
+            item.appendChild(link);
+            fragment.appendChild(item);
         }
 
-        if (!html) {
-            html = '<div class="curated-loading">Could not curate articles. Try refreshing.</div>';
+        if (!hasItems) {
+            const empty = document.createElement('div');
+            empty.className = 'curated-loading';
+            empty.textContent = 'Could not curate articles. Try refreshing.';
+            container.appendChild(empty);
+            cachedCuratedNews = container.innerHTML;
+            curatedTimestamp = Date.now();
+            return;
         }
 
-        html += '<button class="curated-refresh" id="curated-refresh-btn">Refresh Curation</button>';
-        container.innerHTML = html;
-        cachedCuratedNews = html;
+        const refreshBtn = document.createElement('button');
+        refreshBtn.className = 'curated-refresh';
+        refreshBtn.id = 'curated-refresh-btn';
+        refreshBtn.textContent = 'Refresh Curation';
+
+        container.appendChild(fragment);
+        container.appendChild(refreshBtn);
+        cachedCuratedNews = container.innerHTML;
         curatedTimestamp = Date.now();
 
-        document.getElementById('curated-refresh-btn')?.addEventListener('click', () => {
+        refreshBtn.addEventListener('click', () => {
             cachedCuratedNews = null;
             curatedTimestamp = 0;
             if (loadedNewsArticles.length > 0) curateNews(loadedNewsArticles);
         });
     } catch (err) {
         console.error('News curation error:', err);
-        container.innerHTML = `<div class="curated-loading">Failed to curate news: ${err.message}<br><button class="curated-refresh" onclick="cachedCuratedNews=null;curatedTimestamp=0;curateNews(loadedNewsArticles)">Retry</button></div>`;
+        container.innerHTML = '';
+        const error = document.createElement('div');
+        error.className = 'curated-loading';
+        error.textContent = `Failed to curate news: ${err.message}`;
+        const retry = document.createElement('button');
+        retry.className = 'curated-refresh';
+        retry.textContent = 'Retry';
+        retry.onclick = () => {
+            cachedCuratedNews = null;
+            curatedTimestamp = 0;
+            if (loadedNewsArticles.length > 0) curateNews(loadedNewsArticles);
+        };
+        container.appendChild(error);
+        container.appendChild(retry);
     }
 }
 
@@ -5853,7 +6040,9 @@ ${emailTexts}`;
         walk(msg.payload);
         const best = parts.find(p => p.type === 'html') || parts.find(p => p.type === 'plain');
         if (!best) return '';
-        return atob(best.data.replace(/-/g, '+').replace(/_/g, '/'));
+        const base64 = best.data.replace(/-/g, '+').replace(/_/g, '/');
+        const padded = base64 + '='.repeat((4 - base64.length % 4) % 4);
+        return atob(padded);
     }
 
     function stripHtml(html) {
@@ -5905,44 +6094,116 @@ ${emailTexts}`;
         }
 
         pendingMerge = { updates, additions };
+        previewDiv.innerHTML = '';
 
-        let html = `<div style="font-size:12px;font-weight:600;color:#34d399;margin-bottom:8px;">${updates.length} updated, ${additions.length} new companies</div>`;
+        const summary = document.createElement('div');
+        summary.style.fontSize = '12px';
+        summary.style.fontWeight = '600';
+        summary.style.color = '#34d399';
+        summary.style.marginBottom = '8px';
+        summary.textContent = `${updates.length} updated, ${additions.length} new companies`;
+        previewDiv.appendChild(summary);
 
         if (updates.length > 0) {
-            html += '<div style="margin-bottom:8px;font-size:11px;color:rgba(148,163,184,0.7);">Updates:</div>';
+            const label = document.createElement('div');
+            label.style.marginBottom = '8px';
+            label.style.fontSize = '11px';
+            label.style.color = 'rgba(148,163,184,0.7)';
+            label.textContent = 'Updates:';
+            previewDiv.appendChild(label);
+
             for (const u of updates) {
-                html += `<div class="gmail-preview-item"><span class="company-name">${u.name}</span><span class="action-tag update">UPDATE</span><br><span style="color:rgba(148,163,184,0.6);">${u.oldVal} → ${u.newVal}</span></div>`;
+                const item = document.createElement('div');
+                item.className = 'gmail-preview-item';
+
+                const name = document.createElement('span');
+                name.className = 'company-name';
+                name.textContent = u.name;
+                const tag = document.createElement('span');
+                tag.className = 'action-tag update';
+                tag.textContent = 'UPDATE';
+
+                const detail = document.createElement('span');
+                detail.style.color = 'rgba(148,163,184,0.6)';
+                detail.textContent = `${u.oldVal} → ${u.newVal}`;
+
+                item.appendChild(name);
+                item.appendChild(tag);
+                item.appendChild(document.createElement('br'));
+                item.appendChild(detail);
+                previewDiv.appendChild(item);
             }
         }
+
         if (additions.length > 0) {
-            html += '<div style="margin-bottom:8px;margin-top:8px;font-size:11px;color:rgba(148,163,184,0.7);">New companies:</div>';
+            const label = document.createElement('div');
+            label.style.marginBottom = '8px';
+            label.style.marginTop = '8px';
+            label.style.fontSize = '11px';
+            label.style.color = 'rgba(148,163,184,0.7)';
+            label.textContent = 'New companies:';
+            previewDiv.appendChild(label);
+
             for (const a of additions) {
+                const item = document.createElement('div');
+                item.className = 'gmail-preview-item';
+
+                const name = document.createElement('span');
+                name.className = 'company-name';
+                name.textContent = a.name;
+                const tag = document.createElement('span');
+                tag.className = 'action-tag new';
+                tag.textContent = 'NEW';
+                item.appendChild(name);
+                item.appendChild(tag);
+
                 const val = a.val || a.funding || '';
-                html += `<div class="gmail-preview-item"><span class="company-name">${a.name}</span><span class="action-tag new">NEW</span>${val ? ' — ' + val : ''}${a.cat ? ' <span style="color:rgba(148,163,184,0.5);">(' + a.cat + ')</span>' : ''}</div>`;
+                if (val) {
+                    const valSpan = document.createElement('span');
+                    valSpan.textContent = ` — ${val}`;
+                    item.appendChild(valSpan);
+                }
+                if (a.cat) {
+                    const catSpan = document.createElement('span');
+                    catSpan.style.color = 'rgba(148,163,184,0.5)';
+                    catSpan.textContent = ` (${a.cat})`;
+                    item.appendChild(catSpan);
+                }
+
+                previewDiv.appendChild(item);
             }
         }
 
         if (updates.length === 0 && additions.length === 0) {
-            html += '<div style="color:rgba(148,163,184,0.6);font-size:12px;">No changes to apply — your data is up to date.</div>';
+            const msg = document.createElement('div');
+            msg.style.color = 'rgba(148,163,184,0.6)';
+            msg.style.fontSize = '12px';
+            msg.textContent = 'No changes to apply — your data is up to date.';
+            previewDiv.appendChild(msg);
             showStatus('Sync complete. No new data found.', false);
             syncBtn.disabled = false;
-            previewDiv.innerHTML = html;
             previewDiv.classList.add('visible');
             return;
         }
 
-        html += `<div class="gmail-preview-actions">
-            <button id="gmail-apply-btn">Apply ${updates.length + additions.length} Changes</button>
-            <button id="gmail-cancel-btn">Cancel</button>
-        </div>`;
+        const actions = document.createElement('div');
+        actions.className = 'gmail-preview-actions';
+        const applyBtn = document.createElement('button');
+        applyBtn.id = 'gmail-apply-btn';
+        applyBtn.textContent = `Apply ${updates.length + additions.length} Changes`;
+        const cancelBtn = document.createElement('button');
+        cancelBtn.id = 'gmail-cancel-btn';
+        cancelBtn.textContent = 'Cancel';
+        actions.appendChild(applyBtn);
+        actions.appendChild(cancelBtn);
+        previewDiv.appendChild(actions);
 
-        previewDiv.innerHTML = html;
         previewDiv.classList.add('visible');
         showStatus('Review changes below, then click Apply.', false);
         syncBtn.disabled = false;
 
-        document.getElementById('gmail-apply-btn').onclick = applyMerge;
-        document.getElementById('gmail-cancel-btn').onclick = () => {
+        applyBtn.onclick = applyMerge;
+        cancelBtn.onclick = () => {
             previewDiv.classList.remove('visible');
             previewDiv.innerHTML = '';
             hideStatus();
