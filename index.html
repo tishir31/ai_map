@@ -6,7 +6,7 @@
     <title>AI Map - The AI Company Landscape</title>
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&family=Syne:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
-        :root {
+        :root, [data-theme="dark"] {
             --bg-deep: #0a0a0b;
             --bg-surface: rgba(18, 18, 20, 0.85);
             --bg-elevated: rgba(28, 28, 32, 0.9);
@@ -22,6 +22,40 @@
             --border-accent: rgba(245, 158, 11, 0.3);
             --glow-gold: rgba(245, 158, 11, 0.4);
             --glow-cyan: rgba(34, 211, 238, 0.3);
+            --shadow-color: rgba(0, 0, 0, 0.4);
+            --particle-color: rgba(245, 158, 11, 0.4);
+            --particle-line: rgba(245, 158, 11, 0.08);
+            --grid-color: rgba(245, 158, 11, 0.02);
+            --scanline-color: rgba(0, 0, 0, 0.03);
+            --noise-opacity: 0.015;
+            --company-shadow: rgba(0, 0, 0, 1);
+            --company-text: rgba(250, 250, 250, 0.85);
+        }
+
+        [data-theme="light"] {
+            --bg-deep: #f8f7f4;
+            --bg-surface: rgba(255, 255, 255, 0.92);
+            --bg-elevated: rgba(255, 255, 255, 0.98);
+            --accent-gold: #b45309;
+            --accent-amber: #d97706;
+            --accent-warm: #92400e;
+            --accent-cyan: #0891b2;
+            --accent-emerald: #059669;
+            --text-primary: #1c1917;
+            --text-secondary: rgba(28, 25, 23, 0.7);
+            --text-muted: rgba(28, 25, 23, 0.45);
+            --border-subtle: rgba(28, 25, 23, 0.1);
+            --border-accent: rgba(180, 83, 9, 0.35);
+            --glow-gold: rgba(180, 83, 9, 0.2);
+            --glow-cyan: rgba(8, 145, 178, 0.2);
+            --shadow-color: rgba(0, 0, 0, 0.08);
+            --particle-color: rgba(180, 83, 9, 0.25);
+            --particle-line: rgba(180, 83, 9, 0.06);
+            --grid-color: rgba(180, 83, 9, 0.04);
+            --scanline-color: rgba(0, 0, 0, 0.015);
+            --noise-opacity: 0.008;
+            --company-shadow: rgba(255, 255, 255, 1);
+            --company-text: rgba(28, 25, 23, 0.9);
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -38,10 +72,25 @@
         #app {
             position: fixed;
             inset: 0;
+            background: var(--bg-deep);
+            transition: background 0.4s ease;
+        }
+
+        [data-theme="dark"] #app,
+        :root #app {
             background:
                 radial-gradient(ellipse 100% 60% at 50% -30%, rgba(245, 158, 11, 0.08), transparent),
                 radial-gradient(ellipse 80% 50% at 90% 90%, rgba(34, 211, 238, 0.04), transparent),
-                radial-gradient(ellipse 60% 40% at 10% 80%, rgba(16, 185, 129, 0.03), transparent);
+                radial-gradient(ellipse 60% 40% at 10% 80%, rgba(16, 185, 129, 0.03), transparent),
+                var(--bg-deep);
+        }
+
+        [data-theme="light"] #app {
+            background:
+                radial-gradient(ellipse 100% 60% at 50% -30%, rgba(180, 83, 9, 0.06), transparent),
+                radial-gradient(ellipse 80% 50% at 90% 90%, rgba(8, 145, 178, 0.04), transparent),
+                radial-gradient(ellipse 60% 40% at 10% 80%, rgba(5, 150, 105, 0.03), transparent),
+                var(--bg-deep);
         }
 
         /* Scanline overlay for retro-tech feel */
@@ -53,8 +102,8 @@
                 0deg,
                 transparent,
                 transparent 2px,
-                rgba(0, 0, 0, 0.03) 2px,
-                rgba(0, 0, 0, 0.03) 4px
+                var(--scanline-color) 2px,
+                var(--scanline-color) 4px
             );
             pointer-events: none;
             z-index: 1000;
@@ -65,7 +114,7 @@
             content: '';
             position: fixed;
             inset: 0;
-            opacity: 0.015;
+            opacity: var(--noise-opacity);
             background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
             pointer-events: none;
             z-index: 999;
@@ -83,8 +132,8 @@
             position: fixed;
             inset: 0;
             background-image:
-                linear-gradient(rgba(245, 158, 11, 0.02) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(245, 158, 11, 0.02) 1px, transparent 1px);
+                linear-gradient(var(--grid-color) 1px, transparent 1px),
+                linear-gradient(90deg, var(--grid-color) 1px, transparent 1px);
             background-size: 80px 80px;
             pointer-events: none;
         }
@@ -1180,13 +1229,13 @@
             font-family: 'JetBrains Mono', monospace;
             font-weight: 500;
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            text-shadow: 0 0 30px rgba(0,0,0,1), 0 0 15px rgba(0,0,0,0.9);
-            color: rgba(250, 250, 250, 0.85);
+            text-shadow: 0 0 30px var(--company-shadow), 0 0 15px var(--company-shadow);
+            color: var(--company-text);
         }
 
         .company:hover .name {
             color: var(--accent-amber) !important;
-            text-shadow: 0 0 20px var(--glow-gold), 0 0 40px rgba(245, 158, 11, 0.3);
+            text-shadow: 0 0 20px var(--glow-gold), 0 0 40px var(--glow-gold);
             transform: scale(1.05);
         }
 
@@ -2019,6 +2068,90 @@
             box-shadow: 0 0 25px rgba(245, 158, 11, 0.15);
         }
 
+        /* Theme Toggle */
+        .theme-toggle {
+            position: fixed;
+            top: 24px;
+            right: 120px;
+            width: 44px;
+            height: 44px;
+            background: var(--bg-surface);
+            border: 1px solid var(--border-subtle);
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            backdrop-filter: blur(20px);
+            z-index: 100;
+            overflow: hidden;
+        }
+
+        .theme-toggle:hover {
+            border-color: var(--accent-gold);
+            box-shadow: 0 0 25px var(--glow-gold);
+            transform: scale(1.05);
+        }
+
+        .theme-toggle svg {
+            width: 20px;
+            height: 20px;
+            color: var(--accent-amber);
+            transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .theme-toggle .sun-icon {
+            position: absolute;
+            transform: translateY(50px);
+        }
+
+        .theme-toggle .moon-icon {
+            position: absolute;
+            transform: translateY(0);
+        }
+
+        [data-theme="light"] .theme-toggle .sun-icon {
+            transform: translateY(0);
+        }
+
+        [data-theme="light"] .theme-toggle .moon-icon {
+            transform: translateY(-50px);
+        }
+
+        /* Light mode modal overlays */
+        [data-theme="light"] .shortcuts-modal,
+        [data-theme="light"] .analytics-modal,
+        [data-theme="light"] .compare-modal,
+        [data-theme="light"] .datatable-modal {
+            background: rgba(248, 247, 244, 0.88);
+        }
+
+        /* Light mode category colors - adjust for readability */
+        [data-theme="light"] .company[data-cat="Foundation Models"] .name { color: #db2777 !important; }
+        [data-theme="light"] .company[data-cat="Image Generation"] .name { color: #ea580c !important; }
+        [data-theme="light"] .company[data-cat="Video Generation"] .name { color: #ca8a04 !important; }
+        [data-theme="light"] .company[data-cat="Audio AI"] .name,
+        [data-theme="light"] .company[data-cat="Music AI"] .name { color: #7c3aed !important; }
+        [data-theme="light"] .company[data-cat="Code & Dev Tools"] .name { color: #059669 !important; }
+        [data-theme="light"] .company[data-cat="AI Agents"] .name { color: #2563eb !important; }
+        [data-theme="light"] .company[data-cat="Healthcare AI"] .name,
+        [data-theme="light"] .company[data-cat="Drug Discovery"] .name { color: #dc2626 !important; }
+        [data-theme="light"] .company[data-cat="Finance AI"] .name { color: #16a34a !important; }
+        [data-theme="light"] .company[data-cat="Enterprise AI"] .name { color: #0284c7 !important; }
+        [data-theme="light"] .company[data-cat="Security AI"] .name { color: #e11d48 !important; }
+        [data-theme="light"] .company[data-cat="Robotics"] .name,
+        [data-theme="light"] .company[data-cat="Autonomous Vehicles"] .name { color: #9333ea !important; }
+        [data-theme="light"] .company[data-cat="Neo Cloud"] .name,
+        [data-theme="light"] .company[data-cat="Hardware"] .name { color: #0d9488 !important; }
+        [data-theme="light"] .company[data-cat="Data & Vector DB"] .name,
+        [data-theme="light"] .company[data-cat="MLOps"] .name { color: #4f46e5 !important; }
+        [data-theme="light"] .company[data-cat="Marketing AI"] .name { color: #b45309 !important; }
+        [data-theme="light"] .company[data-cat="Legal Tech"] .name { color: #475569 !important; }
+        [data-theme="light"] .company[data-cat="Education"] .name { color: #0891b2 !important; }
+        [data-theme="light"] .company[data-cat="HR Tech"] .name { color: #c026d3 !important; }
+        [data-theme="light"] .company.center .name { color: var(--text-primary) !important; }
+
         /* Modal styles */
         .modal-bg {
             position: fixed;
@@ -2031,6 +2164,10 @@
             justify-content: center;
         }
 
+        [data-theme="light"] .modal-bg {
+            background: rgba(248, 247, 244, 0.85);
+        }
+
         .modal-bg.open { display: flex; }
 
         .modal {
@@ -2041,7 +2178,7 @@
             max-width: 90vw;
             max-height: 80vh;
             overflow: hidden;
-            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5), 0 0 100px rgba(245, 158, 11, 0.05);
+            box-shadow: 0 25px 50px var(--shadow-color), 0 0 100px var(--glow-gold);
         }
 
         .modal-head {
@@ -2698,6 +2835,16 @@
             <svg fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
         </button>
 
+        <!-- Theme Toggle -->
+        <button class="theme-toggle ui" id="theme-toggle" title="Toggle light/dark mode">
+            <svg class="moon-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/>
+            </svg>
+            <svg class="sun-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/>
+            </svg>
+        </button>
+
         <button class="admin-btn ui" id="admin-btn">Manage</button>
 
         <!-- Bottom Toolbar -->
@@ -2765,6 +2912,7 @@
                 <div class="shortcut-item"><kbd>+</kbd><span>Zoom in</span></div>
                 <div class="shortcut-item"><kbd>-</kbd><span>Zoom out</span></div>
                 <div class="shortcut-item"><kbd>0</kbd><span>Reset zoom</span></div>
+                <div class="shortcut-item"><kbd>T</kbd><span>Toggle theme</span></div>
             </div>
         </div>
     </div>
@@ -2970,6 +3118,54 @@
     </div>
 
 <script>
+// === Theme Management ===
+const themeToggle = document.getElementById('theme-toggle');
+const html = document.documentElement;
+
+// Get saved theme or detect system preference
+function getInitialTheme() {
+    const saved = localStorage.getItem('aimap_theme');
+    if (saved) return saved;
+    return window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+}
+
+// Apply theme
+function setTheme(theme) {
+    html.setAttribute('data-theme', theme);
+    localStorage.setItem('aimap_theme', theme);
+    // Update particle colors dynamically
+    updateParticleColors(theme);
+}
+
+// Initialize theme immediately
+setTheme(getInitialTheme());
+
+// Toggle handler
+themeToggle.addEventListener('click', () => {
+    const current = html.getAttribute('data-theme') || 'dark';
+    setTheme(current === 'dark' ? 'light' : 'dark');
+});
+
+// Listen for system theme changes
+window.matchMedia('(prefers-color-scheme: light)').addEventListener('change', (e) => {
+    if (!localStorage.getItem('aimap_theme')) {
+        setTheme(e.matches ? 'light' : 'dark');
+    }
+});
+
+// Particle color update function (called after particles are initialized)
+let particleColorDark = 'rgba(245, 158, 11, 0.4)';
+let particleColorLight = 'rgba(180, 83, 9, 0.25)';
+let particleLineDark = 'rgba(245, 158, 11, 0.08)';
+let particleLineLight = 'rgba(180, 83, 9, 0.06)';
+
+function updateParticleColors(theme) {
+    // Colors will be read in the animation loop
+    window.currentParticleColor = theme === 'light' ? particleColorLight : particleColorDark;
+    window.currentParticleLine = theme === 'light' ? particleLineLight : particleLineDark;
+}
+updateParticleColors(getInitialTheme());
+
 // Category similarity matrix
 const catGroups = {
     "models": ["Foundation Models", "AI Agents"],
@@ -4851,12 +5047,12 @@ function animateParticles() {
 
         ctx.beginPath();
         ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
-        ctx.fillStyle = 'rgba(245, 158, 11, 0.4)';
+        ctx.fillStyle = window.currentParticleColor || 'rgba(245, 158, 11, 0.4)';
         ctx.fill();
     });
 
     // Draw connections between nearby particles
-    ctx.strokeStyle = 'rgba(245, 158, 11, 0.08)';
+    ctx.strokeStyle = window.currentParticleLine || 'rgba(245, 158, 11, 0.08)';
     ctx.lineWidth = 0.5;
     for (let i = 0; i < particles.length; i++) {
         for (let j = i + 1; j < particles.length; j++) {
@@ -5380,6 +5576,11 @@ document.addEventListener('keydown', (e) => {
         case '0':
             e.preventDefault();
             resetZoom();
+            break;
+        case 't':
+        case 'T':
+            e.preventDefault();
+            themeToggle.click();
             break;
     }
 });
