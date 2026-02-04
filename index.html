@@ -3119,8 +3119,15 @@
 
 <script>
 // === Theme Management ===
-const themeToggle = document.getElementById('theme-toggle');
 const html = document.documentElement;
+
+// Particle color variables
+let particleColorDark = 'rgba(245, 158, 11, 0.4)';
+let particleColorLight = 'rgba(180, 83, 9, 0.25)';
+let particleLineDark = 'rgba(245, 158, 11, 0.08)';
+let particleLineLight = 'rgba(180, 83, 9, 0.06)';
+window.currentParticleColor = particleColorDark;
+window.currentParticleLine = particleLineDark;
 
 // Get saved theme or detect system preference
 function getInitialTheme() {
@@ -3129,21 +3136,31 @@ function getInitialTheme() {
     return window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
 }
 
+// Update particle colors
+function updateParticleColors(theme) {
+    window.currentParticleColor = theme === 'light' ? particleColorLight : particleColorDark;
+    window.currentParticleLine = theme === 'light' ? particleLineLight : particleLineDark;
+}
+
 // Apply theme
 function setTheme(theme) {
     html.setAttribute('data-theme', theme);
     localStorage.setItem('aimap_theme', theme);
-    // Update particle colors dynamically
     updateParticleColors(theme);
 }
 
 // Initialize theme immediately
 setTheme(getInitialTheme());
 
-// Toggle handler
-themeToggle.addEventListener('click', () => {
-    const current = html.getAttribute('data-theme') || 'dark';
-    setTheme(current === 'dark' ? 'light' : 'dark');
+// Setup toggle handler after DOM is ready
+document.addEventListener('DOMContentLoaded', () => {
+    const themeToggle = document.getElementById('theme-toggle');
+    if (themeToggle) {
+        themeToggle.addEventListener('click', () => {
+            const current = html.getAttribute('data-theme') || 'dark';
+            setTheme(current === 'dark' ? 'light' : 'dark');
+        });
+    }
 });
 
 // Listen for system theme changes
@@ -3152,19 +3169,6 @@ window.matchMedia('(prefers-color-scheme: light)').addEventListener('change', (e
         setTheme(e.matches ? 'light' : 'dark');
     }
 });
-
-// Particle color update function (called after particles are initialized)
-let particleColorDark = 'rgba(245, 158, 11, 0.4)';
-let particleColorLight = 'rgba(180, 83, 9, 0.25)';
-let particleLineDark = 'rgba(245, 158, 11, 0.08)';
-let particleLineLight = 'rgba(180, 83, 9, 0.06)';
-
-function updateParticleColors(theme) {
-    // Colors will be read in the animation loop
-    window.currentParticleColor = theme === 'light' ? particleColorLight : particleColorDark;
-    window.currentParticleLine = theme === 'light' ? particleLineLight : particleLineDark;
-}
-updateParticleColors(getInitialTheme());
 
 // Category similarity matrix
 const catGroups = {
