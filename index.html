@@ -431,6 +431,22 @@
         .panel-title h3 { font-family: 'Syne', sans-serif; font-size: 17px; font-weight: 700; }
         .panel-title .val { font-size: 13px; font-weight: 700; color: var(--accent-emerald); margin-top: 3px; }
         .panel-title .val.na { color: var(--text-muted); }
+        .live-indicator {
+            font-size: 8px;
+            font-weight: 600;
+            background: var(--accent-emerald);
+            color: var(--bg-deep);
+            padding: 2px 5px;
+            border-radius: 3px;
+            margin-left: 6px;
+            vertical-align: middle;
+            letter-spacing: 0.5px;
+            animation: livePulse 2s ease-in-out infinite;
+        }
+        @keyframes livePulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
 
         .panel p {
             font-size: 12px;
@@ -1774,6 +1790,171 @@
         .compare-card .metric .label { color: #94a3b8; }
         .compare-card .metric .value { color: #fff; font-weight: 500; }
 
+        /* Insights Modal */
+        .insights-modal {
+            position: fixed;
+            inset: 0;
+            background: rgba(10, 10, 11, 0.92);
+            backdrop-filter: blur(12px);
+            z-index: 300;
+            display: none;
+            align-items: center;
+            justify-content: center;
+        }
+        .insights-modal.open { display: flex; }
+        .insights-content {
+            background: var(--bg-elevated);
+            border: 1px solid var(--border-accent);
+            border-radius: 16px;
+            width: 600px;
+            max-width: 95vw;
+            max-height: 85vh;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5), 0 0 100px rgba(245, 158, 11, 0.05);
+        }
+        .insights-header {
+            padding: 20px 24px;
+            border-bottom: 1px solid var(--border-subtle);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .insights-header h3 {
+            font-family: 'Syne', sans-serif;
+            font-size: 17px;
+            font-weight: 700;
+            color: var(--accent-amber);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .insights-close {
+            background: none;
+            border: none;
+            color: var(--text-muted);
+            font-size: 24px;
+            cursor: pointer;
+        }
+        .insights-close:hover { color: var(--accent-amber); }
+        .insights-body {
+            flex: 1;
+            padding: 24px;
+            overflow-y: auto;
+        }
+        .insights-setup h4 {
+            font-size: 14px;
+            color: var(--text-primary);
+            margin-bottom: 12px;
+        }
+        .insights-setup p {
+            font-size: 13px;
+            color: var(--text-secondary);
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        .insights-options {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+        .insights-option {
+            background: rgba(245, 158, 11, 0.03);
+            border: 1px solid var(--border-subtle);
+            border-radius: 10px;
+            padding: 16px;
+        }
+        .insights-option strong {
+            display: block;
+            font-size: 13px;
+            color: var(--accent-amber);
+            margin-bottom: 8px;
+        }
+        .insights-option p {
+            font-size: 12px;
+            margin-bottom: 12px;
+        }
+        .insights-date {
+            font-size: 11px;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 16px;
+        }
+        .insights-summary {
+            font-size: 14px;
+            line-height: 1.7;
+            color: var(--text-secondary);
+            background: rgba(245, 158, 11, 0.03);
+            border: 1px solid var(--border-subtle);
+            border-radius: 10px;
+            padding: 16px;
+            margin-bottom: 20px;
+        }
+        .insights-updates h4 {
+            font-size: 13px;
+            color: var(--text-primary);
+            margin-bottom: 12px;
+        }
+        .insights-list {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .insight-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            padding: 12px;
+            background: rgba(245, 158, 11, 0.02);
+            border: 1px solid var(--border-subtle);
+            border-radius: 8px;
+        }
+        .insight-item .company-name {
+            font-weight: 600;
+            color: var(--accent-amber);
+            font-size: 13px;
+            cursor: pointer;
+        }
+        .insight-item .company-name:hover { text-decoration: underline; }
+        .insight-item .insight-text {
+            font-size: 12px;
+            color: var(--text-secondary);
+            line-height: 1.5;
+        }
+        .insight-item .insight-tag {
+            font-size: 9px;
+            font-weight: 600;
+            padding: 3px 8px;
+            border-radius: 4px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .insight-tag.new { background: rgba(16, 185, 129, 0.15); color: var(--accent-emerald); }
+        .insight-tag.update { background: rgba(245, 158, 11, 0.15); color: var(--accent-amber); }
+        .insight-tag.funding { background: rgba(34, 211, 238, 0.15); color: var(--accent-cyan); }
+        .insights-footer {
+            padding: 16px 24px;
+            border-top: 1px solid var(--border-subtle);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .insights-last-update {
+            font-size: 11px;
+            color: var(--text-muted);
+        }
+        .insights-btn {
+            background: rgba(245, 158, 11, 0.1) !important;
+            border-color: var(--border-accent) !important;
+        }
+        .insights-btn:hover {
+            background: rgba(245, 158, 11, 0.2) !important;
+        }
+        [data-theme="light"] .insights-modal {
+            background: rgba(248, 247, 244, 0.88);
+        }
+
         .compare-header, .analytics-header, .shortcuts-header {
             display: flex;
             justify-content: space-between;
@@ -2914,6 +3095,10 @@
                 <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M3 14h18m-9-4v8m-7 0h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
                 <span>Data</span>
             </button>
+            <button class="toolbar-btn insights-btn" id="insights-btn" title="Insights from Tishir's mailbox">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                <span>Insights</span>
+            </button>
         </div>
 
         <!-- Zoom Controls -->
@@ -3032,6 +3217,53 @@
             <div class="compare-table" id="compare-table"></div>
             <div class="compare-actions">
                 <button class="btn btn-ghost" id="compare-clear">Clear Selection</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Insights Modal -->
+    <div class="insights-modal" id="insights-modal">
+        <div class="insights-content">
+            <div class="insights-header">
+                <h3>
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" width="20" height="20"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                    Insights from Tishir's Mailbox
+                </h3>
+                <button class="insights-close" id="insights-close">&times;</button>
+            </div>
+            <div class="insights-body">
+                <div class="insights-status" id="insights-status">
+                    <div class="insights-setup">
+                        <h4>Setup Required</h4>
+                        <p>To get daily AI startup insights from your newsletters, we need to connect to your email.</p>
+                        <div class="insights-options">
+                            <div class="insights-option">
+                                <strong>Option 1: Email Forwarding (Recommended)</strong>
+                                <p>Set up a filter in your UMich Gmail to forward newsletters from The Information to a personal Gmail account.</p>
+                            </div>
+                            <div class="insights-option">
+                                <strong>Option 2: Manual Import</strong>
+                                <p>Export newsletters and drop them in a folder for processing.</p>
+                                <button class="btn btn-ghost" id="insights-import-btn">Import Emails</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="insights-content-area" id="insights-content-area" style="display:none;">
+                    <div class="insights-date" id="insights-date"></div>
+                    <div class="insights-summary" id="insights-summary"></div>
+                    <div class="insights-updates" id="insights-updates">
+                        <h4>Today's Updates</h4>
+                        <div class="insights-list" id="insights-list"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="insights-footer">
+                <span class="insights-last-update" id="insights-last-update"></span>
+                <button class="btn btn-primary" id="insights-refresh-btn">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" width="14" height="14"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>
+                    Refresh
+                </button>
             </div>
         </div>
     </div>
@@ -3205,6 +3437,161 @@ window.matchMedia('(prefers-color-scheme: light)').addEventListener('change', (e
     if (!localStorage.getItem('aimap_theme')) {
         setTheme(e.matches ? 'light' : 'dark');
     }
+});
+
+// === Public Company Market Cap Tracking ===
+const PUBLIC_COMPANIES = {
+    // Company name -> { ticker, parent (optional) }
+    "Microsoft": { ticker: "MSFT" },
+    "Google": { ticker: "GOOGL" },
+    "Amazon": { ticker: "AMZN" },
+    "Apple Silicon": { ticker: "AAPL", displayAs: "Apple" },
+    "Meta AI": { ticker: "META", displayAs: "Meta" },
+    "NVIDIA": { ticker: "NVDA" },
+    "Salesforce": { ticker: "CRM" },
+    "Oracle": { ticker: "ORCL" },
+    "IBM": { ticker: "IBM" },
+    "Snowflake": { ticker: "SNOW" },
+    "Palantir": { ticker: "PLTR" },
+    "CrowdStrike": { ticker: "CRWD" },
+    "ServiceNow": { ticker: "NOW" },
+    "Workday": { ticker: "WDAY" },
+    "Atlassian": { ticker: "TEAM" },
+    "Walmart": { ticker: "WMT" },
+    "Adobe": { ticker: "ADBE" },
+    "SAP": { ticker: "SAP" },
+    "Intuit": { ticker: "INTU" },
+    "MediaTek": { ticker: "2454.TW" },
+    "AMD": { ticker: "AMD" },
+    "Intel": { ticker: "INTC" },
+    "Qualcomm AI": { ticker: "QCOM", displayAs: "Qualcomm" },
+    "Tesla": { ticker: "TSLA" },
+    "SentinelOne": { ticker: "S" },
+    "Palo Alto Networks": { ticker: "PANW" },
+    "Zscaler": { ticker: "ZS" },
+    "Datadog": { ticker: "DDOG" },
+    "MongoDB": { ticker: "MDB" },
+    "Elastic": { ticker: "ESTC" },
+    "UiPath": { ticker: "PATH" },
+    "C3.ai": { ticker: "AI" },
+    "BigBear.ai": { ticker: "BBAI" },
+    "SoundHound AI": { ticker: "SOUN" }
+};
+
+// Parent company mapping for subsidiaries
+const PARENT_TICKERS = {
+    "Alphabet": "GOOGL",
+    "Apple": "AAPL",
+    "Meta": "META",
+    "Qualcomm": "QCOM"
+};
+
+// Cache for market caps
+let marketCapCache = JSON.parse(localStorage.getItem('aimap_marketcaps') || '{}');
+let marketCapTimestamp = parseInt(localStorage.getItem('aimap_marketcaps_ts') || '0');
+const MARKET_CAP_CACHE_MS = 4 * 60 * 60 * 1000; // 4 hours
+
+// Format market cap
+function formatMarketCap(value) {
+    if (value >= 1e12) return `$${(value / 1e12).toFixed(2)}T`;
+    if (value >= 1e9) return `$${(value / 1e9).toFixed(0)}B`;
+    if (value >= 1e6) return `$${(value / 1e6).toFixed(0)}M`;
+    return `$${value}`;
+}
+
+// Fetch market cap from Yahoo Finance
+async function fetchMarketCap(ticker) {
+    try {
+        // Use Yahoo Finance API via CORS proxy
+        const url = `https://query1.finance.yahoo.com/v8/finance/chart/${ticker}?interval=1d&range=1d`;
+        const resp = await fetch(url);
+        if (!resp.ok) return null;
+        const json = await resp.json();
+        const meta = json.chart?.result?.[0]?.meta;
+        if (meta?.regularMarketPrice && meta?.sharesOutstanding) {
+            return meta.regularMarketPrice * meta.sharesOutstanding;
+        }
+        return null;
+    } catch (e) {
+        console.warn(`Failed to fetch market cap for ${ticker}:`, e);
+        return null;
+    }
+}
+
+// Fetch all public company market caps
+async function refreshMarketCaps() {
+    const now = Date.now();
+    if (now - marketCapTimestamp < MARKET_CAP_CACHE_MS && Object.keys(marketCapCache).length > 0) {
+        console.log('Using cached market caps');
+        applyMarketCaps();
+        return;
+    }
+
+    console.log('Fetching fresh market caps...');
+    const tickers = new Set();
+
+    // Collect all unique tickers
+    Object.values(PUBLIC_COMPANIES).forEach(c => tickers.add(c.ticker));
+    Object.values(PARENT_TICKERS).forEach(t => tickers.add(t));
+
+    // Fetch in batches to avoid rate limits
+    const tickerArray = Array.from(tickers);
+    for (const ticker of tickerArray) {
+        const cap = await fetchMarketCap(ticker);
+        if (cap) {
+            marketCapCache[ticker] = cap;
+        }
+        // Small delay between requests
+        await new Promise(r => setTimeout(r, 100));
+    }
+
+    // Save cache
+    marketCapTimestamp = now;
+    localStorage.setItem('aimap_marketcaps', JSON.stringify(marketCapCache));
+    localStorage.setItem('aimap_marketcaps_ts', marketCapTimestamp.toString());
+
+    applyMarketCaps();
+    console.log('Market caps updated:', marketCapCache);
+}
+
+// Apply market caps to data
+function applyMarketCaps() {
+    if (typeof data === 'undefined') return;
+
+    // Update direct public companies
+    for (const [name, info] of Object.entries(PUBLIC_COMPANIES)) {
+        if (data[name] && marketCapCache[info.ticker]) {
+            const formatted = formatMarketCap(marketCapCache[info.ticker]);
+            data[name].val = formatted;
+            data[name].liveVal = true; // Mark as live data
+        }
+    }
+
+    // Update parent references
+    for (const name of Object.keys(data)) {
+        const val = data[name].val;
+        if (typeof val === 'string' && val.startsWith('Parent: ')) {
+            const parent = val.replace('Parent: ', '');
+            const ticker = PARENT_TICKERS[parent];
+            if (ticker && marketCapCache[ticker]) {
+                // Keep parent reference but store live cap
+                data[name].parentCap = formatMarketCap(marketCapCache[ticker]);
+            }
+        }
+    }
+
+    // Trigger re-render if needed
+    if (typeof save === 'function') {
+        // Don't save to avoid overwriting user data, just update display
+    }
+}
+
+// Auto-refresh on page load (after data loads)
+document.addEventListener('DOMContentLoaded', () => {
+    // Wait for data to be loaded
+    setTimeout(() => {
+        refreshMarketCaps();
+    }, 2000);
 });
 
 // Category similarity matrix
@@ -4789,7 +5176,15 @@ function showPanel(name) {
     document.getElementById('panel-cat').textContent = c.cat;
     document.getElementById('panel-hq').textContent = c.hq || 'N/A';
     const valEl = document.getElementById('panel-val');
-    valEl.textContent = c.val || 'N/A';
+    // Check for live market cap data
+    let valDisplay = c.val || 'N/A';
+    let isLive = false;
+    if (c.liveVal) {
+        isLive = true;
+    } else if (c.parentCap) {
+        valDisplay = `${c.val} (${c.parentCap})`;
+    }
+    valEl.innerHTML = valDisplay + (isLive ? ' <span class="live-indicator">LIVE</span>' : '');
     valEl.className = 'val' + ((!c.val || c.val === 'N/A') ? ' na' : '');
     const logo = document.getElementById('panel-logo');
     const url = logoUrl(c.domain);
@@ -5569,6 +5964,7 @@ document.addEventListener('keydown', (e) => {
         document.getElementById('shortcuts-modal').classList.remove('open');
         document.getElementById('analytics-modal').classList.remove('open');
         document.getElementById('datatable-modal').classList.remove('open');
+        document.getElementById('insights-modal').classList.remove('open');
         document.getElementById('modal-bg').classList.remove('open');
         if (compareMode) toggleCompareMode();
         panel.classList.remove('open');
@@ -6965,6 +7361,15 @@ ${emailTexts}`;
     // Close modal
     closeBtn.onclick = () => modal.classList.remove('open');
     modal.onclick = (e) => { if (e.target === modal) modal.classList.remove('open'); };
+
+    // === Insights Modal ===
+    const insightsModal = document.getElementById('insights-modal');
+    const insightsBtn = document.getElementById('insights-btn');
+    const insightsClose = document.getElementById('insights-close');
+
+    insightsBtn.onclick = () => insightsModal.classList.add('open');
+    insightsClose.onclick = () => insightsModal.classList.remove('open');
+    insightsModal.onclick = (e) => { if (e.target === insightsModal) insightsModal.classList.remove('open'); };
 
     // Populate category and HQ filters
     function populateFilters() {
