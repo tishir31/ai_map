@@ -385,9 +385,11 @@
 
         /* Info Panel */
         .panel {
-            bottom: 24px;
+            bottom: 90px;
             left: 24px;
             width: 340px;
+            max-height: calc(100vh - 180px);
+            overflow-y: auto;
             background: var(--bg-surface);
             border: 1px solid var(--border-subtle);
             border-radius: 12px;
@@ -2373,23 +2375,48 @@
         .ai-summary-text {
             font-size: 12px;
             line-height: 1.7;
-            color: rgba(203, 213, 225, 0.9);
-            background: rgba(30, 41, 59, 0.5);
-            border: 1px solid rgba(139, 92, 246, 0.2);
+            color: var(--text-secondary);
+            background: rgba(245, 158, 11, 0.03);
+            border: 1px solid var(--border-accent);
             border-radius: 10px;
             padding: 14px;
-            max-height: 250px;
+            max-height: 200px;
             overflow-y: auto;
         }
         .ai-summary-text::-webkit-scrollbar { width: 5px; }
-        .ai-summary-text::-webkit-scrollbar-thumb { background: rgba(139, 92, 246, 0.3); border-radius: 3px; }
+        .ai-summary-text::-webkit-scrollbar-thumb { background: rgba(245, 158, 11, 0.2); border-radius: 3px; }
+        .ai-summary-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 8px;
+        }
         .ai-summary-label {
             font-size: 10px;
             font-weight: 600;
-            color: #a78bfa;
+            color: var(--accent-amber);
             text-transform: uppercase;
             letter-spacing: 0.5px;
-            margin-bottom: 8px;
+        }
+        .ai-summary-actions {
+            display: flex;
+            gap: 6px;
+        }
+        .ai-summary-actions button {
+            background: none;
+            border: none;
+            color: var(--text-muted);
+            cursor: pointer;
+            padding: 4px;
+            border-radius: 4px;
+            transition: all 0.2s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .ai-summary-actions button:hover {
+            color: var(--accent-amber);
+            background: rgba(245, 158, 11, 0.1);
         }
 
         /* AI Spinner */
@@ -2763,7 +2790,17 @@
                 </button>
             </div>
             <div id="ai-summary-content">
-                <div class="ai-summary-label">AI Summary</div>
+                <div class="ai-summary-header">
+                    <div class="ai-summary-label">AI Summary</div>
+                    <div class="ai-summary-actions">
+                        <button id="ai-summary-refresh" title="Regenerate">
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" width="14" height="14"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>
+                        </button>
+                        <button id="ai-summary-close" title="Close">
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" width="14" height="14"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+                        </button>
+                    </div>
+                </div>
                 <div class="ai-summary-text" id="ai-summary-text"></div>
             </div>
         </div>
@@ -5531,6 +5568,8 @@ document.addEventListener('keydown', (e) => {
         // Close any open modals
         document.getElementById('shortcuts-modal').classList.remove('open');
         document.getElementById('analytics-modal').classList.remove('open');
+        document.getElementById('datatable-modal').classList.remove('open');
+        document.getElementById('modal-bg').classList.remove('open');
         if (compareMode) toggleCompareMode();
         panel.classList.remove('open');
         return;
@@ -6271,6 +6310,15 @@ Keep it factual, concise, and under 200 words. Use plain text, no markdown heade
 }
 
 document.getElementById('ai-summary-btn').onclick = () => {
+    if (currentPanelCompany) generateCompanySummary(currentPanelCompany);
+};
+
+// AI Summary close and refresh handlers
+document.getElementById('ai-summary-close').onclick = () => {
+    document.getElementById('ai-summary-content').classList.remove('visible');
+};
+
+document.getElementById('ai-summary-refresh').onclick = () => {
     if (currentPanelCompany) generateCompanySummary(currentPanelCompany);
 };
 
