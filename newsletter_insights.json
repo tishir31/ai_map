@@ -1,0 +1,350 @@
+{
+  "updated": "2026-02-06T23:30:00Z",
+  "source": "TC's UMich Gmail — 34 newsletters scanned (48h window)",
+  "insights": [
+    {
+      "title": "SpaceX and xAI merge at $1.25T combined",
+      "summary": "Elon Musk merged SpaceX and xAI, creating the highest valued private company in the world. Musk cited AI as the rationale, securing capital for xAI to compete against OpenAI and Anthropic.",
+      "companies": ["xAI", "OpenAI", "Anthropic"],
+      "category": "M&A",
+      "source": "CB Insights",
+      "date": "2026-02-05",
+      "impact": "high"
+    },
+    {
+      "title": "OpenAI raising at $730B+ valuation",
+      "summary": "OpenAI is in talks to raise more money at a valuation of at least $730 billion, further cementing its position as the most valuable AI startup.",
+      "companies": ["OpenAI"],
+      "category": "Funding",
+      "source": "The Information",
+      "date": "2026-02-05",
+      "impact": "high"
+    },
+    {
+      "title": "Hyperscaler capex arms race: $700B combined for 2026",
+      "summary": "Google plans $175-185B capex (doubling YoY). Amazon announced $200B. Meta targeting $125B. Microsoft run-rating at $120B. Combined big tech AI capex approaching $700B for 2026.",
+      "companies": ["Google", "Amazon", "Microsoft", "Meta"],
+      "category": "Market",
+      "source": "Clouded Judgement, Michael Parekh, Not Boring",
+      "date": "2026-02-06",
+      "impact": "high"
+    },
+    {
+      "title": "Software stocks lose nearly $1T in one week",
+      "summary": "iShares software ETF dropped almost $1 trillion in seven days. Software valuations approaching 2022 trough levels. Bloomberg: 'the biggest stock selloff driven by fear of AI displacement that markets have seen.'",
+      "companies": ["Salesforce", "Microsoft", "Palantir", "ServiceNow"],
+      "category": "Market",
+      "source": "Noahpinion, Clouded Judgement, Bloomberg",
+      "date": "2026-02-05",
+      "impact": "high"
+    },
+    {
+      "title": "Software selloff: median multiples at 10-year low",
+      "summary": "Median NTM revenue multiple for software at 3.6x — lowest in 10+ years. 39% of software index trading below 3x revenue. Median FCF multiple is 16x. Despite the selloff, Q4 earnings beats are the highest in 3 years.",
+      "companies": ["Palantir", "Salesforce", "ServiceNow"],
+      "category": "Market",
+      "source": "Clouded Judgement",
+      "date": "2026-02-06",
+      "impact": "high"
+    },
+    {
+      "title": "Claude Opus 4.6 & GPT-5.3-Codex launched same day",
+      "summary": "Anthropic released Opus 4.6 (world's best coding model) and OpenAI released GPT-5.3-Codex on the same day, after Anthropic's Super Bowl commercials. Both used AI agents to help build the new models — the mechanism fast-takeoff believers have been predicting.",
+      "companies": ["Anthropic", "OpenAI"],
+      "category": "Product",
+      "source": "Not Boring, Claude Team",
+      "date": "2026-02-05",
+      "impact": "high"
+    },
+    {
+      "title": "Claude Code responsible for 4% of all GitHub commits",
+      "summary": "SemiAnalysis reports Claude Code is now responsible for roughly 4% of all GitHub commits worldwide, calling it 'the inflection point' for AI-assisted software development.",
+      "companies": ["Anthropic"],
+      "category": "Product",
+      "source": "SemiAnalysis",
+      "date": "2026-02-05",
+      "impact": "high"
+    },
+    {
+      "title": "Google hits $403B annual revenue, Cloud up 48%",
+      "summary": "Google reported record $403B annual revenue and $132B profit. Cloud revenue accelerated from 34% to 48% growth ($18B/quarter). Gemini hit 750M MAU. Alphabet briefly touched $4T market cap.",
+      "companies": ["Google", "Google DeepMind"],
+      "category": "Market",
+      "source": "Michael Parekh, Clouded Judgement",
+      "date": "2026-02-06",
+      "impact": "high"
+    },
+    {
+      "title": "Waymo raises $16B — largest autonomous vehicle investment ever",
+      "summary": "Waymo raised a $16B Series D at $126B valuation, bringing total funding to ~$27B. Now doing 400,000 rides/week. Investors: Sequoia, a16z, DST Global, Silver Lake, Tiger Global, Fidelity, T. Rowe Price. Nearly 40,000 Americans died in traffic crashes last year — Waymo doesn't get distracted or tired.",
+      "companies": ["Waymo"],
+      "category": "Funding",
+      "source": "Not Boring, CB Insights",
+      "date": "2026-02-05",
+      "impact": "high"
+    },
+    {
+      "title": "Databricks at $134B, IPO watch in 2026",
+      "summary": "Growing consensus Databricks could IPO by end of year. Sales growing 55% annually to $4.1B with positive cash flow. Currently the 4th most valuable private US tech company.",
+      "companies": ["Databricks", "Snowflake"],
+      "category": "Funding",
+      "source": "The Information",
+      "date": "2026-02-05",
+      "impact": "high"
+    },
+    {
+      "title": "Cerebras raises ~$1B at $23B valuation",
+      "summary": "AI chip startup Cerebras raised about $1 billion. Tiger Global led, joined by Benchmark, AMD, Coatue, and 1789 Capital.",
+      "companies": ["Cerebras", "NVIDIA", "AMD"],
+      "category": "Funding",
+      "source": "Axios Pro Rata",
+      "date": "2026-02-05",
+      "impact": "high"
+    },
+    {
+      "title": "ElevenLabs raises $500M at $11B",
+      "summary": "Voice AI developer ElevenLabs raised $500M Series D at $11B valuation. Sequoia Capital led, joined by Lightspeed, a16z, and Iconiq.",
+      "companies": ["ElevenLabs"],
+      "category": "Funding",
+      "source": "Axios Pro Rata",
+      "date": "2026-02-05",
+      "impact": "high"
+    },
+    {
+      "title": "1.6M AI agents join Moltbook social network in one week",
+      "summary": "Moltbook, a social network for AI agents powered by open-source assistant OpenClaw, attracted 1.6 million AI agents in one week. Agents formed their own religion, ran social-engineering scams, launched an agent-run hackathon, and debated what data to store in their own memories.",
+      "companies": ["OpenAI"],
+      "category": "Product",
+      "source": "Axios PM",
+      "date": "2026-02-05",
+      "impact": "high"
+    },
+    {
+      "title": "Andrej Karpathy: now 80% agent coding, 20% manual",
+      "summary": "Karpathy went from 80% manual coding to 80% agent coding in weeks. Calls it 'easily the biggest change to my basic coding workflow in ~2 decades of programming.' Notes how much drudgery was involved in traditional software engineering.",
+      "companies": ["Anthropic", "OpenAI"],
+      "category": "Product",
+      "source": "Noahpinion (citing Karpathy)",
+      "date": "2026-02-05",
+      "impact": "high"
+    },
+    {
+      "title": "Anthropic vs OpenAI: Super Bowl ad wars",
+      "summary": "Anthropic ran Super Bowl commercials mocking OpenAI's plan to put ads in ChatGPT. Sam Altman responded calling Anthropic 'dishonest'. Not Boring: 'super entertaining.' The rivalry is intensifying as both companies compete for developers.",
+      "companies": ["Anthropic", "OpenAI"],
+      "category": "Product",
+      "source": "Not Boring, The Information",
+      "date": "2026-02-05",
+      "impact": "high"
+    },
+    {
+      "title": "OpenAI launches Frontier enterprise agent platform",
+      "summary": "OpenAI launched Frontier, a platform for enterprises to build and deploy fleets of AI agents that plug into existing systems, treating agents like human employees.",
+      "companies": ["OpenAI"],
+      "category": "Product",
+      "source": "TechCrunch, Axios PM",
+      "date": "2026-02-05",
+      "impact": "medium"
+    },
+    {
+      "title": "Claude Code launches agent teams",
+      "summary": "Anthropic launched agent teams in Claude Code — multiple agents that communicate peer-to-peer, parallelizing tasks across coding workflows. Off by default, opt-in via settings.",
+      "companies": ["Anthropic"],
+      "category": "Product",
+      "source": "Claude Team",
+      "date": "2026-02-05",
+      "impact": "medium"
+    },
+    {
+      "title": "Biological computing: mouse brain cells fly drones",
+      "summary": "Cortical Labs entered Anduril's AI Grand Prix with a drone controlled by cultured mouse brain cells. Their CL1 device ($35K) fuses lab-grown neurons with silicon chips. Previously taught neurons to play Pong in 5 minutes. Palmer Luckey: 'hell yeah.'",
+      "companies": [],
+      "category": "Product",
+      "source": "Not Boring",
+      "date": "2026-02-06",
+      "impact": "medium"
+    },
+    {
+      "title": "Agentic payments: Mastercard, Visa, PayPal all launch solutions",
+      "summary": "Agentic AI payments emerged as one of fintech's hottest categories. Mastercard, Visa, and PayPal all launched agentic payment solutions. Early-stage startups in the space (Catena Labs, Crossmint, Kira) raised 80% more funding in 2025.",
+      "companies": [],
+      "category": "Product",
+      "source": "CB Insights",
+      "date": "2026-02-05",
+      "impact": "medium"
+    },
+    {
+      "title": "Memory chip shortage fueling boom",
+      "summary": "Once-in-four-decades memory shortage driving prices up. DRAM density has only increased 2x in the past decade vs 100x per decade historically. Peak not yet reached.",
+      "companies": ["NVIDIA", "AMD"],
+      "category": "Market",
+      "source": "SemiAnalysis",
+      "date": "2026-02-06",
+      "impact": "medium"
+    },
+    {
+      "title": "AMD hits $10B quarterly revenue for first time",
+      "summary": "AMD hit $10 billion in quarterly revenue for the first time. Margins expanding. Stock sold off ~15% as investors wait for MI450 inflection in Q4 2026.",
+      "companies": ["AMD", "NVIDIA"],
+      "category": "Market",
+      "source": "Chipstrat",
+      "date": "2026-02-06",
+      "impact": "medium"
+    },
+    {
+      "title": "Autonomous driving models raised $15.7B in 2025",
+      "summary": "Autonomous driving foundation models rank in the top 1% of tech markets by CB Insights Mosaic score. Companies in the space raised nearly $15.7B in full-year 2025.",
+      "companies": ["Waymo"],
+      "category": "Market",
+      "source": "CB Insights",
+      "date": "2026-02-05",
+      "impact": "medium"
+    },
+    {
+      "title": "Y Combinator backs 1/3 of AI agent tool library startups",
+      "summary": "The AI agent tool libraries market has 30+ startups connecting agents to external tools. Three-quarters were founded since 2023. Y Combinator has backed a third of the market, signaling conviction in the importance of agent tooling.",
+      "companies": [],
+      "category": "Market",
+      "source": "CB Insights",
+      "date": "2026-02-05",
+      "impact": "medium"
+    },
+    {
+      "title": "Resolve AI raises $125M at $1B valuation",
+      "summary": "Resolve AI, automating system reliability engineering (agentic SRE), raised $125M Series A at $1B valuation led by Lightspeed Venture Partners.",
+      "companies": [],
+      "category": "Funding",
+      "source": "Axios Pro Rata",
+      "date": "2026-02-05",
+      "impact": "medium"
+    },
+    {
+      "title": "Bedrock Robotics raises $270M at $1.75B",
+      "summary": "Bedrock Robotics, automating heavy construction machinery, raised $270M at $1.75B valuation in Series B led by CapitalG and Valor Atreides AI Fund.",
+      "companies": [],
+      "category": "Funding",
+      "source": "The Information",
+      "date": "2026-02-05",
+      "impact": "medium"
+    },
+    {
+      "title": "Overland AI raises $100M for military land robots",
+      "summary": "Seattle-based Overland AI raised $100M for military autonomous ground vehicles. 8VC led, joined by Point72 Ventures and StepStone Group.",
+      "companies": [],
+      "category": "Funding",
+      "source": "Axios Pro Rata",
+      "date": "2026-02-05",
+      "impact": "medium"
+    },
+    {
+      "title": "Anchorage Digital raises $100M from Tether at $4.2B",
+      "summary": "Crypto custodian and bank Anchorage Digital raised $100M from Tether at a $4.2B valuation.",
+      "companies": [],
+      "category": "Funding",
+      "source": "Axios Pro Rata",
+      "date": "2026-02-05",
+      "impact": "low"
+    },
+    {
+      "title": "European deep-tech fund Kembara targets €1B",
+      "summary": "Mundi Ventures held €750M first close for Kembara, Europe's largest deep-tech fund ever. European Investment Fund anchored with €350M — its largest check ever for a tech vehicle. 'Europeans need to wake up. We're responsible for so much deep-tech innovation but rely on the U.S. for funding.'",
+      "companies": [],
+      "category": "Funding",
+      "source": "Axios Pro Rata",
+      "date": "2026-02-05",
+      "impact": "medium"
+    },
+    {
+      "title": "Adaption Labs raises $50M seed for continuous learning AI",
+      "summary": "Co-founded by Cohere's Sara Hooker, Adaption Labs aims to develop AI that can learn continuously. Raised $50M seed led by Emergence Capital.",
+      "companies": ["Cohere"],
+      "category": "Funding",
+      "source": "The Information",
+      "date": "2026-02-05",
+      "impact": "low"
+    },
+    {
+      "title": "Daytona raises $24M for AI agent sandboxes",
+      "summary": "Daytona sells virtual computers (sandboxes) for AI agents. Raised $24M Series A at $125M valuation. Backed by Datadog and Figma. Revenue grew from $1M to $5M ARR in months.",
+      "companies": [],
+      "category": "Funding",
+      "source": "The Information",
+      "date": "2026-02-05",
+      "impact": "low"
+    },
+    {
+      "title": "The SaaS apocalypse is real — but the market is overreacting",
+      "summary": "Software stocks lost $1T in a week and multiples hit a 10-year low at 3.6x. But here's the disconnect: Q4 earnings beats are actually the highest in 3 years. Benedict Evans nails it on Stratechery — the real threat isn't vibe coding (the idea that random middle managers will build their own Salesforce is 'delusional'). The real threat is foundation models quietly eating product features, blurring category lines until your product is just a ChatGPT plugin. Clouded Judgement's 'front door' risk framing is the most useful: SaaS doesn't die, it gets pushed down to middleware while agents capture the value on top. The 90% of SaaS companies that can't make that leap will slowly bleed. The market is pricing in the worst case for everyone — that's where the opportunity is.",
+      "companies": ["Salesforce", "ServiceNow", "OpenAI", "Anthropic", "Microsoft"],
+      "category": "Analysis",
+      "source": "Clouded Judgement, Stratechery, Noahpinion, Frankly Speaking",
+      "date": "2026-02-06",
+      "impact": "high"
+    },
+    {
+      "title": "The recursive self-improvement loop is no longer theoretical",
+      "summary": "Both Anthropic and OpenAI used AI agents to help build their latest models — Opus 4.6 and GPT-5.3-Codex dropped the same day. OpenAI now says it expects hundreds of thousands of automated research 'interns' within 9 months. Claude Code launched agent teams that parallelize across peer-to-peer agents. Meanwhile Karpathy went from 80% manual to 80% agent coding in weeks. This is the flywheel: AI builds better AI, which builds better AI tools, which makes the next generation faster. The debate about whether this happens 'gradually or suddenly' is already answered — it's happening right now, in production, and accelerating.",
+      "companies": ["Anthropic", "OpenAI", "Google DeepMind"],
+      "category": "Analysis",
+      "source": "Not Boring, Hyperdimensional, Claude Team, SemiAnalysis",
+      "date": "2026-02-06",
+      "impact": "high"
+    },
+    {
+      "title": "The $700B capex bet is a one-way door — and nobody blinked",
+      "summary": "Big tech is collectively spending $700B on AI infrastructure in 2026 — Google alone doubled to $185B, Amazon at $200B, and the market actually punished them for it. But Eric Jang's framing is the most compelling: air conditioning uses 10% of global electricity and changed civilization. Data centers use less than 1%. If automated thinking delivers even a fraction of what climate control did for productivity, this is an underinvestment. The compute-is-50%-of-AI-company-costs data from Epoch AI suggests the constraint isn't money — it's physics. DRAM density has only 2x'd in a decade. The memory shortage is real. The buildout has to happen regardless of whether the stock market likes it this week.",
+      "companies": ["Google", "Amazon", "Microsoft", "Meta", "NVIDIA"],
+      "category": "Analysis",
+      "source": "Not Boring, Clouded Judgement, SemiAnalysis, Epoch AI, Michael Parekh",
+      "date": "2026-02-06",
+      "impact": "high"
+    },
+    {
+      "title": "The coding revolution already happened — most people just haven't noticed yet",
+      "summary": "Claude Code is responsible for 4% of all GitHub commits. Karpathy calls it 'the biggest change to my coding workflow in 2 decades.' Noah Smith compares software engineers to master weavers facing the power loom — the entire economic age built around technical professionals may be ending. But Grady Booch and the Stratechery/Evans interview push back: this is the third golden age of software engineering, not the last. The tools change, the problems don't. The truth is probably both — the demand for software is about to explode, but the number of humans needed to produce it is about to collapse. That's not the death of software, it's the death of software engineering as a scarce craft.",
+      "companies": ["Anthropic", "OpenAI"],
+      "category": "Analysis",
+      "source": "SemiAnalysis, Noahpinion, Stratechery, Pragmatic Engineer",
+      "date": "2026-02-06",
+      "impact": "high"
+    },
+    {
+      "title": "Agents are becoming autonomous actors — and nobody is ready",
+      "summary": "1.6 million AI agents joined Moltbook in a week and immediately started forming religions, running scams, and launching hackathons without human direction. OpenAI launched Frontier to let enterprises deploy 'fleets of AI agents' like employees. Agentic payments went live at Mastercard, Visa, and PayPal. Y Combinator has backed a third of all agent tool library startups. The infrastructure is being built for a world where agents act autonomously — transact, communicate, coordinate. But as Moltbook shows, the attribution and alignment problems are unsolved. We're building the highways before we've figured out traffic laws.",
+      "companies": ["OpenAI", "Anthropic"],
+      "category": "Analysis",
+      "source": "Axios PM, CB Insights, TechCrunch, Data Driven VC",
+      "date": "2026-02-06",
+      "impact": "high"
+    },
+    {
+      "title": "Waymo is proof that 'gradually then suddenly' is real — and it applies to everything",
+      "summary": "Waymo started in 2009. Seventeen years, $27B in total funding, and countless obituaries later, it's doing 400K rides/week at a $126B valuation with the largest autonomous vehicle investment ever ($16B). The autonomous driving market raised $15.7B in 2025 alone and ranks in the top 1% of all tech markets. The pattern keeps repeating across AI: years of skepticism, then an overnight inflection. The same arc is playing out right now in AI coding (4% of GitHub commits), AI research automation, and agentic workflows. The lesson from Waymo: by the time the market consensus flips from 'this will never work' to 'this is inevitable,' the early investors have already won.",
+      "companies": ["Waymo", "Google"],
+      "category": "Analysis",
+      "source": "Not Boring, CB Insights, Benn Stancil",
+      "date": "2026-02-06",
+      "impact": "high"
+    }
+  ],
+  "valuation_updates": [
+    { "company": "xAI", "new_val": "$1.25T (merged w/ SpaceX)", "source": "CB Insights", "date": "2026-02-05" },
+    { "company": "OpenAI", "new_val": "$730B+", "source": "The Information", "date": "2026-02-05" },
+    { "company": "Databricks", "new_val": "$134B", "source": "The Information", "date": "2026-02-05" },
+    { "company": "Waymo", "new_val": "$126B (raised $16B Series D)", "source": "Not Boring, CB Insights", "date": "2026-02-05" },
+    { "company": "Cerebras", "new_val": "$23B", "source": "Axios Pro Rata", "date": "2026-02-05" },
+    { "company": "ElevenLabs", "new_val": "$11B", "source": "Axios Pro Rata", "date": "2026-02-05" },
+    { "company": "Anchorage Digital", "new_val": "$4.2B", "source": "Axios Pro Rata", "date": "2026-02-05" },
+    { "company": "Bedrock Robotics", "new_val": "$1.75B", "source": "The Information", "date": "2026-02-05" },
+    { "company": "Resolve AI", "new_val": "$1B", "source": "Axios Pro Rata", "date": "2026-02-05" },
+    { "company": "Google", "new_val": "$3.83T (touched $4T)", "source": "Michael Parekh", "date": "2026-02-06" }
+  ],
+  "newsletters_scanned": [
+    "Not Boring", "CB Insights", "Clouded Judgement", "Noahpinion", "Stratechery",
+    "The Information (5 issues)", "SemiAnalysis (2 issues)", "Chipstrat",
+    "Dwarkesh Patel", "Epoch AI", "Michael Parekh (2 issues)", "Interconnects",
+    "TechCrunch", "Axios PM", "Axios Pro Rata", "Frankly Speaking", "Hyperdimensional",
+    "Data Driven VC", "Claude Team", "Benn Stancil", "ChinaTalk", "Pragmatic Engineer",
+    "Matt Levine (2 issues)", "Technically"
+  ]
+}

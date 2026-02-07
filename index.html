@@ -400,6 +400,48 @@
         }
 
         .panel.open { display: block; animation: panelSlide 0.35s cubic-bezier(0.4, 0, 0.2, 1); }
+        .panel.collapsed {
+            display: block;
+            max-height: 36px;
+            overflow: hidden;
+            padding: 6px 14px;
+            cursor: pointer;
+            left: 360px;
+            width: auto;
+            min-width: 160px;
+            max-width: 220px;
+            border-radius: 20px;
+            transition: max-height 0.35s ease, padding 0.35s ease, width 0.35s ease, max-width 0.35s ease, border-radius 0.35s ease;
+        }
+        .panel.collapsed .panel-header { margin-bottom: 0; }
+        .panel.collapsed .panel-logo { width: 22px; height: 22px; border-radius: 6px; }
+        .panel.collapsed .panel-title h3 { font-size: 12px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+        .panel.collapsed .panel-title .val { display: none; }
+        .panel.collapsed #panel-collapse-btn svg { transform: rotate(180deg); }
+        .panel.collapsed p,
+        .panel.collapsed .panel-meta,
+        .panel.collapsed .panel-actions,
+        .panel.collapsed #ai-summary-content,
+        .panel.collapsed .panel-related { display: none; }
+        .panel.collapsed:hover {
+            max-height: calc(100vh - 180px);
+            overflow-y: auto;
+            padding: 22px;
+            width: 340px;
+            max-width: 340px;
+            border-radius: 12px;
+        }
+        .panel.collapsed:hover .panel-logo { width: 44px; height: 44px; border-radius: 10px; }
+        .panel.collapsed:hover .panel-title h3 { font-size: inherit; white-space: normal; }
+        .panel.collapsed:hover .panel-title .val { display: block; }
+        .panel.collapsed:hover .panel-header { margin-bottom: 16px; }
+        .panel.collapsed:hover p,
+        .panel.collapsed:hover .panel-meta,
+        .panel.collapsed:hover .panel-actions,
+        .panel.collapsed:hover #ai-summary-content,
+        .panel.collapsed:hover .panel-related { display: flex; }
+        .panel.collapsed:hover p { display: block; }
+        .panel.collapsed:hover #ai-summary-content { display: block; }
 
         @keyframes panelSlide {
             from { opacity: 0; transform: translateY(20px); }
@@ -1945,11 +1987,19 @@
             color: var(--text-muted);
         }
         .insights-btn {
-            background: rgba(245, 158, 11, 0.1) !important;
+            background: rgba(245, 158, 11, 0.15) !important;
             border-color: var(--border-accent) !important;
+            color: #eab308 !important;
+            box-shadow: 0 0 12px rgba(245, 158, 11, 0.2);
+            animation: insightsPulse 3s ease-in-out infinite;
         }
         .insights-btn:hover {
-            background: rgba(245, 158, 11, 0.2) !important;
+            background: rgba(245, 158, 11, 0.3) !important;
+            box-shadow: 0 0 20px rgba(245, 158, 11, 0.35);
+        }
+        @keyframes insightsPulse {
+            0%, 100% { box-shadow: 0 0 12px rgba(245, 158, 11, 0.2); }
+            50% { box-shadow: 0 0 20px rgba(245, 158, 11, 0.4); }
         }
         [data-theme="light"] .insights-modal {
             background: rgba(248, 247, 244, 0.88);
@@ -2661,6 +2711,79 @@
         #ai-curated-content::-webkit-scrollbar { width: 6px; }
         #ai-curated-content::-webkit-scrollbar-track { background: transparent; }
         #ai-curated-content::-webkit-scrollbar-thumb { background: rgba(245, 158, 11, 0.2); border-radius: 3px; }
+
+        /* Inbox insights styles */
+        #inbox-insights-content {
+            display: none;
+            padding: 12px;
+            overflow-y: auto;
+            max-height: calc(100vh - 200px);
+        }
+        #inbox-insights-content.visible { display: block; }
+        #inbox-insights-content::-webkit-scrollbar { width: 6px; }
+        #inbox-insights-content::-webkit-scrollbar-track { background: transparent; }
+        #inbox-insights-content::-webkit-scrollbar-thumb { background: rgba(234, 179, 8, 0.3); border-radius: 3px; }
+        .inbox-updated { font-size: 11px; color: #888; text-align: center; margin-bottom: 12px; }
+        .inbox-val-section {
+            background: rgba(234, 179, 8, 0.08);
+            border: 1px solid rgba(234, 179, 8, 0.25);
+            border-radius: 10px;
+            padding: 12px;
+            margin-bottom: 16px;
+        }
+        .inbox-val-section h4 { color: #eab308; margin: 0 0 8px; font-size: 13px; text-transform: uppercase; letter-spacing: 1px; }
+        .inbox-val-row { display: flex; align-items: center; gap: 8px; margin-bottom: 6px; font-size: 13px; }
+        .inbox-val-company {
+            background: rgba(139, 92, 246, 0.2);
+            color: #c4b5fd;
+            padding: 2px 8px;
+            border-radius: 12px;
+            font-size: 12px;
+            cursor: pointer;
+        }
+        .inbox-val-company:hover { background: rgba(139, 92, 246, 0.4); }
+        .inbox-val-amount { color: #4ade80; font-weight: 600; }
+        .insight-card {
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 10px;
+            padding: 14px;
+            margin-bottom: 12px;
+            transition: border-color 0.2s;
+        }
+        .insight-card:hover { border-color: rgba(234, 179, 8, 0.3); }
+        .insight-card-header { display: flex; align-items: center; gap: 8px; margin-bottom: 8px; }
+        .insight-cat {
+            font-size: 10px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            padding: 2px 8px;
+            border-radius: 8px;
+        }
+        .insight-cat.Funding { background: rgba(34,197,94,0.2); color: #4ade80; }
+        .insight-cat.MA { background: rgba(249,115,22,0.2); color: #fb923c; }
+        .insight-cat.Product { background: rgba(59,130,246,0.2); color: #60a5fa; }
+        .insight-cat.Market { background: rgba(234,179,8,0.2); color: #facc15; }
+        .insight-cat.Analysis { background: rgba(168,85,247,0.2); color: #c084fc; }
+        .insight-source { font-size: 11px; color: #888; margin-left: auto; }
+        .insight-title { font-size: 14px; font-weight: 600; color: #f1f5f9; margin-bottom: 6px; }
+        .insight-summary { font-size: 12px; color: #94a3b8; line-height: 1.5; margin-bottom: 8px; }
+        .insight-companies { display: flex; flex-wrap: wrap; gap: 4px; }
+        .insight-company-tag {
+            background: rgba(139, 92, 246, 0.15);
+            color: #c4b5fd;
+            padding: 2px 8px;
+            border-radius: 12px;
+            font-size: 11px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .insight-company-tag:hover { background: rgba(139, 92, 246, 0.35); }
+        .insight-impact-high { border-left: 3px solid #eab308; }
+        .insight-impact-medium { border-left: 3px solid #6366f1; }
+        .insight-impact-low { border-left: 3px solid #475569; }
+
         #ai-curated-content.visible {
             display: block;
         }
@@ -2950,6 +3073,9 @@
                     <h3 id="panel-name"></h3>
                     <div class="val" id="panel-val"></div>
                 </div>
+                <button id="panel-collapse-btn" style="background:none;border:none;color:var(--text-muted);cursor:pointer;padding:4px;margin-left:auto;font-size:14px;line-height:1;opacity:0.6;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.6'" title="Collapse">
+                    <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                </button>
             </div>
             <p id="panel-desc"></p>
             <div class="panel-meta">
@@ -3005,6 +3131,7 @@
             <div class="news-tabs">
                 <button class="news-tab active" id="tab-latest">Latest</button>
                 <button class="news-tab" id="tab-curated">AI Curated</button>
+                <button class="news-tab" id="tab-inbox">Inbox</button>
             </div>
             <div class="feed-content" id="news-content">
                 <div class="news-loading">Loading AI news...</div>
@@ -3012,6 +3139,7 @@
             <div id="ai-curated-content">
                 <div class="curated-loading"><span class="ai-spinner"></span> Curating with AI...</div>
             </div>
+            <div id="inbox-insights-content"></div>
         </div>
 
         <!-- News Show Button (when collapsed) -->
@@ -3075,17 +3203,9 @@
                 <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"/></svg>
                 <span>Favorites</span>
             </button>
-            <button class="toolbar-btn" id="compare-btn" title="Compare companies">
-                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
-                <span>Compare</span>
-            </button>
             <button class="toolbar-btn" id="analytics-btn" title="View analytics">
                 <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
                 <span>Analytics</span>
-            </button>
-            <button class="toolbar-btn" id="export-csv-btn" title="Export to CSV">
-                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
-                <span>Export</span>
             </button>
             <button class="toolbar-btn" id="shortcuts-btn" title="Keyboard shortcuts (?)">
                 <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
@@ -3095,9 +3215,9 @@
                 <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M3 14h18m-9-4v8m-7 0h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
                 <span>Data</span>
             </button>
-            <button class="toolbar-btn insights-btn" id="insights-btn" title="Insights from Tishir's mailbox">
+            <button class="toolbar-btn insights-btn" id="insights-btn" title="Insights from TC's mailbox">
                 <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
-                <span>Insights</span>
+                <span>Insights from TC's Inbox</span>
             </button>
         </div>
 
@@ -3227,35 +3347,13 @@
             <div class="insights-header">
                 <h3>
                     <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" width="20" height="20"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
-                    Insights from Tishir's Mailbox
+                    Insights from TC's Mailbox
                 </h3>
                 <button class="insights-close" id="insights-close">&times;</button>
             </div>
             <div class="insights-body">
-                <div class="insights-status" id="insights-status">
-                    <div class="insights-setup">
-                        <h4>Setup Required</h4>
-                        <p>To get daily AI startup insights from your newsletters, we need to connect to your email.</p>
-                        <div class="insights-options">
-                            <div class="insights-option">
-                                <strong>Option 1: Email Forwarding (Recommended)</strong>
-                                <p>Set up a filter in your UMich Gmail to forward newsletters from The Information to a personal Gmail account.</p>
-                            </div>
-                            <div class="insights-option">
-                                <strong>Option 2: Manual Import</strong>
-                                <p>Export newsletters and drop them in a folder for processing.</p>
-                                <button class="btn btn-ghost" id="insights-import-btn">Import Emails</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="insights-content-area" id="insights-content-area" style="display:none;">
-                    <div class="insights-date" id="insights-date"></div>
-                    <div class="insights-summary" id="insights-summary"></div>
-                    <div class="insights-updates" id="insights-updates">
-                        <h4>Today's Updates</h4>
-                        <div class="insights-list" id="insights-list"></div>
-                    </div>
+                <div class="insights-content-area" id="insights-content-area">
+                    <div class="curated-loading"><span class="ai-spinner"></span> Loading insights...</div>
                 </div>
             </div>
             <div class="insights-footer">
@@ -3652,7 +3750,7 @@ const defaultData = {
 "Anthropic": { desc: "AI safety company, creator of Claude. Enterprise AI leader.", cat: "Foundation Models", hq: "San Francisco, CA", val: "$350B", domain: "anthropic.com", rel: ["OpenAI", "Google DeepMind", "Cohere", "xAI", "Amazon"] },
 "Google DeepMind": { desc: "Created Gemini, AlphaFold, AlphaGo. AI research pioneer.", cat: "Foundation Models", hq: "London, UK", val: "Parent: Alphabet", domain: "deepmind.google", rel: ["OpenAI", "Anthropic", "Meta AI", "Microsoft"] },
 "Meta AI": { desc: "Created open-source LLaMA models.", cat: "Foundation Models", hq: "Menlo Park, CA", val: "Parent: Meta", domain: "ai.meta.com", rel: ["Mistral AI", "Hugging Face", "Together AI", "OpenAI"] },
-"xAI": { desc: "Elon Musk's AI company. Creator of Grok.", cat: "Foundation Models", hq: "Palo Alto, CA", val: "$230B", domain: "x.ai", rel: ["OpenAI", "Anthropic", "Google DeepMind"] },
+"xAI": { desc: "Elon Musk's AI company. Creator of Grok. Merged with SpaceX.", cat: "Foundation Models", hq: "Palo Alto, CA", val: "$1.25T (merged w/ SpaceX)", domain: "x.ai", rel: ["OpenAI", "Anthropic", "Google DeepMind"] },
 "Mistral AI": { desc: "French AI startup. Leading open-weight models.", cat: "Foundation Models", hq: "Paris, France", val: "$14B", domain: "mistral.ai", rel: ["Meta AI", "Hugging Face", "Together AI", "Cohere"] },
 "Cohere": { desc: "Enterprise LLM company. Embeddings specialist.", cat: "Foundation Models", hq: "Toronto, Canada", val: "$6B", domain: "cohere.com", rel: ["OpenAI", "Anthropic", "AI21 Labs", "Writer"] },
 "AI21 Labs": { desc: "Creator of Jurassic models.", cat: "Foundation Models", hq: "Tel Aviv, Israel", val: "$1.4B", domain: "ai21.com", rel: ["Cohere", "OpenAI", "Writer"] },
@@ -3726,17 +3824,17 @@ const defaultData = {
 "Fal": { desc: "Fast AI inference.", cat: "Neo Cloud", hq: "San Francisco, CA", val: "$4.5B", domain: "fal.ai", rel: ["Replicate", "Modal"] },
 
 "NVIDIA": { desc: "GPU leader. Powers AI.", cat: "Hardware", hq: "Santa Clara, CA", val: "$4.57T", domain: "nvidia.com", rel: ["AMD", "Cerebras", "Groq"] },
-"AMD": { desc: "GPU competitor. MI300.", cat: "Hardware", hq: "Santa Clara, CA", val: "$423B", domain: "amd.com", rel: ["NVIDIA", "Intel"] },
+"AMD": { desc: "GPU competitor. MI300. First $10B quarter.", cat: "Hardware", hq: "Santa Clara, CA", val: "$313B", domain: "amd.com", rel: ["NVIDIA", "Intel"] },
 "Groq": { desc: "Ultra-fast LPU chips. Acquired by NVIDIA.", cat: "Hardware", hq: "Mountain View, CA", val: "Parent: NVIDIA", domain: "groq.com", rel: ["Cerebras", "NVIDIA", "Fireworks AI"] },
-"Cerebras": { desc: "Wafer-scale AI chips.", cat: "Hardware", hq: "Sunnyvale, CA", val: "$22B", domain: "cerebras.net", rel: ["Groq", "NVIDIA"] },
+"Cerebras": { desc: "Wafer-scale AI chips. Raised ~$1B.", cat: "Hardware", hq: "Sunnyvale, CA", val: "$23B", domain: "cerebras.net", rel: ["Groq", "NVIDIA"] },
 "SambaNova": { desc: "Enterprise AI systems.", cat: "Hardware", hq: "Palo Alto, CA", val: "$5.1B", domain: "sambanova.ai", rel: ["Cerebras", "Groq"] },
 
 "Pinecone": { desc: "Vector database leader.", cat: "Data & Vector DB", hq: "New York, NY", val: "$750M", domain: "pinecone.io", rel: ["Weaviate", "Chroma"] },
 "Weaviate": { desc: "Open-source vector DB.", cat: "Data & Vector DB", hq: "Amsterdam, Netherlands", val: "$200M", domain: "weaviate.io", rel: ["Pinecone", "Chroma"] },
 "Scale AI": { desc: "AI data labeling.", cat: "Data & Vector DB", hq: "San Francisco, CA", val: "$29B", domain: "scale.com", rel: ["Labelbox", "Snorkel"] },
 "Databricks": { desc: "Data lakehouse with AI.", cat: "Data & Vector DB", hq: "San Francisco, CA", val: "$134B", domain: "databricks.com", rel: ["Snowflake", "Scale AI"] },
-"Snowflake": { desc: "Data cloud with AI.", cat: "Data & Vector DB", hq: "Bozeman, MT", val: "$75B", domain: "snowflake.com", rel: ["Databricks", "Microsoft"] },
-"MongoDB": { desc: "Document database.", cat: "Data & Vector DB", hq: "New York, NY", val: "$17B", domain: "mongodb.com", rel: ["Pinecone", "Snowflake"] },
+"Snowflake": { desc: "Data cloud with AI.", cat: "Data & Vector DB", hq: "Bozeman, MT", val: "$65B", domain: "snowflake.com", rel: ["Databricks", "Microsoft"] },
+"MongoDB": { desc: "Document database.", cat: "Data & Vector DB", hq: "New York, NY", val: "$34B", domain: "mongodb.com", rel: ["Pinecone", "Snowflake"] },
 "Supabase": { desc: "Open-source Firebase.", cat: "Data & Vector DB", hq: "San Francisco, CA", val: "$2B", domain: "supabase.com", rel: ["Neon", "MongoDB", "Vercel"] },
 "Neon": { desc: "Serverless Postgres.", cat: "Data & Vector DB", hq: "San Francisco, CA", val: "$1B", domain: "neon.tech", rel: ["Supabase", "MongoDB"] },
 
@@ -3787,7 +3885,7 @@ const defaultData = {
 "Ada": { desc: "AI customer automation.", cat: "Customer Support", hq: "Toronto, Canada", val: "$1.2B", domain: "ada.cx", rel: ["Intercom", "Sierra"] },
 
 "Wiz": { desc: "Cloud security. Acquired by Google.", cat: "Security AI", hq: "New York, NY", val: "Parent: Google", domain: "wiz.io", rel: ["CrowdStrike", "Orca Security"] },
-"CrowdStrike": { desc: "Endpoint security.", cat: "Security AI", hq: "Austin, TX", val: "$75B", domain: "crowdstrike.com", rel: ["SentinelOne", "Wiz"] },
+"CrowdStrike": { desc: "Endpoint security.", cat: "Security AI", hq: "Austin, TX", val: "$104B", domain: "crowdstrike.com", rel: ["SentinelOne", "Wiz"] },
 "SentinelOne": { desc: "AI cybersecurity.", cat: "Security AI", hq: "Mountain View, CA", val: "$7.5B", domain: "sentinelone.com", rel: ["CrowdStrike", "Palo Alto Networks"] },
 "Palo Alto Networks": { desc: "Cybersecurity AI.", cat: "Security AI", hq: "Santa Clara, CA", val: "$110B", domain: "paloaltonetworks.com", rel: ["CrowdStrike", "Fortinet"] },
 
@@ -3802,17 +3900,17 @@ const defaultData = {
 "Boston Dynamics": { desc: "Spot & Atlas robots.", cat: "Robotics", hq: "Waltham, MA", val: "Parent: Hyundai", domain: "bostondynamics.com", rel: ["Figure", "Agility Robotics"] },
 "Skild AI": { desc: "Robot foundation models.", cat: "Robotics", hq: "Pittsburgh, PA", val: "$14B+", domain: "skild.ai", rel: ["Physical Intelligence", "Figure"] },
 
-"Waymo": { desc: "Robotaxi leader.", cat: "Autonomous Vehicles", hq: "Mountain View, CA", val: "$100B+ discussed", domain: "waymo.com", rel: ["Zoox", "Aurora", "Cruise"] },
+"Waymo": { desc: "Robotaxi leader. $16B Series D. 400K rides/week.", cat: "Autonomous Vehicles", hq: "Mountain View, CA", val: "$126B", domain: "waymo.com", rel: ["Zoox", "Aurora", "Cruise"] },
 "Zoox": { desc: "Amazon's robotaxi.", cat: "Autonomous Vehicles", hq: "Foster City, CA", val: "Parent: Amazon", domain: "zoox.com", rel: ["Waymo", "Aurora"] },
 "Aurora": { desc: "Autonomous trucking.", cat: "Autonomous Vehicles", hq: "Pittsburgh, PA", val: "$4B", domain: "aurora.tech", rel: ["Waymo", "Kodiak"] },
 "Cruise": { desc: "GM autonomous.", cat: "Autonomous Vehicles", hq: "San Francisco, CA", val: "Parent: GM", domain: "getcruise.com", rel: ["Waymo", "Aurora"] },
 
-"Microsoft": { desc: "OpenAI investor. Copilot.", cat: "Enterprise AI", hq: "Redmond, WA", val: "$3.4T", domain: "microsoft.com", rel: ["OpenAI", "GitHub Copilot", "Google", "Nuance"] },
-"Amazon": { desc: "AWS Bedrock. Anthropic.", cat: "Enterprise AI", hq: "Seattle, WA", val: "$2.47T", domain: "amazon.com", rel: ["Microsoft", "Google", "Anthropic"] },
-"Google": { desc: "Gemini everywhere.", cat: "Enterprise AI", hq: "Mountain View, CA", val: "$2.4T", domain: "google.com", rel: ["Microsoft", "OpenAI", "Google DeepMind"] },
-"Salesforce": { desc: "Einstein AI CRM.", cat: "Enterprise AI", hq: "San Francisco, CA", val: "$220B", domain: "salesforce.com", rel: ["Microsoft", "HubSpot"] },
-"Palantir": { desc: "Data analytics AI.", cat: "Enterprise AI", hq: "Denver, CO", val: "$423B", domain: "palantir.com", rel: ["Databricks", "Snowflake", "C3.ai"] },
-"ServiceNow": { desc: "Enterprise workflow.", cat: "Enterprise AI", hq: "Santa Clara, CA", val: "$135B", domain: "servicenow.com", rel: ["Salesforce", "Workday"] },
+"Microsoft": { desc: "OpenAI investor. Copilot.", cat: "Enterprise AI", hq: "Redmond, WA", val: "$3.53T", domain: "microsoft.com", rel: ["OpenAI", "GitHub Copilot", "Google", "Nuance"] },
+"Amazon": { desc: "AWS Bedrock. Anthropic. $200B AI capex.", cat: "Enterprise AI", hq: "Seattle, WA", val: "$2.5T", domain: "amazon.com", rel: ["Microsoft", "Google", "Anthropic"] },
+"Google": { desc: "Gemini everywhere. $403B revenue. Cloud up 48%.", cat: "Enterprise AI", hq: "Mountain View, CA", val: "$3.83T", domain: "google.com", rel: ["Microsoft", "OpenAI", "Google DeepMind"] },
+"Salesforce": { desc: "Einstein AI CRM.", cat: "Enterprise AI", hq: "San Francisco, CA", val: "$184B", domain: "salesforce.com", rel: ["Microsoft", "HubSpot"] },
+"Palantir": { desc: "Data analytics AI.", cat: "Enterprise AI", hq: "Denver, CO", val: "$400B", domain: "palantir.com", rel: ["Databricks", "Snowflake", "C3.ai"] },
+"ServiceNow": { desc: "Enterprise workflow.", cat: "Enterprise AI", hq: "Santa Clara, CA", val: "$125B", domain: "servicenow.com", rel: ["Salesforce", "Workday"] },
 "Notion": { desc: "Productivity AI.", cat: "Enterprise AI", hq: "San Francisco, CA", val: "$10B", domain: "notion.so", rel: ["Coda", "Glean", "Atlassian"] },
 "Atlassian": { desc: "Jira, Confluence AI.", cat: "Enterprise AI", hq: "Sydney, Australia", val: "$50B", domain: "atlassian.com", rel: ["Notion", "Microsoft"] },
 "Replika": { desc: "AI companion chatbot.", cat: "Conversational AI", hq: "San Francisco, CA", val: "$300M", domain: "replika.com", rel: ["Character.AI", "Inflection AI"] },
@@ -4866,11 +4964,21 @@ const defaultData = {
     "Human Native": { desc: "AI data marketplace acquired by Cloudflare.", cat: "Data & Vector DB", hq: "", val: "", domain: "", rel: [] },
     "InfiniGrow": { desc: "AI marketing analytics firm acquired by Amplitude.", cat: "Marketing AI", hq: "", val: "", domain: "", rel: [] },
     "Songkick": { desc: "Concert ticket discovery platform acquired by AI music startup Suno from Warner Music Group.", cat: "Music AI", hq: "", val: "", domain: "", rel: [] },
-    "Cleanlab": { desc: "Data label-auditing startup acquired by data labeling company Handshake.", cat: "Data & Vector DB", hq: "", val: "", domain: "", rel: [] }
+    "Cleanlab": { desc: "Data label-auditing startup acquired by data labeling company Handshake.", cat: "Data & Vector DB", hq: "", val: "", domain: "", rel: [] },
+
+// Companies added from TC's newsletter scan (2026-02-06)
+"ElevenLabs": { desc: "Voice AI. $500M Series D.", cat: "Audio AI", hq: "London, UK", val: "$11B", domain: "elevenlabs.io", rel: ["OpenAI", "Anthropic", "Descript"] },
+"Resolve AI": { desc: "Agentic AI for system reliability.", cat: "AI Agents", hq: "San Francisco, CA", val: "$1B", domain: "resolve.ai", rel: ["PagerDuty", "Datadog"] },
+"Bedrock Robotics": { desc: "AI-automated construction machinery.", cat: "Robotics", hq: "San Francisco, CA", val: "$1.75B", domain: "bedrockrobotics.ai", rel: ["Built Robotics", "Waymo"] },
+"Daytona": { desc: "AI agent sandboxes.", cat: "AI Agents", hq: "San Francisco, CA", val: "$125M", domain: "daytona.io", rel: ["Replit", "GitHub Copilot"] },
+"TRM Labs": { desc: "Blockchain intelligence AI.", cat: "Security AI", hq: "San Francisco, CA", val: "$1.4B", domain: "trmlabs.com", rel: ["Chainalysis", "Elliptic"] },
+"Adaption Labs": { desc: "Continuous learning AI. Co-founded by Sara Hooker (ex-Cohere).", cat: "Foundation Models", hq: "San Francisco, CA", val: "$50M seed", domain: "adaptionlabs.ai", rel: ["Cohere", "Anthropic"] },
+"Overland AI": { desc: "Military autonomous ground vehicles.", cat: "Autonomous Vehicles", hq: "Seattle, WA", val: "$100M+", domain: "overland.ai", rel: ["Anduril", "Shield AI"] },
+"Cortical Labs": { desc: "Biological computing. Neurons on silicon chips.", cat: "Hardware", hq: "Melbourne, Australia", val: "$35M+", domain: "corticallabs.com", rel: ["Cerebras", "NVIDIA"] }
 };
 
 // Version check - reset localStorage if default data has more companies (data was updated)
-const DATA_VERSION = 9; // Increment this when adding companies or updating valuations
+const DATA_VERSION = 10; // Increment this when adding companies or updating valuations
 const storedVersion = localStorage.getItem('aimap_version');
 let data;
 if (storedVersion !== String(DATA_VERSION)) {
@@ -4943,7 +5051,8 @@ function exportToCSV() {
 // Toggle compare mode
 function toggleCompareMode() {
     compareMode = !compareMode;
-    document.getElementById('compare-btn').classList.toggle('active', compareMode);
+    const cmpBtn = document.getElementById('compare-btn');
+    if (cmpBtn) cmpBtn.classList.toggle('active', compareMode);
     document.getElementById('compare-modal').classList.toggle('open', compareMode);
     if (!compareMode) {
         compareSelected.clear();
@@ -5218,8 +5327,15 @@ function showPanel(name) {
     const isFav = favorites.has(name);
     favBtn.classList.toggle('active', isFav);
     favText.textContent = isFav ? 'Remove from Favorites' : 'Add to Favorites';
+    panel.classList.remove('collapsed');
     panel.classList.add('open');
 }
+
+document.getElementById('panel-collapse-btn').onclick = (e) => {
+    e.stopPropagation();
+    const panel = document.getElementById('panel');
+    panel.classList.toggle('collapsed');
+};
 
 // Get all related companies with similarity scores
 function getRelatedCompanies(centerName, maxCount = 25, filterCat = null) {
@@ -6027,9 +6143,11 @@ document.addEventListener('keydown', (e) => {
 // Toolbar button event listeners
 document.getElementById('surprise-btn').onclick = surpriseMe;
 document.getElementById('favorites-btn').onclick = toggleFavoritesFilter;
-document.getElementById('compare-btn').onclick = toggleCompareMode;
+const compareBtnEl = document.getElementById('compare-btn');
+if (compareBtnEl) compareBtnEl.onclick = toggleCompareMode;
 document.getElementById('analytics-btn').onclick = showAnalytics;
-document.getElementById('export-csv-btn').onclick = exportToCSV;
+const exportBtnEl = document.getElementById('export-csv-btn');
+if (exportBtnEl) exportBtnEl.onclick = exportToCSV;
 document.getElementById('shortcuts-btn').onclick = () => document.getElementById('shortcuts-modal').classList.toggle('open');
 
 // Zoom controls
@@ -6877,26 +6995,104 @@ Rules:
 // News tab switching
 const tabLatest = document.getElementById('tab-latest');
 const tabCurated = document.getElementById('tab-curated');
+const tabInbox = document.getElementById('tab-inbox');
 const newsContentDiv = document.getElementById('news-content');
 const curatedContentDiv = document.getElementById('ai-curated-content');
+const inboxContentDiv = document.getElementById('inbox-insights-content');
+
+function setActiveTab(activeTab) {
+    [tabLatest, tabCurated, tabInbox].forEach(t => t.classList.remove('active'));
+    activeTab.classList.add('active');
+    newsContentDiv.style.display = 'none';
+    curatedContentDiv.classList.remove('visible');
+    inboxContentDiv.classList.remove('visible');
+}
 
 tabLatest.onclick = () => {
-    tabLatest.classList.add('active');
-    tabCurated.classList.remove('active');
+    setActiveTab(tabLatest);
     newsContentDiv.style.display = '';
-    curatedContentDiv.classList.remove('visible');
 };
 
 tabCurated.onclick = () => {
-    tabCurated.classList.add('active');
-    tabLatest.classList.remove('active');
-    newsContentDiv.style.display = 'none';
+    setActiveTab(tabCurated);
     curatedContentDiv.classList.add('visible');
-    // Trigger curation if needed
     if (loadedNewsArticles.length > 0 && !cachedCuratedNews) {
         curateNews(loadedNewsArticles);
     }
 };
+
+let inboxInsightsLoaded = false;
+tabInbox.onclick = () => {
+    setActiveTab(tabInbox);
+    inboxContentDiv.classList.add('visible');
+    if (!inboxInsightsLoaded) loadInboxInsights();
+};
+
+async function loadInboxInsights() {
+    inboxContentDiv.innerHTML = '<div class="curated-loading"><span class="ai-spinner"></span> Loading inbox insights...</div>';
+    try {
+        const resp = await fetch('newsletter_insights.json');
+        if (!resp.ok) throw new Error('Could not load newsletter_insights.json');
+        const insightsData = await resp.json();
+        inboxInsightsLoaded = true;
+        renderInboxInsights(insightsData, inboxContentDiv);
+    } catch (err) {
+        inboxContentDiv.innerHTML = '<div class="curated-loading">Failed to load inbox insights. Make sure newsletter_insights.json exists.</div>';
+    }
+}
+
+function renderInboxInsights(insightsData, container) {
+    const updated = new Date(insightsData.updated);
+    let html = '<div class="inbox-updated">Last updated: ' + updated.toLocaleDateString('en-US', {month: 'short', day: 'numeric', year: 'numeric'}) + ' at ' + updated.toLocaleTimeString('en-US', {hour: '2-digit', minute: '2-digit'}) + '</div>';
+
+    // 48-hour cutoff for both sections
+    const now = new Date();
+    const cutoff48h = new Date(now.getTime() - 48 * 60 * 60 * 1000);
+    const cutoffStr = cutoff48h.toISOString().split('T')[0];
+
+    if (insightsData.valuation_updates && insightsData.valuation_updates.length > 0) {
+        const recentVals = insightsData.valuation_updates.filter(v => v.date >= cutoffStr);
+        if (recentVals.length > 0) {
+            html += '<div class="inbox-val-section"><h4>VALUATION UPDATES</h4>';
+            recentVals.forEach(v => {
+                const companyClickable = data[v.company] ? ' onclick="showPanel(\'' + v.company.replace(/'/g, "\\'") + '\')"' : '';
+                html += '<div class="inbox-val-row"><span class="inbox-val-company"' + companyClickable + '>' + v.company + '</span> &rarr; <span class="inbox-val-amount">' + v.new_val + '</span></div>';
+            });
+            html += '</div>';
+        }
+    }
+
+    // Show top 8 facts/news from last 48h (Analysis items go to Insights modal)
+    const impactOrder = { high: 0, medium: 1, low: 2 };
+    const facts = insightsData.insights.filter(i => i.category !== 'Analysis' && i.date >= cutoffStr);
+    const sortedFacts = [...facts].sort((a, b) => {
+        const dateCompare = b.date.localeCompare(a.date);
+        if (dateCompare !== 0) return dateCompare;
+        return (impactOrder[a.impact] || 2) - (impactOrder[b.impact] || 2);
+    });
+    const topFacts = sortedFacts.slice(0, 8);
+
+    html += '<h4 style="color:#eab308;font-size:13px;text-transform:uppercase;letter-spacing:1px;margin:12px 0 8px;">News</h4>';
+
+    topFacts.forEach(item => {
+        const catClass = item.category.replace(/&/g, '');
+        html += '<div class="insight-card insight-impact-' + item.impact + '">';
+        html += '<div class="insight-card-header"><span class="insight-cat ' + catClass + '">' + item.category + '</span><span class="insight-source">' + item.source + ' &middot; ' + item.date + '</span></div>';
+        html += '<div class="insight-title">' + item.title + '</div>';
+        html += '<div class="insight-summary">' + item.summary + '</div>';
+        if (item.companies && item.companies.length > 0) {
+            html += '<div class="insight-companies">';
+            item.companies.forEach(c => {
+                const clickable = data[c] ? ' onclick="showPanel(\'' + c.replace(/'/g, "\\'") + '\')"' : '';
+                html += '<span class="insight-company-tag"' + clickable + '>' + c + '</span>';
+            });
+            html += '</div>';
+        }
+        html += '</div>';
+    });
+
+    container.innerHTML = html;
+}
 
 // Update showPanel to reset AI summary for new company
 const _originalShowPanel = showPanel;
@@ -7367,9 +7563,54 @@ ${emailTexts}`;
     const insightsBtn = document.getElementById('insights-btn');
     const insightsClose = document.getElementById('insights-close');
 
-    insightsBtn.onclick = () => insightsModal.classList.add('open');
+    let insightsModalLoaded = false;
+    insightsBtn.onclick = () => {
+        insightsModal.classList.add('open');
+        if (!insightsModalLoaded) loadInsightsModal();
+    };
     insightsClose.onclick = () => insightsModal.classList.remove('open');
     insightsModal.onclick = (e) => { if (e.target === insightsModal) insightsModal.classList.remove('open'); };
+
+    async function loadInsightsModal() {
+        const area = document.getElementById('insights-content-area');
+        try {
+            const resp = await fetch('newsletter_insights.json');
+            if (!resp.ok) throw new Error('Failed to load');
+            const insightsData = await resp.json();
+            insightsModalLoaded = true;
+
+            const impactOrder = { high: 0, medium: 1, low: 2 };
+            // Best insights of the day — Analysis items from latest date
+            const analysisItems = insightsData.insights.filter(i => i.category === 'Analysis');
+            const sorted = [...analysisItems].sort((a, b) => {
+                const d = b.date.localeCompare(a.date);
+                return d !== 0 ? d : (impactOrder[a.impact] || 2) - (impactOrder[b.impact] || 2);
+            });
+            const latestDate = sorted[0]?.date;
+            const topInsights = sorted.filter(i => i.date === latestDate).slice(0, 6);
+
+            let html = '<div style="margin-bottom:16px;font-size:12px;color:#888;">Synthesized from ' + (insightsData.newsletters_scanned?.length || 24) + '+ newsletters &middot; ' + new Date(insightsData.updated).toLocaleDateString('en-US', {month:'short',day:'numeric',year:'numeric'}) + '</div>';
+            topInsights.forEach(item => {
+                const catClass = item.category.replace(/&/g, '');
+                html += '<div class="insight-card insight-impact-' + item.impact + '" style="margin-bottom:14px;">';
+                html += '<div class="insight-card-header"><span class="insight-cat ' + catClass + '">' + item.category + '</span><span class="insight-source">' + item.source + ' &middot; ' + item.date + '</span></div>';
+                html += '<div class="insight-title">' + item.title + '</div>';
+                html += '<div class="insight-summary">' + item.summary + '</div>';
+                if (item.companies && item.companies.length > 0) {
+                    html += '<div class="insight-companies">';
+                    item.companies.forEach(c => {
+                        const clickable = data[c] ? ' onclick="showPanel(\'' + c.replace(/'/g, "\\'") + '\')"' : '';
+                        html += '<span class="insight-company-tag"' + clickable + '>' + c + '</span>';
+                    });
+                    html += '</div>';
+                }
+                html += '</div>';
+            });
+            area.innerHTML = html;
+        } catch (err) {
+            area.innerHTML = '<p style="color:#888;">Could not load insights. Make sure newsletter_insights.json exists.</p>';
+        }
+    }
 
     // Populate category and HQ filters
     function populateFilters() {
