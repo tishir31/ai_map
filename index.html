@@ -3140,6 +3140,29 @@
                 <div class="curated-loading"><span class="ai-spinner"></span> Curating with AI...</div>
             </div>
             <div id="inbox-insights-content"></div>
+            <div style="padding: 12px 16px; border-top: 1px solid var(--border-subtle);">
+                <button id="run-digest-btn" onclick="runOAIDigest()" style="
+                    width: 100%;
+                    padding: 10px 16px;
+                    background: linear-gradient(135deg, var(--accent-gold), var(--accent-warm));
+                    color: #000;
+                    border: none;
+                    border-radius: 8px;
+                    font-family: 'JetBrains Mono', monospace;
+                    font-size: 12px;
+                    font-weight: 600;
+                    cursor: pointer;
+                    letter-spacing: 0.5px;
+                    transition: all 0.2s;
+                ">Run OAI Digest</button>
+                <p id="digest-status" style="
+                    margin: 8px 0 0 0;
+                    font-size: 11px;
+                    color: var(--text-muted);
+                    text-align: center;
+                    display: none;
+                "></p>
+            </div>
         </div>
 
         <!-- News Show Button (when collapsed) -->
@@ -3595,6 +3618,44 @@ function formatMarketCap(value) {
     if (value >= 1e9) return `$${(value / 1e9).toFixed(0)}B`;
     if (value >= 1e6) return `$${(value / 1e6).toFixed(0)}M`;
     return `$${value}`;
+}
+
+// Run OAI Digest Pipeline via remote trigger
+async function runOAIDigest() {
+    const btn = document.getElementById('run-digest-btn');
+    const status = document.getElementById('digest-status');
+    btn.disabled = true;
+    btn.textContent = 'Triggering...';
+    btn.style.opacity = '0.6';
+    status.style.display = 'block';
+    status.textContent = 'Sending trigger to Claude Code...';
+    status.style.color = 'var(--accent-gold)';
+
+    try {
+        const resp = await fetch('/api/run-digest', { method: 'POST' });
+        const data = await resp.json();
+
+        if (resp.ok && data.success) {
+            btn.textContent = 'Triggered';
+            btn.style.background = 'var(--accent-emerald)';
+            status.textContent = 'Pipeline running in cloud. Check Gmail for digest.';
+            status.style.color = 'var(--accent-emerald)';
+        } else {
+            throw new Error(data.error || 'Unknown error');
+        }
+    } catch (err) {
+        btn.textContent = 'Failed';
+        btn.style.background = '#ef4444';
+        status.textContent = err.message;
+        status.style.color = '#ef4444';
+    }
+
+    setTimeout(() => {
+        btn.disabled = false;
+        btn.textContent = 'Run OAI Digest';
+        btn.style.background = 'linear-gradient(135deg, var(--accent-gold), var(--accent-warm))';
+        btn.style.opacity = '1';
+    }, 5000);
 }
 
 // Fetch market cap from Yahoo Finance
