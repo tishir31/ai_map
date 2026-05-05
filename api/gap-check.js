@@ -93,6 +93,7 @@ export default async function handler(req, res) {
                 instructions: SYSTEM_INSTRUCTIONS,
                 input: userInput,
                 tools: [{ type: 'web_search_preview' }],
+                tool_choice: { type: 'web_search_preview' },
                 max_output_tokens: 4000,
                 temperature: 0.3,
             }),
@@ -111,10 +112,15 @@ export default async function handler(req, res) {
         const text = extractMessageText(data);
         const parsed = extractJsonObject(text);
 
+        const outputTypes = (data.output || []).map(o => o.type);
+        const webSearchCalled = outputTypes.includes('web_search_call');
+
         if (!parsed) {
             return res.status(500).json({
                 error: 'OpenAI returned non-JSON content',
                 raw_text: text,
+                output_types: outputTypes,
+                web_search_called: webSearchCalled,
                 full_response: data,
             });
         }
@@ -126,6 +132,9 @@ export default async function handler(req, res) {
             model: data.model,
             gap_count: gaps.length,
             gaps,
+            web_search_called: webSearchCalled,
+            output_types: outputTypes,
+            raw_text: text,
             usage: data.usage,
         });
 
