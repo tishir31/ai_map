@@ -162,6 +162,72 @@ function dropOutOfWindow(gaps, weekStart, weekEnd) {
     return { kept, filtered };
 }
 
+async function semanticDedup(gaps, currentItems, openaiKey) {
+    if (!Array.isArray(currentItems) || currentItems.length === 0 || gaps.length === 0) {
+        return { kept: gaps, filtered: [] };
+    }
+    // Build a single list: gaps first, then currentItems. Ask GPT to group by event.
+    // Any gap (index < gaps.length) that ends up in a group with a currentItem is a duplicate.
+    const allItems = [...gaps, ...currentItems];
+    const numbered = allItems.map((it, i) => {
+        const headline = (it.headline || '').slice(0, 250);
+        const date = it.date || '';
+        const source = it.source_name || '';
+        return `${i}. ${headline} | date=${date} | source=${source}`;
+    }).join('\n');
+    const SYS = `Group items that cover the same UNDERLYING EVENT. Two items are the same event if a careful editor would say "this is one story." Different verbs, different framings, different outlets — same event if the underlying announcement/filing/hire is one occurrence.
+
+Return ONLY JSON: {"groups": [{"member_indices": [...]}]}. Every input index 0..${allItems.length - 1} must appear in exactly one group.`;
+    const userInput = `Items:\n\n${numbered}\n\nReturn JSON.`;
+    let resp;
+    try {
+        const r = await fetch('https://api.openai.com/v1/responses', {
+            method: 'POST',
+            headers: {
+                'Authorization': `Bearer ${openaiKey}`,
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                model: 'gpt-4o',
+                instructions: SYS,
+                input: userInput,
+                max_output_tokens: 2000,
+                temperature: 0.1,
+            }),
+        });
+        resp = await r.json();
+        if (!r.ok) {
+            return { kept: gaps, filtered: [], error: 'semantic dedup HTTP failure' };
+        }
+    } catch (e) {
+        return { kept: gaps, filtered: [], error: 'semantic dedup network failure' };
+    }
+    const text = extractMessageText(resp);
+    const parsed = extractJsonObject(text);
+    if (!parsed || !Array.isArray(parsed.groups)) {
+        return { kept: gaps, filtered: [], error: 'semantic dedup unparseable' };
+    }
+    const filteredGaps = new Set();
+    for (const g of parsed.groups) {
+        const indices = g.member_indices || [];
+        const hasCurrent = indices.some(i => i >= gaps.length);
+        const gapIndices = indices.filter(i => i < gaps.length);
+        if (hasCurrent) {
+            for (const i of gapIndices) filteredGaps.add(i);
+        }
+    }
+    const kept = [];
+    const filtered = [];
+    gaps.forEach((g, i) => {
+        if (filteredGaps.has(i)) {
+            filtered.push({ ...g, _filter_reason: 'Same event as a current item (semantic dedup, GPT-4o)' });
+        } else {
+            kept.push(g);
+        }
+    });
+    return { kept, filtered };
+}
+
 function dedupServerSide(gaps, currentItems) {
     if (!Array.isArray(currentItems) || currentItems.length === 0) {
         return { kept: gaps, filtered: [] };
@@ -295,17 +361,20 @@ export default async function handler(req, res) {
 
         const rawGaps = Array.isArray(parsed.gaps) ? parsed.gaps : [];
         const { kept: inWindow, filtered: outOfWindow } = dropOutOfWindow(rawGaps, week_start, week_end);
-        const { kept, filtered: dedupFiltered } = dedupServerSide(inWindow, current_items);
-        const filtered = [...outOfWindow, ...dedupFiltered];
+        const { kept: afterFuzzy, filtered: fuzzyFiltered } = dedupServerSide(inWindow, current_items);
+        const { kept, filtered: semanticFiltered, error: semanticError } = await semanticDedup(afterFuzzy, current_items, openaiKey);
+        const filtered = [...outOfWindow, ...fuzzyFiltered, ...semanticFiltered];
 
         return res.status(200).json({
             success: true,
             model: data.model,
             raw_gap_count: rawGaps.length,
             in_window_count: inWindow.length,
+            after_fuzzy_dedup_count: afterFuzzy.length,
             gap_count: kept.length,
             gaps: kept,
             filtered_duplicates: filtered,
+            semantic_dedup_error: semanticError,
             web_search_called: webSearchCalled,
             web_search_call_count: webSearchCallCount,
             output_types: outputTypes,
