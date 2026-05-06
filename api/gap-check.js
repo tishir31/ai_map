@@ -88,6 +88,44 @@ function buildItemsBlock(currentItems) {
     return lines.join('\n') + '\n\n';
 }
 
+const STOPWORDS = new Set([
+    'a','an','and','are','as','at','be','by','for','from','has','have','in','is','it',
+    'its','of','on','or','that','the','to','with','was','were','will','this','these',
+    'about','after','before','over','up','down','says','said','new','more','than','also',
+    'into','out','off','open','openai','ai','company','companies','via','around'
+]);
+
+function tokensOf(text) {
+    if (!text) return [];
+    return String(text)
+        .toLowerCase()
+        .replace(/[^a-z0-9\s]/g, ' ')
+        .split(/\s+/)
+        .filter(t => t.length >= 4 && !STOPWORDS.has(t));
+}
+
+function headlineSimilarity(a, b) {
+    const ta = new Set(tokensOf(a));
+    const tb = new Set(tokensOf(b));
+    if (ta.size === 0 || tb.size === 0) return 0;
+    let inter = 0;
+    for (const t of ta) if (tb.has(t)) inter++;
+    const union = ta.size + tb.size - inter;
+    return union === 0 ? 0 : inter / union;
+}
+
+function datesClose(a, b) {
+    if (!a || !b) return true;
+    try {
+        const da = new Date(a);
+        const db = new Date(b);
+        const days = Math.abs((da - db) / (1000 * 60 * 60 * 24));
+        return days <= 3;
+    } catch (e) {
+        return true;
+    }
+}
+
 function dedupServerSide(gaps, currentItems) {
     if (!Array.isArray(currentItems) || currentItems.length === 0) {
         return { kept: gaps, filtered: [] };
@@ -109,6 +147,23 @@ function dedupServerSide(gaps, currentItems) {
         const u = normalizeUrl(g.url);
         if (u && existingUrls.has(u)) {
             filtered.push({ ...g, _filter_reason: 'URL already in current items' });
+            continue;
+        }
+        // Event-level dedup: high headline-token overlap + close dates
+        let matchedItem = null;
+        let matchedScore = 0;
+        for (const it of currentItems) {
+            const score = headlineSimilarity(g.headline, it.headline);
+            if (score >= 0.45 && datesClose(g.date, it.date) && score > matchedScore) {
+                matchedItem = it;
+                matchedScore = score;
+            }
+        }
+        if (matchedItem) {
+            filtered.push({
+                ...g,
+                _filter_reason: `Same event as existing item (headline overlap ${matchedScore.toFixed(2)}): "${matchedItem.headline}"`,
+            });
         } else {
             kept.push(g);
         }
