@@ -2,29 +2,36 @@
 // Uses OpenAI Responses API with web_search_preview tool so GPT actually
 // searches the web (vs. hallucinating from training data on chat completions).
 
-const SYSTEM_INSTRUCTIONS = `You are a gap checker for an OpenAI weekly news digest.
+const SYSTEM_INSTRUCTIONS = `You are a gap checker for an OpenAI weekly news digest serving senior investment banking professionals.
 
 A separate Reporter (Claude) drafted the digest from web + Gmail searches. Your job: find notable OpenAI stories from the target week that are NOT in the draft.
 
-You MUST run MULTIPLE web searches to be exhaustive. A single search will miss things. Run AT LEAST six distinct search queries before deciding nothing is missing. Suggested queries (run all of them, in order):
-1. "OpenAI" news <week_start> <week_end>
-2. OpenAI lawsuit OR court filing <week_end>
-3. OpenAI partnership OR deal <week_end>
-4. OpenAI funding OR investment OR valuation <week_end>
-5. OpenAI government OR regulatory OR Pentagon OR FTC <week_end>
-6. OpenAI executive OR hire OR departure <week_end>
+PRIORITY: A missing major story is FAR worse than a duplicate. Err toward including borderline gaps. The downstream Editor will dedup; your job is recall, not precision.
 
-For each query, scan results for OpenAI stories from the target week. Aggregate findings. Then compare your aggregated list against what is already in the draft. Surface only items that are GENUINELY MISSING from the draft.
+YOU MUST RUN MULTIPLE WEB SEARCHES. A single search is insufficient. Run AT LEAST six distinct searches with these angles:
+1. "OpenAI" general news for the target week
+2. OpenAI lawsuit OR court filing OR settlement
+3. OpenAI partnership OR deal OR acquisition OR investment
+4. OpenAI funding OR revenue OR valuation OR IPO
+5. OpenAI government OR Pentagon OR FTC OR White House OR regulatory
+6. OpenAI executive OR hire OR departure OR Altman OR Brockman
 
-Significance bar: only items a managing director at an investment bank should know about. Skip product micro-updates, minor blog posts, opinion pieces, analyst commentary.
+Aggregate findings across all searches. Then compare to the draft.
 
-Source quality: only use reputable primary outlets — official OpenAI channels, major news outlets (CNBC, Reuters, Bloomberg, WSJ, NYT, Washington Post, NPR), industry-specific press (Defense News, Healthcare IT, Banking Dive), court filings, regulatory documents. Reject low-quality blogs, content farms, and aggregator sites (e.g., investing.com, moneycontrol.com — find the original Bloomberg/Reuters source instead).
+DEDUP RULES (apply in this order):
+- If an item in the draft references the same UNDERLYING EVENT (same lawsuit, same deal, same announcement) — even with a different URL or framing — DO NOT include it as a gap. Two articles about the same lawsuit are the same event.
+- If a story is genuinely a NEW event (different parties, different facts, different filing date), include it even if it superficially resembles a draft item.
+- If unsure whether two stories are the same event, INCLUDE THE GAP. Better to over-flag than miss real news.
 
-Return ONLY a JSON object in this exact shape, no preamble or trailing text:
+SIGNIFICANCE BAR: items a managing director would care about. Skip product micro-updates, opinion pieces, analyst commentary, and minor blog posts. Include: lawsuits, financial milestones, executive moves, major partnerships, regulatory actions, government deals, model releases.
+
+SOURCE QUALITY: prefer primary outlets (CNBC, Reuters, Bloomberg, WSJ, NYT, Washington Post, NPR, official OpenAI/government channels, court filings). Reject aggregator sites (investing.com, moneycontrol.com, headlinetoday.com — find the original). Reject low-quality blogs and content farms.
+
+Return ONLY a JSON object in this shape, no preamble or trailing text:
 
 {"gaps": [
   {
-    "headline": "string — the actual story headline",
+    "headline": "string — the actual story headline as it would appear in the digest",
     "date": "YYYY-MM-DD — date of the event",
     "url": "string — direct link to a primary source you found via web search",
     "source_name": "string — e.g. CNBC, Reuters, court filing",
@@ -63,6 +70,52 @@ function extractMessageText(response) {
     return '';
 }
 
+function normalizeUrl(url) {
+    if (!url || typeof url !== 'string') return '';
+    return url.trim().toLowerCase().replace(/\/+$/, '').split('?')[0].split('#')[0];
+}
+
+function buildItemsBlock(currentItems) {
+    if (!Array.isArray(currentItems) || currentItems.length === 0) return '';
+    const lines = ['Already in the draft (do NOT return as gaps):'];
+    currentItems.forEach((it, i) => {
+        const headline = (it.headline || '').slice(0, 200);
+        const date = it.date || '';
+        const url = it.url || '';
+        const source = it.source_name || '';
+        lines.push(`${i + 1}. ${headline} (${date}) — ${source} — ${url}`);
+    });
+    return lines.join('\n') + '\n\n';
+}
+
+function dedupServerSide(gaps, currentItems) {
+    if (!Array.isArray(currentItems) || currentItems.length === 0) {
+        return { kept: gaps, filtered: [] };
+    }
+    const existingUrls = new Set();
+    for (const it of currentItems) {
+        const u = normalizeUrl(it.url);
+        if (u) existingUrls.add(u);
+        if (Array.isArray(it.corroborating_urls)) {
+            for (const cu of it.corroborating_urls) {
+                const ncu = normalizeUrl(cu);
+                if (ncu) existingUrls.add(ncu);
+            }
+        }
+    }
+    const kept = [];
+    const filtered = [];
+    for (const g of gaps) {
+        const u = normalizeUrl(g.url);
+        if (u && existingUrls.has(u)) {
+            filtered.push({ ...g, _filter_reason: 'URL already in current items' });
+        } else {
+            kept.push(g);
+        }
+    }
+    return { kept, filtered };
+}
+
 export default async function handler(req, res) {
     if (req.method !== 'POST') {
         return res.status(405).json({ error: 'Method not allowed' });
@@ -81,13 +134,14 @@ export default async function handler(req, res) {
         return res.status(401).json({ error: 'Unauthorized' });
     }
 
-    const { draft_html, week_start, week_end, model } = req.body || {};
+    const { draft_html, week_start, week_end, model, current_items } = req.body || {};
     if (!draft_html || !week_start || !week_end) {
         return res.status(400).json({ error: 'Required fields: draft_html, week_start, week_end' });
     }
 
     const truncatedDraft = String(draft_html).slice(0, 16000);
-    const userInput = `Target week: ${week_start} to ${week_end}\n\nCurrent digest draft:\n\n${truncatedDraft}\n\nSearch the web for OpenAI news from this date range that is missing from the draft. Return JSON object {"gaps": [...]} as specified. If nothing is missing, return {"gaps": []}.`;
+    const itemsBlock = buildItemsBlock(current_items);
+    const userInput = `Target week: ${week_start} to ${week_end}\n\n${itemsBlock}Current digest draft:\n\n${truncatedDraft}\n\nSearch the web for OpenAI news from this date range that is missing from the draft. Return JSON object {"gaps": [...]} as specified. If nothing is missing, return {"gaps": []}.`;
 
     try {
         const openaiResp = await fetch('https://api.openai.com/v1/responses', {
@@ -121,7 +175,8 @@ export default async function handler(req, res) {
         const parsed = extractJsonObject(text);
 
         const outputTypes = (data.output || []).map(o => o.type);
-        const webSearchCalled = outputTypes.includes('web_search_call');
+        const webSearchCallCount = outputTypes.filter(t => t === 'web_search_call').length;
+        const webSearchCalled = webSearchCallCount > 0;
 
         if (!parsed) {
             return res.status(500).json({
@@ -133,16 +188,19 @@ export default async function handler(req, res) {
             });
         }
 
-        const gaps = Array.isArray(parsed.gaps) ? parsed.gaps : [];
+        const rawGaps = Array.isArray(parsed.gaps) ? parsed.gaps : [];
+        const { kept, filtered } = dedupServerSide(rawGaps, current_items);
 
         return res.status(200).json({
             success: true,
             model: data.model,
-            gap_count: gaps.length,
-            gaps,
+            raw_gap_count: rawGaps.length,
+            gap_count: kept.length,
+            gaps: kept,
+            filtered_duplicates: filtered,
             web_search_called: webSearchCalled,
+            web_search_call_count: webSearchCallCount,
             output_types: outputTypes,
-            raw_text: text,
             usage: data.usage,
         });
 
