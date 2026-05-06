@@ -101,17 +101,22 @@ function tokensOf(text) {
         .toLowerCase()
         .replace(/[^a-z0-9\s]/g, ' ')
         .split(/\s+/)
-        .filter(t => t.length >= 4 && !STOPWORDS.has(t));
+        .filter(t => t.length >= 3 && !STOPWORDS.has(t));
 }
 
+// Returns { jaccard, sharedCount, sharedTokens }
 function headlineSimilarity(a, b) {
     const ta = new Set(tokensOf(a));
     const tb = new Set(tokensOf(b));
-    if (ta.size === 0 || tb.size === 0) return 0;
-    let inter = 0;
-    for (const t of ta) if (tb.has(t)) inter++;
-    const union = ta.size + tb.size - inter;
-    return union === 0 ? 0 : inter / union;
+    if (ta.size === 0 || tb.size === 0) return { jaccard: 0, sharedCount: 0, sharedTokens: [] };
+    const shared = [];
+    for (const t of ta) if (tb.has(t)) shared.push(t);
+    const union = ta.size + tb.size - shared.length;
+    return {
+        jaccard: union === 0 ? 0 : shared.length / union,
+        sharedCount: shared.length,
+        sharedTokens: shared,
+    };
 }
 
 function datesClose(a, b) {
@@ -149,20 +154,34 @@ function dedupServerSide(gaps, currentItems) {
             filtered.push({ ...g, _filter_reason: 'URL already in current items' });
             continue;
         }
-        // Event-level dedup: high headline-token overlap + close dates
+        // Event-level dedup. Two-tier match:
+        //   (a) Jaccard >= 0.30  OR
+        //   (b) sharedCount >= 2 AND share a high-signal entity token (capitalized in original)
+        //   AND dates within 3 days
+        // For (b), we approximate "high-signal" by checking shared tokens that appear
+        // in known entity-like patterns (proper nouns become lowercase; we just require
+        // 2+ shared non-stopword tokens of length >= 4).
         let matchedItem = null;
         let matchedScore = 0;
+        let matchedReason = '';
         for (const it of currentItems) {
-            const score = headlineSimilarity(g.headline, it.headline);
-            if (score >= 0.45 && datesClose(g.date, it.date) && score > matchedScore) {
+            const sim = headlineSimilarity(g.headline, it.headline);
+            if (!datesClose(g.date, it.date)) continue;
+            const longShared = sim.sharedTokens.filter(t => t.length >= 4);
+            const matchA = sim.jaccard >= 0.30;
+            const matchB = sim.sharedCount >= 2 && longShared.length >= 2;
+            if ((matchA || matchB) && sim.jaccard > matchedScore) {
                 matchedItem = it;
-                matchedScore = score;
+                matchedScore = sim.jaccard;
+                matchedReason = matchA
+                    ? `Jaccard ${sim.jaccard.toFixed(2)} ≥ 0.30; shared: [${sim.sharedTokens.join(', ')}]`
+                    : `Shared ${sim.sharedCount} tokens (${longShared.length} long): [${sim.sharedTokens.join(', ')}]`;
             }
         }
         if (matchedItem) {
             filtered.push({
                 ...g,
-                _filter_reason: `Same event as existing item (headline overlap ${matchedScore.toFixed(2)}): "${matchedItem.headline}"`,
+                _filter_reason: `Same event as: "${matchedItem.headline}" — ${matchedReason}`,
             });
         } else {
             kept.push(g);
