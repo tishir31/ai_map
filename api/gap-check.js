@@ -8,13 +8,17 @@ A separate Reporter (Claude) drafted the digest from web + Gmail searches. Your 
 
 PRIORITY: A missing major story is FAR worse than a duplicate. Err toward including borderline gaps. The downstream Editor will dedup; your job is recall, not precision.
 
-YOU MUST RUN MULTIPLE WEB SEARCHES. A single search is insufficient. Run AT LEAST six distinct searches with these angles:
+YOU MUST RUN MULTIPLE WEB SEARCHES. A single search is insufficient. Run AT LEAST EIGHT distinct searches with these angles:
 1. "OpenAI" general news for the target week
-2. OpenAI lawsuit OR court filing OR settlement
-3. OpenAI partnership OR deal OR acquisition OR investment
-4. OpenAI funding OR revenue OR valuation OR IPO
-5. OpenAI government OR Pentagon OR FTC OR White House OR regulatory
-6. OpenAI executive OR hire OR departure OR Altman OR Brockman
+2. OpenAI lawsuit OR court filing OR settlement (target week)
+3. OpenAI partnership OR deal OR acquisition OR investment (target week)
+4. OpenAI funding OR revenue OR valuation OR IPO (target week)
+5. OpenAI government OR Pentagon OR FTC OR White House OR regulatory (target week)
+6. OpenAI executive OR hire OR departure OR Altman OR Brockman (target week)
+7. ChatGPT death OR harm OR shooter OR shooting OR violence OR self-harm (target week) — SAFETY/TRAGIC INCIDENTS, MUST CHECK
+8. OpenAI investigation OR subpoena OR families sue (target week) — LITIGATION, MUST CHECK
+
+CRITICAL: Searches 7 and 8 are MANDATORY. Sensitive/tragic news about OpenAI is exactly what the Reporter most often misses (the canonical case: a federal lawsuit by families of school-shooting victims got dropped from the digest because the Reporter found OpenAI's preemptive safety blog and stopped looking). DO NOT skip these searches even if earlier searches returned plenty of items.
 
 Aggregate findings across all searches. Then compare to the draft.
 
