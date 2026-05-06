@@ -23,6 +23,8 @@ DEDUP RULES (apply in this order):
 - If a story is genuinely a NEW event (different parties, different facts, different filing date), include it even if it superficially resembles a draft item.
 - If unsure whether two stories are the same event, INCLUDE THE GAP. Better to over-flag than miss real news.
 
+DATE WINDOW: every gap item's \`date\` MUST fall within the target week (week_start to week_end inclusive). Stories from earlier weeks — even if they appeared on a news front page during the target week — are out of scope. The server will reject any gap with a date outside the window; do not waste the slot.
+
 SIGNIFICANCE BAR: items a managing director would care about. Skip product micro-updates, opinion pieces, analyst commentary, and minor blog posts. Include: lawsuits, financial milestones, executive moves, major partnerships, regulatory actions, government deals, model releases.
 
 SOURCE QUALITY: prefer primary outlets (CNBC, Reuters, Bloomberg, WSJ, NYT, Washington Post, NPR, official OpenAI/government channels, court filings). Reject aggregator sites (investing.com, moneycontrol.com, headlinetoday.com — find the original). Reject low-quality blogs and content farms.
@@ -129,6 +131,31 @@ function datesClose(a, b) {
     } catch (e) {
         return true;
     }
+}
+
+function dropOutOfWindow(gaps, weekStart, weekEnd) {
+    const ws = new Date(weekStart);
+    const we = new Date(weekEnd);
+    we.setDate(we.getDate() + 1);
+    const kept = [];
+    const filtered = [];
+    for (const g of gaps) {
+        if (!g.date) {
+            kept.push(g);
+            continue;
+        }
+        const d = new Date(g.date);
+        if (isNaN(d.getTime())) {
+            kept.push(g);
+            continue;
+        }
+        if (d < ws || d > we) {
+            filtered.push({ ...g, _filter_reason: `Date ${g.date} outside window ${weekStart}..${weekEnd}` });
+        } else {
+            kept.push(g);
+        }
+    }
+    return { kept, filtered };
 }
 
 function dedupServerSide(gaps, currentItems) {
@@ -263,12 +290,15 @@ export default async function handler(req, res) {
         }
 
         const rawGaps = Array.isArray(parsed.gaps) ? parsed.gaps : [];
-        const { kept, filtered } = dedupServerSide(rawGaps, current_items);
+        const { kept: inWindow, filtered: outOfWindow } = dropOutOfWindow(rawGaps, week_start, week_end);
+        const { kept, filtered: dedupFiltered } = dedupServerSide(inWindow, current_items);
+        const filtered = [...outOfWindow, ...dedupFiltered];
 
         return res.status(200).json({
             success: true,
             model: data.model,
             raw_gap_count: rawGaps.length,
+            in_window_count: inWindow.length,
             gap_count: kept.length,
             gaps: kept,
             filtered_duplicates: filtered,
