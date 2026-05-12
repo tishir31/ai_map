@@ -1,1 +1,15 @@
-{}
+{
+  "rewrites": [
+    { "source": "/physical-ai", "destination": "/physical-ai/index.html" },
+    { "source": "/physical-ai/", "destination": "/physical-ai/index.html" },
+    { "source": "/physical-ai/:path((?!assets/).*)", "destination": "/physical-ai/index.html" }
+  ],
+  "headers": [
+    {
+      "source": "/physical-ai/assets/(.*)",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+      ]
+    }
+  ]
+}

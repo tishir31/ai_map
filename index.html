@@ -167,6 +167,33 @@
             50% { filter: brightness(1.2); }
         }
 
+        .terminal-tabs {
+            display: inline-flex;
+            gap: 4px;
+            margin-top: 10px;
+            justify-content: center;
+        }
+        .terminal-tab {
+            display: inline-flex; align-items: center;
+            padding: 5px 14px;
+            font-family: 'Syne', sans-serif;
+            font-size: 10px;
+            letter-spacing: 2.4px;
+            text-transform: uppercase;
+            color: var(--text-secondary, #8a8a8a);
+            text-decoration: none;
+            border: 1px solid var(--border-faint, rgba(255,255,255,0.08));
+            border-radius: 999px;
+            background: rgba(0,0,0,0.35);
+            transition: color .15s ease, border-color .15s ease, background .15s ease;
+        }
+        .terminal-tab:hover { color: var(--text-primary, #fff); border-color: var(--accent-gold, #d4af37); }
+        .terminal-tab.active {
+            color: var(--bg-deep, #0a0a0a);
+            background: var(--accent-gold, #d4af37);
+            border-color: var(--accent-gold, #d4af37);
+        }
+
         /* Search */
         .search-wrap {
             top: 70px;
@@ -3021,6 +3048,10 @@
 
         <div class="header ui">
             <h1>AI Map</h1>
+            <nav class="terminal-tabs" aria-label="Terminal sections">
+                <a href="/" class="terminal-tab active" aria-current="page">Map</a>
+                <a href="/physical-ai/" class="terminal-tab">Physical AI</a>
+            </nav>
         </div>
 
         <div class="filter-bar ui">
