@@ -221,11 +221,10 @@
 
       <div class="status-callout">
         <strong>Honest one-liner.</strong>
-        Today this is a <em>static website</em>. There is no database server. The
-        "database" is a TypeScript file that gets compiled into the JavaScript bundle
-        your browser downloads. Your edits live in your browser's <code>localStorage</code>
-        — they don't reach anyone else's screen until they get committed back into the
-        seed file and the site is redeployed.
+        The app still works as a static website from bundled TypeScript seed data, but it now
+        has an optional Supabase shared database path. Published market data is public-read.
+        Editing, Review Queue access, LLM-assisted additions, and tag changes require an
+        email/password editor account.
       </div>
 
       <!-- ====== Stack ====== -->
@@ -237,14 +236,14 @@
           hosted as static files on Vercel. State management is Zustand (a tiny store library — no
           Redux). The data is a hand-curated TypeScript seed (~140 companies, ~150 activities).
           The Excel export uses <code>exceljs</code>; charts use <code>recharts</code>; icons use
-          <code>lucide-react</code>. No backend, no API server, no database, no authentication. Anything
-          "live" that you see in the UI is either (a) in the JS bundle, or (b) in your browser's
-          <code>localStorage</code>.
+          <code>lucide-react</code>. Supabase is optional: <code>lib/sharedDatabase.ts</code> fetches
+          shared rows when env vars and auth are present, and otherwise the app falls back to the
+          JS bundle plus browser <code>localStorage</code>.
         </p>
         <div class="grid-3">
           <div class="card"><h3>Frontend</h3><p>React 19, TypeScript 5.7, Vite 6, Zustand 5, recharts, exceljs.</p></div>
           <div class="card"><h3>Build</h3><p>Vite produces a <code>dist/</code> folder of static HTML / CSS / JS. Vercel serves it.</p></div>
-          <div class="card"><h3>Backend</h3><p>None today. Scripts under <code>scripts/</code> can run locally; GitHub Actions can run them on a schedule.</p></div>
+          <div class="card"><h3>Backend</h3><p>Optional Supabase Postgres for shared data, plus scripts under <code>scripts/</code> for seed, ingest, and verification jobs.</p></div>
         </div>
       </section>
 
@@ -252,12 +251,18 @@
       <section id="data-lives">
         <span class="eyebrow">Data residency</span>
         <h2>Where the data actually lives</h2>
-        <p>This is the most important thing to understand. Three places hold data, and only one of them is shared:</p>
+        <p>This is the most important thing to understand. Four places can hold data, and Supabase is the only real shared runtime layer:</p>
         <table>
           <thead>
             <tr><th>Layer</th><th>Where</th><th>Who sees it</th><th>How it changes</th></tr>
           </thead>
           <tbody>
+            <tr>
+              <td><strong>Supabase</strong></td>
+              <td><code>companies</code>, <code>activities</code>, <code>sources</code>, <code>review_queue_items</code>, <code>user_tags</code></td>
+              <td>Anyone can read published market data; authenticated editors can write</td>
+              <td>Review Queue approval / merge / reject, tag edits, seed script</td>
+            </tr>
             <tr>
               <td><strong>Seed</strong></td>
               <td><code>src/data/seed*.ts</code> → compiled into the bundle</td>
@@ -268,32 +273,28 @@
               <td><strong>Manual overrides</strong></td>
               <td>Your browser's <code>localStorage</code></td>
               <td>Only you, only on this device + browser</td>
-              <td>Click <code>Edit</code> or <code>+ Activity</code> on a company card</td>
+              <td>Fallback for <code>Edit</code> or <code>+ Activity</code> when Supabase/auth are unavailable</td>
             </tr>
             <tr>
               <td><strong>Custom tags</strong></td>
-              <td>Your browser's <code>localStorage</code> (separate key)</td>
-              <td>Only you, only on this device + browser</td>
+              <td>Supabase <code>user_tags</code> when signed in; otherwise <code>localStorage</code></td>
+              <td>You, across devices after auth; local-only otherwise</td>
               <td>Sidebar "Custom Tags" panel</td>
             </tr>
           </tbody>
         </table>
         <p>
-          When the app starts, it merges the seed with anything in your <code>localStorage</code>
-          and that's what you see. Picture it as two transparencies laid on top of each other.
+          When the app starts, <code>store.ts</code> tries Supabase first. If that load fails or no env
+          vars are present, it uses the seed plus localStorage overrides. Successful Supabase loads
+          are cached in <code>paimt-shared-database-cache-v1</code> for offline fallback.
         </p>
-        <pre><code>┌──────────────────────────┐
-│  SHIPPED IN BUNDLE       │   ← everyone has it
-│  src/data/seed*.ts       │
-└──────────────────────────┘
-           +
-┌──────────────────────────┐
-│  YOUR BROWSER ONLY       │   ← just you
-│  localStorage overrides  │
-│  localStorage tags       │
-└──────────────────────────┘
-           ↓
-   What you see on screen</code></pre>
+        <pre><code>Supabase configured + signed in?
+        │
+        ├─ yes → fetch shared tables → subscribe to realtime → cache snapshot
+        │
+        └─ no / unavailable → seed TS bundle + localStorage overrides/tags
+                              ↓
+                         What you see on screen</code></pre>
       </section>
 
       <!-- ====== Database question ====== -->
@@ -301,18 +302,16 @@
         <span class="eyebrow">The database question</span>
         <h2>"Do we need actual database engineering?"</h2>
         <p>
-          Short answer: <strong>not for what you're doing today</strong>. The "database"
-          here is a glorified spreadsheet that lives inside the website's code. That is
-          fine — and intentional — for an internal single-user tracker where the cost of
-          standing up a real backend (Postgres, auth, hosting, backups) outweighs the
-          benefit. But it has real limits, and you've already hit one of them: edits in
-          your browser don't sync to other devices or other people.
+          Short answer: <strong>the database foundation is now Supabase</strong>. Published data can
+          be read publicly, while writes and the private Review Queue require an email/password
+          editor account. The app still falls back to seed/localStorage when Supabase is not
+          configured.
         </p>
         <p>Here are the four options on the spectrum, in increasing order of complexity:</p>
 
         <div class="db-options">
           <div class="db-option recommended">
-            <h4>Option A — Stay as-is, but use Export → commit (the recommendation)</h4>
+            <h4>Option A — Seed + Export → commit (fallback)</h4>
             <p>
               You edit in your browser. Click the new "Export my edits" button (coming in the same
               update as this doc). It downloads a JSON file. You hand it to me / paste it into a PR.
@@ -346,10 +345,10 @@
           <div class="db-option">
             <h4>Option C — Real database (Supabase / Firebase / Postgres)</h4>
             <p>
-              Drop the seed entirely. All companies and activities live in Postgres. App fetches
-              from a REST API on load. Add auth so only you (or your team) can write. This is the
-              "proper" answer. Lets multiple analysts edit simultaneously, supports row history,
-              fine-grained permissions, audit logs, full text search, etc.
+              This is the selected path. <code>docs/schema.sql</code>, <code>lib/supabase.ts</code>,
+              <code>lib/sharedDatabase.ts</code>, <code>scripts/seed-supabase.ts</code>, and
+              <code>scripts/create-supabase-user.ts</code> now exist. Public-read/private-write RLS
+              is the selected model.
             </p>
             <div class="meta">
               <span><strong>Build effort:</strong> large (schema, RLS, auth, migrations, API layer)</span>
@@ -376,10 +375,9 @@
         </div>
 
         <p>
-          My recommendation for an internal IB tracker: <strong>start with Option A</strong>
-          (you already have it). If you find yourself wanting your colleague to see your edits
-          live, jump to Option C with Supabase — it's the cheapest "real" DB and only takes a
-          day to wire. Options B and D are middle grounds that you'd outgrow.
+          My recommendation for an internal IB tracker: keep Option A as the offline/edit-export
+          fallback, and use Option C with Supabase email/password editor accounts for day-to-day
+          shared use.
         </p>
       </section>
 
@@ -416,11 +414,13 @@
                 <ul>
                   <li><span class="name">types.ts</span><span class="role logic">logic</span><span class="desc">The schema. <code>Company</code>, <code>Activity</code>, <code>Source</code>, <code>ReviewQueueItem</code>, <code>UserTag</code> — every shape in the app starts here.</span></li>
                   <li><span class="name">constants.ts</span><span class="role logic">logic</span><span class="desc">The fixed enums (subsectors, activity types, confidence levels).</span></li>
-                  <li><span class="name">store.ts</span><span class="role logic">logic</span><span class="desc">The Zustand store. Holds the live arrays of activities / companies / sources / review queue. All mutations go through here.</span></li>
-                  <li><span class="name">overrides.ts</span><span class="role io">i/o</span><span class="desc">Reads / writes your manual edits to <code>localStorage</code>. Applies them on top of the seed at startup.</span></li>
-                  <li><span class="name">userTags.ts</span><span class="role io">i/o</span><span class="desc">Separate store for your custom tags + assignments. Also <code>localStorage</code>-backed.</span></li>
+                  <li><span class="name">supabase.ts</span><span class="role io">i/o</span><span class="desc">Creates the Supabase browser client from <code>VITE_SUPABASE_URL</code> and <code>VITE_SUPABASE_ANON_KEY</code>.</span></li>
+                  <li><span class="name">sharedDatabase.ts</span><span class="role io">i/o</span><span class="desc">Supabase repository: camelCase ↔ snake_case mapping, realtime subscription, offline cache, and Gmail-safe row serialization.</span></li>
+                  <li><span class="name">store.ts</span><span class="role logic">logic</span><span class="desc">The Zustand store. Holds activities / companies / sources / review queue. Loads Supabase when available; otherwise seed + localStorage fallback.</span></li>
+                  <li><span class="name">overrides.ts</span><span class="role io">i/o</span><span class="desc">Reads / writes browser-local manual edits. Still used as the offline fallback and export bridge.</span></li>
+                  <li><span class="name">userTags.ts</span><span class="role io">i/o</span><span class="desc">Separate store for custom tags + assignments. Uses Supabase per-user tags when authenticated, with <code>localStorage</code> fallback.</span></li>
                   <li><span class="name">filtering.ts</span><span class="role logic">logic</span><span class="desc">Pure functions: filter activities by search/type/subsector, sort, hide samples.</span></li>
-                  <li><span class="name">analytics.ts</span><span class="role logic">logic</span><span class="desc">Aggregations: per-company metrics, deal value by month, counts by subsector.</span></li>
+                  <li><span class="name">analytics.ts</span><span class="role logic">logic</span><span class="desc">Aggregations: per-company metrics, deal value by month, counts by subsector, and dashboard data-quality coverage.</span></li>
                   <li><span class="name">dedupe.ts</span><span class="role logic">logic</span><span class="desc">When a review-queue candidate matches an existing activity, return the duplicate. Used by approve / merge.</span></li>
                   <li><span class="name">review.ts</span><span class="role logic">logic</span><span class="desc">Approve / reject pipeline. Sanitizes Gmail snippets before they leak into the public dataset.</span></li>
                   <li><span class="name">gmail.ts</span><span class="role logic">logic</span><span class="desc">Regex extractor: turns a Gmail-shaped email object into a candidate row. Mock-only today.</span></li>
@@ -428,19 +428,19 @@
                   <li><span class="name">exportExcel.ts</span><span class="role io">i/o</span><span class="desc">Builds a .xlsx file from the visible activities. Two sheets + summary.</span></li>
                   <li><span class="name">format.ts</span><span class="role logic">logic</span><span class="desc">Display helpers: <code>compactUsd</code>, <code>formatDate</code>, <code>titleCase</code>.</span></li>
                   <li><span class="name">useTheme.ts</span><span class="role logic">logic</span><span class="desc">Light / dark mode toggle.</span></li>
-                  <li><span class="name">*.test.ts</span><span class="role logic">logic</span><span class="desc">Vitest unit tests for the modules above. 20 tests total.</span></li>
+                  <li><span class="name">*.test.ts</span><span class="role logic">logic</span><span class="desc">Vitest unit tests for the modules above, including Supabase privacy mappers.</span></li>
                 </ul>
 
                 <li><span class="dir name">src/components/</span><span class="desc">React components — the UI</span></li>
                 <ul>
                   <li><span class="name">AppShell.tsx</span><span class="role ui">ui</span><span class="desc">Top-level layout. Sidebar nav, topbar search/refresh/verify/export, the four tab routes.</span></li>
-                  <li><span class="name">Dashboard.tsx</span><span class="role ui">ui</span><span class="desc">Landing view — headline metrics, charts, latest signals.</span></li>
-                  <li><span class="name">ActivityTracker.tsx</span><span class="role ui">ui</span><span class="desc">The big table view with filters and edit pencils.</span></li>
+                  <li><span class="name">Dashboard.tsx</span><span class="role ui">ui</span><span class="desc">Landing view — headline metrics, source-quality posture, confidence mix, diligence queue, charts, latest signals.</span></li>
+                  <li><span class="name">ActivityTracker.tsx</span><span class="role ui">ui</span><span class="desc">The big table view with filters, edit pencils, export, and filtered-view source-quality indicators.</span></li>
                   <li><span class="name">ReviewQueue.tsx</span><span class="role ui">ui</span><span class="desc">Approve / reject / merge candidates from ingestion.</span></li>
                   <li><span class="name">CompanyProfiles.tsx</span><span class="role ui">ui</span><span class="desc">Grid of company cards with sources, tags, stale flag, Edit and + Activity buttons.</span></li>
                   <li><span class="name">ActivityModal.tsx</span><span class="role ui">ui</span><span class="desc">Add / edit an activity. Validates input, calls <code>addActivity</code> or <code>updateActivity</code>.</span></li>
                   <li><span class="name">CompanyEditModal.tsx</span><span class="role ui">ui</span><span class="desc">Edit a company's overview / subsector / geography / website.</span></li>
-                  <li><span class="name">VerificationDrawer.tsx</span><span class="role ui">ui</span><span class="desc">Right-side panel listing every finding from the verifier with deep-links to sources.</span></li>
+                  <li><span class="name">VerificationDrawer.tsx</span><span class="role ui">ui</span><span class="desc">Right-side diligence panel summarising verifier findings and listing every row-level source issue.</span></li>
                   <li><span class="name">UserTagsPanel.tsx</span><span class="role ui">ui</span><span class="desc">Sidebar widget to create / rename / color / delete custom tags.</span></li>
                   <li><span class="name">CompanyTagPicker.tsx</span><span class="role ui">ui</span><span class="desc">Popover on each company card to assign tags.</span></li>
                   <li><span class="name">ManualEditsPanel.tsx</span><span class="role ui">ui</span><span class="desc">Sidebar widget showing count of overrides + "Reset to seed" button + link to this doc.</span></li>
@@ -525,8 +525,8 @@
           </div>
           <div class="wstep">
             <div>
-              <h4>Persist to localStorage</h4>
-              <p>Because the id starts with <code>a-manual-</code>, the store's new override layer (added in this update) routes it through <span class="file">src/lib/overrides.ts</span> → <code>persistNewActivities()</code> → <code>localStorage.setItem("paimt-overrides-new-activities-v1", JSON.stringify([...]))</code>.</p>
+              <h4>Persist locally, stage shared</h4>
+              <p>The browser fallback still routes <code>a-manual-*</code> rows through <span class="file">src/lib/overrides.ts</span> → <code>localStorage</code>. If Supabase is configured, the shared write is staged as a <code>review_queue_items</code> candidate, not published directly.</p>
             </div>
           </div>
           <div class="wstep">
@@ -538,7 +538,7 @@
           <div class="wstep">
             <div>
               <h4>Next page load</h4>
-              <p>At app startup, <span class="file">store.ts</span> calls <code>loadOverrides()</code> from <span class="file">overrides.ts</span>, reads your localStorage, and merges your manual rows on top of the seed — so your edits persist across refresh.</p>
+              <p>At app startup, <span class="file">store.ts</span> tries <code>loadSharedSnapshot()</code>. If Supabase/auth are unavailable, it calls <code>loadOverrides()</code> and merges localStorage rows on top of the seed.</p>
             </div>
           </div>
         </div>
@@ -631,9 +631,9 @@
           <div class="arrow">→</div>
           <div class="node"><span class="pill live">live</span><h4>3. Review queue</h4><p>Candidates wait until you approve / reject / merge.</p></div>
           <div class="arrow">→</div>
-          <div class="node"><span class="pill live">live</span><h4>4. Database</h4><p>The merged set: bundle seed + your localStorage overrides.</p></div>
+          <div class="node"><span class="pill scaffold">scaffold</span><h4>4. Database</h4><p>Supabase when configured/authenticated; otherwise bundle seed + localStorage.</p></div>
           <div class="arrow">→</div>
-          <div class="node"><span class="pill live">live</span><h4>5. UI</h4><p>Dashboard, Tracker, Profiles, Verifier drawer.</p></div>
+          <div class="node"><span class="pill live">live</span><h4>5. UI</h4><p>Dashboard credibility layer, Tracker, Profiles, Verifier drawer.</p></div>
         </div>
       </section>
 
@@ -648,7 +648,7 @@
         </p>
         <div class="walkthrough">
           <div class="wstep"><div><h4>1. Authenticate Gmail <span class="pill scaffold">scaffold</span></h4><p>OAuth handshake against your Google account, run locally or in a Cloud Function. Tokens never live in the static bundle.</p></div></div>
-          <div class="wstep"><div><h4>2. Sweep matching newsletters <span class="pill scaffold">scaffold</span></h4><p>A Gmail API query like <code>from:hello@theinformation.com newer_than:7d</code> returns recent threads.</p></div></div>
+          <div class="wstep"><div><h4>2. Sweep matching newsletters <span class="pill scaffold">scaffold</span></h4><p>A Gmail API query like <code>from:newsletter-source@example.invalid newer_than:7d</code> returns recent threads.</p></div></div>
           <div class="wstep"><div><h4>3. Extract company / amount / counterparty <span class="pill scaffold">scaffold</span></h4><p>Regex today (<span class="file">src/lib/gmail.ts</span>: <code>parseGmailCandidate</code>); LLM later. Returns a candidate row.</p></div></div>
           <div class="wstep"><div><h4>4. Dedupe against existing rows <span class="pill live">live</span></h4><p><span class="file">src/lib/dedupe.ts</span> flags fuzzy duplicates so we route them through merge rather than create.</p></div></div>
           <div class="wstep"><div><h4>5. Land in the Review Queue <span class="pill live">live</span></h4><p>You see the candidate in the Review Queue tab. Gmail snippets stay private — only sanitized text reaches the published dataset.</p></div></div>
@@ -670,7 +670,7 @@ npm run dev      # Vite dev server, http://localhost:5173
 
 # 3. Before commit, you run:
 npm run typecheck  # TypeScript: tsc -b — finds type errors
-npm run test       # vitest run — 20 unit tests, must all pass
+npm run test       # vitest run — unit tests, must all pass
 npm run build      # tsc -b && vite build → dist/ static files
 
 # 4. Push to GitHub. The CI workflow .github/workflows/deploy-pages.yml:
@@ -684,25 +684,26 @@ npm run build      # tsc -b && vite build → dist/ static files
 #    - the /physical-ai/ tab on the AI Map site reflects the change
 </code></pre>
         <p>
-          The point: there is no server-side "save" anywhere. Every "deploy" is "ship a new bundle
-          of static files." If you want the dataset to change, you have to either (a) edit your own
-          browser (localStorage), or (b) cause a new bundle to be deployed.
+          With Supabase env vars and auth, approved Review Queue writes can update Postgres without
+          a redeploy. Without that, the static flow still applies: edit localStorage or ship a new
+          bundle.
         </p>
       </section>
 
       <!-- ====== Publishing your edits ====== -->
       <section id="publish">
         <span class="eyebrow">Get your edits into main</span>
-        <h2>The bridge: localStorage → bundle</h2>
+        <h2>The bridge: localStorage → bundle / Supabase</h2>
         <p>
-          Until a real database is added, here is the workflow to move an edit from your browser
-          into the shared bundle so it shows up for everyone after the next deploy:
+          There are now two publication paths. The legacy path exports localStorage edits into the
+          seed bundle. The shared path stages new activity candidates in Supabase Review Queue and
+          publishes only after approval.
         </p>
         <div class="walkthrough">
           <div class="wstep">
             <div>
               <h4>Edit in the UI</h4>
-              <p>Use the <code>Edit</code> or <code>+ Activity</code> buttons on a company card. Your changes are immediately saved to localStorage.</p>
+              <p>Use the <code>Edit</code> or <code>+ Activity</code> buttons on a company card. Your browser updates immediately. New shared activities are staged as review candidates rather than published directly.</p>
             </div>
           </div>
           <div class="wstep">
@@ -725,8 +726,8 @@ npm run build      # tsc -b && vite build → dist/ static files
           </div>
         </div>
         <p style="font-size: 13px; color: var(--ink-muted);">
-          That is the cheapest, most honest version of a "save to main" button without a backend.
-          The day you want this to happen with one click — that is the day to add Supabase.
+          Supabase is the shared path. Export/import remains the no-auth fallback and a useful backup
+          for local-only edits.
         </p>
       </section>
 
@@ -740,10 +741,10 @@ npm run build      # tsc -b && vite build → dist/ static files
           </thead>
           <tbody>
             <tr><td>Seed dataset (~140 companies)</td><td><span class="pill live">live</span></td><td><code>src/data/seed*.ts</code></td><td>Curated by hand. Updated when we ship a new build.</td></tr>
-            <tr><td>Custom tags (A / B / etc.)</td><td><span class="pill live">live</span></td><td><code>lib/userTags.ts</code>, <code>UserTagsPanel.tsx</code></td><td>Saved in your browser, persists across reloads.</td></tr>
+            <tr><td>Custom tags (A / B / etc.)</td><td><span class="pill live">live</span></td><td><code>lib/userTags.ts</code>, <code>UserTagsPanel.tsx</code></td><td>Saved to Supabase when authenticated; localStorage fallback persists across reloads.</td></tr>
             <tr><td>Clickable sources on every row</td><td><span class="pill live">live</span></td><td><code>CompanyProfiles.tsx</code>, <code>ActivityTracker.tsx</code></td><td>Every public funding round links to its primary press release / filing / article.</td></tr>
-            <tr><td>Verifier drawer (stale / unsourced)</td><td><span class="pill live">live</span></td><td><code>lib/verify.ts</code>, <code>VerificationDrawer.tsx</code></td><td>Runs in your browser. Flags rows &gt;90 days old, missing URLs, low-confidence figures.</td></tr>
-            <tr><td>Manual edits and additions</td><td><span class="pill live">live</span></td><td><code>lib/overrides.ts</code>, <code>CompanyEditModal.tsx</code>, <code>ActivityModal.tsx</code></td><td>Edit / + Activity buttons on each card. Saved to localStorage.</td></tr>
+            <tr><td>Dashboard / tracker credibility layer + verifier drawer</td><td><span class="pill live">live</span></td><td><code>lib/analytics.ts</code>, <code>lib/verify.ts</code>, <code>Dashboard.tsx</code>, <code>ActivityTracker.tsx</code>, <code>VerificationDrawer.tsx</code></td><td>Runs in your browser. Surfaces source coverage, confidence mix, stale rows, placeholder URLs, and low-confidence figures.</td></tr>
+            <tr><td>Manual edits and additions</td><td><span class="pill live">live</span></td><td><code>lib/overrides.ts</code>, <code>CompanyEditModal.tsx</code>, <code>ActivityModal.tsx</code>, <code>lib/sharedDatabase.ts</code></td><td>Edit / + Activity buttons on each card. Local fallback saves to localStorage; shared new rows stage through Review Queue.</td></tr>
             <tr><td>Export my edits → JSON</td><td><span class="pill live">live</span></td><td><code>ManualEditsPanel.tsx</code></td><td>Downloads JSON. Bridges localStorage → bundle.</td></tr>
             <tr><td>Import edits → seed</td><td><span class="pill scaffold">scaffold</span></td><td><code>scripts/import-overrides.ts</code></td><td>CLI script; needs to be run by someone with repo access.</td></tr>
             <tr><td>Refresh button</td><td><span class="pill scaffold">scaffold</span></td><td><code>AppShell.tsx</code></td><td>Cache-busted reload today. Will hit a real backend once one exists.</td></tr>
@@ -752,8 +753,8 @@ npm run build      # tsc -b && vite build → dist/ static files
             <tr><td>Gmail OAuth and inbox sweep</td><td><span class="pill scaffold">scaffold</span></td><td><code>lib/gmail.ts</code>, <code>scripts/mock-gmail-ingest.ts</code></td><td>Code path designed; not authenticated against a live mailbox yet.</td></tr>
             <tr><td>RSS ingest from newsletters</td><td><span class="pill scaffold">scaffold</span></td><td><code>scripts/rss-ingest.ts</code></td><td>Script exists; emits mock candidates.</td></tr>
             <tr><td>Scheduled refresh (daily cron)</td><td><span class="pill scaffold">scaffold</span></td><td><code>.github/workflows/refresh-data.yml</code></td><td>GitHub Action committed; runs only when the repo is connected to a CI runner.</td></tr>
-            <tr><td>Server-side database</td><td><span class="pill future">future</span></td><td>—</td><td>Option C / D above. Not built yet.</td></tr>
-            <tr><td>Auth (multi-user)</td><td><span class="pill future">future</span></td><td>—</td><td>Only matters once a real DB exists.</td></tr>
+            <tr><td>Server-side database</td><td><span class="pill scaffold">scaffold</span></td><td><code>docs/schema.sql</code>, <code>lib/supabase.ts</code>, <code>lib/sharedDatabase.ts</code>, <code>scripts/seed-supabase.ts</code></td><td>Supabase schema/client/realtime/offline cache exist. Production env QA still needed.</td></tr>
+            <tr><td>Auth (multi-user)</td><td><span class="pill live">live</span></td><td><code>AppShell.tsx</code>, <code>store.ts</code>, <code>scripts/create-supabase-user.ts</code></td><td>Email/password editor sign-in. Public viewers can read but cannot edit.</td></tr>
             <tr><td>LLM-assisted extraction</td><td><span class="pill future">future</span></td><td>—</td><td>Regex first; LLM after.</td></tr>
           </tbody>
         </table>
