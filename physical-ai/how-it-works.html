@@ -1,0 +1,387 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>How the Physical AI Tracker Works</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT,WONK@9..144,300..900,0..100,0..1&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --paper: #14161A;
+        --paper-2: #1B1E24;
+        --ink: #E4E6EB;
+        --ink-strong: #FFFFFF;
+        --ink-muted: #9BA1AC;
+        --ink-faint: #6B7280;
+        --rule: #2A2E36;
+        --rule-strong: #3A3F49;
+        --accent: #E8B14A;
+        --accent-soft: rgba(232, 177, 74, 0.16);
+        --green: #67C99A;
+        --amber: #F2B23B;
+        --red: #EC6E7A;
+        --blue: #6E8AF7;
+        --violet: #B58CF2;
+        --radius: 6px;
+        --radius-pill: 999px;
+      }
+      [data-theme="light"] {
+        --paper: #FAFAF7;
+        --paper-2: #FFFFFF;
+        --ink: #1B1E24;
+        --ink-strong: #0F1115;
+        --ink-muted: #5C6370;
+        --ink-faint: #8B92A0;
+        --rule: #E3E5E8;
+        --rule-strong: #CDD0D5;
+        --accent: #A6741C;
+        --accent-soft: rgba(166, 116, 28, 0.10);
+        --green: #1F8A56;
+        --amber: #B27607;
+        --red: #B83A47;
+      }
+      * { box-sizing: border-box; }
+      html, body { margin: 0; padding: 0; }
+      body {
+        font-family: "IBM Plex Sans", system-ui, sans-serif;
+        background: var(--paper); color: var(--ink); padding: 40px 24px 80px;
+        line-height: 1.55;
+      }
+      main { max-width: 940px; margin: 0 auto; }
+      h1, h2, h3 { font-family: "Fraunces", Georgia, serif; color: var(--ink-strong); letter-spacing: -0.01em; }
+      h1 { font-size: 42px; margin: 0 0 6px; }
+      .lede { color: var(--ink-muted); font-size: 16px; margin-bottom: 32px; }
+      .eyebrow { font-family: "IBM Plex Mono", monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 0.18em; color: var(--accent); }
+      section { margin: 36px 0; padding-top: 28px; border-top: 1px solid var(--rule); }
+      section h2 { font-size: 26px; margin: 0 0 4px; }
+      section h3 { font-size: 17px; margin: 24px 0 8px; color: var(--ink); font-weight: 500; }
+      p { margin: 8px 0 14px; }
+      .mono { font-family: "IBM Plex Mono", monospace; }
+      code, .chip {
+        font-family: "IBM Plex Mono", monospace; font-size: 12px;
+        padding: 2px 6px; border-radius: var(--radius);
+        background: var(--paper-2); border: 1px solid var(--rule); color: var(--ink-strong);
+      }
+      .status-callout {
+        margin: 24px 0; padding: 16px 18px; border: 1px solid var(--accent); border-radius: var(--radius);
+        background: var(--accent-soft); color: var(--ink-strong);
+      }
+      .status-callout strong { color: var(--accent); }
+      .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+      .card {
+        padding: 16px 18px; border: 1px solid var(--rule); border-radius: var(--radius);
+        background: var(--paper-2);
+      }
+      .card h3 { margin-top: 0; }
+      .pill { display: inline-flex; align-items: center; gap: 6px; padding: 2px 9px; border-radius: var(--radius-pill); font-family: "IBM Plex Mono", monospace; font-size: 10px; text-transform: uppercase; letter-spacing: 0.14em; border: 1px solid var(--rule); }
+      .pill.live { color: var(--green); border-color: color-mix(in srgb, var(--green) 50%, transparent); background: color-mix(in srgb, var(--green) 12%, transparent); }
+      .pill.scaffold { color: var(--amber); border-color: color-mix(in srgb, var(--amber) 50%, transparent); background: color-mix(in srgb, var(--amber) 12%, transparent); }
+      .pill.future { color: var(--ink-muted); border-color: var(--rule); }
+      .pill.manual { color: var(--blue); border-color: color-mix(in srgb, var(--blue) 50%, transparent); background: color-mix(in srgb, var(--blue) 12%, transparent); }
+
+      /* Flow diagram */
+      .flow { display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px; align-items: stretch; margin: 18px 0; }
+      .flow .node {
+        position: relative; padding: 12px 12px 10px; border: 1px solid var(--rule); border-radius: var(--radius);
+        background: var(--paper-2); display: flex; flex-direction: column; gap: 6px;
+      }
+      .flow .node h4 { font-family: "IBM Plex Sans", sans-serif; font-size: 13px; margin: 0; color: var(--ink-strong); font-weight: 600; }
+      .flow .node p { margin: 0; font-size: 11px; color: var(--ink-muted); line-height: 1.45; }
+      .flow .node .pill { font-size: 9px; padding: 1px 7px; align-self: flex-start; }
+      .flow .arrow {
+        align-self: center; color: var(--ink-faint); font-family: "IBM Plex Mono", monospace;
+        text-align: center;
+      }
+
+      /* Refresh diagram */
+      .seq { display: grid; gap: 10px; counter-reset: step; margin: 18px 0; }
+      .seq-step {
+        display: grid; grid-template-columns: 36px 1fr; gap: 14px; align-items: start;
+        padding: 14px 16px; border: 1px solid var(--rule); border-radius: var(--radius); background: var(--paper-2);
+      }
+      .seq-step::before {
+        counter-increment: step; content: counter(step);
+        font-family: "IBM Plex Mono", monospace; font-weight: 600; font-size: 22px; color: var(--accent);
+      }
+      .seq-step h4 { margin: 0 0 4px; font-family: "IBM Plex Sans", sans-serif; font-size: 14px; color: var(--ink-strong); }
+      .seq-step p { margin: 0; color: var(--ink-muted); font-size: 13px; }
+      .seq-step .pill { margin-left: 8px; }
+
+      /* Maturity legend */
+      .legend { display: flex; flex-wrap: wrap; gap: 10px; padding: 14px 16px; border: 1px solid var(--rule); border-radius: var(--radius); background: var(--paper-2); }
+      .legend p { margin: 0; font-size: 12px; color: var(--ink-muted); }
+      .legend strong { color: var(--ink); }
+
+      /* Honest assessment */
+      table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 13px; }
+      th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--rule); vertical-align: top; }
+      th { color: var(--ink-muted); font-weight: 500; font-family: "IBM Plex Mono", monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 0.1em; }
+      td .pill { font-size: 9px; }
+
+      .back {
+        display: inline-flex; align-items: center; gap: 6px; padding: 6px 12px;
+        border: 1px solid var(--rule); border-radius: var(--radius); background: var(--paper-2);
+        color: var(--ink); font-size: 13px; text-decoration: none;
+      }
+      .back:hover { border-color: var(--accent); color: var(--accent); }
+
+      @media (max-width: 760px) {
+        .grid-2 { grid-template-columns: 1fr; }
+        .flow { grid-template-columns: 1fr; }
+        .flow .arrow { transform: rotate(90deg); }
+      }
+    </style>
+    <script>
+      try {
+        var t = localStorage.getItem("paimt-theme");
+        if (t === "light" || t === "dark") document.documentElement.dataset.theme = t;
+      } catch (e) {}
+    </script>
+  </head>
+  <body>
+    <main>
+      <a href="index.html" class="back">← Back to the terminal</a>
+      <div style="height: 24px"></div>
+
+      <span class="eyebrow">Plain-English explainer</span>
+      <h1>How the Physical AI Tracker actually works</h1>
+      <p class="lede">
+        You asked a fair question: how live is this, and where does the data come from?
+        Here is an honest, no-jargon map of the pipeline today, what is genuinely live,
+        what is scaffolded but not wired, and what is on the roadmap.
+      </p>
+
+      <div class="status-callout">
+        <strong>Current state, in one sentence.</strong>
+        The tracker is a <em>static</em> website. All ~140 companies are baked into the
+        JavaScript file your browser downloads. The numbers you see come from a curated
+        seed list, plus any edits you make in your own browser. Nothing on this site
+        polls Gmail, Pitchbook, or the open web in real time today.
+      </div>
+
+      <section>
+        <span class="eyebrow">Maturity legend</span>
+        <h2>What is live vs scaffolded</h2>
+        <div class="legend">
+          <p><span class="pill live">live</span> <strong>Live</strong> — fully working in your browser right now.</p>
+          <p><span class="pill manual">manual</span> <strong>Manual</strong> — you do it yourself (the analyst-in-the-loop step).</p>
+          <p><span class="pill scaffold">scaffold</span> <strong>Scaffold</strong> — the code path exists and runs with mock data; needs a real source / credentials / a backend.</p>
+          <p><span class="pill future">future</span> <strong>Future</strong> — designed but not yet built.</p>
+        </div>
+      </section>
+
+      <section>
+        <span class="eyebrow">Pipeline</span>
+        <h2>The five-stage data flow</h2>
+        <p>Everything is meant to flow left to right. Today only the first and last stages are doing real work.</p>
+        <div class="flow">
+          <div class="node">
+            <span class="pill live">live</span>
+            <h4>1. Sources</h4>
+            <p>Curated seed list (~140 companies); your manual edits; mock Gmail and RSS samples.</p>
+          </div>
+          <div class="arrow">→</div>
+          <div class="node">
+            <span class="pill scaffold">scaffold</span>
+            <h4>2. Ingestion</h4>
+            <p>Scripts that read a newsletter or RSS feed and propose candidates. Today they run on mock data only.</p>
+          </div>
+          <div class="arrow">→</div>
+          <div class="node">
+            <span class="pill live">live</span>
+            <h4>3. Review queue</h4>
+            <p>Candidates wait here until <em>you</em> approve, reject, or merge them — the human-in-the-loop gate.</p>
+          </div>
+          <div class="arrow">→</div>
+          <div class="node">
+            <span class="pill live">live</span>
+            <h4>4. Database</h4>
+            <p>Your in-browser store. Seed + approved candidates + your edits. Persisted to <code>localStorage</code>.</p>
+          </div>
+          <div class="arrow">→</div>
+          <div class="node">
+            <span class="pill live">live</span>
+            <h4>5. UI</h4>
+            <p>Dashboard, Activity Tracker, Company Profiles, Verifier drawer — what you see on screen.</p>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <span class="eyebrow">Refresh button</span>
+        <h2>What pressing "Refresh data" actually does</h2>
+        <p>The button is intentionally simple today, because there is no live backend to call yet. Here is the exact sequence:</p>
+        <div class="seq">
+          <div class="seq-step">
+            <div>
+              <h4>You click <span class="chip">Refresh data</span></h4>
+              <p>The button enters a spinning "Refreshing…" state.</p>
+            </div>
+          </div>
+          <div class="seq-step">
+            <div>
+              <h4>If a backend endpoint is configured <span class="pill future">future</span></h4>
+              <p>The page posts to <code>VITE_REFRESH_ENDPOINT</code>. That endpoint is meant to kick off a server-side run of the ingest + verify pipeline. None is wired today.</p>
+            </div>
+          </div>
+          <div class="seq-step">
+            <div>
+              <h4>The page hard-reloads with a cache-buster <span class="pill live">live</span></h4>
+              <p>It appends <code>?r=&lt;timestamp&gt;</code> to the URL and reloads. This guarantees you fetch the freshest deployed JavaScript bundle — useful right after we ship an update.</p>
+            </div>
+          </div>
+          <div class="seq-step">
+            <div>
+              <h4>New bundle = new seed data <span class="pill live">live</span></h4>
+              <p>When we add companies or fix figures, we redeploy the site. The next refresh pulls those changes in. Your <em>own</em> manual edits and tags survive — they live in <code>localStorage</code>, not in the bundle.</p>
+            </div>
+          </div>
+        </div>
+        <p style="color: var(--ink-muted); font-size: 13px;">
+          Translation: refresh is a "pull the latest version of this website" button, not yet a "go fetch tonight's news" button.
+          The second behaviour is what the Gmail integration below is building toward.
+        </p>
+      </section>
+
+      <section>
+        <span class="eyebrow">Gmail integration</span>
+        <h2>How the Gmail flow is designed to work</h2>
+        <p>
+          The plan is to have the system sweep your inbox for newsletters (The Information, Axios, etc.) and
+          surface every Physical AI funding / M&A / partnership signal it finds — but never write to the
+          public dataset without you approving first. Eight steps:
+        </p>
+        <div class="seq">
+          <div class="seq-step">
+            <div>
+              <h4>Authenticate Gmail <span class="pill scaffold">scaffold</span></h4>
+              <p>OAuth handshake against your Google account. The credentials live on your machine, not on this site.</p>
+            </div>
+          </div>
+          <div class="seq-step">
+            <div>
+              <h4>Sweep inbox for matching newsletters <span class="pill scaffold">scaffold</span></h4>
+              <p>A query like <code>from:hello@theinformation.com newer_than:7d</code> pulls candidate threads.</p>
+            </div>
+          </div>
+          <div class="seq-step">
+            <div>
+              <h4>Extract company / amount / counterparty <span class="pill scaffold">scaffold</span></h4>
+              <p>Regex today, LLM later. The extractor builds a <em>candidate row</em>, not a confirmed row.</p>
+            </div>
+          </div>
+          <div class="seq-step">
+            <div>
+              <h4>Dedupe against existing rows <span class="pill live">live</span></h4>
+              <p>If "Anduril $4B" already exists, the candidate is flagged as a likely duplicate, not a new entry.</p>
+            </div>
+          </div>
+          <div class="seq-step">
+            <div>
+              <h4>Land in the Review Queue <span class="pill live">live</span></h4>
+              <p>You see the candidate in the Review Queue tab. Gmail snippets stay private — only sanitized text is shown.</p>
+            </div>
+          </div>
+          <div class="seq-step">
+            <div>
+              <h4>You approve, merge, or reject <span class="pill manual">manual</span></h4>
+              <p>This is the <strong>only</strong> step that can write to the database. No bypass.</p>
+            </div>
+          </div>
+          <div class="seq-step">
+            <div>
+              <h4>Verifier flags stale or unsourced records <span class="pill live">live</span></h4>
+              <p>The "Verify numbers" drawer lists anything older than 90 days, missing a source, or marked low-confidence.</p>
+            </div>
+          </div>
+          <div class="seq-step">
+            <div>
+              <h4>Daily cron runs the whole pipeline <span class="pill scaffold">scaffold</span></h4>
+              <p>A GitHub Action is committed (<code>.github/workflows/refresh-data.yml</code>). It runs at 14:00 UTC daily and opens a pull request rather than writing directly — preserving the review gate.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <span class="eyebrow">Editing companies yourself</span>
+        <h2>The manual update path you just got</h2>
+        <p>
+          On any company card on the <strong>Company Profiles</strong> page you now have two new buttons:
+        </p>
+        <div class="grid-2">
+          <div class="card">
+            <h3><span class="chip">Edit</span> a company</h3>
+            <p>Update the overview text, subsector, geography, website. Your change overrides the seed for that field. The seed is never touched.</p>
+          </div>
+          <div class="card">
+            <h3><span class="chip">+ Activity</span> on a company</h3>
+            <p>Add a fresh funding round, M&A, partnership, customer contract, etc. You set the date, deal value, investors, source URL, and confidence.</p>
+          </div>
+        </div>
+        <p style="color: var(--ink-muted); font-size: 13px;">
+          Both kinds of edit are saved to your browser's <code>localStorage</code>, so they survive refreshes and are scoped to this device.
+          The sidebar shows a live count of edits and a "Reset to seed" button if you want to start over.
+          When we ship a new build that contains the same fact, your override is preserved — it sits on top of the seed.
+        </p>
+      </section>
+
+      <section>
+        <span class="eyebrow">Component-by-component</span>
+        <h2>Honest status of every feature</h2>
+        <table>
+          <thead>
+            <tr><th>Feature</th><th>Status</th><th>What that means</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Seed dataset (~140 companies)</td><td><span class="pill live">live</span></td><td>Curated by hand. Updated when we ship a new build.</td></tr>
+            <tr><td>Custom tags (A / B / world models / etc.)</td><td><span class="pill live">live</span></td><td>Saved in your browser, persists across reloads.</td></tr>
+            <tr><td>Clickable sources on every row</td><td><span class="pill live">live</span></td><td>Every public funding round links to its primary press release / filing / article.</td></tr>
+            <tr><td>Verifier drawer (stale / unsourced)</td><td><span class="pill live">live</span></td><td>Runs in your browser. Flags rows &gt;90 days old, missing URLs, low-confidence figures.</td></tr>
+            <tr><td>Manual edits and additions</td><td><span class="pill live">live</span></td><td>Edit / +Activity buttons on each card. Saved to localStorage.</td></tr>
+            <tr><td>Refresh button</td><td><span class="pill scaffold">scaffold</span></td><td>Cache-busted reload today. Will hit a real backend once one exists.</td></tr>
+            <tr><td>Excel export of filtered view</td><td><span class="pill live">live</span></td><td>Activities + companies + summary sheets.</td></tr>
+            <tr><td>Review Queue (analyst approval gate)</td><td><span class="pill live">live</span></td><td>Mechanic works; today's candidates are mock samples.</td></tr>
+            <tr><td>Gmail OAuth and inbox sweep</td><td><span class="pill scaffold">scaffold</span></td><td>Code path designed; not authenticated against a live mailbox from this site yet.</td></tr>
+            <tr><td>RSS ingest from newsletters</td><td><span class="pill scaffold">scaffold</span></td><td>Script exists; emits mock candidates.</td></tr>
+            <tr><td>Scheduled refresh (daily cron)</td><td><span class="pill scaffold">scaffold</span></td><td>GitHub Action committed; runs only when the repo is connected to a CI runner.</td></tr>
+            <tr><td>Server-side database</td><td><span class="pill future">future</span></td><td>Today the "database" is the JS bundle + your localStorage. A real backend (Supabase, etc.) is on the roadmap.</td></tr>
+            <tr><td>LLM-assisted extraction from emails</td><td><span class="pill future">future</span></td><td>Regex first; LLM after.</td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section>
+        <span class="eyebrow">FAQ in plain English</span>
+        <h2>Quick answers</h2>
+        <div class="grid-2">
+          <div class="card">
+            <h3>If I edit a company on my laptop, does my colleague see it?</h3>
+            <p>No. Edits are stored in <em>your</em> browser. To share, either Export to Excel or ship the edit into the seed (we can commit it into the dataset together).</p>
+          </div>
+          <div class="card">
+            <h3>How "live" are the numbers?</h3>
+            <p>As live as the last deploy. The Verifier flags anything older than 90 days; that is your audit list to re-check against the source URLs you can click.</p>
+          </div>
+          <div class="card">
+            <h3>What happens if a press release moves URL?</h3>
+            <p>The link will 404. The Verifier flags broken/placeholder hosts. Future enhancement: nightly cron that HEAD-pings each URL and downgrades confidence on 4xx/5xx.</p>
+          </div>
+          <div class="card">
+            <h3>Why isn't the Gmail pipeline already running?</h3>
+            <p>It requires either (a) a server with your OAuth credentials, or (b) a local desktop run. The current site is a static deploy on Vercel — no server-side code runs here yet.</p>
+          </div>
+        </div>
+      </section>
+
+      <p style="margin-top: 40px; color: var(--ink-faint); font-size: 11px; font-family: 'IBM Plex Mono', monospace; letter-spacing: 0.08em;">
+        DOC VERSION 1 · GENERATED FROM CODE STATE ON THE DAY OF YOUR LAST DEPLOY
+      </p>
+    </main>
+  </body>
+</html>
