@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>How the Physical AI Tracker Works</title>
+    <title>How the Physical AI Tracker Works — Architecture Reference</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -14,6 +14,7 @@
       :root {
         --paper: #14161A;
         --paper-2: #1B1E24;
+        --paper-3: #22262E;
         --ink: #E4E6EB;
         --ink-strong: #FFFFFF;
         --ink-muted: #9BA1AC;
@@ -33,6 +34,7 @@
       [data-theme="light"] {
         --paper: #FAFAF7;
         --paper-2: #FFFFFF;
+        --paper-3: #F2F2EE;
         --ink: #1B1E24;
         --ink-strong: #0F1115;
         --ink-muted: #5C6370;
@@ -50,78 +52,101 @@
       body {
         font-family: "IBM Plex Sans", system-ui, sans-serif;
         background: var(--paper); color: var(--ink); padding: 40px 24px 80px;
-        line-height: 1.55;
+        line-height: 1.6;
       }
-      main { max-width: 940px; margin: 0 auto; }
-      h1, h2, h3 { font-family: "Fraunces", Georgia, serif; color: var(--ink-strong); letter-spacing: -0.01em; }
-      h1 { font-size: 42px; margin: 0 0 6px; }
-      .lede { color: var(--ink-muted); font-size: 16px; margin-bottom: 32px; }
+      main { max-width: 980px; margin: 0 auto; }
+      h1, h2, h3, h4 { font-family: "Fraunces", Georgia, serif; color: var(--ink-strong); letter-spacing: -0.01em; }
+      h1 { font-size: 42px; margin: 0 0 6px; line-height: 1.1; }
+      h2 { font-size: 28px; margin: 0 0 4px; }
+      h3 { font-size: 18px; margin: 28px 0 10px; color: var(--ink); font-weight: 500; }
+      h4 { font-size: 14px; margin: 0; }
+      .lede { color: var(--ink-muted); font-size: 16px; margin-bottom: 28px; }
       .eyebrow { font-family: "IBM Plex Mono", monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 0.18em; color: var(--accent); }
-      section { margin: 36px 0; padding-top: 28px; border-top: 1px solid var(--rule); }
-      section h2 { font-size: 26px; margin: 0 0 4px; }
-      section h3 { font-size: 17px; margin: 24px 0 8px; color: var(--ink); font-weight: 500; }
-      p { margin: 8px 0 14px; }
-      .mono { font-family: "IBM Plex Mono", monospace; }
-      code, .chip {
+      section { margin: 40px 0; padding-top: 28px; border-top: 1px solid var(--rule); }
+      p { margin: 10px 0 14px; }
+      code, .chip, kbd {
         font-family: "IBM Plex Mono", monospace; font-size: 12px;
         padding: 2px 6px; border-radius: var(--radius);
         background: var(--paper-2); border: 1px solid var(--rule); color: var(--ink-strong);
       }
+      pre { background: var(--paper-2); border: 1px solid var(--rule); border-radius: var(--radius); padding: 14px 16px; overflow-x: auto; font-family: "IBM Plex Mono", monospace; font-size: 12px; line-height: 1.55; }
+      pre code { background: none; border: 0; padding: 0; color: var(--ink); }
+
       .status-callout {
-        margin: 24px 0; padding: 16px 18px; border: 1px solid var(--accent); border-radius: var(--radius);
+        margin: 22px 0; padding: 16px 18px; border: 1px solid var(--accent); border-radius: var(--radius);
         background: var(--accent-soft); color: var(--ink-strong);
       }
       .status-callout strong { color: var(--accent); }
-      .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+
+      .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+      .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
       .card {
-        padding: 16px 18px; border: 1px solid var(--rule); border-radius: var(--radius);
+        padding: 14px 16px; border: 1px solid var(--rule); border-radius: var(--radius);
         background: var(--paper-2);
       }
-      .card h3 { margin-top: 0; }
+      .card h3 { margin: 0 0 6px; }
+      .card p { margin: 0; font-size: 13px; color: var(--ink-muted); }
+
       .pill { display: inline-flex; align-items: center; gap: 6px; padding: 2px 9px; border-radius: var(--radius-pill); font-family: "IBM Plex Mono", monospace; font-size: 10px; text-transform: uppercase; letter-spacing: 0.14em; border: 1px solid var(--rule); }
       .pill.live { color: var(--green); border-color: color-mix(in srgb, var(--green) 50%, transparent); background: color-mix(in srgb, var(--green) 12%, transparent); }
       .pill.scaffold { color: var(--amber); border-color: color-mix(in srgb, var(--amber) 50%, transparent); background: color-mix(in srgb, var(--amber) 12%, transparent); }
       .pill.future { color: var(--ink-muted); border-color: var(--rule); }
       .pill.manual { color: var(--blue); border-color: color-mix(in srgb, var(--blue) 50%, transparent); background: color-mix(in srgb, var(--blue) 12%, transparent); }
 
-      /* Flow diagram */
+      /* File tree */
+      .tree { background: var(--paper-2); border: 1px solid var(--rule); border-radius: var(--radius); padding: 18px 22px; }
+      .tree ul { list-style: none; padding-left: 22px; margin: 0; border-left: 1px dashed var(--rule); }
+      .tree > ul { padding-left: 0; border-left: 0; }
+      .tree li { position: relative; padding: 6px 0; font-family: "IBM Plex Mono", monospace; font-size: 12px; line-height: 1.5; }
+      .tree li .name { color: var(--ink-strong); font-weight: 500; }
+      .tree li .dir { color: var(--accent); }
+      .tree li .desc { color: var(--ink-muted); font-family: "IBM Plex Sans", sans-serif; font-size: 12px; margin-left: 12px; }
+      .tree li .role { display: inline-block; margin-left: 8px; padding: 0 6px; font-size: 9px; letter-spacing: 0.1em; text-transform: uppercase; border-radius: 3px; }
+      .tree .role.data { background: color-mix(in srgb, var(--blue) 15%, transparent); color: var(--blue); }
+      .tree .role.logic { background: color-mix(in srgb, var(--violet) 15%, transparent); color: var(--violet); }
+      .tree .role.ui { background: color-mix(in srgb, var(--green) 15%, transparent); color: var(--green); }
+      .tree .role.io { background: color-mix(in srgb, var(--amber) 15%, transparent); color: var(--amber); }
+      .tree .role.cfg { background: color-mix(in srgb, var(--ink-faint) 18%, transparent); color: var(--ink-muted); }
+
+      /* Module-role legend */
+      .role-legend { display: flex; flex-wrap: wrap; gap: 14px; padding: 12px 16px; border: 1px solid var(--rule); border-radius: var(--radius); background: var(--paper-3); margin: 14px 0; }
+      .role-legend p { margin: 0; font-size: 12px; color: var(--ink-muted); }
+      .role-legend .role { display: inline-block; padding: 1px 7px; font-family: "IBM Plex Mono", monospace; font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; border-radius: 3px; margin-right: 6px; }
+
+      /* Walkthrough */
+      .walkthrough { display: grid; gap: 10px; counter-reset: wstep; margin: 14px 0; }
+      .wstep {
+        display: grid; grid-template-columns: 38px 1fr; gap: 14px; align-items: start;
+        padding: 14px 16px; border: 1px solid var(--rule); border-radius: var(--radius); background: var(--paper-2);
+      }
+      .wstep::before {
+        counter-increment: wstep; content: counter(wstep);
+        font-family: "IBM Plex Mono", monospace; font-weight: 600; font-size: 22px; color: var(--accent);
+      }
+      .wstep h4 { font-family: "IBM Plex Sans", sans-serif; font-size: 14px; margin-bottom: 4px; }
+      .wstep p { margin: 0 0 6px; color: var(--ink-muted); font-size: 13px; }
+      .wstep .file { font-family: "IBM Plex Mono", monospace; font-size: 11px; color: var(--accent); display: inline-block; padding: 1px 6px; background: var(--paper-3); border-radius: 3px; }
+
+      /* Pipeline */
       .flow { display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px; align-items: stretch; margin: 18px 0; }
       .flow .node {
         position: relative; padding: 12px 12px 10px; border: 1px solid var(--rule); border-radius: var(--radius);
         background: var(--paper-2); display: flex; flex-direction: column; gap: 6px;
       }
-      .flow .node h4 { font-family: "IBM Plex Sans", sans-serif; font-size: 13px; margin: 0; color: var(--ink-strong); font-weight: 600; }
+      .flow .node h4 { font-family: "IBM Plex Sans", sans-serif; font-size: 13px; font-weight: 600; }
       .flow .node p { margin: 0; font-size: 11px; color: var(--ink-muted); line-height: 1.45; }
       .flow .node .pill { font-size: 9px; padding: 1px 7px; align-self: flex-start; }
-      .flow .arrow {
-        align-self: center; color: var(--ink-faint); font-family: "IBM Plex Mono", monospace;
-        text-align: center;
-      }
-
-      /* Refresh diagram */
-      .seq { display: grid; gap: 10px; counter-reset: step; margin: 18px 0; }
-      .seq-step {
-        display: grid; grid-template-columns: 36px 1fr; gap: 14px; align-items: start;
-        padding: 14px 16px; border: 1px solid var(--rule); border-radius: var(--radius); background: var(--paper-2);
-      }
-      .seq-step::before {
-        counter-increment: step; content: counter(step);
-        font-family: "IBM Plex Mono", monospace; font-weight: 600; font-size: 22px; color: var(--accent);
-      }
-      .seq-step h4 { margin: 0 0 4px; font-family: "IBM Plex Sans", sans-serif; font-size: 14px; color: var(--ink-strong); }
-      .seq-step p { margin: 0; color: var(--ink-muted); font-size: 13px; }
-      .seq-step .pill { margin-left: 8px; }
+      .flow .arrow { align-self: center; color: var(--ink-faint); font-family: "IBM Plex Mono", monospace; text-align: center; }
 
       /* Maturity legend */
       .legend { display: flex; flex-wrap: wrap; gap: 10px; padding: 14px 16px; border: 1px solid var(--rule); border-radius: var(--radius); background: var(--paper-2); }
       .legend p { margin: 0; font-size: 12px; color: var(--ink-muted); }
-      .legend strong { color: var(--ink); }
 
-      /* Honest assessment */
       table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 13px; }
       th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--rule); vertical-align: top; }
       th { color: var(--ink-muted); font-weight: 500; font-family: "IBM Plex Mono", monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 0.1em; }
       td .pill { font-size: 9px; }
+      td code { font-size: 11px; }
 
       .back {
         display: inline-flex; align-items: center; gap: 6px; padding: 6px 12px;
@@ -130,9 +155,28 @@
       }
       .back:hover { border-color: var(--accent); color: var(--accent); }
 
+      .toc {
+        margin: 24px 0; padding: 14px 18px; border: 1px solid var(--rule); border-radius: var(--radius);
+        background: var(--paper-2);
+      }
+      .toc h4 { font-family: "IBM Plex Sans", sans-serif; font-weight: 600; font-size: 12px; text-transform: uppercase; letter-spacing: 0.14em; color: var(--ink-muted); margin: 0 0 8px; }
+      .toc ol { margin: 0; padding-left: 22px; }
+      .toc li { font-size: 13px; padding: 2px 0; }
+      .toc a { color: var(--ink); text-decoration: none; }
+      .toc a:hover { color: var(--accent); }
+
+      .db-options { display: grid; gap: 12px; margin: 16px 0; }
+      .db-option { padding: 16px 18px; border: 1px solid var(--rule); border-radius: var(--radius); background: var(--paper-2); }
+      .db-option h4 { font-family: "IBM Plex Sans", sans-serif; font-weight: 600; font-size: 14px; margin: 0 0 6px; color: var(--ink-strong); }
+      .db-option p { margin: 0 0 6px; font-size: 13px; color: var(--ink-muted); }
+      .db-option .meta { font-family: "IBM Plex Mono", monospace; font-size: 11px; color: var(--ink-faint); display: flex; flex-wrap: wrap; gap: 14px; margin-top: 8px; }
+      .db-option .meta span { color: var(--ink-muted); }
+      .db-option .meta strong { color: var(--ink); font-weight: 500; }
+      .db-option.recommended { border-color: var(--accent); }
+      .db-option.recommended h4::before { content: "★ "; color: var(--accent); }
+
       @media (max-width: 760px) {
-        .grid-2 { grid-template-columns: 1fr; }
-        .flow { grid-template-columns: 1fr; }
+        .grid-2, .grid-3, .flow { grid-template-columns: 1fr; }
         .flow .arrow { transform: rotate(90deg); }
       }
     </style>
@@ -148,239 +192,575 @@
       <a href="index.html" class="back">← Back to the terminal</a>
       <div style="height: 24px"></div>
 
-      <span class="eyebrow">Plain-English explainer</span>
+      <span class="eyebrow">Architecture reference</span>
       <h1>How the Physical AI Tracker actually works</h1>
       <p class="lede">
-        You asked a fair question: how live is this, and where does the data come from?
-        Here is an honest, no-jargon map of the pipeline today, what is genuinely live,
-        what is scaffolded but not wired, and what is on the roadmap.
+        Not a tour. A real walkthrough of where the data lives, how every click flows
+        through the code, what is genuinely a database versus what is just a JavaScript
+        file pretending to be one, and exactly how to get your edits into "main" so
+        they survive across devices.
       </p>
 
-      <div class="status-callout">
-        <strong>Current state, in one sentence.</strong>
-        The tracker is a <em>static</em> website. All ~140 companies are baked into the
-        JavaScript file your browser downloads. The numbers you see come from a curated
-        seed list, plus any edits you make in your own browser. Nothing on this site
-        polls Gmail, Pitchbook, or the open web in real time today.
+      <div class="toc">
+        <h4>Contents</h4>
+        <ol>
+          <li><a href="#stack">The stack in one paragraph</a></li>
+          <li><a href="#data-lives">Where the data actually lives</a></li>
+          <li><a href="#db-question">"Do we need a real database?" — answered honestly</a></li>
+          <li><a href="#tree">The repo, file by file</a></li>
+          <li><a href="#walkthrough-edit">Click-by-click: what happens when you press "+ Activity"</a></li>
+          <li><a href="#walkthrough-refresh">Click-by-click: what happens when you press "Refresh"</a></li>
+          <li><a href="#walkthrough-tag">Click-by-click: what happens when you assign a custom tag</a></li>
+          <li><a href="#pipeline">The data pipeline at a glance</a></li>
+          <li><a href="#gmail">Gmail integration design</a></li>
+          <li><a href="#build">Build, deploy, and the difference between dev and prod</a></li>
+          <li><a href="#publish">How to "publish" your edits so everyone sees them</a></li>
+          <li><a href="#status">Feature-by-feature status table</a></li>
+        </ol>
       </div>
 
-      <section>
-        <span class="eyebrow">Maturity legend</span>
-        <h2>What is live vs scaffolded</h2>
-        <div class="legend">
-          <p><span class="pill live">live</span> <strong>Live</strong> — fully working in your browser right now.</p>
-          <p><span class="pill manual">manual</span> <strong>Manual</strong> — you do it yourself (the analyst-in-the-loop step).</p>
-          <p><span class="pill scaffold">scaffold</span> <strong>Scaffold</strong> — the code path exists and runs with mock data; needs a real source / credentials / a backend.</p>
-          <p><span class="pill future">future</span> <strong>Future</strong> — designed but not yet built.</p>
+      <div class="status-callout">
+        <strong>Honest one-liner.</strong>
+        Today this is a <em>static website</em>. There is no database server. The
+        "database" is a TypeScript file that gets compiled into the JavaScript bundle
+        your browser downloads. Your edits live in your browser's <code>localStorage</code>
+        — they don't reach anyone else's screen until they get committed back into the
+        seed file and the site is redeployed.
+      </div>
+
+      <!-- ====== Stack ====== -->
+      <section id="stack">
+        <span class="eyebrow">Tech stack</span>
+        <h2>The stack in one paragraph</h2>
+        <p>
+          The whole site is a single-page React app written in TypeScript, bundled by Vite, and
+          hosted as static files on Vercel. State management is Zustand (a tiny store library — no
+          Redux). The data is a hand-curated TypeScript seed (~140 companies, ~150 activities).
+          The Excel export uses <code>exceljs</code>; charts use <code>recharts</code>; icons use
+          <code>lucide-react</code>. No backend, no API server, no database, no authentication. Anything
+          "live" that you see in the UI is either (a) in the JS bundle, or (b) in your browser's
+          <code>localStorage</code>.
+        </p>
+        <div class="grid-3">
+          <div class="card"><h3>Frontend</h3><p>React 19, TypeScript 5.7, Vite 6, Zustand 5, recharts, exceljs.</p></div>
+          <div class="card"><h3>Build</h3><p>Vite produces a <code>dist/</code> folder of static HTML / CSS / JS. Vercel serves it.</p></div>
+          <div class="card"><h3>Backend</h3><p>None today. Scripts under <code>scripts/</code> can run locally; GitHub Actions can run them on a schedule.</p></div>
         </div>
       </section>
 
-      <section>
-        <span class="eyebrow">Pipeline</span>
-        <h2>The five-stage data flow</h2>
-        <p>Everything is meant to flow left to right. Today only the first and last stages are doing real work.</p>
+      <!-- ====== Where the data lives ====== -->
+      <section id="data-lives">
+        <span class="eyebrow">Data residency</span>
+        <h2>Where the data actually lives</h2>
+        <p>This is the most important thing to understand. Three places hold data, and only one of them is shared:</p>
+        <table>
+          <thead>
+            <tr><th>Layer</th><th>Where</th><th>Who sees it</th><th>How it changes</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Seed</strong></td>
+              <td><code>src/data/seed*.ts</code> → compiled into the bundle</td>
+              <td>Everyone who loads the site</td>
+              <td>Edit the TS file → commit → redeploy</td>
+            </tr>
+            <tr>
+              <td><strong>Manual overrides</strong></td>
+              <td>Your browser's <code>localStorage</code></td>
+              <td>Only you, only on this device + browser</td>
+              <td>Click <code>Edit</code> or <code>+ Activity</code> on a company card</td>
+            </tr>
+            <tr>
+              <td><strong>Custom tags</strong></td>
+              <td>Your browser's <code>localStorage</code> (separate key)</td>
+              <td>Only you, only on this device + browser</td>
+              <td>Sidebar "Custom Tags" panel</td>
+            </tr>
+          </tbody>
+        </table>
+        <p>
+          When the app starts, it merges the seed with anything in your <code>localStorage</code>
+          and that's what you see. Picture it as two transparencies laid on top of each other.
+        </p>
+        <pre><code>┌──────────────────────────┐
+│  SHIPPED IN BUNDLE       │   ← everyone has it
+│  src/data/seed*.ts       │
+└──────────────────────────┘
+           +
+┌──────────────────────────┐
+│  YOUR BROWSER ONLY       │   ← just you
+│  localStorage overrides  │
+│  localStorage tags       │
+└──────────────────────────┘
+           ↓
+   What you see on screen</code></pre>
+      </section>
+
+      <!-- ====== Database question ====== -->
+      <section id="db-question">
+        <span class="eyebrow">The database question</span>
+        <h2>"Do we need actual database engineering?"</h2>
+        <p>
+          Short answer: <strong>not for what you're doing today</strong>. The "database"
+          here is a glorified spreadsheet that lives inside the website's code. That is
+          fine — and intentional — for an internal single-user tracker where the cost of
+          standing up a real backend (Postgres, auth, hosting, backups) outweighs the
+          benefit. But it has real limits, and you've already hit one of them: edits in
+          your browser don't sync to other devices or other people.
+        </p>
+        <p>Here are the four options on the spectrum, in increasing order of complexity:</p>
+
+        <div class="db-options">
+          <div class="db-option recommended">
+            <h4>Option A — Stay as-is, but use Export → commit (the recommendation)</h4>
+            <p>
+              You edit in your browser. Click the new "Export my edits" button (coming in the same
+              update as this doc). It downloads a JSON file. You hand it to me / paste it into a PR.
+              We bake it into the seed and redeploy. After the next build, the data is in everyone's
+              bundle.
+            </p>
+            <div class="meta">
+              <span><strong>Build effort:</strong> small (export button + import script)</span>
+              <span><strong>Runtime cost:</strong> $0</span>
+              <span><strong>Sharing:</strong> via PR / redeploy</span>
+              <span><strong>Latency to live:</strong> minutes (after deploy)</span>
+            </div>
+          </div>
+
+          <div class="db-option">
+            <h4>Option B — Single JSON file in the repo, edited via a server function</h4>
+            <p>
+              Move the seed out of TypeScript into <code>data.json</code> in the repo. Add a Vercel /
+              Cloudflare serverless function that, when you click "Save", commits the new JSON via
+              the GitHub API. The site re-fetches the JSON on load. Halfway between a static site and
+              a real DB. Adds an auth requirement (so randos can't edit your dataset).
+            </p>
+            <div class="meta">
+              <span><strong>Build effort:</strong> medium (auth + 1 function + JSON refactor)</span>
+              <span><strong>Runtime cost:</strong> $0–$5/mo</span>
+              <span><strong>Sharing:</strong> real-time after Vercel rebuilds (~60s)</span>
+              <span><strong>Latency to live:</strong> 1 min after save</span>
+            </div>
+          </div>
+
+          <div class="db-option">
+            <h4>Option C — Real database (Supabase / Firebase / Postgres)</h4>
+            <p>
+              Drop the seed entirely. All companies and activities live in Postgres. App fetches
+              from a REST API on load. Add auth so only you (or your team) can write. This is the
+              "proper" answer. Lets multiple analysts edit simultaneously, supports row history,
+              fine-grained permissions, audit logs, full text search, etc.
+            </p>
+            <div class="meta">
+              <span><strong>Build effort:</strong> large (schema, RLS, auth, migrations, API layer)</span>
+              <span><strong>Runtime cost:</strong> $0–$25/mo (Supabase free tier covers a lot)</span>
+              <span><strong>Sharing:</strong> instant, multi-user</span>
+              <span><strong>Latency to live:</strong> instant</span>
+            </div>
+          </div>
+
+          <div class="db-option">
+            <h4>Option D — Airtable / Notion DB as the backing store</h4>
+            <p>
+              Use a SaaS spreadsheet-database as the canonical data, app reads via their API.
+              Lowest engineering effort; you get a UI to edit data outside the app for free; the
+              app becomes a "view" on top. Downsides: rate limits, API churn, vendor lock-in.
+            </p>
+            <div class="meta">
+              <span><strong>Build effort:</strong> medium-small (API client + schema mapping)</span>
+              <span><strong>Runtime cost:</strong> $10–$24/mo for the SaaS tier</span>
+              <span><strong>Sharing:</strong> instant via Airtable, with API caching</span>
+              <span><strong>Latency to live:</strong> seconds</span>
+            </div>
+          </div>
+        </div>
+
+        <p>
+          My recommendation for an internal IB tracker: <strong>start with Option A</strong>
+          (you already have it). If you find yourself wanting your colleague to see your edits
+          live, jump to Option C with Supabase — it's the cheapest "real" DB and only takes a
+          day to wire. Options B and D are middle grounds that you'd outgrow.
+        </p>
+      </section>
+
+      <!-- ====== File tree ====== -->
+      <section id="tree">
+        <span class="eyebrow">Code layout</span>
+        <h2>The repo, file by file</h2>
+        <p>The whole codebase is ~4,000 lines of TypeScript across 40 files. Here is what each one does, with role tags so you can spot the patterns.</p>
+
+        <div class="role-legend">
+          <p><span class="role data" style="background: color-mix(in srgb, var(--blue) 15%, transparent); color: var(--blue);">DATA</span> Holds the actual records.</p>
+          <p><span class="role logic" style="background: color-mix(in srgb, var(--violet) 15%, transparent); color: var(--violet);">LOGIC</span> Pure functions / state machines.</p>
+          <p><span class="role ui" style="background: color-mix(in srgb, var(--green) 15%, transparent); color: var(--green);">UI</span> React components you see.</p>
+          <p><span class="role io" style="background: color-mix(in srgb, var(--amber) 15%, transparent); color: var(--amber);">I/O</span> Reads / writes the outside world.</p>
+          <p><span class="role cfg" style="background: color-mix(in srgb, var(--ink-faint) 18%, transparent); color: var(--ink-muted);">CONFIG</span> Build / deploy / TypeScript.</p>
+        </div>
+
+        <div class="tree">
+          <ul>
+            <li><span class="dir name">physical-ai-market-tracker/</span></li>
+            <ul>
+              <li><span class="dir name">src/</span><span class="desc">all application source code</span></li>
+              <ul>
+                <li><span class="name">main.tsx</span><span class="role ui">ui</span><span class="desc">React entry point — mounts <code>&lt;AppShell /&gt;</code> on <code>#root</code>.</span></li>
+
+                <li><span class="dir name">src/data/</span><span class="desc">the seed dataset (the bundled "database")</span></li>
+                <ul>
+                  <li><span class="name">seed.ts</span><span class="role data">data</span><span class="desc">Base 27 companies + sample rows; entry point that re-exports everything merged together.</span></li>
+                  <li><span class="name">seedExtended.ts</span><span class="role data">data</span><span class="desc">+40 humanoid / AV / defense / drone / industrial / embodied AI / edge-AI companies with funding histories.</span></li>
+                  <li><span class="name">seedSupplyChain.ts</span><span class="role data">data</span><span class="desc">+70 supply-chain and stack companies (LIDAR, actuators, surgical, ag, construction, marine, world models, etc.).</span></li>
+                </ul>
+
+                <li><span class="dir name">src/lib/</span><span class="desc">pure logic, state, helpers</span></li>
+                <ul>
+                  <li><span class="name">types.ts</span><span class="role logic">logic</span><span class="desc">The schema. <code>Company</code>, <code>Activity</code>, <code>Source</code>, <code>ReviewQueueItem</code>, <code>UserTag</code> — every shape in the app starts here.</span></li>
+                  <li><span class="name">constants.ts</span><span class="role logic">logic</span><span class="desc">The fixed enums (subsectors, activity types, confidence levels).</span></li>
+                  <li><span class="name">store.ts</span><span class="role logic">logic</span><span class="desc">The Zustand store. Holds the live arrays of activities / companies / sources / review queue. All mutations go through here.</span></li>
+                  <li><span class="name">overrides.ts</span><span class="role io">i/o</span><span class="desc">Reads / writes your manual edits to <code>localStorage</code>. Applies them on top of the seed at startup.</span></li>
+                  <li><span class="name">userTags.ts</span><span class="role io">i/o</span><span class="desc">Separate store for your custom tags + assignments. Also <code>localStorage</code>-backed.</span></li>
+                  <li><span class="name">filtering.ts</span><span class="role logic">logic</span><span class="desc">Pure functions: filter activities by search/type/subsector, sort, hide samples.</span></li>
+                  <li><span class="name">analytics.ts</span><span class="role logic">logic</span><span class="desc">Aggregations: per-company metrics, deal value by month, counts by subsector.</span></li>
+                  <li><span class="name">dedupe.ts</span><span class="role logic">logic</span><span class="desc">When a review-queue candidate matches an existing activity, return the duplicate. Used by approve / merge.</span></li>
+                  <li><span class="name">review.ts</span><span class="role logic">logic</span><span class="desc">Approve / reject pipeline. Sanitizes Gmail snippets before they leak into the public dataset.</span></li>
+                  <li><span class="name">gmail.ts</span><span class="role logic">logic</span><span class="desc">Regex extractor: turns a Gmail-shaped email object into a candidate row. Mock-only today.</span></li>
+                  <li><span class="name">verify.ts</span><span class="role logic">logic</span><span class="desc">The verifier. Walks every activity, returns findings (stale, missing source, placeholder host, low confidence).</span></li>
+                  <li><span class="name">exportExcel.ts</span><span class="role io">i/o</span><span class="desc">Builds a .xlsx file from the visible activities. Two sheets + summary.</span></li>
+                  <li><span class="name">format.ts</span><span class="role logic">logic</span><span class="desc">Display helpers: <code>compactUsd</code>, <code>formatDate</code>, <code>titleCase</code>.</span></li>
+                  <li><span class="name">useTheme.ts</span><span class="role logic">logic</span><span class="desc">Light / dark mode toggle.</span></li>
+                  <li><span class="name">*.test.ts</span><span class="role logic">logic</span><span class="desc">Vitest unit tests for the modules above. 20 tests total.</span></li>
+                </ul>
+
+                <li><span class="dir name">src/components/</span><span class="desc">React components — the UI</span></li>
+                <ul>
+                  <li><span class="name">AppShell.tsx</span><span class="role ui">ui</span><span class="desc">Top-level layout. Sidebar nav, topbar search/refresh/verify/export, the four tab routes.</span></li>
+                  <li><span class="name">Dashboard.tsx</span><span class="role ui">ui</span><span class="desc">Landing view — headline metrics, charts, latest signals.</span></li>
+                  <li><span class="name">ActivityTracker.tsx</span><span class="role ui">ui</span><span class="desc">The big table view with filters and edit pencils.</span></li>
+                  <li><span class="name">ReviewQueue.tsx</span><span class="role ui">ui</span><span class="desc">Approve / reject / merge candidates from ingestion.</span></li>
+                  <li><span class="name">CompanyProfiles.tsx</span><span class="role ui">ui</span><span class="desc">Grid of company cards with sources, tags, stale flag, Edit and + Activity buttons.</span></li>
+                  <li><span class="name">ActivityModal.tsx</span><span class="role ui">ui</span><span class="desc">Add / edit an activity. Validates input, calls <code>addActivity</code> or <code>updateActivity</code>.</span></li>
+                  <li><span class="name">CompanyEditModal.tsx</span><span class="role ui">ui</span><span class="desc">Edit a company's overview / subsector / geography / website.</span></li>
+                  <li><span class="name">VerificationDrawer.tsx</span><span class="role ui">ui</span><span class="desc">Right-side panel listing every finding from the verifier with deep-links to sources.</span></li>
+                  <li><span class="name">UserTagsPanel.tsx</span><span class="role ui">ui</span><span class="desc">Sidebar widget to create / rename / color / delete custom tags.</span></li>
+                  <li><span class="name">CompanyTagPicker.tsx</span><span class="role ui">ui</span><span class="desc">Popover on each company card to assign tags.</span></li>
+                  <li><span class="name">ManualEditsPanel.tsx</span><span class="role ui">ui</span><span class="desc">Sidebar widget showing count of overrides + "Reset to seed" button + link to this doc.</span></li>
+                  <li><span class="name">Charts.tsx</span><span class="role ui">ui</span><span class="desc">recharts wrappers (donut, horizontal bars, time series).</span></li>
+                  <li><span class="name">Badge.tsx, MetricCard.tsx, ThemeToggle.tsx</span><span class="role ui">ui</span><span class="desc">Small atomic UI primitives.</span></li>
+                </ul>
+
+                <li><span class="dir name">src/styles/</span><span class="desc">CSS</span></li>
+                <ul>
+                  <li><span class="name">tokens.css</span><span class="role cfg">cfg</span><span class="desc">Color palette, font sizes, radii — the design system tokens.</span></li>
+                  <li><span class="name">app.css</span><span class="role cfg">cfg</span><span class="desc">Layout + every component class. One file, no CSS-in-JS.</span></li>
+                </ul>
+              </ul>
+
+              <li><span class="dir name">scripts/</span><span class="desc">tsx CLI scripts (Node, not bundled)</span></li>
+              <ul>
+                <li><span class="name">mock-gmail-ingest.ts</span><span class="role io">i/o</span><span class="desc">Hardcoded mock emails → run through <code>parseGmailCandidate</code> → write candidates JSON.</span></li>
+                <li><span class="name">rss-ingest.ts</span><span class="role io">i/o</span><span class="desc">Placeholder RSS fetcher — emits mock candidates today.</span></li>
+                <li><span class="name">verify-data.ts</span><span class="role io">i/o</span><span class="desc">Runs the verifier offline. Writes <code>verifier-output/verification-report.{json,md}</code>.</span></li>
+              </ul>
+
+              <li><span class="dir name">public/</span><span class="desc">static assets, copied as-is into the build</span></li>
+              <ul>
+                <li><span class="name">how-it-works.html</span><span class="role ui">ui</span><span class="desc">This page. Self-contained, no React, no JS bundle.</span></li>
+              </ul>
+
+              <li><span class="dir name">.github/workflows/</span><span class="desc">CI/CD</span></li>
+              <ul>
+                <li><span class="name">deploy-pages.yml</span><span class="role cfg">cfg</span><span class="desc">On push to main: install, test, build, publish to GitHub Pages.</span></li>
+                <li><span class="name">refresh-data.yml</span><span class="role cfg">cfg</span><span class="desc">Daily at 14:00 UTC: run ingest + verify, open a PR with the diff.</span></li>
+              </ul>
+
+              <li><span class="name">vite.config.ts</span><span class="role cfg">cfg</span><span class="desc">Vite build config; reads <code>VITE_BASE_PATH</code> for deploys under a subpath.</span></li>
+              <li><span class="name">tsconfig*.json, eslint.config.js, vitest.config.ts</span><span class="role cfg">cfg</span><span class="desc">Compiler, linter, test config.</span></li>
+              <li><span class="name">package.json</span><span class="role cfg">cfg</span><span class="desc">Dependencies and npm scripts.</span></li>
+            </ul>
+          </ul>
+        </div>
+      </section>
+
+      <!-- ====== Walkthrough: + Activity ====== -->
+      <section id="walkthrough-edit">
+        <span class="eyebrow">Click-by-click trace</span>
+        <h2>What happens when you press "+ Activity" on a company card</h2>
+        <p>End to end, every file touched, in order:</p>
+        <div class="walkthrough">
+          <div class="wstep">
+            <div>
+              <h4>You click the button</h4>
+              <p>JSX in <span class="file">src/components/CompanyProfiles.tsx</span> sets <code>setAddingActivityFor(company)</code>. React re-renders and a modal mounts.</p>
+            </div>
+          </div>
+          <div class="wstep">
+            <div>
+              <h4>The modal opens</h4>
+              <p><span class="file">src/components/ActivityModal.tsx</span> renders with <code>mode="add"</code> and <code>initial</code> pre-filled with the company's id, subsector, geography. You fill in date, investors, amount, description, source URL.</p>
+            </div>
+          </div>
+          <div class="wstep">
+            <div>
+              <h4>You click Save</h4>
+              <p>The modal calls <code>useMarketStore().addActivity(payload)</code> from <span class="file">src/lib/store.ts</span>.</p>
+            </div>
+          </div>
+          <div class="wstep">
+            <div>
+              <h4>Validation</h4>
+              <p><span class="file">store.ts</span> checks: ISO date format, non-negative deal value, http(s) source URL, company id resolves. If any fail, it returns an error and the modal shows it.</p>
+            </div>
+          </div>
+          <div class="wstep">
+            <div>
+              <h4>Dedupe</h4>
+              <p><code>findDuplicateActivity</code> in <span class="file">src/lib/dedupe.ts</span> runs against existing activities. If a fuzzy match is found, the store returns <code>{ ok: false, reason: "duplicate" }</code> and the modal asks you to edit the existing row instead.</p>
+            </div>
+          </div>
+          <div class="wstep">
+            <div>
+              <h4>Create the row</h4>
+              <p>The store builds a new <code>Activity</code> with an id like <code>a-manual-&lt;timestamp&gt;-&lt;random&gt;</code>, plus a synthesized <code>Source</code> row pointing at the URL you provided.</p>
+            </div>
+          </div>
+          <div class="wstep">
+            <div>
+              <h4>Persist to localStorage</h4>
+              <p>Because the id starts with <code>a-manual-</code>, the store's new override layer (added in this update) routes it through <span class="file">src/lib/overrides.ts</span> → <code>persistNewActivities()</code> → <code>localStorage.setItem("paimt-overrides-new-activities-v1", JSON.stringify([...]))</code>.</p>
+            </div>
+          </div>
+          <div class="wstep">
+            <div>
+              <h4>Update React state</h4>
+              <p>The store sets <code>activities: [newRow, ...state.activities]</code>. Zustand notifies subscribers. Every component that uses <code>useMarketStore</code> re-renders. The new row appears in the Activity Tracker, on the company card, in the charts, in the export.</p>
+            </div>
+          </div>
+          <div class="wstep">
+            <div>
+              <h4>Next page load</h4>
+              <p>At app startup, <span class="file">store.ts</span> calls <code>loadOverrides()</code> from <span class="file">overrides.ts</span>, reads your localStorage, and merges your manual rows on top of the seed — so your edits persist across refresh.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ====== Walkthrough: Refresh ====== -->
+      <section id="walkthrough-refresh">
+        <span class="eyebrow">Click-by-click trace</span>
+        <h2>What happens when you press "Refresh data"</h2>
+        <div class="walkthrough">
+          <div class="wstep">
+            <div>
+              <h4>You click the button</h4>
+              <p><span class="file">src/components/AppShell.tsx</span> calls <code>handleRefresh()</code>.</p>
+            </div>
+          </div>
+          <div class="wstep">
+            <div>
+              <h4>(Optional) POST to a backend endpoint</h4>
+              <p>If a <code>VITE_REFRESH_ENDPOINT</code> environment variable is configured at build time, the page does <code>fetch(endpoint, { method: "POST" })</code>. Today none is configured, so this is a no-op.</p>
+            </div>
+          </div>
+          <div class="wstep">
+            <div>
+              <h4>Cache-busted reload</h4>
+              <p>The handler appends <code>?r=&lt;timestamp&gt;</code> to the URL and calls <code>window.location.replace()</code>. The browser fetches <code>index.html</code> from scratch; the new HTML references whatever JS bundle hash was deployed most recently.</p>
+            </div>
+          </div>
+          <div class="wstep">
+            <div>
+              <h4>Bundle downloads, seed loads, your overrides re-apply</h4>
+              <p>If a newer build is on the server, you get newer seed data. Your localStorage overrides still layer on top because the storage keys don't change between builds.</p>
+            </div>
+          </div>
+        </div>
+        <p style="font-size: 13px; color: var(--ink-muted);">
+          So today Refresh is really "fetch the latest version of this website." It is <em>not</em>
+          a "go pull fresh data from Gmail / Pitchbook / Crunchbase" button. The Gmail / RSS scripts
+          run as a separate process (locally or in GitHub Actions), produce a PR, and only after that
+          PR is merged + redeployed will Refresh expose the new rows.
+        </p>
+      </section>
+
+      <!-- ====== Walkthrough: tagging ====== -->
+      <section id="walkthrough-tag">
+        <span class="eyebrow">Click-by-click trace</span>
+        <h2>What happens when you assign a custom tag</h2>
+        <div class="walkthrough">
+          <div class="wstep">
+            <div>
+              <h4>You define a tag in the sidebar</h4>
+              <p><span class="file">src/components/UserTagsPanel.tsx</span> calls <code>createTag(label)</code> from <span class="file">src/lib/userTags.ts</span>. This is a separate Zustand store from the market data — tags don't touch the main store.</p>
+            </div>
+          </div>
+          <div class="wstep">
+            <div>
+              <h4>The tag is persisted</h4>
+              <p><code>localStorage.setItem("paimt-user-tags-v1", JSON.stringify([...tags, newTag]))</code>.</p>
+            </div>
+          </div>
+          <div class="wstep">
+            <div>
+              <h4>You click "Add tag" on a company card</h4>
+              <p><span class="file">src/components/CompanyTagPicker.tsx</span> renders a popover listing all defined tags. Toggling one calls <code>toggleAssignment(companyId, tagId)</code>.</p>
+            </div>
+          </div>
+          <div class="wstep">
+            <div>
+              <h4>Assignments are persisted</h4>
+              <p>A separate localStorage key <code>paimt-user-tag-assignments-v1</code> holds a <code>Record&lt;companyId, tagId[]&gt;</code>. Two keys keeps tag definitions and assignments cleanly separable.</p>
+            </div>
+          </div>
+          <div class="wstep">
+            <div>
+              <h4>Tag filter bar at the top of Companies</h4>
+              <p>Selected tag ids drive <code>companiesMatchingTagFilter()</code> in <span class="file">userTags.ts</span>. AND semantics: a card shows only if it carries every selected tag.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ====== Pipeline diagram ====== -->
+      <section id="pipeline">
+        <span class="eyebrow">End-to-end</span>
+        <h2>The data pipeline at a glance</h2>
         <div class="flow">
-          <div class="node">
-            <span class="pill live">live</span>
-            <h4>1. Sources</h4>
-            <p>Curated seed list (~140 companies); your manual edits; mock Gmail and RSS samples.</p>
-          </div>
+          <div class="node"><span class="pill live">live</span><h4>1. Sources</h4><p>Seed TS files, your manual edits, mock Gmail and RSS samples.</p></div>
           <div class="arrow">→</div>
-          <div class="node">
-            <span class="pill scaffold">scaffold</span>
-            <h4>2. Ingestion</h4>
-            <p>Scripts that read a newsletter or RSS feed and propose candidates. Today they run on mock data only.</p>
-          </div>
+          <div class="node"><span class="pill scaffold">scaffold</span><h4>2. Ingestion</h4><p><code>scripts/*-ingest.ts</code> proposes candidates from a feed.</p></div>
           <div class="arrow">→</div>
-          <div class="node">
-            <span class="pill live">live</span>
-            <h4>3. Review queue</h4>
-            <p>Candidates wait here until <em>you</em> approve, reject, or merge them — the human-in-the-loop gate.</p>
-          </div>
+          <div class="node"><span class="pill live">live</span><h4>3. Review queue</h4><p>Candidates wait until you approve / reject / merge.</p></div>
           <div class="arrow">→</div>
-          <div class="node">
-            <span class="pill live">live</span>
-            <h4>4. Database</h4>
-            <p>Your in-browser store. Seed + approved candidates + your edits. Persisted to <code>localStorage</code>.</p>
-          </div>
+          <div class="node"><span class="pill live">live</span><h4>4. Database</h4><p>The merged set: bundle seed + your localStorage overrides.</p></div>
           <div class="arrow">→</div>
-          <div class="node">
-            <span class="pill live">live</span>
-            <h4>5. UI</h4>
-            <p>Dashboard, Activity Tracker, Company Profiles, Verifier drawer — what you see on screen.</p>
-          </div>
+          <div class="node"><span class="pill live">live</span><h4>5. UI</h4><p>Dashboard, Tracker, Profiles, Verifier drawer.</p></div>
         </div>
       </section>
 
-      <section>
-        <span class="eyebrow">Refresh button</span>
-        <h2>What pressing "Refresh data" actually does</h2>
-        <p>The button is intentionally simple today, because there is no live backend to call yet. Here is the exact sequence:</p>
-        <div class="seq">
-          <div class="seq-step">
-            <div>
-              <h4>You click <span class="chip">Refresh data</span></h4>
-              <p>The button enters a spinning "Refreshing…" state.</p>
-            </div>
-          </div>
-          <div class="seq-step">
-            <div>
-              <h4>If a backend endpoint is configured <span class="pill future">future</span></h4>
-              <p>The page posts to <code>VITE_REFRESH_ENDPOINT</code>. That endpoint is meant to kick off a server-side run of the ingest + verify pipeline. None is wired today.</p>
-            </div>
-          </div>
-          <div class="seq-step">
-            <div>
-              <h4>The page hard-reloads with a cache-buster <span class="pill live">live</span></h4>
-              <p>It appends <code>?r=&lt;timestamp&gt;</code> to the URL and reloads. This guarantees you fetch the freshest deployed JavaScript bundle — useful right after we ship an update.</p>
-            </div>
-          </div>
-          <div class="seq-step">
-            <div>
-              <h4>New bundle = new seed data <span class="pill live">live</span></h4>
-              <p>When we add companies or fix figures, we redeploy the site. The next refresh pulls those changes in. Your <em>own</em> manual edits and tags survive — they live in <code>localStorage</code>, not in the bundle.</p>
-            </div>
-          </div>
-        </div>
-        <p style="color: var(--ink-muted); font-size: 13px;">
-          Translation: refresh is a "pull the latest version of this website" button, not yet a "go fetch tonight's news" button.
-          The second behaviour is what the Gmail integration below is building toward.
-        </p>
-      </section>
-
-      <section>
-        <span class="eyebrow">Gmail integration</span>
-        <h2>How the Gmail flow is designed to work</h2>
+      <!-- ====== Gmail integration ====== -->
+      <section id="gmail">
+        <span class="eyebrow">Gmail integration design</span>
+        <h2>How the Gmail flow is meant to work</h2>
         <p>
-          The plan is to have the system sweep your inbox for newsletters (The Information, Axios, etc.) and
-          surface every Physical AI funding / M&A / partnership signal it finds — but never write to the
-          public dataset without you approving first. Eight steps:
+          The goal: sweep your inbox for newsletters (The Information, Axios, etc.) and surface every
+          Physical AI funding / M&A / partnership signal it finds — but never write to the public
+          dataset without you approving first.
         </p>
-        <div class="seq">
-          <div class="seq-step">
-            <div>
-              <h4>Authenticate Gmail <span class="pill scaffold">scaffold</span></h4>
-              <p>OAuth handshake against your Google account. The credentials live on your machine, not on this site.</p>
-            </div>
-          </div>
-          <div class="seq-step">
-            <div>
-              <h4>Sweep inbox for matching newsletters <span class="pill scaffold">scaffold</span></h4>
-              <p>A query like <code>from:hello@theinformation.com newer_than:7d</code> pulls candidate threads.</p>
-            </div>
-          </div>
-          <div class="seq-step">
-            <div>
-              <h4>Extract company / amount / counterparty <span class="pill scaffold">scaffold</span></h4>
-              <p>Regex today, LLM later. The extractor builds a <em>candidate row</em>, not a confirmed row.</p>
-            </div>
-          </div>
-          <div class="seq-step">
-            <div>
-              <h4>Dedupe against existing rows <span class="pill live">live</span></h4>
-              <p>If "Anduril $4B" already exists, the candidate is flagged as a likely duplicate, not a new entry.</p>
-            </div>
-          </div>
-          <div class="seq-step">
-            <div>
-              <h4>Land in the Review Queue <span class="pill live">live</span></h4>
-              <p>You see the candidate in the Review Queue tab. Gmail snippets stay private — only sanitized text is shown.</p>
-            </div>
-          </div>
-          <div class="seq-step">
-            <div>
-              <h4>You approve, merge, or reject <span class="pill manual">manual</span></h4>
-              <p>This is the <strong>only</strong> step that can write to the database. No bypass.</p>
-            </div>
-          </div>
-          <div class="seq-step">
-            <div>
-              <h4>Verifier flags stale or unsourced records <span class="pill live">live</span></h4>
-              <p>The "Verify numbers" drawer lists anything older than 90 days, missing a source, or marked low-confidence.</p>
-            </div>
-          </div>
-          <div class="seq-step">
-            <div>
-              <h4>Daily cron runs the whole pipeline <span class="pill scaffold">scaffold</span></h4>
-              <p>A GitHub Action is committed (<code>.github/workflows/refresh-data.yml</code>). It runs at 14:00 UTC daily and opens a pull request rather than writing directly — preserving the review gate.</p>
-            </div>
-          </div>
+        <div class="walkthrough">
+          <div class="wstep"><div><h4>1. Authenticate Gmail <span class="pill scaffold">scaffold</span></h4><p>OAuth handshake against your Google account, run locally or in a Cloud Function. Tokens never live in the static bundle.</p></div></div>
+          <div class="wstep"><div><h4>2. Sweep matching newsletters <span class="pill scaffold">scaffold</span></h4><p>A Gmail API query like <code>from:hello@theinformation.com newer_than:7d</code> returns recent threads.</p></div></div>
+          <div class="wstep"><div><h4>3. Extract company / amount / counterparty <span class="pill scaffold">scaffold</span></h4><p>Regex today (<span class="file">src/lib/gmail.ts</span>: <code>parseGmailCandidate</code>); LLM later. Returns a candidate row.</p></div></div>
+          <div class="wstep"><div><h4>4. Dedupe against existing rows <span class="pill live">live</span></h4><p><span class="file">src/lib/dedupe.ts</span> flags fuzzy duplicates so we route them through merge rather than create.</p></div></div>
+          <div class="wstep"><div><h4>5. Land in the Review Queue <span class="pill live">live</span></h4><p>You see the candidate in the Review Queue tab. Gmail snippets stay private — only sanitized text reaches the published dataset.</p></div></div>
+          <div class="wstep"><div><h4>6. You approve, merge, or reject <span class="pill manual">manual</span></h4><p>Approval logic in <span class="file">src/lib/review.ts</span> strips Gmail IDs, sender, subject, snippets from the publishable Source before it lands in the dataset.</p></div></div>
+          <div class="wstep"><div><h4>7. Verifier flags stale or unsourced records <span class="pill live">live</span></h4><p><span class="file">src/lib/verify.ts</span> runs in-app; <span class="file">scripts/verify-data.ts</span> writes a Markdown re-check sheet.</p></div></div>
+          <div class="wstep"><div><h4>8. Daily cron runs the whole pipeline <span class="pill scaffold">scaffold</span></h4><p><span class="file">.github/workflows/refresh-data.yml</span> at 14:00 UTC daily. Opens a PR for analyst review — never writes directly.</p></div></div>
         </div>
       </section>
 
-      <section>
-        <span class="eyebrow">Editing companies yourself</span>
-        <h2>The manual update path you just got</h2>
+      <!-- ====== Build pipeline ====== -->
+      <section id="build">
+        <span class="eyebrow">Build + deploy</span>
+        <h2>How dev becomes prod</h2>
+        <p>From editing a file to it being live in your browser:</p>
+        <pre><code># 1. You (or I) edit a file under src/
+# 2. Locally:
+npm run dev      # Vite dev server, http://localhost:5173
+                 # → hot module reload, no rebuild needed
+
+# 3. Before commit, you run:
+npm run typecheck  # TypeScript: tsc -b — finds type errors
+npm run test       # vitest run — 20 unit tests, must all pass
+npm run build      # tsc -b && vite build → dist/ static files
+
+# 4. Push to GitHub. The CI workflow .github/workflows/deploy-pages.yml:
+#    - runs typecheck + test + build with VITE_BASE_PATH=/physical-ai-market-tracker/
+#    - publishes dist/ to GitHub Pages
+
+# 5. Separately, the deploy used by ai_map_repo uses Vercel:
+#    - we copy the contents of dist/ into /Users/.../ai_map_repo/physical-ai/
+#    - we commit + push to https://github.com/tishir31/ai_map
+#    - Vercel detects the push and redeploys
+#    - the /physical-ai/ tab on the AI Map site reflects the change
+</code></pre>
         <p>
-          On any company card on the <strong>Company Profiles</strong> page you now have two new buttons:
-        </p>
-        <div class="grid-2">
-          <div class="card">
-            <h3><span class="chip">Edit</span> a company</h3>
-            <p>Update the overview text, subsector, geography, website. Your change overrides the seed for that field. The seed is never touched.</p>
-          </div>
-          <div class="card">
-            <h3><span class="chip">+ Activity</span> on a company</h3>
-            <p>Add a fresh funding round, M&A, partnership, customer contract, etc. You set the date, deal value, investors, source URL, and confidence.</p>
-          </div>
-        </div>
-        <p style="color: var(--ink-muted); font-size: 13px;">
-          Both kinds of edit are saved to your browser's <code>localStorage</code>, so they survive refreshes and are scoped to this device.
-          The sidebar shows a live count of edits and a "Reset to seed" button if you want to start over.
-          When we ship a new build that contains the same fact, your override is preserved — it sits on top of the seed.
+          The point: there is no server-side "save" anywhere. Every "deploy" is "ship a new bundle
+          of static files." If you want the dataset to change, you have to either (a) edit your own
+          browser (localStorage), or (b) cause a new bundle to be deployed.
         </p>
       </section>
 
-      <section>
-        <span class="eyebrow">Component-by-component</span>
+      <!-- ====== Publishing your edits ====== -->
+      <section id="publish">
+        <span class="eyebrow">Get your edits into main</span>
+        <h2>The bridge: localStorage → bundle</h2>
+        <p>
+          Until a real database is added, here is the workflow to move an edit from your browser
+          into the shared bundle so it shows up for everyone after the next deploy:
+        </p>
+        <div class="walkthrough">
+          <div class="wstep">
+            <div>
+              <h4>Edit in the UI</h4>
+              <p>Use the <code>Edit</code> or <code>+ Activity</code> buttons on a company card. Your changes are immediately saved to localStorage.</p>
+            </div>
+          </div>
+          <div class="wstep">
+            <div>
+              <h4>Click "Export my edits" in the sidebar</h4>
+              <p>The Manual Edits panel downloads a JSON file with everything you've added or overridden. (New in this update.)</p>
+            </div>
+          </div>
+          <div class="wstep">
+            <div>
+              <h4>Send me the JSON (or commit it yourself)</h4>
+              <p>I run <code>npm run import:overrides ~/Downloads/paimt-overrides-&lt;date&gt;.json</code>. The script merges your overrides into the seed files (or a new <code>src/data/seedOverrides.ts</code>).</p>
+            </div>
+          </div>
+          <div class="wstep">
+            <div>
+              <h4>Commit + redeploy</h4>
+              <p>The change is now in the bundle. Everyone who reloads the site sees it. Your local overrides can be reset (they are now redundant with the seed).</p>
+            </div>
+          </div>
+        </div>
+        <p style="font-size: 13px; color: var(--ink-muted);">
+          That is the cheapest, most honest version of a "save to main" button without a backend.
+          The day you want this to happen with one click — that is the day to add Supabase.
+        </p>
+      </section>
+
+      <!-- ====== Status table ====== -->
+      <section id="status">
+        <span class="eyebrow">Feature-by-feature</span>
         <h2>Honest status of every feature</h2>
         <table>
           <thead>
-            <tr><th>Feature</th><th>Status</th><th>What that means</th></tr>
+            <tr><th>Feature</th><th>Status</th><th>Files</th><th>What that means</th></tr>
           </thead>
           <tbody>
-            <tr><td>Seed dataset (~140 companies)</td><td><span class="pill live">live</span></td><td>Curated by hand. Updated when we ship a new build.</td></tr>
-            <tr><td>Custom tags (A / B / world models / etc.)</td><td><span class="pill live">live</span></td><td>Saved in your browser, persists across reloads.</td></tr>
-            <tr><td>Clickable sources on every row</td><td><span class="pill live">live</span></td><td>Every public funding round links to its primary press release / filing / article.</td></tr>
-            <tr><td>Verifier drawer (stale / unsourced)</td><td><span class="pill live">live</span></td><td>Runs in your browser. Flags rows &gt;90 days old, missing URLs, low-confidence figures.</td></tr>
-            <tr><td>Manual edits and additions</td><td><span class="pill live">live</span></td><td>Edit / +Activity buttons on each card. Saved to localStorage.</td></tr>
-            <tr><td>Refresh button</td><td><span class="pill scaffold">scaffold</span></td><td>Cache-busted reload today. Will hit a real backend once one exists.</td></tr>
-            <tr><td>Excel export of filtered view</td><td><span class="pill live">live</span></td><td>Activities + companies + summary sheets.</td></tr>
-            <tr><td>Review Queue (analyst approval gate)</td><td><span class="pill live">live</span></td><td>Mechanic works; today's candidates are mock samples.</td></tr>
-            <tr><td>Gmail OAuth and inbox sweep</td><td><span class="pill scaffold">scaffold</span></td><td>Code path designed; not authenticated against a live mailbox from this site yet.</td></tr>
-            <tr><td>RSS ingest from newsletters</td><td><span class="pill scaffold">scaffold</span></td><td>Script exists; emits mock candidates.</td></tr>
-            <tr><td>Scheduled refresh (daily cron)</td><td><span class="pill scaffold">scaffold</span></td><td>GitHub Action committed; runs only when the repo is connected to a CI runner.</td></tr>
-            <tr><td>Server-side database</td><td><span class="pill future">future</span></td><td>Today the "database" is the JS bundle + your localStorage. A real backend (Supabase, etc.) is on the roadmap.</td></tr>
-            <tr><td>LLM-assisted extraction from emails</td><td><span class="pill future">future</span></td><td>Regex first; LLM after.</td></tr>
+            <tr><td>Seed dataset (~140 companies)</td><td><span class="pill live">live</span></td><td><code>src/data/seed*.ts</code></td><td>Curated by hand. Updated when we ship a new build.</td></tr>
+            <tr><td>Custom tags (A / B / etc.)</td><td><span class="pill live">live</span></td><td><code>lib/userTags.ts</code>, <code>UserTagsPanel.tsx</code></td><td>Saved in your browser, persists across reloads.</td></tr>
+            <tr><td>Clickable sources on every row</td><td><span class="pill live">live</span></td><td><code>CompanyProfiles.tsx</code>, <code>ActivityTracker.tsx</code></td><td>Every public funding round links to its primary press release / filing / article.</td></tr>
+            <tr><td>Verifier drawer (stale / unsourced)</td><td><span class="pill live">live</span></td><td><code>lib/verify.ts</code>, <code>VerificationDrawer.tsx</code></td><td>Runs in your browser. Flags rows &gt;90 days old, missing URLs, low-confidence figures.</td></tr>
+            <tr><td>Manual edits and additions</td><td><span class="pill live">live</span></td><td><code>lib/overrides.ts</code>, <code>CompanyEditModal.tsx</code>, <code>ActivityModal.tsx</code></td><td>Edit / + Activity buttons on each card. Saved to localStorage.</td></tr>
+            <tr><td>Export my edits → JSON</td><td><span class="pill live">live</span></td><td><code>ManualEditsPanel.tsx</code></td><td>Downloads JSON. Bridges localStorage → bundle.</td></tr>
+            <tr><td>Import edits → seed</td><td><span class="pill scaffold">scaffold</span></td><td><code>scripts/import-overrides.ts</code></td><td>CLI script; needs to be run by someone with repo access.</td></tr>
+            <tr><td>Refresh button</td><td><span class="pill scaffold">scaffold</span></td><td><code>AppShell.tsx</code></td><td>Cache-busted reload today. Will hit a real backend once one exists.</td></tr>
+            <tr><td>Excel export of filtered view</td><td><span class="pill live">live</span></td><td><code>lib/exportExcel.ts</code></td><td>Activities + companies + summary sheets.</td></tr>
+            <tr><td>Review Queue (analyst approval gate)</td><td><span class="pill live">live</span></td><td><code>lib/review.ts</code>, <code>ReviewQueue.tsx</code></td><td>Mechanic works; today's candidates are mock samples.</td></tr>
+            <tr><td>Gmail OAuth and inbox sweep</td><td><span class="pill scaffold">scaffold</span></td><td><code>lib/gmail.ts</code>, <code>scripts/mock-gmail-ingest.ts</code></td><td>Code path designed; not authenticated against a live mailbox yet.</td></tr>
+            <tr><td>RSS ingest from newsletters</td><td><span class="pill scaffold">scaffold</span></td><td><code>scripts/rss-ingest.ts</code></td><td>Script exists; emits mock candidates.</td></tr>
+            <tr><td>Scheduled refresh (daily cron)</td><td><span class="pill scaffold">scaffold</span></td><td><code>.github/workflows/refresh-data.yml</code></td><td>GitHub Action committed; runs only when the repo is connected to a CI runner.</td></tr>
+            <tr><td>Server-side database</td><td><span class="pill future">future</span></td><td>—</td><td>Option C / D above. Not built yet.</td></tr>
+            <tr><td>Auth (multi-user)</td><td><span class="pill future">future</span></td><td>—</td><td>Only matters once a real DB exists.</td></tr>
+            <tr><td>LLM-assisted extraction</td><td><span class="pill future">future</span></td><td>—</td><td>Regex first; LLM after.</td></tr>
           </tbody>
         </table>
       </section>
 
-      <section>
-        <span class="eyebrow">FAQ in plain English</span>
-        <h2>Quick answers</h2>
-        <div class="grid-2">
-          <div class="card">
-            <h3>If I edit a company on my laptop, does my colleague see it?</h3>
-            <p>No. Edits are stored in <em>your</em> browser. To share, either Export to Excel or ship the edit into the seed (we can commit it into the dataset together).</p>
-          </div>
-          <div class="card">
-            <h3>How "live" are the numbers?</h3>
-            <p>As live as the last deploy. The Verifier flags anything older than 90 days; that is your audit list to re-check against the source URLs you can click.</p>
-          </div>
-          <div class="card">
-            <h3>What happens if a press release moves URL?</h3>
-            <p>The link will 404. The Verifier flags broken/placeholder hosts. Future enhancement: nightly cron that HEAD-pings each URL and downgrades confidence on 4xx/5xx.</p>
-          </div>
-          <div class="card">
-            <h3>Why isn't the Gmail pipeline already running?</h3>
-            <p>It requires either (a) a server with your OAuth credentials, or (b) a local desktop run. The current site is a static deploy on Vercel — no server-side code runs here yet.</p>
-          </div>
-        </div>
-      </section>
-
       <p style="margin-top: 40px; color: var(--ink-faint); font-size: 11px; font-family: 'IBM Plex Mono', monospace; letter-spacing: 0.08em;">
-        DOC VERSION 1 · GENERATED FROM CODE STATE ON THE DAY OF YOUR LAST DEPLOY
+        DOC VERSION 2 · ARCHITECTURE REFERENCE · GENERATED FROM CODE STATE
       </p>
     </main>
   </body>
