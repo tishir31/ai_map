@@ -137,20 +137,26 @@ async function getGmailAccessToken() {
   return j.access_token;
 }
 
-async function gmailList(accessToken, userEmail, query, maxResults) {
-  const url = new URL(`https://gmail.googleapis.com/gmail/v1/users/${encodeURIComponent(userEmail)}/messages`);
+async function gmailList(accessToken, query, maxResults) {
+  const url = new URL("https://gmail.googleapis.com/gmail/v1/users/me/messages");
   url.searchParams.set("q", query);
   url.searchParams.set("maxResults", String(maxResults));
   const r = await fetch(url.toString(), { headers: { Authorization: `Bearer ${accessToken}` } });
-  if (!r.ok) throw new Error(`Gmail list failed (${r.status})`);
+  if (!r.ok) {
+    const detail = await r.text();
+    throw new Error(`Gmail list failed (${r.status}): ${detail.slice(0, 300)}`);
+  }
   const j = await r.json();
   return j.messages || [];
 }
 
-async function gmailGet(accessToken, userEmail, messageId) {
-  const url = `https://gmail.googleapis.com/gmail/v1/users/${encodeURIComponent(userEmail)}/messages/${messageId}?format=metadata&metadataHeaders=Subject&metadataHeaders=From&metadataHeaders=Date`;
+async function gmailGet(accessToken, messageId) {
+  const url = `https://gmail.googleapis.com/gmail/v1/users/me/messages/${messageId}?format=metadata&metadataHeaders=Subject&metadataHeaders=From&metadataHeaders=Date`;
   const r = await fetch(url, { headers: { Authorization: `Bearer ${accessToken}` } });
-  if (!r.ok) throw new Error(`Gmail get failed (${r.status})`);
+  if (!r.ok) {
+    const detail = await r.text();
+    throw new Error(`Gmail get failed (${r.status}): ${detail.slice(0, 300)}`);
+  }
   return r.json();
 }
 
@@ -292,10 +298,10 @@ module.exports = async function handler(req, res) {
   try {
     const accessToken = await getGmailAccessToken();
     for (const src of sources) {
-      const messages = await gmailList(accessToken, GMAIL_USER_EMAIL, src.query, maxResults);
+      const messages = await gmailList(accessToken, src.query, maxResults);
       const candidates = [];
       for (const m of messages) {
-        const detail = await gmailGet(accessToken, GMAIL_USER_EMAIL, m.id);
+        const detail = await gmailGet(accessToken, m.id);
         candidates.push(buildCandidate(detail, src.name));
       }
       const written = await supabaseUpsertReviewQueue(SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY, candidates);
