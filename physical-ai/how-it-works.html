@@ -213,6 +213,7 @@
           <li><a href="#walkthrough-tag">Click-by-click: what happens when you assign a custom tag</a></li>
           <li><a href="#pipeline">The data pipeline at a glance</a></li>
           <li><a href="#gmail">Gmail integration design</a></li>
+          <li><a href="#llm">LLM extraction</a></li>
           <li><a href="#build">Build, deploy, and the difference between dev and prod</a></li>
           <li><a href="#publish">How to "publish" your edits so everyone sees them</a></li>
           <li><a href="#status">Feature-by-feature status table</a></li>
@@ -424,7 +425,8 @@
                   <li><span class="name">dedupe.ts</span><span class="role logic">logic</span><span class="desc">When a review-queue candidate matches an existing activity, return the duplicate. Used by approve / merge.</span></li>
                   <li><span class="name">review.ts</span><span class="role logic">logic</span><span class="desc">Approve / reject pipeline. Sanitizes Gmail snippets before they leak into the public dataset.</span></li>
                   <li><span class="name">gmail.ts</span><span class="role logic">logic</span><span class="desc">Regex extractor: turns a Gmail-shaped email object into a candidate row. Mock-only today.</span></li>
-                  <li><span class="name">verify.ts</span><span class="role logic">logic</span><span class="desc">The verifier. Walks every activity, returns findings (stale, missing source, placeholder host, low confidence).</span></li>
+                  <li><span class="name">verify.ts</span><span class="role logic">logic</span><span class="desc">The verifier. Walks every activity, returns findings (stale, missing source, placeholder host, dead source, low confidence).</span></li>
+                  <li><span class="name">sourceHealth.ts</span><span class="role logic">logic</span><span class="desc">Classifies URL health-check results so broken citations can become verifier findings.</span></li>
                   <li><span class="name">exportExcel.ts</span><span class="role io">i/o</span><span class="desc">Builds a .xlsx file from the visible activities. Two sheets + summary.</span></li>
                   <li><span class="name">format.ts</span><span class="role logic">logic</span><span class="desc">Display helpers: <code>compactUsd</code>, <code>formatDate</code>, <code>titleCase</code>.</span></li>
                   <li><span class="name">useTheme.ts</span><span class="role logic">logic</span><span class="desc">Light / dark mode toggle.</span></li>
@@ -460,6 +462,7 @@
                 <li><span class="name">mock-gmail-ingest.ts</span><span class="role io">i/o</span><span class="desc">Hardcoded mock emails → run through <code>parseGmailCandidate</code> → write candidates JSON.</span></li>
                 <li><span class="name">rss-ingest.ts</span><span class="role io">i/o</span><span class="desc">Placeholder RSS fetcher — emits mock candidates today.</span></li>
                 <li><span class="name">verify-data.ts</span><span class="role io">i/o</span><span class="desc">Runs the verifier offline. Writes <code>verifier-output/verification-report.{json,md}</code>.</span></li>
+                <li><span class="name">ping-sources.ts</span><span class="role io">i/o</span><span class="desc">Networked source URL health sweep. Writes <code>verifier-output/source-health-report.{json,md}</code> and can update the generated health artifact.</span></li>
               </ul>
 
               <li><span class="dir name">public/</span><span class="desc">static assets, copied as-is into the build</span></li>
@@ -653,8 +656,25 @@
           <div class="wstep"><div><h4>4. Dedupe against existing rows <span class="pill live">live</span></h4><p><span class="file">src/lib/dedupe.ts</span> flags fuzzy duplicates so we route them through merge rather than create.</p></div></div>
           <div class="wstep"><div><h4>5. Land in the Review Queue <span class="pill live">live</span></h4><p>You see the candidate in the Review Queue tab. Gmail snippets stay private — only sanitized text reaches the published dataset.</p></div></div>
           <div class="wstep"><div><h4>6. You approve, merge, or reject <span class="pill manual">manual</span></h4><p>Approval logic in <span class="file">src/lib/review.ts</span> strips Gmail IDs, sender, subject, snippets from the publishable Source before it lands in the dataset.</p></div></div>
-          <div class="wstep"><div><h4>7. Verifier flags stale or unsourced records <span class="pill live">live</span></h4><p><span class="file">src/lib/verify.ts</span> runs in-app; <span class="file">scripts/verify-data.ts</span> writes a Markdown re-check sheet.</p></div></div>
+          <div class="wstep"><div><h4>7. Verifier flags stale, unsourced, or dead-source records <span class="pill live">live</span></h4><p><span class="file">src/lib/verify.ts</span> runs in-app; <span class="file">scripts/verify-data.ts</span> writes a Markdown re-check sheet; <span class="file">scripts/ping-sources.ts</span> runs the networked URL health sweep.</p></div></div>
           <div class="wstep"><div><h4>8. Daily cron runs the whole pipeline <span class="pill scaffold">scaffold</span></h4><p><span class="file">.github/workflows/refresh-data.yml</span> at 14:00 UTC daily. Opens a PR for analyst review — never writes directly.</p></div></div>
+        </div>
+      </section>
+
+      <section id="llm">
+        <span class="eyebrow">LLM extraction</span>
+        <h2>How company and link analysis works</h2>
+        <p>
+          Two Vercel functions in the deploy repo keep Gemini calls server-side.
+          <code>/api/research-company</code> structures a company profile and suggested
+          latest activity. <code>/api/research-source</code> reads a source URL, accepts
+          optional pasted text for paywalled articles, and returns one Review Queue
+          candidate. Neither function publishes directly to the tracker.
+        </p>
+        <div class="walkthrough">
+          <div class="wstep"><div><h4>1. Analyst supplies a company or URL <span class="pill live">live</span></h4><p><span class="file">CompanyResearcherModal.tsx</span> and <span class="file">SourceResearcherModal.tsx</span> collect the input. Source text can be pasted when a page is blocked.</p></div></div>
+          <div class="wstep"><div><h4>2. Server-side Gemini extraction <span class="pill live">live</span></h4><p><span class="file">api/research-company.js</span> and <span class="file">api/research-source.js</span> use <code>GEMINI_API_KEY</code> only in Vercel, never in the static bundle.</p></div></div>
+          <div class="wstep"><div><h4>3. Manual review gate <span class="pill live">live</span></h4><p>Link-derived candidates are staged in Review Queue through <span class="file">store.ts</span>: <code>addReviewItems</code>. Approval, rejection, or merge is still manual.</p></div></div>
         </div>
       </section>
 
@@ -743,7 +763,7 @@ npm run build      # tsc -b && vite build → dist/ static files
             <tr><td>Seed dataset (~140 companies)</td><td><span class="pill live">live</span></td><td><code>src/data/seed*.ts</code></td><td>Curated by hand. Updated when we ship a new build.</td></tr>
             <tr><td>Custom tags (A / B / etc.)</td><td><span class="pill live">live</span></td><td><code>lib/userTags.ts</code>, <code>UserTagsPanel.tsx</code></td><td>Saved to Supabase when authenticated; localStorage fallback persists across reloads.</td></tr>
             <tr><td>Clickable sources on every row</td><td><span class="pill live">live</span></td><td><code>CompanyProfiles.tsx</code>, <code>ActivityTracker.tsx</code></td><td>Every public funding round links to its primary press release / filing / article.</td></tr>
-            <tr><td>Dashboard / tracker credibility layer + verifier drawer</td><td><span class="pill live">live</span></td><td><code>lib/analytics.ts</code>, <code>lib/verify.ts</code>, <code>Dashboard.tsx</code>, <code>ActivityTracker.tsx</code>, <code>VerificationDrawer.tsx</code></td><td>Runs in your browser. Surfaces source coverage, confidence mix, stale rows, placeholder URLs, and low-confidence figures.</td></tr>
+            <tr><td>Dashboard / tracker credibility layer + verifier drawer</td><td><span class="pill live">live</span></td><td><code>lib/analytics.ts</code>, <code>lib/verify.ts</code>, <code>lib/sourceHealth.ts</code>, <code>Dashboard.tsx</code>, <code>ActivityTracker.tsx</code>, <code>VerificationDrawer.tsx</code></td><td>Runs in your browser. Surfaces source coverage, confidence mix, stale rows, placeholder URLs, dead links, and low-confidence figures.</td></tr>
             <tr><td>Manual edits and additions</td><td><span class="pill live">live</span></td><td><code>lib/overrides.ts</code>, <code>CompanyEditModal.tsx</code>, <code>ActivityModal.tsx</code>, <code>lib/sharedDatabase.ts</code></td><td>Edit / + Activity buttons on each card. Local fallback saves to localStorage; shared new rows stage through Review Queue.</td></tr>
             <tr><td>Export my edits → JSON</td><td><span class="pill live">live</span></td><td><code>ManualEditsPanel.tsx</code></td><td>Downloads JSON. Bridges localStorage → bundle.</td></tr>
             <tr><td>Import edits → seed</td><td><span class="pill scaffold">scaffold</span></td><td><code>scripts/import-overrides.ts</code></td><td>CLI script; needs to be run by someone with repo access.</td></tr>
@@ -755,7 +775,7 @@ npm run build      # tsc -b && vite build → dist/ static files
             <tr><td>Scheduled refresh (daily cron)</td><td><span class="pill scaffold">scaffold</span></td><td><code>.github/workflows/refresh-data.yml</code></td><td>GitHub Action committed; runs only when the repo is connected to a CI runner.</td></tr>
             <tr><td>Server-side database</td><td><span class="pill scaffold">scaffold</span></td><td><code>docs/schema.sql</code>, <code>lib/supabase.ts</code>, <code>lib/sharedDatabase.ts</code>, <code>scripts/seed-supabase.ts</code></td><td>Supabase schema/client/realtime/offline cache exist. Production env QA still needed.</td></tr>
             <tr><td>Auth (multi-user)</td><td><span class="pill live">live</span></td><td><code>AppShell.tsx</code>, <code>store.ts</code>, <code>scripts/create-supabase-user.ts</code></td><td>Email/password editor sign-in. Public viewers can read but cannot edit.</td></tr>
-            <tr><td>LLM-assisted extraction</td><td><span class="pill future">future</span></td><td>—</td><td>Regex first; LLM after.</td></tr>
+            <tr><td>LLM-assisted company and source-link extraction</td><td><span class="pill live">live</span></td><td><code>CompanyResearcherModal.tsx</code>, <code>SourceResearcherModal.tsx</code>, <code>api/research-company.js</code>, <code>api/research-source.js</code></td><td>Gemini runs server-side. Link candidates stage in Review Queue; no direct publication.</td></tr>
           </tbody>
         </table>
       </section>
