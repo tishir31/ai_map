@@ -33,7 +33,10 @@ const ALLOWED_ORIGINS = new Set([
 ]);
 
 const DEFAULT_QUERIES = [
-  { name: "Physical AI catch-all", query: "from:(newsletter OR news OR alerts) (robotics OR humanoid OR autonomous OR drone OR \"physical AI\") newer_than:2d" }
+  {
+    name: "Physical AI recent fundraises",
+    query: "newer_than:3d (robotics OR humanoid OR autonomous OR drone OR \"physical AI\" OR \"embodied AI\" OR funding OR financing OR raises OR raised OR \"Series A\" OR \"Series B\" OR \"Series C\")"
+  }
 ];
 
 const ACTIVITY_RULES = [
