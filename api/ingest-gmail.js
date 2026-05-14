@@ -23,7 +23,8 @@
 //
 // Required env: SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY, GMAIL_CLIENT_ID,
 // GMAIL_CLIENT_SECRET, GMAIL_REFRESH_TOKEN, GMAIL_USER_EMAIL.
-// Optional: INGEST_SOURCES, INGEST_MAX, INGEST_SHARED_SECRET.
+// Optional: INGEST_SOURCES, INGEST_MAX, INGEST_SHARED_SECRET,
+// INGEST_LLM_ENABLED=false, INGEST_LLM_MODEL, GEMINI_API_KEY.
 
 const SHARED_SECRET = process.env.INGEST_SHARED_SECRET || "";
 const ALLOWED_ORIGINS = new Set([
@@ -40,6 +41,8 @@ const DEFAULT_QUERIES = [
 ];
 const MAX_LOOKBACK_DAYS = 2;
 const MAX_DEFAULT_RESULTS = 20;
+const INTELLIGENCE_MODEL = process.env.INGEST_LLM_MODEL || "gemini-2.5-flash";
+const ALLOWED_SUBSECTORS = ["robotics", "humanoids", "autonomous vehicles", "drones", "defense autonomy", "industrial automation", "embodied AI", "edge AI hardware", "other"];
 
 const ACTIVITY_RULES = [
   ["financing", /\b(raises?|series\s+[a-z]|seed|funding|financing|investment)\b/i],
@@ -136,6 +139,31 @@ function isFundingSignal(text, dealValueUsd) {
   const fundingScore = scoreRules(text, FUNDING_RULES);
   const negativeScore = scoreRules(text, NEGATIVE_RULES);
   return physicalScore >= 1 && fundingScore >= 1 && negativeScore === 0 && (dealValueUsd || /\bseries\s+[a-z]\b|\bseed round|pre-seed\b/i.test(text));
+}
+
+function llmEnabled(body) {
+  return body.llm !== false && process.env.INGEST_LLM_ENABLED !== "false" && Boolean(process.env.GEMINI_API_KEY);
+}
+
+function normalizeAllowed(value, allowed, fallback) {
+  return allowed.includes(value) ? value : fallback;
+}
+
+function validDate(value) {
+  return typeof value === "string" && /^\d{4}-\d{2}-\d{2}$/.test(value) && !Number.isNaN(Date.parse(value));
+}
+
+function boundedText(value, max) {
+  return String(value || "").replace(/\s+/g, " ").trim().slice(0, max);
+}
+
+function safeJson(text) {
+  try {
+    return JSON.parse(text);
+  } catch {
+    const match = String(text || "").match(/\{[\s\S]*\}/);
+    return match ? JSON.parse(match[0]) : null;
+  }
 }
 
 function decodeBase64Url(data) {
@@ -441,6 +469,130 @@ function gateCandidate(candidate, context) {
   return { keep: true, reason: "new-financing" };
 }
 
+function activityContext(activity, context) {
+  if (!activity) return null;
+  return {
+    id: activity.id,
+    company: context.companyById.get(activity.company_id) || activity.company_id,
+    dateAnnounced: activity.date_announced,
+    activityType: activity.activity_type,
+    dealValueUsd: activity.deal_value_usd,
+    description: activity.description
+  };
+}
+
+function intelligencePrompt(candidate, gate, context) {
+  const target = gate.duplicateOfActivityId
+    ? activityContext((context.activities || []).find((activity) => activity.id === gate.duplicateOfActivityId), context)
+    : null;
+  const existingCompanies = (context.companies || []).map((company) => company.name).slice(0, 250);
+  return `You are an investment-bank-grade Physical AI funding triage engine.
+
+Your job is to adjudicate ONE Gmail-derived candidate before it enters a private analyst Review Queue.
+
+Hard rules:
+- Keep only Physical AI funding events from the last ${MAX_LOOKBACK_DAYS} days.
+- Physical AI includes robotics, humanoids, autonomous vehicles, drones, defense autonomy, industrial automation, embodied AI, edge AI hardware, sensing/perception/autonomy infrastructure.
+- Reject stock news, earnings, conference/newsletter promos, hiring, generic AI software, crypto, and non-funding stories.
+- Never invent missing company names, investors, dates, or dollar values.
+- Gmail text is private. Do not quote sensitive email body text. Summarize only short factual evidence.
+- If this is an update to an existing activity, return action "update_existing" and preserve the matching duplicateOfActivityId when appropriate.
+
+Existing deterministic gate: ${JSON.stringify(gate)}
+Existing matched activity, if any: ${JSON.stringify(target)}
+Known companies: ${JSON.stringify(existingCompanies)}
+
+Candidate:
+${JSON.stringify({
+  candidateCompany: candidate.candidate_company,
+  candidateCounterparty: candidate.candidate_counterparty,
+  candidateDate: candidate.candidate_date,
+  activityType: candidate.activity_type,
+  subsector: candidate.subsector,
+  dealValueUsd: candidate.deal_value_usd,
+  subject: candidate.subject,
+  snippet: candidate.snippet,
+  extractedText: candidate.extracted_text,
+  description: candidate.description
+})}
+
+Return strict JSON only:
+{
+  "keep": true,
+  "physicalAi": true,
+  "fundingEvent": true,
+  "action": "update_existing" | "new_activity" | "new_company",
+  "duplicateOfActivityId": null | "existing activity id",
+  "candidateCompany": "official company name or N/A",
+  "candidateCounterparty": "lead/key investors if present, comma-separated, or N/A",
+  "candidateDate": "YYYY-MM-DD",
+  "activityType": "financing",
+  "subsector": "one of ${ALLOWED_SUBSECTORS.join(" | ")}",
+  "dealValueUsd": null,
+  "geography": "country/region or N/A",
+  "confidence": "reported" | "estimated",
+  "description": "one factual analyst-safe sentence; mention undisclosed amount if relevant",
+  "evidence": ["short factual evidence point", "short factual evidence point"],
+  "cautions": ["what analyst should verify"],
+  "rejectReason": null
+}
+
+If the candidate should not be staged, return:
+{ "keep": false, "physicalAi": false, "fundingEvent": false, "rejectReason": "short reason", "evidence": [], "cautions": [] }`;
+}
+
+async function adjudicateWithLlm(candidate, gate, context) {
+  const apiKey = process.env.GEMINI_API_KEY;
+  if (!apiKey) return { keep: true, candidate, status: "disabled" };
+  const response = await fetch(
+    `https://generativelanguage.googleapis.com/v1beta/models/${INTELLIGENCE_MODEL}:generateContent?key=${apiKey}`,
+    {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        contents: [{ parts: [{ text: intelligencePrompt(candidate, gate, context) }] }],
+        generationConfig: {
+          temperature: 0.05,
+          maxOutputTokens: 1200,
+          responseMimeType: "application/json"
+        }
+      })
+    }
+  );
+  const data = await response.json();
+  if (!response.ok) throw new Error(`Gemini triage failed (${response.status}): ${JSON.stringify(data).slice(0, 240)}`);
+  const parsed = safeJson(data?.candidates?.[0]?.content?.parts?.[0]?.text || "");
+  if (!parsed || typeof parsed !== "object") throw new Error("Gemini triage returned invalid JSON");
+  if (parsed.keep === false || parsed.physicalAi === false || parsed.fundingEvent === false) {
+    return { keep: false, reason: `llm-${boundedText(parsed.rejectReason || "rejected", 60)}` };
+  }
+
+  const next = { ...candidate };
+  if (boundedText(parsed.candidateCompany, 140) && parsed.candidateCompany !== "N/A") next.candidate_company = boundedText(parsed.candidateCompany, 140);
+  if (boundedText(parsed.candidateCounterparty, 240)) next.candidate_counterparty = boundedText(parsed.candidateCounterparty, 240);
+  if (validDate(parsed.candidateDate) && isRecent(parsed.candidateDate)) next.candidate_date = parsed.candidateDate;
+  next.activity_type = "financing";
+  next.subsector = normalizeAllowed(parsed.subsector, ALLOWED_SUBSECTORS, next.subsector);
+  if (typeof parsed.dealValueUsd === "number" && Number.isFinite(parsed.dealValueUsd) && parsed.dealValueUsd >= 0) {
+    next.deal_value_usd = parsed.dealValueUsd;
+  }
+  if (boundedText(parsed.geography, 120)) next.geography = boundedText(parsed.geography, 120);
+  next.confidence = normalizeAllowed(parsed.confidence, ["reported", "estimated"], next.confidence);
+  if (boundedText(parsed.description, 500)) next.description = boundedText(parsed.description, 500);
+  if (parsed.action === "update_existing" && parsed.duplicateOfActivityId) {
+    const exists = (context.activities || []).some((activity) => activity.id === parsed.duplicateOfActivityId);
+    if (exists) next.duplicate_of_activity_id = parsed.duplicateOfActivityId;
+  }
+  const evidence = Array.isArray(parsed.evidence) ? parsed.evidence.map((x) => boundedText(x, 160)).filter(Boolean).slice(0, 4) : [];
+  const cautions = Array.isArray(parsed.cautions) ? parsed.cautions.map((x) => boundedText(x, 160)).filter(Boolean).slice(0, 4) : [];
+  const action = ["update_existing", "new_activity", "new_company"].includes(parsed.action) ? parsed.action : (next.duplicate_of_activity_id ? "update_existing" : "new_activity");
+  const triage = [`AI triage: ${action}; model=${INTELLIGENCE_MODEL}.`];
+  if (evidence.length) triage.push(`Evidence: ${evidence.join(" | ")}.`);
+  if (cautions.length) triage.push(`Cautions: ${cautions.join(" | ")}.`);
+  next.extracted_text = boundedText(`${triage.join(" ")} Source: ${candidate.extracted_text}`, 900);
+  return { keep: true, candidate: next, status: "enriched" };
+}
+
 async function supabaseInsertRun(supabaseUrl, serviceRoleKey, run) {
   await fetch(`${supabaseUrl}/rest/v1/ingestion_runs`, {
     method: "POST",
@@ -514,6 +666,7 @@ module.exports = async function handler(req, res) {
   const perSource = [];
   let runStatus = "completed";
   let errorMessage = null;
+  const intelligence = { enabled: llmEnabled(body), model: INTELLIGENCE_MODEL, enriched: 0, rejected: 0, failed: 0 };
 
   try {
     const context = await loadDedupeContext(SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY);
@@ -534,7 +687,24 @@ module.exports = async function handler(req, res) {
           candidate.duplicate_of_activity_id = gate.duplicateOfActivityId;
           candidate.description = `Suggested update to existing activity ${gate.duplicateOfActivityId}: ${candidate.description}`;
         }
-        candidates.push(candidate);
+        let staged = candidate;
+        if (intelligence.enabled) {
+          try {
+            const adjudicated = await adjudicateWithLlm(candidate, gate, context);
+            if (!adjudicated.keep) {
+              dedupedCount += 1;
+              intelligence.rejected += 1;
+              skippedByReason[adjudicated.reason] = (skippedByReason[adjudicated.reason] || 0) + 1;
+              continue;
+            }
+            staged = adjudicated.candidate;
+            if (adjudicated.status === "enriched") intelligence.enriched += 1;
+          } catch (llmError) {
+            intelligence.failed += 1;
+            staged.extracted_text = boundedText(`AI triage failed; deterministic gate used. ${(llmError && llmError.message) || String(llmError)}. Source: ${staged.extracted_text}`, 900);
+          }
+        }
+        candidates.push(staged);
       }
       const written = await supabaseUpsertReviewQueue(SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY, candidates);
       totalCandidates += written;
@@ -566,6 +736,7 @@ module.exports = async function handler(req, res) {
       candidates: totalCandidates,
       deduped: dedupedCount,
       skippedByReason,
+      intelligence,
       perSource,
       error: errorMessage || undefined
     })
