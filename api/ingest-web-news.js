@@ -17,13 +17,33 @@ const ALLOWED_ORIGINS = new Set([
 ]);
 
 const MAX_LOOKBACK_DAYS = 2;
-const MAX_DEFAULT_RESULTS = 20;
+const MAX_DEFAULT_RESULTS = 12;
 const INTELLIGENCE_MODEL = process.env.INGEST_LLM_MODEL || "gemini-2.5-flash";
 const ALLOWED_SUBSECTORS = ["robotics", "humanoids", "autonomous vehicles", "drones", "defense autonomy", "industrial automation", "embodied AI", "edge AI hardware", "other"];
 const DEFAULT_QUERIES = [
   {
-    name: "Physical AI public funding news",
-    query: "(robotics OR humanoid OR autonomous OR drone OR \"physical AI\" OR \"embodied AI\" OR robot OR autonomy) (raises OR raised OR funding OR financing OR \"Series A\" OR \"Series B\" OR \"Series C\" OR \"seed round\") when:2d"
+    name: "Physical AI funding",
+    query: "\"physical AI\" (raises OR raised OR funding OR financing OR investment OR \"seed round\" OR \"Series A\" OR \"Series B\") when:2d"
+  },
+  {
+    name: "Robotics startup financing",
+    query: "(robotics OR robot OR \"robotics startup\") (raises OR raised OR funding OR financing OR \"seed round\" OR \"Series A\" OR \"Series B\" OR \"Series C\") when:2d"
+  },
+  {
+    name: "Humanoid robotics funding",
+    query: "(humanoid OR humanoids OR \"humanoid robot\" OR \"humanoid robotics\") (raises OR raised OR funding OR financing OR \"Series A\" OR \"Series B\" OR \"Series C\") when:2d"
+  },
+  {
+    name: "Autonomy drones defense funding",
+    query: "(autonomous OR autonomy OR drone OR UAV OR \"defense autonomy\" OR \"unmanned systems\") (raises OR raised OR funding OR financing OR investment OR \"Series A\" OR \"Series B\") when:2d"
+  },
+  {
+    name: "Industrial automation funding",
+    query: "(\"industrial automation\" OR \"warehouse robotics\" OR \"manufacturing automation\" OR \"factory automation\") (raises OR raised OR funding OR financing OR investment OR \"Series A\" OR \"Series B\") when:2d"
+  },
+  {
+    name: "Embodied AI funding",
+    query: "(\"embodied AI\" OR \"robot foundation model\" OR \"robot foundation models\" OR \"robot learning\") (raises OR raised OR funding OR financing OR investment OR \"seed round\" OR \"Series A\") when:2d"
   }
 ];
 
