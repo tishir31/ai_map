@@ -223,9 +223,9 @@
       <div class="status-callout">
         <strong>Honest one-liner.</strong>
         Live at <a href="https://ai-map-cyan.vercel.app/physical-ai/" target="_blank" rel="noreferrer" style="color:var(--accent);">ai-map-cyan.vercel.app/physical-ai/</a>
-        after the 2026-05-14 senior-review hardening pass. Bundle: 464&nbsp;kB main (120&nbsp;kB gzip),
+        after the 2026-05-14 senior-review hardening pass. Bundle: 467&nbsp;kB main (121&nbsp;kB gzip),
         with Charts, Supabase SDK, route panels, and modals all lazy-loaded.
-        61 vitest cases passing. Published market data is public-read.
+        64 vitest cases passing. Published market data is public-read.
         Editing, Review Queue access, LLM-assisted additions, and tag changes require an
         email/password editor account. Manual `+ Activity` and the LLM Researcher both
         stage candidates in the Review Queue — no direct publish path exists.
@@ -442,9 +442,10 @@
 
                 <li><span class="dir name">src/components/</span><span class="desc">React components — the UI</span></li>
                 <ul>
-                  <li><span class="name">AppShell.tsx</span><span class="role ui">ui</span><span class="desc">Top-level layout. Sidebar nav, topbar search/refresh/verify/export, the four tab routes.</span></li>
+                  <li><span class="name">AppShell.tsx</span><span class="role ui">ui</span><span class="desc">Top-level layout. Sidebar nav, topbar search/refresh/verify/export, the route tabs.</span></li>
                   <li><span class="name">Dashboard.tsx</span><span class="role ui">ui</span><span class="desc">Landing view — headline metrics, source-quality posture, confidence mix, diligence queue, charts, latest signals.</span></li>
                   <li><span class="name">ActivityTracker.tsx</span><span class="role ui">ui</span><span class="desc">The big table view with filters, edit pencils, export, and filtered-view source-quality indicators.</span></li>
+                  <li><span class="name">VcTracker.tsx</span><span class="role ui">ui</span><span class="desc">Investor leaderboard — ranks financing syndicate participants by participated disclosed deal value and shows per-deal syndicates.</span></li>
                   <li><span class="name">ReviewQueue.tsx</span><span class="role ui">ui</span><span class="desc">Approve / reject / merge candidates from ingestion.</span></li>
                   <li><span class="name">CompanyProfiles.tsx</span><span class="role ui">ui</span><span class="desc">Grid of company cards with sources, tags, stale flag, Edit and + Activity buttons.</span></li>
                   <li><span class="name">ActivityModal.tsx</span><span class="role ui">ui</span><span class="desc">Add / edit an activity. Validates input, calls <code>addActivity</code> or <code>updateActivity</code>.</span></li>
@@ -804,6 +805,7 @@ VITE_BASE_PATH=/physical-ai/ npm run build
             <tr><td>Seed dataset (215 companies / 172 activities)</td><td><span class="pill live">live</span></td><td><code>src/data/seed*.ts</code>, <code>src/data/marketMapTaxonomy.ts</code></td><td>Curated by hand. Updated when we ship a new build and upserted to Supabase for shared runtime.</td></tr>
             <tr><td>Custom tags (A / B / etc., with parent for nesting)</td><td><span class="pill live">live</span></td><td><code>lib/userTags.ts</code>, <code>UserTagsPanel.tsx</code></td><td>Saved to Supabase when authenticated; localStorage fallback persists across reloads.</td></tr>
             <tr><td>Clickable sources on every row, multi-source `+N` badge</td><td><span class="pill live">live</span></td><td><code>lib/sources.ts</code>, <code>CompanyProfiles.tsx</code>, <code>ActivityTracker.tsx</code></td><td>R17 multi-source citations: every public row reads through <code>getActivitySources()</code>; Tracker shows primary URL + <code>+N</code> hover.</td></tr>
+            <tr><td>VC / investor tracker with deal syndicates</td><td><span class="pill live">live</span></td><td><code>lib/vcTracker.ts</code>, <code>VcTracker.tsx</code></td><td>Read-only aggregation over approved financing rows; no new persistence. Totals are full participated deal value, not estimated check size.</td></tr>
             <tr><td>Dashboard / tracker credibility layer + verifier drawer</td><td><span class="pill live">live</span></td><td><code>lib/analytics.ts</code>, <code>lib/verify.ts</code>, <code>lib/sourceHealth.ts</code>, <code>Dashboard.tsx</code>, <code>ActivityTracker.tsx</code>, <code>VerificationDrawer.tsx</code></td><td>Eight severities: stale, missing-source, non-https, placeholder-host, dead-source, low-confidence, raw-email-leak, counterparty-missing.</td></tr>
             <tr><td>Manual edits and additions</td><td><span class="pill live">live</span></td><td><code>lib/overrides.ts</code>, <code>CompanyEditModal.tsx</code>, <code>ActivityModal.tsx</code>, <code>lib/sharedDatabase.ts</code></td><td>Edit / + Activity buttons on each card; default <code>reviewStatus: "pending review"</code>. Local fallback saves to localStorage; shared new rows stage through Review Queue.</td></tr>
             <tr><td>Export my edits → JSON</td><td><span class="pill live">live</span></td><td><code>ManualEditsPanel.tsx</code></td><td>Downloads JSON. Bridges localStorage → bundle. Surfaces locally-staged review queue count.</td></tr>
