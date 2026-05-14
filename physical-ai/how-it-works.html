@@ -285,13 +285,16 @@
           </tbody>
         </table>
         <p>
-          When the app starts, <code>store.ts</code> tries Supabase first. If that load fails or no env
-          vars are present, it uses the seed plus localStorage overrides. Successful Supabase loads
-          are cached in <code>paimt-shared-database-cache-v1</code> for offline fallback.
+          When the app starts, <code>store.ts</code> tries Supabase first. Anonymous users fetch only
+          public market tables; signed-in editors also fetch the private Review Queue. If that load
+          fails or no env vars are present, it uses the seed plus localStorage overrides. Successful
+          Supabase loads are cached in <code>paimt-shared-database-cache-v1</code> for offline fallback.
         </p>
         <pre><code>Supabase configured + signed in?
         │
-        ├─ yes → fetch shared tables → subscribe to realtime → cache snapshot
+        ├─ yes → fetch public tables + private review queue → subscribe to realtime → cache snapshot
+        │
+        ├─ no, but Supabase configured → fetch public market tables only
         │
         └─ no / unavailable → seed TS bundle + localStorage overrides/tags
                               ↓
@@ -623,6 +626,32 @@
         </div>
       </section>
 
+      <!-- ====== Walkthrough: market map ====== -->
+      <section id="walkthrough-map">
+        <span class="eyebrow">Click-by-click trace</span>
+        <h2>What happens on the Market Map</h2>
+        <div class="walkthrough">
+          <div class="wstep">
+            <div>
+              <h4>Public viewers get a default landscape</h4>
+              <p><span class="file">src/components/MarketMap.tsx</span> builds a virtual parent/child taxonomy from the visible company universe, so the map does not depend on localStorage already being populated.</p>
+            </div>
+          </div>
+          <div class="wstep">
+            <div>
+              <h4>Signed-in analysts can make it durable</h4>
+              <p>Startup sync or the <code>Sync taxonomy</code> button calls <code>generateStarterTaxonomy()</code> in <span class="file">src/lib/userTags.ts</span>, creating missing category and subcategory tags while preserving custom analyst buckets.</p>
+            </div>
+          </div>
+          <div class="wstep">
+            <div>
+              <h4>New companies are classified automatically</h4>
+              <p>The starter classifier routes companies into buckets such as Humanoids, Industrial Robotics, Defense Autonomy, Edge AI Hardware, and Data / Simulation / Components. Analysts can still drag logos to override the default.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <!-- ====== Pipeline diagram ====== -->
       <section id="pipeline">
         <span class="eyebrow">End-to-end</span>
@@ -760,7 +789,7 @@ npm run build      # tsc -b && vite build → dist/ static files
             <tr><th>Feature</th><th>Status</th><th>Files</th><th>What that means</th></tr>
           </thead>
           <tbody>
-            <tr><td>Seed dataset (~140 companies)</td><td><span class="pill live">live</span></td><td><code>src/data/seed*.ts</code></td><td>Curated by hand. Updated when we ship a new build.</td></tr>
+            <tr><td>Seed dataset (~150 companies)</td><td><span class="pill live">live</span></td><td><code>src/data/seed*.ts</code></td><td>Curated by hand. Updated when we ship a new build and upserted to Supabase for shared runtime.</td></tr>
             <tr><td>Custom tags (A / B / etc.)</td><td><span class="pill live">live</span></td><td><code>lib/userTags.ts</code>, <code>UserTagsPanel.tsx</code></td><td>Saved to Supabase when authenticated; localStorage fallback persists across reloads.</td></tr>
             <tr><td>Clickable sources on every row</td><td><span class="pill live">live</span></td><td><code>CompanyProfiles.tsx</code>, <code>ActivityTracker.tsx</code></td><td>Every public funding round links to its primary press release / filing / article.</td></tr>
             <tr><td>Dashboard / tracker credibility layer + verifier drawer</td><td><span class="pill live">live</span></td><td><code>lib/analytics.ts</code>, <code>lib/verify.ts</code>, <code>lib/sourceHealth.ts</code>, <code>Dashboard.tsx</code>, <code>ActivityTracker.tsx</code>, <code>VerificationDrawer.tsx</code></td><td>Runs in your browser. Surfaces source coverage, confidence mix, stale rows, placeholder URLs, dead links, and low-confidence figures.</td></tr>
@@ -773,7 +802,7 @@ npm run build      # tsc -b && vite build → dist/ static files
             <tr><td>Gmail OAuth and inbox sweep</td><td><span class="pill scaffold">scaffold</span></td><td><code>lib/gmail.ts</code>, <code>scripts/mock-gmail-ingest.ts</code></td><td>Code path designed; not authenticated against a live mailbox yet.</td></tr>
             <tr><td>RSS ingest from newsletters</td><td><span class="pill scaffold">scaffold</span></td><td><code>scripts/rss-ingest.ts</code></td><td>Script exists; emits mock candidates.</td></tr>
             <tr><td>Scheduled refresh (daily cron)</td><td><span class="pill scaffold">scaffold</span></td><td><code>.github/workflows/refresh-data.yml</code></td><td>GitHub Action committed; runs only when the repo is connected to a CI runner.</td></tr>
-            <tr><td>Server-side database</td><td><span class="pill scaffold">scaffold</span></td><td><code>docs/schema.sql</code>, <code>lib/supabase.ts</code>, <code>lib/sharedDatabase.ts</code>, <code>scripts/seed-supabase.ts</code></td><td>Supabase schema/client/realtime/offline cache exist. Production env QA still needed.</td></tr>
+            <tr><td>Server-side database</td><td><span class="pill live">live</span></td><td><code>docs/schema.sql</code>, <code>lib/supabase.ts</code>, <code>lib/sharedDatabase.ts</code>, <code>scripts/seed-supabase.ts</code></td><td>Supabase schema/client/realtime/offline cache exist. Public reads avoid private Review Queue rows; editor write QA still needs a two-browser pass.</td></tr>
             <tr><td>Auth (multi-user)</td><td><span class="pill live">live</span></td><td><code>AppShell.tsx</code>, <code>store.ts</code>, <code>scripts/create-supabase-user.ts</code></td><td>Email/password editor sign-in. Public viewers can read but cannot edit.</td></tr>
             <tr><td>LLM-assisted company and source-link extraction</td><td><span class="pill live">live</span></td><td><code>CompanyResearcherModal.tsx</code>, <code>SourceResearcherModal.tsx</code>, <code>api/research-company.js</code>, <code>api/research-source.js</code></td><td>Gemini runs server-side. Link candidates stage in Review Queue; no direct publication.</td></tr>
           </tbody>
