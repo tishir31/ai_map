@@ -97,6 +97,20 @@ function decodeXml(value) {
     .trim();
 }
 
+function stripHtml(value) {
+  return String(value || "")
+    .replace(/<script[\s\S]*?<\/script>/gi, " ")
+    .replace(/<style[\s\S]*?<\/style>/gi, " ")
+    .replace(/<[^>]+>/g, " ")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+function htmlMeta(html, pattern) {
+  const match = String(html || "").match(pattern);
+  return decodeXml(match && match[1] ? match[1] : "");
+}
+
 function parseMoneyToUsd(text) {
   const m = String(text || "").match(/\$([0-9]+(?:\.[0-9]+)?)\s?(m|million|b|billion)?/i);
   if (!m) return null;
@@ -143,6 +157,20 @@ function validDate(value) {
 
 function boundedText(value, max) {
   return String(value || "").replace(/\s+/g, " ").trim().slice(0, max);
+}
+
+function intelligenceScore(candidate, action, evidence, cautions) {
+  let score = 52;
+  if (action === "update_existing") score += 16;
+  if (action === "new_activity") score += 10;
+  if (action === "new_company") score += 4;
+  if (candidate.source_url) score += 10;
+  if (candidate.deal_value_usd !== null && candidate.deal_value_usd !== undefined) score += 10;
+  if (candidate.candidate_counterparty && candidate.candidate_counterparty !== "N/A") score += 8;
+  if (candidate.confidence === "reported") score += 6;
+  score += Math.min(evidence.length, 4) * 3;
+  score -= Math.min(cautions.length, 4) * 3;
+  return Math.max(5, Math.min(98, Math.round(score)));
 }
 
 function safeJson(text) {
@@ -221,6 +249,40 @@ async function googleNewsSearch(query, maxResults) {
   const r = await fetch(url.toString(), { headers: { "User-Agent": "physical-ai-tracker/1.0" } });
   if (!r.ok) throw new Error(`News RSS failed (${r.status})`);
   return parseRss(await r.text(), maxResults);
+}
+
+async function fetchArticleSnapshot(url) {
+  const controller = new AbortController();
+  const timer = setTimeout(() => controller.abort(), 7000);
+  try {
+    const response = await fetch(url, {
+      redirect: "follow",
+      signal: controller.signal,
+      headers: { "User-Agent": "physical-ai-market-tracker/1.0" }
+    });
+    const contentType = response.headers.get("content-type") || "";
+    const raw = await response.text();
+    const canonical =
+      htmlMeta(raw, /<link[^>]+rel=["']canonical["'][^>]+href=["']([^"']+)["']/i) ||
+      htmlMeta(raw, /<meta[^>]+property=["']og:url["'][^>]+content=["']([^"']+)["']/i) ||
+      response.url ||
+      url;
+    const title =
+      htmlMeta(raw, /<meta[^>]+property=["']og:title["'][^>]+content=["']([^"']+)["']/i) ||
+      htmlMeta(raw, /<title[^>]*>([\s\S]*?)<\/title>/i);
+    const text = contentType.includes("text/html") ? stripHtml(raw) : raw.replace(/\s+/g, " ").trim();
+    return {
+      ok: response.ok,
+      status: response.status,
+      url: canonical,
+      title,
+      text: text.slice(0, 8000)
+    };
+  } catch (error) {
+    return { ok: false, status: null, url, title: "", text: "", error: String(error) };
+  } finally {
+    clearTimeout(timer);
+  }
 }
 
 async function supabaseGet(supabaseUrl, serviceRoleKey, path) {
@@ -423,15 +485,34 @@ async function adjudicateWithLlm(candidate, gate, context) {
   if (evidence.length) triage.push(`Evidence: ${evidence.join(" | ")}.`);
   if (cautions.length) triage.push(`Cautions: ${cautions.join(" | ")}.`);
   next.extracted_text = boundedText(`${triage.join(" ")} Source: ${candidate.extracted_text}`, 900);
+  next.intelligence_action = action;
+  next.intelligence_score = intelligenceScore(next, action, evidence, cautions);
+  next.intelligence_evidence = evidence;
+  next.intelligence_cautions = cautions;
+  next.llm_model = INTELLIGENCE_MODEL;
+  next.llm_status = "enriched";
   return { keep: true, candidate: next, status: "enriched" };
 }
 
-function buildCandidate(item, sourceName) {
-  const text = `${item.title}. ${item.source}`;
+function stripIntelligenceColumns(row) {
+  const {
+    intelligence_action,
+    intelligence_score,
+    intelligence_evidence,
+    intelligence_cautions,
+    llm_model,
+    llm_status,
+    ...rest
+  } = row;
+  return rest;
+}
+
+function buildCandidate(item, sourceName, article) {
+  const text = `${item.title}. ${item.source}. ${article?.title || ""}. ${article?.text || ""}`;
   const dealValueUsd = parseMoneyToUsd(text);
   const company = inferCompany(text);
   const row = {
-    id: `rq-web-${hash(normalizeUrl(item.link) || item.title)}`,
+    id: `rq-web-${hash(normalizeUrl(article?.url || item.link) || item.title)}`,
     candidate_company: company,
     candidate_counterparty: inferCounterparty(text),
     candidate_date: item.pubDate,
@@ -441,13 +522,13 @@ function buildCandidate(item, sourceName) {
     geography: "N/A",
     description: `Public web funding signal from ${sourceName}: ${item.title}`,
     source_type: "article",
-    source_url: item.link,
+    source_url: article?.url || item.link,
     gmail_message_id: null,
     sender: null,
     subject: item.title,
     received_date: item.pubDate,
     snippet: item.title,
-    extracted_text: `${item.title}${item.source ? ` — ${item.source}` : ""}`,
+    extracted_text: boundedText(`${item.title}${item.source ? ` — ${item.source}` : ""}${article?.text ? `. Article text: ${article.text}` : ""}`, 900),
     confidence: "reported",
     status: "pending",
     created_at: new Date().toISOString()
@@ -457,22 +538,33 @@ function buildCandidate(item, sourceName) {
 
 async function supabaseUpsertReviewQueue(supabaseUrl, serviceRoleKey, rows) {
   if (rows.length === 0) return 0;
-  const r = await fetch(`${supabaseUrl}/rest/v1/review_queue_items?on_conflict=id`, {
-    method: "POST",
-    headers: {
-      apikey: serviceRoleKey,
-      Authorization: `Bearer ${serviceRoleKey}`,
-      "Content-Type": "application/json",
-      Prefer: "resolution=merge-duplicates,return=minimal"
-    },
-    body: JSON.stringify(rows)
-  });
-  if (!r.ok) throw new Error(`Supabase upsert failed (${r.status}): ${(await r.text()).slice(0, 200)}`);
+  async function post(payload) {
+    return fetch(`${supabaseUrl}/rest/v1/review_queue_items?on_conflict=id`, {
+      method: "POST",
+      headers: {
+        apikey: serviceRoleKey,
+        Authorization: `Bearer ${serviceRoleKey}`,
+        "Content-Type": "application/json",
+        Prefer: "resolution=merge-duplicates,return=minimal"
+      },
+      body: JSON.stringify(payload)
+    });
+  }
+  let r = await post(rows);
+  if (!r.ok) {
+    const detail = await r.text();
+    if (/intelligence_|llm_/i.test(detail)) {
+      r = await post(rows.map(stripIntelligenceColumns));
+      if (r.ok) return rows.length;
+      throw new Error(`Supabase upsert fallback failed (${r.status}): ${(await r.text()).slice(0, 200)}`);
+    }
+    throw new Error(`Supabase upsert failed (${r.status}): ${detail.slice(0, 200)}`);
+  }
   return rows.length;
 }
 
-async function supabaseInsertRun(supabaseUrl, serviceRoleKey, run) {
-  await fetch(`${supabaseUrl}/rest/v1/ingestion_runs`, {
+async function supabasePostRun(supabaseUrl, serviceRoleKey, run) {
+  return fetch(`${supabaseUrl}/rest/v1/ingestion_runs`, {
     method: "POST",
     headers: {
       apikey: serviceRoleKey,
@@ -482,6 +574,17 @@ async function supabaseInsertRun(supabaseUrl, serviceRoleKey, run) {
     },
     body: JSON.stringify(run)
   });
+}
+
+async function supabaseInsertRun(supabaseUrl, serviceRoleKey, run) {
+  let r = await supabasePostRun(supabaseUrl, serviceRoleKey, run);
+  if (!r.ok) {
+    const detail = await r.text();
+    if (/llm_/i.test(detail)) {
+      const { llm_enriched_count, llm_rejected_count, llm_failed_count, ...legacyRun } = run;
+      r = await supabasePostRun(supabaseUrl, serviceRoleKey, legacyRun);
+    }
+  }
 }
 
 module.exports = async function handler(req, res) {
@@ -533,7 +636,8 @@ module.exports = async function handler(req, res) {
       const items = await googleNewsSearch(src.query, maxResults);
       const candidates = [];
       for (const item of items) {
-        const candidate = buildCandidate(item, src.name);
+        const article = await fetchArticleSnapshot(item.link);
+        const candidate = buildCandidate(item, src.name, article);
         const gate = gateCandidate(candidate, context);
         if (!gate.keep) {
           dedupedCount += 1;
@@ -559,6 +663,8 @@ module.exports = async function handler(req, res) {
           } catch (llmError) {
             intelligence.failed += 1;
             staged.extracted_text = boundedText(`AI triage failed; deterministic gate used. ${(llmError && llmError.message) || String(llmError)}. Source: ${staged.extracted_text}`, 900);
+            staged.llm_model = INTELLIGENCE_MODEL;
+            staged.llm_status = "failed";
           }
         }
         candidates.push(staged);
@@ -582,6 +688,9 @@ module.exports = async function handler(req, res) {
     completed_at: new Date().toISOString(),
     candidates_found: totalCandidates,
     deduped_count: dedupedCount,
+    llm_enriched_count: intelligence.enriched,
+    llm_rejected_count: intelligence.rejected,
+    llm_failed_count: intelligence.failed,
     status: runStatus
   }).catch(() => undefined);
 

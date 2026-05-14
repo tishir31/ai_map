@@ -157,6 +157,20 @@ function boundedText(value, max) {
   return String(value || "").replace(/\s+/g, " ").trim().slice(0, max);
 }
 
+function intelligenceScore(candidate, action, evidence, cautions) {
+  let score = 48;
+  if (action === "update_existing") score += 16;
+  if (action === "new_activity") score += 10;
+  if (action === "new_company") score += 4;
+  if (candidate.deal_value_usd !== null && candidate.deal_value_usd !== undefined) score += 10;
+  if (candidate.candidate_counterparty && candidate.candidate_counterparty !== "N/A") score += 8;
+  if (candidate.confidence === "reported") score += 6;
+  if (candidate.source_type === "Gmail" && !candidate.source_url) score -= 10;
+  score += Math.min(evidence.length, 4) * 3;
+  score -= Math.min(cautions.length, 4) * 3;
+  return Math.max(5, Math.min(98, Math.round(score)));
+}
+
 function safeJson(text) {
   try {
     return JSON.parse(text);
@@ -363,21 +377,42 @@ function buildCandidate(message, sourceName) {
 
 async function supabaseUpsertReviewQueue(supabaseUrl, serviceRoleKey, rows) {
   if (rows.length === 0) return 0;
-  const r = await fetch(`${supabaseUrl}/rest/v1/review_queue_items?on_conflict=id`, {
+  async function post(payload) {
+    return fetch(`${supabaseUrl}/rest/v1/review_queue_items?on_conflict=id`, {
+      method: "POST",
+      headers: {
+        apikey: serviceRoleKey,
+        Authorization: `Bearer ${serviceRoleKey}`,
+        "Content-Type": "application/json",
+        Prefer: "resolution=merge-duplicates,return=minimal"
+      },
+      body: JSON.stringify(payload)
+    });
+  }
+  let r = await post(rows);
+  if (!r.ok) {
+    const detail = await r.text();
+    if (/intelligence_|llm_/i.test(detail)) {
+      r = await post(rows.map(stripIntelligenceColumns));
+      if (r.ok) return rows.length;
+      throw new Error(`Supabase upsert fallback failed (${r.status}): ${(await r.text()).slice(0, 200)}`);
+    }
+    throw new Error(`Supabase upsert failed (${r.status}): ${detail.slice(0, 200)}`);
+  }
+  return rows.length;
+}
+
+async function supabasePostRun(supabaseUrl, serviceRoleKey, run) {
+  return fetch(`${supabaseUrl}/rest/v1/ingestion_runs`, {
     method: "POST",
     headers: {
       apikey: serviceRoleKey,
       Authorization: `Bearer ${serviceRoleKey}`,
       "Content-Type": "application/json",
-      Prefer: "resolution=merge-duplicates,return=minimal"
+      Prefer: "return=minimal"
     },
-    body: JSON.stringify(rows)
+    body: JSON.stringify(run)
   });
-  if (!r.ok) {
-    const detail = await r.text();
-    throw new Error(`Supabase upsert failed (${r.status}): ${detail.slice(0, 200)}`);
-  }
-  return rows.length;
 }
 
 async function supabaseGet(supabaseUrl, serviceRoleKey, path) {
@@ -590,20 +625,37 @@ async function adjudicateWithLlm(candidate, gate, context) {
   if (evidence.length) triage.push(`Evidence: ${evidence.join(" | ")}.`);
   if (cautions.length) triage.push(`Cautions: ${cautions.join(" | ")}.`);
   next.extracted_text = boundedText(`${triage.join(" ")} Source: ${candidate.extracted_text}`, 900);
+  next.intelligence_action = action;
+  next.intelligence_score = intelligenceScore(next, action, evidence, cautions);
+  next.intelligence_evidence = evidence;
+  next.intelligence_cautions = cautions;
+  next.llm_model = INTELLIGENCE_MODEL;
+  next.llm_status = "enriched";
   return { keep: true, candidate: next, status: "enriched" };
 }
 
+function stripIntelligenceColumns(row) {
+  const {
+    intelligence_action,
+    intelligence_score,
+    intelligence_evidence,
+    intelligence_cautions,
+    llm_model,
+    llm_status,
+    ...rest
+  } = row;
+  return rest;
+}
+
 async function supabaseInsertRun(supabaseUrl, serviceRoleKey, run) {
-  await fetch(`${supabaseUrl}/rest/v1/ingestion_runs`, {
-    method: "POST",
-    headers: {
-      apikey: serviceRoleKey,
-      Authorization: `Bearer ${serviceRoleKey}`,
-      "Content-Type": "application/json",
-      Prefer: "return=minimal"
-    },
-    body: JSON.stringify(run)
-  });
+  let r = await supabasePostRun(supabaseUrl, serviceRoleKey, run);
+  if (!r.ok) {
+    const detail = await r.text();
+    if (/llm_/i.test(detail)) {
+      const { llm_enriched_count, llm_rejected_count, llm_failed_count, ...legacyRun } = run;
+      r = await supabasePostRun(supabaseUrl, serviceRoleKey, legacyRun);
+    }
+  }
 }
 
 module.exports = async function handler(req, res) {
@@ -702,6 +754,8 @@ module.exports = async function handler(req, res) {
           } catch (llmError) {
             intelligence.failed += 1;
             staged.extracted_text = boundedText(`AI triage failed; deterministic gate used. ${(llmError && llmError.message) || String(llmError)}. Source: ${staged.extracted_text}`, 900);
+            staged.llm_model = INTELLIGENCE_MODEL;
+            staged.llm_status = "failed";
           }
         }
         candidates.push(staged);
@@ -725,6 +779,9 @@ module.exports = async function handler(req, res) {
     completed_at: new Date().toISOString(),
     candidates_found: totalCandidates,
     deduped_count: dedupedCount,
+    llm_enriched_count: intelligence.enriched,
+    llm_rejected_count: intelligence.rejected,
+    llm_failed_count: intelligence.failed,
     status: runStatus
   }).catch(() => undefined);
 
