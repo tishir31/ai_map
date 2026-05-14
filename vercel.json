@@ -13,6 +13,7 @@
     }
   ],
   "crons": [
-    { "path": "/api/ingest-gmail", "schedule": "0 13 * * *" }
+    { "path": "/api/ingest-gmail", "schedule": "0 13 * * *" },
+    { "path": "/api/ingest-web-news", "schedule": "15 13 * * *" }
   ]
 }

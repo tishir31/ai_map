@@ -35,9 +35,11 @@ const ALLOWED_ORIGINS = new Set([
 const DEFAULT_QUERIES = [
   {
     name: "Physical AI recent fundraises",
-    query: "newer_than:3d (robotics OR humanoid OR autonomous OR drone OR \"physical AI\" OR \"embodied AI\" OR funding OR financing OR raises OR raised OR \"Series A\" OR \"Series B\" OR \"Series C\")"
+    query: "newer_than:2d (robotics OR humanoid OR autonomous OR drone OR \"physical AI\" OR \"embodied AI\" OR robot OR autonomy) (raises OR raised OR funding OR financing OR \"Series A\" OR \"Series B\" OR \"Series C\" OR \"seed round\")"
   }
 ];
+const MAX_LOOKBACK_DAYS = 2;
+const MAX_DEFAULT_RESULTS = 20;
 
 const ACTIVITY_RULES = [
   ["financing", /\b(raises?|series\s+[a-z]|seed|funding|financing|investment)\b/i],
@@ -59,6 +61,40 @@ const SUBSECTOR_RULES = [
   ["robotics", /\brobot/i]
 ];
 
+const PHYSICAL_AI_RULES = [
+  /\bphysical ai\b/i,
+  /\bembodied ai\b/i,
+  /\bhumanoid/i,
+  /\brobot(ic|ics|s)?\b/i,
+  /\bautonom(y|ous)\b/i,
+  /\bself-driving\b/i,
+  /\bdrone|uav|uas|unmanned\b/i,
+  /\bindustrial automation\b/i,
+  /\bwarehouse automation\b/i,
+  /\bdefense autonomy\b/i,
+  /\bcomputer vision\b/i,
+  /\blidar|sensor fusion|perception\b/i,
+  /\bmanipulation\b/i
+];
+
+const FUNDING_RULES = [
+  /\braises?|raised|raising\b/i,
+  /\bfunding|financing|fundraise|investment\b/i,
+  /\bseries\s+[a-z]\b/i,
+  /\bseed round|pre-seed\b/i,
+  /\bled by|backed by|participat(?:e|ed|ion)\b/i,
+  /\bvaluation\b/i,
+  /\bclosed? (?:a|an|its)?\s*(?:\$|series|seed|financing|funding)/i,
+  /\bsecured? (?:\$|funding|financing|investment)/i
+];
+
+const NEGATIVE_RULES = [
+  /\bstock\b|\bshare price\b|\bearnings\b|\banalyst rating\b/i,
+  /\betf\b|\bmutual fund\b/i,
+  /\bwebinar\b|\bpodcast\b|\bconference agenda\b/i,
+  /\bjob opening\b|\bhiring\b/i
+];
+
 function parseMoneyToUsd(text) {
   const m = String(text || "").match(/\$([0-9]+(?:\.[0-9]+)?)\s?(m|million|b|billion)?/i);
   if (!m) return null;
@@ -67,6 +103,82 @@ function parseMoneyToUsd(text) {
   if (unit === "b" || unit === "billion") return value * 1_000_000_000;
   if (unit === "m" || unit === "million") return value * 1_000_000;
   return value;
+}
+
+function normalize(value) {
+  return String(value || "").toLowerCase().replace(/[^a-z0-9]+/g, " ").trim();
+}
+
+function normalizeCompany(value) {
+  return normalize(value)
+    .replace(/\b(inc|incorporated|corp|corporation|co|company|ltd|limited|llc|plc|technologies|technology|robotics|ai)\b/g, "")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+function daysBetween(a, b) {
+  const ta = new Date(a).getTime();
+  const tb = new Date(b).getTime();
+  if (!Number.isFinite(ta) || !Number.isFinite(tb)) return Infinity;
+  return Math.abs(ta - tb) / 86_400_000;
+}
+
+function isRecent(date, now = new Date()) {
+  return daysBetween(date, now.toISOString().slice(0, 10)) <= MAX_LOOKBACK_DAYS + 0.5;
+}
+
+function scoreRules(text, rules) {
+  return rules.reduce((sum, rule) => sum + (rule.test(text) ? 1 : 0), 0);
+}
+
+function isFundingSignal(text, dealValueUsd) {
+  const physicalScore = scoreRules(text, PHYSICAL_AI_RULES);
+  const fundingScore = scoreRules(text, FUNDING_RULES);
+  const negativeScore = scoreRules(text, NEGATIVE_RULES);
+  return physicalScore >= 1 && fundingScore >= 1 && negativeScore === 0 && (dealValueUsd || /\bseries\s+[a-z]\b|\bseed round|pre-seed\b/i.test(text));
+}
+
+function decodeBase64Url(data) {
+  if (!data) return "";
+  try {
+    return Buffer.from(String(data).replace(/-/g, "+").replace(/_/g, "/"), "base64").toString("utf8");
+  } catch {
+    return "";
+  }
+}
+
+function stripHtml(value) {
+  return String(value || "")
+    .replace(/<style[\s\S]*?<\/style>/gi, " ")
+    .replace(/<script[\s\S]*?<\/script>/gi, " ")
+    .replace(/<[^>]+>/g, " ")
+    .replace(/&nbsp;/g, " ")
+    .replace(/&amp;/g, "&")
+    .replace(/&quot;/g, "\"")
+    .replace(/&#39;/g, "'")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+function collectPayloadText(payload, out = []) {
+  if (!payload) return out;
+  const mimeType = String(payload.mimeType || "");
+  const bodyText = decodeBase64Url(payload.body && payload.body.data);
+  if (bodyText && /text\/(plain|html)/i.test(mimeType)) out.push(stripHtml(bodyText));
+  for (const part of payload.parts || []) collectPayloadText(part, out);
+  return out;
+}
+
+function bestFundingExcerpt(text) {
+  const sentences = String(text || "").split(/(?<=[.!?])\s+|\n+/).map((s) => s.trim()).filter(Boolean);
+  const ranked = sentences
+    .map((sentence) => ({
+      sentence,
+      score: scoreRules(sentence, PHYSICAL_AI_RULES) * 2 + scoreRules(sentence, FUNDING_RULES) * 3 + (parseMoneyToUsd(sentence) ? 4 : 0)
+    }))
+    .sort((a, b) => b.score - a.score);
+  const best = ranked[0]?.sentence || String(text || "");
+  return best.slice(0, 700);
 }
 
 function inferActivityType(text) {
@@ -79,18 +191,30 @@ function inferSubsector(text) {
 }
 
 function inferCompany(subject, body) {
-  const bodyMatch = String(body || "").match(/(?:^|[.!?]\s+)([A-Z][A-Za-z0-9&.\- ]{2,45})\s+(?:raises?|raised|acquires?|partners?|selected|launches?|released|wins?)/);
-  if (bodyMatch && bodyMatch[1]) return bodyMatch[1].trim();
-  const subjMatch = String(subject || "").match(/(?:alert:|news:|financing:)?\s*([A-Z][A-Za-z0-9&.\- ]{2,45})\s+(?:raises?|raised|acquires?|partners?|selected|launches?|released|wins?)/);
-  return (subjMatch && subjMatch[1] && subjMatch[1].trim()) || "N/A";
+  const text = `${subject}. ${body}`;
+  const patterns = [
+    /\b([A-Z][A-Za-z0-9&.'\-]*(?:\s+[A-Z0-9][A-Za-z0-9&.'\-]*){0,5})\s+(?:has\s+)?(?:raises?|raised|secures?|secured|closes?|closed|announces?|announced)\b/,
+    /\b([A-Z][A-Za-z0-9&.'\-]*(?:\s+[A-Z0-9][A-Za-z0-9&.'\-]*){0,5}),?\s+(?:an?|the)?\s*(?:robotics|humanoid|autonomous|drone|industrial|embodied AI|physical AI)[^.!?]{0,120}\b(?:raises?|raised|secures?|closed)\b/i,
+    /(?:funding|financing|investment)\s+(?:for|in)\s+([A-Z][A-Za-z0-9&.'\-]*(?:\s+[A-Z0-9][A-Za-z0-9&.'\-]*){0,5})\b/i
+  ];
+  for (const pattern of patterns) {
+    const match = text.match(pattern);
+    const candidate = match && match[1] ? match[1].trim().replace(/^(Today|This|The|A|An)\s+/i, "") : "";
+    if (candidate && !/^(series|seed|funding|financing|robotics|humanoid|autonomous|today|this)$/i.test(candidate)) return candidate;
+  }
+  return "N/A";
 }
 
 function inferCounterparty(body) {
   const text = String(body || "");
-  const from = text.match(/\bfrom\s+([A-Z][A-Za-z0-9&.\- ]{2,55})/);
-  const wth = text.match(/\bwith\s+([A-Z][A-Za-z0-9&.\- ]{2,55})/);
-  const by = text.match(/\bby\s+([A-Z][A-Za-z0-9&.\- ]{2,55})/);
-  return ((from && from[1]) || (wth && wth[1]) || (by && by[1]) || "N/A").replace(/\s+to\s.*$/, "").trim();
+  const led = text.match(/\bled by\s+([A-Z][A-Za-z0-9&.,'\- ]{2,90})/);
+  const from = text.match(/\bfrom\s+([A-Z][A-Za-z0-9&.,'\- ]{2,90})/);
+  const backed = text.match(/\bbacked by\s+([A-Z][A-Za-z0-9&.,'\- ]{2,90})/);
+  const withParticipation = text.match(/\bparticipation from\s+([A-Z][A-Za-z0-9&.,'\- ]{2,90})/);
+  return ((led && led[1]) || (from && from[1]) || (backed && backed[1]) || (withParticipation && withParticipation[1]) || "N/A")
+    .replace(/\s+(to|for|as|in order)\s.*$/, "")
+    .replace(/[.;:].*$/, "")
+    .trim();
 }
 
 function unauthorized(res, reason) {
@@ -154,7 +278,7 @@ async function gmailList(accessToken, query, maxResults) {
 }
 
 async function gmailGet(accessToken, messageId) {
-  const url = `https://gmail.googleapis.com/gmail/v1/users/me/messages/${messageId}?format=metadata&metadataHeaders=Subject&metadataHeaders=From&metadataHeaders=Date`;
+  const url = `https://gmail.googleapis.com/gmail/v1/users/me/messages/${messageId}?format=full`;
   const r = await fetch(url, { headers: { Authorization: `Bearer ${accessToken}` } });
   if (!r.ok) {
     const detail = await r.text();
@@ -177,11 +301,13 @@ function buildCandidate(message, sourceName) {
     ? new Date(headers.date).toISOString().slice(0, 10)
     : new Date().toISOString().slice(0, 10);
   const snippet = String(message.snippet || "");
-  const text = `${subject}. ${snippet}`;
+  const bodyText = collectPayloadText(message.payload).join(" ").slice(0, 8000);
+  const text = `${subject}. ${snippet}. ${bodyText}`;
   const activityType = inferActivityType(text);
   const subsector = inferSubsector(text);
-  const candidateCompany = inferCompany(subject, snippet);
-  const candidateCounterparty = inferCounterparty(snippet);
+  const excerpt = bestFundingExcerpt(text);
+  const candidateCompany = inferCompany(subject, excerpt);
+  const candidateCounterparty = inferCounterparty(excerpt);
   const dealValueUsd = parseMoneyToUsd(text);
   return {
     id: `rq-gmail-${message.id}`,
@@ -192,7 +318,7 @@ function buildCandidate(message, sourceName) {
     subsector,
     deal_value_usd: dealValueUsd,
     geography: "N/A",
-    description: `Sanitized Gmail candidate from ${sourceName}: ${candidateCompany} ${activityType}. Review private email before approving.`,
+    description: `Gmail funding signal from ${sourceName}: ${candidateCompany} ${activityType}${dealValueUsd ? ` (${Math.round(dealValueUsd / 1_000_000)}M disclosed)` : ""}. Review before approving or merging.`,
     source_type: "Gmail",
     source_url: null,
     gmail_message_id: message.id,
@@ -200,7 +326,7 @@ function buildCandidate(message, sourceName) {
     subject,
     received_date: receivedDate,
     snippet,
-    extracted_text: "Private email body intentionally not committed. Review the Gmail message by ID before approving or merging.",
+    extracted_text: excerpt,
     confidence: "reported",
     status: "pending",
     created_at: new Date().toISOString()
@@ -224,6 +350,95 @@ async function supabaseUpsertReviewQueue(supabaseUrl, serviceRoleKey, rows) {
     throw new Error(`Supabase upsert failed (${r.status}): ${detail.slice(0, 200)}`);
   }
   return rows.length;
+}
+
+async function supabaseGet(supabaseUrl, serviceRoleKey, path) {
+  const r = await fetch(`${supabaseUrl}/rest/v1/${path}`, {
+    headers: {
+      apikey: serviceRoleKey,
+      Authorization: `Bearer ${serviceRoleKey}`
+    }
+  });
+  if (!r.ok) {
+    const detail = await r.text();
+    throw new Error(`Supabase read failed (${r.status}): ${detail.slice(0, 200)}`);
+  }
+  return r.json();
+}
+
+async function loadDedupeContext(supabaseUrl, serviceRoleKey) {
+  const [companies, activities, pending] = await Promise.all([
+    supabaseGet(supabaseUrl, serviceRoleKey, "companies?select=id,name&is_sample=eq.false"),
+    supabaseGet(
+      supabaseUrl,
+      serviceRoleKey,
+      "activities?select=id,company_id,date_announced,activity_type,deal_value_usd,description,review_status&is_sample=eq.false&order=date_announced.desc&limit=600"
+    ),
+    supabaseGet(
+      supabaseUrl,
+      serviceRoleKey,
+      "review_queue_items?select=id,candidate_company,candidate_date,activity_type,deal_value_usd,gmail_message_id,status,description,duplicate_of_activity_id&status=eq.pending&limit=600"
+    )
+  ]);
+  const companyById = new Map((companies || []).map((company) => [company.id, company.name]));
+  return { companies, activities, pending, companyById };
+}
+
+function sameDealValue(a, b) {
+  if (a === null || a === undefined || b === null || b === undefined) return false;
+  return Math.abs(Number(a) - Number(b)) < 1;
+}
+
+function findExistingActivity(candidate, context) {
+  const candidateCompany = normalizeCompany(candidate.candidate_company);
+  if (!candidateCompany) return null;
+  let companyMatched = null;
+  for (const [companyId, name] of context.companyById.entries()) {
+    const existing = normalizeCompany(name);
+    if (existing && (existing === candidateCompany || existing.includes(candidateCompany) || candidateCompany.includes(existing))) {
+      companyMatched = companyId;
+      break;
+    }
+  }
+  if (!companyMatched) return null;
+  return (context.activities || []).find((activity) => {
+    if (activity.company_id !== companyMatched) return false;
+    if (activity.activity_type !== candidate.activity_type) return false;
+    if (daysBetween(activity.date_announced, candidate.candidate_date) > 120) return false;
+    return true;
+  }) || null;
+}
+
+function pendingDuplicate(candidate, context) {
+  const candidateCompany = normalizeCompany(candidate.candidate_company);
+  return (context.pending || []).some((item) => {
+    if (candidate.gmail_message_id && item.gmail_message_id === candidate.gmail_message_id) return true;
+    if (item.activity_type !== candidate.activity_type) return false;
+    if (normalizeCompany(item.candidate_company) !== candidateCompany) return false;
+    if (daysBetween(item.candidate_date, candidate.candidate_date) > 14) return false;
+    if (sameDealValue(item.deal_value_usd, candidate.deal_value_usd)) return true;
+    return normalize(item.description).slice(0, 80) === normalize(candidate.description).slice(0, 80);
+  });
+}
+
+function gateCandidate(candidate, context) {
+  const text = `${candidate.subject || ""}. ${candidate.snippet || ""}. ${candidate.extracted_text || ""}. ${candidate.description || ""}`;
+  if (!isRecent(candidate.candidate_date)) return { keep: false, reason: "outside-lookback" };
+  if (candidate.activity_type !== "financing") return { keep: false, reason: "not-financing" };
+  if (!candidate.candidate_company || candidate.candidate_company === "N/A") return { keep: false, reason: "company-unresolved" };
+  if (!isFundingSignal(text, candidate.deal_value_usd)) return { keep: false, reason: "low-relevance" };
+  if (pendingDuplicate(candidate, context)) return { keep: false, reason: "pending-duplicate" };
+
+  const existing = findExistingActivity(candidate, context);
+  if (existing) {
+    if (sameDealValue(existing.deal_value_usd, candidate.deal_value_usd)) return { keep: false, reason: "approved-duplicate" };
+    return {
+      keep: true,
+      reason: "existing-activity-update",
+      duplicateOfActivityId: existing.id
+    };
+  }
+  return { keep: true, reason: "new-financing" };
 }
 
 async function supabaseInsertRun(supabaseUrl, serviceRoleKey, run) {
@@ -277,7 +492,7 @@ module.exports = async function handler(req, res) {
   } catch {
     body = {};
   }
-  const maxResults = Number(body.maxResults || process.env.INGEST_MAX || 5);
+  const maxResults = Math.min(Number(body.maxResults || process.env.INGEST_MAX || MAX_DEFAULT_RESULTS), 50);
 
   let sources = DEFAULT_QUERIES;
   if (process.env.INGEST_SOURCES) {
@@ -294,22 +509,36 @@ module.exports = async function handler(req, res) {
 
   const startedAt = new Date().toISOString();
   let totalCandidates = 0;
+  let dedupedCount = 0;
+  const skippedByReason = {};
   const perSource = [];
   let runStatus = "completed";
   let errorMessage = null;
 
   try {
+    const context = await loadDedupeContext(SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY);
     const accessToken = await getGmailAccessToken();
     for (const src of sources) {
       const messages = await gmailList(accessToken, src.query, maxResults);
       const candidates = [];
       for (const m of messages) {
         const detail = await gmailGet(accessToken, m.id);
-        candidates.push(buildCandidate(detail, src.name));
+        const candidate = buildCandidate(detail, src.name);
+        const gate = gateCandidate(candidate, context);
+        if (!gate.keep) {
+          dedupedCount += 1;
+          skippedByReason[gate.reason] = (skippedByReason[gate.reason] || 0) + 1;
+          continue;
+        }
+        if (gate.duplicateOfActivityId) {
+          candidate.duplicate_of_activity_id = gate.duplicateOfActivityId;
+          candidate.description = `Suggested update to existing activity ${gate.duplicateOfActivityId}: ${candidate.description}`;
+        }
+        candidates.push(candidate);
       }
       const written = await supabaseUpsertReviewQueue(SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY, candidates);
       totalCandidates += written;
-      perSource.push({ source: src.name, query: src.query, found: messages.length, written });
+      perSource.push({ source: src.name, query: src.query, found: messages.length, written, skipped: messages.length - written });
     }
   } catch (err) {
     runStatus = "failed";
@@ -325,7 +554,7 @@ module.exports = async function handler(req, res) {
     started_at: startedAt,
     completed_at: new Date().toISOString(),
     candidates_found: totalCandidates,
-    deduped_count: 0,
+    deduped_count: dedupedCount,
     status: runStatus
   }).catch(() => undefined);
 
@@ -335,6 +564,8 @@ module.exports = async function handler(req, res) {
     JSON.stringify({
       ok: !errorMessage,
       candidates: totalCandidates,
+      deduped: dedupedCount,
+      skippedByReason,
       perSource,
       error: errorMessage || undefined
     })
