@@ -213,7 +213,7 @@ async function loadDedupeContext(supabaseUrl, serviceRoleKey) {
     supabaseGet(
       supabaseUrl,
       serviceRoleKey,
-      "activities?select=id,company_id,date_announced,activity_type,deal_value_usd,description,source_url,additional_sources,review_status&is_sample=eq.false&order=date_announced.desc&limit=600"
+      "activities?select=id,company_id,date_announced,activity_type,deal_value_usd,description,source_url,review_status&is_sample=eq.false&order=date_announced.desc&limit=600"
     ),
     supabaseGet(
       supabaseUrl,
@@ -233,9 +233,6 @@ function sameDealValue(a, b) {
 function activityUrls(activity) {
   const urls = [];
   if (activity.source_url) urls.push(normalizeUrl(activity.source_url));
-  if (Array.isArray(activity.additional_sources)) {
-    for (const source of activity.additional_sources) if (source && source.url) urls.push(normalizeUrl(source.url));
-  }
   return urls;
 }
 
