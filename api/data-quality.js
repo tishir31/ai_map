@@ -338,6 +338,86 @@ function summarize(activities, companies, rowFindings, companyFindings, investor
   };
 }
 
+function buildRemediationPlan(summary) {
+  const counts = summary.issueCounts || {};
+  const plan = [
+    {
+      code: "missing-deal-value",
+      count: counts["missing-deal-value"] || 0,
+      priority: "high",
+      owner: "data",
+      action: "For financing rows, source the disclosed round size or explicitly mark the description as undisclosed."
+    },
+    {
+      code: "estimated-confidence",
+      count: counts["estimated-confidence"] || 0,
+      priority: "high",
+      owner: "research",
+      action: "Recheck estimated rows against primary/public sources and upgrade confidence to reported or confirmed only when evidence supports it."
+    },
+    {
+      code: "no-approved-activity",
+      count: counts["no-approved-activity"] || 0,
+      priority: "medium",
+      owner: "research",
+      action: "Add at least one approved public activity row for active companies, or intentionally remove/archive companies that should not be client-facing."
+    },
+    {
+      code: "high-value-single-source",
+      count: counts["high-value-single-source"] || 0,
+      priority: "medium",
+      owner: "research",
+      action: "Add a second public citation for large financing rounds before MD/client export."
+    },
+    {
+      code: "missing-website",
+      count: counts["missing-website"] || 0,
+      priority: "low",
+      owner: "data",
+      action: "Fill missing company websites so profile, logo, and source enrichment workflows can resolve consistently."
+    }
+  ];
+  return plan.filter((item) => item.count > 0);
+}
+
+function buildClientReadinessGates(summary, readiness) {
+  const counts = summary.issueCounts || {};
+  return [
+    {
+      gate: "schema-ready",
+      passed: summary.investorNormalizationApplied === true,
+      detail: summary.investorNormalizationApplied
+        ? "Investor normalization is readable."
+        : "Investor normalization tables/views are not readable; apply the Supabase migration bundle."
+    },
+    {
+      gate: "source-coverage",
+      passed: summary.publicSourceBackedPct >= 95,
+      detail: `${summary.publicSourceBackedPct}% of approved rows have usable public source coverage.`
+    },
+    {
+      gate: "confirmed-or-reported",
+      passed: summary.confirmedOrReportedPct >= 90,
+      detail: `${summary.confirmedOrReportedPct}% of approved rows are confirmed or reported.`
+    },
+    {
+      gate: "financing-completeness",
+      passed: (counts["missing-deal-value"] || 0) === 0,
+      detail: `${counts["missing-deal-value"] || 0} financing rows need value/undisclosed cleanup.`
+    },
+    {
+      gate: "active-company-coverage",
+      passed: (counts["no-approved-activity"] || 0) === 0,
+      detail: `${counts["no-approved-activity"] || 0} companies have no approved activity rows.`
+    },
+    {
+      gate: "overall-quality-score",
+      passed: readiness.status === "client_ready",
+      detail: `Data-quality score is ${readiness.score} (${readiness.status}).`
+    }
+  ];
+}
+
 module.exports = async function handler(req, res) {
   setCors(req, res);
   if (req.method === "OPTIONS") {
@@ -390,6 +470,8 @@ module.exports = async function handler(req, res) {
     const companyFindings = buildCompanyFindings(companies || [], activities || []);
     const readiness = qualityScore(rowFindings, companyFindings, (activities || []).length);
     const summary = summarize(activities || [], companies || [], rowFindings, companyFindings, activityInvestors.ok);
+    const remediationPlan = buildRemediationPlan(summary);
+    const clientReadinessGates = buildClientReadinessGates(summary, readiness);
 
     res.statusCode = 200;
     res.setHeader("Content-Type", "application/json");
@@ -398,6 +480,8 @@ module.exports = async function handler(req, res) {
       generatedAt: new Date().toISOString(),
       readiness,
       summary,
+      clientReadinessGates,
+      remediationPlan,
       rowFindings: rowFindings.slice(0, limit),
       companyFindings: companyFindings.slice(0, limit),
       warnings: [
