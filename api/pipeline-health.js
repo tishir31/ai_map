@@ -130,7 +130,7 @@ function summarizeQueue(items) {
   };
 }
 
-function buildFindings({ latestBySource, queue, investorStatus, runWindow }) {
+function buildFindings({ latestBySource, queue, investorStatus, runWindow, schemaWarnings, llmConfigured }) {
   const findings = [];
   for (const expected of EXPECTED_SOURCES) {
     const latest = latestBySource[expected.sourceName];
@@ -155,6 +155,12 @@ function buildFindings({ latestBySource, queue, investorStatus, runWindow }) {
   }
   if (queue.gmailOnly > 0) {
     findings.push({ severity: "low", code: "gmail-only", detail: `${queue.gmailOnly} Gmail-only candidates need public corroboration.` });
+  }
+  if (!llmConfigured) {
+    findings.push({ severity: "medium", code: "llm-triage-disabled", detail: "LLM triage is not configured; ingestion is relying on deterministic gates only." });
+  }
+  if (schemaWarnings.length > 0) {
+    findings.push({ severity: "medium", code: "schema-compatibility-mode", detail: "Supabase is missing newer ingestion intelligence columns; API is using compatibility reads." });
   }
   if (!investorStatus.applied) {
     findings.push({ severity: "low", code: "investor-normalization-missing", detail: "Investor normalization migration has not been applied." });
@@ -233,7 +239,9 @@ module.exports = async function handler(req, res) {
       error: investors.ok && activityInvestors.ok ? undefined : investors.error || activityInvestors.error
     };
     const approvedLast30d = recentActivities.filter((activity) => hoursSince(activity.date_announced) <= 24 * 30).length;
-    const findings = buildFindings({ latestBySource, queue: queueSummary, investorStatus, runWindow: runs });
+    const schemaWarnings = [runsRead.warning, queueRead.warning].filter(Boolean);
+    const llmConfigured = process.env.INGEST_LLM_ENABLED !== "false" && Boolean(process.env.GEMINI_API_KEY);
+    const findings = buildFindings({ latestBySource, queue: queueSummary, investorStatus, runWindow: runs, schemaWarnings, llmConfigured });
     const health = scoreHealth(findings);
 
     res.statusCode = 200;
@@ -258,7 +266,12 @@ module.exports = async function handler(req, res) {
         approvedLast30d
       },
       investorNormalization: investorStatus,
-      warnings: [runsRead.warning, queueRead.warning].filter(Boolean)
+      intelligence: {
+        llmConfigured,
+        model: process.env.INGEST_LLM_MODEL || "gemini-2.5-flash",
+        schemaCompatibilityMode: schemaWarnings.length > 0
+      },
+      warnings: schemaWarnings
     }));
   } catch (error) {
     res.statusCode = 502;

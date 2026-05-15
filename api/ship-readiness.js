@@ -205,7 +205,7 @@ function migrationStatus(reads) {
   };
 }
 
-function buildFindings({ migrations, latestRuns, queue, data }) {
+function buildFindings({ migrations, latestRuns, queue, data, llmConfigured, schemaWarnings }) {
   const findings = [];
   for (const [code, status] of Object.entries(migrations)) {
     if (!status.applied) {
@@ -228,6 +228,8 @@ function buildFindings({ migrations, latestRuns, queue, data }) {
   if (queue.pending > 30) findings.push({ severity: "medium", code: "review-backlog", detail: `${queue.pending} pending Review Queue items.` });
   if (queue.pendingUpdates > 0) findings.push({ severity: "medium", code: "pending-updates", detail: `${queue.pendingUpdates} candidates should update existing rows.` });
   if (queue.gmailOnly > 0) findings.push({ severity: "low", code: "gmail-only", detail: `${queue.gmailOnly} Gmail-only candidates need public corroboration.` });
+  if (!llmConfigured) findings.push({ severity: "medium", code: "llm-triage-disabled", detail: "LLM triage is not configured; daily ingestion cannot perform intelligent adjudication." });
+  if (schemaWarnings.length > 0) findings.push({ severity: "medium", code: "schema-compatibility-mode", detail: "One or more API reads fell back to the legacy Supabase schema." });
   if (data.publicSourceBackedPct < 80) findings.push({ severity: "medium", code: "weak-source-coverage", detail: `Only ${data.publicSourceBackedPct}% of approved rows have public source coverage.` });
   if (data.estimatedRows > 0) findings.push({ severity: "low", code: "estimated-rows", detail: `${data.estimatedRows} approved rows use estimated confidence.` });
   if (data.staleRows > 0) findings.push({ severity: "low", code: "stale-approved-rows", detail: `${data.staleRows} approved rows have not been refreshed in 90+ days.` });
@@ -307,7 +309,9 @@ module.exports = async function handler(req, res) {
     const latestRuns = latestRunsBySource(runs);
     const queue = summarizeQueue(pending);
     const data = summarizeData(activities, companies);
-    const findings = buildFindings({ migrations, latestRuns, queue, data });
+    const schemaWarnings = [activitiesRead.warning, pendingRead.warning, runsRead.warning].filter(Boolean);
+    const llmConfigured = process.env.INGEST_LLM_ENABLED !== "false" && Boolean(process.env.GEMINI_API_KEY);
+    const findings = buildFindings({ migrations, latestRuns, queue, data, llmConfigured, schemaWarnings });
     const readiness = score(findings);
 
     res.statusCode = 200;
@@ -321,11 +325,16 @@ module.exports = async function handler(req, res) {
       ingestion: { latestRunsBySource: latestRuns, recentRunsRead: runs.length },
       reviewQueue: queue,
       approvedData: data,
+      intelligence: {
+        llmConfigured,
+        model: process.env.INGEST_LLM_MODEL || "gemini-2.5-flash",
+        schemaCompatibilityMode: schemaWarnings.length > 0
+      },
       nextActions: findings.slice(0, 8).map((finding) => ({
         priority: finding.severity,
         action: finding.detail
       })),
-      warnings: [activitiesRead.warning, pendingRead.warning, runsRead.warning].filter(Boolean)
+      warnings: schemaWarnings
     }));
   } catch (error) {
     res.statusCode = 502;
