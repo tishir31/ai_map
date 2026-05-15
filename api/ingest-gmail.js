@@ -809,7 +809,39 @@ module.exports = async function handler(req, res) {
   let runStatus = "completed";
   let errorMessage = null;
   const intelligence = { enabled: llmEnabled(body), model: INTELLIGENCE_MODEL, enriched: 0, rejected: 0, failed: 0 };
+  const actionCounts = {
+    stagedNew: 0,
+    stagedUpdates: 0,
+    exactDuplicates: 0,
+    pendingDuplicates: 0,
+    runDuplicates: 0,
+    deterministicRejected: 0,
+    llmRejected: 0,
+    llmFailed: 0
+  };
   const runSeen = new Set();
+
+  function recordSkip(reason, sourceStats, isLlmReject = false) {
+    dedupedCount += 1;
+    skippedByReason[reason] = (skippedByReason[reason] || 0) + 1;
+    sourceStats.skippedByReason[reason] = (sourceStats.skippedByReason[reason] || 0) + 1;
+    if (reason === "approved-duplicate") actionCounts.exactDuplicates += 1;
+    else if (reason === "pending-duplicate") actionCounts.pendingDuplicates += 1;
+    else if (reason === "run-duplicate") actionCounts.runDuplicates += 1;
+    else actionCounts.deterministicRejected += isLlmReject ? 0 : 1;
+    if (isLlmReject) actionCounts.llmRejected += 1;
+  }
+
+  function recordStage(candidate, sourceStats) {
+    const isUpdate = Boolean(candidate.duplicate_of_activity_id || candidate.intelligence_action === "update_existing");
+    if (isUpdate) {
+      actionCounts.stagedUpdates += 1;
+      sourceStats.stagedUpdates += 1;
+    } else {
+      actionCounts.stagedNew += 1;
+      sourceStats.stagedNew += 1;
+    }
+  }
 
   try {
     const context = await loadDedupeContext(SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY);
@@ -817,13 +849,13 @@ module.exports = async function handler(req, res) {
     for (const src of sources) {
       const messages = await gmailList(accessToken, src.query, maxResults);
       const candidates = [];
+      const sourceStats = { source: src.name, query: src.query, found: messages.length, written: 0, skipped: 0, stagedNew: 0, stagedUpdates: 0, skippedByReason: {} };
       for (const m of messages) {
         const detail = await gmailGet(accessToken, m.id);
         const candidate = buildCandidate(detail, src.name);
         const gate = gateCandidate(candidate, context);
         if (!gate.keep) {
-          dedupedCount += 1;
-          skippedByReason[gate.reason] = (skippedByReason[gate.reason] || 0) + 1;
+          recordSkip(gate.reason, sourceStats);
           continue;
         }
         if (gate.duplicateOfActivityId) {
@@ -832,8 +864,7 @@ module.exports = async function handler(req, res) {
         }
         const runKey = candidateRunKey(candidate);
         if (runSeen.has(runKey)) {
-          dedupedCount += 1;
-          skippedByReason["run-duplicate"] = (skippedByReason["run-duplicate"] || 0) + 1;
+          recordSkip("run-duplicate", sourceStats);
           continue;
         }
         runSeen.add(runKey);
@@ -842,25 +873,28 @@ module.exports = async function handler(req, res) {
           try {
             const adjudicated = await adjudicateWithLlm(candidate, gate, context);
             if (!adjudicated.keep) {
-              dedupedCount += 1;
               intelligence.rejected += 1;
-              skippedByReason[adjudicated.reason] = (skippedByReason[adjudicated.reason] || 0) + 1;
+              recordSkip(adjudicated.reason, sourceStats, true);
               continue;
             }
             staged = adjudicated.candidate;
             if (adjudicated.status === "enriched") intelligence.enriched += 1;
           } catch (llmError) {
             intelligence.failed += 1;
+            actionCounts.llmFailed += 1;
             staged.extracted_text = boundedText(`AI triage failed; deterministic gate used. ${(llmError && llmError.message) || String(llmError)}. Source: ${staged.extracted_text}`, 900);
             staged.llm_model = INTELLIGENCE_MODEL;
             staged.llm_status = "failed";
           }
         }
+        recordStage(staged, sourceStats);
         candidates.push(staged);
       }
       const written = await supabaseUpsertReviewQueue(SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY, candidates);
       totalCandidates += written;
-      perSource.push({ source: src.name, query: src.query, found: messages.length, written, skipped: messages.length - written });
+      sourceStats.written = written;
+      sourceStats.skipped = messages.length - written;
+      perSource.push(sourceStats);
     }
   } catch (err) {
     runStatus = "failed";
@@ -890,6 +924,7 @@ module.exports = async function handler(req, res) {
       ok: !errorMessage,
       candidates: totalCandidates,
       deduped: dedupedCount,
+      actionCounts,
       skippedByReason,
       intelligence,
       perSource,
