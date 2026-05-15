@@ -16,6 +16,7 @@ const ALLOWED_SUBSECTORS = [
     "edge AI hardware",
     "other"
 ];
+const MODEL_CANDIDATES = ["gemini-2.5-flash", "gemini-2.5-flash-lite", "gemini-2.0-flash"];
 
 const PROMPT = (companyName) => `You are a Physical AI investment research assistant. Research the company named "${companyName}".
 
@@ -85,6 +86,32 @@ function normalizeActivity(activity) {
     };
 }
 
+async function generateWithFallback(apiKey, prompt) {
+    let lastError = null;
+    for (const model of MODEL_CANDIDATES) {
+        const response = await fetch(
+            `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${apiKey}`,
+            {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                    contents: [{ parts: [{ text: prompt }] }],
+                    generationConfig: {
+                        temperature: 0.2,
+                        maxOutputTokens: 4096,
+                        responseMimeType: "application/json"
+                    }
+                })
+            }
+        );
+        const data = await response.json();
+        if (response.ok) return { model, data };
+        lastError = { status: response.status, data, model };
+        if (![429, 500, 502, 503, 504].includes(response.status)) break;
+    }
+    return { error: lastError };
+}
+
 export default async function handler(req, res) {
     res.setHeader("Cache-Control", "no-store");
 
@@ -121,27 +148,15 @@ export default async function handler(req, res) {
     }
 
     try {
-        const model = "gemini-2.5-flash";
-        const response = await fetch(
-            `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${apiKey}`,
-            {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({
-                    contents: [{ parts: [{ text: PROMPT(name) }] }],
-                    generationConfig: {
-                        temperature: 0.2,
-                        maxOutputTokens: 4096,
-                        responseMimeType: "application/json"
-                    }
-                })
-            }
-        );
-
-        const data = await response.json();
-        if (!response.ok) {
-            return res.status(response.status).json({ error: "Gemini error", detail: data });
+        const generated = await generateWithFallback(apiKey, PROMPT(name));
+        if (generated.error) {
+            return res.status(generated.error.status || 502).json({
+                error: "Gemini error",
+                model: generated.error.model,
+                detail: generated.error.data
+            });
         }
+        const { data, model } = generated;
 
         const text = data?.candidates?.[0]?.content?.parts?.[0]?.text ?? "";
         let parsed;
