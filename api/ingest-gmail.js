@@ -119,6 +119,15 @@ function normalizeCompany(value) {
     .trim();
 }
 
+function normalizeUrl(url) {
+  try {
+    const parsed = new URL(url);
+    return `${parsed.host.toLowerCase().replace(/^www\./, "")}${parsed.pathname.replace(/\/+$/, "")}`;
+  } catch {
+    return String(url || "").toLowerCase();
+  }
+}
+
 function daysBetween(a, b) {
   const ta = new Date(a).getTime();
   const tb = new Date(b).getTime();
@@ -441,7 +450,7 @@ async function loadDedupeContext(supabaseUrl, serviceRoleKey) {
     supabaseGet(
       supabaseUrl,
       serviceRoleKey,
-      "activities?select=id,company_id,date_announced,activity_type,deal_value_usd,description,review_status&is_sample=eq.false&order=date_announced.desc&limit=600"
+      "activities?select=id,company_id,date_announced,counterparty,activity_type,deal_value_usd,description,source_url,review_status&is_sample=eq.false&order=date_announced.desc&limit=600"
     ),
     supabaseGet(
       supabaseUrl,
@@ -455,11 +464,68 @@ async function loadDedupeContext(supabaseUrl, serviceRoleKey) {
 
 function sameDealValue(a, b) {
   if (a === null || a === undefined || b === null || b === undefined) return false;
-  return Math.abs(Number(a) - Number(b)) < 1;
+  const left = Number(a);
+  const right = Number(b);
+  if (!Number.isFinite(left) || !Number.isFinite(right)) return false;
+  return Math.abs(left - right) <= Math.max(1_000_000, Math.max(Math.abs(left), Math.abs(right)) * 0.01);
+}
+
+function extractRoundLabel(text) {
+  const value = String(text || "").toLowerCase();
+  const series = value.match(/\bseries\s+([a-h])\b/i);
+  if (series) return `series-${series[1].toLowerCase()}`;
+  if (/\bpre[-\s]?seed\b/i.test(value)) return "pre-seed";
+  if (/\bseed\b/i.test(value)) return "seed";
+  if (/\bextension\b|\bextended\b/i.test(value)) return "extension";
+  if (/\bipo\b|\blisted\b|\bpublic offering\b/i.test(value)) return "ipo";
+  return "";
+}
+
+function tokenSet(text) {
+  return new Set(normalize(text).split(" ").filter((token) => token.length > 2));
+}
+
+function tokenOverlap(a, b) {
+  const left = tokenSet(a);
+  const right = tokenSet(b);
+  if (left.size === 0 || right.size === 0) return 0;
+  let shared = 0;
+  for (const token of left) if (right.has(token)) shared += 1;
+  return shared / Math.min(left.size, right.size);
+}
+
+function activityUrls(activity) {
+  const urls = [];
+  if (activity.source_url) urls.push(normalizeUrl(activity.source_url));
+  return urls;
+}
+
+function hasNewFundingDetail(existing, candidate) {
+  if ((candidate.deal_value_usd !== null && candidate.deal_value_usd !== undefined) && (existing.deal_value_usd === null || existing.deal_value_usd === undefined)) return true;
+  if ((candidate.deal_value_usd !== null && candidate.deal_value_usd !== undefined) && !sameDealValue(existing.deal_value_usd, candidate.deal_value_usd)) return true;
+  const incomingCounterparty = normalize(candidate.candidate_counterparty);
+  const existingCounterparty = normalize(existing.counterparty);
+  if (incomingCounterparty && incomingCounterparty !== "n a" && incomingCounterparty !== "undisclosed investors" && !existingCounterparty.includes(incomingCounterparty)) return true;
+  return false;
+}
+
+function isSameFinancingRound(existing, candidate) {
+  if (existing.activity_type !== candidate.activity_type) return false;
+  if (daysBetween(existing.date_announced, candidate.candidate_date) > 180) return false;
+  const candidateText = `${candidate.candidate_company} ${candidate.candidate_counterparty} ${candidate.description} ${candidate.snippet} ${candidate.extracted_text}`;
+  const existingText = `${existing.counterparty || ""} ${existing.description || ""}`;
+  const candidateRound = extractRoundLabel(candidateText);
+  const existingRound = extractRoundLabel(existingText);
+  if (candidateRound && existingRound && candidateRound !== existingRound) return false;
+  if (sameDealValue(existing.deal_value_usd, candidate.deal_value_usd)) return true;
+  if (candidateRound && existingRound && daysBetween(existing.date_announced, candidate.candidate_date) <= 90) return true;
+  if (daysBetween(existing.date_announced, candidate.candidate_date) <= 21) return true;
+  return tokenOverlap(candidateText, existingText) >= 0.35;
 }
 
 function findExistingActivity(candidate, context) {
   const candidateCompany = normalizeCompany(candidate.candidate_company);
+  const candidateUrl = normalizeUrl(candidate.source_url);
   if (!candidateCompany) return null;
   let companyMatched = null;
   for (const [companyId, name] of context.companyById.entries()) {
@@ -470,12 +536,16 @@ function findExistingActivity(candidate, context) {
     }
   }
   if (!companyMatched) return null;
-  return (context.activities || []).find((activity) => {
+  const activity = (context.activities || []).find((activity) => {
+    if (candidateUrl && activityUrls(activity).includes(candidateUrl)) return true;
     if (activity.company_id !== companyMatched) return false;
-    if (activity.activity_type !== candidate.activity_type) return false;
-    if (daysBetween(activity.date_announced, candidate.candidate_date) > 120) return false;
-    return true;
+    return isSameFinancingRound(activity, candidate);
   }) || null;
+  if (!activity) return null;
+  return {
+    activity,
+    exact: !hasNewFundingDetail(activity, candidate)
+  };
 }
 
 function pendingDuplicate(candidate, context) {
@@ -486,7 +556,11 @@ function pendingDuplicate(candidate, context) {
     if (normalizeCompany(item.candidate_company) !== candidateCompany) return false;
     if (daysBetween(item.candidate_date, candidate.candidate_date) > 14) return false;
     if (sameDealValue(item.deal_value_usd, candidate.deal_value_usd)) return true;
-    return normalize(item.description).slice(0, 80) === normalize(candidate.description).slice(0, 80);
+    const pendingText = `${item.description || ""} ${item.duplicate_of_activity_id || ""}`;
+    const candidateText = `${candidate.description || ""} ${candidate.snippet || ""} ${candidate.extracted_text || ""}`;
+    return extractRoundLabel(pendingText) && extractRoundLabel(pendingText) === extractRoundLabel(candidateText)
+      ? true
+      : tokenOverlap(pendingText, candidateText) >= 0.45;
   });
 }
 
@@ -510,11 +584,11 @@ function gateCandidate(candidate, context) {
 
   const existing = findExistingActivity(candidate, context);
   if (existing) {
-    if (sameDealValue(existing.deal_value_usd, candidate.deal_value_usd)) return { keep: false, reason: "approved-duplicate" };
+    if (existing.exact) return { keep: false, reason: "approved-duplicate" };
     return {
       keep: true,
       reason: "existing-activity-update",
-      duplicateOfActivityId: existing.id
+      duplicateOfActivityId: existing.activity.id
     };
   }
   return { keep: true, reason: "new-financing" };
