@@ -352,7 +352,8 @@ module.exports = async function handler(req, res) {
   let limit = 60;
   try {
     const url = new URL(req.url || "/api/data-quality", "https://ai-map-cyan.vercel.app");
-    limit = Math.max(10, Math.min(Number(url.searchParams.get("limit") || 60), 250));
+    const parsedLimit = Number(url.searchParams.get("limit") || 60);
+    limit = Number.isFinite(parsedLimit) ? Math.max(10, Math.min(parsedLimit, 250)) : 60;
   } catch {
     limit = 60;
   }
