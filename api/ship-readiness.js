@@ -21,6 +21,18 @@ const EXPECTED_SOURCES = [
   { sourceName: "Public web news", maxAgeHours: 30 }
 ];
 
+const MIGRATION_RUNBOOK = {
+  bundleCommand: "npm run db:bundle-migrations",
+  bundlePath: "verifier-output/supabase-production-upgrade.sql",
+  manifestPath: "verifier-output/supabase-production-upgrade.manifest.json",
+  checklistPath: "docs/SUPABASE_MIGRATION_CHECKLIST.md",
+  postApplyChecks: [
+    "Run the verification query at the bottom of the generated SQL bundle; every boolean should be true.",
+    "Run API_BASE_URL=https://ai-map-cyan.vercel.app npm run verify:api-contract.",
+    "Reload /api/ship-readiness and confirm schemaCompatibilityMode=false and all migrations report applied=true."
+  ]
+};
+
 function setCors(req, res) {
   const origin = req.headers.origin || "";
   res.setHeader("Access-Control-Allow-Origin", ALLOWED_ORIGINS.has(origin) ? origin : "https://ai-map-cyan.vercel.app");
@@ -237,6 +249,27 @@ function buildFindings({ migrations, latestRuns, queue, data, llmConfigured, sch
   return findings;
 }
 
+function migrationNextActions(migrations) {
+  const missing = Object.values(migrations).filter((migration) => !migration.applied);
+  if (missing.length === 0) {
+    return [];
+  }
+  return [
+    {
+      priority: "high",
+      action: `Generate and apply ${MIGRATION_RUNBOOK.bundlePath} with ${MIGRATION_RUNBOOK.bundleCommand}.`
+    },
+    ...missing.map((migration) => ({
+      priority: "high",
+      action: `Confirm ${migration.migration} is included in the production Supabase SQL upgrade.`
+    })),
+    ...MIGRATION_RUNBOOK.postApplyChecks.map((action) => ({
+      priority: "medium",
+      action
+    }))
+  ];
+}
+
 function score(findings) {
   let value = 100;
   for (const finding of findings) {
@@ -313,6 +346,7 @@ module.exports = async function handler(req, res) {
     const llmConfigured = process.env.INGEST_LLM_ENABLED !== "false" && Boolean(process.env.GEMINI_API_KEY);
     const findings = buildFindings({ migrations, latestRuns, queue, data, llmConfigured, schemaWarnings });
     const readiness = score(findings);
+    const migrationActions = migrationNextActions(migrations);
 
     res.statusCode = 200;
     res.setHeader("Content-Type", "application/json");
@@ -325,15 +359,19 @@ module.exports = async function handler(req, res) {
       ingestion: { latestRunsBySource: latestRuns, recentRunsRead: runs.length },
       reviewQueue: queue,
       approvedData: data,
+      migrationRunbook: MIGRATION_RUNBOOK,
       intelligence: {
         llmConfigured,
         model: process.env.INGEST_LLM_MODEL || "gemini-2.5-flash",
         schemaCompatibilityMode: schemaWarnings.length > 0
       },
-      nextActions: findings.slice(0, 8).map((finding) => ({
-        priority: finding.severity,
-        action: finding.detail
-      })),
+      nextActions: [
+        ...migrationActions,
+        ...findings.map((finding) => ({
+          priority: finding.severity,
+          action: finding.detail
+        }))
+      ].slice(0, 12),
       warnings: schemaWarnings
     }));
   } catch (error) {
