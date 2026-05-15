@@ -97,7 +97,7 @@ const STRATEGIC_INVESTOR_NAMES = new Set([
 function setCors(req, res) {
   const origin = req.headers.origin || "";
   res.setHeader("Access-Control-Allow-Origin", ALLOWED_ORIGINS.has(origin) ? origin : "https://ai-map-cyan.vercel.app");
-  res.setHeader("Access-Control-Allow-Methods", "POST, OPTIONS");
+  res.setHeader("Access-Control-Allow-Methods", "GET, POST, OPTIONS");
   res.setHeader("Access-Control-Allow-Headers", "Content-Type");
   res.setHeader("Vary", "Origin");
 }
@@ -207,6 +207,126 @@ function buildRows(activities, companies) {
   };
 }
 
+function themeForSubsector(subsector) {
+  switch (subsector) {
+    case "humanoids":
+      return "Humanoids & general-purpose robots";
+    case "embodied AI":
+      return "Robot foundation models";
+    case "defense autonomy":
+      return "Defense autonomy";
+    case "autonomous vehicles":
+      return "Autonomous mobility";
+    case "drones":
+      return "Aerial autonomy";
+    case "industrial automation":
+      return "Industrial & warehouse automation";
+    case "edge AI hardware":
+      return "Physical AI compute";
+    case "robotics":
+      return "Vertical robotics";
+    default:
+      return "Physical AI infrastructure";
+  }
+}
+
+function buildInvestorIntelligence(activities, companies) {
+  const companyById = new Map(companies.map((company) => [company.id, company]));
+  const companyNames = new Set(companies.map((company) => normalizeForCompare(company.name)));
+  const investorMap = new Map();
+  const dealTape = [];
+  let parsedActivities = 0;
+
+  for (const activity of activities) {
+    const investorNames = parseInvestorNames(activity.counterparty);
+    if (investorNames.length === 0) continue;
+    parsedActivities += 1;
+    const leadNames = extractLeadInvestors(activity, investorNames);
+    const leadSet = new Set(leadNames.map(normalizeForCompare));
+    const company = companyById.get(activity.company_id);
+    const deal = {
+      activityId: activity.id,
+      companyId: activity.company_id,
+      companyName: company ? company.name : activity.company_id,
+      dateAnnounced: activity.date_announced,
+      subsector: activity.subsector,
+      dealValueUsd: activity.deal_value_usd == null ? null : Number(activity.deal_value_usd),
+      sourceUrl: activity.source_url || null,
+      leadInvestors: leadNames,
+      investorNames
+    };
+    dealTape.push(deal);
+
+    for (const investorName of investorNames) {
+      const name = canonicalInvestorName(investorName);
+      const key = normalizeForCompare(name);
+      const role = leadSet.has(key) ? "lead" : "participant";
+      const existing = investorMap.get(key) || {
+        name,
+        kind: classifyInvestorKind(name, companyNames),
+        dealCount: 0,
+        leadDealCount: 0,
+        participatedDealValueUsd: 0,
+        latestDealDate: "",
+        subsectors: new Set(),
+        thematicAreas: new Map(),
+        deals: []
+      };
+      existing.dealCount += 1;
+      if (role === "lead") existing.leadDealCount += 1;
+      existing.participatedDealValueUsd += deal.dealValueUsd || 0;
+      existing.latestDealDate = existing.latestDealDate > deal.dateAnnounced ? existing.latestDealDate : deal.dateAnnounced;
+      existing.subsectors.add(deal.subsector);
+      const theme = themeForSubsector(deal.subsector);
+      const themeRow = existing.thematicAreas.get(theme) || {
+        name: theme,
+        dealCount: 0,
+        leadDealCount: 0,
+        disclosedValueUsd: 0,
+        representativeCompanies: new Set(),
+        subsectors: new Set()
+      };
+      themeRow.dealCount += 1;
+      if (role === "lead") themeRow.leadDealCount += 1;
+      themeRow.disclosedValueUsd += deal.dealValueUsd || 0;
+      themeRow.representativeCompanies.add(deal.companyName);
+      themeRow.subsectors.add(deal.subsector);
+      existing.thematicAreas.set(theme, themeRow);
+      existing.deals.push({ ...deal, role });
+      investorMap.set(key, existing);
+    }
+  }
+
+  const investors = Array.from(investorMap.values())
+    .map((investor) => ({
+      ...investor,
+      subsectors: Array.from(investor.subsectors).sort(),
+      thematicAreas: Array.from(investor.thematicAreas.values())
+        .map((theme) => ({
+          ...theme,
+          representativeCompanies: Array.from(theme.representativeCompanies).sort().slice(0, 8),
+          subsectors: Array.from(theme.subsectors).sort()
+        }))
+        .sort((a, b) => b.disclosedValueUsd - a.disclosedValueUsd || b.dealCount - a.dealCount || a.name.localeCompare(b.name)),
+      deals: investor.deals
+        .sort((a, b) => String(b.dateAnnounced).localeCompare(String(a.dateAnnounced)))
+        .slice(0, 50)
+    }))
+    .sort((a, b) => b.participatedDealValueUsd - a.participatedDealValueUsd || b.dealCount - a.dealCount || a.name.localeCompare(b.name));
+
+  return {
+    mode: "parsed-from-approved-activities",
+    scannedActivities: activities.length,
+    parsedActivities,
+    investorCount: investors.length,
+    dealCount: dealTape.length,
+    investors: investors.slice(0, 100),
+    dealTape: dealTape
+      .sort((a, b) => String(b.dateAnnounced).localeCompare(String(a.dateAnnounced)))
+      .slice(0, 250)
+  };
+}
+
 async function supabaseGet(supabaseUrl, serviceRoleKey, path) {
   const r = await fetch(`${supabaseUrl}/rest/v1/${path}`, {
     headers: {
@@ -248,10 +368,10 @@ module.exports = async function handler(req, res) {
     res.statusCode = 204;
     return res.end();
   }
-  if (req.method !== "POST") {
+  if (req.method !== "GET" && req.method !== "POST") {
     res.statusCode = 405;
     res.setHeader("Content-Type", "application/json");
-    return res.end(JSON.stringify({ ok: false, error: "POST only" }));
+    return res.end(JSON.stringify({ ok: false, error: "GET or POST only" }));
   }
 
   const SUPABASE_URL = process.env.SUPABASE_URL;
@@ -271,18 +391,26 @@ module.exports = async function handler(req, res) {
   } catch {
     body = {};
   }
-  const dryRun = body.dryRun === true;
-  const limit = Math.min(Number(body.limit || process.env.NORMALIZE_INVESTORS_LIMIT || 1000), 2500);
+  let queryLimit = null;
+  try {
+    const url = new URL(req.url || "/api/normalize-investors", "https://ai-map-cyan.vercel.app");
+    queryLimit = Number(url.searchParams.get("limit") || 0) || null;
+  } catch {
+    queryLimit = null;
+  }
+  const dryRun = req.method === "GET" || body.dryRun === true;
+  const limit = Math.min(Number(queryLimit || body.limit || process.env.NORMALIZE_INVESTORS_LIMIT || 1000), 2500);
   try {
     const [activities, companies] = await Promise.all([
       supabaseGet(
         SUPABASE_URL,
         SUPABASE_SERVICE_ROLE_KEY,
-        `activities?select=id,counterparty,description,activity_type,review_status,is_sample&activity_type=eq.financing&review_status=eq.approved&is_sample=eq.false&limit=${limit}`
+        `activities?select=id,date_announced,company_id,counterparty,description,activity_type,subsector,deal_value_usd,source_url,review_status,is_sample&activity_type=eq.financing&review_status=eq.approved&is_sample=eq.false&order=date_announced.desc&limit=${limit}`
       ),
       supabaseGet(SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY, "companies?select=id,name&is_sample=eq.false&limit=3000")
     ]);
     const rows = buildRows(activities, companies);
+    const intelligence = buildInvestorIntelligence(activities, companies);
     if (!dryRun) {
       await supabaseUpsert(SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY, "investors", rows.investors);
       await supabaseUpsert(SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY, "activity_investors", rows.activityInvestors);
@@ -295,7 +423,8 @@ module.exports = async function handler(req, res) {
       scannedActivities: activities.length,
       parsedActivities: rows.parsedActivities,
       investors: rows.investors.length,
-      activityInvestors: rows.activityInvestors.length
+      activityInvestors: rows.activityInvestors.length,
+      intelligence
     }));
   } catch (error) {
     res.statusCode = error && error.code === "missing_migration" ? 503 : 502;
