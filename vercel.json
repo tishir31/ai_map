@@ -2,13 +2,19 @@
   "rewrites": [
     { "source": "/physical-ai", "destination": "/physical-ai/index.html" },
     { "source": "/physical-ai/", "destination": "/physical-ai/index.html" },
-    { "source": "/physical-ai/:path((?!assets/).*)", "destination": "/physical-ai/index.html" }
+    { "source": "/physical-ai/:path((?!assets/|physical-ai-vc-knowledge-base\\.json$).*)", "destination": "/physical-ai/index.html" }
   ],
   "headers": [
     {
       "source": "/physical-ai/assets/(.*)",
       "headers": [
         { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+      ]
+    },
+    {
+      "source": "/physical-ai/physical-ai-vc-knowledge-base.json",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" }
       ]
     }
   ],
