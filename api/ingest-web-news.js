@@ -16,6 +16,7 @@ const ALLOWED_ORIGINS = new Set([
   "http://localhost:5173"
 ]);
 
+const SHARED_SECRET = process.env.INGEST_SHARED_SECRET || "";
 const MAX_LOOKBACK_DAYS = 2;
 const MAX_DEFAULT_RESULTS = 12;
 const INTELLIGENCE_MODEL = process.env.INGEST_LLM_MODEL || "gemini-2.5-flash";
@@ -83,8 +84,20 @@ function setCors(req, res) {
   const origin = req.headers.origin || "";
   res.setHeader("Access-Control-Allow-Origin", ALLOWED_ORIGINS.has(origin) ? origin : "https://ai-map-cyan.vercel.app");
   res.setHeader("Access-Control-Allow-Methods", "POST, OPTIONS");
-  res.setHeader("Access-Control-Allow-Headers", "Content-Type");
+  res.setHeader("Access-Control-Allow-Headers", "Content-Type, X-Ingest-Secret, Authorization");
   res.setHeader("Vary", "Origin");
+}
+
+function hasSharedSecret(req) {
+  if (!SHARED_SECRET) return true;
+  const bearer = String(req.headers.authorization || "").replace(/^Bearer\s+/i, "");
+  return req.headers["x-ingest-secret"] === SHARED_SECRET || bearer === SHARED_SECRET;
+}
+
+function unauthorized(res, reason) {
+  res.statusCode = 401;
+  res.setHeader("Content-Type", "application/json");
+  res.end(JSON.stringify({ ok: false, error: reason }));
 }
 
 function normalize(value) {
@@ -371,6 +384,17 @@ function pendingDuplicate(candidate, context) {
   });
 }
 
+function candidateRunKey(candidate) {
+  const candidateUrl = normalizeUrl(candidate.source_url);
+  if (candidateUrl) return `url:${candidateUrl}`;
+  return [
+    normalizeCompany(candidate.candidate_company),
+    candidate.candidate_date,
+    candidate.activity_type,
+    candidate.deal_value_usd === null || candidate.deal_value_usd === undefined ? "undisclosed" : String(Math.round(Number(candidate.deal_value_usd)))
+  ].join("|");
+}
+
 function gateCandidate(candidate, context) {
   const text = `${candidate.candidate_company}. ${candidate.description}. ${candidate.snippet}. ${candidate.extracted_text}`;
   if (!isRecent(candidate.candidate_date)) return { keep: false, reason: "outside-lookback" };
@@ -618,6 +642,9 @@ module.exports = async function handler(req, res) {
     res.setHeader("Content-Type", "application/json");
     return res.end(JSON.stringify({ ok: false, error: "POST only" }));
   }
+  if (!hasSharedSecret(req)) {
+    return unauthorized(res, "Missing or wrong X-Ingest-Secret header.");
+  }
 
   const SUPABASE_URL = process.env.SUPABASE_URL;
   const SUPABASE_SERVICE_ROLE_KEY = process.env.SUPABASE_SERVICE_ROLE_KEY;
@@ -637,9 +664,16 @@ module.exports = async function handler(req, res) {
     body = {};
   }
   const maxResults = Math.min(Number(body.maxResults || process.env.INGEST_WEB_MAX || MAX_DEFAULT_RESULTS), 50);
-  const sources = body.query
-    ? [{ name: body.queryLabel || "ad-hoc web", query: body.query }]
-    : (process.env.INGEST_WEB_SOURCES ? JSON.parse(process.env.INGEST_WEB_SOURCES) : DEFAULT_QUERIES);
+  let sources = DEFAULT_QUERIES;
+  if (process.env.INGEST_WEB_SOURCES) {
+    try {
+      const parsed = JSON.parse(process.env.INGEST_WEB_SOURCES);
+      if (Array.isArray(parsed) && parsed.length > 0) sources = parsed;
+    } catch {
+      sources = DEFAULT_QUERIES;
+    }
+  }
+  if (body.query) sources = [{ name: body.queryLabel || "ad-hoc web", query: body.query }];
 
   const startedAt = new Date().toISOString();
   let totalCandidates = 0;
@@ -649,6 +683,7 @@ module.exports = async function handler(req, res) {
   let errorMessage = null;
   let runStatus = "completed";
   const intelligence = { enabled: llmEnabled(body), model: INTELLIGENCE_MODEL, enriched: 0, rejected: 0, failed: 0 };
+  const runSeen = new Set();
 
   try {
     const context = await loadDedupeContext(SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY);
@@ -668,6 +703,13 @@ module.exports = async function handler(req, res) {
           candidate.duplicate_of_activity_id = gate.duplicateOfActivityId;
           candidate.description = `Suggested update to existing activity ${gate.duplicateOfActivityId}: ${candidate.description}`;
         }
+        const runKey = candidateRunKey(candidate);
+        if (runSeen.has(runKey)) {
+          dedupedCount += 1;
+          skippedByReason["run-duplicate"] = (skippedByReason["run-duplicate"] || 0) + 1;
+          continue;
+        }
+        runSeen.add(runKey);
         let staged = candidate;
         if (intelligence.enabled) {
           try {

@@ -259,6 +259,12 @@ function inferCounterparty(body) {
     .trim();
 }
 
+function hasSharedSecret(req) {
+  if (!SHARED_SECRET) return true;
+  const bearer = String(req.headers.authorization || "").replace(/^Bearer\s+/i, "");
+  return req.headers["x-ingest-secret"] === SHARED_SECRET || bearer === SHARED_SECRET;
+}
+
 function unauthorized(res, reason) {
   res.statusCode = 401;
   res.setHeader("Content-Type", "application/json");
@@ -269,7 +275,7 @@ function setCors(req, res) {
   const origin = req.headers.origin || "";
   res.setHeader("Access-Control-Allow-Origin", ALLOWED_ORIGINS.has(origin) ? origin : "https://ai-map-cyan.vercel.app");
   res.setHeader("Access-Control-Allow-Methods", "POST, OPTIONS");
-  res.setHeader("Access-Control-Allow-Headers", "Content-Type, X-Ingest-Secret");
+  res.setHeader("Access-Control-Allow-Headers", "Content-Type, X-Ingest-Secret, Authorization");
   res.setHeader("Vary", "Origin");
 }
 
@@ -484,6 +490,16 @@ function pendingDuplicate(candidate, context) {
   });
 }
 
+function candidateRunKey(candidate) {
+  if (candidate.gmail_message_id) return `gmail:${candidate.gmail_message_id}`;
+  return [
+    normalizeCompany(candidate.candidate_company),
+    candidate.candidate_date,
+    candidate.activity_type,
+    candidate.deal_value_usd === null || candidate.deal_value_usd === undefined ? "undisclosed" : String(Math.round(Number(candidate.deal_value_usd)))
+  ].join("|");
+}
+
 function gateCandidate(candidate, context) {
   const text = `${candidate.subject || ""}. ${candidate.snippet || ""}. ${candidate.extracted_text || ""}. ${candidate.description || ""}`;
   if (!isRecent(candidate.candidate_date)) return { keep: false, reason: "outside-lookback" };
@@ -671,7 +687,7 @@ module.exports = async function handler(req, res) {
     return res.end(JSON.stringify({ ok: false, error: "POST only" }));
   }
 
-  if (SHARED_SECRET && req.headers["x-ingest-secret"] !== SHARED_SECRET) {
+  if (!hasSharedSecret(req)) {
     return unauthorized(res, "Missing or wrong X-Ingest-Secret header.");
   }
 
@@ -719,6 +735,7 @@ module.exports = async function handler(req, res) {
   let runStatus = "completed";
   let errorMessage = null;
   const intelligence = { enabled: llmEnabled(body), model: INTELLIGENCE_MODEL, enriched: 0, rejected: 0, failed: 0 };
+  const runSeen = new Set();
 
   try {
     const context = await loadDedupeContext(SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY);
@@ -739,6 +756,13 @@ module.exports = async function handler(req, res) {
           candidate.duplicate_of_activity_id = gate.duplicateOfActivityId;
           candidate.description = `Suggested update to existing activity ${gate.duplicateOfActivityId}: ${candidate.description}`;
         }
+        const runKey = candidateRunKey(candidate);
+        if (runSeen.has(runKey)) {
+          dedupedCount += 1;
+          skippedByReason["run-duplicate"] = (skippedByReason["run-duplicate"] || 0) + 1;
+          continue;
+        }
+        runSeen.add(runKey);
         let staged = candidate;
         if (intelligence.enabled) {
           try {
