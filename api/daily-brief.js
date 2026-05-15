@@ -39,6 +39,26 @@ async function supabaseGet(supabaseUrl, serviceRoleKey, path) {
   return r.json();
 }
 
+async function optionalRead(supabaseUrl, serviceRoleKey, path) {
+  try {
+    return { ok: true, data: await supabaseGet(supabaseUrl, serviceRoleKey, path) };
+  } catch (error) {
+    return { ok: false, data: [], error: (error && error.message) || String(error) };
+  }
+}
+
+async function readWithFallback(supabaseUrl, serviceRoleKey, primaryPath, fallbackPath) {
+  const primary = await optionalRead(supabaseUrl, serviceRoleKey, primaryPath);
+  if (primary.ok || !fallbackPath) return primary;
+  const fallback = await optionalRead(supabaseUrl, serviceRoleKey, fallbackPath);
+  if (!fallback.ok) return primary;
+  return {
+    ok: true,
+    data: fallback.data,
+    warning: `Using compatibility read because primary query failed: ${primary.error}`
+  };
+}
+
 function isoDateDaysAgo(days) {
   const d = new Date();
   d.setUTCDate(d.getUTCDate() - days);
@@ -189,25 +209,31 @@ module.exports = async function handler(req, res) {
   const cutoff = isoDateDaysAgo(windowDays);
 
   try {
-    const [companies, activities, pendingItems, runs] = await Promise.all([
+    const [companies, activities, pendingRead, runsRead] = await Promise.all([
       supabaseGet(SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY, "companies?select=id,name&is_sample=eq.false"),
       supabaseGet(
         SUPABASE_URL,
         SUPABASE_SERVICE_ROLE_KEY,
         `activities?select=id,date_announced,company_id,counterparty,activity_type,subsector,deal_value_usd,geography,description,source_url,confidence,review_status,is_sample&review_status=eq.approved&is_sample=eq.false&date_announced=gte.${cutoff}&order=date_announced.desc&limit=200`
       ),
-      supabaseGet(
+      readWithFallback(
         SUPABASE_URL,
         SUPABASE_SERVICE_ROLE_KEY,
-        "review_queue_items?select=id,status,source_type,source_url,duplicate_of_activity_id,intelligence_action,intelligence_score,llm_status&status=eq.pending&limit=1000"
+        "review_queue_items?select=id,status,source_type,source_url,duplicate_of_activity_id,intelligence_action,intelligence_score,llm_status&status=eq.pending&limit=1000",
+        "review_queue_items?select=id,status,source_type,source_url,duplicate_of_activity_id&status=eq.pending&limit=1000"
       ),
-      supabaseGet(
+      readWithFallback(
         SUPABASE_URL,
         SUPABASE_SERVICE_ROLE_KEY,
-        "ingestion_runs?select=id,source_name,source_type,started_at,completed_at,candidates_found,deduped_count,llm_enriched_count,llm_rejected_count,llm_failed_count,status&order=started_at.desc&limit=20"
+        "ingestion_runs?select=id,source_name,source_type,started_at,completed_at,candidates_found,deduped_count,llm_enriched_count,llm_rejected_count,llm_failed_count,status&order=started_at.desc&limit=20",
+        "ingestion_runs?select=id,source_name,source_type,started_at,completed_at,candidates_found,deduped_count,status&order=started_at.desc&limit=20"
       )
     ]);
 
+    if (!pendingRead.ok) throw new Error(pendingRead.error);
+    if (!runsRead.ok) throw new Error(runsRead.error);
+    const pendingItems = pendingRead.data || [];
+    const runs = runsRead.data || [];
     const companyById = new Map((companies || []).map((company) => [company.id, company.name]));
     const approvedRows = approvedBriefRows(activities || [], companyById);
     const pending = summarizePending(pendingItems || []);
@@ -224,7 +250,8 @@ module.exports = async function handler(req, res) {
       recommendedActions: actions,
       approvedRows,
       reviewQueue: pending,
-      ingestion: { latestRunsBySource: latestRuns }
+      ingestion: { latestRunsBySource: latestRuns },
+      warnings: [pendingRead.warning, runsRead.warning].filter(Boolean)
     }));
   } catch (error) {
     res.statusCode = 502;

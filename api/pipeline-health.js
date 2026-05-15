@@ -65,6 +65,18 @@ async function optionalRead(supabaseUrl, serviceRoleKey, path) {
   }
 }
 
+async function readWithFallback(supabaseUrl, serviceRoleKey, primaryPath, fallbackPath) {
+  const primary = await optionalRead(supabaseUrl, serviceRoleKey, primaryPath);
+  if (primary.ok || !fallbackPath) return primary;
+  const fallback = await optionalRead(supabaseUrl, serviceRoleKey, fallbackPath);
+  if (!fallback.ok) return primary;
+  return {
+    ok: true,
+    data: fallback.data,
+    warning: `Using compatibility read because primary query failed: ${primary.error}`
+  };
+}
+
 function summarizeRuns(runs) {
   const latestBySource = {};
   for (const run of runs) {
@@ -186,16 +198,18 @@ module.exports = async function handler(req, res) {
   }
 
   try {
-    const [runs, queue, recentActivities, investors, activityInvestors] = await Promise.all([
-      supabaseGet(
+    const [runsRead, queueRead, recentActivities, investors, activityInvestors] = await Promise.all([
+      readWithFallback(
         SUPABASE_URL,
         SUPABASE_SERVICE_ROLE_KEY,
-        "ingestion_runs?select=id,source_name,source_type,started_at,completed_at,candidates_found,deduped_count,llm_enriched_count,llm_rejected_count,llm_failed_count,status&order=started_at.desc&limit=50"
+        "ingestion_runs?select=id,source_name,source_type,started_at,completed_at,candidates_found,deduped_count,llm_enriched_count,llm_rejected_count,llm_failed_count,status&order=started_at.desc&limit=50",
+        "ingestion_runs?select=id,source_name,source_type,started_at,completed_at,candidates_found,deduped_count,status&order=started_at.desc&limit=50"
       ),
-      supabaseGet(
+      readWithFallback(
         SUPABASE_URL,
         SUPABASE_SERVICE_ROLE_KEY,
-        "review_queue_items?select=id,status,source_type,source_url,duplicate_of_activity_id,intelligence_action,intelligence_score,llm_status&status=eq.pending&limit=1000"
+        "review_queue_items?select=id,status,source_type,source_url,duplicate_of_activity_id,intelligence_action,intelligence_score,llm_status&status=eq.pending&limit=1000",
+        "review_queue_items?select=id,status,source_type,source_url,duplicate_of_activity_id&status=eq.pending&limit=1000"
       ),
       supabaseGet(
         SUPABASE_URL,
@@ -206,6 +220,10 @@ module.exports = async function handler(req, res) {
       optionalRead(SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY, "activity_investors?select=activity_id,investor_id,role&limit=1000")
     ]);
 
+    if (!runsRead.ok) throw new Error(runsRead.error);
+    if (!queueRead.ok) throw new Error(queueRead.error);
+    const runs = runsRead.data || [];
+    const queue = queueRead.data || [];
     const latestBySource = summarizeRuns(runs);
     const queueSummary = summarizeQueue(queue);
     const investorStatus = {
@@ -239,7 +257,8 @@ module.exports = async function handler(req, res) {
         approvedRowsRead: recentActivities.length,
         approvedLast30d
       },
-      investorNormalization: investorStatus
+      investorNormalization: investorStatus,
+      warnings: [runsRead.warning, queueRead.warning].filter(Boolean)
     }));
   } catch (error) {
     res.statusCode = 502;

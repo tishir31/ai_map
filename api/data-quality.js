@@ -60,6 +60,18 @@ async function optionalRead(supabaseUrl, serviceRoleKey, path) {
   }
 }
 
+async function readWithFallback(supabaseUrl, serviceRoleKey, primaryPath, fallbackPath) {
+  const primary = await optionalRead(supabaseUrl, serviceRoleKey, primaryPath);
+  if (primary.ok || !fallbackPath) return primary;
+  const fallback = await optionalRead(supabaseUrl, serviceRoleKey, fallbackPath);
+  if (!fallback.ok) return primary;
+  return {
+    ok: true,
+    data: fallback.data,
+    warning: `Using compatibility read because primary query failed: ${primary.error}`
+  };
+}
+
 function hostOf(url) {
   if (!url) return "";
   try {
@@ -359,16 +371,19 @@ module.exports = async function handler(req, res) {
   }
 
   try {
-    const [companies, activities, activityInvestors] = await Promise.all([
+    const [companies, activitiesRead, activityInvestors] = await Promise.all([
       supabaseGet(SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY, "companies?select=id,name,subsector,geography,website,is_sample&is_sample=eq.false&order=name.asc"),
-      supabaseGet(
+      readWithFallback(
         SUPABASE_URL,
         SUPABASE_SERVICE_ROLE_KEY,
-        "activities?select=id,date_announced,company_id,counterparty,activity_type,subsector,deal_value_usd,geography,description,source_url,source_reference,source_type,additional_sources,confidence,review_status,last_updated,is_sample&review_status=eq.approved&is_sample=eq.false&order=date_announced.desc&limit=2500"
+        "activities?select=id,date_announced,company_id,counterparty,activity_type,subsector,deal_value_usd,geography,description,source_url,source_reference,source_type,additional_sources,confidence,review_status,last_updated,is_sample&review_status=eq.approved&is_sample=eq.false&order=date_announced.desc&limit=2500",
+        "activities?select=id,date_announced,company_id,counterparty,activity_type,subsector,deal_value_usd,geography,description,source_url,source_reference,source_type,confidence,review_status,last_updated,is_sample&review_status=eq.approved&is_sample=eq.false&order=date_announced.desc&limit=2500"
       ),
       optionalRead(SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY, "activity_investors?select=activity_id,investor_id,role&limit=5000")
     ]);
 
+    if (!activitiesRead.ok) throw new Error(activitiesRead.error);
+    const activities = activitiesRead.data || [];
     const companyById = new Map((companies || []).map((company) => [company.id, company.name]));
     const investorLinks = activityInvestors.ok ? activityInvestors.data : null;
     const rowFindings = buildRowFindings(activities || [], companyById, investorLinks);
@@ -385,7 +400,10 @@ module.exports = async function handler(req, res) {
       summary,
       rowFindings: rowFindings.slice(0, limit),
       companyFindings: companyFindings.slice(0, limit),
-      warnings: activityInvestors.ok ? [] : [`Investor normalization not readable: ${activityInvestors.error}`]
+      warnings: [
+        activitiesRead.warning,
+        activityInvestors.ok ? null : `Investor normalization not readable: ${activityInvestors.error}`
+      ].filter(Boolean)
     }));
   } catch (error) {
     res.statusCode = 502;

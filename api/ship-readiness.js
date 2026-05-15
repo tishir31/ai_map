@@ -52,6 +52,18 @@ async function optionalRead(supabaseUrl, serviceRoleKey, path) {
   }
 }
 
+async function readWithFallback(supabaseUrl, serviceRoleKey, primaryPath, fallbackPath) {
+  const primary = await optionalRead(supabaseUrl, serviceRoleKey, primaryPath);
+  if (primary.ok || !fallbackPath) return primary;
+  const fallback = await optionalRead(supabaseUrl, serviceRoleKey, fallbackPath);
+  if (!fallback.ok) return primary;
+  return {
+    ok: true,
+    data: fallback.data,
+    warning: `Using compatibility read because primary query failed: ${primary.error}`
+  };
+}
+
 function hoursSince(value) {
   const t = new Date(value || 0).getTime();
   if (!Number.isFinite(t) || t <= 0) return Infinity;
@@ -261,9 +273,9 @@ module.exports = async function handler(req, res) {
   try {
     const [
       companies,
-      activities,
-      pending,
-      runs,
+      activitiesRead,
+      pendingRead,
+      runsRead,
       multiSource,
       ingestionIntelligenceQueue,
       ingestionIntelligenceRuns,
@@ -273,9 +285,9 @@ module.exports = async function handler(req, res) {
       analystProfiles
     ] = await Promise.all([
       supabaseGet(SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY, "companies?select=id,name,website,is_sample&is_sample=eq.false&limit=3000"),
-      supabaseGet(SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY, "activities?select=id,date_announced,company_id,counterparty,activity_type,subsector,deal_value_usd,description,source_url,source_type,additional_sources,confidence,last_updated,review_status,is_sample&review_status=eq.approved&is_sample=eq.false&order=date_announced.desc&limit=3000"),
-      supabaseGet(SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY, "review_queue_items?select=id,status,source_type,source_url,duplicate_of_activity_id,intelligence_action,intelligence_score&status=eq.pending&limit=1000"),
-      supabaseGet(SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY, "ingestion_runs?select=id,source_name,source_type,started_at,completed_at,candidates_found,deduped_count,llm_enriched_count,llm_rejected_count,llm_failed_count,status&order=started_at.desc&limit=50"),
+      readWithFallback(SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY, "activities?select=id,date_announced,company_id,counterparty,activity_type,subsector,deal_value_usd,description,source_url,source_type,additional_sources,confidence,last_updated,review_status,is_sample&review_status=eq.approved&is_sample=eq.false&order=date_announced.desc&limit=3000", "activities?select=id,date_announced,company_id,counterparty,activity_type,subsector,deal_value_usd,description,source_url,source_type,confidence,last_updated,review_status,is_sample&review_status=eq.approved&is_sample=eq.false&order=date_announced.desc&limit=3000"),
+      readWithFallback(SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY, "review_queue_items?select=id,status,source_type,source_url,duplicate_of_activity_id,intelligence_action,intelligence_score&status=eq.pending&limit=1000", "review_queue_items?select=id,status,source_type,source_url,duplicate_of_activity_id&status=eq.pending&limit=1000"),
+      readWithFallback(SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY, "ingestion_runs?select=id,source_name,source_type,started_at,completed_at,candidates_found,deduped_count,llm_enriched_count,llm_rejected_count,llm_failed_count,status&order=started_at.desc&limit=50", "ingestion_runs?select=id,source_name,source_type,started_at,completed_at,candidates_found,deduped_count,status&order=started_at.desc&limit=50"),
       optionalRead(SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY, "activities?select=additional_sources&limit=1"),
       optionalRead(SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY, "review_queue_items?select=intelligence_action,intelligence_score,intelligence_evidence,intelligence_cautions,llm_model,llm_status&limit=1"),
       optionalRead(SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY, "ingestion_runs?select=llm_enriched_count,llm_rejected_count,llm_failed_count&limit=1"),
@@ -285,6 +297,12 @@ module.exports = async function handler(req, res) {
       optionalRead(SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY, "analyst_profiles?select=user_id,is_lead&limit=1")
     ]);
 
+    if (!activitiesRead.ok) throw new Error(activitiesRead.error);
+    if (!pendingRead.ok) throw new Error(pendingRead.error);
+    if (!runsRead.ok) throw new Error(runsRead.error);
+    const activities = activitiesRead.data || [];
+    const pending = pendingRead.data || [];
+    const runs = runsRead.data || [];
     const migrations = migrationStatus({ multiSource, ingestionIntelligenceQueue, ingestionIntelligenceRuns, investors, activityInvestors, auditLog, analystProfiles });
     const latestRuns = latestRunsBySource(runs);
     const queue = summarizeQueue(pending);
@@ -306,7 +324,8 @@ module.exports = async function handler(req, res) {
       nextActions: findings.slice(0, 8).map((finding) => ({
         priority: finding.severity,
         action: finding.detail
-      }))
+      })),
+      warnings: [activitiesRead.warning, pendingRead.warning, runsRead.warning].filter(Boolean)
     }));
   } catch (error) {
     res.statusCode = 502;
