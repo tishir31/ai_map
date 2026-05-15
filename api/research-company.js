@@ -47,6 +47,44 @@ CRITICAL rules:
 - Use "estimated" confidence whenever you are inferring details rather than citing them.
 - Output ONLY the JSON. No code fences, no explanation.`;
 
+function parseModelJson(text) {
+    const raw = String(text || "").trim();
+    if (!raw) throw new Error("empty model response");
+
+    const unfenced = raw
+        .replace(/^```(?:json)?\s*/i, "")
+        .replace(/\s*```$/i, "")
+        .trim();
+
+    try {
+        return JSON.parse(unfenced);
+    } catch {
+        const start = unfenced.indexOf("{");
+        const end = unfenced.lastIndexOf("}");
+        if (start >= 0 && end > start) {
+            return JSON.parse(unfenced.slice(start, end + 1));
+        }
+        throw new Error("model response was not parseable JSON");
+    }
+}
+
+function normalizeActivity(activity) {
+    if (!activity || typeof activity !== "object") return null;
+    const allowedActivityTypes = ["financing", "m&a", "partnership", "customer contract", "product launch", "infrastructure", "other"];
+    const allowedSourceTypes = ["press release", "SEC filing", "article", "company blog", "other"];
+    const allowedConfidence = ["confirmed", "reported", "estimated"];
+    return {
+        dateAnnounced: typeof activity.dateAnnounced === "string" ? activity.dateAnnounced : "",
+        activityType: allowedActivityTypes.includes(activity.activityType) ? activity.activityType : "other",
+        dealValueUsd: typeof activity.dealValueUsd === "number" && Number.isFinite(activity.dealValueUsd) ? activity.dealValueUsd : null,
+        counterparty: String(activity.counterparty || "N/A"),
+        description: String(activity.description || ""),
+        sourceUrl: typeof activity.sourceUrl === "string" && /^https?:\/\//.test(activity.sourceUrl) ? activity.sourceUrl : "",
+        sourceType: allowedSourceTypes.includes(activity.sourceType) ? activity.sourceType : "other",
+        confidence: allowedConfidence.includes(activity.confidence) ? activity.confidence : "estimated"
+    };
+}
+
 export default async function handler(req, res) {
     res.setHeader("Cache-Control", "no-store");
 
@@ -93,7 +131,7 @@ export default async function handler(req, res) {
                     contents: [{ parts: [{ text: PROMPT(name) }] }],
                     generationConfig: {
                         temperature: 0.2,
-                        maxOutputTokens: 1024,
+                        maxOutputTokens: 4096,
                         responseMimeType: "application/json"
                     }
                 })
@@ -108,7 +146,7 @@ export default async function handler(req, res) {
         const text = data?.candidates?.[0]?.content?.parts?.[0]?.text ?? "";
         let parsed;
         try {
-            parsed = JSON.parse(text);
+            parsed = parseModelJson(text);
         } catch (err) {
             return res.status(502).json({ error: "Model did not return valid JSON", raw: text });
         }
@@ -125,9 +163,11 @@ export default async function handler(req, res) {
             subsector,
             geography: String(parsed.geography || ""),
             website: typeof parsed.website === "string" && /^https?:\/\//.test(parsed.website) ? parsed.website : undefined,
-            suggestedActivity: parsed.suggestedActivity ?? null,
-            additionalSources: Array.isArray(parsed.additionalSources) ? parsed.additionalSources.slice(0, 6) : [],
-            notes: parsed.notes ?? null,
+            suggestedActivity: normalizeActivity(parsed.suggestedActivity),
+            additionalSources: Array.isArray(parsed.additionalSources)
+                ? parsed.additionalSources.filter((url) => typeof url === "string" && /^https?:\/\//.test(url)).slice(0, 6)
+                : [],
+            notes: parsed.notes ? String(parsed.notes) : null,
             generatedAt: new Date().toISOString(),
             model
         };

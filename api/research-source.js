@@ -101,6 +101,25 @@ function normalized(value, allowed, fallback) {
     return allowed.includes(value) ? value : fallback;
 }
 
+function parseModelJson(text) {
+    const raw = String(text || "").trim();
+    if (!raw) throw new Error("empty model response");
+    const unfenced = raw
+        .replace(/^```(?:json)?\s*/i, "")
+        .replace(/\s*```$/i, "")
+        .trim();
+    try {
+        return JSON.parse(unfenced);
+    } catch {
+        const start = unfenced.indexOf("{");
+        const end = unfenced.lastIndexOf("}");
+        if (start >= 0 && end > start) {
+            return JSON.parse(unfenced.slice(start, end + 1));
+        }
+        throw new Error("model response was not parseable JSON");
+    }
+}
+
 export default async function handler(req, res) {
     res.setHeader("Cache-Control", "no-store");
 
@@ -146,7 +165,7 @@ export default async function handler(req, res) {
                     contents: [{ parts: [{ text: PROMPT({ url, fetched, sourceText }) }] }],
                     generationConfig: {
                         temperature: 0.1,
-                        maxOutputTokens: 1200,
+                        maxOutputTokens: 3072,
                         responseMimeType: "application/json"
                     }
                 })
@@ -158,7 +177,7 @@ export default async function handler(req, res) {
         const text = data?.candidates?.[0]?.content?.parts?.[0]?.text ?? "";
         let parsed;
         try {
-            parsed = JSON.parse(text);
+            parsed = parseModelJson(text);
         } catch {
             return res.status(502).json({ error: "Model did not return valid JSON", raw: text });
         }
