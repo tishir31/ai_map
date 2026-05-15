@@ -31,9 +31,14 @@ const ALIASES = new Map([
   ["a16z", "Andreessen Horowitz"],
   ["andreessen horowitz", "Andreessen Horowitz"],
   ["andreessen horowitz and others", "Andreessen Horowitz"],
+  ["capitalg", "CapitalG"],
   ["google ventures", "GV"],
   ["google", "Google"],
+  ["idg capital", "IDG Capital"],
+  ["jpmorganchase", "JPMorgan Chase"],
   ["nvidia", "NVIDIA"],
+  ["nventures", "NVentures"],
+  ["qatar investment authority", "QIA"],
   ["softbank group", "SoftBank"],
   ["openai startup fund", "OpenAI Startup Fund"]
 ]);
@@ -61,19 +66,31 @@ const FINANCIAL_INVESTOR_NAMES = new Set([
   "andreessen horowitz",
   "atreides management",
   "b capital",
+  "bain capital ventures",
+  "balderton capital",
   "blackrock",
   "blackstone",
+  "capitalg",
+  "canaan partners",
   "coatue",
+  "eclipse ventures",
   "fidelity",
   "founders fund",
   "general catalyst",
   "gv",
+  "hsg",
+  "idg capital",
+  "initialized",
   "khosla ventures",
   "kleiner perkins",
   "lightspeed",
+  "meritech capital",
   "openai startup fund",
+  "point72 ventures",
   "qia",
+  "redpoint ventures",
   "sequoia capital",
+  "sv angel",
   "softbank",
   "thrive capital",
   "tiger global"
@@ -89,6 +106,7 @@ const STRATEGIC_INVESTOR_NAMES = new Set([
   "mercedes-benz",
   "microsoft",
   "nvidia",
+  "nventures",
   "samsung next",
   "stellantis",
   "uber"
@@ -298,20 +316,64 @@ function buildInvestorIntelligence(activities, companies) {
   }
 
   const investors = Array.from(investorMap.values())
-    .map((investor) => ({
-      ...investor,
-      subsectors: Array.from(investor.subsectors).sort(),
-      thematicAreas: Array.from(investor.thematicAreas.values())
+    .map((investor) => {
+      const coInvestorMap = new Map();
+      for (const deal of investor.deals) {
+        for (const rawName of deal.investorNames) {
+          const name = canonicalInvestorName(rawName);
+          if (normalizeForCompare(name) === normalizeForCompare(investor.name)) continue;
+          const existing = coInvestorMap.get(normalizeForCompare(name)) || {
+            name,
+            dealCount: 0,
+            participatedDealValueUsd: 0,
+            leadDealCount: 0,
+            sharedCompanies: new Set()
+          };
+          existing.dealCount += 1;
+          existing.participatedDealValueUsd += deal.dealValueUsd || 0;
+          if ((deal.leadInvestors || []).map(normalizeForCompare).includes(normalizeForCompare(name))) existing.leadDealCount += 1;
+          existing.sharedCompanies.add(deal.companyName);
+          coInvestorMap.set(normalizeForCompare(name), existing);
+        }
+      }
+      const deals = investor.deals
+        .sort((a, b) => String(b.dateAnnounced).localeCompare(String(a.dateAnnounced)))
+        .slice(0, 50);
+      const dealsWithSource = investor.deals.filter((deal) => deal.sourceUrl).length;
+      const syndicateDensity = investor.deals.length
+        ? Math.round((investor.deals.reduce((sum, deal) => sum + deal.investorNames.length, 0) / investor.deals.length) * 10) / 10
+        : 0;
+      const parserWarnings = [
+        investor.leadDealCount === 0 ? "No lead investor tags parsed for this investor." : null,
+        investor.kind === "other" ? "Investor kind is unclassified; add alias/classification if this is a known VC or strategic." : null,
+        dealsWithSource < investor.dealCount ? `${investor.dealCount - dealsWithSource} parsed deals do not expose source URLs.` : null
+      ].filter(Boolean);
+      return {
+        ...investor,
+        subsectors: Array.from(investor.subsectors).sort(),
+        thematicAreas: Array.from(investor.thematicAreas.values())
         .map((theme) => ({
           ...theme,
           representativeCompanies: Array.from(theme.representativeCompanies).sort().slice(0, 8),
           subsectors: Array.from(theme.subsectors).sort()
         }))
         .sort((a, b) => b.disclosedValueUsd - a.disclosedValueUsd || b.dealCount - a.dealCount || a.name.localeCompare(b.name)),
-      deals: investor.deals
-        .sort((a, b) => String(b.dateAnnounced).localeCompare(String(a.dateAnnounced)))
-        .slice(0, 50)
-    }))
+        coInvestors: Array.from(coInvestorMap.values())
+          .map((coInvestor) => ({
+            ...coInvestor,
+            sharedCompanies: Array.from(coInvestor.sharedCompanies).sort().slice(0, 8)
+          }))
+          .sort((a, b) => b.dealCount - a.dealCount || b.participatedDealValueUsd - a.participatedDealValueUsd || a.name.localeCompare(b.name))
+          .slice(0, 20),
+        quality: {
+          leadCoveragePct: investor.dealCount ? Math.round((investor.leadDealCount / investor.dealCount) * 100) : 0,
+          sourceCoveragePct: investor.dealCount ? Math.round((dealsWithSource / investor.dealCount) * 100) : 0,
+          syndicateDensity,
+          parserWarnings
+        },
+        deals
+      };
+    })
     .sort((a, b) => b.participatedDealValueUsd - a.participatedDealValueUsd || b.dealCount - a.dealCount || a.name.localeCompare(b.name));
 
   return {
@@ -320,11 +382,41 @@ function buildInvestorIntelligence(activities, companies) {
     parsedActivities,
     investorCount: investors.length,
     dealCount: dealTape.length,
+    topCoInvestorPairs: buildTopCoInvestorPairs(dealTape),
     investors: investors.slice(0, 100),
     dealTape: dealTape
       .sort((a, b) => String(b.dateAnnounced).localeCompare(String(a.dateAnnounced)))
       .slice(0, 250)
   };
+}
+
+function buildTopCoInvestorPairs(dealTape) {
+  const pairMap = new Map();
+  for (const deal of dealTape) {
+    const names = deal.investorNames.map(canonicalInvestorName).sort((a, b) => a.localeCompare(b));
+    for (let i = 0; i < names.length; i += 1) {
+      for (let j = i + 1; j < names.length; j += 1) {
+        const key = `${normalizeForCompare(names[i])}::${normalizeForCompare(names[j])}`;
+        const existing = pairMap.get(key) || {
+          investors: [names[i], names[j]],
+          dealCount: 0,
+          participatedDealValueUsd: 0,
+          sharedCompanies: new Set()
+        };
+        existing.dealCount += 1;
+        existing.participatedDealValueUsd += deal.dealValueUsd || 0;
+        existing.sharedCompanies.add(deal.companyName);
+        pairMap.set(key, existing);
+      }
+    }
+  }
+  return Array.from(pairMap.values())
+    .map((pair) => ({
+      ...pair,
+      sharedCompanies: Array.from(pair.sharedCompanies).sort().slice(0, 8)
+    }))
+    .sort((a, b) => b.dealCount - a.dealCount || b.participatedDealValueUsd - a.participatedDealValueUsd)
+    .slice(0, 50);
 }
 
 async function supabaseGet(supabaseUrl, serviceRoleKey, path) {
