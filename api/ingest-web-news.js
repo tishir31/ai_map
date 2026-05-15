@@ -16,7 +16,7 @@ const ALLOWED_ORIGINS = new Set([
   "http://localhost:5173"
 ]);
 
-const SHARED_SECRET = process.env.INGEST_SHARED_SECRET || "";
+const SHARED_SECRET = process.env.INGEST_SHARED_SECRET || process.env.CRON_SECRET || "";
 const MAX_LOOKBACK_DAYS = 2;
 const MAX_DEFAULT_RESULTS = 12;
 const INTELLIGENCE_MODEL = process.env.INGEST_LLM_MODEL || "gemini-2.5-flash";

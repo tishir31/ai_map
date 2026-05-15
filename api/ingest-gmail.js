@@ -26,7 +26,7 @@
 // Optional: INGEST_SOURCES, INGEST_MAX, INGEST_SHARED_SECRET,
 // INGEST_LLM_ENABLED=false, INGEST_LLM_MODEL, GEMINI_API_KEY.
 
-const SHARED_SECRET = process.env.INGEST_SHARED_SECRET || "";
+const SHARED_SECRET = process.env.INGEST_SHARED_SECRET || process.env.CRON_SECRET || "";
 const ALLOWED_ORIGINS = new Set([
   "https://ai-map-cyan.vercel.app",
   "https://tishir31.github.io",
