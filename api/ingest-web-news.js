@@ -165,8 +165,25 @@ function daysBetween(a, b) {
   return Math.abs(ta - tb) / 86_400_000;
 }
 
+function isoDateDaysAgo(now, daysAgo) {
+  const d = new Date(now);
+  d.setUTCDate(d.getUTCDate() - daysAgo);
+  return d.toISOString().slice(0, 10);
+}
+
+function refreshWindow(now = new Date()) {
+  const end = now.toISOString().slice(0, 10);
+  return {
+    maxLookbackDays: MAX_LOOKBACK_DAYS,
+    startDate: isoDateDaysAgo(now, MAX_LOOKBACK_DAYS),
+    endDate: end
+  };
+}
+
 function isRecent(date, now = new Date()) {
-  return daysBetween(date, now.toISOString().slice(0, 10)) <= MAX_LOOKBACK_DAYS + 0.5;
+  if (!validDate(date)) return false;
+  const window = refreshWindow(now);
+  return date >= window.startDate && date <= window.endDate;
 }
 
 function isFundingSignal(text, dealValueUsd) {
@@ -730,6 +747,7 @@ module.exports = async function handler(req, res) {
   if (body.query) sources = [{ name: body.queryLabel || "ad-hoc web", query: body.query }];
 
   const startedAt = new Date().toISOString();
+  const window = refreshWindow(new Date(startedAt));
   let totalCandidates = 0;
   let dedupedCount = 0;
   const skippedByReason = {};
@@ -848,6 +866,7 @@ module.exports = async function handler(req, res) {
   res.setHeader("Content-Type", "application/json");
   return res.end(JSON.stringify({
     ok: !errorMessage,
+    window,
     candidates: totalCandidates,
     deduped: dedupedCount,
     actionCounts,
