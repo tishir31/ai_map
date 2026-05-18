@@ -131,6 +131,17 @@ function money(value) {
   return Number.isFinite(n) ? n : null;
 }
 
+function isGenericInvestorCounterparty(value) {
+  const text = String(value || "").trim().toLowerCase();
+  if (!text || text === "n/a") return true;
+  return (
+    /^public market investors/.test(text) ||
+    /^undisclosed\b/.test(text) ||
+    /^strategic investors$/.test(text) ||
+    /^existing investors$/.test(text)
+  );
+}
+
 function inc(map, key, by = 1) {
   const k = key || "unknown";
   map[k] = (map[k] || 0) + by;
@@ -225,7 +236,7 @@ function buildRowFindings(activities, companyById, activityInvestorLinks) {
         detail: "Financing row has no lead/key investor field."
       });
     }
-    if (activity.activity_type === "financing" && activity.counterparty && activity.counterparty !== "N/A" && activityInvestorLinks && !linksByActivity.has(activity.id)) {
+    if (activity.activity_type === "financing" && activity.counterparty && !isGenericInvestorCounterparty(activity.counterparty) && activityInvestorLinks && !linksByActivity.has(activity.id)) {
       addFinding(findings, {
         ...base,
         severity: "low",
