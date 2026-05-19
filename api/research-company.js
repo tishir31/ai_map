@@ -20,6 +20,8 @@ const MODEL_CANDIDATES = ["gemini-2.5-flash", "gemini-2.5-flash-lite", "gemini-2
 
 const PROMPT = (companyName) => `You are a Physical AI investment research assistant. Research the company named "${companyName}".
 
+Coverage includes companies building physical-world AI and the adjacent infrastructure used by robotics, autonomy, industrial automation, defense autonomy, and embodied AI teams. In-scope infrastructure includes spatial intelligence, world models, simulation, synthetic data, autonomy data platforms, robotics foundation models, and edge AI hardware, even when the company does not manufacture robots itself.
+
 Return a strict JSON object (no markdown, no preamble, no trailing text) with this exact shape:
 
 {
@@ -43,7 +45,9 @@ Return a strict JSON object (no markdown, no preamble, no trailing text) with th
 }
 
 CRITICAL rules:
-- If you are not confident the company exists or is a real Physical AI company, return {"error": "not found", "notes": "..."}
+- Treat spatial/world-model/simulation companies as in scope when their technology models, simulates, controls, or reasons about the physical world for robotics, autonomy, industrial, defense, or embodied AI use cases.
+- If a real company is adjacent Physical AI infrastructure, classify it as "embodied AI" or "other" and explain the caveat in notes.
+- Only return {"error": "not found", "notes": "..."} when the company cannot be identified or is clearly unrelated to Physical AI and adjacent physical-world AI infrastructure.
 - Never fabricate URLs. If you can't recall a specific source URL, use the company's domain root.
 - Use "estimated" confidence whenever you are inferring details rather than citing them.
 - Output ONLY the JSON. No code fences, no explanation.`;
