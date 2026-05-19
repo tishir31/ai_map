@@ -18,6 +18,7 @@ const EXPECTED_SOURCES = [
   { sourceName: "Gmail", maxAgeHours: 30 },
   { sourceName: "Public web news", maxAgeHours: 30 }
 ];
+const ANY_SOURCE_MAX_AGE_HOURS = 48;
 
 function setCors(req, res) {
   const origin = req.headers.origin || "";
@@ -132,6 +133,7 @@ function summarizeQueue(items) {
 
 function buildFindings({ latestBySource, queue, investorStatus, runWindow, schemaWarnings, llmConfigured }) {
   const findings = [];
+  const expectedNames = new Set(EXPECTED_SOURCES.map((source) => source.sourceName));
   for (const expected of EXPECTED_SOURCES) {
     const latest = latestBySource[expected.sourceName];
     if (!latest) {
@@ -143,6 +145,12 @@ function buildFindings({ latestBySource, queue, investorStatus, runWindow, schem
     }
     if (latest.ageHours > expected.maxAgeHours) {
       findings.push({ severity: "medium", code: "stale-run", detail: `${expected.sourceName} latest run is ${latest.ageHours}h old.` });
+    }
+  }
+  for (const run of Object.values(latestBySource)) {
+    if (expectedNames.has(run.sourceName)) continue;
+    if (run.ageHours > ANY_SOURCE_MAX_AGE_HOURS) {
+      findings.push({ severity: "medium", code: "stale-ingestion-source", detail: `${run.sourceName} latest run is ${run.ageHours}h old; stale sources should not count as healthy.` });
     }
   }
   const llmFailures = runWindow.reduce((sum, run) => sum + Number(run.llm_failed_count || 0), 0);

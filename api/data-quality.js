@@ -28,6 +28,36 @@ const CORE_SUBSECTORS = [
 const PLACEHOLDER_HOSTS = new Set(["example.com", "example.org", "example.net"]);
 const STALE_AFTER_DAYS = 90;
 const HIGH_VALUE_THRESHOLD = 100_000_000;
+const KNOWN_BAD_SOURCE_URLS = new Map([
+  ["https://groq.com/news/groq-funding-2024", "Network/source sweep failed; URL shape does not resolve to a durable Groq announcement."],
+  ["https://huggingface.co/blog/pollen-robotics-acquisition", "Source sweep failed; verify canonical Hugging Face acquisition URL."],
+  ["https://www.bloomberg.com/news/humanoid-uk-funding", "Bloomberg URL shape is non-canonical and failed validation."],
+  ["https://www.bloomberg.com/news/tusimple-delisting-2024", "Bloomberg URL shape is non-canonical and failed validation."],
+  ["https://wisk.aero/news/boeing-investment", "Source sweep returned a dead/non-durable announcement URL."],
+  ["https://www.archer.com/news/series-d", "Source sweep returned server failure; verify canonical Archer release URL."],
+  ["https://www.softbank.com/news/berkshire-grey-acquisition", "Source sweep failed DNS/fetch; verify canonical SoftBank release URL."],
+  ["https://www.forterrausa.com/news/army-rcv", "Fetched page is too thin to support the claim."],
+  ["https://www.engineeredarts.co.uk/news/ameca-update", "Redirects away from the article path to homepage."],
+  ["https://www.redcatholdings.com/news/srr-award", "Redirects away from the article path to homepage."],
+  ["https://cmrsurgical.com/news/series-e", "Redirects away from the article path to homepage."],
+  ["https://innoviz.tech/press/bmw-design-win", "Redirects away from the article path to homepage."],
+  ["https://helsing.ai/newsroom/series-c", "Source-health sweep returned HTTP 429; needs manual validation before client use."],
+  ["https://www.agibot.com/article/231/detail/53.html", "Source-health sweep returned HTTP 500."],
+  ["https://www.anduril.com/news/anduril-announces-usd5b-series-h-raise", "Fetched page was too thin to support the claim."],
+  ["https://www.axios.com/2026/01/28/ai-uber-waabi-robotaxi", "Source-health sweep returned HTTP 403; needs manual validation before client use."],
+  ["https://www.bloomberg.com/news/articles/2026-03-27/ex-deepmind-staffers-robotics-startup-in-talks-for-11-billion-valuation", "Source-health sweep returned HTTP 403; needs manual validation before client use."],
+  ["https://www.bloomberg.com/news/etched-sohu-funding", "Source-health sweep returned HTTP 403; needs manual validation before client use."],
+  ["https://www.bloomberg.com/news/rebellions-sapeon-merger", "Source-health sweep returned HTTP 403; needs manual validation before client use."],
+  ["https://www.canvas.build/news/series-b", "Source-health sweep failed network fetch."],
+  ["https://www.co.bot/news/series-a", "Fetched page was too thin to support the claim."],
+  ["https://www.hkex.com.hk/9880-annual-report-2024", "Source-health sweep returned HTTP 404."],
+  ["https://www.iconbuild.com/news/series-c", "Fetched page/title looked like a soft 404."],
+  ["https://www.intuitive.com/news/da-vinci-5-launch", "Fetched page was empty/thin."],
+  ["https://www.nytimes.com/2024/dji-us-restrictions", "Source-health sweep returned HTTP 403; needs manual validation before client use."],
+  ["https://www.reuters.com/technology/kepler-robotics-funding", "Source-health sweep returned HTTP 401; needs manual validation before client use."],
+  ["https://www.reuters.com/technology/limx-dynamics-funding-2024", "Source-health sweep returned HTTP 401; needs manual validation before client use."],
+  ["https://www.streetinsider.com/Business%2BWire/Skild%2BAI%2BRaises%2B%24300M%2BSeries%2BA%2BTo%2BBuild%2BA%2BScalable%2BAI%2BFoundation%2BModel%2BFor%2BRobotics/23446655.html", "Source-health sweep returned HTTP 403; needs manual validation before client use."]
+]);
 
 function setCors(req, res) {
   const origin = req.headers.origin || "";
@@ -88,6 +118,14 @@ function isPlaceholderUrl(url) {
     if (host === placeholder || host.endsWith(`.${placeholder}`)) return true;
   }
   return false;
+}
+
+function sourceQualityIssue(src) {
+  if (!src?.url) return null;
+  if (isPlaceholderUrl(src.url)) return { code: "placeholder-source", severity: "high", detail: "Approved row uses a placeholder source host." };
+  const knownBad = KNOWN_BAD_SOURCE_URLS.get(src.url);
+  if (knownBad) return { code: "bad-source-url", severity: "high", detail: knownBad };
+  return null;
 }
 
 function parseAdditionalSources(value) {
@@ -202,6 +240,17 @@ function buildRowFindings(activities, companyById, activityInvestorLinks) {
         severity: "high",
         code: "placeholder-source",
         detail: "Approved row uses a placeholder source host."
+      });
+    }
+    for (const src of refs) {
+      const issue = sourceQualityIssue(src);
+      if (!issue || issue.code === "placeholder-source") continue;
+      addFinding(findings, {
+        ...base,
+        sourceUrl: src.url,
+        severity: issue.severity,
+        code: issue.code,
+        detail: issue.detail
       });
     }
     if (activity.confidence === "estimated") {
@@ -353,6 +402,13 @@ function buildRemediationPlan(summary) {
   const counts = summary.issueCounts || {};
   const plan = [
     {
+      code: "bad-source-url",
+      count: counts["bad-source-url"] || 0,
+      priority: "critical",
+      owner: "research",
+      action: "Replace or demote citations that fail source-health validation, including soft-404s, homepage redirects, and thin pages."
+    },
+    {
       code: "missing-deal-value",
       count: counts["missing-deal-value"] || 0,
       priority: "high",
@@ -400,6 +456,11 @@ function buildClientReadinessGates(summary, readiness) {
       detail: summary.investorNormalizationApplied
         ? "Investor normalization is readable."
         : "Investor normalization tables/views are not readable; apply the Supabase migration bundle."
+    },
+    {
+      gate: "source-health",
+      passed: (counts["bad-source-url"] || 0) === 0 && (counts["placeholder-source"] || 0) === 0,
+      detail: `${(counts["bad-source-url"] || 0) + (counts["placeholder-source"] || 0)} approved citations fail source-health validation.`
     },
     {
       gate: "source-coverage",
