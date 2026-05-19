@@ -345,7 +345,8 @@ function qualityScore(rowFindings, companyFindings, totalRows) {
     + companyFindings.reduce((sum, finding) => sum + severityPenalty(finding.severity), 0);
   const scale = Math.max(totalRows, 20);
   const score = Math.max(0, Math.round(100 - (rawPenalty / scale) * 18));
-  const status = score >= 88 ? "client_ready" : score >= 72 ? "needs_review" : "not_client_ready";
+  const hasCriticalSourceIssue = rowFindings.some((finding) => finding.code === "bad-source-url" || finding.code === "placeholder-source");
+  const status = hasCriticalSourceIssue ? "not_client_ready" : score >= 88 ? "client_ready" : score >= 72 ? "needs_review" : "not_client_ready";
   return { score, status };
 }
 
