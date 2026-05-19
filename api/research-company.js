@@ -17,6 +17,12 @@ const ALLOWED_SUBSECTORS = [
     "other"
 ];
 const MODEL_CANDIDATES = ["gemini-2.5-flash", "gemini-2.5-flash-lite", "gemini-2.0-flash"];
+const COMPANY_ALIASES = new Map([
+    [
+        "world labs",
+        "World Labs AI (worldlabs.ai), the spatial intelligence and world-model company founded by Fei-Fei Li, Justin Johnson, Christoph Lassner, and Ben Mildenhall"
+    ]
+]);
 
 const PROMPT = (companyName) => `You are a Physical AI investment research assistant. Research the company named "${companyName}".
 
@@ -150,9 +156,10 @@ export default async function handler(req, res) {
     if (name.length > 120) {
         return res.status(400).json({ error: "Name too long" });
     }
+    const researchName = COMPANY_ALIASES.get(name.toLowerCase()) || name;
 
     try {
-        const generated = await generateWithFallback(apiKey, PROMPT(name));
+        const generated = await generateWithFallback(apiKey, PROMPT(researchName));
         if (generated.error) {
             return res.status(generated.error.status || 502).json({
                 error: "Gemini error",
