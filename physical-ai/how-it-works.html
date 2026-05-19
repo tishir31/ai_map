@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex, nofollow" />
     <title>How the Physical AI Tracker Works — Architecture Reference</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -222,7 +223,7 @@
 
       <div class="status-callout">
         <strong>Honest one-liner.</strong>
-        Live at <a href="https://ai-map-cyan.vercel.app/physical-ai/" target="_blank" rel="noreferrer" style="color:var(--accent);">ai-map-cyan.vercel.app/physical-ai/</a>
+        Live at <a href="https://ai-map-cyan.vercel.app/physical-ai/" target="_blank" rel="noopener noreferrer" style="color:var(--accent);">ai-map-cyan.vercel.app/physical-ai/</a>
         after the 2026-05-14 senior-review hardening pass. Bundle: 475&nbsp;kB main (124&nbsp;kB gzip),
         with Charts, Supabase SDK, route panels, and modals all lazy-loaded.
         66 vitest cases passing. Published market data is public-read.
@@ -577,7 +578,7 @@
           <div class="wstep">
             <div>
               <h4>Cache-busted reload</h4>
-              <p>The handler appends <code>?r=&lt;timestamp&gt;</code> to the URL and calls <code>window.location.replace()</code>. The browser fetches <code>index.html</code> from scratch; the new HTML references whatever JS bundle hash was deployed most recently.</p>
+              <p>The handler calls the production refresh API when available. If no endpoint is configured, it performs a normal page reload so the browser fetches <code>index.html</code> from scratch and picks up the latest JS bundle hash.</p>
             </div>
           </div>
           <div class="wstep">

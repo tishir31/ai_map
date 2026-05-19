@@ -1,1 +1,0 @@
-const e=["financing","m&a","partnership","customer contract","product launch","infrastructure","other"],t=["robotics","humanoids","autonomous vehicles","drones","defense autonomy","industrial automation","embodied AI","edge AI hardware","other"],o=["confirmed","reported","estimated"],s=["draft","pending review","approved","rejected"];export{e as a,o as c,s as r,t as s};
