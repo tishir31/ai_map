@@ -18,6 +18,11 @@ const EXPECTED_SOURCES = [
   { sourceName: "Gmail", maxAgeHours: 30 },
   { sourceName: "Public web news", maxAgeHours: 30 }
 ];
+const RETIRED_SOURCES = new Set([
+  "Gmail attachment: physical_ai_mna_deals.xlsx",
+  "Mock Gmail sweep",
+  "Autonomy RSS sources"
+]);
 const ANY_SOURCE_MAX_AGE_HOURS = 48;
 
 function setCors(req, res) {
@@ -149,6 +154,7 @@ function buildFindings({ latestBySource, queue, investorStatus, runWindow, schem
   }
   for (const run of Object.values(latestBySource)) {
     if (expectedNames.has(run.sourceName)) continue;
+    if (RETIRED_SOURCES.has(run.sourceName)) continue;
     if (run.ageHours > ANY_SOURCE_MAX_AGE_HOURS) {
       findings.push({ severity: "medium", code: "stale-ingestion-source", detail: `${run.sourceName} latest run is ${run.ageHours}h old; stale sources should not count as healthy.` });
     }
