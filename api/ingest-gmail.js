@@ -39,14 +39,19 @@ const ALLOWED_ORIGINS = new Set([
 
 const DEFAULT_QUERIES = [
   {
-    name: "Physical AI recent fundraises",
-    query: "newer_than:2d (robotics OR humanoid OR autonomous OR drone OR \"physical AI\" OR \"embodied AI\" OR robot OR autonomy) (raises OR raised OR funding OR financing OR \"Series A\" OR \"Series B\" OR \"Series C\" OR \"seed round\")"
+    name: "Physical AI inbox sweep",
+    query: "newer_than:2d (\"physical AI\" OR robotics OR robot OR humanoid OR autonomous OR autonomy OR drone OR UAV OR sensor OR sensors OR lidar OR perception OR \"computer vision\" OR \"world model\" OR embodied OR industrial OR warehouse OR manufacturing)"
+  },
+  {
+    name: "AI newsletters and deal digests",
+    query: "newer_than:2d (AI OR \"artificial intelligence\" OR startup OR funding OR financing OR raises OR launched OR unveiled OR \"Deals and Debuts\" OR \"AI Agenda\" OR \"The Information\")"
   }
 ];
 const MAX_LOOKBACK_DAYS = 2;
-const MAX_DEFAULT_RESULTS = 20;
+const MAX_DEFAULT_RESULTS = 35;
 const INTELLIGENCE_MODEL = process.env.INGEST_LLM_MODEL || "gemini-2.5-flash";
 const ALLOWED_SUBSECTORS = ["robotics", "humanoids", "autonomous vehicles", "drones", "defense autonomy", "industrial automation", "embodied AI", "edge AI hardware", "other"];
+const ALLOWED_ACTIVITY_TYPES = ["financing", "m&a", "partnership", "customer contract", "product launch", "infrastructure", "other"];
 
 const ACTIVITY_RULES = [
   ["financing", /\b(raises?|series\s+[a-z]|seed|funding|financing|investment)\b/i],
@@ -132,6 +137,10 @@ function normalizeUrl(url) {
   }
 }
 
+function slugifyId(value) {
+  return normalize(value).split(" ").filter(Boolean).slice(0, 5).join("-") || "event";
+}
+
 function daysBetween(a, b) {
   const ta = new Date(a).getTime();
   const tb = new Date(b).getTime();
@@ -169,6 +178,15 @@ function isFundingSignal(text, dealValueUsd) {
   const fundingScore = scoreRules(text, FUNDING_RULES);
   const negativeScore = scoreRules(text, NEGATIVE_RULES);
   return physicalScore >= 1 && fundingScore >= 1 && negativeScore === 0 && (dealValueUsd || /\bseries\s+[a-z]\b|\bseed round|pre-seed\b/i.test(text));
+}
+
+function isMaterialPhysicalAiSignal(text, candidate) {
+  const physicalScore = scoreRules(text, PHYSICAL_AI_RULES);
+  const negativeScore = scoreRules(text, NEGATIVE_RULES);
+  if (negativeScore > 0) return false;
+  if (physicalScore < 1 && candidate.subsector === "other") return false;
+  if (candidate.activity_type !== "other") return true;
+  return /\b(raises?|raised|funding|financing|acquires?|acquisition|partners?|partnership|contract|selected|customer|deployment|launch|released|introduced|unveiled|sensor|computer vision|perception|world model|platform)\b/i.test(text);
 }
 
 function llmEnabled(body) {
@@ -266,7 +284,8 @@ function inferCompany(subject, body) {
   const text = `${subject}. ${body}`;
   const patterns = [
     /\b([A-Z][A-Za-z0-9&.'\-]*(?:\s+[A-Z0-9][A-Za-z0-9&.'\-]*){0,5})\s+(?:has\s+)?(?:raises?|raised|secures?|secured|closes?|closed|announces?|announced)\b/,
-    /\b([A-Z][A-Za-z0-9&.'\-]*(?:\s+[A-Z0-9][A-Za-z0-9&.'\-]*){0,5}),?\s+(?:an?|the)?\s*(?:robotics|humanoid|autonomous|drone|industrial|embodied AI|physical AI)[^.!?]{0,120}\b(?:raises?|raised|secures?|closed)\b/i,
+    /\b([A-Z][A-Za-z0-9&.'\-]*(?:\s+[A-Z0-9][A-Za-z0-9&.'\-]*){0,5}),?\s+(?:an?|the)?\s*(?:robotics|humanoid|autonomous|drone|industrial|embodied AI|physical AI|sensor|sensors|computer vision|perception|lidar)[^.!?]{0,160}\b(?:raises?|raised|secures?|secured|closed)\b/i,
+    /\b([A-Z][A-Za-z0-9&.'\-]*(?:\s+[A-Z0-9][A-Za-z0-9&.'\-]*){0,5}),?\s+which\s+(?:provides|uses|develops|builds|makes|offers)[^.!?]{0,180}\b(?:raises?|raised|secures?|secured|closed)\b/i,
     /(?:funding|financing|investment)\s+(?:for|in)\s+([A-Z][A-Za-z0-9&.'\-]*(?:\s+[A-Z0-9][A-Za-z0-9&.'\-]*){0,5})\b/i
   ];
   for (const pattern of patterns) {
@@ -572,7 +591,7 @@ function findExistingActivity(candidate, context) {
 function pendingDuplicate(candidate, context) {
   const candidateCompany = normalizeCompany(candidate.candidate_company);
   return (context.pending || []).some((item) => {
-    if (candidate.gmail_message_id && item.gmail_message_id === candidate.gmail_message_id) return true;
+    if (candidate.gmail_message_id && item.gmail_message_id === candidate.gmail_message_id && item.id === candidate.id) return true;
     if (item.activity_type !== candidate.activity_type) return false;
     if (normalizeCompany(item.candidate_company) !== candidateCompany) return false;
     if (daysBetween(item.candidate_date, candidate.candidate_date) > 14) return false;
@@ -598,9 +617,8 @@ function candidateRunKey(candidate) {
 function gateCandidate(candidate, context) {
   const text = `${candidate.subject || ""}. ${candidate.snippet || ""}. ${candidate.extracted_text || ""}. ${candidate.description || ""}`;
   if (!isRecent(candidate.candidate_date)) return { keep: false, reason: "outside-lookback" };
-  if (candidate.activity_type !== "financing") return { keep: false, reason: "not-financing" };
   if (!candidate.candidate_company || candidate.candidate_company === "N/A") return { keep: false, reason: "company-unresolved" };
-  if (!isFundingSignal(text, candidate.deal_value_usd)) return { keep: false, reason: "low-relevance" };
+  if (!isMaterialPhysicalAiSignal(text, candidate)) return { keep: false, reason: "low-relevance" };
   if (pendingDuplicate(candidate, context)) return { keep: false, reason: "pending-duplicate" };
 
   const existing = findExistingActivity(candidate, context);
@@ -612,7 +630,7 @@ function gateCandidate(candidate, context) {
       duplicateOfActivityId: existing.activity.id
     };
   }
-  return { keep: true, reason: "new-financing" };
+  return { keep: true, reason: `new-${candidate.activity_type.replace(/\s+/g, "-")}` };
 }
 
 function activityContext(activity, context) {
@@ -632,14 +650,17 @@ function intelligencePrompt(candidate, gate, context) {
     ? activityContext((context.activities || []).find((activity) => activity.id === gate.duplicateOfActivityId), context)
     : null;
   const existingCompanies = (context.companies || []).map((company) => company.name).slice(0, 250);
-  return `You are an investment-bank-grade Physical AI funding triage engine.
+  return `You are an investment-bank-grade Physical AI market-intelligence triage engine.
 
-Your job is to adjudicate ONE Gmail-derived candidate before it enters a private analyst Review Queue.
+Your job is to read ONE Gmail-derived newsletter, digest, or alert and extract the most important Physical AI market event before it enters a private analyst Review Queue.
 
 Hard rules:
-- Keep only Physical AI funding events from the last ${MAX_LOOKBACK_DAYS} days.
+- Keep only material Physical AI market events from the last ${MAX_LOOKBACK_DAYS} days.
 - Physical AI includes robotics, humanoids, autonomous vehicles, drones, defense autonomy, industrial automation, embodied AI, edge AI hardware, sensing/perception/autonomy infrastructure.
-- Reject stock news, earnings, conference/newsletter promos, hiring, generic AI software, crypto, and non-funding stories.
+- Sensor, lidar, computer-vision, perception, inventory-sensing, and edge-hardware companies should be kept when they enable physical-world automation.
+- Keep financings, M&A, strategic partnerships, customer contracts/deployments, product/model launches, infrastructure/facility expansions, and other company-level events that an investment banker covering the space would track.
+- Digests often contain many unrelated items. Extract the best single Physical AI event. Prefer specific company events over broad conference commentary.
+- Reject stock news, earnings, conference promos, generic AI software/coding tools, pure enterprise SaaS, crypto, jobs, and unrelated newsletter content.
 - Never invent missing company names, investors, dates, or dollar values.
 - Gmail text is private. Do not quote sensitive email body text. Summarize only short factual evidence.
 - If this is an update to an existing activity, return action "update_existing" and preserve the matching duplicateOfActivityId when appropriate.
@@ -665,26 +686,31 @@ ${JSON.stringify({
 Return strict JSON only:
 {
   "keep": true,
-  "physicalAi": true,
-  "fundingEvent": true,
-  "action": "update_existing" | "new_activity" | "new_company",
-  "duplicateOfActivityId": null | "existing activity id",
-  "candidateCompany": "official company name or N/A",
-  "candidateCounterparty": "lead/key investors if present, comma-separated, or N/A",
-  "candidateDate": "YYYY-MM-DD",
-  "activityType": "financing",
-  "subsector": "one of ${ALLOWED_SUBSECTORS.join(" | ")}",
-  "dealValueUsd": null,
-  "geography": "country/region or N/A",
-  "confidence": "reported" | "estimated",
-  "description": "one factual analyst-safe sentence; mention undisclosed amount if relevant",
-  "evidence": ["short factual evidence point", "short factual evidence point"],
-  "cautions": ["what analyst should verify"],
+  "events": [
+    {
+      "physicalAi": true,
+      "action": "update_existing" | "new_activity" | "new_company",
+      "duplicateOfActivityId": null | "existing activity id",
+      "candidateCompany": "official company name or N/A",
+      "candidateCounterparty": "lead/key investors if present, comma-separated, or N/A",
+      "candidateDate": "YYYY-MM-DD",
+      "activityType": "one of ${ALLOWED_ACTIVITY_TYPES.join(" | ")}",
+      "subsector": "one of ${ALLOWED_SUBSECTORS.join(" | ")}",
+      "dealValueUsd": null,
+      "geography": "country/region or N/A",
+      "confidence": "reported" | "estimated",
+      "description": "one factual analyst-safe sentence; mention undisclosed amount if relevant",
+      "evidence": ["short factual evidence point", "short factual evidence point"],
+      "cautions": ["what analyst should verify"]
+    }
+  ],
   "rejectReason": null
 }
 
 If the candidate should not be staged, return:
-{ "keep": false, "physicalAi": false, "fundingEvent": false, "rejectReason": "short reason", "evidence": [], "cautions": [] }`;
+{ "keep": false, "events": [], "rejectReason": "short reason" }
+
+Extract up to 6 events from the email. If a digest contains Radar and Hellbender as separate Physical AI financings, return both events.`;
 }
 
 async function adjudicateWithLlm(candidate, gate, context) {
@@ -709,40 +735,50 @@ async function adjudicateWithLlm(candidate, gate, context) {
   if (!response.ok) throw new Error(`Gemini triage failed (${response.status}): ${JSON.stringify(data).slice(0, 240)}`);
   const parsed = safeJson(data?.candidates?.[0]?.content?.parts?.[0]?.text || "");
   if (!parsed || typeof parsed !== "object") throw new Error("Gemini triage returned invalid JSON");
-  if (parsed.keep === false || parsed.physicalAi === false || parsed.fundingEvent === false) {
+  if (parsed.keep === false) {
     return { keep: false, reason: `llm-${boundedText(parsed.rejectReason || "rejected", 60)}` };
   }
 
-  const next = { ...candidate };
-  if (boundedText(parsed.candidateCompany, 140) && parsed.candidateCompany !== "N/A") next.candidate_company = boundedText(parsed.candidateCompany, 140);
-  if (boundedText(parsed.candidateCounterparty, 240)) next.candidate_counterparty = boundedText(parsed.candidateCounterparty, 240);
-  if (validDate(parsed.candidateDate) && isRecent(parsed.candidateDate)) next.candidate_date = parsed.candidateDate;
-  next.activity_type = "financing";
-  next.subsector = normalizeAllowed(parsed.subsector, ALLOWED_SUBSECTORS, next.subsector);
-  if (typeof parsed.dealValueUsd === "number" && Number.isFinite(parsed.dealValueUsd) && parsed.dealValueUsd >= 0) {
-    next.deal_value_usd = parsed.dealValueUsd;
-  }
-  if (boundedText(parsed.geography, 120)) next.geography = boundedText(parsed.geography, 120);
-  next.confidence = normalizeAllowed(parsed.confidence, ["reported", "estimated"], next.confidence);
-  if (boundedText(parsed.description, 500)) next.description = boundedText(parsed.description, 500);
-  if (parsed.action === "update_existing" && parsed.duplicateOfActivityId) {
-    const exists = (context.activities || []).some((activity) => activity.id === parsed.duplicateOfActivityId);
-    if (exists) next.duplicate_of_activity_id = parsed.duplicateOfActivityId;
-  }
-  const evidence = Array.isArray(parsed.evidence) ? parsed.evidence.map((x) => boundedText(x, 160)).filter(Boolean).slice(0, 4) : [];
-  const cautions = Array.isArray(parsed.cautions) ? parsed.cautions.map((x) => boundedText(x, 160)).filter(Boolean).slice(0, 4) : [];
-  const action = ["update_existing", "new_activity", "new_company"].includes(parsed.action) ? parsed.action : (next.duplicate_of_activity_id ? "update_existing" : "new_activity");
-  const triage = [`AI triage: ${action}; model=${INTELLIGENCE_MODEL}.`];
-  if (evidence.length) triage.push(`Evidence: ${evidence.join(" | ")}.`);
-  if (cautions.length) triage.push(`Cautions: ${cautions.join(" | ")}.`);
-  next.extracted_text = boundedText(`${triage.join(" ")} Source: ${candidate.extracted_text}`, 900);
-  next.intelligence_action = action;
-  next.intelligence_score = intelligenceScore(next, action, evidence, cautions);
-  next.intelligence_evidence = evidence;
-  next.intelligence_cautions = cautions;
-  next.llm_model = INTELLIGENCE_MODEL;
-  next.llm_status = "enriched";
-  return { keep: true, candidate: next, status: "enriched" };
+  const rawEvents = Array.isArray(parsed.events) ? parsed.events : [parsed];
+  const candidates = rawEvents
+    .filter((event) => event && event.physicalAi !== false)
+    .slice(0, 6)
+    .map((event, index) => {
+      const next = { ...candidate };
+      const company = boundedText(event.candidateCompany, 140);
+      if (company && company !== "N/A") next.candidate_company = company;
+      if (boundedText(event.candidateCounterparty, 240)) next.candidate_counterparty = boundedText(event.candidateCounterparty, 240);
+      if (validDate(event.candidateDate) && isRecent(event.candidateDate)) next.candidate_date = event.candidateDate;
+      next.activity_type = normalizeAllowed(event.activityType, ALLOWED_ACTIVITY_TYPES, next.activity_type);
+      next.subsector = normalizeAllowed(event.subsector, ALLOWED_SUBSECTORS, next.subsector);
+      if (typeof event.dealValueUsd === "number" && Number.isFinite(event.dealValueUsd) && event.dealValueUsd >= 0) {
+        next.deal_value_usd = event.dealValueUsd;
+      }
+      if (boundedText(event.geography, 120)) next.geography = boundedText(event.geography, 120);
+      next.confidence = normalizeAllowed(event.confidence, ["reported", "estimated"], next.confidence);
+      if (boundedText(event.description, 500)) next.description = boundedText(event.description, 500);
+      if (event.action === "update_existing" && event.duplicateOfActivityId) {
+        const exists = (context.activities || []).some((activity) => activity.id === event.duplicateOfActivityId);
+        if (exists) next.duplicate_of_activity_id = event.duplicateOfActivityId;
+      }
+      next.id = `${candidate.id}-${slugifyId(`${next.candidate_company}-${next.activity_type}`)}-${index + 1}`;
+      const evidence = Array.isArray(event.evidence) ? event.evidence.map((x) => boundedText(x, 160)).filter(Boolean).slice(0, 4) : [];
+      const cautions = Array.isArray(event.cautions) ? event.cautions.map((x) => boundedText(x, 160)).filter(Boolean).slice(0, 4) : [];
+      const action = ["update_existing", "new_activity", "new_company"].includes(event.action) ? event.action : (next.duplicate_of_activity_id ? "update_existing" : "new_activity");
+      const triage = [`AI triage: ${action}; model=${INTELLIGENCE_MODEL}.`];
+      if (evidence.length) triage.push(`Evidence: ${evidence.join(" | ")}.`);
+      if (cautions.length) triage.push(`Cautions: ${cautions.join(" | ")}.`);
+      next.extracted_text = boundedText(`${triage.join(" ")} Source: ${candidate.extracted_text}`, 900);
+      next.intelligence_action = action;
+      next.intelligence_score = intelligenceScore(next, action, evidence, cautions);
+      next.intelligence_evidence = evidence;
+      next.intelligence_cautions = cautions;
+      next.llm_model = INTELLIGENCE_MODEL;
+      next.llm_status = "enriched";
+      return next;
+    });
+  if (candidates.length === 0) return { keep: false, reason: `llm-${boundedText(parsed.rejectReason || "no relevant events", 60)}` };
+  return { keep: true, candidates, status: "enriched" };
 }
 
 function stripIntelligenceColumns(row) {
@@ -875,42 +911,46 @@ module.exports = async function handler(req, res) {
       for (const m of messages) {
         const detail = await gmailGet(accessToken, m.id);
         const candidate = buildCandidate(detail, src.name);
-        const gate = gateCandidate(candidate, context);
-        if (!gate.keep) {
-          recordSkip(gate.reason, sourceStats);
-          continue;
-        }
-        if (gate.duplicateOfActivityId) {
-          candidate.duplicate_of_activity_id = gate.duplicateOfActivityId;
-          candidate.description = `Suggested update to existing activity ${gate.duplicateOfActivityId}: ${candidate.description}`;
-        }
-        const runKey = candidateRunKey(candidate);
-        if (runSeen.has(runKey)) {
-          recordSkip("run-duplicate", sourceStats);
-          continue;
-        }
-        runSeen.add(runKey);
         let staged = candidate;
+        let stagedCandidates = [candidate];
         if (intelligence.enabled) {
           try {
-            const adjudicated = await adjudicateWithLlm(candidate, gate, context);
+            const adjudicated = await adjudicateWithLlm(candidate, { keep: true, reason: "llm-first" }, context);
             if (!adjudicated.keep) {
               intelligence.rejected += 1;
               recordSkip(adjudicated.reason, sourceStats, true);
               continue;
             }
-            staged = adjudicated.candidate;
-            if (adjudicated.status === "enriched") intelligence.enriched += 1;
+            stagedCandidates = adjudicated.candidates;
+            if (adjudicated.status === "enriched") intelligence.enriched += stagedCandidates.length;
           } catch (llmError) {
             intelligence.failed += 1;
             actionCounts.llmFailed += 1;
             staged.extracted_text = boundedText(`AI triage failed; deterministic gate used. ${(llmError && llmError.message) || String(llmError)}. Source: ${staged.extracted_text}`, 900);
             staged.llm_model = INTELLIGENCE_MODEL;
             staged.llm_status = "failed";
+            stagedCandidates = [staged];
           }
         }
-        recordStage(staged, sourceStats);
-        candidates.push(staged);
+        for (staged of stagedCandidates) {
+          const gate = gateCandidate(staged, context);
+          if (!gate.keep) {
+            recordSkip(gate.reason, sourceStats);
+            continue;
+          }
+          if (gate.duplicateOfActivityId) {
+            staged.duplicate_of_activity_id = gate.duplicateOfActivityId;
+            staged.description = `Suggested update to existing activity ${gate.duplicateOfActivityId}: ${staged.description}`;
+          }
+          const runKey = candidateRunKey(staged);
+          if (runSeen.has(runKey)) {
+            recordSkip("run-duplicate", sourceStats);
+            continue;
+          }
+          runSeen.add(runKey);
+          recordStage(staged, sourceStats);
+          candidates.push(staged);
+        }
       }
       const written = await supabaseUpsertReviewQueue(SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY, candidates);
       totalCandidates += written;
