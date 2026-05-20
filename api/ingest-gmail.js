@@ -620,7 +620,10 @@ function pendingDuplicate(candidate, context) {
 }
 
 function candidateRunKey(candidate) {
-  if (candidate.gmail_message_id) return `gmail:${candidate.gmail_message_id}`;
+  if (candidate.gmail_message_id) {
+    const value = candidate.deal_value_usd === null || candidate.deal_value_usd === undefined ? "undisclosed" : String(Math.round(Number(candidate.deal_value_usd)));
+    return `gmail:${candidate.gmail_message_id}:${normalizeCompany(candidate.candidate_company)}:${candidate.activity_type}:${value}`;
+  }
   return [
     normalizeCompany(candidate.candidate_company),
     candidate.candidate_date,
