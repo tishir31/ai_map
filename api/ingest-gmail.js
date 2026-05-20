@@ -12,6 +12,10 @@
 //   4. Validate manually via the curl example in R15 docs before scheduling
 //      the daily cron in vercel.json.
 //
+// GET /api/ingest-gmail
+//   Used by Vercel Cron. If CRON_SECRET is set, Vercel sends
+//   Authorization: Bearer $CRON_SECRET.
+//
 // POST /api/ingest-gmail
 //   Optional body: { query?: string, maxResults?: number, queryLabel?: string }
 //
@@ -300,7 +304,7 @@ function unauthorized(res, reason) {
 function setCors(req, res) {
   const origin = req.headers.origin || "";
   res.setHeader("Access-Control-Allow-Origin", ALLOWED_ORIGINS.has(origin) ? origin : "https://ai-map-cyan.vercel.app");
-  res.setHeader("Access-Control-Allow-Methods", "POST, OPTIONS");
+  res.setHeader("Access-Control-Allow-Methods", "GET, POST, OPTIONS");
   res.setHeader("Access-Control-Allow-Headers", "Content-Type, X-Ingest-Secret, Authorization");
   res.setHeader("Vary", "Origin");
 }
@@ -772,10 +776,10 @@ module.exports = async function handler(req, res) {
     return res.end();
   }
 
-  if (req.method !== "POST") {
+  if (req.method !== "GET" && req.method !== "POST") {
     res.statusCode = 405;
     res.setHeader("Content-Type", "application/json");
-    return res.end(JSON.stringify({ ok: false, error: "POST only" }));
+    return res.end(JSON.stringify({ ok: false, error: "GET or POST only" }));
   }
 
   if (!hasSharedSecret(req)) {
