@@ -28,7 +28,8 @@
 // Required env: SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY, GMAIL_CLIENT_ID,
 // GMAIL_CLIENT_SECRET, GMAIL_REFRESH_TOKEN, GMAIL_USER_EMAIL.
 // Optional: INGEST_SOURCES, INGEST_MAX, INGEST_SHARED_SECRET,
-// INGEST_LLM_ENABLED=false, INGEST_LLM_MODEL, GEMINI_API_KEY.
+// INGEST_LLM_ENABLED=false, INGEST_LLM_MODEL, GEMINI_API_KEY,
+// OPENAI_API_KEY, OPENAI_TRIAGE_MODEL.
 
 const SHARED_SECRET = process.env.INGEST_SHARED_SECRET || process.env.CRON_SECRET || "";
 const ALLOWED_ORIGINS = new Set([
@@ -49,7 +50,8 @@ const DEFAULT_QUERIES = [
 ];
 const MAX_LOOKBACK_DAYS = 2;
 const MAX_DEFAULT_RESULTS = 35;
-const INTELLIGENCE_MODEL = process.env.INGEST_LLM_MODEL || "gemini-2.5-flash";
+const GEMINI_MODEL = process.env.INGEST_LLM_MODEL || "gemini-2.5-flash";
+const OPENAI_MODEL = process.env.OPENAI_TRIAGE_MODEL || "gpt-4.1-mini";
 const ALLOWED_SUBSECTORS = ["robotics", "humanoids", "autonomous vehicles", "drones", "defense autonomy", "industrial automation", "embodied AI", "edge AI hardware", "other"];
 const ALLOWED_ACTIVITY_TYPES = ["financing", "m&a", "partnership", "customer contract", "product launch", "infrastructure", "other"];
 
@@ -190,7 +192,14 @@ function isMaterialPhysicalAiSignal(text, candidate) {
 }
 
 function llmEnabled(body) {
-  return body.llm !== false && process.env.INGEST_LLM_ENABLED !== "false" && Boolean(process.env.GEMINI_API_KEY);
+  return body.llm !== false && process.env.INGEST_LLM_ENABLED !== "false" && Boolean(process.env.GEMINI_API_KEY || process.env.OPENAI_API_KEY);
+}
+
+function configuredModelLabel() {
+  const labels = [];
+  if (process.env.GEMINI_API_KEY) labels.push(`gemini:${GEMINI_MODEL}`);
+  if (process.env.OPENAI_API_KEY) labels.push(`openai:${OPENAI_MODEL}`);
+  return labels.join(",") || "disabled";
 }
 
 function normalizeAllowed(value, allowed, fallback) {
@@ -203,6 +212,11 @@ function validDate(value) {
 
 function boundedText(value, max) {
   return String(value || "").replace(/\s+/g, " ").trim().slice(0, max);
+}
+
+function stripTransientColumns(row) {
+  const { _llm_text, ...rest } = row;
+  return rest;
 }
 
 function intelligenceScore(candidate, action, evidence, cautions) {
@@ -424,6 +438,7 @@ function buildCandidate(message, sourceName) {
     received_date: receivedDate,
     snippet,
     extracted_text: excerpt,
+    _llm_text: boundedText(text, 12000),
     confidence: "reported",
     status: "pending",
     created_at: new Date().toISOString()
@@ -441,7 +456,7 @@ async function supabaseUpsertReviewQueue(supabaseUrl, serviceRoleKey, rows) {
         "Content-Type": "application/json",
         Prefer: "resolution=merge-duplicates,return=minimal"
       },
-      body: JSON.stringify(payload)
+      body: JSON.stringify(payload.map(stripTransientColumns))
     });
   }
   let r = await post(rows);
@@ -679,7 +694,7 @@ ${JSON.stringify({
   dealValueUsd: candidate.deal_value_usd,
   subject: candidate.subject,
   snippet: candidate.snippet,
-  extractedText: candidate.extracted_text,
+  emailText: candidate._llm_text || candidate.extracted_text,
   description: candidate.description
 })}
 
@@ -713,28 +728,8 @@ If the candidate should not be staged, return:
 Extract up to 6 events from the email. If a digest contains Radar and Hellbender as separate Physical AI financings, return both events.`;
 }
 
-async function adjudicateWithLlm(candidate, gate, context) {
-  const apiKey = process.env.GEMINI_API_KEY;
-  if (!apiKey) return { keep: true, candidate, status: "disabled" };
-  const response = await fetch(
-    `https://generativelanguage.googleapis.com/v1beta/models/${INTELLIGENCE_MODEL}:generateContent?key=${apiKey}`,
-    {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        contents: [{ parts: [{ text: intelligencePrompt(candidate, gate, context) }] }],
-        generationConfig: {
-          temperature: 0.05,
-          maxOutputTokens: 1200,
-          responseMimeType: "application/json"
-        }
-      })
-    }
-  );
-  const data = await response.json();
-  if (!response.ok) throw new Error(`Gemini triage failed (${response.status}): ${JSON.stringify(data).slice(0, 240)}`);
-  const parsed = safeJson(data?.candidates?.[0]?.content?.parts?.[0]?.text || "");
-  if (!parsed || typeof parsed !== "object") throw new Error("Gemini triage returned invalid JSON");
+function buildAdjudicatedCandidates(parsed, candidate, context, modelLabel) {
+  if (!parsed || typeof parsed !== "object") throw new Error(`${modelLabel} triage returned invalid JSON`);
   if (parsed.keep === false) {
     return { keep: false, reason: `llm-${boundedText(parsed.rejectReason || "rejected", 60)}` };
   }
@@ -765,7 +760,7 @@ async function adjudicateWithLlm(candidate, gate, context) {
       const evidence = Array.isArray(event.evidence) ? event.evidence.map((x) => boundedText(x, 160)).filter(Boolean).slice(0, 4) : [];
       const cautions = Array.isArray(event.cautions) ? event.cautions.map((x) => boundedText(x, 160)).filter(Boolean).slice(0, 4) : [];
       const action = ["update_existing", "new_activity", "new_company"].includes(event.action) ? event.action : (next.duplicate_of_activity_id ? "update_existing" : "new_activity");
-      const triage = [`AI triage: ${action}; model=${INTELLIGENCE_MODEL}.`];
+      const triage = [`AI triage: ${action}; model=${modelLabel}.`];
       if (evidence.length) triage.push(`Evidence: ${evidence.join(" | ")}.`);
       if (cautions.length) triage.push(`Cautions: ${cautions.join(" | ")}.`);
       next.extracted_text = boundedText(`${triage.join(" ")} Source: ${candidate.extracted_text}`, 900);
@@ -773,12 +768,85 @@ async function adjudicateWithLlm(candidate, gate, context) {
       next.intelligence_score = intelligenceScore(next, action, evidence, cautions);
       next.intelligence_evidence = evidence;
       next.intelligence_cautions = cautions;
-      next.llm_model = INTELLIGENCE_MODEL;
+      next.llm_model = modelLabel;
       next.llm_status = "enriched";
       return next;
     });
   if (candidates.length === 0) return { keep: false, reason: `llm-${boundedText(parsed.rejectReason || "no relevant events", 60)}` };
   return { keep: true, candidates, status: "enriched" };
+}
+
+async function adjudicateWithGemini(candidate, gate, context) {
+  const apiKey = process.env.GEMINI_API_KEY;
+  if (!apiKey) return null;
+  const response = await fetch(
+    `https://generativelanguage.googleapis.com/v1beta/models/${GEMINI_MODEL}:generateContent?key=${apiKey}`,
+    {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        contents: [{ parts: [{ text: intelligencePrompt(candidate, gate, context) }] }],
+        generationConfig: {
+          temperature: 0.05,
+          maxOutputTokens: 3000,
+          responseMimeType: "application/json"
+        }
+      })
+    }
+  );
+  const data = await response.json();
+  if (!response.ok) throw new Error(`Gemini triage failed (${response.status}): ${JSON.stringify(data).slice(0, 240)}`);
+  const parsed = safeJson(data?.candidates?.[0]?.content?.parts?.[0]?.text || "");
+  return buildAdjudicatedCandidates(parsed, candidate, context, `gemini:${GEMINI_MODEL}`);
+}
+
+function extractOpenAiText(data) {
+  if (typeof data?.output_text === "string") return data.output_text;
+  const parts = [];
+  for (const item of data?.output || []) {
+    for (const content of item.content || []) {
+      if (typeof content.text === "string") parts.push(content.text);
+    }
+  }
+  return parts.join("\n");
+}
+
+async function adjudicateWithOpenAi(candidate, gate, context) {
+  const apiKey = process.env.OPENAI_API_KEY;
+  if (!apiKey) return null;
+  const response = await fetch("https://api.openai.com/v1/responses", {
+    method: "POST",
+    headers: {
+      Authorization: `Bearer ${apiKey}`,
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({
+      model: OPENAI_MODEL,
+      input: intelligencePrompt(candidate, gate, context),
+      temperature: 0.05,
+      max_output_tokens: 3000,
+      text: { format: { type: "json_object" } },
+      store: false
+    })
+  });
+  const data = await response.json();
+  if (!response.ok) throw new Error(`OpenAI triage failed (${response.status}): ${JSON.stringify(data).slice(0, 240)}`);
+  const parsed = safeJson(extractOpenAiText(data));
+  return buildAdjudicatedCandidates(parsed, candidate, context, `openai:${OPENAI_MODEL}`);
+}
+
+async function adjudicateWithLlm(candidate, gate, context) {
+  const attempts = [];
+  for (const provider of [adjudicateWithGemini, adjudicateWithOpenAi]) {
+    try {
+      const result = await provider(candidate, gate, context);
+      if (result) return result;
+    } catch (err) {
+      attempts.push((err && err.message) || String(err));
+    }
+  }
+  if (attempts.length > 0) throw new Error(attempts.join(" | "));
+  return { keep: true, candidate, status: "disabled" };
 }
 
 function stripIntelligenceColumns(row) {
@@ -866,7 +934,7 @@ module.exports = async function handler(req, res) {
   const perSource = [];
   let runStatus = "completed";
   let errorMessage = null;
-  const intelligence = { enabled: llmEnabled(body), model: INTELLIGENCE_MODEL, enriched: 0, rejected: 0, failed: 0 };
+  const intelligence = { enabled: llmEnabled(body), model: configuredModelLabel(), enriched: 0, rejected: 0, failed: 0 };
   const actionCounts = {
     stagedNew: 0,
     stagedUpdates: 0,
@@ -927,7 +995,7 @@ module.exports = async function handler(req, res) {
             intelligence.failed += 1;
             actionCounts.llmFailed += 1;
             staged.extracted_text = boundedText(`AI triage failed; deterministic gate used. ${(llmError && llmError.message) || String(llmError)}. Source: ${staged.extracted_text}`, 900);
-            staged.llm_model = INTELLIGENCE_MODEL;
+            staged.llm_model = configuredModelLabel();
             staged.llm_status = "failed";
             stagedCandidates = [staged];
           }
