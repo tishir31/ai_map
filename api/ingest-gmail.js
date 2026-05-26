@@ -38,18 +38,28 @@ const ALLOWED_ORIGINS = new Set([
   "http://localhost:5173"
 ]);
 
+function boundedInt(value, fallback, min, max) {
+  const parsed = Number(value);
+  if (!Number.isFinite(parsed)) return fallback;
+  return Math.max(min, Math.min(max, Math.round(parsed)));
+}
+
+const MAX_LOOKBACK_DAYS = boundedInt(process.env.INGEST_LOOKBACK_DAYS, 7, 1, 30);
 const DEFAULT_QUERIES = [
   {
     name: "Physical AI inbox sweep",
-    query: "newer_than:2d (\"physical AI\" OR robotics OR robot OR humanoid OR autonomous OR autonomy OR drone OR UAV OR sensor OR sensors OR lidar OR perception OR \"computer vision\" OR \"world model\" OR embodied OR industrial OR warehouse OR manufacturing)"
+    query: `newer_than:${MAX_LOOKBACK_DAYS}d ("physical AI" OR robotics OR robot OR humanoid OR autonomous OR autonomy OR drone OR UAV OR sensor OR sensors OR lidar OR perception OR "computer vision" OR "world model" OR embodied OR industrial OR warehouse OR manufacturing OR maritime OR vessel OR ship OR ocean OR RFID OR inventory OR "retail intelligence" OR construction OR jobsite)`
   },
   {
     name: "AI newsletters and deal digests",
-    query: "newer_than:2d (AI OR \"artificial intelligence\" OR startup OR funding OR financing OR raises OR launched OR unveiled OR \"Deals and Debuts\" OR \"AI Agenda\" OR \"The Information\")"
+    query: `newer_than:${MAX_LOOKBACK_DAYS}d (AI OR "artificial intelligence" OR startup OR funding OR financing OR raises OR raised OR launched OR unveiled OR "Deals and Debuts" OR "AI Agenda" OR "The Information")`
+  },
+  {
+    name: "Physical-world sensing and automation deals",
+    query: `newer_than:${MAX_LOOKBACK_DAYS}d (funding OR financing OR raises OR raised OR "Series A" OR "Series B" OR seed) (sensor OR sensors OR RFID OR inventory OR maritime OR vessel OR ship OR ocean OR construction OR jobsite OR autonomous OR robotics OR "edge AI" OR perception)`
   }
 ];
-const MAX_LOOKBACK_DAYS = 2;
-const MAX_DEFAULT_RESULTS = 35;
+const MAX_DEFAULT_RESULTS = 75;
 const GEMINI_MODEL = process.env.INGEST_LLM_MODEL || "gemini-2.5-flash";
 const OPENAI_MODEL = process.env.OPENAI_TRIAGE_MODEL || "gpt-4.1-mini";
 const ALLOWED_SUBSECTORS = ["robotics", "humanoids", "autonomous vehicles", "drones", "defense autonomy", "industrial automation", "embodied AI", "edge AI hardware", "other"];
@@ -67,11 +77,11 @@ const ACTIVITY_RULES = [
 const SUBSECTOR_RULES = [
   ["humanoids", /\bhumanoid/i],
   ["defense autonomy", /\b(defense|military|resilient autonomy|autonomy)\b/i],
-  ["autonomous vehicles", /\b(autonomous vehicle|yard tractor|self-driving|port autonomy)\b/i],
+  ["autonomous vehicles", /\b(autonomous vehicle|yard tractor|self-driving|port autonomy|maritime autonomy|vessel autonomy)\b/i],
   ["drones", /\b(drone|uav|aerial)\b/i],
-  ["industrial automation", /\b(industrial|factory|welding|inspection|automation)\b/i],
+  ["industrial automation", /\b(industrial|factory|welding|inspection|automation|construction|jobsite)\b/i],
   ["embodied AI", /\b(embodied|manipulation|foundation model)\b/i],
-  ["edge AI hardware", /\b(edge|chip|silicon|inference module|hardware)\b/i],
+  ["edge AI hardware", /\b(edge|chip|silicon|inference module|hardware|sensor|sensors|rfid|inventory|maritime|vessel|ship|ocean|smartmast)\b/i],
   ["robotics", /\brobot/i]
 ];
 
@@ -88,7 +98,10 @@ const PHYSICAL_AI_RULES = [
   /\bdefense autonomy\b/i,
   /\bcomputer vision\b/i,
   /\blidar|sensor fusion|perception\b/i,
-  /\bmanipulation\b/i
+  /\bmanipulation\b/i,
+  /\brfid|inventory sensing|retail intelligence\b/i,
+  /\bmaritime|vessel|ship|ocean|smartmast\b/i,
+  /\bconstruction robotics|jobsite automation\b/i
 ];
 
 const FUNDING_RULES = [
@@ -670,14 +683,14 @@ function intelligencePrompt(candidate, gate, context) {
   const existingCompanies = (context.companies || []).map((company) => company.name).slice(0, 250);
   return `You are an investment-bank-grade Physical AI market-intelligence triage engine.
 
-Your job is to read ONE Gmail-derived newsletter, digest, or alert and extract the most important Physical AI market event before it enters a private analyst Review Queue.
+Your job is to read ONE Gmail-derived newsletter, digest, or alert and extract all material Physical AI market events before they enter a private analyst Review Queue.
 
 Hard rules:
 - Keep only material Physical AI market events from the last ${MAX_LOOKBACK_DAYS} days.
 - Physical AI includes robotics, humanoids, autonomous vehicles, drones, defense autonomy, industrial automation, embodied AI, edge AI hardware, sensing/perception/autonomy infrastructure.
-- Sensor, lidar, computer-vision, perception, inventory-sensing, and edge-hardware companies should be kept when they enable physical-world automation.
+- Sensor, lidar, computer-vision, perception, inventory-sensing, RFID, maritime sensing, construction automation, and edge-hardware companies should be kept when they enable physical-world automation.
 - Keep financings, M&A, strategic partnerships, customer contracts/deployments, product/model launches, infrastructure/facility expansions, and other company-level events that an investment banker covering the space would track.
-- Digests often contain many unrelated items. Extract the best single Physical AI event. Prefer specific company events over broad conference commentary.
+- Digests often contain many unrelated items. Extract every material Physical AI company event up to the event limit. Prefer specific company events over broad conference commentary.
 - Reject stock news, earnings, conference promos, generic AI software/coding tools, pure enterprise SaaS, crypto, jobs, and unrelated newsletter content.
 - Never invent missing company names, investors, dates, or dollar values.
 - Gmail text is private. Do not quote sensitive email body text. Summarize only short factual evidence.
@@ -728,7 +741,7 @@ Return strict JSON only:
 If the candidate should not be staged, return:
 { "keep": false, "events": [], "rejectReason": "short reason" }
 
-Extract up to 6 events from the email. If a digest contains Radar and Hellbender as separate Physical AI financings, return both events.`;
+Extract up to 10 events from the email. If a digest contains Radar, Hellbender, August Robotics, and Quartermaster as separate Physical AI financings, return each relevant event.`;
 }
 
 function buildAdjudicatedCandidates(parsed, candidate, context, modelLabel) {
@@ -740,7 +753,7 @@ function buildAdjudicatedCandidates(parsed, candidate, context, modelLabel) {
   const rawEvents = Array.isArray(parsed.events) ? parsed.events : [parsed];
   const candidates = rawEvents
     .filter((event) => event && event.physicalAi !== false)
-    .slice(0, 6)
+    .slice(0, 10)
     .map((event, index) => {
       const next = { ...candidate };
       const company = boundedText(event.candidateCompany, 140);
@@ -914,7 +927,7 @@ module.exports = async function handler(req, res) {
   } catch {
     body = {};
   }
-  const maxResults = Math.min(Number(body.maxResults || process.env.INGEST_MAX || MAX_DEFAULT_RESULTS), 50);
+  const maxResults = Math.min(Number(body.maxResults || process.env.INGEST_MAX || MAX_DEFAULT_RESULTS), 100);
 
   let sources = DEFAULT_QUERIES;
   if (process.env.INGEST_SOURCES) {

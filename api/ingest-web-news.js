@@ -21,34 +21,50 @@ const ALLOWED_ORIGINS = new Set([
 ]);
 
 const SHARED_SECRET = process.env.INGEST_SHARED_SECRET || process.env.CRON_SECRET || "";
-const MAX_LOOKBACK_DAYS = 2;
-const MAX_DEFAULT_RESULTS = 12;
-const INTELLIGENCE_MODEL = process.env.INGEST_LLM_MODEL || "gemini-2.5-flash";
+
+function boundedInt(value, fallback, min, max) {
+  const parsed = Number(value);
+  if (!Number.isFinite(parsed)) return fallback;
+  return Math.max(min, Math.min(max, Math.round(parsed)));
+}
+
+const MAX_LOOKBACK_DAYS = boundedInt(process.env.INGEST_LOOKBACK_DAYS, 7, 1, 30);
+const MAX_DEFAULT_RESULTS = 24;
+const GEMINI_MODEL = process.env.INGEST_LLM_MODEL || "gemini-2.5-flash";
+const OPENAI_MODEL = process.env.OPENAI_TRIAGE_MODEL || "gpt-4.1-mini";
 const ALLOWED_SUBSECTORS = ["robotics", "humanoids", "autonomous vehicles", "drones", "defense autonomy", "industrial automation", "embodied AI", "edge AI hardware", "other"];
 const DEFAULT_QUERIES = [
   {
     name: "Physical AI funding",
-    query: "\"physical AI\" (raises OR raised OR funding OR financing OR investment OR \"seed round\" OR \"Series A\" OR \"Series B\") when:2d"
+    query: `"physical AI" (raises OR raised OR funding OR financing OR investment OR "seed round" OR "Series A" OR "Series B") when:${MAX_LOOKBACK_DAYS}d`
   },
   {
     name: "Robotics startup financing",
-    query: "(robotics OR robot OR \"robotics startup\") (raises OR raised OR funding OR financing OR \"seed round\" OR \"Series A\" OR \"Series B\" OR \"Series C\") when:2d"
+    query: `(robotics OR robot OR "robotics startup") (raises OR raised OR funding OR financing OR "seed round" OR "Series A" OR "Series B" OR "Series C") when:${MAX_LOOKBACK_DAYS}d`
   },
   {
     name: "Humanoid robotics funding",
-    query: "(humanoid OR humanoids OR \"humanoid robot\" OR \"humanoid robotics\") (raises OR raised OR funding OR financing OR \"Series A\" OR \"Series B\" OR \"Series C\") when:2d"
+    query: `(humanoid OR humanoids OR "humanoid robot" OR "humanoid robotics") (raises OR raised OR funding OR financing OR "Series A" OR "Series B" OR "Series C") when:${MAX_LOOKBACK_DAYS}d`
   },
   {
     name: "Autonomy drones defense funding",
-    query: "(autonomous OR autonomy OR drone OR UAV OR \"defense autonomy\" OR \"unmanned systems\") (raises OR raised OR funding OR financing OR investment OR \"Series A\" OR \"Series B\") when:2d"
+    query: `(autonomous OR autonomy OR drone OR UAV OR "defense autonomy" OR "unmanned systems") (raises OR raised OR funding OR financing OR investment OR "Series A" OR "Series B") when:${MAX_LOOKBACK_DAYS}d`
   },
   {
     name: "Industrial automation funding",
-    query: "(\"industrial automation\" OR \"warehouse robotics\" OR \"manufacturing automation\" OR \"factory automation\") (raises OR raised OR funding OR financing OR investment OR \"Series A\" OR \"Series B\") when:2d"
+    query: `("industrial automation" OR "warehouse robotics" OR "manufacturing automation" OR "factory automation" OR "construction robotics" OR "jobsite automation") (raises OR raised OR funding OR financing OR investment OR "Series A" OR "Series B") when:${MAX_LOOKBACK_DAYS}d`
   },
   {
     name: "Embodied AI funding",
-    query: "(\"embodied AI\" OR \"robot foundation model\" OR \"robot foundation models\" OR \"robot learning\") (raises OR raised OR funding OR financing OR investment OR \"seed round\" OR \"Series A\") when:2d"
+    query: `("embodied AI" OR "robot foundation model" OR "robot foundation models" OR "robot learning") (raises OR raised OR funding OR financing OR investment OR "seed round" OR "Series A") when:${MAX_LOOKBACK_DAYS}d`
+  },
+  {
+    name: "Physical-world sensing funding",
+    query: `(sensor OR sensors OR RFID OR lidar OR perception OR "computer vision" OR "edge AI" OR "retail intelligence" OR inventory) (raises OR raised OR funding OR financing OR investment OR "Series A" OR "Series B" OR seed) when:${MAX_LOOKBACK_DAYS}d`
+  },
+  {
+    name: "Maritime autonomy sensing funding",
+    query: `(maritime OR vessel OR ship OR ocean OR "maritime autonomy" OR "ocean intelligence") (raises OR raised OR funding OR financing OR investment OR "Series A" OR "Series B" OR seed) when:${MAX_LOOKBACK_DAYS}d`
   }
 ];
 
@@ -63,7 +79,10 @@ const PHYSICAL_AI_RULES = [
   /\bindustrial automation\b/i,
   /\bwarehouse automation\b/i,
   /\bdefense autonomy\b/i,
-  /\blidar|sensor fusion|perception\b/i
+  /\blidar|sensor fusion|perception\b/i,
+  /\brfid|inventory sensing|retail intelligence\b/i,
+  /\bmaritime|vessel|ship|ocean|smartmast\b/i,
+  /\bconstruction robotics|jobsite automation\b/i
 ];
 
 const FUNDING_RULES = [
@@ -198,7 +217,14 @@ function isFundingSignal(text, dealValueUsd) {
 }
 
 function llmEnabled(body) {
-  return body.llm !== false && process.env.INGEST_LLM_ENABLED !== "false" && Boolean(process.env.GEMINI_API_KEY);
+  return body.llm !== false && process.env.INGEST_LLM_ENABLED !== "false" && Boolean(process.env.GEMINI_API_KEY || process.env.OPENAI_API_KEY);
+}
+
+function configuredModelLabel() {
+  const labels = [];
+  if (process.env.GEMINI_API_KEY) labels.push(`gemini:${GEMINI_MODEL}`);
+  if (process.env.OPENAI_API_KEY) labels.push(`openai:${OPENAI_MODEL}`);
+  return labels.join(",") || "disabled";
 }
 
 function normalizeAllowed(value, allowed, fallback) {
@@ -262,11 +288,11 @@ function inferCounterparty(text) {
 function inferSubsector(text) {
   if (/\bhumanoid/i.test(text)) return "humanoids";
   if (/\b(defense|military|unmanned)\b/i.test(text)) return "defense autonomy";
-  if (/\b(autonomous vehicle|self-driving|robotaxi|trucking)\b/i.test(text)) return "autonomous vehicles";
+  if (/\b(autonomous vehicle|self-driving|robotaxi|trucking|maritime autonomy|vessel autonomy)\b/i.test(text)) return "autonomous vehicles";
   if (/\b(drone|uav|aerial)\b/i.test(text)) return "drones";
-  if (/\b(industrial|warehouse|factory|manufacturing|automation)\b/i.test(text)) return "industrial automation";
+  if (/\b(industrial|warehouse|factory|manufacturing|automation|construction|jobsite)\b/i.test(text)) return "industrial automation";
   if (/\b(embodied|manipulation|foundation model|physical ai)\b/i.test(text)) return "embodied AI";
-  if (/\b(edge|chip|silicon|lidar|sensor|perception)\b/i.test(text)) return "edge AI hardware";
+  if (/\b(edge|chip|silicon|lidar|sensor|sensors|perception|rfid|inventory|retail intelligence|maritime|vessel|ship|ocean|smartmast)\b/i.test(text)) return "edge AI hardware";
   return "robotics";
 }
 
@@ -507,6 +533,7 @@ Your job is to adjudicate ONE public RSS/news candidate before it enters a priva
 Hard rules:
 - Keep only Physical AI funding events from the last ${MAX_LOOKBACK_DAYS} days.
 - Physical AI includes robotics, humanoids, autonomous vehicles, drones, defense autonomy, industrial automation, embodied AI, edge AI hardware, sensing/perception/autonomy infrastructure.
+- Sensor, lidar, computer-vision, RFID, inventory-sensing, retail-intelligence, maritime-sensing, construction-automation, and edge-hardware companies should be kept when they enable physical-world automation.
 - Reject stock news, earnings, opinion pieces, conference/newsletter promos, hiring, generic AI software, crypto, and non-funding stories.
 - Never invent missing company names, investors, dates, or dollar values.
 - If this is an update to an existing activity, return action "update_existing" and preserve the matching duplicateOfActivityId when appropriate.
@@ -555,28 +582,8 @@ If the candidate should not be staged, return:
 { "keep": false, "physicalAi": false, "fundingEvent": false, "rejectReason": "short reason", "evidence": [], "cautions": [] }`;
 }
 
-async function adjudicateWithLlm(candidate, gate, context) {
-  const apiKey = process.env.GEMINI_API_KEY;
-  if (!apiKey) return { keep: true, candidate, status: "disabled" };
-  const response = await fetch(
-    `https://generativelanguage.googleapis.com/v1beta/models/${INTELLIGENCE_MODEL}:generateContent?key=${apiKey}`,
-    {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        contents: [{ parts: [{ text: intelligencePrompt(candidate, gate, context) }] }],
-        generationConfig: {
-          temperature: 0.05,
-          maxOutputTokens: 1200,
-          responseMimeType: "application/json"
-        }
-      })
-    }
-  );
-  const data = await response.json();
-  if (!response.ok) throw new Error(`Gemini triage failed (${response.status}): ${JSON.stringify(data).slice(0, 240)}`);
-  const parsed = safeJson(data?.candidates?.[0]?.content?.parts?.[0]?.text || "");
-  if (!parsed || typeof parsed !== "object") throw new Error("Gemini triage returned invalid JSON");
+function buildAdjudicatedCandidate(parsed, candidate, context, modelLabel) {
+  if (!parsed || typeof parsed !== "object") throw new Error(`${modelLabel} triage returned invalid JSON`);
   if (parsed.keep === false || parsed.physicalAi === false || parsed.fundingEvent === false) {
     return { keep: false, reason: `llm-${boundedText(parsed.rejectReason || "rejected", 60)}` };
   }
@@ -600,7 +607,7 @@ async function adjudicateWithLlm(candidate, gate, context) {
   const evidence = Array.isArray(parsed.evidence) ? parsed.evidence.map((x) => boundedText(x, 160)).filter(Boolean).slice(0, 4) : [];
   const cautions = Array.isArray(parsed.cautions) ? parsed.cautions.map((x) => boundedText(x, 160)).filter(Boolean).slice(0, 4) : [];
   const action = ["update_existing", "new_activity", "new_company"].includes(parsed.action) ? parsed.action : (next.duplicate_of_activity_id ? "update_existing" : "new_activity");
-  const triage = [`AI triage: ${action}; model=${INTELLIGENCE_MODEL}.`];
+  const triage = [`AI triage: ${action}; model=${modelLabel}.`];
   if (evidence.length) triage.push(`Evidence: ${evidence.join(" | ")}.`);
   if (cautions.length) triage.push(`Cautions: ${cautions.join(" | ")}.`);
   next.extracted_text = boundedText(`${triage.join(" ")} Source: ${candidate.extracted_text}`, 900);
@@ -608,9 +615,82 @@ async function adjudicateWithLlm(candidate, gate, context) {
   next.intelligence_score = intelligenceScore(next, action, evidence, cautions);
   next.intelligence_evidence = evidence;
   next.intelligence_cautions = cautions;
-  next.llm_model = INTELLIGENCE_MODEL;
+  next.llm_model = modelLabel;
   next.llm_status = "enriched";
   return { keep: true, candidate: next, status: "enriched" };
+}
+
+async function adjudicateWithGemini(candidate, gate, context) {
+  const apiKey = process.env.GEMINI_API_KEY;
+  if (!apiKey) return null;
+  const response = await fetch(
+    `https://generativelanguage.googleapis.com/v1beta/models/${GEMINI_MODEL}:generateContent?key=${apiKey}`,
+    {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        contents: [{ parts: [{ text: intelligencePrompt(candidate, gate, context) }] }],
+        generationConfig: {
+          temperature: 0.05,
+          maxOutputTokens: 1200,
+          responseMimeType: "application/json"
+        }
+      })
+    }
+  );
+  const data = await response.json();
+  if (!response.ok) throw new Error(`Gemini triage failed (${response.status}): ${JSON.stringify(data).slice(0, 240)}`);
+  const parsed = safeJson(data?.candidates?.[0]?.content?.parts?.[0]?.text || "");
+  return buildAdjudicatedCandidate(parsed, candidate, context, `gemini:${GEMINI_MODEL}`);
+}
+
+function extractOpenAiText(data) {
+  if (typeof data?.output_text === "string") return data.output_text;
+  const parts = [];
+  for (const item of data?.output || []) {
+    for (const content of item.content || []) {
+      if (typeof content.text === "string") parts.push(content.text);
+    }
+  }
+  return parts.join("\n");
+}
+
+async function adjudicateWithOpenAi(candidate, gate, context) {
+  const apiKey = process.env.OPENAI_API_KEY;
+  if (!apiKey) return null;
+  const response = await fetch("https://api.openai.com/v1/responses", {
+    method: "POST",
+    headers: {
+      Authorization: `Bearer ${apiKey}`,
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({
+      model: OPENAI_MODEL,
+      input: intelligencePrompt(candidate, gate, context),
+      temperature: 0.05,
+      max_output_tokens: 1200,
+      text: { format: { type: "json_object" } },
+      store: false
+    })
+  });
+  const data = await response.json();
+  if (!response.ok) throw new Error(`OpenAI triage failed (${response.status}): ${JSON.stringify(data).slice(0, 240)}`);
+  const parsed = safeJson(extractOpenAiText(data));
+  return buildAdjudicatedCandidate(parsed, candidate, context, `openai:${OPENAI_MODEL}`);
+}
+
+async function adjudicateWithLlm(candidate, gate, context) {
+  const attempts = [];
+  for (const provider of [adjudicateWithGemini, adjudicateWithOpenAi]) {
+    try {
+      const result = await provider(candidate, gate, context);
+      if (result) return result;
+    } catch (err) {
+      attempts.push((err && err.message) || String(err));
+    }
+  }
+  if (attempts.length > 0) throw new Error(attempts.join(" | "));
+  return { keep: true, candidate, status: "disabled" };
 }
 
 function stripIntelligenceColumns(row) {
@@ -738,7 +818,7 @@ module.exports = async function handler(req, res) {
   } catch {
     body = {};
   }
-  const maxResults = Math.min(Number(body.maxResults || process.env.INGEST_WEB_MAX || MAX_DEFAULT_RESULTS), 50);
+  const maxResults = Math.min(Number(body.maxResults || process.env.INGEST_WEB_MAX || MAX_DEFAULT_RESULTS), 75);
   let sources = DEFAULT_QUERIES;
   if (process.env.INGEST_WEB_SOURCES) {
     try {
@@ -758,7 +838,7 @@ module.exports = async function handler(req, res) {
   const perSource = [];
   let errorMessage = null;
   let runStatus = "completed";
-  const intelligence = { enabled: llmEnabled(body), model: INTELLIGENCE_MODEL, enriched: 0, rejected: 0, failed: 0 };
+  const intelligence = { enabled: llmEnabled(body), model: configuredModelLabel(), enriched: 0, rejected: 0, failed: 0 };
   const actionCounts = {
     stagedNew: 0,
     stagedUpdates: 0,
@@ -802,25 +882,10 @@ module.exports = async function handler(req, res) {
       for (const item of items) {
         const article = await fetchArticleSnapshot(item.link);
         const candidate = buildCandidate(item, src.name, article);
-        const gate = gateCandidate(candidate, context);
-        if (!gate.keep) {
-          recordSkip(gate.reason, sourceStats);
-          continue;
-        }
-        if (gate.duplicateOfActivityId) {
-          candidate.duplicate_of_activity_id = gate.duplicateOfActivityId;
-          candidate.description = `Suggested update to existing activity ${gate.duplicateOfActivityId}: ${candidate.description}`;
-        }
-        const runKey = candidateRunKey(candidate);
-        if (runSeen.has(runKey)) {
-          recordSkip("run-duplicate", sourceStats);
-          continue;
-        }
-        runSeen.add(runKey);
         let staged = candidate;
         if (intelligence.enabled) {
           try {
-            const adjudicated = await adjudicateWithLlm(candidate, gate, context);
+            const adjudicated = await adjudicateWithLlm(candidate, { keep: true, reason: "llm-first" }, context);
             if (!adjudicated.keep) {
               intelligence.rejected += 1;
               recordSkip(adjudicated.reason, sourceStats, true);
@@ -832,10 +897,25 @@ module.exports = async function handler(req, res) {
             intelligence.failed += 1;
             actionCounts.llmFailed += 1;
             staged.extracted_text = boundedText(`AI triage failed; deterministic gate used. ${(llmError && llmError.message) || String(llmError)}. Source: ${staged.extracted_text}`, 900);
-            staged.llm_model = INTELLIGENCE_MODEL;
+            staged.llm_model = configuredModelLabel();
             staged.llm_status = "failed";
           }
         }
+        const gate = gateCandidate(staged, context);
+        if (!gate.keep) {
+          recordSkip(gate.reason, sourceStats);
+          continue;
+        }
+        if (gate.duplicateOfActivityId) {
+          staged.duplicate_of_activity_id = gate.duplicateOfActivityId;
+          staged.description = `Suggested update to existing activity ${gate.duplicateOfActivityId}: ${staged.description}`;
+        }
+        const runKey = candidateRunKey(staged);
+        if (runSeen.has(runKey)) {
+          recordSkip("run-duplicate", sourceStats);
+          continue;
+        }
+        runSeen.add(runKey);
         recordStage(staged, sourceStats);
         candidates.push(staged);
       }
