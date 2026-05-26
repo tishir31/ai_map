@@ -620,6 +620,7 @@ function pendingDuplicate(candidate, context) {
   const candidateCompany = normalizeCompany(candidate.candidate_company);
   return (context.pending || []).some((item) => {
     if (candidate.gmail_message_id && item.gmail_message_id === candidate.gmail_message_id && item.id === candidate.id) return true;
+    if (candidate.gmail_message_id && item.gmail_message_id === candidate.gmail_message_id && normalizeCompany(item.candidate_company) === candidateCompany && daysBetween(item.candidate_date, candidate.candidate_date) <= 7) return true;
     if (item.activity_type !== candidate.activity_type) return false;
     if (normalizeCompany(item.candidate_company) !== candidateCompany) return false;
     if (daysBetween(item.candidate_date, candidate.candidate_date) > 14) return false;
