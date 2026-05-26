@@ -646,7 +646,9 @@ function candidateRunKey(candidate) {
 }
 
 function gateCandidate(candidate, context) {
-  const text = `${candidate.subject || ""}. ${candidate.snippet || ""}. ${candidate.extracted_text || ""}. ${candidate.description || ""}`;
+  const evidence = Array.isArray(candidate.intelligence_evidence) ? candidate.intelligence_evidence.join(" ") : "";
+  const sourceText = candidate.llm_status === "enriched" ? "" : candidate.extracted_text || "";
+  const text = `${candidate.candidate_company || ""}. ${candidate.subject || ""}. ${candidate.snippet || ""}. ${sourceText}. ${candidate.description || ""}. ${evidence}`;
   if (!isRecent(candidate.candidate_date)) return { keep: false, reason: "outside-lookback" };
   if (!candidate.candidate_company || candidate.candidate_company === "N/A") return { keep: false, reason: "company-unresolved" };
   if (!isMaterialPhysicalAiSignal(text, candidate)) return { keep: false, reason: "low-relevance" };
