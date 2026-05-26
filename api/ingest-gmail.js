@@ -681,12 +681,14 @@ function intelligencePrompt(candidate, gate, context) {
     ? activityContext((context.activities || []).find((activity) => activity.id === gate.duplicateOfActivityId), context)
     : null;
   const existingCompanies = (context.companies || []).map((company) => company.name).slice(0, 250);
+  const window = refreshWindow();
   return `You are an investment-bank-grade Physical AI market-intelligence triage engine.
 
 Your job is to read ONE Gmail-derived newsletter, digest, or alert and extract all material Physical AI market events before they enter a private analyst Review Queue.
 
 Hard rules:
-- Keep only material Physical AI market events from the last ${MAX_LOOKBACK_DAYS} days.
+- Today's date for this run is ${window.endDate}. The valid ingestion window is ${window.startDate} through ${window.endDate}. Treat event dates inside that window as current, not future.
+- Keep only material Physical AI market events from that valid ingestion window.
 - Physical AI includes robotics, humanoids, autonomous vehicles, drones, defense autonomy, industrial automation, embodied AI, edge AI hardware, sensing/perception/autonomy infrastructure.
 - Sensor, lidar, computer-vision, perception, inventory-sensing, RFID, maritime sensing, construction automation, and edge-hardware companies should be kept when they enable physical-world automation.
 - Keep financings, M&A, strategic partnerships, customer contracts/deployments, product/model launches, infrastructure/facility expansions, and other company-level events that an investment banker covering the space would track.
@@ -747,7 +749,11 @@ Extract up to 10 events from the email. If a digest contains Radar, Hellbender, 
 function buildAdjudicatedCandidates(parsed, candidate, context, modelLabel) {
   if (!parsed || typeof parsed !== "object") throw new Error(`${modelLabel} triage returned invalid JSON`);
   if (parsed.keep === false) {
-    return { keep: false, reason: `llm-${boundedText(parsed.rejectReason || "rejected", 60)}` };
+    const reason = boundedText(parsed.rejectReason || "rejected", 120);
+    if (isRecent(candidate.candidate_date) && /\b(future|outside|date|window|lookback|recent)\b/i.test(reason)) {
+      return { keep: true, candidates: [candidate], status: "date-recheck" };
+    }
+    return { keep: false, reason: `llm-${boundedText(reason, 60)}` };
   }
 
   const rawEvents = Array.isArray(parsed.events) ? parsed.events : [parsed];

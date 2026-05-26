@@ -526,12 +526,14 @@ function intelligencePrompt(candidate, gate, context) {
     ? activityContext((context.activities || []).find((activity) => activity.id === gate.duplicateOfActivityId), context)
     : null;
   const existingCompanies = (context.companies || []).map((company) => company.name).slice(0, 250);
+  const window = refreshWindow();
   return `You are an investment-bank-grade Physical AI public-news triage engine.
 
 Your job is to adjudicate ONE public RSS/news candidate before it enters a private analyst Review Queue.
 
 Hard rules:
-- Keep only Physical AI funding events from the last ${MAX_LOOKBACK_DAYS} days.
+- Today's date for this run is ${window.endDate}. The valid ingestion window is ${window.startDate} through ${window.endDate}. Treat event dates inside that window as current, not future.
+- Keep only Physical AI funding events from that valid ingestion window.
 - Physical AI includes robotics, humanoids, autonomous vehicles, drones, defense autonomy, industrial automation, embodied AI, edge AI hardware, sensing/perception/autonomy infrastructure.
 - Sensor, lidar, computer-vision, RFID, inventory-sensing, retail-intelligence, maritime-sensing, construction-automation, and edge-hardware companies should be kept when they enable physical-world automation.
 - Reject stock news, earnings, opinion pieces, conference/newsletter promos, hiring, generic AI software, crypto, and non-funding stories.
@@ -585,7 +587,11 @@ If the candidate should not be staged, return:
 function buildAdjudicatedCandidate(parsed, candidate, context, modelLabel) {
   if (!parsed || typeof parsed !== "object") throw new Error(`${modelLabel} triage returned invalid JSON`);
   if (parsed.keep === false || parsed.physicalAi === false || parsed.fundingEvent === false) {
-    return { keep: false, reason: `llm-${boundedText(parsed.rejectReason || "rejected", 60)}` };
+    const reason = boundedText(parsed.rejectReason || "rejected", 120);
+    if (isRecent(candidate.candidate_date) && /\b(future|outside|date|window|lookback|recent)\b/i.test(reason)) {
+      return { keep: true, candidate, status: "date-recheck" };
+    }
+    return { keep: false, reason: `llm-${boundedText(reason, 60)}` };
   }
 
   const next = { ...candidate };
