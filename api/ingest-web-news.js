@@ -387,7 +387,7 @@ async function loadDedupeContext(supabaseUrl, serviceRoleKey) {
     supabaseGet(
       supabaseUrl,
       serviceRoleKey,
-      "review_queue_items?select=id,candidate_company,candidate_date,activity_type,deal_value_usd,source_url,status,description,duplicate_of_activity_id&status=eq.pending&limit=600"
+      "review_queue_items?select=id,candidate_company,candidate_date,activity_type,deal_value_usd,source_url,status,description,duplicate_of_activity_id&limit=1000"
     )
   ]);
   const companyById = new Map((companies || []).map((company) => [company.id, company.name]));
