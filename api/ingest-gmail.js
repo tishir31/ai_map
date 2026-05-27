@@ -45,6 +45,8 @@ function boundedInt(value, fallback, min, max) {
 }
 
 const MAX_LOOKBACK_DAYS = boundedInt(process.env.INGEST_LOOKBACK_DAYS, 7, 1, 30);
+const DEFAULT_TIME_BUDGET_MS = boundedInt(process.env.INGEST_TIME_BUDGET_MS, 45000, 10000, 240000);
+const DEFAULT_MAX_ITEMS = boundedInt(process.env.INGEST_MAX_ITEMS, 18, 1, 80);
 const DEFAULT_QUERIES = [
   {
     name: "Physical AI inbox sweep",
@@ -59,7 +61,7 @@ const DEFAULT_QUERIES = [
     query: `newer_than:${MAX_LOOKBACK_DAYS}d (funding OR financing OR raises OR raised OR "Series A" OR "Series B" OR seed) (sensor OR sensors OR RFID OR inventory OR maritime OR vessel OR ship OR ocean OR construction OR jobsite OR autonomous OR robotics OR "edge AI" OR perception)`
   }
 ];
-const MAX_DEFAULT_RESULTS = 75;
+const MAX_DEFAULT_RESULTS = 8;
 const GEMINI_MODEL = process.env.INGEST_LLM_MODEL || "gemini-2.5-flash";
 const OPENAI_MODEL = process.env.OPENAI_TRIAGE_MODEL || "gpt-4.1-mini";
 const ALLOWED_SUBSECTORS = ["robotics", "humanoids", "autonomous vehicles", "drones", "defense autonomy", "industrial automation", "embodied AI", "edge AI hardware", "other"];
@@ -937,6 +939,8 @@ module.exports = async function handler(req, res) {
     body = {};
   }
   const maxResults = Math.min(Number(body.maxResults || process.env.INGEST_MAX || MAX_DEFAULT_RESULTS), 100);
+  const maxItems = boundedInt(body.maxItems || process.env.INGEST_MAX_ITEMS, DEFAULT_MAX_ITEMS, 1, 100);
+  const timeBudgetMs = boundedInt(body.timeBudgetMs || process.env.INGEST_TIME_BUDGET_MS, DEFAULT_TIME_BUDGET_MS, 10000, 300000);
 
   let sources = DEFAULT_QUERIES;
   if (process.env.INGEST_SOURCES) {
@@ -959,6 +963,8 @@ module.exports = async function handler(req, res) {
   const perSource = [];
   let runStatus = "completed";
   let errorMessage = null;
+  let stopReason = null;
+  let processedItems = 0;
   const intelligence = { enabled: llmEnabled(body), model: configuredModelLabel(), enriched: 0, rejected: 0, failed: 0 };
   const actionCounts = {
     stagedNew: 0,
@@ -997,11 +1003,27 @@ module.exports = async function handler(req, res) {
   try {
     const context = await loadDedupeContext(SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY);
     const accessToken = await getGmailAccessToken();
+    const startedMs = Date.now();
+    function budgetExceeded() {
+      return Date.now() - startedMs > timeBudgetMs || processedItems >= maxItems;
+    }
     for (const src of sources) {
+      if (budgetExceeded()) {
+        stopReason = processedItems >= maxItems ? "max-items" : "time-budget";
+        runStatus = "partial";
+        break;
+      }
       const messages = await gmailList(accessToken, src.query, maxResults);
       const candidates = [];
-      const sourceStats = { source: src.name, query: src.query, found: messages.length, written: 0, skipped: 0, stagedNew: 0, stagedUpdates: 0, skippedByReason: {} };
+      const sourceStats = { source: src.name, query: src.query, found: messages.length, processed: 0, written: 0, skipped: 0, stagedNew: 0, stagedUpdates: 0, skippedByReason: {} };
       for (const m of messages) {
+        if (budgetExceeded()) {
+          stopReason = processedItems >= maxItems ? "max-items" : "time-budget";
+          runStatus = "partial";
+          break;
+        }
+        processedItems += 1;
+        sourceStats.processed += 1;
         const detail = await gmailGet(accessToken, m.id);
         const candidate = buildCandidate(detail, src.name);
         let staged = candidate;
@@ -1048,8 +1070,9 @@ module.exports = async function handler(req, res) {
       const written = await supabaseUpsertReviewQueue(SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY, candidates);
       totalCandidates += written;
       sourceStats.written = written;
-      sourceStats.skipped = messages.length - written;
+      sourceStats.skipped = sourceStats.processed - written;
       perSource.push(sourceStats);
+      if (stopReason) break;
     }
   } catch (err) {
     runStatus = "failed";
@@ -1084,6 +1107,8 @@ module.exports = async function handler(req, res) {
       skippedByReason,
       intelligence,
       perSource,
+      processedItems,
+      stopReason: stopReason || undefined,
       error: errorMessage || undefined
     })
   );
