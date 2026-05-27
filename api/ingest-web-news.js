@@ -28,7 +28,7 @@ function boundedInt(value, fallback, min, max) {
   return Math.max(min, Math.min(max, Math.round(parsed)));
 }
 
-const MAX_LOOKBACK_DAYS = boundedInt(process.env.INGEST_LOOKBACK_DAYS, 7, 1, 30);
+const MAX_LOOKBACK_DAYS = boundedInt(process.env.INGEST_LOOKBACK_DAYS, 2, 1, 30);
 const DEFAULT_TIME_BUDGET_MS = boundedInt(process.env.INGEST_TIME_BUDGET_MS, 45000, 10000, 240000);
 const DEFAULT_MAX_ITEMS = boundedInt(process.env.INGEST_WEB_MAX_ITEMS, 18, 1, 80);
 const MAX_DEFAULT_RESULTS = 4;
@@ -489,13 +489,16 @@ function pendingDuplicate(candidate, context) {
 
 function candidateRunKey(candidate) {
   const candidateUrl = normalizeUrl(candidate.source_url);
-  if (candidateUrl) return `url:${candidateUrl}`;
-  return [
-    normalizeCompany(candidate.candidate_company),
+  const company = normalizeCompany(candidate.candidate_company);
+  const value = candidate.deal_value_usd === null || candidate.deal_value_usd === undefined ? "undisclosed" : String(Math.round(Number(candidate.deal_value_usd)));
+  if (company && company !== "n a") return [
+    company,
     candidate.candidate_date,
     candidate.activity_type,
-    candidate.deal_value_usd === null || candidate.deal_value_usd === undefined ? "undisclosed" : String(Math.round(Number(candidate.deal_value_usd)))
+    value
   ].join("|");
+  if (candidateUrl) return `url:${candidateUrl}`;
+  return ["unresolved", candidate.candidate_date, candidate.activity_type, value].join("|");
 }
 
 function gateCandidate(candidate, context) {

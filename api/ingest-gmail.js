@@ -44,7 +44,7 @@ function boundedInt(value, fallback, min, max) {
   return Math.max(min, Math.min(max, Math.round(parsed)));
 }
 
-const MAX_LOOKBACK_DAYS = boundedInt(process.env.INGEST_LOOKBACK_DAYS, 7, 1, 30);
+const MAX_LOOKBACK_DAYS = boundedInt(process.env.INGEST_LOOKBACK_DAYS, 2, 1, 30);
 const DEFAULT_TIME_BUDGET_MS = boundedInt(process.env.INGEST_TIME_BUDGET_MS, 45000, 10000, 240000);
 const DEFAULT_MAX_ITEMS = boundedInt(process.env.INGEST_MAX_ITEMS, 18, 1, 80);
 const DEFAULT_QUERIES = [
