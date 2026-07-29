@@ -8,9 +8,9 @@
       "text": "When Hugging Face got breached, the closed tools couldn't distinguish attackers from defenders and blocked the forensic analysis. They ended up running open-weight GLM 5.2 on their own infra to contain it. Perplexity is joining the OSAA to support open tools for security.",
       "url": "https://x.com/AravSrinivas/status/2082144189211681157",
       "timestamp": "2026-07-28T16:40:33Z",
-      "likes": 948,
-      "retweets": 69,
-      "replies": 31,
+      "likes": 1104,
+      "retweets": 74,
+      "replies": 33,
       "media": []
     },
     {
@@ -21,7 +21,7 @@
       "text": "Today I'm publishing a new essay, Policy on the AI Exponential. AI is progressing extremely fast—much faster than the policy process was built to handle. The essay lays out where I think the technology is now, and the action needed to close the gap: https://darioamodei.com/post/policy-on-the-ai-exponential",
       "url": "https://x.com/DarioAmodei/status/2064781775247950326",
       "timestamp": "2026-06-10T18:48:31Z",
-      "likes": 13902,
+      "likes": 13905,
       "retweets": 2501,
       "replies": 1528,
       "media": []
@@ -35,7 +35,7 @@
       "url": "https://x.com/karpathy/status/1988705360723763242",
       "timestamp": "2025-11-12T20:28:01Z",
       "likes": 27539,
-      "retweets": 2763,
+      "retweets": 2762,
       "replies": 942,
       "media": []
     },
@@ -47,7 +47,7 @@
       "text": "@guy_dar1 There is no AI approach that can do what these babies do, not even close. The sample efficiency gap (at equal space dimensionality) is 3-4 OOM.\n\nSo if the bar is \"baby level invention\", AI isn't anywhere close.",
       "url": "https://x.com/fchollet/status/1984040993726058956",
       "timestamp": "2025-10-30T23:33:29Z",
-      "likes": 9088,
+      "likes": 9087,
       "retweets": 57,
       "replies": 14,
       "media": []
@@ -60,8 +60,8 @@
       "text": "Crawling isn't innate (unlike walking). Every baby must *invent* crawling, from scratch, using extremely little data, and no reference to imitate. Which is why different babies end up with different ways of crawling.\n\nSometimes people tell me, \"you say AI isn't intelligent until",
       "url": "https://x.com/fchollet/status/1984014438673113477",
       "timestamp": "2025-10-30T21:47:58Z",
-      "likes": 133745,
-      "retweets": 8184,
+      "likes": 133750,
+      "retweets": 8182,
       "replies": 324,
       "media": []
     },
@@ -73,7 +73,7 @@
       "text": "YouTube and Maps are the hardest. Maybe even impossible. \n\nThe rest are hard but doable.",
       "url": "https://x.com/AravSrinivas/status/1981450807938596955",
       "timestamp": "2025-10-23T20:01:00Z",
-      "likes": 17756,
+      "likes": 17764,
       "retweets": 843,
       "replies": 860,
       "media": []
@@ -86,7 +86,7 @@
       "text": "You can now track insider trading on Perplexity Finance. We will be adding politician trading shortly.",
       "url": "https://x.com/AravSrinivas/status/1978941079182545338",
       "timestamp": "2025-10-16T21:48:14Z",
-      "likes": 20180,
+      "likes": 20186,
       "retweets": 1138,
       "replies": 520,
       "media": [
@@ -104,7 +104,7 @@
       "text": "Today I met with PM @narendramodi to discuss Anthropic's expansion to India—where Claude Code use is up 5× since June. How India deploys AI across critical sectors like education, healthcare, and agriculture for over a billion people will be essential in shaping the future of AI.",
       "url": "https://x.com/DarioAmodei/status/1977010693460443151",
       "timestamp": "2025-10-11T13:57:35Z",
-      "likes": 9624,
+      "likes": 9627,
       "retweets": 811,
       "replies": 456,
       "media": [
@@ -135,8 +135,8 @@
       "text": "The 3rd edition of my book Deep Learning with Python is being printed right now, and will be in bookstores within 2 weeks. You can order it now from Amazon or from Manning.\n\nThis time, we're also releasing the whole thing as a 100% free website.\n\nI don't care if it reduces book",
       "url": "https://x.com/fchollet/status/1968676861430706451",
       "timestamp": "2025-09-18T14:01:54Z",
-      "likes": 6358,
-      "retweets": 1017,
+      "likes": 6359,
+      "retweets": 1016,
       "replies": 326,
       "media": [
         {
@@ -153,8 +153,8 @@
       "text": "The most interesting fact about this globalized chain is the number of irreplaceable single points of failure. There's only one company that can make these chips at scale. It runs on equipment that only one company can make. Out of parts that only one company can make.",
       "url": "https://x.com/fchollet/status/1960080110335480202",
       "timestamp": "2025-08-25T20:41:29Z",
-      "likes": 10864,
-      "retweets": 467,
+      "likes": 10863,
+      "retweets": 466,
       "replies": 92,
       "media": []
     },
@@ -166,8 +166,8 @@
       "text": "NVIDA chips are manufactured by TSMC, a Taiwanese company. They're created using EUV lithography machines manufactured by ASML, a Dutch company. These machines consist of &gt;50% of German parts (by value), in particular ZEISS optics.",
       "url": "https://x.com/fchollet/status/1960079432548516310",
       "timestamp": "2025-08-25T20:38:47Z",
-      "likes": 33119,
-      "retweets": 2142,
+      "likes": 33120,
+      "retweets": 2141,
       "replies": 241,
       "media": []
     },
@@ -179,8 +179,8 @@
       "text": "This is a remarkable claim given what I have heard alleged that Elon does to manipulate X to benefit himself and his own companies and harm his competitors and people he doesn't like.",
       "url": "https://x.com/sama/status/1955094792804720660",
       "timestamp": "2025-08-12T02:31:37Z",
-      "likes": 80338,
-      "retweets": 4861,
+      "likes": 80369,
+      "retweets": 4863,
       "replies": 4460,
       "media": []
     },
@@ -210,8 +210,8 @@
       "text": "the highest sense of purpose is dharma",
       "url": "https://x.com/AravSrinivas/status/1920924933267325435",
       "timestamp": "2025-05-09T19:32:47Z",
-      "likes": 34186,
-      "retweets": 4173,
+      "likes": 34197,
+      "retweets": 4174,
       "replies": 334,
       "media": [
         {
@@ -241,7 +241,7 @@
       "text": "can yall please chill on generating images this is insane our team needs sleep",
       "url": "https://x.com/sama/status/1906210479695126886",
       "timestamp": "2025-03-30T05:02:48Z",
-      "likes": 119292,
+      "likes": 119284,
       "retweets": 5726,
       "replies": 6381,
       "media": []
@@ -254,7 +254,7 @@
       "text": "कालोऽस्मि लोकक्षयकृत्प्रवृद्धो\nलोकान्समाहर्तुमिह प्रवृत्तः।\nऋतेऽपि त्वां न भविष्यन्ति सर्वे\nयेऽवस्थिताः प्रत्यनीकेषु योधाः॥",
       "url": "https://x.com/AravSrinivas/status/1905146079076823481",
       "timestamp": "2025-03-27T06:33:15Z",
-      "likes": 17978,
+      "likes": 17986,
       "retweets": 2013,
       "replies": 262,
       "media": [
@@ -272,9 +272,9 @@
       "text": "I wrote a quick new post on \"Digital Hygiene\".\n\nBasically there are some no-brainer decisions you can make in your life to dramatically improve the privacy and security of your computing and this post goes over some of them. Blog post link in the reply, but copy pasting below",
       "url": "https://x.com/karpathy/status/1902046003567718810",
       "timestamp": "2025-03-18T17:14:40Z",
-      "likes": 26491,
+      "likes": 26492,
       "retweets": 3464,
-      "replies": 696,
+      "replies": 697,
       "media": [
         {
           "type": "photo",
@@ -303,8 +303,8 @@
       "text": "Agency &gt; Intelligence\n\nI had this intuitively wrong for decades, I think due to a pervasive cultural veneration of intelligence, various entertainment/media, obsession with IQ etc. Agency is significantly more powerful and significantly more scarce. Are you hiring for agency? Are",
       "url": "https://x.com/karpathy/status/1894099637218545984",
       "timestamp": "2025-02-24T18:58:38Z",
-      "likes": 49826,
-      "retweets": 9349,
+      "likes": 49831,
+      "retweets": 9350,
       "replies": 1942,
       "media": []
     },
@@ -316,8 +316,8 @@
       "text": "Great to meet you once again, Prime Minister @narendramodi ji, at Paris!",
       "url": "https://x.com/AravSrinivas/status/1889068008024195373",
       "timestamp": "2025-02-10T21:44:44Z",
-      "likes": 26479,
-      "retweets": 1054,
+      "likes": 26485,
+      "retweets": 1055,
       "replies": 208,
       "media": [
         {
@@ -334,9 +334,9 @@
       "text": "no thank you but we will buy twitter for $9.74 billion if you want",
       "url": "https://x.com/sama/status/1889059531625464090",
       "timestamp": "2025-02-10T21:11:04Z",
-      "likes": 219112,
-      "retweets": 17023,
-      "replies": 11537,
+      "likes": 219124,
+      "retweets": 17024,
+      "replies": 11536,
       "media": []
     },
     {
@@ -347,7 +347,7 @@
       "text": "There's a new kind of coding I call \"vibe coding\", where you fully give in to the vibes, embrace exponentials, and forget that the code even exists. It's possible because the LLMs (e.g. Cursor Composer w Sonnet) are getting too good. Also I just talk to Composer with SuperWhisper",
       "url": "https://x.com/karpathy/status/1886192184808149383",
       "timestamp": "2025-02-02T23:17:15Z",
-      "likes": 34144,
+      "likes": 34143,
       "retweets": 3642,
       "replies": 1474,
       "media": []
@@ -360,7 +360,7 @@
       "text": "My thoughts on China, export controls and two possible futures https://darioamodei.com/on-deepseek-and-export-controls",
       "url": "https://x.com/DarioAmodei/status/1884636410839535967",
       "timestamp": "2025-01-29T16:15:09Z",
-      "likes": 6306,
+      "likes": 6305,
       "retweets": 1110,
       "replies": 1256,
       "media": []
@@ -373,8 +373,8 @@
       "text": "deepseek's r1 is an impressive model, particularly around what they're able to deliver for the price.\n\nwe will obviously deliver much better models and also it's legit invigorating to have a new competitor! we will pull up some releases.",
       "url": "https://x.com/sama/status/1884066337103962416",
       "timestamp": "2025-01-28T02:29:53Z",
-      "likes": 81832,
-      "retweets": 6079,
+      "likes": 81841,
+      "retweets": 6080,
       "replies": 6199,
       "media": []
     },
@@ -386,8 +386,8 @@
       "text": "funny, they never sent me one of these for contributing to democrats...",
       "url": "https://x.com/sama/status/1880303311842341152",
       "timestamp": "2025-01-17T17:16:58Z",
-      "likes": 73273,
-      "retweets": 9109,
+      "likes": 73269,
+      "retweets": 9111,
       "replies": 4013,
       "media": [
         {
@@ -408,8 +408,8 @@
       "text": "Had the honor to meet Prime Minister @narendramodi ji. We had a great conversation about the potential for AI adoption in India and across the world. Really inspired by Modi Ji’s dedication to stay updated on the topic and his remarkable vision for the future.",
       "url": "https://x.com/AravSrinivas/status/1873020346737279341",
       "timestamp": "2024-12-28T14:57:04Z",
-      "likes": 24328,
-      "retweets": 2015,
+      "likes": 24325,
+      "retweets": 2014,
       "replies": 817,
       "media": [
         {
@@ -426,8 +426,8 @@
       "text": "TikTok just open-sourced their recommender system framework (Monolith) -- and it uses Keras\n\nThis means that nearly all the major recommender systems in the industry are built on Keras -- YouTube, TikTok, Spotify, Snap, X/Twitter, and many more (Grubhub...)",
       "url": "https://x.com/fchollet/status/1869949776764252328",
       "timestamp": "2024-12-20T03:35:43Z",
-      "likes": 10168,
-      "retweets": 840,
+      "likes": 10170,
+      "retweets": 841,
       "replies": 74,
       "media": []
     },
@@ -439,9 +439,9 @@
       "text": "I do not write posts on X.\nI tweet links to posts on other platforms.\nI like and retweet (occasionally)\nI comment on friends' tweets (rarely)\nFollow me on...⬇️⬇️⬇️",
       "url": "https://x.com/ylecun/status/1862598063275061484",
       "timestamp": "2024-11-29T20:42:38Z",
-      "likes": 1959,
+      "likes": 1957,
       "retweets": 114,
-      "replies": 1002,
+      "replies": 1003,
       "media": []
     },
     {
@@ -465,8 +465,8 @@
       "text": "It is morning in America again",
       "url": "https://x.com/elonmusk/status/1854201929519247803",
       "timestamp": "2024-11-06T16:39:24Z",
-      "likes": 2256237,
-      "retweets": 198920,
+      "likes": 2256185,
+      "retweets": 198896,
       "replies": 66837,
       "media": [
         {
@@ -483,8 +483,8 @@
       "text": "🇺🇸🇺🇸The future is gonna be so 🔥 🇺🇸🇺🇸",
       "url": "https://x.com/elonmusk/status/1854026234339938528",
       "timestamp": "2024-11-06T05:01:15Z",
-      "likes": 2494180,
-      "retweets": 194049,
+      "likes": 2494187,
+      "retweets": 194037,
       "replies": 56899,
       "media": [
         {
@@ -566,8 +566,8 @@
       "text": "@elonmusk Your smartest friends aren't very smart.",
       "url": "https://x.com/ylecun/status/1815125133448671363",
       "timestamp": "2024-07-21T20:42:09Z",
-      "likes": 13280,
-      "retweets": 401,
+      "likes": 13282,
+      "retweets": 402,
       "replies": 891,
       "media": []
     },
@@ -579,7 +579,7 @@
       "text": "X is a $44 billion propaganda machine. Yet it attempts to disguise itself as a defender of unfettered free speech, a source of factual information, and a substitute for professional journalism.",
       "url": "https://x.com/ylecun/status/1814932356404314442",
       "timestamp": "2024-07-21T07:56:08Z",
-      "likes": 12700,
+      "likes": 12701,
       "retweets": 1386,
       "replies": 2773,
       "media": []
@@ -592,7 +592,7 @@
       "text": "⚡️ Excited to share that I am starting an AI+Education company called Eureka Labs. \nThe announcement:\n\n---\nWe are Eureka Labs and we are building a new kind of school that is AI native.\n\nHow can we approach an ideal experience for learning something new? For example, in the case",
       "url": "https://x.com/karpathy/status/1813263734707790301",
       "timestamp": "2024-07-16T17:25:37Z",
-      "likes": 27573,
+      "likes": 27572,
       "retweets": 3580,
       "replies": 1510,
       "media": [
@@ -611,7 +611,7 @@
       "url": "https://x.com/ylecun/status/1797742726047502623",
       "timestamp": "2024-06-03T21:30:40Z",
       "likes": 14282,
-      "retweets": 1307,
+      "retweets": 1308,
       "replies": 2709,
       "media": []
     },
@@ -623,7 +623,7 @@
       "text": "My opinion of @elonmusk\nI like his cars (I own a 2015 S, and 2023 S), his rockets, his solar energy systems, and his satellite communication system.\nI also like his positions on open source and patents.\n\nBut I very much disagree with him on a number of issues.\n\nI disagree with",
       "url": "https://x.com/ylecun/status/1797270661192155427",
       "timestamp": "2024-06-02T14:14:51Z",
-      "likes": 16659,
+      "likes": 16661,
       "retweets": 1832,
       "replies": 2514,
       "media": []
@@ -636,7 +636,7 @@
       "text": "@elonmusk @bneiluj @how_many_roads_ Over 80 technical papers published since January 2022.\nWhat about you?\nhttps://scholar.google.com/citations?hl=en&user=WLN3QrAAAAAJ&view_op=list_works&sortby=pubdate",
       "url": "https://x.com/ylecun/status/1795219718837616775",
       "timestamp": "2024-05-27T22:25:09Z",
-      "likes": 16368,
+      "likes": 16370,
       "retweets": 733,
       "replies": 453,
       "media": []
@@ -667,7 +667,7 @@
       "text": "AI has achieved transcendence.",
       "url": "https://x.com/AravSrinivas/status/1732076912292581579",
       "timestamp": "2023-12-05T16:38:10Z",
-      "likes": 32163,
+      "likes": 32165,
       "retweets": 942,
       "replies": 514,
       "media": [
@@ -685,8 +685,8 @@
       "text": "first and last time i ever wear one of these",
       "url": "https://x.com/sama/status/1726345564059832609",
       "timestamp": "2023-11-19T21:03:51Z",
-      "likes": 91835,
-      "retweets": 5578,
+      "likes": 91842,
+      "retweets": 5577,
       "replies": 3429,
       "media": [
         {
@@ -703,8 +703,8 @@
       "text": "i love you all. \n\ntoday was a weird experience in many ways. but one unexpected one is that it has been sorta like reading your own eulogy while you’re still alive. the outpouring of love is awesome.\n\none takeaway: go tell your friends how great you think they are.",
       "url": "https://x.com/sama/status/1725742088317534446",
       "timestamp": "2023-11-18T05:05:51Z",
-      "likes": 84348,
-      "retweets": 5630,
+      "likes": 84347,
+      "retweets": 5631,
       "replies": 3389,
       "media": []
     },
@@ -716,8 +716,8 @@
       "text": "i loved my time at openai. it was transformative for me personally, and hopefully the world a little bit. most of all i loved working with such talented people.\n\nwill have more to say about what’s next later. \n\n🫡",
       "url": "https://x.com/sama/status/1725631621511184771",
       "timestamp": "2023-11-17T21:46:53Z",
-      "likes": 89056,
-      "retweets": 8639,
+      "likes": 89062,
+      "retweets": 8638,
       "replies": 6060,
       "media": []
     },
@@ -760,7 +760,7 @@
       "text": "This is huge: Llama-v2 is open source, with a license that authorizes commercial use!\n\nThis is going to change the landscape of the LLM market.\nLlama-v2 is available on Microsoft Azure and will be available on AWS, Hugging Face and other providers\n\nPretrained and fine-tuned",
       "url": "https://x.com/ylecun/status/1681336284453781505",
       "timestamp": "2023-07-18T16:13:02Z",
-      "likes": 14867,
+      "likes": 14866,
       "retweets": 3337,
       "replies": 381,
       "media": []
@@ -821,7 +821,7 @@
       "text": "Some personal news: I am joining OpenAI (again :)). Like many others both in/out of AI, I am very inspired by the impact of their work and I have personally benefited greatly from it. The future potential is especially exciting; it is a great pleasure to jump back in and build!🪄",
       "url": "https://x.com/karpathy/status/1623476659369443328",
       "timestamp": "2023-02-09T00:19:32Z",
-      "likes": 25210,
+      "likes": 25209,
       "retweets": 1304,
       "replies": 807,
       "media": []
@@ -834,7 +834,7 @@
       "text": "The hottest new programming language is English",
       "url": "https://x.com/karpathy/status/1617979122625712128",
       "timestamp": "2023-01-24T20:14:18Z",
-      "likes": 73508,
+      "likes": 73504,
       "retweets": 8973,
       "replies": 2313,
       "media": []
@@ -869,8 +869,8 @@
       "text": "the bird is freed",
       "url": "https://x.com/elonmusk/status/1585841080431321088",
       "timestamp": "2022-10-28T03:49:11Z",
-      "likes": 2176802,
-      "retweets": 294968,
+      "likes": 2176762,
+      "retweets": 294957,
       "replies": 121798,
       "media": []
     },
@@ -913,8 +913,8 @@
       "text": "Listen, I can’t do miracles ok",
       "url": "https://x.com/elonmusk/status/1519495982723084290",
       "timestamp": "2022-04-28T01:57:27Z",
-      "likes": 2253234,
-      "retweets": 179884,
+      "likes": 2253168,
+      "retweets": 179880,
       "replies": 68082,
       "media": [
         {
@@ -931,8 +931,8 @@
       "text": "Let’s make Twitter maximum fun!",
       "url": "https://x.com/elonmusk/status/1519495072802390016",
       "timestamp": "2022-04-28T01:53:50Z",
-      "likes": 2332024,
-      "retweets": 164589,
+      "likes": 2331984,
+      "retweets": 164581,
       "replies": 99683,
       "media": []
     },
@@ -944,8 +944,8 @@
       "text": "Next I’m buying Coca-Cola to put the cocaine back in",
       "url": "https://x.com/elonmusk/status/1519480761749016577",
       "timestamp": "2022-04-28T00:56:58Z",
-      "likes": 4212398,
-      "retweets": 580134,
+      "likes": 4212366,
+      "retweets": 580118,
       "replies": 168115,
       "media": []
     },
@@ -957,8 +957,8 @@
       "text": "🚀💫♥️ Yesss!!! ♥️💫🚀",
       "url": "https://x.com/elonmusk/status/1518677066325053441",
       "timestamp": "2022-04-25T19:43:22Z",
-      "likes": 2304291,
-      "retweets": 297002,
+      "likes": 2304267,
+      "retweets": 296992,
       "replies": 128712,
       "media": [
         {
@@ -975,9 +975,9 @@
       "text": "I hope that even my worst critics remain on Twitter, because that is what free speech means",
       "url": "https://x.com/elonmusk/status/1518623997054918657",
       "timestamp": "2022-04-25T16:12:30Z",
-      "likes": 2852180,
-      "retweets": 315130,
-      "replies": 153312,
+      "likes": 2852154,
+      "retweets": 315122,
+      "replies": 153311,
       "media": []
     },
     {
@@ -988,7 +988,7 @@
       "text": "TikTok is scary good. It's digital crack. First time I feel attacked by AI in the brain.",
       "url": "https://x.com/karpathy/status/1507893647341142016",
       "timestamp": "2022-03-27T01:33:55Z",
-      "likes": 24620,
+      "likes": 24618,
       "retweets": 1495,
       "replies": 548,
       "media": []
@@ -1014,8 +1014,8 @@
       "text": "The problem with Facebook is not *just* the loss of your privacy and the fact that it can be used as a totalitarian panopticon. The more worrying issue, in my opinion, is its use of digital information consumption as a psychological control vector. Time for a thread",
       "url": "https://x.com/fchollet/status/976563870322999296",
       "timestamp": "2018-03-21T20:59:05Z",
-      "likes": 14081,
-      "retweets": 7489,
+      "likes": 14083,
+      "retweets": 7490,
       "replies": 497,
       "media": []
     },
@@ -1111,7 +1111,7 @@
       "media": []
     }
   ],
-  "updated": "2026-07-29T08:38:55Z",
+  "updated": "2026-07-29T14:07:12Z",
   "accounts": 13,
-  "successful_fetches": 9
+  "successful_fetches": 7
 }
