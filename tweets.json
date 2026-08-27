@@ -21,9 +21,9 @@
       "text": "In a compute and power-constrained world, a good chunk of agentic inference needs to move to local hardware. A drastic version of that is a fully local agent runtime, where the model (orchestrator and subagents) and the harness run locally. Portable Computer from Perplexity is",
       "url": "https://x.com/AravSrinivas/status/2092270041471598820",
       "timestamp": "2026-08-25T15:17:05Z",
-      "likes": 806,
-      "retweets": 48,
-      "replies": 75,
+      "likes": 820,
+      "retweets": 49,
+      "replies": 78,
       "media": []
     },
     {
@@ -34,7 +34,7 @@
       "text": "I wrote Deep Learning with Python to be the definitive guide to how deep learning works and how to best make use of it. Tens of thousands of people got their career start via this book. 120,000 copies sold, and downloaded by millions more.\n\nAnd now it's free to read online:",
       "url": "https://x.com/fchollet/status/2051370269445615965",
       "timestamp": "2026-05-04T18:35:59Z",
-      "likes": 3948,
+      "likes": 3947,
       "retweets": 588,
       "replies": 87,
       "media": []
@@ -60,7 +60,7 @@
       "text": "@guy_dar1 There is no AI approach that can do what these babies do, not even close. The sample efficiency gap (at equal space dimensionality) is 3-4 OOM.\n\nSo if the bar is \"baby level invention\", AI isn't anywhere close.",
       "url": "https://x.com/fchollet/status/1984040993726058956",
       "timestamp": "2025-10-30T23:33:29Z",
-      "likes": 9054,
+      "likes": 9053,
       "retweets": 58,
       "replies": 14,
       "media": []
@@ -73,7 +73,7 @@
       "text": "Crawling isn't innate (unlike walking). Every baby must *invent* crawling, from scratch, using extremely little data, and no reference to imitate. Which is why different babies end up with different ways of crawling.\n\nSometimes people tell me, \"you say AI isn't intelligent until",
       "url": "https://x.com/fchollet/status/1984014438673113477",
       "timestamp": "2025-10-30T21:47:58Z",
-      "likes": 133257,
+      "likes": 133248,
       "retweets": 8125,
       "replies": 322,
       "media": []
@@ -86,7 +86,7 @@
       "text": "YouTube and Maps are the hardest. Maybe even impossible. \n\nThe rest are hard but doable.",
       "url": "https://x.com/AravSrinivas/status/1981450807938596955",
       "timestamp": "2025-10-23T20:01:00Z",
-      "likes": 17687,
+      "likes": 17673,
       "retweets": 838,
       "replies": 860,
       "media": []
@@ -99,7 +99,7 @@
       "text": "You can now track insider trading on Perplexity Finance. We will be adding politician trading shortly.",
       "url": "https://x.com/AravSrinivas/status/1978941079182545338",
       "timestamp": "2025-10-16T21:48:14Z",
-      "likes": 20127,
+      "likes": 20125,
       "retweets": 1131,
       "replies": 516,
       "media": [
@@ -135,7 +135,7 @@
       "text": "RIP Vibe Coding \nFeb 2025 - Oct 2025",
       "url": "https://x.com/swyx/status/1975711519506833424",
       "timestamp": "2025-10-07T23:55:07Z",
-      "likes": 5317,
+      "likes": 5315,
       "retweets": 198,
       "replies": 266,
       "media": []
@@ -148,7 +148,7 @@
       "text": "The most interesting fact about this globalized chain is the number of irreplaceable single points of failure. There's only one company that can make these chips at scale. It runs on equipment that only one company can make. Out of parts that only one company can make.",
       "url": "https://x.com/fchollet/status/1960080110335480202",
       "timestamp": "2025-08-25T20:41:29Z",
-      "likes": 10820,
+      "likes": 10823,
       "retweets": 461,
       "replies": 92,
       "media": []
@@ -162,7 +162,7 @@
       "url": "https://x.com/fchollet/status/1960079432548516310",
       "timestamp": "2025-08-25T20:38:47Z",
       "likes": 33000,
-      "retweets": 2123,
+      "retweets": 2122,
       "replies": 241,
       "media": []
     },
@@ -205,8 +205,8 @@
       "text": "the highest sense of purpose is dharma",
       "url": "https://x.com/AravSrinivas/status/1920924933267325435",
       "timestamp": "2025-05-09T19:32:47Z",
-      "likes": 34083,
-      "retweets": 4145,
+      "likes": 34080,
+      "retweets": 4144,
       "replies": 334,
       "media": [
         {
@@ -285,8 +285,8 @@
       "text": "All of the billions spent on AI innovation just so we can get these beautiful cat videos",
       "url": "https://x.com/bindureddy/status/1898364509758300568",
       "timestamp": "2025-03-08T13:25:43Z",
-      "likes": 247570,
-      "retweets": 30259,
+      "likes": 247566,
+      "retweets": 30258,
       "replies": 4777,
       "media": []
     },
@@ -311,7 +311,7 @@
       "text": "Great to meet you once again, Prime Minister @narendramodi ji, at Paris!",
       "url": "https://x.com/AravSrinivas/status/1889068008024195373",
       "timestamp": "2025-02-10T21:44:44Z",
-      "likes": 26410,
+      "likes": 26419,
       "retweets": 1040,
       "replies": 209,
       "media": [
@@ -403,7 +403,7 @@
       "text": "Had the honor to meet Prime Minister @narendramodi ji. We had a great conversation about the potential for AI adoption in India and across the world. Really inspired by Modi Ji’s dedication to stay updated on the topic and his remarkable vision for the future.",
       "url": "https://x.com/AravSrinivas/status/1873020346737279341",
       "timestamp": "2024-12-28T14:57:04Z",
-      "likes": 24247,
+      "likes": 24251,
       "retweets": 2003,
       "replies": 817,
       "media": [
@@ -421,7 +421,7 @@
       "text": "TikTok just open-sourced their recommender system framework (Monolith) -- and it uses Keras\n\nThis means that nearly all the major recommender systems in the industry are built on Keras -- YouTube, TikTok, Spotify, Snap, X/Twitter, and many more (Grubhub...)",
       "url": "https://x.com/fchollet/status/1869949776764252328",
       "timestamp": "2024-12-20T03:35:43Z",
-      "likes": 10146,
+      "likes": 10148,
       "retweets": 837,
       "replies": 74,
       "media": []
@@ -447,7 +447,7 @@
       "text": "I am out of the country and having to watch CNN! \n\nIt’s pretty insane - there is no real news or reporting \n\nThey spend all day chatting about stuff that happens on Twitter and fear mongering about Trump’s cabinet picks or campaign promises! \n\nThis is what the rest of the world",
       "url": "https://x.com/bindureddy/status/1858695850513625107",
       "timestamp": "2024-11-19T02:16:38Z",
-      "likes": 17074,
+      "likes": 17073,
       "retweets": 2209,
       "replies": 1043,
       "media": []
@@ -522,7 +522,7 @@
       "text": "@elonmusk @realDonaldTrump @KamalaHarris The biggest loser in the debate was ABC news",
       "url": "https://x.com/bindureddy/status/1833748746854715705",
       "timestamp": "2024-09-11T06:05:45Z",
-      "likes": 72399,
+      "likes": 72395,
       "retweets": 2348,
       "replies": 1230,
       "media": []
@@ -535,7 +535,7 @@
       "text": "I saw an AI engineer today\n\nNo cursor.\nNo claude 3.5 sonnet.\nNo aider.\n\nHe just sat there.\nCoding without running an LLM every other minute.\nLike a psychopath.",
       "url": "https://x.com/swyx/status/1830335212120854731",
       "timestamp": "2024-09-01T20:01:35Z",
-      "likes": 8667,
+      "likes": 8666,
       "retweets": 361,
       "replies": 217,
       "media": []
@@ -644,7 +644,7 @@
       "text": "Apparently, the Apple - OpenAI deal just closed!  One day before the voice assistant announcement :)\n\nGuess Apple decided that it couldn't make it on its own 🤷\n\nThe new Siri will be from OpenAI",
       "url": "https://x.com/bindureddy/status/1789905880193851725",
       "timestamp": "2024-05-13T06:29:51Z",
-      "likes": 9835,
+      "likes": 9833,
       "retweets": 1104,
       "replies": 359,
       "media": [
@@ -662,7 +662,7 @@
       "text": "AI has achieved transcendence.",
       "url": "https://x.com/AravSrinivas/status/1732076912292581579",
       "timestamp": "2023-12-05T16:38:10Z",
-      "likes": 32045,
+      "likes": 32047,
       "retweets": 938,
       "replies": 514,
       "media": [
@@ -724,7 +724,7 @@
       "text": "Taking revenge on ChatGPT! 🤣",
       "url": "https://x.com/bindureddy/status/1691669460875362744",
       "timestamp": "2023-08-16T04:33:23Z",
-      "likes": 10463,
+      "likes": 10467,
       "retweets": 848,
       "replies": 176,
       "media": [
@@ -742,7 +742,7 @@
       "text": "YYYY-MM-DD is obviously the best date format: it's the one where alphanumerical order matches chronological order.",
       "url": "https://x.com/fchollet/status/1688252452632678400",
       "timestamp": "2023-08-06T18:15:25Z",
-      "likes": 8357,
+      "likes": 8356,
       "retweets": 510,
       "replies": 295,
       "media": []
@@ -768,7 +768,7 @@
       "text": "Incredible how Stephen Wolfram toiled away in relative obscurity for ~15 years, only to wake up one day and find that Wolfram|Alpha is literally the perfect bridge from agentic AI to real world knowledge, errors included.\n\n“You can't connect the dots looking forward; you can only",
       "url": "https://x.com/swyx/status/1640491430874591232",
       "timestamp": "2023-03-27T23:10:10Z",
-      "likes": 6296,
+      "likes": 6295,
       "retweets": 676,
       "replies": 136,
       "media": [
@@ -790,7 +790,7 @@
       "text": "ChatGPT casually dropped an APP STORE 🤯\n\nIt can now:\n- browse the web (RIP Bing waitlist, cutoff)\n- write and run Python (RIP replit?)\n- access org info (RIP docsearch startups)\n- add third party plugins from OpenTable, Wolfram, Instacart, Zapier, etc)\n- developer SDK in preview",
       "url": "https://x.com/swyx/status/1638968071129030658",
       "timestamp": "2023-03-23T18:16:53Z",
-      "likes": 7684,
+      "likes": 7685,
       "retweets": 949,
       "replies": 122,
       "media": []
@@ -803,8 +803,8 @@
       "text": "Wow. GitHub CEO @ashtom just announced GitHub Copilot X: \n\n- Copilot Chat - \"ChatGPT-like experience in your editor\" powered by GPT-4\n- Copilot for Pull Requests - AI-generated descriptions for pull requests on GitHub\n- GitHub Copilot for Docs - chat for *any* company's repos and",
       "url": "https://x.com/swyx/status/1638550858073006089",
       "timestamp": "2023-03-22T14:39:02Z",
-      "likes": 7248,
-      "retweets": 1045,
+      "likes": 7249,
+      "retweets": 1046,
       "replies": 129,
       "media": []
     },
@@ -864,7 +864,7 @@
       "text": "By far, the most accurate representation of machine learning pipelines in the real world 🍿 😀",
       "url": "https://x.com/bindureddy/status/1552073812157403136",
       "timestamp": "2022-07-26T23:30:07Z",
-      "likes": 10988,
+      "likes": 10986,
       "retweets": 1555,
       "replies": 206,
       "media": []
@@ -877,7 +877,7 @@
       "text": "Every so often I love to be reminded of the biggest devtools bizdev fail of all time\n\nhttps://www.linuxjournal.com/content/git-origin-story",
       "url": "https://x.com/swyx/status/1536832603411451905",
       "timestamp": "2022-06-14T22:07:00Z",
-      "likes": 4670,
+      "likes": 4668,
       "retweets": 611,
       "replies": 43,
       "media": [
@@ -983,7 +983,7 @@
       "text": "💁‍♂️ How to Play Long Term Games:\n\nSystems &gt; Goals\nDiscipline &gt; Motivation\nTrust &gt; Distrust\nPrinciples &gt; Tactics\nWriting &gt; Reading\nVulnerability &gt; Confidence\nNorth Stars &gt; Low Hanging Fruit\nTrends &gt; News\nHabits &gt; Sprints\nQuestions &gt; Answers\nProblems &gt; Solutions\nPeople &gt; Projects",
       "url": "https://x.com/swyx/status/1281424520100737025",
       "timestamp": "2020-07-10T03:06:27Z",
-      "likes": 5584,
+      "likes": 5585,
       "retweets": 897,
       "replies": 336,
       "media": []
@@ -996,7 +996,7 @@
       "text": "The problem with Facebook is not *just* the loss of your privacy and the fact that it can be used as a totalitarian panopticon. The more worrying issue, in my opinion, is its use of digital information consumption as a psychological control vector. Time for a thread",
       "url": "https://x.com/fchollet/status/976563870322999296",
       "timestamp": "2018-03-21T20:59:05Z",
-      "likes": 14062,
+      "likes": 14063,
       "retweets": 7478,
       "replies": 496,
       "media": []
@@ -1093,7 +1093,7 @@
       "media": []
     }
   ],
-  "updated": "2026-08-27T07:25:45Z",
+  "updated": "2026-08-27T21:48:29Z",
   "accounts": 13,
-  "successful_fetches": 9
+  "successful_fetches": 4
 }
