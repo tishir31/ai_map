@@ -1,6 +1,8 @@
 {
+  "redirects": [
+    { "source": "/physical-ai", "destination": "/physical-ai/", "permanent": true }
+  ],
   "rewrites": [
-    { "source": "/physical-ai", "destination": "/physical-ai/index.html" },
     { "source": "/physical-ai/", "destination": "/physical-ai/index.html" },
     { "source": "/physical-ai/:path((?!assets/|physical-ai-vc-knowledge-base\\.json$).*)", "destination": "/physical-ai/index.html" }
   ],
