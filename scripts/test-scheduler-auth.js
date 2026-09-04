@@ -70,7 +70,7 @@ async function run() {
     { headers: requestHeaders() }, "ingest-gmail",
     { CRON_SECRET: secret, PHYSICAL_AI_SCHEDULER_SECRET: secret },
   )).status, 503);
-  assert.equal((await authorizeScheduledRequest({ headers: {} }, "ingest-gmail", {})).status, 503);
+  assert.equal((await authorizeScheduledRequest({ headers: {} }, "ingest-gmail", {})).status, 401);
 
   const calls = [];
   const production = {
@@ -88,6 +88,14 @@ async function run() {
   assert.equal(calls[0].init.headers.apikey, "service-role-test-key");
   assert.equal(calls[0].init.headers.Authorization, "Bearer service-role-test-key");
   assert.equal(calls[0].init.body, "{}");
+  const rejectedCalls = [];
+  const missingEnvelope = await authorizeScopedSchedulerRequest(
+    { headers: {} }, "ingest-gmail", production, [],
+    { fetchImpl: rpcFetch(secret, { calls: rejectedCalls }) },
+  );
+  assert.equal(missingEnvelope.status, 401);
+  assert.equal(rejectedCalls.length, 0,
+    "Malformed public requests must be rejected before a Vault RPC.");
 
   const matching = await resolveSchedulerSecret(
     { ...production, PHYSICAL_AI_SCHEDULER_SECRET: secret }, { fetchImpl: rpcFetch(secret) },
