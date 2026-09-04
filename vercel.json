@@ -16,7 +16,7 @@
     { "source": "/api/graph-refresh-monthly", "destination": "/api/pipeline-health?physicalAiRoute=graph-refresh-monthly" },
     { "source": "/api/graph-refresh-quarterly", "destination": "/api/pipeline-health?physicalAiRoute=graph-refresh-quarterly" },
     { "source": "/physical-ai/", "destination": "/physical-ai/index.html" },
-    { "source": "/physical-ai/:path((?!assets/|physical-ai-vc-knowledge-base\\.json$).*)", "destination": "/physical-ai/index.html" }
+    { "source": "/physical-ai/:path((?!assets/|physical-ai-vc-knowledge-base\\.json$|knowledge-graph\\.v1\\.json$).*)", "destination": "/physical-ai/index.html" }
   ],
   "headers": [
     {
@@ -30,6 +30,19 @@
       "headers": [
         { "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" }
       ]
+    },
+    {
+      "source": "/physical-ai/knowledge-graph.v1.json",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" }
+      ]
     }
+  ],
+  "crons": [
+    { "path": "/api/ingest-gmail", "schedule": "0 13 * * *" },
+    { "path": "/api/ingest-web-news", "schedule": "15 13 * * *" },
+    { "path": "/api/graph-refresh-weekly", "schedule": "0 15 * * 1" },
+    { "path": "/api/graph-refresh-monthly", "schedule": "0 16 1 * *" },
+    { "path": "/api/graph-refresh-quarterly", "schedule": "0 17 1 1,4,7,10 *" }
   ]
 }

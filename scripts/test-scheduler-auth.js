@@ -78,7 +78,7 @@ assert.equal(authorizeScopedSchedulerRequest(
 assert.equal(authorizeScheduledRequest(
   { headers: { authorization: "Bearer native-cron" } },
   "ingest-gmail",
-  { CRON_SECRET: "native-cron" },
+  { CRON_SECRET: "native-cron", VERCEL_ENV: "production" },
 ).provider, "vercel-cron");
 assert.equal(authorizeScheduledRequest(
   { headers: headers() },
@@ -92,7 +92,16 @@ assert.equal(authorizeScheduledRequest(
 ).status, 503);
 
 const vercel = JSON.parse(fs.readFileSync(path.resolve(__dirname, "../vercel.json"), "utf8"));
-assert.equal(Array.isArray(vercel.crons) && vercel.crons.length > 0, false,
-  "Native Vercel crons must stay disabled while Supabase Cron owns dispatch.");
+assert.deepEqual(vercel.crons, [
+  { path: "/api/ingest-gmail", schedule: "0 13 * * *" },
+  { path: "/api/ingest-web-news", schedule: "15 13 * * *" },
+  { path: "/api/graph-refresh-weekly", schedule: "0 15 * * 1" },
+  { path: "/api/graph-refresh-monthly", schedule: "0 16 1 * *" },
+  { path: "/api/graph-refresh-quarterly", schedule: "0 17 1 1,4,7,10 *" },
+], "Native Vercel Cron remains the production dispatcher.");
+const physicalAiFallback = vercel.rewrites.find((rewrite) => rewrite.destination === "/physical-ai/index.html"
+  && rewrite.source.includes(":path"));
+assert.ok(physicalAiFallback?.source.includes("knowledge-graph\\.v1\\.json$"),
+  "The v1 graph rollback snapshot must bypass the SPA fallback.");
 
 console.log("scheduler auth tests passed");

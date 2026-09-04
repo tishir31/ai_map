@@ -4,11 +4,10 @@
 // COPY-TO: ai_map_repo/api/ingest-web-news.js
 //
 // GET /api/ingest-web-news
-//   Used by the Supabase pg_cron scheduler. Its Vault-backed, route-scoped
-//   credential is sent as a Bearer token with the three scheduler identity
-//   headers validated by lib/scheduler-auth.js. CRON_SECRET remains a
-//   transition fallback for native Vercel Cron; INGEST_SHARED_SECRET is for
-//   manual calls. The route fails closed when no accepted credential exists.
+//   Used by Vercel Cron with Authorization: Bearer $CRON_SECRET. The route also
+//   supports an optional route-scoped external scheduler credential validated
+//   by lib/scheduler-auth.js. INGEST_SHARED_SECRET is for manual calls. The
+//   route fails closed when no accepted credential exists.
 //
 // POST /api/ingest-web-news
 //   Optional body: { query?: string, maxResults?: number, queryLabel?: string }
@@ -19,6 +18,10 @@
 
 const { buildRotationPlan, isDateInWindow } = require("../lib/query-rotation");
 const { authorizeIngestRequest } = require("../lib/ingest-auth");
+const {
+  deterministicDuplicateAgreement,
+  sourceBackedDealValueUsd
+} = require("../lib/ingest-adjudication");
 
 const ALLOWED_ORIGINS = new Set([
   "https://ai-map-cyan.vercel.app",
@@ -456,14 +459,22 @@ function isSameFinancingRound(existing, candidate) {
 function findExistingActivity(candidate, context) {
   const candidateCompany = normalizeCompany(candidate.candidate_company);
   const candidateUrl = normalizeUrl(candidate.source_url);
-  for (const activity of context.activities || []) {
-    if (candidateUrl && activityUrls(activity).includes(candidateUrl)) return { activity, exact: true };
-    const name = normalizeCompany(context.companyById.get(activity.company_id));
-    if (!name || !(name === candidateCompany || name.includes(candidateCompany) || candidateCompany.includes(name))) continue;
-    if (!isSameFinancingRound(activity, candidate)) continue;
-    return { activity, exact: !hasNewFundingDetail(activity, candidate) };
+  if (!candidateCompany) return null;
+  const matchingCompanyIds = new Set();
+  for (const [companyId, name] of context.companyById.entries()) {
+    const existing = normalizeCompany(name);
+    if (existing && (existing === candidateCompany || existing.includes(candidateCompany) || candidateCompany.includes(existing))) {
+      matchingCompanyIds.add(companyId);
+    }
   }
-  return null;
+  if (matchingCompanyIds.size === 0) return null;
+  const activity = (context.activities || []).find((row) => {
+    if (!matchingCompanyIds.has(row.company_id) || row.activity_type !== candidate.activity_type) return false;
+    if (candidateUrl && activityUrls(row).includes(candidateUrl)) return true;
+    return isSameFinancingRound(row, candidate);
+  }) || null;
+  if (!activity) return null;
+  return { activity, exact: !hasNewFundingDetail(activity, candidate) };
 }
 
 function pendingDuplicate(candidate, context) {
@@ -592,30 +603,43 @@ function buildAdjudicatedCandidate(parsed, candidate, context, modelLabel) {
   if (parsed.keep === false || parsed.physicalAi === false || parsed.fundingEvent === false) {
     const reason = boundedText(parsed.rejectReason || "rejected", 120);
     if (candidateIsInWindow(candidate.candidate_date, context) && /\b(future|outside|date|window|lookback|recent)\b/i.test(reason)) {
-      return { keep: true, candidate, status: "date-recheck" };
+      const recheckCandidate = { ...candidate, deal_value_usd: null };
+      delete recheckCandidate.duplicate_of_activity_id;
+      return { keep: true, candidate: recheckCandidate, status: "date-recheck" };
     }
     return { keep: false, reason: `llm-${boundedText(reason, 60)}` };
   }
 
-  const next = { ...candidate };
+  const next = { ...candidate, deal_value_usd: null };
+  delete next.duplicate_of_activity_id;
   if (boundedText(parsed.candidateCompany, 140) && parsed.candidateCompany !== "N/A") next.candidate_company = boundedText(parsed.candidateCompany, 140);
   if (boundedText(parsed.candidateCounterparty, 240)) next.candidate_counterparty = boundedText(parsed.candidateCounterparty, 240);
   if (validDate(parsed.candidateDate) && candidateIsInWindow(parsed.candidateDate, context)) next.candidate_date = parsed.candidateDate;
   next.activity_type = "financing";
   next.subsector = normalizeAllowed(parsed.subsector, ALLOWED_SUBSECTORS, next.subsector);
-  if (typeof parsed.dealValueUsd === "number" && Number.isFinite(parsed.dealValueUsd) && parsed.dealValueUsd >= 0) {
-    next.deal_value_usd = parsed.dealValueUsd;
-  }
+  const evidence = Array.isArray(parsed.evidence) ? parsed.evidence.map((x) => boundedText(x, 160)).filter(Boolean).slice(0, 4) : [];
+  next.deal_value_usd = sourceBackedDealValueUsd(
+    parsed.dealValueUsd,
+    parsed.confidence,
+    [parsed.description, ...evidence],
+    [candidate.subject, candidate.snippet, candidate.extracted_text]
+  );
   if (boundedText(parsed.geography, 120)) next.geography = boundedText(parsed.geography, 120);
   next.confidence = normalizeAllowed(parsed.confidence, ["reported", "estimated"], next.confidence);
   if (boundedText(parsed.description, 500)) next.description = boundedText(parsed.description, 500);
-  if (parsed.action === "update_existing" && parsed.duplicateOfActivityId) {
-    const exists = (context.activities || []).some((activity) => activity.id === parsed.duplicateOfActivityId);
-    if (exists) next.duplicate_of_activity_id = parsed.duplicateOfActivityId;
-  }
-  const evidence = Array.isArray(parsed.evidence) ? parsed.evidence.map((x) => boundedText(x, 160)).filter(Boolean).slice(0, 4) : [];
+  const agreedDuplicateId = deterministicDuplicateAgreement({
+    action: parsed.action,
+    requestedId: parsed.duplicateOfActivityId,
+    candidate: next,
+    context,
+    findExistingActivity
+  });
+  if (agreedDuplicateId) next.duplicate_of_activity_id = agreedDuplicateId;
   const cautions = Array.isArray(parsed.cautions) ? parsed.cautions.map((x) => boundedText(x, 160)).filter(Boolean).slice(0, 4) : [];
-  const action = ["update_existing", "new_activity", "new_company"].includes(parsed.action) ? parsed.action : (next.duplicate_of_activity_id ? "update_existing" : "new_activity");
+  const requestedAction = ["update_existing", "new_activity", "new_company"].includes(parsed.action) ? parsed.action : null;
+  const action = requestedAction === "update_existing" && !next.duplicate_of_activity_id
+    ? "new_activity"
+    : (requestedAction || (next.duplicate_of_activity_id ? "update_existing" : "new_activity"));
   const triage = [`AI triage: ${action}; model=${modelLabel}.`];
   if (evidence.length) triage.push(`Evidence: ${evidence.join(" | ")}.`);
   if (cautions.length) triage.push(`Cautions: ${cautions.join(" | ")}.`);
@@ -1010,4 +1034,10 @@ module.exports = async function handler(req, res) {
     stopReason: stopReason || undefined,
     error: errorMessage || undefined
   }));
+};
+
+module.exports._test = {
+  buildAdjudicatedCandidate,
+  findExistingActivity,
+  gateCandidate
 };

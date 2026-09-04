@@ -1,14 +1,21 @@
 # AI Map Changelog
 
-## 2026-09-04: Supabase-owned Physical AI scheduler
+## 2026-09-04: Vault-only Physical AI scheduler
 
-- Added strict Vault-mirrored scheduler authentication for the Gmail, web-news,
-  and three graph-refresh routes without depending on `CRON_SECRET`.
-- Required exact scheduler version, job, and deterministic job/date run-key
-  headers; weak, conflicting, incomplete, and cross-route credentials fail closed.
-- Made scheduled ingestion-run IDs deterministic and their writes idempotent.
-- Removed native Vercel cron definitions so Supabase `pg_cron` is the sole
-  production dispatcher after its migration is applied.
+- Added asynchronous scheduler authentication that resolves the generated
+  Supabase Vault credential through a `service_role`-only RPC.
+- Production fails closed when Vault/RPC is unavailable or an optional explicit
+  override conflicts; native `CRON_SECRET` fallback is limited to non-production.
+- Kept exact scheduler version, job, and deterministic job/date run-key checks,
+  and removed native Vercel cron definitions to prevent double dispatch.
+- Rejected valuation, target, guarantee, contract, award, and facility-size
+  amounts from financing proceeds unless the source independently supports the
+  exact reported round amount.
+- Required deterministic company and activity-type agreement before accepting a
+  model-proposed duplicate, and aligned health/readiness counts with the public
+  market snapshot projection.
+- Kept `knowledge-graph.v1.json` directly retrievable as the one-release
+  rollback snapshot instead of routing it through the SPA shell.
 
 ## Branch: `feature/gmail-inbox` (based on `main`)
 

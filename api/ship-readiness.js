@@ -6,9 +6,12 @@
 // POST /api/ship-readiness
 //
 // Returns a single backend readiness score and operator checklist. It reads
-// public approved rows plus aggregate private operational tables; it does not
+// the same public-safe approved projection served by market-snapshot plus
+// aggregate private operational tables; it does not
 // return Gmail subjects, senders, snippets, extracted text, or Review Queue
 // evidence.
+
+const { buildSnapshot } = require("../lib/market-snapshot");
 
 const ALLOWED_ORIGINS = new Set([
   "https://ai-map-cyan.vercel.app",
@@ -309,6 +312,7 @@ module.exports = async function handler(req, res) {
     const [
       companies,
       activitiesRead,
+      exclusions,
       pendingRead,
       runsRead,
       multiSource,
@@ -319,8 +323,9 @@ module.exports = async function handler(req, res) {
       auditLog,
       analystProfiles
     ] = await Promise.all([
-      supabaseGet(SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY, "companies?select=id,name,website,is_sample&is_sample=eq.false&limit=3000"),
-      readWithFallback(SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY, "activities?select=id,date_announced,company_id,counterparty,activity_type,subsector,deal_value_usd,description,source_url,source_type,additional_sources,confidence,last_updated,review_status,is_sample&review_status=eq.approved&is_sample=eq.false&order=date_announced.desc&limit=3000", "activities?select=id,date_announced,company_id,counterparty,activity_type,subsector,deal_value_usd,description,source_url,source_type,confidence,last_updated,review_status,is_sample&review_status=eq.approved&is_sample=eq.false&order=date_announced.desc&limit=3000"),
+      supabaseGet(SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY, "companies?select=id,name,overview,subsector,geography,website,is_sample&is_sample=eq.false&order=name.asc&limit=2000"),
+      readWithFallback(SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY, "activities?select=id,date_announced,company_id,counterparty,activity_type,subsector,deal_value_usd,geography,description,source_id,source_url,source_reference,source_type,additional_sources,confidence,review_status,last_updated,is_sample,entered_by,approved_at&review_status=eq.approved&is_sample=eq.false&order=date_announced.desc&limit=1000", "activities?select=id,date_announced,company_id,counterparty,activity_type,subsector,deal_value_usd,geography,description,source_id,source_url,source_reference,source_type,confidence,review_status,last_updated,is_sample,entered_by,approved_at&review_status=eq.approved&is_sample=eq.false&order=date_announced.desc&limit=1000"),
+      supabaseGet(SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY, "data_exclusions?select=id,target_type,target_id,company_id,reason,cascade,excluded_at,restored_at&restored_at=is.null&limit=2000"),
       readWithFallback(SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY, "review_queue_items?select=id,status,source_type,source_url,duplicate_of_activity_id,intelligence_action,intelligence_score&status=eq.pending&limit=1000", "review_queue_items?select=id,status,source_type,source_url,duplicate_of_activity_id&status=eq.pending&limit=1000"),
       readWithFallback(SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY, "ingestion_runs?select=id,source_name,source_type,started_at,completed_at,candidates_found,deduped_count,llm_enriched_count,llm_rejected_count,llm_failed_count,status&order=started_at.desc&limit=50", "ingestion_runs?select=id,source_name,source_type,started_at,completed_at,candidates_found,deduped_count,status&order=started_at.desc&limit=50"),
       optionalRead(SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY, "activities?select=additional_sources&limit=1"),
@@ -338,10 +343,21 @@ module.exports = async function handler(req, res) {
     const activities = activitiesRead.data || [];
     const pending = pendingRead.data || [];
     const runs = runsRead.data || [];
+    const publicSnapshot = buildSnapshot({
+      activities,
+      companies,
+      exclusions,
+      ingestionRuns: runs,
+    });
     const migrations = migrationStatus({ multiSource, ingestionIntelligenceQueue, ingestionIntelligenceRuns, investors, activityInvestors, auditLog, analystProfiles });
     const latestRuns = latestRunsBySource(runs);
     const queue = summarizeQueue(pending);
-    const data = summarizeData(activities, companies);
+    const data = {
+      ...summarizeData(publicSnapshot.activities, publicSnapshot.companies),
+      publicSafeRows: publicSnapshot.counts.activities,
+      latestActivityDate: publicSnapshot.latestActivityDate,
+      sourceUniverse: "public-safe approved activities after active exclusions and company joins",
+    };
     const schemaWarnings = [activitiesRead.warning, pendingRead.warning, runsRead.warning].filter(Boolean);
     const llmConfigured = process.env.INGEST_LLM_ENABLED !== "false" && Boolean(process.env.GEMINI_API_KEY);
     const findings = buildFindings({ migrations, latestRuns, queue, data, llmConfigured, schemaWarnings });
