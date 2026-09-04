@@ -3,9 +3,9 @@
 const assert = require("node:assert/strict");
 const graph = require("../lib/graph-api");
 const { createScheduledRefreshHandler } = require("../lib/graph-cron-handler");
-const weeklyCron = require("../api/graph-refresh-weekly");
-const monthlyCron = require("../api/graph-refresh-monthly");
-const quarterlyCron = require("../api/graph-refresh-quarterly");
+const weeklyCron = createScheduledRefreshHandler("weekly");
+const monthlyCron = createScheduledRefreshHandler("monthly");
+const quarterlyCron = createScheduledRefreshHandler("quarterly");
 
 function response(payload, status = 200) {
   return {
@@ -100,6 +100,36 @@ async function run() {
       ),
       (error) => error.status === 403 && /approved analyst directory/i.test(error.message),
     );
+  } finally {
+    global.fetch = originalFetch;
+  }
+
+  let anonymousProfileRead = false;
+  global.fetch = async (input) => {
+    const url = new URL(String(input));
+    if (url.pathname === "/auth/v1/user") {
+      return response({ id: "anonymous-user", is_anonymous: true, app_metadata: {} });
+    }
+    if (url.pathname.endsWith("/analyst_profiles")) {
+      anonymousProfileRead = true;
+      return response([{ user_id: "anonymous-user", is_lead: true }]);
+    }
+    throw new Error(`Unexpected anonymous-user path: ${url.pathname}`);
+  };
+  try {
+    assert.equal(await graph.verifyUser(
+      { headers: { authorization: "Bearer anonymous-token" } },
+      { supabaseUrl: "https://project.supabase.co", serviceRoleKey: "service-secret" },
+    ), null);
+    await assert.rejects(
+      graph.verifyUser(
+        { headers: { authorization: "Bearer anonymous-token" } },
+        { supabaseUrl: "https://project.supabase.co", serviceRoleKey: "service-secret" },
+        { required: true },
+      ),
+      (error) => error.status === 403 && /anonymous accounts/i.test(error.message),
+    );
+    assert.equal(anonymousProfileRead, false);
   } finally {
     global.fetch = originalFetch;
   }

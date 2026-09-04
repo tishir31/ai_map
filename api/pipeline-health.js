@@ -8,6 +8,8 @@
 // Returns aggregate operational health only. It deliberately does not return
 // private Review Queue snippets, Gmail subjects, senders, or extracted text.
 
+const { canHandlePhysicalAiRoute, handlePhysicalAiRoute } = require("../lib/physical-ai-router");
+
 const ALLOWED_ORIGINS = new Set([
   "https://ai-map-cyan.vercel.app",
   "https://tishir31.github.io",
@@ -195,6 +197,10 @@ function scoreHealth(findings) {
 }
 
 module.exports = async function handler(req, res) {
+  // Hobby deployments are capped at 12 functions. Stable public graph and
+  // market-snapshot paths are rewritten here and dispatched before the legacy
+  // pipeline-health handler, keeping all URL contracts intact in one function.
+  if (canHandlePhysicalAiRoute(req)) return handlePhysicalAiRoute(req, res);
   setCors(req, res);
   if (req.method === "OPTIONS") {
     res.statusCode = 204;

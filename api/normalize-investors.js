@@ -183,7 +183,7 @@ function parseInvestorNames(counterparty) {
     .replace(/\s+and\s+Series [A-Z] investors\b/g, "");
 
   const names = normalized
-    .split(/,\s*|\s+and\s+/i)
+    .split(/[;,]\s*|\s+and\s+/i)
     .map(canonicalInvestorName)
     .filter((name) => name && !NOISE_TOKENS.some((rx) => rx.test(name)));
 

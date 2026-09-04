@@ -29,12 +29,11 @@ export default async function handler(req, res) {
         const data = await response.json();
 
         if (!response.ok) {
-            // Return the exact error for debugging
+            // Return the upstream response without exposing any credential material.
             return res.status(response.status).json({
                 error: 'API call failed',
                 status: response.status,
                 api_response: data,
-                token_hint: routineToken.substring(0, 20) + '...',
             });
         }
 

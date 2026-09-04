@@ -5,6 +5,16 @@
     { "source": "/physical-ai", "destination": "/physical-ai/", "permanent": true }
   ],
   "rewrites": [
+    { "source": "/api/market-snapshot", "destination": "/api/pipeline-health?physicalAiRoute=market-snapshot" },
+    { "source": "/api/graph-search", "destination": "/api/pipeline-health?physicalAiRoute=graph-search" },
+    { "source": "/api/graph-investigate", "destination": "/api/pipeline-health?physicalAiRoute=graph-investigate" },
+    { "source": "/api/graph-compare", "destination": "/api/pipeline-health?physicalAiRoute=graph-compare" },
+    { "source": "/api/graph-review", "destination": "/api/pipeline-health?physicalAiRoute=graph-review" },
+    { "source": "/api/graph-refresh", "destination": "/api/pipeline-health?physicalAiRoute=graph-refresh" },
+    { "source": "/api/graph-refresh-cron", "destination": "/api/pipeline-health?physicalAiRoute=graph-refresh-cron" },
+    { "source": "/api/graph-refresh-weekly", "destination": "/api/pipeline-health?physicalAiRoute=graph-refresh-weekly" },
+    { "source": "/api/graph-refresh-monthly", "destination": "/api/pipeline-health?physicalAiRoute=graph-refresh-monthly" },
+    { "source": "/api/graph-refresh-quarterly", "destination": "/api/pipeline-health?physicalAiRoute=graph-refresh-quarterly" },
     { "source": "/physical-ai/", "destination": "/physical-ai/index.html" },
     { "source": "/physical-ai/:path((?!assets/|physical-ai-vc-knowledge-base\\.json$).*)", "destination": "/physical-ai/index.html" }
   ],
