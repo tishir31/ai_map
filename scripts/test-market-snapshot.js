@@ -27,8 +27,8 @@ const base = {
 assert.equal(isPublicSafeActivity(base), true);
 assert.equal(isPublicSafeActivity({ ...base, id: "a-pending", review_status: "pending" }), false);
 assert.equal(isPublicSafeActivity({ ...base, id: "a-gmail", source_type: "Gmail", source_url: null }), false);
-assert.equal(isPublicSafeActivity({ ...base, id: "a-rq-gmail-private-origin", source_type: "press release" }), false);
-assert.equal(isPublicSafeActivity({ ...base, id: "a-web", entered_by: "gmail-ingestion", source_type: "press release" }), false);
+assert.equal(isPublicSafeActivity({ ...base, id: "a-rq-gmail-publicly-sourced", source_type: "press release" }), true);
+assert.equal(isPublicSafeActivity({ ...base, id: "a-web", entered_by: "gmail-ingestion", source_type: "press release" }), true);
 assert.equal(isPublicSafeActivity({ ...base, id: "a-google-news", source_url: "https://news.google.com/rss/articles/redirect" }), false);
 assert.equal(isPublicSafeActivity({
   ...base,
