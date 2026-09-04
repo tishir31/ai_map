@@ -9,14 +9,15 @@
 //   2. Provision the Vercel env vars listed in docs/R15-gmail-ingestion.md.
 //   3. cd /path/to/ai_map_repo && git add api/ingest-gmail.js && git commit
 //      && git push origin main (Vercel redeploys automatically).
-//   4. Validate manually via the curl example in R15 docs before scheduling
-//      the daily cron in vercel.json.
+//   4. Validate manually via the R15 runbook before applying the Supabase
+//      pg_cron/pg_net scheduler migration.
 //
 // GET /api/ingest-gmail
-//   Used by Vercel Cron. CRON_SECRET (or INGEST_SHARED_SECRET for manual
-//   calls) is required; the route fails closed when neither is configured.
-//   Vercel sends
-//   Authorization: Bearer $CRON_SECRET.
+//   Used by the Supabase pg_cron scheduler. Its Vault-backed, route-scoped
+//   credential is sent as a Bearer token with the three scheduler identity
+//   headers validated by lib/scheduler-auth.js. CRON_SECRET remains a
+//   transition fallback for native Vercel Cron; INGEST_SHARED_SECRET is for
+//   manual calls. The route fails closed when no accepted credential exists.
 //
 // POST /api/ingest-gmail
 //   Optional body: { query?: string, maxResults?: number, queryLabel?: string }
@@ -29,7 +30,8 @@
 //
 // Required env: SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY, GMAIL_CLIENT_ID,
 // GMAIL_CLIENT_SECRET, GMAIL_REFRESH_TOKEN, GMAIL_USER_EMAIL.
-// Auth (at least one required): CRON_SECRET or INGEST_SHARED_SECRET.
+// Auth (at least one required): PHYSICAL_AI_SCHEDULER_SECRET,
+// CRON_SECRET, or INGEST_SHARED_SECRET.
 // Optional: INGEST_SOURCES, INGEST_MAX,
 // INGEST_LLM_ENABLED=false, INGEST_LLM_MODEL, GEMINI_API_KEY,
 // OPENAI_API_KEY, OPENAI_TRIAGE_MODEL.
@@ -485,13 +487,13 @@ async function supabaseUpsertReviewQueue(supabaseUrl, serviceRoleKey, rows) {
 }
 
 async function supabasePostRun(supabaseUrl, serviceRoleKey, run) {
-  return fetch(`${supabaseUrl}/rest/v1/ingestion_runs`, {
+  return fetch(`${supabaseUrl}/rest/v1/ingestion_runs?on_conflict=id`, {
     method: "POST",
     headers: {
       apikey: serviceRoleKey,
       Authorization: `Bearer ${serviceRoleKey}`,
       "Content-Type": "application/json",
-      Prefer: "return=minimal"
+      Prefer: "resolution=merge-duplicates,return=minimal"
     },
     body: JSON.stringify(run)
   });
@@ -910,7 +912,7 @@ module.exports = async function handler(req, res) {
     return res.end(JSON.stringify({ ok: false, error: "GET or POST only" }));
   }
 
-  const authorization = authorizeIngestRequest(req);
+  const authorization = authorizeIngestRequest(req, process.env, { schedulerJob: "ingest-gmail" });
   if (!authorization.ok) return rejectUnauthorizedIngest(res, authorization);
 
   const missing = [];
@@ -1091,8 +1093,11 @@ module.exports = async function handler(req, res) {
     res.statusCode = 502;
   }
 
+  const runId = authorization.schedulerRunDate
+    ? `run-gmail-scheduled-${authorization.schedulerRunDate}`
+    : `run-gmail-${Date.now().toString(36)}`;
   await supabaseInsertRun(SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY, {
-    id: `run-gmail-${Date.now().toString(36)}`,
+    id: runId,
     source_name: "Gmail",
     source_type: "gmail",
     query: sources.map((s) => s.query).join(" | "),
@@ -1111,6 +1116,8 @@ module.exports = async function handler(req, res) {
   return res.end(
     JSON.stringify({
       ok: !errorMessage,
+      runId,
+      duplicateSafe: Boolean(authorization.schedulerRunDate),
       window,
       candidates: totalCandidates,
       deduped: dedupedCount,

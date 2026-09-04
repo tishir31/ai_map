@@ -4,10 +4,11 @@
 // COPY-TO: ai_map_repo/api/ingest-web-news.js
 //
 // GET /api/ingest-web-news
-//   Used by Vercel Cron. CRON_SECRET (or INGEST_SHARED_SECRET for manual
-//   calls) is required; the route fails closed when neither is configured.
-//   Vercel sends
-//   Authorization: Bearer $CRON_SECRET.
+//   Used by the Supabase pg_cron scheduler. Its Vault-backed, route-scoped
+//   credential is sent as a Bearer token with the three scheduler identity
+//   headers validated by lib/scheduler-auth.js. CRON_SECRET remains a
+//   transition fallback for native Vercel Cron; INGEST_SHARED_SECRET is for
+//   manual calls. The route fails closed when no accepted credential exists.
 //
 // POST /api/ingest-web-news
 //   Optional body: { query?: string, maxResults?: number, queryLabel?: string }
@@ -771,13 +772,13 @@ async function supabaseUpsertReviewQueue(supabaseUrl, serviceRoleKey, rows) {
 }
 
 async function supabasePostRun(supabaseUrl, serviceRoleKey, run) {
-  return fetch(`${supabaseUrl}/rest/v1/ingestion_runs`, {
+  return fetch(`${supabaseUrl}/rest/v1/ingestion_runs?on_conflict=id`, {
     method: "POST",
     headers: {
       apikey: serviceRoleKey,
       Authorization: `Bearer ${serviceRoleKey}`,
       "Content-Type": "application/json",
-      Prefer: "return=minimal"
+      Prefer: "resolution=merge-duplicates,return=minimal"
     },
     body: JSON.stringify(run)
   });
@@ -805,7 +806,7 @@ module.exports = async function handler(req, res) {
     res.setHeader("Content-Type", "application/json");
     return res.end(JSON.stringify({ ok: false, error: "GET or POST only" }));
   }
-  const authorization = authorizeIngestRequest(req);
+  const authorization = authorizeIngestRequest(req, process.env, { schedulerJob: "ingest-web-news" });
   if (!authorization.ok) return rejectUnauthorizedIngest(res, authorization);
 
   const SUPABASE_URL = process.env.SUPABASE_URL;
@@ -974,8 +975,11 @@ module.exports = async function handler(req, res) {
     res.statusCode = 502;
   }
 
+  const runId = authorization.schedulerRunDate
+    ? `run-web-scheduled-${authorization.schedulerRunDate}`
+    : `run-web-${Date.now().toString(36)}`;
   await supabaseInsertRun(SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY, {
-    id: `run-web-${Date.now().toString(36)}`,
+    id: runId,
     source_name: "Public web news",
     source_type: "rss",
     query: sources.map((s) => s.query).join(" | "),
@@ -993,6 +997,8 @@ module.exports = async function handler(req, res) {
   res.setHeader("Content-Type", "application/json");
   return res.end(JSON.stringify({
     ok: !errorMessage,
+    runId,
+    duplicateSafe: Boolean(authorization.schedulerRunDate),
     window,
     candidates: totalCandidates,
     deduped: dedupedCount,

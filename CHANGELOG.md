@@ -1,5 +1,15 @@
 # AI Map Changelog
 
+## 2026-09-04: Supabase-owned Physical AI scheduler
+
+- Added strict Vault-mirrored scheduler authentication for the Gmail, web-news,
+  and three graph-refresh routes without depending on `CRON_SECRET`.
+- Required exact scheduler version, job, and deterministic job/date run-key
+  headers; weak, conflicting, incomplete, and cross-route credentials fail closed.
+- Made scheduled ingestion-run IDs deterministic and their writes idempotent.
+- Removed native Vercel cron definitions so Supabase `pg_cron` is the sole
+  production dispatcher after its migration is applied.
+
 ## Branch: `feature/gmail-inbox` (based on `main`)
 
 ### 2026-02-06: Gmail Newsletter Integration
