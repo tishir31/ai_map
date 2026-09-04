@@ -34,7 +34,7 @@
       "text": "I wrote Deep Learning with Python to be the definitive guide to how deep learning works and how to best make use of it. Tens of thousands of people got their career start via this book. 120,000 copies sold, and downloaded by millions more.\n\nAnd now it's free to read online:",
       "url": "https://x.com/fchollet/status/2051370269445615965",
       "timestamp": "2026-05-04T18:35:59Z",
-      "likes": 3978,
+      "likes": 3982,
       "retweets": 605,
       "replies": 92,
       "media": []
@@ -60,7 +60,7 @@
       "text": "@guy_dar1 There is no AI approach that can do what these babies do, not even close. The sample efficiency gap (at equal space dimensionality) is 3-4 OOM.\n\nSo if the bar is \"baby level invention\", AI isn't anywhere close.",
       "url": "https://x.com/fchollet/status/1984040993726058956",
       "timestamp": "2025-10-30T23:33:29Z",
-      "likes": 9039,
+      "likes": 9035,
       "retweets": 58,
       "replies": 14,
       "media": []
@@ -73,8 +73,8 @@
       "text": "Crawling isn't innate (unlike walking). Every baby must *invent* crawling, from scratch, using extremely little data, and no reference to imitate. Which is why different babies end up with different ways of crawling.\n\nSometimes people tell me, \"you say AI isn't intelligent until",
       "url": "https://x.com/fchollet/status/1984014438673113477",
       "timestamp": "2025-10-30T21:47:58Z",
-      "likes": 133126,
-      "retweets": 8113,
+      "likes": 133128,
+      "retweets": 8112,
       "replies": 322,
       "media": []
     },
@@ -148,7 +148,7 @@
       "text": "The most interesting fact about this globalized chain is the number of irreplaceable single points of failure. There's only one company that can make these chips at scale. It runs on equipment that only one company can make. Out of parts that only one company can make.",
       "url": "https://x.com/fchollet/status/1960080110335480202",
       "timestamp": "2025-08-25T20:41:29Z",
-      "likes": 10827,
+      "likes": 10826,
       "retweets": 461,
       "replies": 92,
       "media": []
@@ -285,8 +285,8 @@
       "text": "All of the billions spent on AI innovation just so we can get these beautiful cat videos",
       "url": "https://x.com/bindureddy/status/1898364509758300568",
       "timestamp": "2025-03-08T13:25:43Z",
-      "likes": 247361,
-      "retweets": 30208,
+      "likes": 247358,
+      "retweets": 30209,
       "replies": 4768,
       "media": []
     },
@@ -421,7 +421,7 @@
       "text": "TikTok just open-sourced their recommender system framework (Monolith) -- and it uses Keras\n\nThis means that nearly all the major recommender systems in the industry are built on Keras -- YouTube, TikTok, Spotify, Snap, X/Twitter, and many more (Grubhub...)",
       "url": "https://x.com/fchollet/status/1869949776764252328",
       "timestamp": "2024-12-20T03:35:43Z",
-      "likes": 10139,
+      "likes": 10136,
       "retweets": 836,
       "replies": 73,
       "media": []
@@ -509,7 +509,7 @@
       "text": "Umm, Elon is getting an insane amount of hate for his political views! \n\nI thought the idea was to stop the hate and spread the joy! 😂😂\n\nSo how about NOT attacking, censoring and canceling people for their politcs",
       "url": "https://x.com/bindureddy/status/1843041274347290683",
       "timestamp": "2024-10-06T21:30:56Z",
-      "likes": 20867,
+      "likes": 20866,
       "retweets": 2259,
       "replies": 1717,
       "media": []
@@ -522,7 +522,7 @@
       "text": "@elonmusk @realDonaldTrump @KamalaHarris The biggest loser in the debate was ABC news",
       "url": "https://x.com/bindureddy/status/1833748746854715705",
       "timestamp": "2024-09-11T06:05:45Z",
-      "likes": 72360,
+      "likes": 72361,
       "retweets": 2347,
       "replies": 1230,
       "media": []
@@ -535,7 +535,7 @@
       "text": "I saw an AI engineer today\n\nNo cursor.\nNo claude 3.5 sonnet.\nNo aider.\n\nHe just sat there.\nCoding without running an LLM every other minute.\nLike a psychopath.",
       "url": "https://x.com/swyx/status/1830335212120854731",
       "timestamp": "2024-09-01T20:01:35Z",
-      "likes": 8657,
+      "likes": 8660,
       "retweets": 360,
       "replies": 217,
       "media": []
@@ -724,7 +724,7 @@
       "text": "Taking revenge on ChatGPT! 🤣",
       "url": "https://x.com/bindureddy/status/1691669460875362744",
       "timestamp": "2023-08-16T04:33:23Z",
-      "likes": 10452,
+      "likes": 10451,
       "retweets": 847,
       "replies": 176,
       "media": [
@@ -742,7 +742,7 @@
       "text": "YYYY-MM-DD is obviously the best date format: it's the one where alphanumerical order matches chronological order.",
       "url": "https://x.com/fchollet/status/1688252452632678400",
       "timestamp": "2023-08-06T18:15:25Z",
-      "likes": 8357,
+      "likes": 8358,
       "retweets": 509,
       "replies": 295,
       "media": []
@@ -790,7 +790,7 @@
       "text": "ChatGPT casually dropped an APP STORE 🤯\n\nIt can now:\n- browse the web (RIP Bing waitlist, cutoff)\n- write and run Python (RIP replit?)\n- access org info (RIP docsearch startups)\n- add third party plugins from OpenTable, Wolfram, Instacart, Zapier, etc)\n- developer SDK in preview",
       "url": "https://x.com/swyx/status/1638968071129030658",
       "timestamp": "2023-03-23T18:16:53Z",
-      "likes": 7686,
+      "likes": 7687,
       "retweets": 949,
       "replies": 122,
       "media": []
@@ -803,7 +803,7 @@
       "text": "Wow. GitHub CEO @ashtom just announced GitHub Copilot X: \n\n- Copilot Chat - \"ChatGPT-like experience in your editor\" powered by GPT-4\n- Copilot for Pull Requests - AI-generated descriptions for pull requests on GitHub\n- GitHub Copilot for Docs - chat for *any* company's repos and",
       "url": "https://x.com/swyx/status/1638550858073006089",
       "timestamp": "2023-03-22T14:39:02Z",
-      "likes": 7248,
+      "likes": 7247,
       "retweets": 1046,
       "replies": 129,
       "media": []
@@ -842,7 +842,7 @@
       "text": "ChatGPT’s current killer app isn’t search, therapy, doing math, controlling browsers, emulating a virtual machine, or any of that other cherrypicked examples that come with huge disclaimers.\n\nIt’s a lot more quotidian: \n\nReformatting information from any format X to any format Y.",
       "url": "https://x.com/swyx/status/1610247438958481408",
       "timestamp": "2023-01-03T12:11:21Z",
-      "likes": 5294,
+      "likes": 5295,
       "retweets": 537,
       "replies": 80,
       "media": [
@@ -996,8 +996,8 @@
       "text": "The problem with Facebook is not *just* the loss of your privacy and the fact that it can be used as a totalitarian panopticon. The more worrying issue, in my opinion, is its use of digital information consumption as a psychological control vector. Time for a thread",
       "url": "https://x.com/fchollet/status/976563870322999296",
       "timestamp": "2018-03-21T20:59:05Z",
-      "likes": 14058,
-      "retweets": 7469,
+      "likes": 14057,
+      "retweets": 7468,
       "replies": 496,
       "media": []
     },
@@ -1093,7 +1093,7 @@
       "media": []
     }
   ],
-  "updated": "2026-09-04T15:47:58Z",
+  "updated": "2026-09-04T20:18:40Z",
   "accounts": 13,
-  "successful_fetches": 9
+  "successful_fetches": 3
 }
