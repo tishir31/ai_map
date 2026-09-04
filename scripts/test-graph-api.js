@@ -28,6 +28,32 @@ async function run() {
   assert.equal(weeklyCron.cadence, "weekly");
   assert.equal(monthlyCron.cadence, "monthly");
   assert.equal(quarterlyCron.cadence, "quarterly");
+  const originalCronSecret = process.env.CRON_SECRET;
+  const originalSchedulerSecret = process.env.PHYSICAL_AI_SCHEDULER_SECRET;
+  const scopedSchedulerSecret = "0123456789abcdef0123456789abcdef";
+  try {
+    delete process.env.CRON_SECRET;
+    process.env.PHYSICAL_AI_SCHEDULER_SECRET = scopedSchedulerSecret;
+    const schedulerAuthorization = graph.verifyCron({ headers: {
+      authorization: `Bearer ${scopedSchedulerSecret}`,
+      "x-physical-ai-scheduler": "v1",
+      "x-physical-ai-job": "graph-refresh-weekly",
+      "x-physical-ai-run-key": "graph-refresh-weekly:2026-09-04",
+    } }, "graph-refresh-weekly");
+    assert.equal(schedulerAuthorization.provider, "supabase-pg-cron");
+    assert.equal(schedulerAuthorization.schedulerRunDate, "2026-09-04");
+    assert.throws(() => graph.verifyCron({ headers: {
+      authorization: `Bearer ${scopedSchedulerSecret}`,
+      "x-physical-ai-scheduler": "v1",
+      "x-physical-ai-job": "graph-refresh-monthly",
+      "x-physical-ai-run-key": "graph-refresh-monthly:2026-09-04",
+    } }, "graph-refresh-weekly"), /scheduler credential/i);
+  } finally {
+    if (originalCronSecret === undefined) delete process.env.CRON_SECRET;
+    else process.env.CRON_SECRET = originalCronSecret;
+    if (originalSchedulerSecret === undefined) delete process.env.PHYSICAL_AI_SCHEDULER_SECRET;
+    else process.env.PHYSICAL_AI_SCHEDULER_SECRET = originalSchedulerSecret;
+  }
   assert.equal(graph._test.userCanReviewCandidate(
     { id: "user-1", appMetadata: {} },
     { owner_id: "user-1" },
@@ -340,7 +366,10 @@ async function run() {
   const cronHandler = createScheduledRefreshHandler("weekly", {
     today: () => "2026-09-04",
     setCors: () => {},
-    verifyCron: (req) => cronCalls.push(["verify", req.headers.authorization]),
+    verifyCron: (req, expectedJob) => {
+      cronCalls.push(["verify", req.headers.authorization, expectedJob]);
+      return { schedulerRunDate: "2026-09-03" };
+    },
     getConfig: () => ({ test: true }),
     runRefresh: async (config, options) => {
       cronCalls.push(["refresh", config, options]);
@@ -353,10 +382,11 @@ async function run() {
   assert.equal(cronResult.status, 202);
   assert.deepEqual(cronCalls[1][2], {
     cadence: "weekly",
-    asOf: "2026-09-04",
+    asOf: "2026-09-03",
     scheduled: true,
   });
   assert.equal(cronCalls[0][1], "Bearer secret");
+  assert.equal(cronCalls[0][2], "graph-refresh-weekly");
 
   const searchCalls = [];
   global.fetch = async (input) => {

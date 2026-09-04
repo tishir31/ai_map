@@ -5,10 +5,12 @@
 // GET /api/pipeline-health
 // POST /api/pipeline-health
 //
-// Returns aggregate operational health only. It deliberately does not return
-// private Review Queue snippets, Gmail subjects, senders, or extracted text.
+// Returns aggregate operational health only. Public dataset counts use the
+// same public-safe approved projection served by market-snapshot. It deliberately
+// does not return private Review Queue snippets, Gmail subjects, senders, or extracted text.
 
 const { canHandlePhysicalAiRoute, handlePhysicalAiRoute } = require("../lib/physical-ai-router");
+const { buildSnapshot } = require("../lib/market-snapshot");
 
 const ALLOWED_ORIGINS = new Set([
   "https://ai-map-cyan.vercel.app",
@@ -224,7 +226,7 @@ module.exports = async function handler(req, res) {
   }
 
   try {
-    const [runsRead, queueRead, recentActivities, investors, activityInvestors] = await Promise.all([
+    const [runsRead, queueRead, approvedActivities, companies, exclusions, investors, activityInvestors] = await Promise.all([
       readWithFallback(
         SUPABASE_URL,
         SUPABASE_SERVICE_ROLE_KEY,
@@ -240,7 +242,17 @@ module.exports = async function handler(req, res) {
       supabaseGet(
         SUPABASE_URL,
         SUPABASE_SERVICE_ROLE_KEY,
-        "activities?select=id,date_announced&review_status=eq.approved&is_sample=eq.false&order=date_announced.desc&limit=1000"
+        "activities?select=id,date_announced,company_id,counterparty,activity_type,subsector,deal_value_usd,geography,description,source_id,source_url,source_reference,source_type,additional_sources,confidence,review_status,last_updated,is_sample,entered_by,approved_at&review_status=eq.approved&is_sample=eq.false&order=date_announced.desc&limit=1000"
+      ),
+      supabaseGet(
+        SUPABASE_URL,
+        SUPABASE_SERVICE_ROLE_KEY,
+        "companies?select=id,name,overview,subsector,geography,website,is_sample&is_sample=eq.false&order=name.asc&limit=2000"
+      ),
+      supabaseGet(
+        SUPABASE_URL,
+        SUPABASE_SERVICE_ROLE_KEY,
+        "data_exclusions?select=id,target_type,target_id,company_id,reason,cascade,excluded_at,restored_at&restored_at=is.null&limit=2000"
       ),
       optionalRead(SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY, "investors?select=id,kind&limit=1000"),
       optionalRead(SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY, "activity_investors?select=activity_id,investor_id,role&limit=1000")
@@ -258,7 +270,13 @@ module.exports = async function handler(req, res) {
       activityInvestors: activityInvestors.ok ? activityInvestors.data.length : 0,
       error: investors.ok && activityInvestors.ok ? undefined : investors.error || activityInvestors.error
     };
-    const approvedLast30d = recentActivities.filter((activity) => hoursSince(activity.date_announced) <= 24 * 30).length;
+    const publicSnapshot = buildSnapshot({
+      activities: approvedActivities,
+      companies,
+      exclusions,
+      ingestionRuns: runs,
+    });
+    const approvedLast30d = publicSnapshot.activities.filter((activity) => hoursSince(activity.date_announced) <= 24 * 30).length;
     const schemaWarnings = [runsRead.warning, queueRead.warning].filter(Boolean);
     const llmConfigured = process.env.INGEST_LLM_ENABLED !== "false" && Boolean(process.env.GEMINI_API_KEY);
     const findings = buildFindings({ latestBySource, queue: queueSummary, investorStatus, runWindow: runs, schemaWarnings, llmConfigured });
@@ -282,8 +300,12 @@ module.exports = async function handler(req, res) {
       },
       reviewQueue: queueSummary,
       approvedDataset: {
-        approvedRowsRead: recentActivities.length,
-        approvedLast30d
+        approvedRowsRead: publicSnapshot.counts.activities,
+        publicSafeRows: publicSnapshot.counts.activities,
+        companies: publicSnapshot.counts.companies,
+        latestActivityDate: publicSnapshot.latestActivityDate,
+        approvedLast30d,
+        sourceUniverse: "public-safe approved activities after active exclusions and company joins"
       },
       investorNormalization: investorStatus,
       intelligence: {

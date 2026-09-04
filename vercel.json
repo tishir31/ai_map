@@ -16,7 +16,7 @@
     { "source": "/api/graph-refresh-monthly", "destination": "/api/pipeline-health?physicalAiRoute=graph-refresh-monthly" },
     { "source": "/api/graph-refresh-quarterly", "destination": "/api/pipeline-health?physicalAiRoute=graph-refresh-quarterly" },
     { "source": "/physical-ai/", "destination": "/physical-ai/index.html" },
-    { "source": "/physical-ai/:path((?!assets/|physical-ai-vc-knowledge-base\\.json$).*)", "destination": "/physical-ai/index.html" }
+    { "source": "/physical-ai/:path((?!assets/|physical-ai-vc-knowledge-base\\.json$|knowledge-graph\\.v1\\.json$).*)", "destination": "/physical-ai/index.html" }
   ],
   "headers": [
     {
@@ -27,6 +27,12 @@
     },
     {
       "source": "/physical-ai/physical-ai-vc-knowledge-base.json",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" }
+      ]
+    },
+    {
+      "source": "/physical-ai/knowledge-graph.v1.json",
       "headers": [
         { "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" }
       ]
