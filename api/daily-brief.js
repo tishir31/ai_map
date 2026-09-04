@@ -9,6 +9,8 @@
 // aggregate Review Queue / ingestion status. It never returns Gmail subjects,
 // senders, snippets, or private extracted text.
 
+const { isPublicSafeActivity } = require("../lib/market-snapshot");
+
 const ALLOWED_ORIGINS = new Set([
   "https://ai-map-cyan.vercel.app",
   "https://tishir31.github.io",
@@ -214,7 +216,7 @@ module.exports = async function handler(req, res) {
       supabaseGet(
         SUPABASE_URL,
         SUPABASE_SERVICE_ROLE_KEY,
-        `activities?select=id,date_announced,company_id,counterparty,activity_type,subsector,deal_value_usd,geography,description,source_url,confidence,review_status,is_sample&review_status=eq.approved&is_sample=eq.false&date_announced=gte.${cutoff}&order=date_announced.desc&limit=200`
+        `activities?select=id,date_announced,company_id,counterparty,activity_type,subsector,deal_value_usd,geography,description,source_url,source_reference,source_type,additional_sources,confidence,review_status,is_sample&review_status=eq.approved&is_sample=eq.false&date_announced=gte.${cutoff}&order=date_announced.desc&limit=200`
       ),
       readWithFallback(
         SUPABASE_URL,
@@ -235,7 +237,7 @@ module.exports = async function handler(req, res) {
     const pendingItems = pendingRead.data || [];
     const runs = runsRead.data || [];
     const companyById = new Map((companies || []).map((company) => [company.id, company.name]));
-    const approvedRows = approvedBriefRows(activities || [], companyById);
+    const approvedRows = approvedBriefRows((activities || []).filter(isPublicSafeActivity), companyById);
     const pending = summarizePending(pendingItems || []);
     const latestRuns = latestRunsBySource(runs || []);
     const actions = buildActions({ pending, latestRuns, approvedRows });

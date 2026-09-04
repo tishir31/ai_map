@@ -13,7 +13,9 @@
 //      the daily cron in vercel.json.
 //
 // GET /api/ingest-gmail
-//   Used by Vercel Cron. If CRON_SECRET is set, Vercel sends
+//   Used by Vercel Cron. CRON_SECRET (or INGEST_SHARED_SECRET for manual
+//   calls) is required; the route fails closed when neither is configured.
+//   Vercel sends
 //   Authorization: Bearer $CRON_SECRET.
 //
 // POST /api/ingest-gmail
@@ -27,11 +29,14 @@
 //
 // Required env: SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY, GMAIL_CLIENT_ID,
 // GMAIL_CLIENT_SECRET, GMAIL_REFRESH_TOKEN, GMAIL_USER_EMAIL.
-// Optional: INGEST_SOURCES, INGEST_MAX, INGEST_SHARED_SECRET,
+// Auth (at least one required): CRON_SECRET or INGEST_SHARED_SECRET.
+// Optional: INGEST_SOURCES, INGEST_MAX,
 // INGEST_LLM_ENABLED=false, INGEST_LLM_MODEL, GEMINI_API_KEY,
 // OPENAI_API_KEY, OPENAI_TRIAGE_MODEL.
 
-const SHARED_SECRET = process.env.INGEST_SHARED_SECRET || process.env.CRON_SECRET || "";
+const { buildRotationPlan, isDateInWindow } = require("../lib/query-rotation");
+const { authorizeIngestRequest } = require("../lib/ingest-auth");
+
 const ALLOWED_ORIGINS = new Set([
   "https://ai-map-cyan.vercel.app",
   "https://tishir31.github.io",
@@ -171,19 +176,17 @@ function isoDateDaysAgo(now, daysAgo) {
   return d.toISOString().slice(0, 10);
 }
 
-function refreshWindow(now = new Date()) {
+function refreshWindow(now = new Date(), lookbackDays = MAX_LOOKBACK_DAYS) {
   const end = now.toISOString().slice(0, 10);
   return {
-    maxLookbackDays: MAX_LOOKBACK_DAYS,
-    startDate: isoDateDaysAgo(now, MAX_LOOKBACK_DAYS),
+    maxLookbackDays: lookbackDays,
+    startDate: isoDateDaysAgo(now, lookbackDays),
     endDate: end
   };
 }
 
-function isRecent(date, now = new Date()) {
-  if (!validDate(date)) return false;
-  const window = refreshWindow(now);
-  return date >= window.startDate && date <= window.endDate;
+function candidateIsInWindow(date, context) {
+  return isDateInWindow(date, context?.refreshWindow || refreshWindow());
 }
 
 function scoreRules(text, rules) {
@@ -337,16 +340,10 @@ function inferCounterparty(body) {
     .trim();
 }
 
-function hasSharedSecret(req) {
-  if (!SHARED_SECRET) return true;
-  const bearer = String(req.headers.authorization || "").replace(/^Bearer\s+/i, "");
-  return req.headers["x-ingest-secret"] === SHARED_SECRET || bearer === SHARED_SECRET;
-}
-
-function unauthorized(res, reason) {
-  res.statusCode = 401;
+function rejectUnauthorizedIngest(res, authorization) {
+  res.statusCode = authorization.status;
   res.setHeader("Content-Type", "application/json");
-  res.end(JSON.stringify({ ok: false, error: reason }));
+  return res.end(JSON.stringify({ ok: false, error: authorization.error }));
 }
 
 function setCors(req, res) {
@@ -652,7 +649,7 @@ function gateCandidate(candidate, context) {
   const evidence = Array.isArray(candidate.intelligence_evidence) ? candidate.intelligence_evidence.join(" ") : "";
   const sourceText = candidate.llm_status === "enriched" ? "" : candidate.extracted_text || "";
   const text = `${candidate.candidate_company || ""}. ${candidate.subject || ""}. ${candidate.snippet || ""}. ${sourceText}. ${candidate.description || ""}. ${evidence}`;
-  if (!isRecent(candidate.candidate_date)) return { keep: false, reason: "outside-lookback" };
+  if (!candidateIsInWindow(candidate.candidate_date, context)) return { keep: false, reason: "outside-lookback" };
   if (!candidate.candidate_company || candidate.candidate_company === "N/A") return { keep: false, reason: "company-unresolved" };
   if (!isMaterialPhysicalAiSignal(text, candidate)) return { keep: false, reason: "low-relevance" };
   if (pendingDuplicate(candidate, context)) return { keep: false, reason: "pending-duplicate" };
@@ -686,7 +683,7 @@ function intelligencePrompt(candidate, gate, context) {
     ? activityContext((context.activities || []).find((activity) => activity.id === gate.duplicateOfActivityId), context)
     : null;
   const existingCompanies = (context.companies || []).map((company) => company.name).slice(0, 250);
-  const window = refreshWindow();
+  const window = context?.refreshWindow || refreshWindow();
   return `You are an investment-bank-grade Physical AI market-intelligence triage engine.
 
 Your job is to read ONE Gmail-derived newsletter, digest, or alert and extract all material Physical AI market events before they enter a private analyst Review Queue.
@@ -755,7 +752,7 @@ function buildAdjudicatedCandidates(parsed, candidate, context, modelLabel) {
   if (!parsed || typeof parsed !== "object") throw new Error(`${modelLabel} triage returned invalid JSON`);
   if (parsed.keep === false) {
     const reason = boundedText(parsed.rejectReason || "rejected", 120);
-    if (isRecent(candidate.candidate_date) && /\b(future|outside|date|window|lookback|recent)\b/i.test(reason)) {
+    if (candidateIsInWindow(candidate.candidate_date, context) && /\b(future|outside|date|window|lookback|recent)\b/i.test(reason)) {
       return { keep: true, candidates: [candidate], status: "date-recheck" };
     }
     return { keep: false, reason: `llm-${boundedText(reason, 60)}` };
@@ -770,7 +767,7 @@ function buildAdjudicatedCandidates(parsed, candidate, context, modelLabel) {
       const company = boundedText(event.candidateCompany, 140);
       if (company && company !== "N/A") next.candidate_company = company;
       if (boundedText(event.candidateCounterparty, 240)) next.candidate_counterparty = boundedText(event.candidateCounterparty, 240);
-      if (validDate(event.candidateDate) && isRecent(event.candidateDate)) next.candidate_date = event.candidateDate;
+      if (validDate(event.candidateDate) && candidateIsInWindow(event.candidateDate, context)) next.candidate_date = event.candidateDate;
       next.activity_type = normalizeAllowed(event.activityType, ALLOWED_ACTIVITY_TYPES, next.activity_type);
       next.subsector = normalizeAllowed(event.subsector, ALLOWED_SUBSECTORS, next.subsector);
       if (typeof event.dealValueUsd === "number" && Number.isFinite(event.dealValueUsd) && event.dealValueUsd >= 0) {
@@ -913,9 +910,8 @@ module.exports = async function handler(req, res) {
     return res.end(JSON.stringify({ ok: false, error: "GET or POST only" }));
   }
 
-  if (!hasSharedSecret(req)) {
-    return unauthorized(res, "Missing or wrong X-Ingest-Secret header.");
-  }
+  const authorization = authorizeIngestRequest(req);
+  if (!authorization.ok) return rejectUnauthorizedIngest(res, authorization);
 
   const missing = [];
   const SUPABASE_URL = process.env.SUPABASE_URL;
@@ -956,7 +952,21 @@ module.exports = async function handler(req, res) {
   }
 
   const startedAt = new Date().toISOString();
-  const window = refreshWindow(new Date(startedAt));
+  let effectiveLookbackDays = MAX_LOOKBACK_DAYS;
+  let rotationCycleDays = 0;
+  if (!body.query) {
+    const plan = buildRotationPlan(sources, startedAt, {
+      provider: "gmail",
+      baseLookbackDays: MAX_LOOKBACK_DAYS,
+    });
+    sources = plan.queries;
+    effectiveLookbackDays = plan.effectiveLookbackDays;
+    rotationCycleDays = plan.rotationCycleDays;
+  }
+  const window = {
+    ...refreshWindow(new Date(startedAt), effectiveLookbackDays),
+    rotationCycleDays,
+  };
   let totalCandidates = 0;
   let dedupedCount = 0;
   const skippedByReason = {};
@@ -1002,6 +1012,7 @@ module.exports = async function handler(req, res) {
 
   try {
     const context = await loadDedupeContext(SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY);
+    context.refreshWindow = window;
     const accessToken = await getGmailAccessToken();
     const startedMs = Date.now();
     function budgetExceeded() {
