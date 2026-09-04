@@ -11,6 +11,8 @@
 // scheduled writes. Dry runs work before the migration because they only read
 // the existing public market tables.
 
+const { authorizeIngestRequest } = require("../lib/ingest-auth");
+
 const ALLOWED_ORIGINS = new Set([
   "https://ai-map-cyan.vercel.app",
   "https://tishir31.github.io",
@@ -492,6 +494,14 @@ module.exports = async function handler(req, res) {
     res.statusCode = 405;
     res.setHeader("Content-Type", "application/json");
     return res.end(JSON.stringify({ ok: false, error: "GET or POST only" }));
+  }
+  if (req.method === "POST") {
+    const authorization = authorizeIngestRequest(req);
+    if (!authorization.ok) {
+      res.statusCode = authorization.status;
+      res.setHeader("Content-Type", "application/json");
+      return res.end(JSON.stringify({ ok: false, error: authorization.error }));
+    }
   }
 
   const SUPABASE_URL = process.env.SUPABASE_URL;

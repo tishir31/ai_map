@@ -3,9 +3,11 @@ const assert = require("node:assert/strict");
 async function main() {
   const previousUrl = process.env.SUPABASE_URL;
   const previousKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
+  const previousSecret = process.env.INGEST_SHARED_SECRET;
   const previousFetch = global.fetch;
   process.env.SUPABASE_URL = "https://example.supabase.co";
   process.env.SUPABASE_SERVICE_ROLE_KEY = "test-service-role";
+  process.env.INGEST_SHARED_SECRET = "test-ingest-secret";
 
   global.fetch = async (url) => {
     const value = String(url);
@@ -58,6 +60,22 @@ async function main() {
       body.intelligence.investors.map((investor) => investor.name).sort(),
       ["General Catalyst", "RoboStrategy"]
     );
+
+    statusCode = 200;
+    payload = "";
+    await handler({ method: "POST", headers: {}, body: {} }, res);
+    assert.equal(statusCode, 401);
+    assert.match(JSON.parse(payload).error, /credential/i);
+
+    statusCode = 200;
+    payload = "";
+    await handler({
+      method: "POST",
+      headers: { authorization: "Bearer test-ingest-secret" },
+      body: { dryRun: true }
+    }, res);
+    assert.equal(statusCode, 200);
+    assert.equal(JSON.parse(payload).dryRun, true);
     console.log("investor normalization tests passed");
   } finally {
     global.fetch = previousFetch;
@@ -65,6 +83,8 @@ async function main() {
     else process.env.SUPABASE_URL = previousUrl;
     if (previousKey === undefined) delete process.env.SUPABASE_SERVICE_ROLE_KEY;
     else process.env.SUPABASE_SERVICE_ROLE_KEY = previousKey;
+    if (previousSecret === undefined) delete process.env.INGEST_SHARED_SECRET;
+    else process.env.INGEST_SHARED_SECRET = previousSecret;
   }
 }
 
