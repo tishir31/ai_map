@@ -496,7 +496,7 @@ module.exports = async function handler(req, res) {
     return res.end(JSON.stringify({ ok: false, error: "GET or POST only" }));
   }
   if (req.method === "POST") {
-    const authorization = authorizeIngestRequest(req);
+    const authorization = await authorizeIngestRequest(req);
     if (!authorization.ok) {
       res.statusCode = authorization.status;
       res.setHeader("Content-Type", "application/json");

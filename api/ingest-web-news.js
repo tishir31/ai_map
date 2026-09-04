@@ -830,7 +830,7 @@ module.exports = async function handler(req, res) {
     res.setHeader("Content-Type", "application/json");
     return res.end(JSON.stringify({ ok: false, error: "GET or POST only" }));
   }
-  const authorization = authorizeIngestRequest(req, process.env, { schedulerJob: "ingest-web-news" });
+  const authorization = await authorizeIngestRequest(req, process.env, { schedulerJob: "ingest-web-news" });
   if (!authorization.ok) return rejectUnauthorizedIngest(res, authorization);
 
   const SUPABASE_URL = process.env.SUPABASE_URL;
