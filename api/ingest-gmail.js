@@ -928,7 +928,7 @@ module.exports = async function handler(req, res) {
     return res.end(JSON.stringify({ ok: false, error: "GET or POST only" }));
   }
 
-  const authorization = authorizeIngestRequest(req, process.env, { schedulerJob: "ingest-gmail" });
+  const authorization = await authorizeIngestRequest(req, process.env, { schedulerJob: "ingest-gmail" });
   if (!authorization.ok) return rejectUnauthorizedIngest(res, authorization);
 
   const missing = [];

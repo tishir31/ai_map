@@ -34,7 +34,7 @@ async function run() {
   try {
     delete process.env.CRON_SECRET;
     process.env.PHYSICAL_AI_SCHEDULER_SECRET = scopedSchedulerSecret;
-    const schedulerAuthorization = graph.verifyCron({ headers: {
+    const schedulerAuthorization = await graph.verifyCron({ headers: {
       authorization: `Bearer ${scopedSchedulerSecret}`,
       "x-physical-ai-scheduler": "v1",
       "x-physical-ai-job": "graph-refresh-weekly",
@@ -42,7 +42,7 @@ async function run() {
     } }, "graph-refresh-weekly");
     assert.equal(schedulerAuthorization.provider, "supabase-pg-cron");
     assert.equal(schedulerAuthorization.schedulerRunDate, "2026-09-04");
-    assert.throws(() => graph.verifyCron({ headers: {
+    await assert.rejects(() => graph.verifyCron({ headers: {
       authorization: `Bearer ${scopedSchedulerSecret}`,
       "x-physical-ai-scheduler": "v1",
       "x-physical-ai-job": "graph-refresh-monthly",

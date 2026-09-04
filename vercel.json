@@ -37,12 +37,5 @@
         { "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" }
       ]
     }
-  ],
-  "crons": [
-    { "path": "/api/ingest-gmail", "schedule": "0 13 * * *" },
-    { "path": "/api/ingest-web-news", "schedule": "15 13 * * *" },
-    { "path": "/api/graph-refresh-weekly", "schedule": "0 15 * * 1" },
-    { "path": "/api/graph-refresh-monthly", "schedule": "0 16 1 * *" },
-    { "path": "/api/graph-refresh-quarterly", "schedule": "0 17 1 1,4,7,10 *" }
   ]
 }

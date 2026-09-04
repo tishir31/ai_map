@@ -26,21 +26,21 @@ async function run() {
   assert.equal(constantTimeEqual("secret", "wrong"), false);
   assert.equal(constantTimeEqual("short", "much-longer"), false);
 
-  assert.deepEqual(authorizeIngestRequest({ headers: {} }, {}), {
+  assert.deepEqual(await authorizeIngestRequest({ headers: {} }, {}), {
     ok: false,
     status: 503,
     error: "Ingestion authorization is not configured.",
   });
-  assert.equal(authorizeIngestRequest({ headers: {} }, { CRON_SECRET: "secret" }).status, 401);
-  assert.equal(authorizeIngestRequest({ headers: { authorization: "Bearer wrong" } }, { CRON_SECRET: "secret" }).status, 401);
-  assert.equal(authorizeIngestRequest({ headers: { authorization: "Bearer secret" } }, { CRON_SECRET: "secret" }).ok, true);
-  assert.equal(authorizeIngestRequest({ headers: { "x-ingest-secret": "secret" } }, { INGEST_SHARED_SECRET: "secret" }).ok, true);
-  assert.equal(authorizeIngestRequest(
+  assert.equal((await authorizeIngestRequest({ headers: {} }, { CRON_SECRET: "secret" })).status, 401);
+  assert.equal((await authorizeIngestRequest({ headers: { authorization: "Bearer wrong" } }, { CRON_SECRET: "secret" })).status, 401);
+  assert.equal((await authorizeIngestRequest({ headers: { authorization: "Bearer secret" } }, { CRON_SECRET: "secret" })).ok, true);
+  assert.equal((await authorizeIngestRequest({ headers: { "x-ingest-secret": "secret" } }, { INGEST_SHARED_SECRET: "secret" })).ok, true);
+  assert.equal((await authorizeIngestRequest(
     { headers: { authorization: "Bearer cron-secret" } },
     { INGEST_SHARED_SECRET: "manual-secret", CRON_SECRET: "cron-secret" },
-  ).ok, true);
+  )).ok, true);
   const schedulerSecret = "0123456789abcdef0123456789abcdef";
-  const scoped = authorizeIngestRequest(
+  const scoped = await authorizeIngestRequest(
     { headers: {
       authorization: `Bearer ${schedulerSecret}`,
       "x-physical-ai-scheduler": "v1",
@@ -52,16 +52,49 @@ async function run() {
   );
   assert.equal(scoped.ok, true);
   assert.equal(scoped.schedulerRunDate, "2026-09-04");
-  assert.equal(authorizeIngestRequest(
+  const productionScoped = await authorizeIngestRequest(
+    { headers: {
+      authorization: `Bearer ${schedulerSecret}`,
+      "x-physical-ai-scheduler": "v1",
+      "x-physical-ai-job": "ingest-gmail",
+      "x-physical-ai-run-key": "ingest-gmail:2026-09-04",
+    } },
+    { VERCEL_ENV: "production", SUPABASE_URL: "https://project.supabase.co", SUPABASE_SERVICE_ROLE_KEY: "service-key" },
+    { schedulerJob: "ingest-gmail", fetchImpl: async () => ({ ok: true, text: async () => JSON.stringify(schedulerSecret) }) },
+  );
+  assert.equal(productionScoped.ok, true);
+  const productionCronRejected = await authorizeIngestRequest(
+    { headers: { authorization: "Bearer native-cron" } },
+    { VERCEL_ENV: "production", CRON_SECRET: "native-cron", SUPABASE_URL: "https://project.supabase.co", SUPABASE_SERVICE_ROLE_KEY: "service-key" },
+    { schedulerJob: "ingest-gmail", fetchImpl: async () => ({ ok: true, text: async () => JSON.stringify(schedulerSecret) }) },
+  );
+  assert.equal(productionCronRejected.status, 401);
+  const productionManualFailsWithVault = await authorizeIngestRequest(
+    { headers: { "x-ingest-secret": "manual-secret" } },
+    {
+      VERCEL_ENV: "production",
+      INGEST_SHARED_SECRET: "manual-secret",
+      PHYSICAL_AI_SCHEDULER_SECRET: "abcdef0123456789abcdef0123456789",
+      SUPABASE_URL: "https://project.supabase.co",
+      SUPABASE_SERVICE_ROLE_KEY: "service-key",
+    },
+    {
+      schedulerJob: "ingest-gmail",
+      fetchImpl: async () => ({ ok: true, text: async () => JSON.stringify(schedulerSecret) }),
+    },
+  );
+  assert.equal(productionManualFailsWithVault.status, 503);
+  assert.match(productionManualFailsWithVault.error, /does not match/i);
+  assert.equal((await authorizeIngestRequest(
     { headers: { authorization: `Bearer ${schedulerSecret}` } },
     { PHYSICAL_AI_SCHEDULER_SECRET: schedulerSecret },
     { schedulerJob: "ingest-gmail" },
-  ).status, 401);
-  assert.equal(authorizeIngestRequest(
+  )).status, 401);
+  assert.equal((await authorizeIngestRequest(
     { headers: { "x-ingest-secret": schedulerSecret } },
     { PHYSICAL_AI_SCHEDULER_SECRET: schedulerSecret },
     { schedulerJob: "ingest-gmail" },
-  ).status, 401);
+  )).status, 401);
 
   const savedCronSecret = process.env.CRON_SECRET;
   const savedIngestSecret = process.env.INGEST_SHARED_SECRET;
