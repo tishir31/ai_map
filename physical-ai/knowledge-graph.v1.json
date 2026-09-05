@@ -9,7 +9,7 @@
       "verified_fact",
       "derived_signal"
     ],
-    "sourceCanonicalPayloadSha256": "a1c3d665368173641c88be94988380e181216b0067c6456c742b4bd5de6a5dbc",
+    "sourceCanonicalPayloadSha256": "6681addc120c12c3ef760d20ae538f18eebf71651de4a1f9d08bf783a87f1556",
     "counts": {
       "entities": 5485,
       "relationships": 2377,
@@ -26,8 +26,8 @@
       "minYear": 1967,
       "maxYear": 2026
     },
-    "publicProjectionSha256": "a903c6869525be743fcbb63ba7d03d7fe31da773061b1eaf80775612ef27cafc",
-    "canonicalPayloadSha256": "a903c6869525be743fcbb63ba7d03d7fe31da773061b1eaf80775612ef27cafc"
+    "publicProjectionSha256": "26104e7879a1e43eb196d83ba072ae33952f4295beb81c12fa34c34b627ce04f",
+    "canonicalPayloadSha256": "26104e7879a1e43eb196d83ba072ae33952f4295beb81c12fa34c34b627ce04f"
   },
   "entities": [
     {
@@ -237297,12 +237297,12 @@
       "id": "SRC-4462",
       "url": "https://news.bloomberglaw.com/private-equity/alibaba-backed-robot-firm-seeks-3-billion-value-in-new-funding",
       "publisher": "news.bloomberglaw.com",
-      "tier": "primary",
+      "tier": "secondary",
       "locator": "Dexmal inclusion and identity in the public-source discovery directory",
       "retrievedAt": "2026-09-02",
       "stance": "supports",
       "snapshotStatus": "metadata_only",
-      "contentHash": "bcbe745e85f00a27c5466ff99b303f6bcf720c993451d35f173c103933229ef2"
+      "contentHash": "25c405f2bc0672cd3fb069963f9e092ee3a6adea121a1707ba3c50be6872db41"
     },
     {
       "id": "SRC-4463",
