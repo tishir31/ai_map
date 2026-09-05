@@ -15,6 +15,18 @@ function response(payload, status = 200) {
   };
 }
 
+async function invokeRoute(handler, req) {
+  let body = "";
+  const res = {
+    statusCode: 200,
+    headers: {},
+    setHeader(name, value) { this.headers[name] = value; },
+    end(value = "") { body = value; return value; },
+  };
+  await handler(req, res);
+  return { status: res.statusCode, body: body ? JSON.parse(body) : null };
+}
+
 async function run() {
   const apiFiles = fs.readdirSync(path.resolve(__dirname, "../api"))
     .filter((name) => name.endsWith(".js"));
@@ -24,8 +36,37 @@ async function run() {
   assert.equal(physicalAiRoute({ url: "/api/pipeline-health?physicalAiRoute=market-snapshot", headers: {} }), "market-snapshot");
   for (const route of [
     "market-snapshot", "graph-search", "graph-investigate", "graph-compare", "graph-review",
-    "graph-refresh", "graph-refresh-weekly", "graph-refresh-monthly", "graph-refresh-quarterly",
+    "graph-refresh", "graph-refresh-cron", "graph-refresh-weekly", "graph-refresh-monthly", "graph-refresh-quarterly",
   ]) assert.equal(typeof routeHandlers[route], "function", `${route} is not routed`);
+
+  const savedVercelEnv = process.env.VERCEL_ENV;
+  const savedCronSecret = process.env.CRON_SECRET;
+  process.env.VERCEL_ENV = "production";
+  process.env.CRON_SECRET = "legacy-native-cron-secret";
+  try {
+    const retiredManual = await invokeRoute(routeHandlers["graph-refresh"], {
+      method: "POST",
+      headers: { authorization: "Bearer legacy-native-cron-secret" },
+    });
+    assert.equal(retiredManual.status, 410);
+    const retiredCron = await invokeRoute(routeHandlers["graph-refresh-cron"], {
+      method: "GET",
+      headers: { authorization: "Bearer legacy-native-cron-secret" },
+    });
+    assert.equal(retiredCron.status, 410);
+    for (const route of ["graph-refresh-weekly", "graph-refresh-monthly", "graph-refresh-quarterly"]) {
+      const result = await invokeRoute(routeHandlers[route], {
+        method: "GET",
+        headers: { authorization: "Bearer legacy-native-cron-secret" },
+      });
+      assert.equal(result.status, 401, `${route} must reject CRON_SECRET in production.`);
+    }
+  } finally {
+    if (savedVercelEnv === undefined) delete process.env.VERCEL_ENV;
+    else process.env.VERCEL_ENV = savedVercelEnv;
+    if (savedCronSecret === undefined) delete process.env.CRON_SECRET;
+    else process.env.CRON_SECRET = savedCronSecret;
+  }
 
   const savedUrl = process.env.SUPABASE_URL;
   const savedKey = process.env.SUPABASE_SERVICE_ROLE_KEY;

@@ -2,6 +2,7 @@
 
 const assert = require("node:assert/strict");
 const { authorizeIngestRequest, configuredSecret, configuredSecrets, constantTimeEqual } = require("../lib/ingest-auth");
+const { schedulerDispatchToken } = require("../lib/scheduler-auth");
 const ingestGmail = require("../api/ingest-gmail");
 const ingestWebNews = require("../api/ingest-web-news");
 
@@ -39,28 +40,32 @@ async function run() {
     { headers: { authorization: "Bearer cron-secret" } },
     { INGEST_SHARED_SECRET: "manual-secret", CRON_SECRET: "cron-secret" },
   )).ok, true);
-  const schedulerSecret = "0123456789abcdef0123456789abcdef";
+  const schedulerSecret = "0123456789abcdef".repeat(4);
+  const otherSchedulerSecret = "fedcba9876543210".repeat(4);
+  const testDate = "2026-09-04";
+  const testNow = new Date("2026-09-04T17:00:00.000Z");
+  const schedulerToken = schedulerDispatchToken(schedulerSecret, "ingest-gmail", testDate);
   const scoped = await authorizeIngestRequest(
     { headers: {
-      authorization: `Bearer ${schedulerSecret}`,
+      authorization: `Bearer ${schedulerToken}`,
       "x-physical-ai-scheduler": "v1",
       "x-physical-ai-job": "ingest-gmail",
-      "x-physical-ai-run-key": "ingest-gmail:2026-09-04",
+      "x-physical-ai-run-key": `ingest-gmail:${testDate}`,
     } },
     { PHYSICAL_AI_SCHEDULER_SECRET: schedulerSecret },
-    { schedulerJob: "ingest-gmail" },
+    { schedulerJob: "ingest-gmail", now: testNow },
   );
   assert.equal(scoped.ok, true);
-  assert.equal(scoped.schedulerRunDate, "2026-09-04");
+  assert.equal(scoped.schedulerRunDate, testDate);
   const productionScoped = await authorizeIngestRequest(
     { headers: {
-      authorization: `Bearer ${schedulerSecret}`,
+      authorization: `Bearer ${schedulerToken}`,
       "x-physical-ai-scheduler": "v1",
       "x-physical-ai-job": "ingest-gmail",
-      "x-physical-ai-run-key": "ingest-gmail:2026-09-04",
+      "x-physical-ai-run-key": `ingest-gmail:${testDate}`,
     } },
     { VERCEL_ENV: "production", SUPABASE_URL: "https://project.supabase.co", SUPABASE_SERVICE_ROLE_KEY: "service-key" },
-    { schedulerJob: "ingest-gmail", fetchImpl: async () => ({ ok: true, text: async () => JSON.stringify(schedulerSecret) }) },
+    { schedulerJob: "ingest-gmail", fetchImpl: async () => ({ ok: true, text: async () => JSON.stringify(schedulerSecret) }), now: testNow },
   );
   assert.equal(productionScoped.ok, true);
   const productionCronRejected = await authorizeIngestRequest(
@@ -74,7 +79,7 @@ async function run() {
     {
       VERCEL_ENV: "production",
       INGEST_SHARED_SECRET: "manual-secret",
-      PHYSICAL_AI_SCHEDULER_SECRET: "abcdef0123456789abcdef0123456789",
+      PHYSICAL_AI_SCHEDULER_SECRET: otherSchedulerSecret,
       SUPABASE_URL: "https://project.supabase.co",
       SUPABASE_SERVICE_ROLE_KEY: "service-key",
     },
@@ -109,22 +114,23 @@ async function run() {
       assert.match(result.body.error, /authorization is not configured/i);
     }
     process.env.PHYSICAL_AI_SCHEDULER_SECRET = schedulerSecret;
+    const today = new Date().toISOString().slice(0, 10);
     for (const [handler, job] of [[ingestGmail, "ingest-gmail"], [ingestWebNews, "ingest-web-news"]]) {
       const result = await invoke(handler, {
-        authorization: `Bearer ${schedulerSecret}`,
+        authorization: `Bearer ${schedulerDispatchToken(schedulerSecret, job, today)}`,
         "x-physical-ai-scheduler": "v1",
         "x-physical-ai-job": job,
-        "x-physical-ai-run-key": `${job}:2026-09-04`,
+        "x-physical-ai-run-key": `${job}:${today}`,
       });
       assert.equal(result.status, 503);
       assert.match(result.body.error, /not configured/i);
       assert.ok(Array.isArray(result.body.missingEnv));
     }
     const crossRoute = await invoke(ingestGmail, {
-      authorization: `Bearer ${schedulerSecret}`,
+      authorization: `Bearer ${schedulerDispatchToken(schedulerSecret, "ingest-web-news", today)}`,
       "x-physical-ai-scheduler": "v1",
       "x-physical-ai-job": "ingest-web-news",
-      "x-physical-ai-run-key": "ingest-web-news:2026-09-04",
+      "x-physical-ai-run-key": `ingest-web-news:${today}`,
     });
     assert.equal(crossRoute.status, 401);
   } finally {

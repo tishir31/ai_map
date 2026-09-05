@@ -3,6 +3,7 @@
 const assert = require("node:assert/strict");
 const graph = require("../lib/graph-api");
 const { createScheduledRefreshHandler } = require("../lib/graph-cron-handler");
+const { schedulerDispatchToken } = require("../lib/scheduler-auth");
 const weeklyCron = createScheduledRefreshHandler("weekly");
 const monthlyCron = createScheduledRefreshHandler("monthly");
 const quarterlyCron = createScheduledRefreshHandler("quarterly");
@@ -30,24 +31,26 @@ async function run() {
   assert.equal(quarterlyCron.cadence, "quarterly");
   const originalCronSecret = process.env.CRON_SECRET;
   const originalSchedulerSecret = process.env.PHYSICAL_AI_SCHEDULER_SECRET;
-  const scopedSchedulerSecret = "0123456789abcdef0123456789abcdef";
+  const scopedSchedulerSecret = "0123456789abcdef".repeat(4);
+  const schedulerDate = "2026-09-04";
+  const schedulerNow = new Date("2026-09-04T17:00:00.000Z");
   try {
     delete process.env.CRON_SECRET;
     process.env.PHYSICAL_AI_SCHEDULER_SECRET = scopedSchedulerSecret;
     const schedulerAuthorization = await graph.verifyCron({ headers: {
-      authorization: `Bearer ${scopedSchedulerSecret}`,
+      authorization: `Bearer ${schedulerDispatchToken(scopedSchedulerSecret, "graph-refresh-weekly", schedulerDate)}`,
       "x-physical-ai-scheduler": "v1",
       "x-physical-ai-job": "graph-refresh-weekly",
-      "x-physical-ai-run-key": "graph-refresh-weekly:2026-09-04",
-    } }, "graph-refresh-weekly");
+      "x-physical-ai-run-key": `graph-refresh-weekly:${schedulerDate}`,
+    } }, "graph-refresh-weekly", { now: schedulerNow });
     assert.equal(schedulerAuthorization.provider, "supabase-pg-cron");
     assert.equal(schedulerAuthorization.schedulerRunDate, "2026-09-04");
     await assert.rejects(() => graph.verifyCron({ headers: {
-      authorization: `Bearer ${scopedSchedulerSecret}`,
+      authorization: `Bearer ${schedulerDispatchToken(scopedSchedulerSecret, "graph-refresh-monthly", schedulerDate)}`,
       "x-physical-ai-scheduler": "v1",
       "x-physical-ai-job": "graph-refresh-monthly",
-      "x-physical-ai-run-key": "graph-refresh-monthly:2026-09-04",
-    } }, "graph-refresh-weekly"), /scheduler credential/i);
+      "x-physical-ai-run-key": `graph-refresh-monthly:${schedulerDate}`,
+    } }, "graph-refresh-weekly", { now: schedulerNow }), /scheduler credential/i);
   } finally {
     if (originalCronSecret === undefined) delete process.env.CRON_SECRET;
     else process.env.CRON_SECRET = originalCronSecret;
