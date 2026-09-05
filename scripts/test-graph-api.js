@@ -391,6 +391,58 @@ async function run() {
   assert.equal(cronCalls[0][1], "Bearer secret");
   assert.equal(cronCalls[0][2], "graph-refresh-weekly");
 
+  let failedSequenceAttempt = 0;
+  const failedSequenceHandler = createScheduledRefreshHandler("weekly", {
+    today: () => "2026-09-04",
+    setCors: () => {},
+    verifyCron: () => ({ schedulerRunDate: "2026-09-04" }),
+    getConfig: () => ({ test: true }),
+    runRefresh: async () => {
+      failedSequenceAttempt += 1;
+      if (failedSequenceAttempt === 1) throw new graph.ApiError(502, "Forced first-attempt failure.");
+      return { runId: "run-1", duplicate: true, status: "failed", stagingOnly: true };
+    },
+    sendJson: (_res, status, payload) => ({ status, payload }),
+    sendError: (_res, error) => ({ status: error.status, error: error.message }),
+  });
+  const firstFailedAttempt = await failedSequenceHandler({ method: "GET", headers: {} }, {});
+  assert.equal(firstFailedAttempt.status, 502);
+  const failedDuplicate = await failedSequenceHandler({ method: "GET", headers: {} }, {});
+  assert.equal(failedDuplicate.status, 503, "A duplicate failed refresh must remain retryable.");
+  assert.match(failedDuplicate.error, /failed/);
+
+  const runningDuplicateHandler = createScheduledRefreshHandler("weekly", {
+    today: () => "2026-09-04",
+    setCors: () => {},
+    verifyCron: () => ({ schedulerRunDate: "2026-09-04" }),
+    getConfig: () => ({ test: true }),
+    runRefresh: async () => ({ runId: "run-1", duplicate: true, status: "running", stagingOnly: true }),
+    sendJson: (_res, status, payload) => ({ status, payload }),
+    sendError: (_res, error) => ({ status: error.status, error: error.message }),
+  });
+  const runningDuplicate = await runningDuplicateHandler({ method: "GET", headers: {} }, {});
+  assert.equal(runningDuplicate.status, 503, "A duplicate running refresh must remain retryable.");
+  assert.match(runningDuplicate.error, /running/);
+
+  const completedDuplicateHandler = createScheduledRefreshHandler("weekly", {
+    today: () => "2026-09-04",
+    setCors: () => {},
+    verifyCron: () => ({ schedulerRunDate: "2026-09-04" }),
+    getConfig: () => ({ test: true }),
+    runRefresh: async () => ({
+      runId: "run-1",
+      duplicate: true,
+      status: "completed",
+      stagingOnly: true,
+    }),
+    sendJson: (_res, status, payload) => ({ status, payload }),
+    sendError: (_res, error) => { throw error; },
+  });
+  const completedDuplicate = await completedDuplicateHandler({ method: "GET", headers: {} }, {});
+  assert.equal(completedDuplicate.status, 202);
+  assert.equal(completedDuplicate.payload.result.duplicate, true);
+  assert.equal(completedDuplicate.payload.result.status, "completed");
+
   const searchCalls = [];
   global.fetch = async (input) => {
     const url = new URL(String(input));
