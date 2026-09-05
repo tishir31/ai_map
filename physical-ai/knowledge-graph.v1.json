@@ -9,7 +9,7 @@
       "verified_fact",
       "derived_signal"
     ],
-    "sourceCanonicalPayloadSha256": "58e650c48258788072708ad32db645e7878f523b3ab645f77eb1e953bac3a5e5",
+    "sourceCanonicalPayloadSha256": "a1c3d665368173641c88be94988380e181216b0067c6456c742b4bd5de6a5dbc",
     "counts": {
       "entities": 5485,
       "relationships": 2377,
@@ -26,8 +26,8 @@
       "minYear": 1967,
       "maxYear": 2026
     },
-    "publicProjectionSha256": "ea8d17c18afa234ec76e36524b3683b60d34f67810305bd67277a512e201017b",
-    "canonicalPayloadSha256": "ea8d17c18afa234ec76e36524b3683b60d34f67810305bd67277a512e201017b"
+    "publicProjectionSha256": "a903c6869525be743fcbb63ba7d03d7fe31da773061b1eaf80775612ef27cafc",
+    "canonicalPayloadSha256": "a903c6869525be743fcbb63ba7d03d7fe31da773061b1eaf80775612ef27cafc"
   },
   "entities": [
     {
@@ -212356,12 +212356,12 @@
       "id": "SRC-0768",
       "url": "https://news.bloomberglaw.com/private-equity/alibaba-backed-robot-firm-seeks-3-billion-value-in-new-funding",
       "publisher": "Bloomberg Law",
-      "tier": "primary",
+      "tier": "secondary",
       "locator": "Dexmal was seeking a valuation of about $3 billion in ongoing fundraising talks; the source did not report a completed financing.",
       "retrievedAt": "2026-09-02",
       "stance": "supports",
       "snapshotStatus": "metadata_only",
-      "contentHash": "03c88e8f8b46cd912b263136978b5bc2b6a4127b61c72b342b0ffaed56e55dd1"
+      "contentHash": "79f6a9cb90ceddd926ded068e3df959de1616969c0cd78494d096d89f62813b5"
     },
     {
       "id": "SRC-0770",
