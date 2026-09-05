@@ -9,25 +9,25 @@
       "verified_fact",
       "derived_signal"
     ],
-    "sourceCanonicalPayloadSha256": "3ae487275180fdb26d17dc37b6b09235af2b330f04f4d52d3f40ec9c879febe7",
+    "sourceCanonicalPayloadSha256": "58e650c48258788072708ad32db645e7878f523b3ab645f77eb1e953bac3a5e5",
     "counts": {
-      "entities": 5486,
+      "entities": 5485,
       "relationships": 2377,
-      "evidence": 2428,
-      "facts": 512,
+      "evidence": 2426,
+      "facts": 511,
       "authorMentions": 0,
       "collections": 5,
-      "redirects": 1,
+      "redirects": 2,
       "people": 2785,
-      "companies": 769,
+      "companies": 768,
       "papers": 1481,
       "ideas": 7,
       "artifacts": 36,
       "minYear": 1967,
       "maxYear": 2026
     },
-    "publicProjectionSha256": "dbd5a73519c0e9b982d6cf07ee289b056e20cf69eb2c168ef2b3b18722f22568",
-    "canonicalPayloadSha256": "dbd5a73519c0e9b982d6cf07ee289b056e20cf69eb2c168ef2b3b18722f22568"
+    "publicProjectionSha256": "ea8d17c18afa234ec76e36524b3683b60d34f67810305bd67277a512e201017b",
+    "canonicalPayloadSha256": "ea8d17c18afa234ec76e36524b3683b60d34f67810305bd67277a512e201017b"
   },
   "entities": [
     {
@@ -8066,7 +8066,7 @@
           "ENT-0655"
         ],
         "sourceUrls": [
-          "https://news.google.com/rss/articles/CBMiU0FVX3lxTFBvQ25oY3NXdlMzOGllWnVTRE5lV3hCa0lzcFpoLXUwTGVfdUFwQXlFVFlzN0ExcmlhMjhieGhxUkpVNkRIRmp1d0FyOWJTMjRaQk1F"
+          "https://ablelabsinc.com/news?bmode=view&category=L4PksJo54n&idx=173585100&q=YToxOntzOjEyOiJrZXl3b3JkX3R5cGUiO3M6MzoiYWxsIjt9&t=board"
         ],
         "themes": [
           "Embodiment & Integrated Systems"
@@ -8079,7 +8079,7 @@
       "verificationStatus": "verified",
       "description": "Tracked in the Embodiment & Integrated Systems theme; classified as industrial automation.",
       "evidenceIds": [
-        "SRC-2065"
+        "SRC-4461"
       ]
     },
     {
@@ -12904,7 +12904,7 @@
           "ENT-0779"
         ],
         "sourceUrls": [
-          "https://news.google.com/rss/articles/CBMiwAFBVV95cUxNRi03bWhjeFVxZ3FLX1NIbHBDN0IyVkdIdGt3WnhTU0w2VW5vOEN4dEUxQURzREJFek5OMFdBdEc4QUptNjlzaUdiaWZaTjVKSTlteFQ0a2ZZNmlsNFFuZGx0Yjl0YkZBaGlDWHozS3hZenhfY2YzR3JvUEN0eEpHZUVMWFVkRmx3LWNNejJLeDRVWWZqRGdTdlhibkxVNjB5aVdhcU9vRlpYRnR0RjFzVEVad2I3bzFRMEt5YWlRUl8"
+          "https://news.bloomberglaw.com/private-equity/alibaba-backed-robot-firm-seeks-3-billion-value-in-new-funding"
         ],
         "themes": [
           "Unclassified / review"
@@ -12917,7 +12917,7 @@
       "verificationStatus": "verified",
       "description": "Tracked in the Unclassified / review theme; classified as robotics.",
       "evidenceIds": [
-        "SRC-2217"
+        "SRC-4462"
       ]
     },
     {
@@ -14210,7 +14210,7 @@
           "ENT-0812"
         ],
         "sourceUrls": [
-          "https://news.google.com/rss/articles/CBMisgFBVV95cUxQSnNERUE3ZUlwdlZwNHVuZzVBVkE2alZHTGIyRUJWNEtsMndDV2lSWGxNMUoxS3lURXE4VlNGREpURWhUc3dzSkZYWFNQNU94eDNGOHNXVFVldVRtWjVwcTBJdEMyNWZMWTFndXlIMl9CdnNRTWNCd1owZmxUZUN3WThGdWJidHc3am1RNzlmZ0lMWlRHWGd3cmxwM19hQXFYOEdqNnJFSDhQN1N2QmxQdXNn"
+          "https://www.newswire.com/news/enigma-raises-71-million-seed-round-with-a-new-game-plan-for-ai-and-robots"
         ],
         "themes": [
           "Unclassified / review"
@@ -14223,7 +14223,7 @@
       "verificationStatus": "verified",
       "description": "Tracked in the Unclassified / review theme; classified as robotics.",
       "evidenceIds": [
-        "SRC-2261"
+        "SRC-4463"
       ]
     },
     {
@@ -16120,7 +16120,7 @@
           "ENT-0860"
         ],
         "sourceUrls": [
-          "https://news.google.com/rss/articles/CBMiiwFBVV95cUxNWVVpT3pjbnlLOVJYU0tsM0YyQXpEdHVrM1hjWFdMNERDa2NXT3dvM0FYSFVGdmRTbDNVX3VBeW9USGstcFRaQ1RZa1F3X0pwanhtVHVCT0hnaHJVQ1J5U1F6UHY5bWlvYi01SWFLZ2JhbW0xbU5hSW9UM290cG9aV0gwV2pCdndSeUJj"
+          "https://www.gravisrobotics.com/series-a"
         ],
         "themes": [
           "Embodiment & Integrated Systems"
@@ -16133,7 +16133,7 @@
       "verificationStatus": "verified",
       "description": "Tracked in the Embodiment & Integrated Systems theme; classified as industrial automation.",
       "evidenceIds": [
-        "SRC-2321"
+        "SRC-4464"
       ]
     },
     {
@@ -16270,7 +16270,7 @@
           "ENT-0864"
         ],
         "sourceUrls": [
-          "https://news.google.com/rss/articles/CBMib0FVX3lxTE9UU0YyajJYTk41UkxOZ3hBQWtwZ20xbU1ia1ZDNEp1cmVFTWRXc01YYkh5SlQyQmVTWVhPQkVTWnMzTktaaGQ2STA5NHJIa1VXekYzNlJNTVFfOU13QVpKamVqT3BpM1dWR0pYOE56a9IBdEFVX3lxTE1sQVR4UTFUWVVCal9aS1RKaVI3NlBVR29VbHV2d1VxM0RvMUFDRFNaUUljS09WZWprLTZpWUpuQjBxeDFKbmF0aHpvMjJab0ZDeDlyelNNZ205b3lrLXE5dTlmT2lMRndqbXlmbXU5c2RJeU9z"
+          "https://www.greyparrot.ai/series-b"
         ],
         "themes": [
           "Unclassified / review"
@@ -16283,7 +16283,7 @@
       "verificationStatus": "verified",
       "description": "Tracked in the Unclassified / review theme; classified as embodied AI.",
       "evidenceIds": [
-        "SRC-2325"
+        "SRC-4465"
       ]
     },
     {
@@ -16306,7 +16306,7 @@
           "ENT-0865"
         ],
         "sourceUrls": [
-          "https://news.google.com/rss/articles/CBMiyAFBVV95cUxPYXhhTVlrYnJLTzA0RF9GeTFwYWFPZ2d4Y3NOTm52V3d6VGx1Tng4YVB6dDZSOUdxY1c2cnAyeHJ6N085NTlidlBIV1l6OFctY3JXSUI5Y0NGUnlyYXdTYjkwYWgyWl9MRWJITGxEejE0ZmpYSG53eUVKamZBU0FDT0lIVDFKQzc0WHpaTTlBazVRV0l6X0otMmZLc0pfZUc3MjVjVlZvRnd5N0sxSmt3REhtWEVfYzZpaUJZMnljNUQyQTBLQnhOXw"
+          "https://www.gritt.ai/news/gritt-launches-physical-ai"
         ],
         "themes": [
           "Embodiment & Integrated Systems"
@@ -16319,7 +16319,7 @@
       "verificationStatus": "verified",
       "description": "Tracked in the Embodiment & Integrated Systems theme; classified as industrial automation.",
       "evidenceIds": [
-        "SRC-2326"
+        "SRC-4466"
       ]
     },
     {
@@ -18674,7 +18674,7 @@
           "ENT-0927"
         ],
         "sourceUrls": [
-          "https://news.google.com/rss/articles/CBMilwFBVV95cUxPNlpOZ3kwVURXdFpaN0JpTnJjWDA0R2t5QzZ0bGNNVG5ISjBKS1pWWS1NdVNFQnp1OVZUZ1lUX08ta1BwMUNfQlVXQkVrc0F2dEFFakZLQ1dPLUJKclBsZE9GOWdEN2pxYkd1SzA3UXJkQlhYakFLYU9sV2JTdHMxeWxvR05sUGJWZGQzVTh0WVE5ejE0MVI0"
+          "https://krakentechnology.com/articles/kraken-technology-group-raises-160m-at-1bn-valuation"
         ],
         "themes": [
           "Embodiment & Integrated Systems"
@@ -18687,7 +18687,7 @@
       "verificationStatus": "verified",
       "description": "Tracked in the Embodiment & Integrated Systems theme; classified as autonomous vehicles.",
       "evidenceIds": [
-        "SRC-2387"
+        "SRC-4467"
       ]
     },
     {
@@ -23180,7 +23180,7 @@
           "ENT-1039"
         ],
         "sourceUrls": [
-          "https://news.google.com/rss/articles/CBMi0wFBVV95cUxNSUluakZaSGxLMjhfNlBZRUhjelpjdXFiSTJLVURTUk42SS03YUNRU3hyMXdtVnpxQms3bHN1S05kbkg4MmxsQW4zSHJXbjBheW9Qdmd4UlhzRTBiNDZkUkcxb3o5MDNjRl9Xc1Q3TkxoOEFzSkJqajA4LUp6TF9ZOHNqQnVuVFZpUUlOcHVyekNWN0hEZExFWG1ScElEekxXOHF1cHdrUFF0cFBUdVV5S1liY0tZdWh6ZUFwOG9wY1YzMUxtZGZNaTcyR3NrcUF5TVJR"
+          "https://www.utahbusiness.com/press-releases/2026/08/13/peppy-secures-pre-seed-funding-build-coding-platform-humanoid-robotics-ai"
         ],
         "themes": [
           "Embodiment & Integrated Systems"
@@ -23193,7 +23193,7 @@
       "verificationStatus": "verified",
       "description": "Tracked in the Embodiment & Integrated Systems theme; classified as humanoids.",
       "evidenceIds": [
-        "SRC-2522"
+        "SRC-4468"
       ]
     },
     {
@@ -23314,7 +23314,7 @@
           "ENT-1043"
         ],
         "sourceUrls": [
-          "https://news.google.com/rss/articles/CBMiekFVX3lxTE0xMlp2OTFMb1lVTDFCV1NrWmotWXVRQXc5VElNdVFEZmJ3ZnI5ZmZwZDJsa0ZmU040cXduQ2xaajNMUHYzdmZlOHk5ZVlKYlpVSmQwUEY3YWZsWlphMGFYNXBzdTA4NGR2XzdRYjBoNjFuTmhhOHEzdU1B"
+          "https://www.prnewswire.com/news-releases/introducing-physical-superintelligence-the-worlds-most-advanced-physics-lab-staffed-by-virtual-physicists-to-discover-new-laws-of-the-universe-302865561.html"
         ],
         "themes": [
           "Unclassified / review"
@@ -23327,7 +23327,7 @@
       "verificationStatus": "verified",
       "description": "Tracked in the Unclassified / review theme; classified as robotics.",
       "evidenceIds": [
-        "SRC-2529"
+        "SRC-4469"
       ]
     },
     {
@@ -24892,7 +24892,7 @@
           "ENT-1082"
         ],
         "sourceUrls": [
-          "https://news.google.com/rss/articles/CBMiowFBVV95cUxPVWFEUnMzcHB1N1gtaEszRXFFQ0JyWDJWeW9ReWg3ZF9uOTJxM3ZRbnVsNTRwRDZaNEFlYno4OHY1R2luOWsyY1hXNGZBOVI1NWRvVlZLdk81U2xfZTBqanE2RTdtSnB2cDVtV0JvLVRVaDhvZHhBb1JBdUJhUjlZSGpEUy03VExGRjhjVzhzRk5RRFlnT3llWkdpSHRMRVRSd1c4"
+          "https://www.businesswire.com/news/home/20260831532459/en"
         ],
         "themes": [
           "Unclassified / review"
@@ -24905,7 +24905,7 @@
       "verificationStatus": "verified",
       "description": "Tracked in the Unclassified / review theme; classified as robotics.",
       "evidenceIds": [
-        "SRC-2574"
+        "SRC-4470"
       ]
     },
     {
@@ -28721,7 +28721,7 @@
           "ENT-1177"
         ],
         "sourceUrls": [
-          "https://news.google.com/rss/articles/CBMilwFBVV95cUxNR2FnTHFsbDE4RS10MVJMSXNNZUs4VEtST2ZhSDJWamhsLUJQTmZzWTZ5aEV1Rk5BeDBTcVlrdkp4eEhBMDI3cVhzSHp0NTRtcGZuMUUtSEx1Y1k1c2Iwb1VWVFE3M2taQkM3YjZUT01jd3FTMlVTQ3hfb0lPMklOekdFbENVZE03eXNsWFpSeVM1aE95U1dZ"
+          "https://www.transfyr.ai/news/transfyr-launches-physical-ai-platform-for-science-with-usd25m-seed-funding"
         ],
         "themes": [
           "Unclassified / review"
@@ -28734,7 +28734,7 @@
       "verificationStatus": "verified",
       "description": "Tracked in the Unclassified / review theme; classified as embodied AI.",
       "evidenceIds": [
-        "SRC-2692"
+        "SRC-4471"
       ]
     },
     {
@@ -30004,7 +30004,7 @@
           "ENT-1209"
         ],
         "sourceUrls": [
-          "https://news.google.com/rss/articles/CBMinAFBVV95cUxPbHFuZ2NRaXhzZ2dxZ3ViQmJoTjBQQ2Q2YUFGUzdZTTNvSVRaRUI4WmVYSnpUTnRYRmdvRVNkVExTSGxCZUloZTlZZTNhUG5MSGNlU2pHY0F6ZXItYmlBR2NKMWducEtWM1paWFAwS00xM2VERFNud2IxWTNaOHNsZVlJd2lOanQ1UFpJME5pZm9DQlFVU3Jfb3VIZXU"
+          "https://www.warpify.ai/blog-posts/warpify-pre-a-funding-zhongguancun-zhongnuo-fund"
         ],
         "themes": [
           "Unclassified / review"
@@ -30017,7 +30017,7 @@
       "verificationStatus": "verified",
       "description": "Tracked in the Unclassified / review theme; classified as robotics.",
       "evidenceIds": [
-        "SRC-2732"
+        "SRC-4472"
       ]
     },
     {
@@ -30394,7 +30394,7 @@
           "ENT-1219"
         ],
         "sourceUrls": [
-          "https://news.google.com/rss/articles/CBMia0FVX3lxTFB4RHBBQ0pDREN6aVFYU3RwX1cyTEhJN3g2dDVQS0Q4OFBSeThrQU56ZHlpUUQxWW9OY1ZFNTA2QXFBdEtkb3lsM0dEaUlybzhoWmxmNlBwRVAwSEIwekhkZFFRQVg3eFZ2QlRz"
+          "https://www.xpeng.com/pressroom/news/01a03797fccda01e0de68a02a256006a"
         ],
         "themes": [
           "Embodiment & Integrated Systems"
@@ -30407,7 +30407,7 @@
       "verificationStatus": "verified",
       "description": "Tracked in the Embodiment & Integrated Systems theme; classified as humanoids.",
       "evidenceIds": [
-        "SRC-2749"
+        "SRC-4473"
       ]
     },
     {
@@ -30445,44 +30445,6 @@
       "description": "Tracked in the Embodiment & Integrated Systems theme; classified as Humanoid robots.",
       "evidenceIds": [
         "SRC-2750"
-      ]
-    },
-    {
-      "id": "ENT-1221",
-      "typedId": "ORG-0846",
-      "kind": "company",
-      "subtype": "Operating Company",
-      "canonicalName": "XPENG's humanoid robotics unit",
-      "displayName": "XPENG's humanoid robotics unit",
-      "aliases": [
-        "Xpeng Robotics Unit"
-      ],
-      "externalIds": {
-        "legacyRecord": "UNI-0663",
-        "universeIds": [
-          "UNI-0663"
-        ],
-        "vercelCompanyIds": [
-          "c-xpeng-s-humanoid-robotics-unit"
-        ],
-        "discoveryEntityIds": [
-          "ENT-1221"
-        ],
-        "sourceUrls": [
-          "https://news.google.com/rss/articles/CBMi1AFBVV95cUxQVzlPOERmR1JKMVdxWWE4d0VjWUZFNE85bzRNWlpvRWFkV0ZWMjd4eGV4OTRrYzJxTzZ2eTdqSmxoaDByel8tN0FRTW92YmxpRTBhQllkU2tQelF6QWVuZHE4cFpobHVZcGRMNVJHM2dTNjlOUzNkYTZxeDZiN1JKdDd0WlM0VFFYMjVjZEZnVTM0ZWdUU0R0M2ZoQ1dfWE1LUlYxbWFqVEhMMXp2NTVKYzRLUzF6OU1EVGo4VHlPYU85OXA1b0ZCRlNnT1QxaFpSMnRUdQ"
-        ],
-        "themes": [
-          "Embodiment & Integrated Systems"
-        ],
-        "geographies": [
-          "N/A"
-        ]
-      },
-      "lifecycleStatus": "unknown",
-      "verificationStatus": "verified",
-      "description": "Tracked in the Embodiment & Integrated Systems theme; classified as humanoids.",
-      "evidenceIds": [
-        "SRC-2751"
       ]
     },
     {
@@ -212040,14 +212002,14 @@
     },
     {
       "id": "SRC-0555",
-      "url": "https://news.google.com/rss/articles/CBMiU0FVX3lxTFBvQ25oY3NXdlMzOGllWnVTRE5lV3hCa0lzcFpoLXUwTGVfdUFwQXlFVFlzN0ExcmlhMjhieGhxUkpVNkRIRmp1d0FyOWJTMjRaQk1F",
-      "publisher": "news.google.com",
-      "tier": "primary",
-      "locator": "Public activity evidence for ABLE Labs",
+      "url": "https://ablelabsinc.com/news?bmode=view&category=L4PksJo54n&idx=173585100&q=YToxOntzOjEyOiJrZXl3b3JkX3R5cGUiO3M6MzoiYWxsIjt9&t=board",
+      "publisher": "ABLE Labs",
+      "tier": "official",
+      "locator": "ABLE Labs announced a KRW 12.1 billion Series A; the company source did not disclose a USD amount.",
       "retrievedAt": "2026-09-02",
       "stance": "supports",
       "snapshotStatus": "metadata_only",
-      "contentHash": "cdbf0bee6e6f5b29e6ac6b3d1e585729a1c287735de3c2045e28f5b606555ccf"
+      "contentHash": "e1aca2003d476f3368ad0595c6d8fda293b007864e11b35d37cc392d9efc8557"
     },
     {
       "id": "SRC-0575",
@@ -212392,14 +212354,14 @@
     },
     {
       "id": "SRC-0768",
-      "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxNRi03bWhjeFVxZ3FLX1NIbHBDN0IyVkdIdGt3WnhTU0w2VW5vOEN4dEUxQURzREJFek5OMFdBdEc4QUptNjlzaUdiaWZaTjVKSTlteFQ0a2ZZNmlsNFFuZGx0Yjl0YkZBaGlDWHozS3hZenhfY2YzR3JvUEN0eEpHZUVMWFVkRmx3LWNNejJLeDRVWWZqRGdTdlhibkxVNjB5aVdhcU9vRlpYRnR0RjFzVEVad2I3bzFRMEt5YWlRUl8",
-      "publisher": "news.google.com",
+      "url": "https://news.bloomberglaw.com/private-equity/alibaba-backed-robot-firm-seeks-3-billion-value-in-new-funding",
+      "publisher": "Bloomberg Law",
       "tier": "primary",
-      "locator": "Public activity evidence for Dexmal",
+      "locator": "Dexmal was seeking a valuation of about $3 billion in ongoing fundraising talks; the source did not report a completed financing.",
       "retrievedAt": "2026-09-02",
       "stance": "supports",
       "snapshotStatus": "metadata_only",
-      "contentHash": "b71db59d7d8b1d459c1015b85d9c977c5ab90f57ccecf703b77ffb56b404209f"
+      "contentHash": "03c88e8f8b46cd912b263136978b5bc2b6a4127b61c72b342b0ffaed56e55dd1"
     },
     {
       "id": "SRC-0770",
@@ -212480,14 +212442,14 @@
     },
     {
       "id": "SRC-0814",
-      "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQSnNERUE3ZUlwdlZwNHVuZzVBVkE2alZHTGIyRUJWNEtsMndDV2lSWGxNMUoxS3lURXE4VlNGREpURWhUc3dzSkZYWFNQNU94eDNGOHNXVFVldVRtWjVwcTBJdEMyNWZMWTFndXlIMl9CdnNRTWNCd1owZmxUZUN3WThGdWJidHc3am1RNzlmZ0lMWlRHWGd3cmxwM19hQXFYOEdqNnJFSDhQN1N2QmxQdXNn",
-      "publisher": "news.google.com",
+      "url": "https://www.newswire.com/news/enigma-raises-71-million-seed-round-with-a-new-game-plan-for-ai-and-robots",
+      "publisher": "Newswire",
       "tier": "primary",
-      "locator": "Public activity evidence for Enigma",
+      "locator": "Enigma announced a $71 million seed round on July 27, 2026.",
       "retrievedAt": "2026-09-02",
       "stance": "supports",
       "snapshotStatus": "metadata_only",
-      "contentHash": "700f1755caf584921d05234a59dd0db3392e330c4fb18e1c8e7dad23ab6cb59a"
+      "contentHash": "883503eb3386b030bc8e91ccf09fca60a35d623ca90010a4e84f3f93623854d3"
     },
     {
       "id": "SRC-0819",
@@ -212623,14 +212585,14 @@
     },
     {
       "id": "SRC-0894",
-      "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxNWVVpT3pjbnlLOVJYU0tsM0YyQXpEdHVrM1hjWFdMNERDa2NXT3dvM0FYSFVGdmRTbDNVX3VBeW9USGstcFRaQ1RZa1F3X0pwanhtVHVCT0hnaHJVQ1J5U1F6UHY5bWlvYi01SWFLZ2JhbW0xbU5hSW9UM290cG9aV0gwV2pCdndSeUJj",
-      "publisher": "news.google.com",
+      "url": "https://www.gravisrobotics.com/series-a",
+      "publisher": "Gravis Robotics",
       "tier": "primary",
-      "locator": "Public activity evidence for Gravis Robotics",
+      "locator": "Gravis Robotics announced its Series A financing.",
       "retrievedAt": "2026-09-02",
       "stance": "supports",
       "snapshotStatus": "metadata_only",
-      "contentHash": "33350f55a1d4675a54cb642070e51d74c8d6db3176ed6e6a55539564c08b5f34"
+      "contentHash": "82ff1d12eb148bcea28fbc2e33ddf34779528b4dd260ed145693e5bdad365333"
     },
     {
       "id": "SRC-0899",
@@ -212645,25 +212607,25 @@
     },
     {
       "id": "SRC-0901",
-      "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxNeWZnVFN6RGU4Ml9vWFpCa2JaYUs5djNfMVE3dkhlLVhSMVdKTzZfa1RJdW1LTGhlUnVqUjk3RFQ4WkhMcTRiNjRDWU1lOUxzekdRRUpNQXNORDRWeVdFNUhaZ2dacmx6bV9UbHRXRnBxb2xGbFZXVGhmcmZTQmpHM2FMM2ZSZlktYUs5ZmlUaTBUTjEtTWZ2a0w5MWdVWWZQMGhXbVdlN3k4OVdJTm5B",
-      "publisher": "news.google.com",
+      "url": "https://www.greyparrot.ai/series-b",
+      "publisher": "Greyparrot",
       "tier": "primary",
-      "locator": "Public activity evidence for Greyparrot",
+      "locator": "Greyparrot announced its Series B financing.",
       "retrievedAt": "2026-09-02",
       "stance": "supports",
       "snapshotStatus": "metadata_only",
-      "contentHash": "f1e48db11193551801756c960344bb1a0706b40f4337839644a50d749a03bc40"
+      "contentHash": "0efd89d4319f370f7227361824be23340b249c715a72917bbbe04c804aff5906"
     },
     {
       "id": "SRC-0902",
-      "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxPYXhhTVlrYnJLTzA0RF9GeTFwYWFPZ2d4Y3NOTm52V3d6VGx1Tng4YVB6dDZSOUdxY1c2cnAyeHJ6N085NTlidlBIV1l6OFctY3JXSUI5Y0NGUnlyYXdTYjkwYWgyWl9MRWJITGxEejE0ZmpYSG53eUVKamZBU0FDT0lIVDFKQzc0WHpaTTlBazVRV0l6X0otMmZLc0pfZUc3MjVjVlZvRnd5N0sxSmt3REhtWEVfYzZpaUJZMnljNUQyQTBLQnhOXw",
-      "publisher": "news.google.com",
+      "url": "https://www.gritt.ai/news/gritt-launches-physical-ai",
+      "publisher": "Gritt",
       "tier": "primary",
-      "locator": "Public activity evidence for Gritt",
+      "locator": "Gritt announced $32.4 million of aggregate pre-seed and Series A financing on July 21, 2026.",
       "retrievedAt": "2026-09-02",
       "stance": "supports",
       "snapshotStatus": "metadata_only",
-      "contentHash": "feec50d87dbcd3136a281c4e690cda68efaa52e6dce79b11720f4d2c3753e0ae"
+      "contentHash": "f6a5ab4ba86ba175c8f440c3026745de11db18217bf138a18f992c715460235a"
     },
     {
       "id": "SRC-0904",
@@ -212744,14 +212706,14 @@
     },
     {
       "id": "SRC-0933",
-      "url": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxOQ1VROGdUb3BVVkdrUkVleU50TkhNY0dpMDlNSV9CTENBZ2hPOG5zQVJXcFJld2xZaExLbG5PMmFGMDFRMXpzakJERnlhaC1iRnF2bGQ0V2o2NXFFR2h5TGd0U2syUk1xRUJMbFpJMklxcnQ3NW9aZHc3Qjg1RC15a2hpcVdpMEp3cjlpckZKQlc3bEltd0lZVlhnUk9TZEh5VzA2RDBLNEcySjUzSTg2bXYwMHNhM2xTaGFVcVMwbV9uWmIwNVdSNlhnTnFfV2Fq",
-      "publisher": "news.google.com",
+      "url": "https://thehumanoid.ai/humanoid-raises-152-million-at-1-35-billion-post-money-valuation-becoming-europes-first-pure-play-humanoid-robotics-unicorn",
+      "publisher": "Humanoid",
       "tier": "primary",
-      "locator": "Public activity evidence for Humanoid",
+      "locator": "Humanoid announced its Series A financing and post-money valuation.",
       "retrievedAt": "2026-09-02",
       "stance": "supports",
       "snapshotStatus": "metadata_only",
-      "contentHash": "abdf6d2b88c4be3add217f47759bc19a10ad5b3ccf8d1f61dccf2772c99b5ea3"
+      "contentHash": "07cc9c87cd8e393613916be457afdbc922f35f3324f2a31237af4196cf89aae3"
     },
     {
       "id": "SRC-0939",
@@ -213052,14 +213014,14 @@
     },
     {
       "id": "SRC-1172",
-      "url": "https://news.google.com/rss/articles/CBMiekFVX3lxTE0xMlp2OTFMb1lVTDFCV1NrWmotWXVRQXc5VElNdVFEZmJ3ZnI5ZmZwZDJsa0ZmU040cXduQ2xaajNMUHYzdmZlOHk5ZVlKYlpVSmQwUEY3YWZsWlphMGFYNXBzdTA4NGR2XzdRYjBoNjFuTmhhOHEzdU1B",
-      "publisher": "news.google.com",
+      "url": "https://www.prnewswire.com/news-releases/introducing-physical-superintelligence-the-worlds-most-advanced-physics-lab-staffed-by-virtual-physicists-to-discover-new-laws-of-the-universe-302865561.html",
+      "publisher": "PR Newswire",
       "tier": "primary",
-      "locator": "Public activity evidence for Physical Superintelligence",
+      "locator": "Physical Superintelligence announced its seed financing.",
       "retrievedAt": "2026-09-02",
       "stance": "supports",
       "snapshotStatus": "metadata_only",
-      "contentHash": "36ba612164cb0f6599e62e45d28b86d3bb637985d7dc6915b05f4558e96f5012"
+      "contentHash": "73e377c457a546782ccbf5de53b4fa180642b0e311b945fee668ee85df1634d5"
     },
     {
       "id": "SRC-1177",
@@ -213173,14 +213135,14 @@
     },
     {
       "id": "SRC-1234",
-      "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxPVWFEUnMzcHB1N1gtaEszRXFFQ0JyWDJWeW9ReWg3ZF9uOTJxM3ZRbnVsNTRwRDZaNEFlYno4OHY1R2luOWsyY1hXNGZBOVI1NWRvVlZLdk81U2xfZTBqanE2RTdtSnB2cDVtV0JvLVRVaDhvZHhBb1JBdUJhUjlZSGpEUy03VExGRjhjVzhzRk5RRFlnT3llWkdpSHRMRVRSd1c4",
-      "publisher": "news.google.com",
+      "url": "https://www.businesswire.com/news/home/20260831532459/en",
+      "publisher": "Business Wire",
       "tier": "primary",
-      "locator": "Public activity evidence for Reframe Systems",
+      "locator": "Reframe Systems announced additional venture financing.",
       "retrievedAt": "2026-09-02",
       "stance": "supports",
       "snapshotStatus": "metadata_only",
-      "contentHash": "0f31e5707fbb7cfe3e355dad0b9e6d80813bc01036e222cb1946403fd95dd8cb"
+      "contentHash": "ec4f501be510dfaa245e9cc48b00ec4103ff9473516bb37f96079d5c8c5a00dd"
     },
     {
       "id": "SRC-1236",
@@ -213503,14 +213465,14 @@
     },
     {
       "id": "SRC-1393",
-      "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxQT3ZIQVVvSTlZdzBoUGo3ajdUNUhSZzhwbXhvQ1g3bDJvOTM0eFJTckxTajF4dGJJZlZwSW9PN1FGQlNXYTZBNzBISEdFWUpsVXdIWUtjMVgweThSTVNJQVhsTDZwUm5oMFRMZDQxb2FtNC0tUjNTSFF1SHFaRXNlNlNleFJWOXdxMVBEdzBoSU5QUUhOYk9iajVlaVUyelduOFJ0OVJQbEhQUWwyd213eVNXTThrWHc",
-      "publisher": "news.google.com",
+      "url": "https://www.transfyr.ai/news/transfyr-launches-physical-ai-platform-for-science-with-usd25m-seed-funding",
+      "publisher": "Transfyr",
       "tier": "primary",
-      "locator": "Public activity evidence for Transfyr",
+      "locator": "Transfyr announced its $25 million seed financing.",
       "retrievedAt": "2026-09-02",
       "stance": "supports",
       "snapshotStatus": "metadata_only",
-      "contentHash": "203ff6f69e3dad071320de3c65c9cec0fcb16f31695d412358f60ba49d0ba9d4"
+      "contentHash": "3e137bc14d266a9a3057fe708068d6cdb5e0e9ea4f1b4bc5e6ea83ca2c59e387"
     },
     {
       "id": "SRC-1397",
@@ -213569,14 +213531,14 @@
     },
     {
       "id": "SRC-1429",
-      "url": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE1BTlVVcXo0aFNKck02Tjc1RWVGWXlJRnRrcVVmRHFtT09BLVppdHJUZ1NOZU40QUl6ZWxZdURYb19yNTBIdzNUNmRoZ0VkUTNJWTdJ",
-      "publisher": "news.google.com",
-      "tier": "primary",
-      "locator": "Public activity evidence for Veeda AI",
+      "url": "https://www.therecursive.com/ex-nvidia-stars-from-slovenia-raise-90m-to-build-the-matrix-for-robots",
+      "publisher": "The Recursive",
+      "tier": "secondary",
+      "locator": "The Recursive reported on August 24, 2026 that Veeda AI raised over $90 million.",
       "retrievedAt": "2026-09-02",
       "stance": "supports",
       "snapshotStatus": "metadata_only",
-      "contentHash": "3de3f8e0c39293568fc8b4e10578151deb7c7f6d4da0fbd61f7dd2ae6fac88cc"
+      "contentHash": "3cbbd95b2714370f92c879a045f45d2a441dd9262e011f8aba440dbf88ad0e9a"
     },
     {
       "id": "SRC-1437",
@@ -213645,26 +213607,15 @@
       "contentHash": "21deef9b39ffed27c7b898a70d360ce9f48362602d5b7bfb1f75e5bfa7857680"
     },
     {
-      "id": "SRC-1473",
-      "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTFB4RHBBQ0pDREN6aVFYU3RwX1cyTEhJN3g2dDVQS0Q4OFBSeThrQU56ZHlpUUQxWW9OY1ZFNTA2QXFBdEtkb3lsM0dEaUlybzhoWmxmNlBwRVAwSEIwekhkZFFRQVg3eFZ2QlRz",
-      "publisher": "news.google.com",
-      "tier": "primary",
-      "locator": "Public activity evidence for XPENG",
-      "retrievedAt": "2026-09-02",
-      "stance": "supports",
-      "snapshotStatus": "metadata_only",
-      "contentHash": "d9592af874bf713246c8c3612d6ebab42de88b9ae114dc4d38bd316db8284cd9"
-    },
-    {
       "id": "SRC-1475",
-      "url": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxQVzlPOERmR1JKMVdxWWE4d0VjWUZFNE85bzRNWlpvRWFkV0ZWMjd4eGV4OTRrYzJxTzZ2eTdqSmxoaDByel8tN0FRTW92YmxpRTBhQllkU2tQelF6QWVuZHE4cFpobHVZcGRMNVJHM2dTNjlOUzNkYTZxeDZiN1JKdDd0WlM0VFFYMjVjZEZnVTM0ZWdUU0R0M2ZoQ1dfWE1LUlYxbWFqVEhMMXp2NTVKYzRLUzF6OU1EVGo4VHlPYU85OXA1b0ZCRlNnT1QxaFpSMnRUdQ",
-      "publisher": "news.google.com",
+      "url": "https://www.xpeng.com/pressroom/news/01a03797fccda01e0de68a02a256006a",
+      "publisher": "XPENG",
       "tier": "primary",
-      "locator": "Public activity evidence for XPENG's humanoid robotics unit",
+      "locator": "XPENG announced financing for its robotics business.",
       "retrievedAt": "2026-09-02",
       "stance": "supports",
       "snapshotStatus": "metadata_only",
-      "contentHash": "fe75bd793f90398e11051ce54000bac02f1b3df100097e16eb2ac63b31d106fb"
+      "contentHash": "5f3b0c026769d8243ea726da40ba28210b75c888c805ecc3467a29b4a22b7194"
     },
     {
       "id": "SRC-1491",
@@ -213676,17 +213627,6 @@
       "stance": "supports",
       "snapshotStatus": "metadata_only",
       "contentHash": "60b73a17d2324dd738bc3646f2a86558d68a74913c7dcd1aeb93c595c55652da"
-    },
-    {
-      "id": "SRC-1495",
-      "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxPZXBINzFQZURyd3RqaWE1UjJkMXVGTF81bnBEN3lxdkpaWktMNGJpT3IxYl9ZUjJkc29JaVNoTUp1OGVGQzZTVzRpRWJlWkZKV0N6NlZBWkdGd09TOHU5ekk4VE1DajBIckVlWkswbGQ1MURFcDI5WUxtMTdTdFA1OHJweHg4dHV1ZmdsdmozUGdNMndRNnYwRFVYLXFqLS11M1JDcWE4M2d2M1pD",
-      "publisher": "news.google.com",
-      "tier": "secondary",
-      "locator": "Financing activity for Xpeng Robotics Unit",
-      "retrievedAt": "2026-09-02",
-      "stance": "supports",
-      "snapshotStatus": "metadata_only",
-      "contentHash": "e17fc1ce02eaf5394ea8c8b75d0a21d643cda264365b022919745f8eeded03ff"
     },
     {
       "id": "SRC-1496",
@@ -215700,17 +215640,6 @@
       "stance": "supports",
       "snapshotStatus": "metadata_only",
       "contentHash": "0d3d844b2298809cff0f4480aa30166a628114aab8a9cafdc2861627e547201b"
-    },
-    {
-      "id": "SRC-1686",
-      "url": "https://www.cbinsights.com/company/veeda-ai/financials",
-      "publisher": "cbinsights.com",
-      "tier": "secondary",
-      "locator": "Explicit total funding evidence for Veeda AI",
-      "retrievedAt": "2026-09-02",
-      "stance": "supports",
-      "snapshotStatus": "metadata_only",
-      "contentHash": "61d79db3e471830c00f37f8369f264aede23d5b89b87fee19a676c7e22ac970e"
     },
     {
       "id": "SRC-1687",
@@ -219149,17 +219078,6 @@
       "contentHash": "f94240376bafdde22f4a7b6de81e54a01e0e39027d6e41597ceab3d811b1a80e"
     },
     {
-      "id": "SRC-2065",
-      "url": "https://news.google.com/rss/articles/CBMiU0FVX3lxTFBvQ25oY3NXdlMzOGllWnVTRE5lV3hCa0lzcFpoLXUwTGVfdUFwQXlFVFlzN0ExcmlhMjhieGhxUkpVNkRIRmp1d0FyOWJTMjRaQk1F",
-      "publisher": "news.google.com",
-      "tier": "primary",
-      "locator": "ABLE Labs inclusion and identity in the public-source discovery directory",
-      "retrievedAt": "2026-09-02",
-      "stance": "supports",
-      "snapshotStatus": "metadata_only",
-      "contentHash": "713b1ea198de0267fc12705022a23e33b3daa73ae42cc41916184b0750fd29de"
-    },
-    {
       "id": "SRC-2066",
       "url": "https://www.accuray.com/",
       "publisher": "accuray.com",
@@ -220821,17 +220739,6 @@
       "contentHash": "6267c67c83d1af8ab3722d61685a58b89d68245906276239cfe1dd5b9798d2e3"
     },
     {
-      "id": "SRC-2217",
-      "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxNRi03bWhjeFVxZ3FLX1NIbHBDN0IyVkdIdGt3WnhTU0w2VW5vOEN4dEUxQURzREJFek5OMFdBdEc4QUptNjlzaUdiaWZaTjVKSTlteFQ0a2ZZNmlsNFFuZGx0Yjl0YkZBaGlDWHozS3hZenhfY2YzR3JvUEN0eEpHZUVMWFVkRmx3LWNNejJLeDRVWWZqRGdTdlhibkxVNjB5aVdhcU9vRlpYRnR0RjFzVEVad2I3bzFRMEt5YWlRUl8",
-      "publisher": "news.google.com",
-      "tier": "primary",
-      "locator": "Dexmal inclusion and identity in the public-source discovery directory",
-      "retrievedAt": "2026-09-02",
-      "stance": "supports",
-      "snapshotStatus": "metadata_only",
-      "contentHash": "6c04085188d7769beef2937c64850101c042129987c95d2c581f63cb3fe5ee1d"
-    },
-    {
       "id": "SRC-2218",
       "url": "https://dexterity.ai/about",
       "publisher": "dexterity.ai",
@@ -221303,17 +221210,6 @@
       "stance": "supports",
       "snapshotStatus": "metadata_only",
       "contentHash": "eba1bf414d59f03cec61153882bcff6d397eacf81abba2d3d8ae49b96c6dcbbf"
-    },
-    {
-      "id": "SRC-2261",
-      "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQSnNERUE3ZUlwdlZwNHVuZzVBVkE2alZHTGIyRUJWNEtsMndDV2lSWGxNMUoxS3lURXE4VlNGREpURWhUc3dzSkZYWFNQNU94eDNGOHNXVFVldVRtWjVwcTBJdEMyNWZMWTFndXlIMl9CdnNRTWNCd1owZmxUZUN3WThGdWJidHc3am1RNzlmZ0lMWlRHWGd3cmxwM19hQXFYOEdqNnJFSDhQN1N2QmxQdXNn",
-      "publisher": "news.google.com",
-      "tier": "primary",
-      "locator": "Enigma inclusion and identity in the public-source discovery directory",
-      "retrievedAt": "2026-09-02",
-      "stance": "supports",
-      "snapshotStatus": "metadata_only",
-      "contentHash": "9348131e8ac71614846ad1998ddb7f8875f4af273048de49e5b0b08c31161024"
     },
     {
       "id": "SRC-2262",
@@ -221965,17 +221861,6 @@
       "contentHash": "ac19b7b31d17241af7f84b90fa26685ab0353d957b72e3487d90933b95fad297"
     },
     {
-      "id": "SRC-2321",
-      "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxNWVVpT3pjbnlLOVJYU0tsM0YyQXpEdHVrM1hjWFdMNERDa2NXT3dvM0FYSFVGdmRTbDNVX3VBeW9USGstcFRaQ1RZa1F3X0pwanhtVHVCT0hnaHJVQ1J5U1F6UHY5bWlvYi01SWFLZ2JhbW0xbU5hSW9UM290cG9aV0gwV2pCdndSeUJj",
-      "publisher": "news.google.com",
-      "tier": "primary",
-      "locator": "Gravis Robotics inclusion and identity in the public-source discovery directory",
-      "retrievedAt": "2026-09-02",
-      "stance": "supports",
-      "snapshotStatus": "metadata_only",
-      "contentHash": "d0b4274e028413d34374197bec9236e6e73b5f0cfa36e9ab2ad4f282a0d0ecbc"
-    },
-    {
       "id": "SRC-2322",
       "url": "https://greeneye.ag/",
       "publisher": "greeneye.ag",
@@ -222007,28 +221892,6 @@
       "stance": "supports",
       "snapshotStatus": "metadata_only",
       "contentHash": "5681dac9260d7c7a07ccf4ceb18dbf1096916110553dd8db268e6172424ae359"
-    },
-    {
-      "id": "SRC-2325",
-      "url": "https://news.google.com/rss/articles/CBMib0FVX3lxTE9UU0YyajJYTk41UkxOZ3hBQWtwZ20xbU1ia1ZDNEp1cmVFTWRXc01YYkh5SlQyQmVTWVhPQkVTWnMzTktaaGQ2STA5NHJIa1VXekYzNlJNTVFfOU13QVpKamVqT3BpM1dWR0pYOE56a9IBdEFVX3lxTE1sQVR4UTFUWVVCal9aS1RKaVI3NlBVR29VbHV2d1VxM0RvMUFDRFNaUUljS09WZWprLTZpWUpuQjBxeDFKbmF0aHpvMjJab0ZDeDlyelNNZ205b3lrLXE5dTlmT2lMRndqbXlmbXU5c2RJeU9z",
-      "publisher": "news.google.com",
-      "tier": "primary",
-      "locator": "Greyparrot inclusion and identity in the public-source discovery directory",
-      "retrievedAt": "2026-09-02",
-      "stance": "supports",
-      "snapshotStatus": "metadata_only",
-      "contentHash": "856b89c62d8fdb403964807f0f567a4a68769a12f054eabe52cd9c92ecd11de9"
-    },
-    {
-      "id": "SRC-2326",
-      "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxPYXhhTVlrYnJLTzA0RF9GeTFwYWFPZ2d4Y3NOTm52V3d6VGx1Tng4YVB6dDZSOUdxY1c2cnAyeHJ6N085NTlidlBIV1l6OFctY3JXSUI5Y0NGUnlyYXdTYjkwYWgyWl9MRWJITGxEejE0ZmpYSG53eUVKamZBU0FDT0lIVDFKQzc0WHpaTTlBazVRV0l6X0otMmZLc0pfZUc3MjVjVlZvRnd5N0sxSmt3REhtWEVfYzZpaUJZMnljNUQyQTBLQnhOXw",
-      "publisher": "news.google.com",
-      "tier": "primary",
-      "locator": "Gritt inclusion and identity in the public-source discovery directory",
-      "retrievedAt": "2026-09-02",
-      "stance": "supports",
-      "snapshotStatus": "metadata_only",
-      "contentHash": "362e8947149df4f6d97092ad765851178bc2fbcbd6956003cf9e49024c17552f"
     },
     {
       "id": "SRC-2327",
@@ -222689,17 +222552,6 @@
       "stance": "supports",
       "snapshotStatus": "metadata_only",
       "contentHash": "ffeb1037abc767945fc8383983aa1ec3c16c4066d42b83fefa2b68507206281c"
-    },
-    {
-      "id": "SRC-2387",
-      "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxPNlpOZ3kwVURXdFpaN0JpTnJjWDA0R2t5QzZ0bGNNVG5ISjBKS1pWWS1NdVNFQnp1OVZUZ1lUX08ta1BwMUNfQlVXQkVrc0F2dEFFakZLQ1dPLUJKclBsZE9GOWdEN2pxYkd1SzA3UXJkQlhYakFLYU9sV2JTdHMxeWxvR05sUGJWZGQzVTh0WVE5ejE0MVI0",
-      "publisher": "news.google.com",
-      "tier": "primary",
-      "locator": "Kraken Technology inclusion and identity in the public-source discovery directory",
-      "retrievedAt": "2026-09-02",
-      "stance": "supports",
-      "snapshotStatus": "metadata_only",
-      "contentHash": "79fa5976f3dc631f1adef538de4d1be4725ca2fc2fbac644517f72f112c850cc"
     },
     {
       "id": "SRC-2388",
@@ -224176,17 +224028,6 @@
       "contentHash": "a85becfc08c858a77312f5e137f4e35ac80d508be035ab3269e9d83bb1aaefbc"
     },
     {
-      "id": "SRC-2522",
-      "url": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxNSUluakZaSGxLMjhfNlBZRUhjelpjdXFiSTJLVURTUk42SS03YUNRU3hyMXdtVnpxQms3bHN1S05kbkg4MmxsQW4zSHJXbjBheW9Qdmd4UlhzRTBiNDZkUkcxb3o5MDNjRl9Xc1Q3TkxoOEFzSkJqajA4LUp6TF9ZOHNqQnVuVFZpUUlOcHVyekNWN0hEZExFWG1ScElEekxXOHF1cHdrUFF0cFBUdVV5S1liY0tZdWh6ZUFwOG9wY1YzMUxtZGZNaTcyR3NrcUF5TVJR",
-      "publisher": "news.google.com",
-      "tier": "primary",
-      "locator": "Peppy inclusion and identity in the public-source discovery directory",
-      "retrievedAt": "2026-09-02",
-      "stance": "supports",
-      "snapshotStatus": "metadata_only",
-      "contentHash": "a933dd7e0e25087a970af097e8bbd9d6eec1c3bfec1635641e24dc84ad2a731c"
-    },
-    {
       "id": "SRC-2523",
       "url": "https://percepto.co/",
       "publisher": "percepto.co",
@@ -224251,17 +224092,6 @@
       "stance": "supports",
       "snapshotStatus": "metadata_only",
       "contentHash": "71e553c8a17945757821ebe31362a5d3cf788f5e375ae4f16b9439fef6a72151"
-    },
-    {
-      "id": "SRC-2529",
-      "url": "https://news.google.com/rss/articles/CBMiekFVX3lxTE0xMlp2OTFMb1lVTDFCV1NrWmotWXVRQXc5VElNdVFEZmJ3ZnI5ZmZwZDJsa0ZmU040cXduQ2xaajNMUHYzdmZlOHk5ZVlKYlpVSmQwUEY3YWZsWlphMGFYNXBzdTA4NGR2XzdRYjBoNjFuTmhhOHEzdU1B",
-      "publisher": "news.google.com",
-      "tier": "primary",
-      "locator": "Physical Superintelligence inclusion and identity in the public-source discovery directory",
-      "retrievedAt": "2026-09-02",
-      "stance": "supports",
-      "snapshotStatus": "metadata_only",
-      "contentHash": "f9d56cf9b4276f4d28fb25551e029f68712eea214ff2c07bb77ffff3d8dcce4a"
     },
     {
       "id": "SRC-2530",
@@ -224746,17 +224576,6 @@
       "stance": "supports",
       "snapshotStatus": "metadata_only",
       "contentHash": "9a7a3f264cd3177273b9871ccfd87a52585dc4974412e4defa3ec9b242981255"
-    },
-    {
-      "id": "SRC-2574",
-      "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxPVWFEUnMzcHB1N1gtaEszRXFFQ0JyWDJWeW9ReWg3ZF9uOTJxM3ZRbnVsNTRwRDZaNEFlYno4OHY1R2luOWsyY1hXNGZBOVI1NWRvVlZLdk81U2xfZTBqanE2RTdtSnB2cDVtV0JvLVRVaDhvZHhBb1JBdUJhUjlZSGpEUy03VExGRjhjVzhzRk5RRFlnT3llWkdpSHRMRVRSd1c4",
-      "publisher": "news.google.com",
-      "tier": "primary",
-      "locator": "Reframe Systems inclusion and identity in the public-source discovery directory",
-      "retrievedAt": "2026-09-02",
-      "stance": "supports",
-      "snapshotStatus": "metadata_only",
-      "contentHash": "bbea3ab1e8d8f79c9acf6d575dff36c71ef64273c6d5ae0ee67f5c7fb4612c4c"
     },
     {
       "id": "SRC-2575",
@@ -226046,17 +225865,6 @@
       "contentHash": "7394d8bb0622d7647db6e4f7841a5b0f65857ffca7ae802ab0a8e565a6b60dd1"
     },
     {
-      "id": "SRC-2692",
-      "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxNR2FnTHFsbDE4RS10MVJMSXNNZUs4VEtST2ZhSDJWamhsLUJQTmZzWTZ5aEV1Rk5BeDBTcVlrdkp4eEhBMDI3cVhzSHp0NTRtcGZuMUUtSEx1Y1k1c2Iwb1VWVFE3M2taQkM3YjZUT01jd3FTMlVTQ3hfb0lPMklOekdFbENVZE03eXNsWFpSeVM1aE95U1dZ",
-      "publisher": "news.google.com",
-      "tier": "primary",
-      "locator": "Transfyr inclusion and identity in the public-source discovery directory",
-      "retrievedAt": "2026-09-02",
-      "stance": "supports",
-      "snapshotStatus": "metadata_only",
-      "contentHash": "30b8fb3697dd8d5d7dd6e4b5265b04b11a1a58c36923808a6264977e7a8465fc"
-    },
-    {
       "id": "SRC-2693",
       "url": "https://www.trueanomaly.space/",
       "publisher": "trueanomaly.space",
@@ -226486,17 +226294,6 @@
       "contentHash": "838e5fb30e8a6af9bb9347148327d6b4139b06fd4045832e41ed6d7f93bfbea1"
     },
     {
-      "id": "SRC-2732",
-      "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxPbHFuZ2NRaXhzZ2dxZ3ViQmJoTjBQQ2Q2YUFGUzdZTTNvSVRaRUI4WmVYSnpUTnRYRmdvRVNkVExTSGxCZUloZTlZZTNhUG5MSGNlU2pHY0F6ZXItYmlBR2NKMWducEtWM1paWFAwS00xM2VERFNud2IxWTNaOHNsZVlJd2lOanQ1UFpJME5pZm9DQlFVU3Jfb3VIZXU",
-      "publisher": "news.google.com",
-      "tier": "primary",
-      "locator": "Warpify Robotics inclusion and identity in the public-source discovery directory",
-      "retrievedAt": "2026-09-02",
-      "stance": "supports",
-      "snapshotStatus": "metadata_only",
-      "contentHash": "a44fcbf2363c4e25977f052641906e90118339ad4a957019130a66e5029eaf7f"
-    },
-    {
       "id": "SRC-2733",
       "url": "https://waymo.com/about",
       "publisher": "waymo.com",
@@ -226673,17 +226470,6 @@
       "contentHash": "fa449cbe581d9cf4c4456b02f8710d9f03c9c8e47ce8428aad5aabff80af8f6e"
     },
     {
-      "id": "SRC-2749",
-      "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTFB4RHBBQ0pDREN6aVFYU3RwX1cyTEhJN3g2dDVQS0Q4OFBSeThrQU56ZHlpUUQxWW9OY1ZFNTA2QXFBdEtkb3lsM0dEaUlybzhoWmxmNlBwRVAwSEIwekhkZFFRQVg3eFZ2QlRz",
-      "publisher": "news.google.com",
-      "tier": "primary",
-      "locator": "XPENG inclusion and identity in the public-source discovery directory",
-      "retrievedAt": "2026-09-02",
-      "stance": "supports",
-      "snapshotStatus": "metadata_only",
-      "contentHash": "c8f3319fcfbaa2ebac984af7902883dd759e489df28322e03b1103e85387808b"
-    },
-    {
       "id": "SRC-2750",
       "url": "https://www.xpeng.com/pressroom/news/019e95aed2899e8226228a028d650112",
       "publisher": "xpeng.com",
@@ -226693,17 +226479,6 @@
       "stance": "supports",
       "snapshotStatus": "metadata_only",
       "contentHash": "814a43324392e4e2b4f6b595e744b1328832b438616762c749cc60c686f6d124"
-    },
-    {
-      "id": "SRC-2751",
-      "url": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxQVzlPOERmR1JKMVdxWWE4d0VjWUZFNE85bzRNWlpvRWFkV0ZWMjd4eGV4OTRrYzJxTzZ2eTdqSmxoaDByel8tN0FRTW92YmxpRTBhQllkU2tQelF6QWVuZHE4cFpobHVZcGRMNVJHM2dTNjlOUzNkYTZxeDZiN1JKdDd0WlM0VFFYMjVjZEZnVTM0ZWdUU0R0M2ZoQ1dfWE1LUlYxbWFqVEhMMXp2NTVKYzRLUzF6OU1EVGo4VHlPYU85OXA1b0ZCRlNnT1QxaFpSMnRUdQ",
-      "publisher": "news.google.com",
-      "tier": "primary",
-      "locator": "XPENG's humanoid robotics unit inclusion and identity in the public-source discovery directory",
-      "retrievedAt": "2026-09-02",
-      "stance": "supports",
-      "snapshotStatus": "metadata_only",
-      "contentHash": "d90f7edaab381803a143903baa29b5acdf2abfb9947469dfbbddf80438130522"
     },
     {
       "id": "SRC-2752",
@@ -237506,6 +237281,171 @@
       "stance": "supports",
       "snapshotStatus": "metadata_only",
       "contentHash": "be23f877d6f3bfe7d335a6aac0e21329acde05f4b51a8ea0a79f0bfd6ed1a3c2"
+    },
+    {
+      "id": "SRC-4461",
+      "url": "https://ablelabsinc.com/news?bmode=view&category=L4PksJo54n&idx=173585100&q=YToxOntzOjEyOiJrZXl3b3JkX3R5cGUiO3M6MzoiYWxsIjt9&t=board",
+      "publisher": "ablelabsinc.com",
+      "tier": "primary",
+      "locator": "ABLE Labs inclusion and identity in the public-source discovery directory",
+      "retrievedAt": "2026-09-02",
+      "stance": "supports",
+      "snapshotStatus": "metadata_only",
+      "contentHash": "ead8929d5824838d23a419ff19e4c96ab0d5178f396c0cc430ed8742e65c9509"
+    },
+    {
+      "id": "SRC-4462",
+      "url": "https://news.bloomberglaw.com/private-equity/alibaba-backed-robot-firm-seeks-3-billion-value-in-new-funding",
+      "publisher": "news.bloomberglaw.com",
+      "tier": "primary",
+      "locator": "Dexmal inclusion and identity in the public-source discovery directory",
+      "retrievedAt": "2026-09-02",
+      "stance": "supports",
+      "snapshotStatus": "metadata_only",
+      "contentHash": "bcbe745e85f00a27c5466ff99b303f6bcf720c993451d35f173c103933229ef2"
+    },
+    {
+      "id": "SRC-4463",
+      "url": "https://www.newswire.com/news/enigma-raises-71-million-seed-round-with-a-new-game-plan-for-ai-and-robots",
+      "publisher": "newswire.com",
+      "tier": "primary",
+      "locator": "Enigma inclusion and identity in the public-source discovery directory",
+      "retrievedAt": "2026-09-02",
+      "stance": "supports",
+      "snapshotStatus": "metadata_only",
+      "contentHash": "e4061324aa5e31866c2a91860f65154d00e0edc90a3df6eebd8783bb31de5141"
+    },
+    {
+      "id": "SRC-4464",
+      "url": "https://www.gravisrobotics.com/series-a",
+      "publisher": "gravisrobotics.com",
+      "tier": "primary",
+      "locator": "Gravis Robotics inclusion and identity in the public-source discovery directory",
+      "retrievedAt": "2026-09-02",
+      "stance": "supports",
+      "snapshotStatus": "metadata_only",
+      "contentHash": "30ee977c8a3511d4b12c81a642c6a2f5bde97748ff0ab15569c4b7ad907cf74d"
+    },
+    {
+      "id": "SRC-4465",
+      "url": "https://www.greyparrot.ai/series-b",
+      "publisher": "greyparrot.ai",
+      "tier": "primary",
+      "locator": "Greyparrot inclusion and identity in the public-source discovery directory",
+      "retrievedAt": "2026-09-02",
+      "stance": "supports",
+      "snapshotStatus": "metadata_only",
+      "contentHash": "dd8402a9a4e4a6c2f19d44361a95f5c4d37d33ec66bcf025e9851331a3545c2e"
+    },
+    {
+      "id": "SRC-4466",
+      "url": "https://www.gritt.ai/news/gritt-launches-physical-ai",
+      "publisher": "gritt.ai",
+      "tier": "primary",
+      "locator": "Gritt inclusion and identity in the public-source discovery directory",
+      "retrievedAt": "2026-09-02",
+      "stance": "supports",
+      "snapshotStatus": "metadata_only",
+      "contentHash": "61bbf3e83428bf27c7c2a2280b548da983accbb6b7db9ff38942d16aa13270c2"
+    },
+    {
+      "id": "SRC-4467",
+      "url": "https://krakentechnology.com/articles/kraken-technology-group-raises-160m-at-1bn-valuation",
+      "publisher": "krakentechnology.com",
+      "tier": "primary",
+      "locator": "Kraken Technology inclusion and identity in the public-source discovery directory",
+      "retrievedAt": "2026-09-02",
+      "stance": "supports",
+      "snapshotStatus": "metadata_only",
+      "contentHash": "cf500c3b2a9eb18f631088f4777081269813d944b883d270f7cfe63f2668f1c1"
+    },
+    {
+      "id": "SRC-4468",
+      "url": "https://www.utahbusiness.com/press-releases/2026/08/13/peppy-secures-pre-seed-funding-build-coding-platform-humanoid-robotics-ai",
+      "publisher": "utahbusiness.com",
+      "tier": "primary",
+      "locator": "Peppy inclusion and identity in the public-source discovery directory",
+      "retrievedAt": "2026-09-02",
+      "stance": "supports",
+      "snapshotStatus": "metadata_only",
+      "contentHash": "edb9ca98298fbff58046ecd5692285b0f6bd5ead98bb984276446cf3533d45a3"
+    },
+    {
+      "id": "SRC-4469",
+      "url": "https://www.prnewswire.com/news-releases/introducing-physical-superintelligence-the-worlds-most-advanced-physics-lab-staffed-by-virtual-physicists-to-discover-new-laws-of-the-universe-302865561.html",
+      "publisher": "prnewswire.com",
+      "tier": "primary",
+      "locator": "Physical Superintelligence inclusion and identity in the public-source discovery directory",
+      "retrievedAt": "2026-09-02",
+      "stance": "supports",
+      "snapshotStatus": "metadata_only",
+      "contentHash": "3c81515e8ab9d8803636887320b83c18ca2202914fae4921037477e1875339ff"
+    },
+    {
+      "id": "SRC-4470",
+      "url": "https://www.businesswire.com/news/home/20260831532459/en",
+      "publisher": "businesswire.com",
+      "tier": "primary",
+      "locator": "Reframe Systems inclusion and identity in the public-source discovery directory",
+      "retrievedAt": "2026-09-02",
+      "stance": "supports",
+      "snapshotStatus": "metadata_only",
+      "contentHash": "e592721ff5db633197424263e8cb44ad6e5ccc64d15fb96471f67ec5b5bf74db"
+    },
+    {
+      "id": "SRC-4471",
+      "url": "https://www.transfyr.ai/news/transfyr-launches-physical-ai-platform-for-science-with-usd25m-seed-funding",
+      "publisher": "transfyr.ai",
+      "tier": "primary",
+      "locator": "Transfyr inclusion and identity in the public-source discovery directory",
+      "retrievedAt": "2026-09-02",
+      "stance": "supports",
+      "snapshotStatus": "metadata_only",
+      "contentHash": "573c47401b76edd7fc125ae95925c22c71782fbf342716130b95b92d23ed9700"
+    },
+    {
+      "id": "SRC-4472",
+      "url": "https://www.warpify.ai/blog-posts/warpify-pre-a-funding-zhongguancun-zhongnuo-fund",
+      "publisher": "warpify.ai",
+      "tier": "primary",
+      "locator": "Warpify Robotics inclusion and identity in the public-source discovery directory",
+      "retrievedAt": "2026-09-02",
+      "stance": "supports",
+      "snapshotStatus": "metadata_only",
+      "contentHash": "ac14eba23a6f21aabde78e4dcccfbe1e47cd1a5216a517e184e478df3e3bdc9f"
+    },
+    {
+      "id": "SRC-4473",
+      "url": "https://www.xpeng.com/pressroom/news/01a03797fccda01e0de68a02a256006a",
+      "publisher": "xpeng.com",
+      "tier": "primary",
+      "locator": "XPENG inclusion and identity in the public-source discovery directory",
+      "retrievedAt": "2026-09-02",
+      "stance": "supports",
+      "snapshotStatus": "metadata_only",
+      "contentHash": "f9f7ba6e70c2f56291e7774dc3f07857aa954b156404195115ff91d879da3977"
+    },
+    {
+      "id": "SRC-4474",
+      "url": "https://www.automate.org/robotics/industry-insights/robotics-raises-able-labs-easy-aerial-lupin-dental-motion-reframe-systems",
+      "publisher": "Association for Advancing Automation",
+      "tier": "secondary",
+      "locator": "A3 reported ABLE Labs' KRW 12.1 billion Series A as an $8.8 million USD equivalent.",
+      "retrievedAt": "2026-09-04",
+      "stance": "supports",
+      "snapshotStatus": "metadata_only",
+      "contentHash": "41623fc02037dbfdeaf1e7b816b260f82afc5853474b3df13099f2dba58ef2f3"
+    },
+    {
+      "id": "SRC-4475",
+      "url": "https://radical.vc/articles/world-models-in-robotics",
+      "publisher": "Radical Ventures",
+      "tier": "official",
+      "locator": "Radical Ventures describes its investment in Veeda AI alongside Khosla Ventures; this source is not used for the financing amount.",
+      "retrievedAt": "2026-09-04",
+      "stance": "supports",
+      "snapshotStatus": "metadata_only",
+      "contentHash": "91bbf539052fdabf135e34723eb93c862469693d47a8e917e82caeb0c7392515"
     }
   ],
   "facts": [
@@ -237622,26 +237562,29 @@
       "metric": "tracked_disclosed_financing",
       "factType": "tracked_disclosed_financing",
       "value": {
-        "display": "$8.7M",
-        "amountUsd": 8700000,
-        "currency": "USD"
+        "display": "KRW 12.1B (~$8.8M A3-reported USD equivalent)",
+        "amountUsd": 8800000,
+        "amountLocal": 12100000000,
+        "currency": "KRW",
+        "qualifier": "secondary_reported_usd_equivalent"
       },
-      "displayValue": "$8.7M",
-      "numericValue": 8700000,
+      "displayValue": "KRW 12.1B (~$8.8M A3-reported USD equivalent)",
+      "numericValue": 8800000,
       "currency": "USD",
       "periodLabel": null,
-      "disclosureStatus": "disclosed",
-      "coverageOutcome": "partial",
-      "statusRaw": "Partial Tracked Sum Available",
+      "disclosureStatus": "qualified",
+      "coverageOutcome": "qualified",
+      "statusRaw": "Official KRW disclosure; secondary-reported USD equivalent",
       "asOf": "2026-08-31",
       "asOfDate": "2026-08-31",
       "datePrecision": "day",
-      "verifiedAt": "2026-09-02",
-      "basis": "Sum of qualifying public financing events currently present in the workbook activity tape.",
+      "verifiedAt": "2026-09-04",
+      "basis": "ABLE Labs disclosed KRW 12.1 billion. The Association for Advancing Automation separately reported an $8.8 million USD equivalent; it is not an exact company-disclosed USD amount.",
       "scope": "known_round_aggregate_not_lifetime_funding",
       "metricScope": "tracked_disclosed_financing",
       "evidenceIds": [
-        "SRC-0555"
+        "SRC-0555",
+        "SRC-4474"
       ],
       "classification": "verified_fact",
       "conclusionLabel": "Verified fact",
@@ -237649,7 +237592,7 @@
       "status": "published",
       "publicationState": "published",
       "publicationStatus": "published",
-      "revision": 1
+      "revision": 2
     },
     {
       "id": "FCT-000061",
@@ -241446,24 +241389,24 @@
       "metric": "latest_disclosed_valuation",
       "factType": "valuation",
       "value": {
-        "display": "$3B",
-        "amountUsd": 3000000000,
+        "display": "Seeking ~$3B valuation",
+        "amountUsd": null,
         "currency": "USD",
-        "qualifier": "stated"
+        "qualifier": "fundraising_target_not_completed"
       },
-      "displayValue": "$3B",
-      "numericValue": 3000000000,
+      "displayValue": "Seeking ~$3B valuation (ongoing talks; not completed)",
+      "numericValue": null,
       "currency": "USD",
       "periodLabel": null,
-      "disclosureStatus": "disclosed",
-      "coverageOutcome": "disclosed",
-      "statusRaw": "Available From Existing Public Deal Description",
+      "disclosureStatus": "qualified",
+      "coverageOutcome": "qualified",
+      "statusRaw": "Reported fundraising target — not completed",
       "asOf": "2026-08-21",
       "asOfDate": "2026-08-21",
       "datePrecision": "day",
-      "verifiedAt": "2026-09-02",
-      "basis": "Private Financing Valuation",
-      "scope": "latest_disclosed_company_valuation_not_market_cap",
+      "verifiedAt": "2026-09-04",
+      "basis": "Ongoing fundraising target; no completed financing or achieved valuation was disclosed.",
+      "scope": "fundraising_target_not_completed",
       "metricScope": "point_in_time",
       "evidenceIds": [
         "SRC-0768"
@@ -241474,7 +241417,7 @@
       "status": "published",
       "publicationState": "published",
       "publicationStatus": "published",
-      "revision": 1
+      "revision": 2
     },
     {
       "id": "FCT-000766",
@@ -242412,12 +242355,12 @@
       "metric": "tracked_disclosed_financing",
       "factType": "tracked_disclosed_financing",
       "value": {
-        "display": "$70M",
-        "amountUsd": 70000000,
+        "display": "$71M",
+        "amountUsd": 71000000,
         "currency": "USD"
       },
-      "displayValue": "$70M",
-      "numericValue": 70000000,
+      "displayValue": "$71M",
+      "numericValue": 71000000,
       "currency": "USD",
       "periodLabel": null,
       "disclosureStatus": "disclosed",
@@ -242426,7 +242369,7 @@
       "asOf": "2026-07-27",
       "asOfDate": "2026-07-27",
       "datePrecision": "day",
-      "verifiedAt": "2026-09-02",
+      "verifiedAt": "2026-09-04",
       "basis": "Sum of qualifying public financing events currently present in the workbook activity tape.",
       "scope": "known_round_aggregate_not_lifetime_funding",
       "metricScope": "tracked_disclosed_financing",
@@ -242439,7 +242382,7 @@
       "status": "published",
       "publicationState": "published",
       "publicationStatus": "published",
-      "revision": 1
+      "revision": 2
     },
     {
       "id": "FCT-000980",
@@ -243874,7 +243817,8 @@
       "value": {
         "display": "$32.4M",
         "amountUsd": 32400000,
-        "currency": "USD"
+        "currency": "USD",
+        "qualifier": "aggregate_pre_seed_and_series_a"
       },
       "displayValue": "$32.4M",
       "numericValue": 32400000,
@@ -243883,11 +243827,11 @@
       "disclosureStatus": "disclosed",
       "coverageOutcome": "partial",
       "statusRaw": "Partial Tracked Sum Available",
-      "asOf": "2026-07-22",
-      "asOfDate": "2026-07-22",
+      "asOf": "2026-07-21",
+      "asOfDate": "2026-07-21",
       "datePrecision": "day",
-      "verifiedAt": "2026-09-02",
-      "basis": "Sum of qualifying public financing events currently present in the workbook activity tape.",
+      "verifiedAt": "2026-09-04",
+      "basis": "Aggregate disclosed pre-seed and Series A financing, not a single-round amount.",
       "scope": "known_round_aggregate_not_lifetime_funding",
       "metricScope": "tracked_disclosed_financing",
       "evidenceIds": [
@@ -243899,7 +243843,7 @@
       "status": "published",
       "publicationState": "published",
       "publicationStatus": "published",
-      "revision": 1
+      "revision": 2
     },
     {
       "id": "FCT-001277",
@@ -254201,27 +254145,28 @@
       "metric": "explicit_total_funding",
       "factType": "total_funding",
       "value": {
-        "display": "$90M",
+        "display": "Over $90M",
         "amountUsd": 90000000,
         "currency": "USD",
-        "qualifier": "stated"
+        "qualifier": "greater_than"
       },
-      "displayValue": "$90M",
+      "displayValue": "Over $90M",
       "numericValue": 90000000,
       "currency": "USD",
       "periodLabel": null,
-      "disclosureStatus": "disclosed",
-      "coverageOutcome": "disclosed",
-      "statusRaw": "Reported Secondary Identity Contingent",
-      "asOf": "2026-08-19",
-      "asOfDate": "2026-08-19",
+      "disclosureStatus": "qualified",
+      "coverageOutcome": "qualified",
+      "statusRaw": "Secondary-reported lower-bound financing",
+      "asOf": "2026-08-24",
+      "asOfDate": "2026-08-24",
       "datePrecision": "day",
-      "verifiedAt": "2026-09-02",
-      "basis": "CB Insights-Reported Veeda AI Seed Funding; Applies Only If Veeda AI Is The Intended Entity.",
+      "verifiedAt": "2026-09-04",
+      "basis": "The Recursive reported financing of over $90 million; numeric value is a lower bound. Radical Ventures separately supports the investor context without stating the amount.",
       "scope": "explicit_company_level_total_funding",
       "metricScope": "lifetime_total",
       "evidenceIds": [
-        "SRC-1686"
+        "SRC-1429",
+        "SRC-4475"
       ],
       "classification": "verified_fact",
       "conclusionLabel": "Verified fact",
@@ -254229,7 +254174,7 @@
       "status": "published",
       "publicationState": "published",
       "publicationStatus": "published",
-      "revision": 1
+      "revision": 2
     },
     {
       "id": "FCT-003160",
@@ -254237,26 +254182,28 @@
       "metric": "tracked_disclosed_financing",
       "factType": "tracked_disclosed_financing",
       "value": {
-        "display": "$90M",
+        "display": "Over $90M",
         "amountUsd": 90000000,
-        "currency": "USD"
+        "currency": "USD",
+        "qualifier": "greater_than"
       },
-      "displayValue": "$90M",
+      "displayValue": "Over $90M",
       "numericValue": 90000000,
       "currency": "USD",
       "periodLabel": null,
-      "disclosureStatus": "disclosed",
-      "coverageOutcome": "partial",
-      "statusRaw": "Partial Tracked Sum Available",
-      "asOf": "2026-08-31",
-      "asOfDate": "2026-08-31",
+      "disclosureStatus": "qualified",
+      "coverageOutcome": "qualified",
+      "statusRaw": "Secondary-reported lower-bound financing",
+      "asOf": "2026-08-24",
+      "asOfDate": "2026-08-24",
       "datePrecision": "day",
-      "verifiedAt": "2026-09-02",
-      "basis": "Sum of qualifying public financing events currently present in the workbook activity tape.",
+      "verifiedAt": "2026-09-04",
+      "basis": "The Recursive reported financing of over $90 million; numeric value is a lower bound. Radical Ventures separately supports the investor context without stating the amount.",
       "scope": "known_round_aggregate_not_lifetime_funding",
       "metricScope": "tracked_disclosed_financing",
       "evidenceIds": [
-        "SRC-1429"
+        "SRC-1429",
+        "SRC-4475"
       ],
       "classification": "verified_fact",
       "conclusionLabel": "Verified fact",
@@ -254264,7 +254211,7 @@
       "status": "published",
       "publicationState": "published",
       "publicationStatus": "published",
-      "revision": 1
+      "revision": 2
     },
     {
       "id": "FCT-003161",
@@ -255233,111 +255180,76 @@
       "revision": 1
     },
     {
-      "id": "FCT-003305",
-      "entityId": "ENT-1219",
-      "metric": "tracked_disclosed_financing",
-      "factType": "tracked_disclosed_financing",
-      "value": {
-        "display": "$900M",
-        "amountUsd": 900000000,
-        "currency": "USD"
-      },
-      "displayValue": "$900M",
-      "numericValue": 900000000,
-      "currency": "USD",
-      "periodLabel": null,
-      "disclosureStatus": "disclosed",
-      "coverageOutcome": "partial",
-      "statusRaw": "Partial Tracked Sum Available",
-      "asOf": "2026-08-25",
-      "asOfDate": "2026-08-25",
-      "datePrecision": "day",
-      "verifiedAt": "2026-09-02",
-      "basis": "Sum of qualifying public financing events currently present in the workbook activity tape.",
-      "scope": "known_round_aggregate_not_lifetime_funding",
-      "metricScope": "tracked_disclosed_financing",
-      "evidenceIds": [
-        "SRC-1473"
-      ],
-      "classification": "verified_fact",
-      "conclusionLabel": "Verified fact",
-      "semanticKey": "ENT-1219|tracked_disclosed_financing|v6",
-      "status": "published",
-      "publicationState": "published",
-      "publicationStatus": "published",
-      "revision": 1
-    },
-    {
-      "id": "FCT-003312",
-      "entityId": "ENT-1221",
+      "id": "FCT-003307",
+      "entityId": "ENT-1220",
       "metric": "latest_disclosed_valuation",
       "factType": "valuation",
       "value": {
-        "display": "$6.3B",
+        "display": "Over $6.3B",
         "amountUsd": 6300000000,
         "currency": "USD",
         "qualifier": "greater_than"
       },
-      "displayValue": "$6.3B",
+      "displayValue": "Over $6.3B",
       "numericValue": 6300000000,
       "currency": "USD",
       "periodLabel": null,
-      "disclosureStatus": "disclosed",
-      "coverageOutcome": "disclosed",
-      "statusRaw": "Available From Existing Public Deal Description",
+      "disclosureStatus": "qualified",
+      "coverageOutcome": "qualified",
+      "statusRaw": "Official lower-bound disclosure",
       "asOf": "2026-08-24",
       "asOfDate": "2026-08-24",
       "datePrecision": "day",
-      "verifiedAt": "2026-09-02",
-      "basis": "Private Financing Valuation",
+      "verifiedAt": "2026-09-04",
+      "basis": "Post-money valuation disclosed as over $6.3 billion.",
       "scope": "latest_disclosed_company_valuation_not_market_cap",
       "metricScope": "point_in_time",
       "evidenceIds": [
-        "SRC-1495"
-      ],
-      "classification": "verified_fact",
-      "conclusionLabel": "Verified fact",
-      "semanticKey": "ENT-1221|valuation|v6",
-      "status": "published",
-      "publicationState": "published",
-      "publicationStatus": "published",
-      "revision": 1
-    },
-    {
-      "id": "FCT-003315",
-      "entityId": "ENT-1221",
-      "metric": "tracked_disclosed_financing",
-      "factType": "tracked_disclosed_financing",
-      "value": {
-        "display": "$900M",
-        "amountUsd": 900000000,
-        "currency": "USD"
-      },
-      "displayValue": "$900M",
-      "numericValue": 900000000,
-      "currency": "USD",
-      "periodLabel": null,
-      "disclosureStatus": "disclosed",
-      "coverageOutcome": "partial",
-      "statusRaw": "Partial Tracked Sum Available",
-      "asOf": "2026-08-24",
-      "asOfDate": "2026-08-24",
-      "datePrecision": "day",
-      "verifiedAt": "2026-09-02",
-      "basis": "Sum of qualifying public financing events currently present in the workbook activity tape.",
-      "scope": "known_round_aggregate_not_lifetime_funding",
-      "metricScope": "tracked_disclosed_financing",
-      "evidenceIds": [
-        "SRC-1495",
         "SRC-1475"
       ],
       "classification": "verified_fact",
       "conclusionLabel": "Verified fact",
-      "semanticKey": "ENT-1221|tracked_disclosed_financing|v6",
+      "semanticKey": "ENT-1220|valuation|v6",
       "status": "published",
       "publicationState": "published",
       "publicationStatus": "published",
-      "revision": 1
+      "revision": 2
+    },
+    {
+      "id": "FCT-003310",
+      "entityId": "ENT-1220",
+      "metric": "tracked_disclosed_financing",
+      "factType": "tracked_disclosed_financing",
+      "value": {
+        "display": "Over $900M",
+        "amountUsd": 900000000,
+        "currency": "USD",
+        "qualifier": "greater_than"
+      },
+      "displayValue": "Over $900M",
+      "numericValue": 900000000,
+      "currency": "USD",
+      "periodLabel": null,
+      "disclosureStatus": "qualified",
+      "coverageOutcome": "qualified",
+      "statusRaw": "Official lower-bound disclosure",
+      "asOf": "2026-08-24",
+      "asOfDate": "2026-08-24",
+      "datePrecision": "day",
+      "verifiedAt": "2026-09-04",
+      "basis": "Robotics-business financing disclosed as over $900 million; numeric value is a lower bound.",
+      "scope": "known_round_aggregate_not_lifetime_funding",
+      "metricScope": "tracked_disclosed_financing",
+      "evidenceIds": [
+        "SRC-1475"
+      ],
+      "classification": "verified_fact",
+      "conclusionLabel": "Verified fact",
+      "semanticKey": "ENT-1220|tracked_disclosed_financing|v6",
+      "status": "published",
+      "publicationState": "published",
+      "publicationStatus": "published",
+      "revision": 2
     },
     {
       "id": "FCT-003341",
@@ -261011,6 +260923,12 @@
     }
   ],
   "redirects": [
+    {
+      "fromId": "ENT-1221",
+      "toId": "ENT-1220",
+      "fromTypedId": "ORG-0846",
+      "reason": "duplicate_xpeng_robotics_unit_entity_redirected_to_canonical_company"
+    },
     {
       "fromId": "ENT-2208",
       "toId": "ENT-2091",
