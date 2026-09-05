@@ -17,6 +17,14 @@ function response(payload, status = 200) {
   };
 }
 
+function testJwt(payload) {
+  return [
+    Buffer.from(JSON.stringify({ alg: "none", typ: "JWT" })).toString("base64url"),
+    Buffer.from(JSON.stringify(payload)).toString("base64url"),
+    "test-signature",
+  ].join(".");
+}
+
 async function run() {
   assert.equal(graph.requiredEntityId("ENT-0868"), "ENT-0868");
   assert.throws(() => graph.requiredEntityId("World Labs"), /stable ENT key/);
@@ -105,6 +113,43 @@ async function run() {
     );
     assert.equal(approvedUser.id, "approved-user");
     assert.equal(approvedUser.isLead, true);
+  } finally {
+    global.fetch = originalFetch;
+  }
+
+  let recoveryProfileRead = false;
+  global.fetch = async (input) => {
+    const url = new URL(String(input));
+    if (url.pathname === "/auth/v1/user") {
+      return response({ id: "approved-user", email: "analyst@example.test", app_metadata: {} });
+    }
+    if (url.pathname.endsWith("/analyst_profiles")) {
+      recoveryProfileRead = true;
+      return response([{ user_id: "approved-user", is_lead: true }]);
+    }
+    throw new Error(`Unexpected recovery verification path: ${url.pathname}`);
+  };
+  const recoveryToken = testJwt({
+    sub: "approved-user",
+    session_id: "recovery-session",
+    amr: [{ method: "recovery", timestamp: 1788566400 }],
+  });
+  try {
+    assert.equal(graph._test.accessTokenUsesRecovery(recoveryToken), true);
+    assert.equal(graph._test.accessTokenUsesRecovery(testJwt({ amr: [{ method: "password" }] })), false);
+    assert.equal(await graph.verifyUser(
+      { headers: { authorization: `Bearer ${recoveryToken}` } },
+      { supabaseUrl: "https://project.supabase.co", serviceRoleKey: "service-secret" },
+    ), null);
+    await assert.rejects(
+      graph.verifyUser(
+        { headers: { authorization: `Bearer ${recoveryToken}` } },
+        { supabaseUrl: "https://project.supabase.co", serviceRoleKey: "service-secret" },
+        { required: true },
+      ),
+      (error) => error.status === 403 && /finish password recovery/i.test(error.message),
+    );
+    assert.equal(recoveryProfileRead, false);
   } finally {
     global.fetch = originalFetch;
   }
