@@ -105,6 +105,10 @@ async function run() {
       { id: "ENT-0104", kind: "company", canonical_name: "Unsupported Startup" },
       { id: "ENT-0105", kind: "person", subtype: "PhD student", canonical_name: "Subtype-only Researcher" },
       { id: "ENT-0106", kind: "company", canonical_name: "Legacy Investor Record" },
+      { id: "ENT-0107", kind: "company", canonical_name: "Current Employer" },
+      { id: "ENT-0108", kind: "company", canonical_name: "Wrong-direction Company" },
+      { id: "ENT-0109", kind: "company", canonical_name: "Past Employer" },
+      { id: "ENT-0110", kind: "company", canonical_name: "Dual-path Startup" },
     ],
     relationships: [
       { id: "REL-0100", subject_entity_id: "ENT-0101", predicate: "member_of", object_entity_id: "ENT-0100", layer: "institutional", started_on: "2025-09-01", conclusion_label: "Verified fact", review_status: "approved" },
@@ -114,6 +118,14 @@ async function run() {
       { id: "REL-0104", subject_entity_id: "ENT-0105", predicate: "member_of", object_entity_id: "ENT-0100", layer: "institutional", started_on: "2025-09-01", conclusion_label: "Verified fact", review_status: "approved" },
       { id: "REL-0105", subject_entity_id: "ENT-0105", predicate: "authored", object_entity_id: "ENT-0102", layer: "research", started_on: "2026-01-01", conclusion_label: "Verified fact", review_status: "approved" },
       { id: "REL-0106", subject_entity_id: "ENT-0106", predicate: "invested_in", object_entity_id: "ENT-0100", layer: "capital", started_on: "2026-01-01", conclusion_label: "Verified fact", review_status: "approved" },
+      { id: "REL-0107", subject_entity_id: "ENT-0101", predicate: "employed_by", object_entity_id: "ENT-0107", layer: "institutional", started_on: "2025-01-01", ended_on: null, conclusion_label: "Verified fact", review_status: "approved" },
+      { id: "REL-0108", subject_entity_id: "ENT-0108", predicate: "founded", object_entity_id: "ENT-0101", layer: "company", started_on: "2025-01-01", conclusion_label: "Verified fact", review_status: "approved" },
+      { id: "REL-0109", subject_entity_id: "ENT-0101", predicate: "employed_by", object_entity_id: "ENT-0109", layer: "institutional", started_on: "2020-01-01", ended_on: "2024-01-01", conclusion_label: "Verified fact", review_status: "approved" },
+      // Employment is deliberately inserted before founding. Both routes are
+      // two hops from the lab, so dossier classification must select each
+      // terminal explanation independently of the ordinary BFS winner.
+      { id: "REL-0110", subject_entity_id: "ENT-0101", predicate: "employed_by", object_entity_id: "ENT-0110", layer: "institutional", started_on: "2025-01-01", ended_on: null, conclusion_label: "Verified fact", review_status: "approved" },
+      { id: "REL-0111", subject_entity_id: "ENT-0101", predicate: "founded", object_entity_id: "ENT-0110", layer: "company", started_on: "2025-01-01", conclusion_label: "Verified fact", review_status: "approved" },
     ],
     facts: [
       { id: "FCT-0100", entity_id: "ENT-0102", fact_type: "published_on", display_value: "2026-01-01", as_of_date: "2026-01-01", conclusion_label: "Verified fact" },
@@ -136,6 +148,11 @@ async function run() {
         { relationship_id: "REL-0104", evidence_id: "EVD-0104" },
         { relationship_id: "REL-0105", evidence_id: "EVD-0105" },
         { relationship_id: "REL-0106", evidence_id: "EVD-0106" },
+        { relationship_id: "REL-0107", evidence_id: "EVD-0107" },
+        { relationship_id: "REL-0108", evidence_id: "EVD-0108" },
+        { relationship_id: "REL-0109", evidence_id: "EVD-0109" },
+        { relationship_id: "REL-0110", evidence_id: "EVD-0110" },
+        { relationship_id: "REL-0111", evidence_id: "EVD-0111" },
       ],
       evidence: [
         { id: "EVD-0100", source_id: "SRC-0100", stance: "support", retrieved_at: "2026-09-01T00:00:00Z" },
@@ -145,6 +162,11 @@ async function run() {
         { id: "EVD-0104", source_id: "SRC-0104", stance: "support", retrieved_at: "2026-09-01T00:00:00Z" },
         { id: "EVD-0105", source_id: "SRC-0101", stance: "support", retrieved_at: "2026-09-01T00:00:00Z" },
         { id: "EVD-0106", source_id: "SRC-0106", stance: "support", retrieved_at: "2026-09-01T00:00:00Z" },
+        { id: "EVD-0107", source_id: "SRC-0107", stance: "support", retrieved_at: "2026-09-01T00:00:00Z" },
+        { id: "EVD-0108", source_id: "SRC-0108", stance: "support", retrieved_at: "2026-09-01T00:00:00Z" },
+        { id: "EVD-0109", source_id: "SRC-0109", stance: "support", retrieved_at: "2026-09-01T00:00:00Z" },
+        { id: "EVD-0110", source_id: "SRC-0110", stance: "support", retrieved_at: "2026-09-01T00:00:00Z" },
+        { id: "EVD-0111", source_id: "SRC-0111", stance: "support", retrieved_at: "2026-09-01T00:00:00Z" },
       ],
       sources: [
         { id: "SRC-0100", source_type: "official_roster" },
@@ -153,13 +175,33 @@ async function run() {
         { id: "SRC-0103", source_type: "official_company" },
         { id: "SRC-0104", source_type: "news_article" },
         { id: "SRC-0106", source_type: "official_company" },
+        { id: "SRC-0107", source_type: "official_company" },
+        { id: "SRC-0108", source_type: "official_company" },
+        { id: "SRC-0109", source_type: "official_company" },
+        { id: "SRC-0110", source_type: "official_company" },
+        { id: "SRC-0111", source_type: "official_company" },
       ],
     },
   });
   assert.deepEqual(
     publicIntelligence.nearbyStartups.map((item) => item.entityId),
-    ["ENT-0103"],
-    "A context-only relationship must not drive a public proximity path.",
+    ["ENT-0110", "ENT-0103"],
+    "Context-only, investor, employment, and wrong-direction paths must not drive startup proximity.",
+  );
+  assert.deepEqual(
+    publicIntelligence.currentNetworkEmployers.map((item) => item.entityId),
+    ["ENT-0107", "ENT-0110"],
+    "Only a current, correctly directed employed_by path belongs in network employment context.",
+  );
+  assert.equal(
+    publicIntelligence.nearbyStartups.find((item) => item.entityId === "ENT-0110").path.relationshipIds.at(-1),
+    "REL-0111",
+    "An equal-length employment path must not mask the startup's founded path.",
+  );
+  assert.equal(
+    publicIntelligence.currentNetworkEmployers.find((item) => item.entityId === "ENT-0110").path.relationshipIds.at(-1),
+    "REL-0110",
+    "The same company may independently retain its current-employment explanation.",
   );
   assert.deepEqual(
     publicIntelligence.emergingResearchers.map((item) => item.entityId),
@@ -343,7 +385,7 @@ async function run() {
     assert.equal(dossier.intelligenceAccess, "public-read");
     assert.equal(dossier.publicIntelligence.publiclyDerived, true);
     assert.equal(dossier.publicIntelligence.signal.conclusion_label, "Derived signal");
-    assert.equal(dossier.publicIntelligence.signalModel.version, "public-graph-v1");
+    assert.equal(dossier.publicIntelligence.signalModel.version, "public-graph-v2");
     assert.deepEqual(
       dossier.publicIntelligence.signalInputs
         .map((input) => input.relationship_id)
