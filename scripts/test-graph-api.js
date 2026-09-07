@@ -104,6 +104,7 @@ async function run() {
       { id: "ENT-0103", kind: "company", canonical_name: "Public Startup" },
       { id: "ENT-0104", kind: "company", canonical_name: "Unsupported Startup" },
       { id: "ENT-0105", kind: "person", subtype: "PhD student", canonical_name: "Subtype-only Researcher" },
+      { id: "ENT-0106", kind: "company", canonical_name: "Legacy Investor Record" },
     ],
     relationships: [
       { id: "REL-0100", subject_entity_id: "ENT-0101", predicate: "member_of", object_entity_id: "ENT-0100", layer: "institutional", started_on: "2025-09-01", conclusion_label: "Verified fact", review_status: "approved" },
@@ -112,6 +113,7 @@ async function run() {
       { id: "REL-0103", subject_entity_id: "ENT-0101", predicate: "founded", object_entity_id: "ENT-0104", layer: "company", started_on: "2026-02-01", conclusion_label: "Verified fact", review_status: "approved" },
       { id: "REL-0104", subject_entity_id: "ENT-0105", predicate: "member_of", object_entity_id: "ENT-0100", layer: "institutional", started_on: "2025-09-01", conclusion_label: "Verified fact", review_status: "approved" },
       { id: "REL-0105", subject_entity_id: "ENT-0105", predicate: "authored", object_entity_id: "ENT-0102", layer: "research", started_on: "2026-01-01", conclusion_label: "Verified fact", review_status: "approved" },
+      { id: "REL-0106", subject_entity_id: "ENT-0106", predicate: "invested_in", object_entity_id: "ENT-0100", layer: "capital", started_on: "2026-01-01", conclusion_label: "Verified fact", review_status: "approved" },
     ],
     facts: [
       { id: "FCT-0100", entity_id: "ENT-0102", fact_type: "published_on", display_value: "2026-01-01", as_of_date: "2026-01-01", conclusion_label: "Verified fact" },
@@ -133,6 +135,7 @@ async function run() {
         { relationship_id: "REL-0103", evidence_id: "EVD-0103" },
         { relationship_id: "REL-0104", evidence_id: "EVD-0104" },
         { relationship_id: "REL-0105", evidence_id: "EVD-0105" },
+        { relationship_id: "REL-0106", evidence_id: "EVD-0106" },
       ],
       evidence: [
         { id: "EVD-0100", source_id: "SRC-0100", stance: "support", retrieved_at: "2026-09-01T00:00:00Z" },
@@ -141,6 +144,7 @@ async function run() {
         { id: "EVD-0103", source_id: "SRC-0103", stance: "context", retrieved_at: "2026-09-01T00:00:00Z" },
         { id: "EVD-0104", source_id: "SRC-0104", stance: "support", retrieved_at: "2026-09-01T00:00:00Z" },
         { id: "EVD-0105", source_id: "SRC-0101", stance: "support", retrieved_at: "2026-09-01T00:00:00Z" },
+        { id: "EVD-0106", source_id: "SRC-0106", stance: "support", retrieved_at: "2026-09-01T00:00:00Z" },
       ],
       sources: [
         { id: "SRC-0100", source_type: "official_roster" },
@@ -148,6 +152,7 @@ async function run() {
         { id: "SRC-0102", source_type: "official_company" },
         { id: "SRC-0103", source_type: "official_company" },
         { id: "SRC-0104", source_type: "news_article" },
+        { id: "SRC-0106", source_type: "official_company" },
       ],
     },
   });
