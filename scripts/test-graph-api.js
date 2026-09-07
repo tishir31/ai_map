@@ -17,6 +17,14 @@ function response(payload, status = 200) {
   };
 }
 
+function testJwt(payload) {
+  return [
+    Buffer.from(JSON.stringify({ alg: "none", typ: "JWT" })).toString("base64url"),
+    Buffer.from(JSON.stringify(payload)).toString("base64url"),
+    "test-signature",
+  ].join(".");
+}
+
 async function run() {
   assert.equal(graph.requiredEntityId("ENT-0868"), "ENT-0868");
   assert.throws(() => graph.requiredEntityId("World Labs"), /stable ENT key/);
@@ -86,6 +94,87 @@ async function run() {
   assert.equal(graph._test.relationshipActiveAt({ started_on: "2027-01-01", ended_on: null }, "2026-01-01"), false);
   assert.equal(graph._test.relationshipActiveAt({ started_on: "2018-01-01", ended_on: "2020-01-01" }, "2026-01-01"), true);
 
+  const publicIntelligence = graph._test.buildPublicIntelligence({
+    rootId: "ENT-0100",
+    asOf: "2026-09-04",
+    entities: [
+      { id: "ENT-0100", kind: "lab", canonical_name: "Public Lab" },
+      { id: "ENT-0101", kind: "person", subtype: "PhD student", canonical_name: "Public Researcher" },
+      { id: "ENT-0102", kind: "paper", canonical_name: "Public Paper" },
+      { id: "ENT-0103", kind: "company", canonical_name: "Public Startup" },
+      { id: "ENT-0104", kind: "company", canonical_name: "Unsupported Startup" },
+      { id: "ENT-0105", kind: "person", subtype: "PhD student", canonical_name: "Subtype-only Researcher" },
+      { id: "ENT-0106", kind: "company", canonical_name: "Legacy Investor Record" },
+    ],
+    relationships: [
+      { id: "REL-0100", subject_entity_id: "ENT-0101", predicate: "member_of", object_entity_id: "ENT-0100", layer: "institutional", started_on: "2025-09-01", conclusion_label: "Verified fact", review_status: "approved" },
+      { id: "REL-0101", subject_entity_id: "ENT-0101", predicate: "authored", object_entity_id: "ENT-0102", layer: "research", started_on: "2026-01-01", conclusion_label: "Verified fact", review_status: "approved" },
+      { id: "REL-0102", subject_entity_id: "ENT-0101", predicate: "founded", object_entity_id: "ENT-0103", layer: "company", started_on: "2026-02-01", conclusion_label: "Verified fact", review_status: "approved" },
+      { id: "REL-0103", subject_entity_id: "ENT-0101", predicate: "founded", object_entity_id: "ENT-0104", layer: "company", started_on: "2026-02-01", conclusion_label: "Verified fact", review_status: "approved" },
+      { id: "REL-0104", subject_entity_id: "ENT-0105", predicate: "member_of", object_entity_id: "ENT-0100", layer: "institutional", started_on: "2025-09-01", conclusion_label: "Verified fact", review_status: "approved" },
+      { id: "REL-0105", subject_entity_id: "ENT-0105", predicate: "authored", object_entity_id: "ENT-0102", layer: "research", started_on: "2026-01-01", conclusion_label: "Verified fact", review_status: "approved" },
+      { id: "REL-0106", subject_entity_id: "ENT-0106", predicate: "invested_in", object_entity_id: "ENT-0100", layer: "capital", started_on: "2026-01-01", conclusion_label: "Verified fact", review_status: "approved" },
+    ],
+    facts: [
+      { id: "FCT-0100", entity_id: "ENT-0102", fact_type: "published_on", display_value: "2026-01-01", as_of_date: "2026-01-01", conclusion_label: "Verified fact" },
+      { id: "FCT-0101", entity_id: "ENT-0103", fact_type: "headquarters", display_value: "Berkeley, CA", as_of_date: "2026-02-01", conclusion_label: "Verified fact" },
+      { id: "FCT-0102", entity_id: "ENT-0103", fact_type: "valuation", display_value: "$1B", as_of_date: "2026-02-01", conclusion_label: "Analyst thesis" },
+    ],
+    factEvidence: [
+      { fact_id: "FCT-0100", evidence_id: "EVD-0101" },
+      { fact_id: "FCT-0101", evidence_id: "EVD-0102" },
+      { fact_id: "FCT-0102", evidence_id: "EVD-0102" },
+    ],
+    collections: [{ id: "COL-0100", name: "Physical AI", scope_statement: "Robotics research", coverage_outcome: "Complete against declared source" }],
+    collectionMemberships: [{ collection_id: "COL-0100", entity_id: "ENT-0100" }],
+    evidenceBundle: {
+      relationshipEvidence: [
+        { relationship_id: "REL-0100", evidence_id: "EVD-0100" },
+        { relationship_id: "REL-0101", evidence_id: "EVD-0101" },
+        { relationship_id: "REL-0102", evidence_id: "EVD-0102" },
+        { relationship_id: "REL-0103", evidence_id: "EVD-0103" },
+        { relationship_id: "REL-0104", evidence_id: "EVD-0104" },
+        { relationship_id: "REL-0105", evidence_id: "EVD-0105" },
+        { relationship_id: "REL-0106", evidence_id: "EVD-0106" },
+      ],
+      evidence: [
+        { id: "EVD-0100", source_id: "SRC-0100", stance: "support", retrieved_at: "2026-09-01T00:00:00Z" },
+        { id: "EVD-0101", source_id: "SRC-0101", stance: "support", retrieved_at: "2026-09-01T00:00:00Z" },
+        { id: "EVD-0102", source_id: "SRC-0102", stance: "support", retrieved_at: "2026-09-01T00:00:00Z" },
+        { id: "EVD-0103", source_id: "SRC-0103", stance: "context", retrieved_at: "2026-09-01T00:00:00Z" },
+        { id: "EVD-0104", source_id: "SRC-0104", stance: "support", retrieved_at: "2026-09-01T00:00:00Z" },
+        { id: "EVD-0105", source_id: "SRC-0101", stance: "support", retrieved_at: "2026-09-01T00:00:00Z" },
+        { id: "EVD-0106", source_id: "SRC-0106", stance: "support", retrieved_at: "2026-09-01T00:00:00Z" },
+      ],
+      sources: [
+        { id: "SRC-0100", source_type: "official_roster" },
+        { id: "SRC-0101", source_type: "publisher_record" },
+        { id: "SRC-0102", source_type: "official_company" },
+        { id: "SRC-0103", source_type: "official_company" },
+        { id: "SRC-0104", source_type: "news_article" },
+        { id: "SRC-0106", source_type: "official_company" },
+      ],
+    },
+  });
+  assert.deepEqual(
+    publicIntelligence.nearbyStartups.map((item) => item.entityId),
+    ["ENT-0103"],
+    "A context-only relationship must not drive a public proximity path.",
+  );
+  assert.deepEqual(
+    publicIntelligence.emergingResearchers.map((item) => item.entityId),
+    ["ENT-0101"],
+    "An emerging-stage subtype without an official public roster source must not qualify a lead.",
+  );
+  assert.deepEqual(publicIntelligence.emergingResearchers[0].recentPaperEntityIds, ["ENT-0102"]);
+  assert.deepEqual(publicIntelligence.companyMetrics.map((item) => item.factType), ["headquarters"]);
+  assert.equal(publicIntelligence.signal.axes.research_momentum.band, "medium");
+  assert.equal(publicIntelligence.signal.outcome, "Watch");
+  assert.doesNotMatch(
+    JSON.stringify(publicIntelligence),
+    /owner_id|source_id|evidence_id|candidate|review_queue|warm_path|contact|credential|internal_note/i,
+  );
+
   const originalFetch = global.fetch;
   global.fetch = async (input) => {
     const url = new URL(String(input));
@@ -105,6 +194,43 @@ async function run() {
     );
     assert.equal(approvedUser.id, "approved-user");
     assert.equal(approvedUser.isLead, true);
+  } finally {
+    global.fetch = originalFetch;
+  }
+
+  let recoveryProfileRead = false;
+  global.fetch = async (input) => {
+    const url = new URL(String(input));
+    if (url.pathname === "/auth/v1/user") {
+      return response({ id: "approved-user", email: "analyst@example.test", app_metadata: {} });
+    }
+    if (url.pathname.endsWith("/analyst_profiles")) {
+      recoveryProfileRead = true;
+      return response([{ user_id: "approved-user", is_lead: true }]);
+    }
+    throw new Error(`Unexpected recovery verification path: ${url.pathname}`);
+  };
+  const recoveryToken = testJwt({
+    sub: "approved-user",
+    session_id: "recovery-session",
+    amr: [{ method: "recovery", timestamp: 1788566400 }],
+  });
+  try {
+    assert.equal(graph._test.accessTokenUsesRecovery(recoveryToken), true);
+    assert.equal(graph._test.accessTokenUsesRecovery(testJwt({ amr: [{ method: "password" }] })), false);
+    assert.equal(await graph.verifyUser(
+      { headers: { authorization: `Bearer ${recoveryToken}` } },
+      { supabaseUrl: "https://project.supabase.co", serviceRoleKey: "service-secret" },
+    ), null);
+    await assert.rejects(
+      graph.verifyUser(
+        { headers: { authorization: `Bearer ${recoveryToken}` } },
+        { supabaseUrl: "https://project.supabase.co", serviceRoleKey: "service-secret" },
+        { required: true },
+      ),
+      (error) => error.status === 403 && /finish password recovery/i.test(error.message),
+    );
+    assert.equal(recoveryProfileRead, false);
   } finally {
     global.fetch = originalFetch;
   }
@@ -169,20 +295,20 @@ async function run() {
     const table = url.pathname.split("/").at(-1);
     calls.push(url);
     if (table === "graph_entities") {
-      if (url.searchParams.get("id") === "eq.ENT-0001") {
-        return response([{ id: "ENT-0001", kind: "company", canonical_name: "Pilot Co", publication_status: "published" }]);
-      }
-      return response([
+      const entities = [
         { id: "ENT-0001", kind: "company", canonical_name: "Pilot Co", publication_status: "published" },
         { id: "ENT-0002", kind: "person", canonical_name: "Pilot Founder", publication_status: "published" },
         { id: "ENT-0003", kind: "lab", canonical_name: "Pilot Lab", publication_status: "published" },
         { id: "ENT-0004", kind: "paper", canonical_name: "Pilot Paper", publication_status: "published" },
-      ]);
+      ];
+      const requestedFilter = url.searchParams.get("id") || "";
+      const requestedId = requestedFilter.startsWith("eq.") ? requestedFilter.slice(3) : null;
+      return response(requestedId ? entities.filter((entity) => entity.id === requestedId) : entities);
     }
     if (table === "graph_current_relationships") return response([
-      { ...relationships[0], layer: "company", current_revision: 1, observed_at: "2026-01-01T00:00:00Z" },
-      { ...relationships[1], layer: "institutional", current_revision: 1, observed_at: "2026-01-01T00:00:00Z" },
-      { id: "REL-0003", subject_entity_id: "ENT-0002", object_entity_id: "ENT-0004", predicate: "authored", layer: "research", conclusion_label: "Verified fact", current_revision: 1, observed_at: "2026-01-01T00:00:00Z" },
+      { ...relationships[0], layer: "company", current_revision: 1, review_status: "approved", observed_at: "2026-01-01T00:00:00Z" },
+      { ...relationships[1], layer: "institutional", current_revision: 1, review_status: "approved", observed_at: "2026-01-01T00:00:00Z" },
+      { id: "REL-0003", subject_entity_id: "ENT-0002", object_entity_id: "ENT-0004", predicate: "authored", layer: "research", conclusion_label: "Verified fact", current_revision: 1, review_status: "approved", observed_at: "2026-01-01T00:00:00Z" },
     ]);
     if (table === "graph_relationship_evidence") return response([
       { relationship_id: "REL-0001", revision: 1, evidence_id: "EVD-0001" },
@@ -213,7 +339,22 @@ async function run() {
     );
     assert.equal(dossier.entity.id, "ENT-0001");
     assert.equal(dossier.privateAvailable, false);
-    assert.equal(dossier.privateDossier, null);
+    assert.equal(Object.hasOwn(dossier, "privateDossier"), false);
+    assert.equal(dossier.intelligenceAccess, "public-read");
+    assert.equal(dossier.publicIntelligence.publiclyDerived, true);
+    assert.equal(dossier.publicIntelligence.signal.conclusion_label, "Derived signal");
+    assert.equal(dossier.publicIntelligence.signalModel.version, "public-graph-v1");
+    assert.deepEqual(
+      dossier.publicIntelligence.signalInputs
+        .map((input) => input.relationship_id)
+        .filter((id) => id === "REL-0002" || id === "REL-0003"),
+      [],
+      "Relationships without valid public evidence must not feed public intelligence.",
+    );
+    assert.doesNotMatch(
+      JSON.stringify(dossier.publicIntelligence),
+      /owner_id|source_id|evidence_id|candidate|review_queue|warm_path|contact|credential|internal_note/i,
+    );
     assert.deepEqual(dossier.entity.aliases, ["Pilot Company"]);
     assert.equal(dossier.entity.external_ids.website, "https://pilot.test");
     assert.equal(dossier.researchDna[0].entity.id, "ENT-0004");
@@ -223,6 +364,18 @@ async function run() {
     const relationshipRequest = calls.find((url) => url.pathname.endsWith("graph_current_relationships"));
     assert.equal(relationshipRequest.searchParams.get("conclusion_label"), "eq.Verified fact");
     assert.equal(relationshipRequest.searchParams.get("review_status"), "eq.approved");
+    assert.doesNotMatch(relationshipRequest.searchParams.get("select"), /qualifiers|temporal_note/);
+
+    const comparison = await graph.compare(
+      { supabaseUrl: "https://project.supabase.co", serviceRoleKey: "service-secret" },
+      { left: "ENT-0001", right: "ENT-0003", hops: 2, asOf: "2026-09-04", user: null },
+    );
+    assert.equal(comparison.left.intelligenceAccess, "public-read");
+    assert.equal(comparison.right.intelligenceAccess, "public-read");
+    assert.equal(comparison.left.publicIntelligence.publiclyDerived, true);
+    assert.equal(comparison.right.publicIntelligence.publiclyDerived, true);
+    assert.equal(Object.hasOwn(comparison.left, "privateDossier"), false);
+    assert.equal(Object.hasOwn(comparison.right, "privateDossier"), false);
   } finally {
     global.fetch = originalFetch;
   }
@@ -244,9 +397,9 @@ async function run() {
       ]);
     }
     if (table === "graph_current_relationships") return response([
-      { ...relationships[0], layer: "company", current_revision: 1, observed_at: "2026-01-01T00:00:00Z" },
-      { ...relationships[1], layer: "institutional", current_revision: 1, observed_at: "2026-01-01T00:00:00Z" },
-      { id: "REL-0003", subject_entity_id: "ENT-0002", object_entity_id: "ENT-0004", predicate: "authored", layer: "research", conclusion_label: "Verified fact", current_revision: 1, observed_at: "2026-01-01T00:00:00Z" },
+      { ...relationships[0], layer: "company", current_revision: 1, review_status: "approved", observed_at: "2026-01-01T00:00:00Z" },
+      { ...relationships[1], layer: "institutional", current_revision: 1, review_status: "approved", observed_at: "2026-01-01T00:00:00Z" },
+      { id: "REL-0003", subject_entity_id: "ENT-0002", object_entity_id: "ENT-0004", predicate: "authored", layer: "research", conclusion_label: "Verified fact", current_revision: 1, review_status: "approved", observed_at: "2026-01-01T00:00:00Z" },
     ]);
     if (table === "graph_relationship_evidence") return response([
       { relationship_id: "REL-0001", revision: 1, evidence_id: "EVD-0001" },
@@ -304,6 +457,7 @@ async function run() {
       if (url.searchParams.get("is_public") === "eq.true") return response([
         { id: "EVD-0001", source_id: "SRC-0001", snapshot_id: "SNP-0001", stance: "support", retrieved_at: "2026-09-04T00:00:00Z" },
         { id: "EVD-0002", source_id: "SRC-0002", snapshot_id: "SNP-0002", stance: "support", retrieved_at: "2026-09-04T00:00:00Z" },
+        { id: "EVD-0003", source_id: "SRC-0003", snapshot_id: "SNP-0003", stance: "support", retrieved_at: "2026-09-04T00:00:00Z" },
       ]);
       return response([
         { id: "EVD-0003", source_id: "SRC-0003", snapshot_id: "SNP-0003", stance: "support" },
@@ -314,6 +468,7 @@ async function run() {
       if (url.searchParams.get("is_public") === "eq.true") return response([
         { id: "SRC-0001", canonical_url: "https://example.test/about", title: "About", source_type: "official_company", tier: "primary", accessibility_status: "accessible" },
         { id: "SRC-0002", canonical_url: "https://example.test/people", title: "Roster", source_type: "official_roster", tier: "primary", accessibility_status: "accessible" },
+        { id: "SRC-0003", canonical_url: "https://example.test/paper", title: "Paper", source_type: "publisher_record", tier: "primary", accessibility_status: "accessible" },
       ]);
       return response([
         { id: "SRC-0003", source_type: "publisher_record", accessibility_status: "accessible" },
@@ -348,6 +503,8 @@ async function run() {
       { id: "ENT-0001", hops: 2, asOf: "2026-09-04", user: { id: "user-1", appMetadata: {} } },
     );
     assert.equal(dossier.privateAvailable, true);
+    assert.equal(dossier.intelligenceAccess, "public-read");
+    assert.equal(dossier.publicIntelligence.publiclyDerived, true);
     assert.equal(dossier.privateDossier.emergingResearchers[0].entity.id, "ENT-0002");
     assert.deepEqual(dossier.privateDossier.emergingResearchers[0].recentPaperEntityIds, ["ENT-0004"]);
     assert.equal(dossier.privateDossier.metricCoverage[0].conclusion_label, "Derived signal");

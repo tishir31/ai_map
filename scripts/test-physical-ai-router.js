@@ -73,6 +73,18 @@ async function run() {
   const savedFetch = global.fetch;
   process.env.SUPABASE_URL = "https://project.supabase.co";
   process.env.SUPABASE_SERVICE_ROLE_KEY = "service-secret";
+  const unauthenticatedReview = await invokeRoute(routeHandlers["graph-review"], {
+    method: "POST",
+    headers: {},
+    body: { action: "research_entity", entityId: "ENT-0001" },
+  });
+  assert.equal(unauthenticatedReview.status, 401);
+  assert.match(unauthenticatedReview.body.error, /sign in is required/i);
+  const mutationOnReadRoute = await invokeRoute(routeHandlers["graph-investigate"], {
+    method: "POST",
+    headers: {},
+  });
+  assert.equal(mutationOnReadRoute.status, 405);
   global.fetch = async (input) => {
     const url = new URL(String(input));
     const table = url.pathname.split("/").at(-1);
