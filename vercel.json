@@ -114,7 +114,7 @@
   ],
   "functions": {
     "api/research-company.js": {
-      "maxDuration": 60
+      "maxDuration": 90
     }
   }
 }
