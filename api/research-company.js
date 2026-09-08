@@ -477,6 +477,14 @@ export default async function handler(req, res) {
     }
 
     const researchAction = getResearchAction(req);
+    if (researchAction === "work") {
+        if (req.method !== "POST") return sendApi(res, 405, { ok: false, error: "Use POST." });
+        if (!await allowPublicAction(req, res, "research-step", 48, 240)) return;
+        const body = getRequestBody(req);
+        if (body.runId && (typeof body.runId !== "string" || body.runId.length > 150)) return sendApi(res, 400, { ok: false, error: "Invalid run ID." });
+        try { return sendApi(res, 200, { ok: true, ...await require("../lib/public-research-worker").processPublicResearch(body.runId) }); }
+        catch { return sendApi(res, 502, { ok: false, error: "Research step could not complete. Refresh to see saved findings and task status." }); }
+    }
     if (researchAction === "snapshot") {
         return handleResearchSnapshot(req, res).catch((error) => sendApi(res, 500, { ok: false, error: "Research service temporarily unavailable." }));
     }

@@ -111,5 +111,10 @@
         }
       ]
     }
-  ]
+  ],
+  "functions": {
+    "api/research-company.js": {
+      "maxDuration": 60
+    }
+  }
 }
