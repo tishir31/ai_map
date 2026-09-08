@@ -5379,7 +5379,10 @@
                 <h3>Compare Companies</h3>
                 <button class="compare-close" id="compare-close">&times;</button>
             </div>
-            <p class="compare-hint">Select 2-3 companies to compare. Click on companies in the map or search.</p>
+            <p class="compare-hint">Select 2–3 companies to compare. Values come from this map’s dataset; check the company source for current figures.</p>
+            <label for="compare-picker">Company</label>
+            <select id="compare-picker" class="datatable-filter" aria-label="Company to compare"></select>
+            <button class="btn btn-ghost" id="compare-add">Add company</button>
             <div class="compare-selected" id="compare-selected"></div>
             <div class="compare-table" id="compare-table"></div>
             <div class="compare-actions">
@@ -7146,6 +7149,12 @@ function toggleCompareMode() {
     const cmpBtn = document.getElementById('compare-btn');
     if (cmpBtn) cmpBtn.classList.toggle('active', compareMode);
     document.getElementById('compare-modal').classList.toggle('open', compareMode);
+    if (compareMode) {
+        const picker = document.getElementById('compare-picker');
+        picker.replaceChildren();
+        for (const name of Object.keys(data).sort()) { const option = document.createElement('option'); option.value = name; option.textContent = name; picker.appendChild(option); }
+        updateCompareDisplay();
+    }
     if (!compareMode) {
         compareSelected.clear();
         updateCompareDisplay();
@@ -7164,6 +7173,7 @@ function toggleCompareSelection(name) {
 
 // Update compare modal display
 function updateCompareDisplay() {
+    document.getElementById('compare-add').disabled = compareSelected.size >= 3;
     const selectedDiv = document.getElementById('compare-selected');
     const tableDiv = document.getElementById('compare-table');
 
@@ -8251,6 +8261,7 @@ document.getElementById('zoom-reset').onclick = resetZoom;
 document.getElementById('shortcuts-close').onclick = () => document.getElementById('shortcuts-modal').classList.remove('open');
 document.getElementById('analytics-close').onclick = () => document.getElementById('analytics-modal').classList.remove('open');
 document.getElementById('compare-close').onclick = toggleCompareMode;
+document.getElementById('compare-add').onclick = () => { const name=document.getElementById('compare-picker').value; if(data[name] && !compareSelected.has(name)) toggleCompareSelection(name); };
 document.getElementById('compare-clear').onclick = () => { compareSelected.clear(); updateCompareDisplay(); };
 
 // Panel favorite button
