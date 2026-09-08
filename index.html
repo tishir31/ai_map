@@ -5012,7 +5012,7 @@
             max-width: 240px;
         }
 
-    </style>
+     .site-tools { position: relative; } .site-tools summary { cursor: pointer; list-style: none; } .site-tools nav { position: absolute; top: 100%; right: 0; background: var(--bg, #151918); border: 1px solid #777; padding: 12px; min-width: 220px; display: grid; gap: 10px; z-index: 999; } .site-tools nav a { color: inherit; font-size: 13px; } </style>
     <script src="https://accounts.google.com/gsi/client" async defer></script>
 </head>
 <body>
@@ -5040,6 +5040,9 @@
             <nav class="terminal-tabs" aria-label="Terminal sections">
                 <a href="/" class="terminal-tab active" aria-current="page">Map</a>
                 <a href="/physical-ai/" class="terminal-tab">Physical AI</a>
+                <details class="site-tools"><summary class="terminal-tab">All tools</summary><nav aria-label="All public tools">
+                  <a href="/physical-ai/#today">Today</a><a href="/physical-ai/#dashboard">Overview</a><a href="/physical-ai/#map">Landscape</a><a href="/physical-ai/#companies">Companies</a><a href="/physical-ai/#vc">Capital</a><a href="/physical-ai/#talent">Research &amp; Lineage</a><a href="/physical-ai/#tracker">Activity</a><a href="/physical-ai/#tables">Data Tables</a><a href="/physical-ai/#research">Research Sheet</a><a href="/physical-ai/#review">Review Queue</a><a href="/physical-ai/#health">Ingestion Health</a><a href="/physical-ai/how-it-works.html">How it works</a>
+                </nav></details>
             </nav>
         </div>
 
@@ -5174,7 +5177,7 @@
                     cursor: pointer;
                     letter-spacing: 0.5px;
                     transition: all 0.2s;
-                ">Run OAI Digest</button>
+                ">Build public digest</button>
                 <p id="digest-status" style="
                     margin: 8px 0 0 0;
                     font-size: 11px;
@@ -5258,9 +5261,9 @@
                 <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M3 14h18m-9-4v8m-7 0h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
                 <span>Data</span>
             </button>
-            <button class="toolbar-btn insights-btn" id="insights-btn" title="Insights from TC's mailbox">
+            <button class="toolbar-btn insights-btn" id="insights-btn" title="Published newsletter snapshot">
                 <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
-                <span>Insights from TC's Inbox</span>
+                <span>Published insights archive</span>
             </button>
         </div>
 
@@ -5390,7 +5393,7 @@
             <div class="insights-header">
                 <h3>
                     <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" width="20" height="20"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
-                    Insights from TC's Mailbox
+                    Published insights archive
                 </h3>
                 <button class="insights-close" id="insights-close">&times;</button>
             </div>
@@ -5645,25 +5648,27 @@ function formatMarketCap(value) {
     return `$${value}`;
 }
 
-// Run OAI Digest Pipeline via remote trigger
+// Build public digest Pipeline via remote trigger
 async function runOAIDigest() {
     const btn = document.getElementById('run-digest-btn');
     const status = document.getElementById('digest-status');
     btn.disabled = true;
-    btn.textContent = 'Triggering...';
+    btn.textContent = 'Building...';
     btn.style.opacity = '0.6';
     status.style.display = 'block';
-    status.textContent = 'Sending trigger to Claude Code...';
+    status.textContent = 'Reading approved public evidence...';
     status.style.color = 'var(--accent-gold)';
 
     try {
         const resp = await fetch('/api/run-digest', { method: 'POST' });
         const data = await resp.json();
 
-        if (resp.ok && data.success) {
-            btn.textContent = 'Triggered';
+        if (resp.ok && data.ok) {
+            btn.textContent = 'Digest ready';
             btn.style.background = 'var(--accent-emerald)';
-            status.textContent = 'Pipeline running in cloud. Check Gmail for digest.';
+            status.textContent = typeof data.executiveSummary === 'string' ? data.executiveSummary : JSON.stringify(data.executiveSummary);
+            const digestBlob = URL.createObjectURL(new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' }));
+            const digestLink = document.createElement('a'); digestLink.href = digestBlob; digestLink.download = 'public-physical-ai-digest.json'; digestLink.click(); setTimeout(() => URL.revokeObjectURL(digestBlob), 1000);
             status.style.color = 'var(--accent-emerald)';
         } else {
             throw new Error(data.error || 'Unknown error');
@@ -5677,7 +5682,7 @@ async function runOAIDigest() {
 
     setTimeout(() => {
         btn.disabled = false;
-        btn.textContent = 'Run OAI Digest';
+        btn.textContent = 'Build public digest';
         btn.style.background = 'linear-gradient(135deg, var(--accent-gold), var(--accent-warm))';
         btn.style.opacity = '1';
     }, 5000);
@@ -8751,7 +8756,7 @@ let useGeminiProxy = null; // null = not checked, true/false = checked
 async function checkGeminiProxy() {
     if (useGeminiProxy !== null) return useGeminiProxy;
     try {
-        const res = await fetch('/api/gemini', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ prompt: 'test' }) });
+        const res = await fetch('/api/gemini');
         // If we get 200 or 500 (configured but error), proxy exists
         useGeminiProxy = res.status !== 404;
     } catch {
@@ -8760,7 +8765,7 @@ async function checkGeminiProxy() {
     return useGeminiProxy;
 }
 
-async function callGemini(prompt, maxRetries = 3) {
+async function callGemini(prompt, maxRetries = 0) {
     // Try proxy first (Vercel deployment with server-side key)
     const hasProxy = await checkGeminiProxy();
 
@@ -8851,10 +8856,10 @@ async function callGemini(prompt, maxRetries = 3) {
 })();
 
 // --- Feature 1: AI Company Summary ---
-const aiSummaryCache = JSON.parse(localStorage.getItem('aiSummaryCache') || '{}');
+const aiSummaryCache = JSON.parse(localStorage.getItem('aiSummaryCache-safe-v2') || '{}');
 
 function saveAiSummaryCache() {
-    localStorage.setItem('aiSummaryCache', JSON.stringify(aiSummaryCache));
+    localStorage.setItem('aiSummaryCache-safe-v2', JSON.stringify(aiSummaryCache));
 }
 
 async function generateCompanySummary(companyName) {
@@ -8896,7 +8901,7 @@ Cover these points in 3-5 short paragraphs:
 Keep it factual, concise, and under 200 words. Use plain text, no markdown headers.`;
 
         const result = await callGemini(prompt);
-        const formatted = result.replace(/\n\n/g, '<br><br>').replace(/\n/g, '<br>');
+        const formatted = '<small>AI generated interpretation · ' + new Date().toLocaleDateString() + ' · verify claims against sources</small><br><br>' + escapeHTML(result).replace(/\n\n/g, '<br><br>').replace(/\n/g, '<br>');
         aiSummaryCache[companyName] = formatted;
         saveAiSummaryCache();
         textDiv.innerHTML = formatted;
@@ -9127,57 +9132,19 @@ async function loadInboxInsights() {
     }
 }
 
+function renderPublishedInsight(item) {
+    const impact = ['high', 'medium', 'low'].includes(item.impact) ? item.impact : 'low';
+    return '<article class="insight-card insight-impact-' + impact + '"><div class="insight-card-header">' + escapeHTML(item.category || '') + ' · ' + escapeHTML(item.source || '') + ' · ' + escapeHTML(item.date || '') + '</div><h3 class="insight-title">' + escapeHTML(item.title || '') + '</h3><p class="insight-summary">' + escapeHTML(item.summary || '') + '</p><div class="insight-companies">' + (item.companies || []).map(name => '<button class="insight-company-tag" data-insight-company="' + escapeHTML(name) + '">' + escapeHTML(name) + '</button>').join('') + '</div></article>';
+}
+function bindInsightCompanies(container) {
+    container.querySelectorAll('[data-insight-company]').forEach(button => { button.onclick = () => { const name = button.dataset.insightCompany; if (Object.hasOwn(data, name)) showPanel(name); }; });
+}
 function renderInboxInsights(insightsData, container) {
     const updated = new Date(insightsData.updated);
-    let html = '<div class="inbox-updated">Last updated: ' + updated.toLocaleDateString('en-US', {month: 'short', day: 'numeric', year: 'numeric'}) + ' at ' + updated.toLocaleTimeString('en-US', {hour: '2-digit', minute: '2-digit'}) + '</div>';
-
-    // 48-hour cutoff for both sections
-    const now = new Date();
-    const cutoff48h = new Date(now.getTime() - 48 * 60 * 60 * 1000);
-    const cutoffStr = cutoff48h.toISOString().split('T')[0];
-
-    if (insightsData.valuation_updates && insightsData.valuation_updates.length > 0) {
-        const recentVals = insightsData.valuation_updates.filter(v => v.date >= cutoffStr);
-        if (recentVals.length > 0) {
-            html += '<div class="inbox-val-section"><h4>VALUATION UPDATES</h4>';
-            recentVals.forEach(v => {
-                const companyClickable = data[v.company] ? ' onclick="showPanel(\'' + v.company.replace(/'/g, "\\'") + '\')"' : '';
-                html += '<div class="inbox-val-row"><span class="inbox-val-company"' + companyClickable + '>' + v.company + '</span> &rarr; <span class="inbox-val-amount">' + v.new_val + '</span></div>';
-            });
-            html += '</div>';
-        }
-    }
-
-    // Show top 8 facts/news from last 48h (Analysis items go to Insights modal)
-    const impactOrder = { high: 0, medium: 1, low: 2 };
-    const facts = insightsData.insights.filter(i => i.category !== 'Analysis' && i.date >= cutoffStr);
-    const sortedFacts = [...facts].sort((a, b) => {
-        const dateCompare = b.date.localeCompare(a.date);
-        if (dateCompare !== 0) return dateCompare;
-        return (impactOrder[a.impact] || 2) - (impactOrder[b.impact] || 2);
-    });
-    const topFacts = sortedFacts.slice(0, 8);
-
-    html += '<h4 style="color:#eab308;font-size:13px;text-transform:uppercase;letter-spacing:1px;margin:12px 0 8px;">News</h4>';
-
-    topFacts.forEach(item => {
-        const catClass = item.category.replace(/&/g, '');
-        html += '<div class="insight-card insight-impact-' + item.impact + '">';
-        html += '<div class="insight-card-header"><span class="insight-cat ' + catClass + '">' + item.category + '</span><span class="insight-source">' + item.source + ' &middot; ' + item.date + '</span></div>';
-        html += '<div class="insight-title">' + item.title + '</div>';
-        html += '<div class="insight-summary">' + item.summary + '</div>';
-        if (item.companies && item.companies.length > 0) {
-            html += '<div class="insight-companies">';
-            item.companies.forEach(c => {
-                const clickable = data[c] ? ' onclick="showPanel(\'' + c.replace(/'/g, "\\'") + '\')"' : '';
-                html += '<span class="insight-company-tag"' + clickable + '>' + c + '</span>';
-            });
-            html += '</div>';
-        }
-        html += '</div>';
-    });
-
-    container.innerHTML = html;
+    const stale = Date.now() - updated.getTime() > 7 * 86400000;
+    const items = (insightsData.insights || []).filter(item => item.category !== 'Analysis').sort((a,b) => String(b.date).localeCompare(String(a.date))).slice(0,8);
+    container.innerHTML = '<p class="inbox-updated">Published snapshot: ' + escapeHTML(updated.toLocaleDateString()) + (stale ? ' · Archived coverage; not a current news feed.' : '') + '</p>' + items.map(renderPublishedInsight).join('');
+    bindInsightCompanies(container);
 }
 
 // Update showPanel to reset AI summary for new company
@@ -9687,34 +9654,9 @@ ${emailTexts}`;
             const insightsData = await resp.json();
             insightsModalLoaded = true;
 
-            const impactOrder = { high: 0, medium: 1, low: 2 };
-            // Best insights of the day — Analysis items from latest date
-            const analysisItems = insightsData.insights.filter(i => i.category === 'Analysis');
-            const sorted = [...analysisItems].sort((a, b) => {
-                const d = b.date.localeCompare(a.date);
-                return d !== 0 ? d : (impactOrder[a.impact] || 2) - (impactOrder[b.impact] || 2);
-            });
-            const latestDate = sorted[0]?.date;
-            const topInsights = sorted.filter(i => i.date === latestDate).slice(0, 6);
-
-            let html = '<div style="margin-bottom:16px;font-size:12px;color:#888;">Synthesized from ' + (insightsData.newsletters_scanned?.length || 24) + '+ newsletters &middot; ' + new Date(insightsData.updated).toLocaleDateString('en-US', {month:'short',day:'numeric',year:'numeric'}) + '</div>';
-            topInsights.forEach(item => {
-                const catClass = item.category.replace(/&/g, '');
-                html += '<div class="insight-card insight-impact-' + item.impact + '" style="margin-bottom:14px;">';
-                html += '<div class="insight-card-header"><span class="insight-cat ' + catClass + '">' + item.category + '</span><span class="insight-source">' + item.source + ' &middot; ' + item.date + '</span></div>';
-                html += '<div class="insight-title">' + item.title + '</div>';
-                html += '<div class="insight-summary">' + item.summary + '</div>';
-                if (item.companies && item.companies.length > 0) {
-                    html += '<div class="insight-companies">';
-                    item.companies.forEach(c => {
-                        const clickable = data[c] ? ' onclick="showPanel(\'' + c.replace(/'/g, "\\'") + '\')"' : '';
-                        html += '<span class="insight-company-tag"' + clickable + '>' + c + '</span>';
-                    });
-                    html += '</div>';
-                }
-                html += '</div>';
-            });
-            area.innerHTML = html;
+            const items = (insightsData.insights || []).filter(item => item.category === 'Analysis').sort((a,b) => String(b.date).localeCompare(String(a.date))).slice(0,6);
+            area.innerHTML = '<p>Published newsletter archive · ' + escapeHTML(new Date(insightsData.updated).toLocaleDateString()) + '. Historical interpretation, not a live market update.</p>' + items.map(renderPublishedInsight).join('');
+            bindInsightCompanies(area);
         } catch (err) {
             area.innerHTML = '<p style="color:#888;">Could not load insights. Make sure newsletter_insights.json exists.</p>';
         }

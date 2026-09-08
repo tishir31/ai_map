@@ -1,3 +1,4 @@
+const { allowPublicAction, databaseRpc } = require("../lib/public-actions");
 // Vercel Serverless Function — Physical AI company researcher.
 // POST /api/research-company  { name: string }
 // Returns: { ok: true, candidate: { ...Company-like, suggestedActivity, sources } }
@@ -125,6 +126,7 @@ async function generateWithFallback(apiKey, prompt) {
             `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${apiKey}`,
             {
                 method: "POST",
+                signal: AbortSignal.timeout(15000),
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({
                     contents: [{ parts: [{ text: prompt }] }],
@@ -174,8 +176,8 @@ async function handleResearchSnapshot(req, res) {
     const actionUrl = new URL(req.url || "/api/research-company", `https://${req.headers.host || "localhost"}`);
     const runId = req.query?.runId || actionUrl.searchParams.get("runId") || undefined;
     const runRows = await researchRestSelect(supabaseUrl, serviceKey, "research_runs", runId
-        ? { id: `eq.${runId}`, limit: "1" }
-        : { order: "started_at.desc", limit: "1" });
+        ? { id: `eq.${runId}`, public_mode: "eq.true", limit: "1" }
+        : { public_mode: "eq.true", order: "started_at.desc", limit: "1" });
     const runRow = runRows[0];
     if (!runRow) return sendApi(res, 200, { ok: true, snapshot: null });
 
@@ -203,16 +205,15 @@ async function handleResearchRun(req, res) {
     if (req.method !== "POST") return sendApi(res, 405, { ok: false, error: "Use POST." });
     const body = getRequestBody(req);
     const prompt = typeof body.prompt === "string" ? body.prompt.trim() : "";
-    if (!prompt) return sendApi(res, 400, { ok: false, error: "Missing prompt." });
+    if (!prompt || prompt.length > 2000) return sendApi(res, 400, { ok: false, error: "Use a public research prompt of 1–2,000 characters." });
+    if (!await allowPublicAction(req, res, "research-run", 2, 12)) return;
 
     const supabaseUrl = process.env.SUPABASE_URL;
     const serviceKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
     if (!supabaseUrl || !serviceKey) return sendApi(res, 503, { ok: false, error: "Research persistence is not configured." });
 
     const snapshot = createDraftResearchSnapshot(prompt);
-    await researchRestUpsert(supabaseUrl, serviceKey, "research_runs", [toResearchRunRow(snapshot.run)]);
-    await researchRestUpsert(supabaseUrl, serviceKey, "research_tasks", snapshot.tasks.map(toResearchTaskRow));
-    await researchRestUpsert(supabaseUrl, serviceKey, "research_events", snapshot.events.map(toResearchEventRow));
+    await databaseRpc("create_public_research_run", { p_run: toResearchRunRow(snapshot.run), p_tasks: snapshot.tasks.map(toResearchTaskRow), p_events: snapshot.events.map(toResearchEventRow) });
     return sendApi(res, 200, { ok: true, runId: snapshot.run.id, taskCount: snapshot.tasks.length });
 }
 
@@ -221,6 +222,7 @@ async function researchRestSelect(supabaseUrl, serviceKey, table, params) {
     url.searchParams.set("select", "*");
     for (const [key, value] of Object.entries(params)) url.searchParams.set(key, value);
     const response = await fetch(url, {
+        signal: AbortSignal.timeout(10000),
         headers: {
             apikey: serviceKey,
             Authorization: `Bearer ${serviceKey}`,
@@ -327,9 +329,8 @@ function toResearchTask(row) {
         type: row.type,
         status: row.status,
         agentName: row.agent_name,
-        input: row.input || {},
-        output: row.output || undefined,
-        error: row.error || undefined,
+        input: {},
+        error: row.error ? "Research task failed. A worker retry may be needed." : undefined,
         createdAt: row.created_at,
         startedAt: row.started_at || undefined,
         completedAt: row.completed_at || undefined,
@@ -391,7 +392,7 @@ function toResearchEvent(row) {
         eventType: row.event_type,
         agentName: row.agent_name,
         message: row.message,
-        metadata: row.metadata || undefined,
+        metadata: undefined,
         createdAt: row.created_at,
     };
 }
@@ -477,16 +478,17 @@ export default async function handler(req, res) {
 
     const researchAction = getResearchAction(req);
     if (researchAction === "snapshot") {
-        return handleResearchSnapshot(req, res).catch((error) => sendApi(res, 500, { ok: false, error: String(error) }));
+        return handleResearchSnapshot(req, res).catch((error) => sendApi(res, 500, { ok: false, error: "Research service temporarily unavailable." }));
     }
     if (researchAction === "run") {
-        return handleResearchRun(req, res).catch((error) => sendApi(res, 500, { ok: false, error: String(error) }));
+        return handleResearchRun(req, res).catch((error) => sendApi(res, 500, { ok: false, error: "Research service temporarily unavailable." }));
     }
 
     if (req.method !== "POST") {
         return res.status(405).json({ error: "Method not allowed" });
     }
 
+    if (!await allowPublicAction(req, res, "company-research", 10, 120)) return;
     const apiKey = process.env.GEMINI_API_KEY;
     if (!apiKey) {
         return res.status(500).json({ error: "GEMINI_API_KEY not configured in Vercel environment" });
