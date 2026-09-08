@@ -483,7 +483,7 @@ export default async function handler(req, res) {
         const body = getRequestBody(req);
         if (body.runId && (typeof body.runId !== "string" || body.runId.length > 150)) return sendApi(res, 400, { ok: false, error: "Invalid run ID." });
         try { return sendApi(res, 200, { ok: true, ...await require("../lib/public-research-worker").processPublicResearch(body.runId) }); }
-        catch { return sendApi(res, 502, { ok: false, error: "Research step could not complete. Refresh to see saved findings and task status." }); }
+        catch (error) { if (error.status === 429) res.setHeader("Retry-After", "300"); return sendApi(res, error.status === 429 ? 429 : 502, { ok: false, error: error.message || "Research step could not complete. Refresh to see saved findings and task status." }); }
     }
     if (researchAction === "snapshot") {
         return handleResearchSnapshot(req, res).catch((error) => sendApi(res, 500, { ok: false, error: "Research service temporarily unavailable." }));
