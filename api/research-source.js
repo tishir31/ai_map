@@ -18,7 +18,6 @@ const ALLOWED_SUBSECTORS = [
     "other"
 ];
 const ALLOWED_SOURCE_TYPES = ["press release", "SEC filing", "article", "company blog", "other"];
-const ALLOWED_CONFIDENCE = ["confirmed", "reported", "estimated"];
 const MODEL_CANDIDATES = ["gemini-2.5-flash", "gemini-2.5-flash-lite", "gemini-2.0-flash"];
 
 function stripHtml(html) {
@@ -178,8 +177,8 @@ export default async function handler(req, res) {
             return res.status(502).json({ error: "Model did not return valid JSON", raw: text });
         }
 
-        const today = new Date().toISOString().slice(0, 10);
-        const date = /^\d{4}-\d{2}-\d{2}$/.test(parsed.candidateDate) ? parsed.candidateDate : today;
+        const rawDate = String(parsed?.candidateDate || "");
+        const date = /^\d{4}-\d{2}-\d{2}$/.test(rawDate) && Number.isFinite(Date.parse(rawDate)) && new Date(rawDate).toISOString().slice(0, 10) === rawDate ? rawDate : "";
         const candidate = {
             candidateCompany: String(parsed.candidateCompany || "N/A"),
             candidateCounterparty: String(parsed.candidateCounterparty || "N/A"),
@@ -190,7 +189,7 @@ export default async function handler(req, res) {
             geography: String(parsed.geography || "N/A"),
             description: String(parsed.description || "N/A"),
             sourceType: normalized(parsed.sourceType, ALLOWED_SOURCE_TYPES, "article"),
-            confidence: normalized(parsed.confidence, ALLOWED_CONFIDENCE, "estimated"),
+            confidence: "estimated",
             snippet: String(parsed.snippet || "").slice(0, 240),
             extractedText: String(parsed.extractedText || parsed.description || "").slice(0, 650),
             notes: parsed.notes ? String(parsed.notes) : null,

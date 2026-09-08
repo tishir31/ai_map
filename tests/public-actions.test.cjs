@@ -7,10 +7,11 @@ const { createRequire } = require('node:module');
 const { isPublicAddress, parsePublicUrl } = require('../lib/public-web');
 const savedFetch = global.fetch;
 afterEach(() => { global.fetch = savedFetch; });
-function handler(file, fetcher) {
+function handler(file, fetcher, overrides = {}) {
   const filename = path.resolve(__dirname, '../api', file);
   const code = fs.readFileSync(filename,'utf8').replace('export default async function handler','module.exports = async function handler');
-  const context = { module: { exports: {} }, require: createRequire(filename), fetch: fetcher, process: { env: { SUPABASE_URL: 'https://db.example.org', SUPABASE_SERVICE_ROLE_KEY: 'test', GEMINI_API_KEY: 'test' } }, URL, AbortSignal, Buffer, console, setTimeout, clearTimeout };
+  const requireFromFile = createRequire(filename);
+  const context = { module: { exports: {} }, require: name => overrides[name] ?? requireFromFile(name), fetch: fetcher, process: { env: { SUPABASE_URL: 'https://db.example.org', SUPABASE_SERVICE_ROLE_KEY: 'test', GEMINI_API_KEY: 'test' } }, URL, AbortSignal, Buffer, console, setTimeout, clearTimeout };
   vm.runInNewContext(code, context, { filename }); return context.module.exports;
 }
 function response() { return { statusCode: 200, headers: {}, setHeader(k,v) { this.headers[k]=v; }, status(n) { this.statusCode=n; return this; }, json(v) { this.body=v; return this; }, end(v) { this.body=v ? JSON.parse(v) : null; return this; } }; }
@@ -34,4 +35,14 @@ test('all legacy inline JavaScript still parses after rendering and navigation f
   const blocks=[...html.matchAll(/<script\b[^>]*>([\s\S]*?)<\/script>/gi)].map(match=>match[1]).filter(Boolean);
   for (const block of blocks) new vm.Script(block);
   assert.match(html,/All public tools/); assert.match(html,/escapeHTML\(result\)/); assert.doesNotMatch(html,/prompt: 'test'/);
+});
+test('source research preserves unknown dates and treats model assertions as unverified', async () => {
+  for (const [input, expected] of [['',''],['2026-02-30',''],['2026-09-01','2026-09-01']]) {
+    const fn = handler('research-source.js', async () => ({ok:true,json:async()=>({candidates:[{content:{parts:[{text:JSON.stringify({candidateDate:input,candidateCompany:'Figure AI',confidence:'confirmed'})}]}}]})}), {
+      '../lib/public-actions': {allowPublicAction:async()=>true},
+      '../lib/public-web': {parsePublicUrl,readPublicPage:async()=>({status:200,finalUrl:'https://www.figure.ai/news',text:'Public source text.'})}
+    });
+    const res = response(); await fn({method:'POST',body:{url:'https://www.figure.ai/news'},headers:{}},res);
+    assert.equal(res.statusCode,200); assert.equal(res.body.candidate.candidateDate,expected); assert.equal(res.body.candidate.confidence,'estimated');
+  }
 });
