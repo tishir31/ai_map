@@ -1,0 +1,19 @@
+name: Public site checks
+on:
+  pull_request:
+  push:
+    branches: [main]
+    paths-ignore: [tweets.json]
+permissions:
+  contents: read
+jobs:
+  public-contracts:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 22
+      - run: node --test tests/*.test.cjs
+      - name: Check release artifact
+        run: node scripts/check-public-release.cjs

@@ -1,49 +1,7 @@
-// Vercel Serverless Function — Trigger OAI News Digest Pipeline
-// Fires Claude Code routine via per-routine bearer token
-
+// The public digest is assembled from the approved market projection.
+// No mailbox access or external agent routine is needed for this public feature.
+const dailyBrief = require("./daily-brief");
 export default async function handler(req, res) {
-    if (req.method !== 'POST') {
-        return res.status(405).json({ error: 'Method not allowed' });
-    }
-
-    const routineToken = process.env.ROUTINE_TOKEN;
-    if (!routineToken) {
-        return res.status(500).json({ error: 'ROUTINE_TOKEN not configured' });
-    }
-
-    const routineId = 'trig_01QPM9inh86qSpEvrj8spwoT';
-    const url = `https://api.anthropic.com/v1/claude_code/routines/${routineId}/fire`;
-
-    try {
-        const response = await fetch(url, {
-            method: 'POST',
-            headers: {
-                'Authorization': `Bearer ${routineToken}`,
-                'anthropic-beta': 'experimental-cc-routine-2026-04-01',
-                'anthropic-version': '2023-06-01',
-                'Content-Type': 'application/json',
-            },
-            body: '{}',
-        });
-
-        const data = await response.json();
-
-        if (!response.ok) {
-            // Return the upstream response without exposing any credential material.
-            return res.status(response.status).json({
-                error: 'API call failed',
-                status: response.status,
-                api_response: data,
-            });
-        }
-
-        return res.status(200).json({
-            success: true,
-            message: 'OAI Digest pipeline triggered',
-            session_url: data.claude_code_session_url,
-        });
-
-    } catch (error) {
-        return res.status(500).json({ error: error.message });
-    }
+  if (!["GET", "POST"].includes(req.method)) return res.status(405).json({ error: "Use GET or POST." });
+  return dailyBrief({ ...req, method: "GET", url: "/api/daily-brief?days=7", query: { days: "7" } }, res);
 }

@@ -1,3 +1,5 @@
+const { allowPublicAction } = require("../lib/public-actions");
+const { parsePublicUrl, readPublicPage } = require("../lib/public-web");
 // Vercel Serverless Function — Physical AI source-link extractor.
 // POST /api/research-source { url: string, sourceText?: string }
 // Returns a Review Queue candidate shape. The frontend stages it for manual
@@ -16,7 +18,6 @@ const ALLOWED_SUBSECTORS = [
     "other"
 ];
 const ALLOWED_SOURCE_TYPES = ["press release", "SEC filing", "article", "company blog", "other"];
-const ALLOWED_CONFIDENCE = ["confirmed", "reported", "estimated"];
 const MODEL_CANDIDATES = ["gemini-2.5-flash", "gemini-2.5-flash-lite", "gemini-2.0-flash"];
 
 function stripHtml(html) {
@@ -29,36 +30,10 @@ function stripHtml(html) {
 }
 
 async function fetchSourceText(url) {
-    const controller = new AbortController();
-    const timer = setTimeout(() => controller.abort(), 9000);
     try {
-        const response = await fetch(url, {
-            redirect: "follow",
-            signal: controller.signal,
-            headers: {
-                "user-agent": "physical-ai-market-tracker-link-analyzer/1.0"
-            }
-        });
-        const contentType = response.headers.get("content-type") || "";
-        const raw = await response.text();
-        const text = contentType.includes("text/html") ? stripHtml(raw) : raw.replace(/\s+/g, " ").trim();
-        return {
-            ok: response.ok,
-            status: response.status,
-            finalUrl: response.url,
-            text: text.slice(0, 18000)
-        };
-    } catch (error) {
-        return {
-            ok: false,
-            status: null,
-            finalUrl: url,
-            text: "",
-            error: String(error)
-        };
-    } finally {
-        clearTimeout(timer);
-    }
+        const page = await readPublicPage(url);
+        return { ok: page.status >= 200 && page.status < 300, status: page.status, finalUrl: page.finalUrl, text: stripHtml(page.text).slice(0, 18000) };
+    } catch (error) { return { ok: false, status: null, finalUrl: url, text: "", error: error.message }; }
 }
 
 const PROMPT = ({ url, fetched, sourceText }) => `You are a Physical AI investment banking research assistant extracting ONE candidate activity from a source.
@@ -77,7 +52,7 @@ Return strict JSON only, no markdown, with this shape:
 {
   "candidateCompany": "Company primarily involved, or N/A if unknown",
   "candidateCounterparty": "Investor/acquirer/customer/partner, or N/A",
-  "candidateDate": "YYYY-MM-DD date announced or source publication date; if truly unknown use today's date",
+  "candidateDate": "YYYY-MM-DD date announced or source publication date; leave empty if unknown",
   "activityType": "ONE of: ${ALLOWED_ACTIVITY_TYPES.join(" | ")}",
   "subsector": "ONE of: ${ALLOWED_SUBSECTORS.join(" | ")}",
   "dealValueUsd": null OR number in USD",
@@ -128,6 +103,7 @@ async function generateWithFallback(apiKey, prompt) {
             `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${apiKey}`,
             {
                 method: "POST",
+                signal: AbortSignal.timeout(15000),
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({
                     contents: [{ parts: [{ text: prompt }] }],
@@ -177,6 +153,8 @@ export default async function handler(req, res) {
     if (url.length > 2000) return res.status(400).json({ error: "URL too long" });
 
     try {
+        parsePublicUrl(url);
+        if (!await allowPublicAction(req, res, "source-research", 10, 120)) return;
         const fetched = await fetchSourceText(url);
         if (!sourceText && !fetched.text) {
             return res.status(422).json({ error: "Could not read source text. Paste the relevant excerpt and try again.", fetchStatus: fetched.status, detail: fetched.error });
@@ -199,8 +177,8 @@ export default async function handler(req, res) {
             return res.status(502).json({ error: "Model did not return valid JSON", raw: text });
         }
 
-        const today = new Date().toISOString().slice(0, 10);
-        const date = /^\d{4}-\d{2}-\d{2}$/.test(parsed.candidateDate) ? parsed.candidateDate : today;
+        const rawDate = String(parsed?.candidateDate || "");
+        const date = /^\d{4}-\d{2}-\d{2}$/.test(rawDate) && Number.isFinite(Date.parse(rawDate)) && new Date(rawDate).toISOString().slice(0, 10) === rawDate ? rawDate : "";
         const candidate = {
             candidateCompany: String(parsed.candidateCompany || "N/A"),
             candidateCounterparty: String(parsed.candidateCounterparty || "N/A"),
@@ -211,7 +189,7 @@ export default async function handler(req, res) {
             geography: String(parsed.geography || "N/A"),
             description: String(parsed.description || "N/A"),
             sourceType: normalized(parsed.sourceType, ALLOWED_SOURCE_TYPES, "article"),
-            confidence: normalized(parsed.confidence, ALLOWED_CONFIDENCE, "estimated"),
+            confidence: "estimated",
             snippet: String(parsed.snippet || "").slice(0, 240),
             extractedText: String(parsed.extractedText || parsed.description || "").slice(0, 650),
             notes: parsed.notes ? String(parsed.notes) : null,
