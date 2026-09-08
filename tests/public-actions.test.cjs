@@ -46,3 +46,8 @@ test('source research preserves unknown dates and treats model assertions as unv
     assert.equal(res.statusCode,200); assert.equal(res.body.candidate.candidateDate,expected); assert.equal(res.body.candidate.confidence,'estimated');
   }
 });
+test('public digest forwards request headers even when the server exposes them through prototype getters',async()=>{
+  const req=Object.create({get headers(){return {origin:'https://ai-map-cyan.vercel.app'};}});req.method='POST';
+  const fn=handler('run-digest.js',async()=>{throw Error('Unexpected external routine');},{'./daily-brief':async(req,res)=>{assert.equal(req.headers.origin,'https://ai-map-cyan.vercel.app');assert.equal(req.method,'GET');return res.json({ok:true});}});
+  const res=response();await fn(req,res);assert.equal(res.body.ok,true);
+});

@@ -28,9 +28,9 @@
     "api/ingest-web-news.js": "bebdc3fce3bb1467c76c4731e7fe7f9b20546d8745daf49470bcd1119183f952",
     "api/normalize-investors.js": "e3ddec8945e172671321cef1c25002af79dfb4f0c8c701d5db782da300b3ab40",
     "api/pipeline-health.js": "9556648cd661315c8dca46ecbaa071bbc5dd7e1fa66c1e0195ef166f32dba1b9",
-    "api/research-company.js": "8384feb4bd87730100c54c347d22b1ea225bfd60558c32eecd0b5953ff579646",
+    "api/research-company.js": "d67f6df69e5dc873c2f88b434f4c1744f77f77a93f53fad7af72fd2c3e84540d",
     "api/research-source.js": "53f2d63d84f12f7fcd28a5ce8f4f5d9db8877c542d87c88fb4fc4dd9b8a7629f",
-    "api/run-digest.js": "7b5d09d5cccaa5c5251c212a9b8f2f46828980b527a6f731a091c9d14310d5a3",
+    "api/run-digest.js": "7bf6e1f386e738f4661eabe146882da1e1ae5bf6ce32bff06724909a49311d8a",
     "api/ship-readiness.js": "1a953d02d5370d7df9688dce68af6fc13b4355205d90d22d53bedecedef9475f",
     "index.html": "19ce8197f156f5c5173f0150dbdf46e1a92466e2b6fe926cd7a542aea8f1c75f",
     "lib/graph-api.js": "23581681b9447944e7f64d15137aba7960b5db44db411ac3ce012aee00faf3fc",
@@ -40,7 +40,7 @@
     "lib/market-snapshot.js": "cb481e26cf74e38ebf2a35b4224229b3b3b2b1d87f7d021bb99534e1638883c4",
     "lib/physical-ai-router.js": "c0cd92607f6e2b0f734a485e76a436b1d7829ec46ce7337548f9aea35d13557e",
     "lib/public-actions.js": "e290b3575b26271115e646825a80eada9554550a43e324794720003aae5b27ca",
-    "lib/public-research-worker.js": "ff2d4cf8ad381a5b2c24b57ae5b6889ec02287e0d2614fdcb5888490f6f5bd46",
+    "lib/public-research-worker.js": "8d59191661de2b27053cbcb37c0c144a7595cf912eb611edfd5f32f21c4f9f4e",
     "lib/public-web.js": "17a7ca6e6c06c6f3e824ac39afec2788d56e1b35222a8b403ba2d84d9f647f22",
     "lib/query-rotation.js": "2d7d7dfa813bb57af5dce51b85a84d46acc2b8e68a832871ad71dbd70bddd120",
     "lib/research-agents.cjs": "d80b2d7ed0e816c77df60da0731233ad565c65bfc0b6b788a8a3367c7bd1e275",
@@ -48,6 +48,7 @@
     "migrations/20260908_public_research.sql": "5479120f3fabaaf281625ef3be55123b94c78d2e7c610ffa64a01575f7fd090d",
     "migrations/20260908_public_research_task_defaults.sql": "8c98a7d3ee7ffaab29d0ee6c029308eae2bb5fc95cdd2010fd39230864a7509d",
     "migrations/20260908_public_research_worker.sql": "30ec3887696e06f6ca391f6a9e15c85f8a5bb034f5917d7206a2a8b641be0bb3",
+    "migrations/20260908_public_worker_cooldown.sql": "48dfbf1c773332ec49e9164052482192034ea08d313b0b40ed582d8d75153914",
     "migrations/20260908_public_worker_reliability.sql": "75671914fb22612801158dbf67fd454a95cdda3f817e4ddf2f37dfe23eb93cda",
     "physical-ai/assets/ActivityDrilldownModal-D7CTetYc.js": "f8bf3ba05f7b9933f899941d8f3d92fe13c78e61b7975b56309d32e6b07b34e1",
     "physical-ai/assets/ActivityModal-CmpdUU8z.js": "69d7cbb217b3693ff452a3e060429667fb84d0fd2f21510cf0a31ac62fa9f858",
@@ -100,6 +101,8 @@
     "public_research_workspace",
     "public_research_worker",
     "public_research_task_defaults",
-    "public_worker_reliability"
-  ]
+    "public_worker_reliability",
+    "public_worker_cooldown"
+  ],
+  "workerWorkflowSource": "fc2b5f65826a9398204663f5a2c416720b714c2b"
 }
