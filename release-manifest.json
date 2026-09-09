@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "release": "physical-ai-discovery-focus-2026-09-09",
-  "builtAt": "2026-09-09T21:42:43.173Z",
-  "sourceCommit": "9cdc7169d6ed4efcdf4c18b6a4b93ae0ded8f0d0",
+  "builtAt": "2026-09-09T21:51:46.570Z",
+  "sourceCommit": "6bbd90c8ad8d2ba2dc5aaac69537d1a98c3caf0e",
   "backendBaseCommit": "09fb584d57e1d881c1c87409e410e288eb3931ca",
   "graphAsOf": "2026-09-07",
   "publicRoutes": [
