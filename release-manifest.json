@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "release": "physical-ai-ecosystem-2026-09-10",
-  "builtAt": "2026-09-10T07:42:32.587Z",
+  "builtAt": "2026-09-10T07:46:50.387Z",
   "sourceCommit": "e7b3d315d99870223417519c726fde05b22faeb7",
   "backendBaseCommit": "36416e65faf327e44bbf615138dda7649106064a",
   "graphAsOf": "2026-09-07",
@@ -473,7 +473,7 @@
     "physical-ai/og-v2.png": "7a99daf95b8432f3b7c565f8594af707a8f77449e955a19b3c40b1c85cf3a7d3",
     "physical-ai/og-v3.png": "7a628f0885ad4d8c28b422b7a7bd8a7e2fd508f63b21b948c1add8a210a4cb0a",
     "supabase/migrations/20260910065510_physical_ai_ecosystem_v3.sql": "554afd62bc27a9b6b38d7941b2862b47fbea8e0c30bce98a9c84ac92364e01e9",
-    "supabase/migrations/20260910074154_physical_ai_ecosystem_bootstrap_upload.sql": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "supabase/migrations/20260910074154_physical_ai_ecosystem_bootstrap_upload.sql": "52aa249e4c9accb9f019a666e6402ae42aa2f38b767f1538cf9d38941570d50f",
     "vercel.json": "279243a9c6fe8f1c754fc238df7d7ab28bbd1b24f3d9a2358aa8fb72441dd69e"
   },
   "researchRuntime": "public leased tasks; immediate step execution and bounded six-hour worker; findings unverified",
