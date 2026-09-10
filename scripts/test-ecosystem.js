@@ -49,6 +49,11 @@ async function main(){
  const base={core:get(/^knowledgeGraphRuntimeData-.*json$/),research:get(/^knowledgeGraphResearchRuntimeData-.*json$/),discovery};
  const prepared=await snapshots.prepare(base,{selectedVersion:'test-v1'});assert.equal(prepared.shards.length,3);for(const s of prepared.shards)assert.equal(s.sha256,snapshots.hash(s.payload));
  const published={manifest:prepared.manifest,...Object.fromEntries(prepared.shards.map(x=>[x.name,JSON.parse(x.payload)]))};const full=await snapshots.snapshotGraph(published);assert(full.entities.length>1000);assert(full.relationships.length>1000);
+ for(const name of ['core','research']) {
+   assert.equal(published[name].metadata.asOf,discovery.researchAsOf,'All snapshot shards share the research reference date');
+   const originalFacts={...base[name]};delete originalFacts.metadata;const publishedFacts={...published[name]};delete publishedFacts.metadata;
+   assert.deepEqual(publishedFacts,originalFacts,'Publication preserves every entity, relationship, evidence and historical fact date');
+ }
  const baselineEvidenceRelationship={id:'ECO-TEST-BASELINE-EVIDENCE',subjectId:full.entities.find(x=>x.kind==='person').id,objectId:full.entities.find(x=>x.kind==='lab').id,predicate:'member_of',layer:'institutional',temporal:{startYear:null,endYear:null,precision:'undated'},evidenceIds:[full.evidence[0].id],status:'published',derived:false,conclusionLabel:'Verified fact',revision:1};
  await snapshots.prepare({...base,discovery:{...discovery,extensions:{...discovery.extensions,relationships:[baselineEvidenceRelationship]}}},{selectedVersion:'test-baseline-evidence'});
  const save=graph.restRequest;
