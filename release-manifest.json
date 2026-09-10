@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "release": "physical-ai-ecosystem-2026-09-10",
-  "builtAt": "2026-09-10T08:33:04.731Z",
+  "builtAt": "2026-09-10T08:34:56.834Z",
   "sourceCommit": "7131938fc848c1d95d09af5cfc57b3796cb8dd14",
   "backendBaseCommit": "36416e65faf327e44bbf615138dda7649106064a",
   "graphAsOf": "2026-09-07",
@@ -38,7 +38,7 @@
     "lib/ecosystem-publication-parser.js": "bce685f7d39d18f20082590f3dec585efd5e66ca67b18e626ec282b8d3d1e044",
     "lib/ecosystem-registry-parser.js": "f3ca9658cef942d94399ab7997d55b181ab222351b4eacaeb399397ad6db4ec6",
     "lib/ecosystem-validator.cjs": "2296fe7fba8c41c9ed83d520dbb1070b47a1d000d76dd515e8edfa27d9529f9e",
-    "lib/ecosystem-worker.js": "50a849f9ed23d614d3e519bebb34ed324e6b060afa76f594911cd85fe828250b",
+    "lib/ecosystem-worker.js": "ef0cce76947a1a1f27ef96a7eb863c46ddb642c1cd4602ea3f7ede686912c8ee",
     "lib/graph-api.js": "905f9bba3fd728c3eaa1e8843d252a00c44f796faaba65e61aac7b094d1aee2b",
     "lib/graph-cron-handler.js": "9cfa3c9998280c0a82c74691be87e62d9cb056fd5c0dbd55ff1abb9fba453f8a",
     "lib/graph-runtime.mjs": "86ad39106bbad3c9309dc075373b652791de23101cd5dfb339430c258302b6ce",
