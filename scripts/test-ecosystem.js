@@ -1,0 +1,51 @@
+"use strict";
+const assert=require("node:assert/strict");const fs=require("node:fs");const path=require("node:path");
+const policy=require("../lib/ecosystem-policy");const worker=require("../lib/ecosystem-worker");const snapshots=require("../lib/graph-snapshot");const graph=require("../lib/graph-api");const {citationAuthors}=require('../lib/ecosystem-publication-parser');
+const source={id:"SRC-TEST",url:"https://robotics.edu/people",publisher:"Robotics University",kind:"institution",verifiedIdentity:true,title:"People",checkedAt:"2026-09-10",outcome:"checked"};
+const entity=(id,name,kind,url)=>({id,canonicalName:name,displayName:name,kind,aliases:[],externalIds:{officialProfile:url}});
+const alice=entity("ENT-0001","Alice","person","https://robotics.edu/alice");const bob=entity("ENT-0002","Bob","person","https://robotics.edu/bob");const acme=entity("ENT-0003","Acme Robotics","company","https://acme.com");const paper=entity("ENT-0004","Robot Paper","paper","https://arxiv.org/abs/2601.00001");const paper2=entity("ENT-0005","Other Paper","paper","https://arxiv.org/abs/2601.00002");const project=entity("ENT-0006","Robot Project","project","https://github.com/acme/robot");const lab=entity("ENT-0007","Robotics Lab","lab","https://robotics.edu/lab");
+const entities=[alice,bob,acme,paper,paper2,project,lab];const ref=x=>({name:x.canonicalName,url:x.externalIds.officialProfile});
+const candidate=(predicate,subject,object,quote)=>({type:"relationship",predicate,subject:ref(subject),object:ref(object),quote,locator:"People",eventDate:null,datePrecision:"unknown",inferred:false,contradiction:false});
+const pairs=[['founded',alice,acme,'Alice founded Acme Robotics.'],['authored',alice,paper,'Alice authored Robot Paper.'],['cites',paper,paper2,'Robot Paper cites Other Paper.'],['member_of',alice,lab,'Alice is a member of Robotics Lab.'],['employed_by',alice,acme,'Alice works at Acme Robotics.'],['advised_by',alice,bob,"Alice's PhD adviser was Bob."],['research_supervised_by',alice,bob,"Alice's research project supervisor was Bob."],['contributed_to',alice,project,'Alice contributed to Robot Project.']];
+async function main(){
+ for(const args of pairs){const c=candidate(...args);assert.equal(policy.gate(c,{source:c.predicate==='cites'?{...source,url:paper.externalIds.officialProfile,kind:'publication'}:source,text:c.quote,entities,relationships:[]}).decision,'eligible',c.predicate);}
+ const paperSource={...source,url:paper.externalIds.officialProfile,kind:'publication'};
+ const metadata='<meta name="citation_title" content="Robot Paper"><meta name="citation_author" content="Alice"><meta name="citation_author_url" content="https://robotics.edu/alice">';
+ assert.equal(citationAuthors(metadata,paperSource,entities,[],'2026-09-10').accepted.length,1);
+ assert.equal(citationAuthors(metadata.replace('<meta name="citation_author_url" content="https://robotics.edu/alice">',''),paperSource,entities,[],'2026-09-10').accepted.length,0,'Byline name alone must not establish identity');
+ const c=candidate(...pairs[0]);const context={source,text:c.quote,entities,relationships:[]};
+ assert.equal(policy.gate({...c,quote:'Alice advises Bob, founder of Acme Robotics.'},{...context,text:'Alice advises Bob, founder of Acme Robotics.'}).decision,'held','Keyword co-occurrence must not assert the wrong pair');
+ assert.equal(policy.gate({...c,quote:'It is false that Alice founded Acme Robotics.'},{...context,text:'It is false that Alice founded Acme Robotics.'}).decision,'held');
+ assert.equal(policy.gate(candidate('advised_by',alice,bob,"Alice's research project supervisor was Bob."),{...context,text:"Alice's research project supervisor was Bob."}).decision,'held','Project supervisor is not PhD adviser');
+ assert.equal(policy.gate({...c,quote:'invented quote'},context).decision,'held');
+ assert.equal(policy.gate({...c,predicate:'spun_out_of'},context).decision,'held');
+ assert.equal(policy.gate({...c,subject:{...c.subject,url:'https://other.edu/alice'}},context).decision,'held');
+ assert.equal(policy.gate({...c,inferred:true},context).decision,'held');
+ assert.equal(policy.gate(c,{...context,source:{...source,verifiedIdentity:false}}).decision,'held');
+ assert.equal(policy.gate(c,{...context,source:{...source,url:'https://github.com/random/readme',kind:'repository',verifiedIdentity:false}}).decision,'held','An arbitrary repository cannot assert founder/mentor links');
+ assert.equal(policy.gate({...c,eventDate:'2026-09-10',datePrecision:'day',dateQuote:'2026-09-10'},{...context,text:c.quote+' Another team founded a company on 2026-09-10.'}).decision,'held','Unrelated date must not date relationship');
+ let dated={...c,quote:'Alice founded Acme Robotics on 2026-09-10.',eventDate:'2026-09-10',datePrecision:'day'};assert.equal(policy.gate(dated,{...context,text:dated.quote}).decision,'eligible');
+ assert.equal(policy.validDate('2026-02-30','day'),false);
+ assert.equal(policy.validDate('2026-09','month'),true);
+ const claim={type:'claim',kind:'pilot',subject:ref(acme),quote:'Acme Robotics plans to begin customer pilots.',text:'Acme Robotics plans to begin customer pilots.',locator:'Plans',eventDate:null,datePrecision:'unknown'};
+ let decision=policy.gate(claim,{...context,source:{...source,kind:'company'},text:claim.quote});assert.equal(decision.decision,'eligible');
+ const made=policy.materialize(claim,decision,{...source,kind:'company'},'2026-09-10T00:00:00Z');assert.equal(made.claim.attribution,'company');assert.equal(made.relationship,undefined);assert.match(made.claim.text,/plans/);
+ assert.equal(policy.gate({...claim,text:'Acme Robotics has deployed at customers.'},{...context,source:{...source,kind:'company'},text:claim.quote}).decision,'held','Paraphrased model performance is not evidence');
+ const result=await worker.sourceTask({}, {input:{source},run_id:'test'}, {}, {entities,relationships:[]}, {readPublicPage:async()=>({status:200,finalUrl:source.url,text:`<p>${c.quote} This official public profile includes biographical and company information for checking.</p>`}),modelJson:async()=>({data:{candidates:[c],newEntities:[]},model:'fixture'})});assert.equal(result.accepted.length,1);assert.equal(result.contentHash,snapshots.hash(result.capture.text+'\n'));
+ const unchanged=await worker.sourceTask({}, {input:{source:{...source,contentHash:result.contentHash}},run_id:'test'}, {}, {entities,relationships:[]}, {readPublicPage:async()=>({status:200,text:result.capture.text}),modelJson:async()=>{throw Error('Should not call model on unchanged capture');}});assert.equal(unchanged.status,'unchanged');
+ await assert.rejects(worker.sourceTask({}, {input:{source}}, {}, {entities,relationships:[]}, {readPublicPage:async()=>({status:404})}),/HTTP 404/);
+ const files=fs.readdirSync(path.resolve(__dirname,'../physical-ai/assets'));const get=re=>JSON.parse(fs.readFileSync(path.resolve(__dirname,'../physical-ai/assets',files.find(x=>re.test(x)))));
+ const discovery={schemaVersion:'1.0.0',version:'test-v1',researchAsOf:'2026-09-10',publishedAt:null,areas:[],communities:[],profiles:[],works:[],sources:[],reportedClaims:[],changes:[],researchOutcomes:[],extensions:{entities:[],relationships:[],evidence:[],collections:[]}};
+ const base={core:get(/^knowledgeGraphRuntimeData-.*json$/),research:get(/^knowledgeGraphResearchRuntimeData-.*json$/),discovery};
+ const prepared=await snapshots.prepare(base,{selectedVersion:'test-v1'});assert.equal(prepared.shards.length,3);for(const s of prepared.shards)assert.equal(s.sha256,snapshots.hash(s.payload));
+ const published={manifest:prepared.manifest,...Object.fromEntries(prepared.shards.map(x=>[x.name,JSON.parse(x.payload)]))};const full=await snapshots.snapshotGraph(published);assert(full.entities.length>1000);assert(full.relationships.length>1000);
+ const save=graph.restRequest;
+ graph.restRequest=async(_config,table,{params})=>table==='ecosystem_snapshot_releases'?[{manifest:prepared.manifest}]:[{payload:prepared.shards.find(x=>`eq.${x.name}`===params.name).payload,sha256:prepared.shards.find(x=>`eq.${x.name}`===params.name).sha256}];
+ try{const dossier=await graph.investigate({}, {id:full.entities[0].id,hops:2,asOf:'2026-09-10',snapshotVersion:'test-v1',user:{id:'analyst'}});assert.equal(dossier.snapshotVersion,'test-v1');assert.equal(dossier.privateAvailable,false);assert(!('privateDossier' in dossier));assert(dossier.nodes.length<=400);
+ graph.restRequest=async(_config,table)=>table==='ecosystem_snapshot_releases'?[{manifest:prepared.manifest}]:[{payload:'{}',sha256:prepared.shards[0].sha256}];await assert.rejects(snapshots.shard({},'test-v1','core'),/integrity/);
+ }finally{graph.restRequest=save;}
+ assert.throws(()=>snapshots.validateDiscovery({...discovery,privateDossier:'secret'}),/unknown public field/);
+ const assembled=worker.assemble({discovery},[{id:'task1',kind:'source',status:'held',source_id:source.id,input:{source},result}],{backlog:4},'2026-09-10T00:00:00Z');assert.equal(assembled.status,'partial');assert.equal(assembled.coverage.remaining,4);assert.equal(assembled.dataset.changes[0].kind,'newly_mapped','An unknown event date is not today');
+ console.log('ecosystem tests passed: all eight predicates, wrong pairs, mentor distinctions, date evidence, authority, exact claims, actual fetch/unchanged/404, shards, same-version dossier, privacy and partial updates');
+}
+main().catch(e=>{console.error(e);process.exitCode=1;});

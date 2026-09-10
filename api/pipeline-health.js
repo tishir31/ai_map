@@ -226,7 +226,7 @@ module.exports = async function handler(req, res) {
   }
 
   try {
-    const [runsRead, queueRead, approvedActivities, companies, exclusions, investors, activityInvestors] = await Promise.all([
+    const [runsRead, queueRead, approvedActivities, companies, exclusions, investors, activityInvestors, ecosystemRuns, ecosystemRelease] = await Promise.all([
       readWithFallback(
         SUPABASE_URL,
         SUPABASE_SERVICE_ROLE_KEY,
@@ -255,7 +255,9 @@ module.exports = async function handler(req, res) {
         "data_exclusions?select=id,target_type,target_id,company_id,reason,cascade,excluded_at,restored_at&restored_at=is.null&limit=2000"
       ),
       optionalRead(SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY, "investors?select=id,kind&limit=1000"),
-      optionalRead(SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY, "activity_investors?select=activity_id,investor_id,role&limit=1000")
+      optionalRead(SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY, "activity_investors?select=activity_id,investor_id,role&limit=1000"),
+      optionalRead(SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY, "ecosystem_runs?select=id,batch_date,status,mode,fetches,new_entities,backlog,created_at,updated_at,completed_at&order=created_at.desc&limit=1"),
+      optionalRead(SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY, "ecosystem_snapshot_releases?select=manifest&active=eq.true&is_public=eq.true&limit=1")
     ]);
 
     if (!runsRead.ok) throw new Error(runsRead.error);
@@ -298,6 +300,7 @@ module.exports = async function handler(req, res) {
         llmRejected: runs.reduce((sum, run) => sum + Number(run.llm_rejected_count || 0), 0),
         llmFailed: runs.reduce((sum, run) => sum + Number(run.llm_failed_count || 0), 0)
       },
+      ecosystem: { configured: ecosystemRuns.ok && ecosystemRelease.ok, latestBatch: ecosystemRuns.ok ? ecosystemRuns.data[0] || null : null, lastPublicUpdate: ecosystemRelease.ok ? ecosystemRelease.data[0]?.manifest?.publishedAt || null : null, version: ecosystemRelease.ok ? ecosystemRelease.data[0]?.manifest?.version || null : null, coverage: ecosystemRelease.ok ? ecosystemRelease.data[0]?.manifest?.coverage || null : null, status: ecosystemRuns.ok ? ecosystemRuns.data[0]?.status || "not_run" : "unavailable" },
       reviewQueue: queueSummary,
       approvedDataset: {
         approvedRowsRead: publicSnapshot.counts.activities,

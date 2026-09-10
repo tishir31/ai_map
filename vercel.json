@@ -18,6 +18,10 @@
   ],
   "rewrites": [
     {
+      "source": "/api/graph-snapshot",
+      "destination": "/api/pipeline-health?physicalAiRoute=graph-snapshot"
+    },
+    {
       "source": "/api/market-snapshot",
       "destination": "/api/pipeline-health?physicalAiRoute=market-snapshot"
     },
@@ -114,6 +118,9 @@
   ],
   "functions": {
     "api/research-company.js": {
+      "maxDuration": 90
+    },
+    "api/pipeline-health.js": {
       "maxDuration": 90
     }
   }
