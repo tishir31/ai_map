@@ -60,6 +60,7 @@ async function main(){
  await assert.rejects(q("update public.ecosystem_snapshot_releases set manifest='{}' where version='test-base'"),/immutable/);
  for(const role of ['anon','authenticated']){assert.equal((await q("select has_table_privilege($1,'public.ecosystem_tasks','select') as allowed",[role]))[0].allowed,false);assert.equal((await q("select has_function_privilege($1,'public.publish_ecosystem_snapshot(jsonb,jsonb,text,text,boolean,uuid)','execute') as allowed",[role]))[0].allowed,false);}
  assert.equal((await q("select count(*)::int as n from pg_class c join pg_namespace n on n.oid=c.relnamespace where n.nspname='public' and c.relname like 'ecosystem_%' and c.relkind='r' and not c.relrowsecurity"))[0].n,0);
+ const audit=(await q(fs.readFileSync(path.resolve(__dirname,'audit-ecosystem.sql'),'utf8')))[0].ecosystem_audit;assert.equal(audit.batch.status,'shadow');assert(!JSON.stringify(audit).includes('capture.text'));
  await db.close();console.log('ecosystem SQL tests passed: migration, partial-index acquisition, day rollover, leases, budgets, atomic publication, shadow, RLS/ACL');
 }
 main().catch(e=>{console.error(e);process.exitCode=1;});
