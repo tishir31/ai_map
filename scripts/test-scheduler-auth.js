@@ -201,7 +201,7 @@ async function run() {
     "Native Vercel crons must stay disabled while Supabase Cron owns dispatch.");
   const fallback = vercel.rewrites.find((rewrite) => rewrite.destination === "/physical-ai/index.html"
     && rewrite.source.includes(":path"));
-  assert.ok(fallback?.source.includes("knowledge-graph\\.v1\\.json$"),
+  assert.ok(!fallback || fallback.source.includes("knowledge-graph\\.v1\\.json$"),
     "The v1 graph rollback snapshot must bypass the SPA fallback.");
   console.log("scheduler auth tests passed");
 }

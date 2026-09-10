@@ -15,5 +15,14 @@ jobs:
         with:
           node-version: 22
       - run: node --test tests/*.test.cjs
+      - name: Check ecosystem and graph contracts
+        run: |
+          node scripts/test-graph-api.js
+          node scripts/test-physical-ai-router.js
+          node scripts/test-ecosystem.js
+      - name: Validate ecosystem SQL in isolated PostgreSQL
+        run: |
+          npm install --prefix "$RUNNER_TEMP/ecosystem-sql" @electric-sql/pglite@0.3.14 --no-audit --no-fund
+          ECOSYSTEM_PGLITE_PATH="$RUNNER_TEMP/ecosystem-sql/node_modules/@electric-sql/pglite" node scripts/test-ecosystem-sql.js
       - name: Check release artifact
         run: node scripts/check-public-release.cjs

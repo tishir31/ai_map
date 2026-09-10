@@ -684,26 +684,26 @@ async function run() {
     if (table === "graph_review_policies") {
       return response([{ id: "GRAPH-POLICY-V2", mode: "shadow", version: 2 }]);
     }
-    if (table === "graph_refresh_runs" && init.method === "POST") {
+    if (table === "acquire_graph_refresh_run") {
       refreshInsertCount += 1;
-      return response(refreshInsertCount === 1 ? [{
+      return response({ acquired: refreshInsertCount === 1, run: {
         id: "refresh-run-1",
         mode: "shadow",
-        cadence: "weekly",
-        status: "running",
-        idempotency_key: "graph-refresh:weekly:2026-09-04",
-      }] : []);
+        cadence: "monthly",
+        status: refreshInsertCount === 1 ? "running" : "completed",
+        idempotency_key: "graph-refresh:monthly:2026-09-04",
+      } });
     }
     if (table === "graph_refresh_runs" && init.method === "PATCH") return response([]);
     if (table === "graph_refresh_runs") return response([{
       id: "refresh-run-1",
       mode: "shadow",
-      cadence: "weekly",
+      cadence: "monthly",
       status: "completed",
       candidate_count: 2,
       published_count: 0,
       blocked_count: 1,
-      idempotency_key: "graph-refresh:weekly:2026-09-04",
+      idempotency_key: "graph-refresh:monthly:2026-09-04",
     }]);
     if (table === "research_runs" || table === "research_tasks") return response([]);
     if (table === "graph_try_auto_approve_batch") {
@@ -715,7 +715,7 @@ async function run() {
   try {
     const config = { supabaseUrl: "https://project.supabase.co", serviceRoleKey: "service-secret" };
     const first = await graph.runRefresh(config, {
-      cadence: "weekly",
+      cadence: "monthly",
       asOf: "2026-09-04",
       scheduled: true,
       batchLimit: 50,
@@ -728,21 +728,21 @@ async function run() {
     assert.equal(first.candidates, 0);
     assert.equal(first.published, 0);
     assert.equal(first.blocked, 0);
-    assert.equal(first.stagedTaskCount, 5);
+    assert.equal(first.stagedTaskCount, 3);
     assert.equal(batchCallCount, 0);
     const taskInsert = refreshCalls.find((call) => call.table === "research_tasks" && call.method === "POST");
     const stagedTasks = JSON.parse(taskInsert.init.body);
-    assert.equal(stagedTasks.length, 5);
+    assert.equal(stagedTasks.length, 3);
     assert.equal(stagedTasks.every((task) => task.status === "blocked"), true);
     assert.equal(stagedTasks.every((task) => /graph-capable/.test(task.error)), true);
     const refreshPatch = refreshCalls.find((call) => call.table === "graph_refresh_runs" && call.method === "PATCH");
     assert.match(JSON.parse(refreshPatch.init.body).notes, /No sources were fetched/);
-    const insertCall = refreshCalls.find((call) => call.table === "graph_refresh_runs" && call.method === "POST");
-    assert.equal(insertCall.url.searchParams.get("on_conflict"), "idempotency_key");
-    assert.match(insertCall.init.headers.Prefer, /resolution=ignore-duplicates/);
+    const insertCall = refreshCalls.find((call) => call.table === "acquire_graph_refresh_run" && call.method === "POST");
+    assert.equal(JSON.parse(insertCall.init.body).p_scheduled, true);
+    assert.equal(insertCall.url.searchParams.has("on_conflict"), false);
 
     const duplicate = await graph.runRefresh(config, {
-      cadence: "weekly",
+      cadence: "monthly",
       asOf: "2026-09-04",
       scheduled: true,
     });
