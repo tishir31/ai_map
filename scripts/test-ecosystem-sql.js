@@ -9,10 +9,12 @@ async function main(){
  create table public.graph_refresh_runs(id text default gen_random_uuid()::text,mode text,policy_id text,cadence text,status text,idempotency_key text);
  create unique index legacy_partial_refresh on public.graph_refresh_runs(idempotency_key) where idempotency_key is not null;
  create function extensions.digest(input text,algorithm text) returns bytea language sql immutable as $$ select sha256(convert_to(input,'UTF8')) $$;
+ create function extensions.digest(input bytea,algorithm text) returns bytea language sql immutable as $$ select sha256(input) $$;
  create function cron.schedule(text,text,text) returns bigint language sql as $$select 1::bigint$$;
  create function net.http_get(url text,headers jsonb,timeout_milliseconds integer) returns bigint language sql as $$select 1::bigint$$;
  create function extensions.hmac(text,text,text) returns bytea language sql as $$select convert_to('fixture','UTF8')$$;`);
  const migration=fs.readFileSync(path.resolve(__dirname,"../supabase/migrations/20260910065510_physical_ai_ecosystem_v3.sql"),"utf8");await db.exec(migration);
+ await db.exec(fs.readFileSync(path.resolve(__dirname,"../supabase/migrations/20260910074154_physical_ai_ecosystem_bootstrap_upload.sql"),"utf8"));
  const q=async(sql,args=[])=> (await db.query(sql,args)).rows;
  let r=await q("select public.acquire_graph_refresh_run('monthly','2026-09-10','policy','shadow',true) as result");assert.equal(r[0].result.acquired,true);
  r=await q("select public.acquire_graph_refresh_run('monthly','2026-09-10','policy','shadow',true) as result");assert.equal(r[0].result.acquired,false);
@@ -61,6 +63,30 @@ async function main(){
  for(const role of ['anon','authenticated']){assert.equal((await q("select has_table_privilege($1,'public.ecosystem_tasks','select') as allowed",[role]))[0].allowed,false);assert.equal((await q("select has_function_privilege($1,'public.publish_ecosystem_snapshot(jsonb,jsonb,text,text,boolean,uuid)','execute') as allowed",[role]))[0].allowed,false);}
  assert.equal((await q("select count(*)::int as n from pg_class c join pg_namespace n on n.oid=c.relnamespace where n.nspname='public' and c.relname like 'ecosystem_%' and c.relkind='r' and not c.relrowsecurity"))[0].n,0);
  const audit=(await q(fs.readFileSync(path.resolve(__dirname,'audit-ecosystem.sql'),'utf8')))[0].ecosystem_audit;assert.equal(audit.batch.status,'shadow');assert(!JSON.stringify(audit).includes('capture.text'));
+ // Chunk transport is private, byte exact, resumable and publishes atomically.
+ for(const role of ['anon','authenticated']) {
+   for(const table of ['ecosystem_bootstrap_uploads','ecosystem_bootstrap_chunks'])assert.equal((await q('select has_table_privilege($1,$2,\'select\') as ok',[role,'public.'+table]))[0].ok,false);
+   for(const fn of ['begin_ecosystem_bootstrap(uuid,text,integer,integer,text)','put_ecosystem_bootstrap_chunk(uuid,integer,text)','finish_ecosystem_bootstrap(uuid)'])assert.equal((await q('select has_function_privilege($1,$2,\'execute\') as ok',[role,'public.'+fn]))[0].ok,false);
+ }
+ const envelopeFor=version=>({...packageFor(version),sources:[{id:'UP-SOURCE',url:'https://example.org/reviewed',descriptor:{title:'Robots 🤖 '.repeat(6000)},last_checked_at:'2026-09-10',last_outcome:'checked'}],identifiers:[{identifier:'https://example.org/person',entity_id:'ENT-919999',kind:'person',canonical_name:'Élodie'}]});
+ const stage=async(envelope,expected='test-base',overrideHash=null)=>{const bytes=Buffer.from(JSON.stringify(envelope)),id=crypto.randomUUID(),sha=overrideHash||crypto.createHash('sha256').update(bytes).digest('hex'),chunks=[];for(let i=0;i<bytes.length;i+=48000)chunks.push(bytes.subarray(i,i+48000).toString('base64'));await q('select public.begin_ecosystem_bootstrap($1,$2,$3,$4,$5)',[id,sha,bytes.length,chunks.length,expected]);return {id,chunks,sha,bytes};};
+ const put=async(s,i,b=s.chunks[i])=>q('select public.put_ecosystem_bootstrap_chunk($1,$2,$3)',[s.id,i,b]);
+ const finish=s=>q('select public.finish_ecosystem_bootstrap($1) as result',[s.id]);
+ let upload=await stage(envelopeFor('upload-valid'));
+ await put(upload,0);await put(upload,0); // interrupted uploader resumes exact chunk idempotently
+ await assert.rejects(put(upload,0,Buffer.from('different').toString('base64')),/chunk conflict/);
+ await assert.rejects(finish(upload),/incomplete/);
+ assert.equal((await q('select version from public.ecosystem_snapshot_releases where active'))[0].version,'test-base');
+ for(let i=1;i<upload.chunks.length;i++)await put(upload,i);
+ const finished=(await finish(upload))[0].result;assert.equal(finished.published,true);assert.equal(finished.version,'upload-valid');assert.deepEqual((await finish(upload))[0].result,finished);
+ assert.equal((await q('select count(*)::int n from public.ecosystem_bootstrap_chunks where upload_id=$1',[upload.id]))[0].n,0,'Successful upload clears private chunks');
+ assert.equal((await q("select descriptor->>'title' title from public.ecosystem_sources where id='UP-SOURCE'"))[0].title,'Robots 🤖 '.repeat(6000),'Byte chunk boundaries preserve UTF8');
+ upload=await stage(envelopeFor('upload-hash-bad'),'upload-valid','0'.repeat(64));for(let i=0;i<upload.chunks.length;i++)await put(upload,i);await assert.rejects(finish(upload),/hash mismatch/);
+ const bad=envelopeFor('upload-shard-bad');bad.shards[0].payload='{}';bad.sources[0].id='UP-ROLLBACK';bad.sources[0].url='https://example.org/rollback';upload=await stage(bad,'upload-valid');for(let i=0;i<upload.chunks.length;i++)await put(upload,i);await assert.rejects(finish(upload),/Snapshot hash mismatch/);
+ assert.equal((await q("select count(*)::int n from public.ecosystem_sources where id='UP-ROLLBACK'"))[0].n,0,'Failed publication rolls back registrations');
+ assert.equal((await q('select version from public.ecosystem_snapshot_releases where active'))[0].version,'upload-valid');
+ const dir=process.env.ECOSYSTEM_BOOTSTRAP_UPLOAD_DIR;
+ if(dir){for(const file of fs.readdirSync(dir).filter(x=>x.endsWith('.sql')).sort())await db.exec(fs.readFileSync(path.join(dir,file),'utf8'));const expected=JSON.parse(fs.readFileSync(path.join(dir,'upload-manifest.json'),'utf8'));assert.equal((await q('select version from public.ecosystem_snapshot_releases where active'))[0].version,expected.version);assert.equal((await q('select result->>\'sha256\' as sha from public.ecosystem_bootstrap_uploads where id=$1',[expected.uploadId]))[0].sha,expected.sha256);console.log('Real bootstrap artifact validated in PostgreSQL: '+expected.chunks+' chunks, '+expected.bytes+' bytes');}
  await db.close();console.log('ecosystem SQL tests passed: migration, partial-index acquisition, day rollover, leases, budgets, atomic publication, shadow, RLS/ACL');
 }
 main().catch(e=>{console.error(e);process.exitCode=1;});

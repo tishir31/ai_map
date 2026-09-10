@@ -1,11 +1,12 @@
 #!/usr/bin/env node
 "use strict";
 // Validate first; --publish explicitly uploads a version and registers its public sources.
-const fs=require("node:fs"); const path=require("node:path");
+const fs=require("node:fs"); const path=require("node:path"); const crypto=require("node:crypto");
 const snapshots=require("../lib/graph-snapshot"); const graph=require("../lib/graph-api"); const policy=require("../lib/ecosystem-policy");
 async function main() {
   const args=process.argv.slice(2);const publish=args.includes("--publish");const sqlIndex=args.indexOf("--sql-out");const sqlOut=sqlIndex>=0?args[sqlIndex+1]:null;if(sqlIndex>=0&&!sqlOut)throw Error("--sql-out requires a path");
-  const datasetPath=args.find((x,i)=>!x.startsWith("--")&&(sqlIndex<0||i!==sqlIndex+1)) || path.resolve(__dirname,"../physical-ai/ecosystem.v1.json");
+  const chunkIndex=args.indexOf("--chunk-dir");const chunkDir=chunkIndex>=0?args[chunkIndex+1]:null;if(chunkIndex>=0&&!chunkDir)throw Error("--chunk-dir requires a path");
+  const datasetPath=args.find((x,i)=>!x.startsWith("--")&&(sqlIndex<0||i!==sqlIndex+1)&&(chunkIndex<0||i!==chunkIndex+1)) || path.resolve(__dirname,"../physical-ai/ecosystem.v1.json");
   const assetDir=path.resolve(__dirname,"../physical-ai/assets");
   const files=fs.readdirSync(assetDir);
   const coreFile=files.filter(x=>/^knowledgeGraphRuntimeData-.*\.json$/.test(x));
@@ -20,6 +21,18 @@ async function main() {
   const identities=full.entities.flatMap(entity=>policy.stableIdentifiers(entity).map(identifier=>({identifier,entity_id:entity.id,kind:entity.kind,canonical_name:entity.canonicalName})));
   const groups=new Map();for(const row of identities){if(!groups.has(row.identifier))groups.set(row.identifier,[]);groups.get(row.identifier).push(row);}
   const unique=[...groups.values()].filter(rows=>new Set(rows.map(x=>x.entity_id)).size===1).map(rows=>rows[0]);
+  if(chunkDir) {
+    const dir=path.resolve(chunkDir);if(fs.existsSync(dir)&&fs.readdirSync(dir).length)throw Error("--chunk-dir must be empty so files from a previous upload cannot be mixed");fs.mkdirSync(dir,{recursive:true});
+    const envelope=Buffer.from(JSON.stringify({manifest:prepared.manifest,shards:prepared.shards,sources,identifiers:unique}));
+    const id=crypto.randomUUID(),sha256=crypto.createHash("sha256").update(envelope).digest("hex"),chunkCount=Math.ceil(envelope.length/48000);
+    const begin=`select public.begin_ecosystem_bootstrap('${id}','${sha256}',${envelope.length},${chunkCount},(select version from public.ecosystem_snapshot_releases where active));\n`;
+    fs.writeFileSync(path.join(dir,"000-begin.sql"),begin);
+    for(let i=0;i<chunkCount;i++)fs.writeFileSync(path.join(dir,`${String(i+1).padStart(3,"0")}-chunk.sql`),`select public.put_ecosystem_bootstrap_chunk('${id}',${i},'${envelope.subarray(i*48000,(i+1)*48000).toString("base64")}');\n`);
+    fs.writeFileSync(path.join(dir,`${String(chunkCount+1).padStart(3,"0")}-finish.sql`),`select public.finish_ecosystem_bootstrap('${id}');\n`);
+    fs.writeFileSync(path.join(dir,"payload.json"),envelope);
+    const report={validated:true,uploadId:id,version:prepared.manifest.version,sha256,bytes:envelope.length,chunks:chunkCount,directory:dir,shards:prepared.shards.map(x=>({name:x.name,bytes:Buffer.byteLength(x.payload),sha256:x.sha256})),registeredSources:sources.length,authorityResolved:sources.filter(x=>x.descriptor.verifiedIdentity).length};
+    fs.writeFileSync(path.join(dir,"upload-manifest.json"),JSON.stringify(report,null,2));console.log(JSON.stringify(report,null,2));return;
+  }
   if(sqlOut) {
     const literal=value=>"'"+JSON.stringify(value).replaceAll("'","''")+"'::jsonb";
     const sql=`begin;
