@@ -28,6 +28,8 @@ async function main(){
  assert.equal(ycCompanyIdentity(registryHtml.replace('&quot;signedIn&quot;:false','&quot;signedIn&quot;:true'),registryUrl,registryUrl),null,'Only public anonymous registry content');
  assert.equal(ycCompanyIdentity(registryHtml.replace('rel="canonical"','rel="alternate"'),registryUrl,registryUrl),null);
  assert.equal(worker.physicalApplication(registryApplication),true);assert.equal(worker.physicalApplication('GenericAI develops LLM tools from a physical office at 100 Main Street.'),false);
+ // Actual public YC taglines reviewed alongside the saved source fixtures.
+ for(const text of ['Making hard molecules for Pharma and Biotech','Tools for the next era of physical automation.','Robot Cowboys that Herd Cattle with AI Drones'])assert.equal(worker.physicalApplication(text),true,text);
  const registrySource={...source,url:registryUrl,id:'YC-30689',kind:'registry',verifiedIdentity:false};
  const registryCandidate={name:'b12 Labs',kind:'company',url:registryUrl,quote:'b12 Labs',physicalRelevance:registryApplication};
  const savedRegistryRest=graph.restRequest;let registryResolutions=0;graph.restRequest=async()=>{registryResolutions++;return 'ENT-919998';};
