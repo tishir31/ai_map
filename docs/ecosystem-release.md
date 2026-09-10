@@ -24,11 +24,15 @@ Automatic relationship publication requires an exact captured quote, a pair-spec
 
 The citation parser additionally accepts explicit citation metadata with a paper's canonical URL/title and each author's resolved stable profile URL or ORCID. A plain arXiv author name does not establish identity and stays held. Arbitrary repository README text cannot assert founder, mentor or employment connections. New canonical repository identifiers can establish project identity, not person/company identity.
 
+New companies can also resolve from an anonymous official YC company profile whose requested/final/canonical/structured registry URLs agree, with a positive registry ID and exact structured company name/title. Application evidence must occur in the company's own registry description and describe work on physical systems; a physical office/address is insufficient. The YC registry ID and canonical URL are retained for duplicate checks. This establishes company identity only: it does not authorize founder, mentor, employment, funding or deployment edges, and unknown standalone domains remain held. The parser was checked against the public [b12 Labs profile](https://www.ycombinator.com/companies/b12-labs).
+
 Community membership follows accepted links to existing community nodes. Unconnected discoveries remain research gaps; area search results do not fabricate membership. New connected people and works receive partial profiles with explicit unknowns.
 
 ## Recovery and monitoring
 
 Tasks have 85-second leases, at most two workers globally, three attempts, five-minute retry cooldown and frozen initial queues. The resume scheduler authenticates using today's scoped HMAC while the worker resumes the original persisted batch date. Fetch budgets count actual attempts; unprocessed sources remain a visible backlog. A source disappearing never creates a departure/closure claim.
+
+The model request is bounded to 45 seconds after the existing nine-second source-read limit, leaving time to checkpoint within the lease and endpoint limit. Timeouts enter the existing retry queue; a successful private capture is retained even if subsequent extraction fails, without counting that task as completed research. Source planning and backlog counts deduplicate canonical URL variants.
 
 `/api/pipeline-health` exposes only aggregate ecosystem run state, counters, last public update and delayed areas. It exposes no task captures, model output or review records. Public dataset counts describe mapped evidence rather than complete market coverage.
 
