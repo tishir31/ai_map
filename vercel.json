@@ -17,6 +17,7 @@
     }
   ],
   "rewrites": [
+    {"source":"/api/market-review-daily","destination":"/api/pipeline-health?physicalAiRoute=market-review-daily"},
     {
       "source": "/api/graph-refresh-daily",
       "destination": "/api/pipeline-health?physicalAiRoute=graph-refresh-daily"

@@ -23,7 +23,8 @@ const backendBaseCommit = process.env.RELEASE_BACKEND_COMMIT;
 assert.match(sourceCommit || '', /^[a-f0-9]{40}$/, 'RELEASE_SOURCE_COMMIT must be an explicit commit SHA');
 assert.match(backendBaseCommit || '', /^[a-f0-9]{40}$/, 'RELEASE_BACKEND_COMMIT must be an explicit commit SHA');
 const builtAt = new Date(process.env.RELEASE_BUILT_AT || Date.now()).toISOString();
-const files = [...Object.keys(manifest.sha256).filter((file) => !file.startsWith('physical-ai/')), ...filesUnder('physical-ai')].sort();
+const backendFiles = ['api', 'lib'].flatMap(filesUnder).filter(file => /\.(?:js|cjs)$/.test(file));
+const files = [...new Set([...Object.keys(manifest.sha256).filter((file) => !file.startsWith('physical-ai/')), ...backendFiles, ...filesUnder('physical-ai')])].sort();
 const sha256 = {};
 for (const file of files) {
   sha256[file] = crypto.createHash('sha256').update(fs.readFileSync(path.join(root, file))).digest('hex');

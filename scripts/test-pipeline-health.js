@@ -24,6 +24,8 @@ global.fetch=async(url)=>({ok:true,json:async()=>{
  if(url.includes("review_queue_items?"))return [{id:"pending",status:"pending",source_type:"Gmail",created_at:"2026-05-20",candidate_date:"2026-09-16"}];
  if(url.includes("activities?"))return [publicRow,{...publicRow,id:"a-private",source_type:"Gmail",date_announced:"2026-09-18",approved_at:"2026-09-19T00:00:00Z"}];
  if(url.includes("companies?"))return [{id:"c-public",name:"Public company",is_sample:false}];
+ if(url.includes("market_review_runs?"))return [{run_date:"2026-09-18",status:"completed",selected:0,reviewed:0,input:{candidateId:"PRIVATE REVIEW ID"}}];
+ if(url.includes("rpc/market_review_scheduler_status"))return {configured:true};
  if(url.includes("ecosystem_runs?"))return [{id:"eco",status:"partial",cadence:"daily",result:{private:"RAW CAPTURE"}}];
  if(url.includes("ecosystem_snapshot_releases?"))return [{manifest:{publishedAt:"2026-09-18",version:"test",coverage:{checked:1,remaining:2}}}];
  return [];
@@ -33,6 +35,7 @@ global.fetch=async(url)=>({ok:true,json:async()=>{
  await handler({method:"GET",headers:{},query:{}},res);
  assert.equal(res.statusCode,200);assert.equal(res.payload.ok,true);
  assert.equal(res.payload.approvedDataset.publicSafeRows,1);assert.equal(res.payload.approvedDataset.latestActivityDate,"2026-09-10");assert.equal(res.payload.approvedDataset.lastPublicationAt,"2026-09-18T00:00:00Z");
+ assert.equal(res.payload.publicMarketReview.latestRun.selected,0);assert.equal(JSON.stringify(res.payload).includes("PRIVATE REVIEW ID"),false);
  assert.equal(res.payload.ecosystem.status,"partial");assert.equal(res.payload.reviewQueue.complete,true);
  assert.equal(JSON.stringify(res.payload).includes("PRIVATE QUERY"),false);assert.equal(JSON.stringify(res.payload).includes("RAW CAPTURE"),false);
  console.log("pipeline health handler integration tests passed");

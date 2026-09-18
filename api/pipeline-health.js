@@ -294,6 +294,11 @@ module.exports = async function handler(req, res) {
     if (!queueRead.ok) throw new Error(queueRead.error);
     const runs = runsRead.data || [];
     const queue = queueRead.data || [];
+    const [publicReviewRead,reviewSchedulerRead] = await Promise.all([
+      optionalRead(SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY, "market_review_runs?select=run_date,status,selected,reviewed,published,held,duplicates,nonqualifying,errors,collector_window_status,started_at,last_review_at,completed_at&order=run_date.desc&limit=1"),
+      optionalRead(SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY, "rpc/market_review_scheduler_status")
+    ]);
+    const publicMarketReview = require("../lib/market-review-health").reviewHealth(publicReviewRead, new Date(), reviewSchedulerRead);
     const latestBySource = summarizeRuns(runs);
     const queueSummary = summarizeQueue(queue);
     const investorStatus = {
@@ -347,6 +352,7 @@ module.exports = async function handler(req, res) {
       },
       ecosystem,
       reviewQueue: queueSummary,
+      publicMarketReview,
       approvedDataset: {
         approvedRowsRead: publicSnapshot.counts.activities,
         publicSafeRows: publicSnapshot.counts.activities,
