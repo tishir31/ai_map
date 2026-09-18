@@ -1,4 +1,4 @@
--- Apply only after schema and authenticated fixed backend route verified. No activation performed.
+-- Migration template. Apply once after schema and authenticated fixed backend route verification.
 begin;
 alter table private.physical_ai_scheduler_dispatches drop constraint physical_ai_scheduler_dispatches_job_name_check;
 alter table private.physical_ai_scheduler_dispatches add constraint physical_ai_scheduler_dispatches_job_name_check check(job_name in('ingest-gmail','ingest-web-news','market-review-daily','graph-refresh-daily','graph-refresh-weekly','graph-refresh-monthly','graph-refresh-quarterly'));
@@ -179,7 +179,8 @@ declare job text; root_secret text; token text; today text; request_id bigint; b
 end $$;
 revoke all on function private.resume_physical_ai_ecosystem() from public,anon,authenticated,service_role;
 select cron.schedule('physical-ai-market-review-daily','10,40 15,16 * * *',$job$select * from private.dispatch_physical_ai_job('market-review-daily');$job$);
--- Expose only a fixed boolean. Column-level grants exclude all cron command/credential text.
+-- The RPC exposes only a fixed boolean. Explicit grants below request three cron columns.
+-- Existing table/PUBLIC grants may independently allow broader service-role reads; these grants do not revoke them.
 grant usage on schema cron to service_role;
 grant select(jobname,active,schedule)on cron.job to service_role;
 create function public.market_review_scheduler_status()returns jsonb
