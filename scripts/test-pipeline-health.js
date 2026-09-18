@@ -26,6 +26,9 @@ global.fetch=async(url)=>({ok:true,json:async()=>{
  if(url.includes("companies?"))return [{id:"c-public",name:"Public company",is_sample:false}];
  if(url.includes("market_review_runs?"))return [{run_date:"2026-09-18",status:"completed",selected:0,reviewed:0,input:{candidateId:"PRIVATE REVIEW ID"}}];
  if(url.includes("rpc/market_review_scheduler_status"))return {configured:true};
+ if(url.includes("web_collection_runs?"))return [];
+ if(url.includes("rpc/web_collection_scheduler_status"))return {configured:true};
+ if(url.includes("rpc/backlog_triage_summary"))return {pending:1,publicPending:0,privatePending:1,unknownSourcePending:0,asOf:"2026-09-18",capture:"PRIVATE BACKLOG"};
  if(url.includes("ecosystem_runs?"))return [{id:"eco",status:"partial",cadence:"daily",result:{private:"RAW CAPTURE"}}];
  if(url.includes("ecosystem_snapshot_releases?"))return [{manifest:{publishedAt:"2026-09-18",version:"test",coverage:{checked:1,remaining:2}}}];
  return [];
@@ -37,6 +40,7 @@ global.fetch=async(url)=>({ok:true,json:async()=>{
  assert.equal(res.payload.approvedDataset.publicSafeRows,1);assert.equal(res.payload.approvedDataset.latestActivityDate,"2026-09-10");assert.equal(res.payload.approvedDataset.lastPublicationAt,"2026-09-18T00:00:00Z");
  assert.equal(res.payload.publicMarketReview.latestRun.selected,0);assert.equal(JSON.stringify(res.payload).includes("PRIVATE REVIEW ID"),false);
  assert.equal(res.payload.ecosystem.status,"partial");assert.equal(res.payload.reviewQueue.complete,true);
+ assert.equal(res.payload.webCollection.latestRun.historicalUnrecoverable,true);assert.equal(res.payload.webCollection.latestRun.processed,null);assert.equal(res.payload.backlogTriage.pending,1);assert(!JSON.stringify(res.payload).includes("PRIVATE BACKLOG"));
  assert.equal(JSON.stringify(res.payload).includes("PRIVATE QUERY"),false);assert.equal(JSON.stringify(res.payload).includes("RAW CAPTURE"),false);
  console.log("pipeline health handler integration tests passed");
 })().catch(error=>{console.error(error);process.exitCode=1;});

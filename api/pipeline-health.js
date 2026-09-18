@@ -300,6 +300,16 @@ module.exports = async function handler(req, res) {
     ]);
     const publicMarketReview = require("../lib/market-review-health").reviewHealth(publicReviewRead, new Date(), reviewSchedulerRead);
     const latestBySource = summarizeRuns(runs);
+    const [webRunRead,webSchedulerRead,backlogRead]=await Promise.all([
+      optionalRead(SUPABASE_URL,SUPABASE_SERVICE_ROLE_KEY,"web_collection_runs?select=run_date,status,planned_queries,completed_queries,selected,processed,staged,duplicates,rejected,errors,remaining,stop_reason,started_at,last_progress_at,completed_at&order=run_date.desc&limit=1"),
+      optionalRead(SUPABASE_URL,SUPABASE_SERVICE_ROLE_KEY,"rpc/web_collection_scheduler_status"),
+      optionalRead(SUPABASE_URL,SUPABASE_SERVICE_ROLE_KEY,"rpc/backlog_triage_summary")
+    ]);
+    const legacyWeb=latestBySource["Public web news"];
+    const legacyCheckpoint=legacyWeb?await optionalRead(SUPABASE_URL,SUPABASE_SERVICE_ROLE_KEY,`collector_checkpoints?id=eq.${encodeURIComponent(legacyWeb.id)}&select=status&limit=1`):{ok:true,data:[]};
+    const collectionHealth=require("../lib/web-collection-health");
+    const webCollection=collectionHealth.webHealth(webRunRead,webSchedulerRead,legacyWeb,new Date(),legacyCheckpoint);
+    const backlogTriage=collectionHealth.backlogHealth(backlogRead);
     const queueSummary = summarizeQueue(queue);
     const investorStatus = {
       applied: investors.ok && activityInvestors.ok,
@@ -353,6 +363,8 @@ module.exports = async function handler(req, res) {
       ecosystem,
       reviewQueue: queueSummary,
       publicMarketReview,
+      webCollection,
+      backlogTriage,
       approvedDataset: {
         approvedRowsRead: publicSnapshot.counts.activities,
         publicSafeRows: publicSnapshot.counts.activities,

@@ -252,4 +252,30 @@ const gmailAgreedMerge = ingestGmail._test.buildAdjudicatedCandidates(
 assert.equal(gmailAgreedMerge.duplicate_of_activity_id, "a-alpha-series-a");
 assert.equal(gmailAgreedMerge.intelligence_action, "update_existing");
 
+const similarCompanyContext = {
+  ...context,
+  companyById: new Map([["c-alpha-labs", "Alpha Robotics Labs"]]),
+  activities: [{ ...context.activities[0], company_id: "c-alpha-labs" }]
+};
+assert.equal(
+  ingestWebNews._test.findExistingActivity(baseCandidate, similarCompanyContext),
+  null,
+  "a merely similar registry name must not suppress a distinct candidate"
+);
+const ambiguousCompanyContext = {
+  ...context,
+  companyById: new Map([["c-alpha", "Alpha Robotics"], ["c-alpha-case", "alpha robotics"]]),
+  activities: context.activities
+};
+assert.equal(
+  ingestWebNews._test.findExistingActivity(baseCandidate, ambiguousCompanyContext),
+  null,
+  "an ambiguous normalized company identity must reach review"
+);
+assert.equal(
+  ingestWebNews._test.findExistingActivity({ ...baseCandidate, source_url: "https://another-publisher.example/series-a" }, context),
+  null,
+  "same-date and same-amount cross-URL similarity must not suppress review"
+);
+
 console.log("ingest adjudication corruption regression tests passed");
