@@ -1,0 +1,168 @@
+{
+  "status": "REVIEWED_DRAFT_NOT_APPLIED",
+  "researchedAt": "2026-09-18",
+  "inspectedPublicCandidateIds": [
+    "rq-web-uivkn5",
+    "rq-web-e2nu4p",
+    "rq-web-lg7d8y"
+  ],
+  "publicationPolicy": "Explicit owner-reviewed public evidence recovery; not collector auto-approval. Validate payload under one transaction and fresh exact-ID preconditions. Insert-if-missing must reject different existing payloads, and dedupe event identity/amount/date/source before insertion. Fill apply-time audit fields with actual authenticated owner/time. Update final candidate status only after company/source/activity creation succeeds.",
+  "records": [
+    {
+      "candidateId": "rq-web-e2nu4p",
+      "precondition": {
+        "status": "pending",
+        "source_type": "article",
+        "candidate_date": "2026-09-15"
+      },
+      "candidateCorrection": {
+        "candidate_date": "2026-09-15",
+        "candidate_counterparty": "Headline; Sofina; Goldman Sachs; EIB Group (ETCI); KfW Capital; T.Capital; Balderton; HV; Intrepid Growth Partners; 33N Ventures; Lakestar; Supernova Invest; Blue Cloud Ventures; Geodesic Capital",
+        "subsector": "other",
+        "geography": "Italy",
+        "description": "Exein announced $270 million in equity funding led by Headline at a $1.7 billion valuation. The company said the funding supports US and APAC expansion of security for intelligent physical systems. A separately expanded revolving credit facility has no disclosed amount here and is excluded from the $270 million equity value.",
+        "source_type": "press release",
+        "source_url": "https://www.exein.io/blog/exein-raises-270m-at-1-7bn-valuation-to-build-the-security-layer-for-physical-ai",
+        "confidence": "reported",
+        "intelligence_action": "new_company"
+      },
+      "companyInsertIfMissing": {
+        "id": "c-exein",
+        "name": "Exein",
+        "overview": "Embedded and runtime cybersecurity provider addressing intelligent physical systems, including robots, drones and vehicles.",
+        "subsector": "other",
+        "geography": "Italy",
+        "website": "https://www.exein.io",
+        "is_sample": false
+      },
+      "sourceInsertIfMissing": {
+        "id": "s-rq-web-e2nu4p",
+        "activity_id": "a-rq-web-e2nu4p",
+        "type": "press release",
+        "url": "https://www.exein.io/blog/exein-raises-270m-at-1-7bn-valuation-to-build-the-security-layer-for-physical-ai",
+        "title": "Exein announces $270 million equity financing"
+      },
+      "activityInsertIfMissing": {
+        "id": "a-rq-web-e2nu4p",
+        "company_id": "c-exein",
+        "date_announced": "2026-09-15",
+        "counterparty": "Headline; Sofina; Goldman Sachs; EIB Group (ETCI); KfW Capital; T.Capital; Balderton; HV; Intrepid Growth Partners; 33N Ventures; Lakestar; Supernova Invest; Blue Cloud Ventures; Geodesic Capital",
+        "activity_type": "financing",
+        "subsector": "other",
+        "deal_value_usd": 270000000,
+        "geography": "Italy",
+        "description": "Exein announced $270 million in equity funding led by Headline at a $1.7 billion valuation. The company said the funding supports US and APAC expansion of security for intelligent physical systems. A separately expanded revolving credit facility has no disclosed amount here and is excluded from the $270 million equity value.",
+        "source_id": "s-rq-web-e2nu4p",
+        "source_type": "press release",
+        "source_url": "https://www.exein.io/blog/exein-raises-270m-at-1-7bn-valuation-to-build-the-security-layer-for-physical-ai",
+        "source_reference": "Exein announces $270 million equity financing",
+        "additional_sources": [
+          {
+            "url": "https://prtimes.jp/main/html/rd/p/000000001.000191079.html",
+            "type": "press release",
+            "title": "Exein company-issued Japanese release with Rome headquarters and September 15 event dateline"
+          }
+        ],
+        "confidence": "reported",
+        "review_status": "approved",
+        "is_sample": false,
+        "entered_by": "public-source-recovery-review",
+        "entered_at": null,
+        "approved_by": null,
+        "approved_at": null,
+        "last_updated": "2026-09-18",
+        "merged_from_candidate_ids": [
+          "rq-web-e2nu4p"
+        ]
+      },
+      "candidateFinalStatus": "approved",
+      "applyTimeFields": [
+        "activityInsertIfMissing.entered_at",
+        "activityInsertIfMissing.approved_at",
+        "activityInsertIfMissing.approved_by"
+      ],
+      "claimClass": "COMPANY-REPORTED CLAIM"
+    },
+    {
+      "candidateId": "rq-web-lg7d8y",
+      "precondition": {
+        "status": "pending",
+        "source_type": "article",
+        "candidate_date": "2026-09-14"
+      },
+      "candidateCorrection": {
+        "candidate_date": "2026-09-10",
+        "candidate_counterparty": "NewView Capital; Insight Partners; Primary Venture Partners; Scale Venture Partners; Vintage Investment Partners; Lightbank; Avenir Growth Capital; Story Ventures; Camber Creek",
+        "subsector": "other",
+        "geography": "United States",
+        "description": "Inspiren announced $70 million in Series C funding led by NewView Capital to expand its ambient Physical AI and hardware ecosystem for senior living. The company-issued announcement dates the financing September 10, 2026. Company-reported care outcomes are excluded from this funding record.",
+        "source_type": "press release",
+        "source_url": "https://www.prnewswire.com/news-releases/inspiren-raises-70m-series-c-to-scale-physical-ai-for-senior-living-302874801.html",
+        "confidence": "reported",
+        "intelligence_action": "new_company"
+      },
+      "companyInsertIfMissing": {
+        "id": "c-inspiren",
+        "name": "Inspiren",
+        "overview": "Ambient AI, sensing and care-workflow technology for senior living.",
+        "subsector": "other",
+        "geography": "United States",
+        "website": "https://www.inspiren.com",
+        "is_sample": false
+      },
+      "sourceInsertIfMissing": {
+        "id": "s-rq-web-lg7d8y",
+        "activity_id": "a-rq-web-lg7d8y",
+        "type": "press release",
+        "url": "https://www.prnewswire.com/news-releases/inspiren-raises-70m-series-c-to-scale-physical-ai-for-senior-living-302874801.html",
+        "title": "Inspiren announces $70 million Series C financing"
+      },
+      "activityInsertIfMissing": {
+        "id": "a-rq-web-lg7d8y",
+        "company_id": "c-inspiren",
+        "date_announced": "2026-09-10",
+        "counterparty": "NewView Capital; Insight Partners; Primary Venture Partners; Scale Venture Partners; Vintage Investment Partners; Lightbank; Avenir Growth Capital; Story Ventures; Camber Creek",
+        "activity_type": "financing",
+        "subsector": "other",
+        "deal_value_usd": 70000000,
+        "geography": "United States",
+        "description": "Inspiren announced $70 million in Series C funding led by NewView Capital to expand its ambient Physical AI and hardware ecosystem for senior living. The company-issued announcement dates the financing September 10, 2026. Company-reported care outcomes are excluded from this funding record.",
+        "source_id": "s-rq-web-lg7d8y",
+        "source_type": "press release",
+        "source_url": "https://www.prnewswire.com/news-releases/inspiren-raises-70m-series-c-to-scale-physical-ai-for-senior-living-302874801.html",
+        "source_reference": "Inspiren announces $70 million Series C financing",
+        "additional_sources": [
+          {
+            "url": "https://www.inspiren.com/news",
+            "type": "company blog",
+            "title": "Inspiren official news index: Series C announcement September 10, 2026"
+          }
+        ],
+        "confidence": "reported",
+        "review_status": "approved",
+        "is_sample": false,
+        "entered_by": "public-source-recovery-review",
+        "entered_at": null,
+        "approved_by": null,
+        "approved_at": null,
+        "last_updated": "2026-09-18",
+        "merged_from_candidate_ids": [
+          "rq-web-lg7d8y"
+        ]
+      },
+      "candidateFinalStatus": "approved",
+      "applyTimeFields": [
+        "activityInsertIfMissing.entered_at",
+        "activityInsertIfMissing.approved_at",
+        "activityInsertIfMissing.approved_by"
+      ],
+      "claimClass": "COMPANY-REPORTED CLAIM"
+    }
+  ],
+  "held": [
+    {
+      "candidateId": "rq-web-uivkn5",
+      "reason": "Official news index confirms September 10/$31 million, but detailed official article direct retrieval failed through web tool and shell DNS. Do not publish lead-investor assertions from a search snippet. Recheck full article or use the official index as a narrowly sourced separate review."
+    }
+  ]
+}

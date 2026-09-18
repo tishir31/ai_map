@@ -19,8 +19,8 @@ const ALLOWED_ORIGINS = new Set([
 ]);
 
 const EXPECTED_SOURCES = [
-  { sourceName: "Gmail", maxAgeHours: 30 },
-  { sourceName: "Public web news", maxAgeHours: 30 }
+  { sourceName: "Gmail", maxAgeHours: 30, hour: 13, minute: 0 },
+  { sourceName: "Public web news", maxAgeHours: 30, hour: 13, minute: 15 }
 ];
 const RETIRED_SOURCES = new Set([
   "Gmail attachment: physical_ai_mna_deals.xlsx",
@@ -87,6 +87,13 @@ async function readWithFallback(supabaseUrl, serviceRoleKey, primaryPath, fallba
   };
 }
 
+function nextDailyCheck(source, now = new Date()) {
+  if (!source) return null;
+  const next = new Date(now); next.setUTCHours(source.hour, source.minute, 0, 0);
+  if (next <= now) next.setUTCDate(next.getUTCDate() + 1);
+  return next.toISOString();
+}
+
 function summarizeRuns(runs) {
   const latestBySource = {};
   for (const run of runs) {
@@ -104,7 +111,11 @@ function summarizeRuns(runs) {
         llmEnrichedCount: Number(run.llm_enriched_count || 0),
         llmRejectedCount: Number(run.llm_rejected_count || 0),
         llmFailedCount: Number(run.llm_failed_count || 0),
-        status: run.status
+        status: run.status,
+        stopReason: ["max-items", "time-budget", "provider-error"].includes(run.stop_reason) ? run.stop_reason : null,
+        processedItems: Number.isFinite(run.processed_items) ? run.processed_items : null,
+        requestedItems: Number.isFinite(run.requested_items) ? run.requested_items : null,
+        nextExpectedCheck: nextDailyCheck(EXPECTED_SOURCES.find(x => x.sourceName === source)),
       };
     }
   }
@@ -119,9 +130,15 @@ function summarizeQueue(items) {
   let pendingUpdates = 0;
   let gmailOnly = 0;
   let lowScore = 0;
+  let oldestPendingAt = null;
+  let newestCandidateDate = null;
+  let agedOver7d = 0;
   for (const item of items) {
     if (item.status !== "pending") continue;
     pending += 1;
+    if (item.created_at && (!oldestPendingAt || item.created_at < oldestPendingAt)) oldestPendingAt = item.created_at;
+    if (hoursSince(item.created_at) > 168 && item.created_at) agedOver7d += 1;
+    if (item.candidate_date && (!newestCandidateDate || item.candidate_date > newestCandidateDate)) newestCandidateDate = item.candidate_date;
     increment(bySource, item.source_type);
     increment(byAction, item.intelligence_action || (item.duplicate_of_activity_id ? "update_existing" : "unclassified"));
     increment(byLlmStatus, item.llm_status || "none");
@@ -132,6 +149,11 @@ function summarizeQueue(items) {
   return {
     pending,
     pendingUpdates,
+    oldestPendingAt,
+    newestCandidateDate,
+    agedOver7d,
+    complete: items.length < 1000,
+    scope: "global-server",
     gmailOnly,
     lowScore,
     bySource,
@@ -140,7 +162,7 @@ function summarizeQueue(items) {
   };
 }
 
-function buildFindings({ latestBySource, queue, investorStatus, runWindow, schemaWarnings, llmConfigured }) {
+function buildFindings({ latestBySource, queue, investorStatus, runWindow, schemaWarnings, llmConfigured, approvedDataset, ecosystem }) {
   const findings = [];
   const expectedNames = new Set(EXPECTED_SOURCES.map((source) => source.sourceName));
   for (const expected of EXPECTED_SOURCES) {
@@ -152,6 +174,8 @@ function buildFindings({ latestBySource, queue, investorStatus, runWindow, schem
     if (latest.status === "failed") {
       findings.push({ severity: "high", code: "latest-run-failed", detail: `${expected.sourceName} latest run failed.` });
     }
+    if (latest.status === "partial") findings.push({ severity: "medium", code: "latest-run-partial", detail: `${expected.sourceName} checked only part of its selected source window (${latest.stopReason || "reason not recorded"}).` });
+    if (latest.status === "running") findings.push({ severity: "low", code: "latest-run-running", detail: `${expected.sourceName} collection is still running.` });
     if (latest.ageHours > expected.maxAgeHours) {
       findings.push({ severity: "medium", code: "stale-run", detail: `${expected.sourceName} latest run is ${latest.ageHours}h old.` });
     }
@@ -168,6 +192,12 @@ function buildFindings({ latestBySource, queue, investorStatus, runWindow, schem
   if (llmFailures > 0 && llmFailures >= llmEnriched) {
     findings.push({ severity: "medium", code: "llm-failure-rate", detail: `LLM failures (${llmFailures}) are high relative to enrichments (${llmEnriched}).` });
   }
+  if (!queue.complete) findings.push({ severity: "medium", code: "queue-truncated", detail: "Queue totals are lower bounds from the oldest 1000 pending items." });
+  if (queue.agedOver7d > 0) findings.push({ severity: "medium", code: "review-aging", detail: `${queue.agedOver7d} pending candidates have waited more than seven days.` });
+  if (approvedDataset && hoursSince(approvedDataset.latestActivityDate) > 72) findings.push({ severity: "medium", code: "event-age", detail: "No public event is dated in the last three days. This may mean no new qualifying evidence or delayed review." });
+  if (approvedDataset && !approvedDataset.lastPublicationAt) findings.push({ severity: "low", code: "publication-telemetry-unknown", detail: "Last reviewed public publication time is not recorded." });
+  if (approvedDataset?.lastPublicationAt && queue.pending && hoursSince(approvedDataset.lastPublicationAt) > 72) findings.push({ severity: "medium", code: "publication-stall", detail: "Pending evidence is awaiting review and no reviewed public row has been published in three days." });
+  if (ecosystem?.status === "partial") findings.push({ severity: "medium", code: "ecosystem-partial", detail: "The latest ecosystem batch has incomplete coverage; held, failed and remaining sources are shown separately." });
   if (queue.pending > 25) {
     findings.push({ severity: "medium", code: "review-backlog", detail: `${queue.pending} pending Review Queue items.` });
   }
@@ -230,14 +260,14 @@ module.exports = async function handler(req, res) {
       readWithFallback(
         SUPABASE_URL,
         SUPABASE_SERVICE_ROLE_KEY,
-        "ingestion_runs?select=id,source_name,source_type,started_at,completed_at,candidates_found,deduped_count,llm_enriched_count,llm_rejected_count,llm_failed_count,status&order=started_at.desc&limit=50",
+        "ingestion_runs?select=*&order=started_at.desc&limit=50",
         "ingestion_runs?select=id,source_name,source_type,started_at,completed_at,candidates_found,deduped_count,status&order=started_at.desc&limit=50"
       ),
       readWithFallback(
         SUPABASE_URL,
         SUPABASE_SERVICE_ROLE_KEY,
-        "review_queue_items?select=id,status,source_type,source_url,duplicate_of_activity_id,intelligence_action,intelligence_score,llm_status&status=eq.pending&limit=1000",
-        "review_queue_items?select=id,status,source_type,source_url,duplicate_of_activity_id&status=eq.pending&limit=1000"
+        "review_queue_items?select=id,status,source_type,source_url,duplicate_of_activity_id,intelligence_action,intelligence_score,llm_status,created_at,candidate_date&status=eq.pending&order=created_at.asc&limit=1000",
+        "review_queue_items?select=id,status,source_type,source_url,duplicate_of_activity_id,created_at,candidate_date&status=eq.pending&order=created_at.asc&limit=1000"
       ),
       supabaseGet(
         SUPABASE_URL,
@@ -256,7 +286,7 @@ module.exports = async function handler(req, res) {
       ),
       optionalRead(SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY, "investors?select=id,kind&limit=1000"),
       optionalRead(SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY, "activity_investors?select=activity_id,investor_id,role&limit=1000"),
-      optionalRead(SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY, "ecosystem_runs?select=id,batch_date,status,mode,fetches,new_entities,backlog,created_at,updated_at,completed_at&order=created_at.desc&limit=1"),
+      optionalRead(SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY, "ecosystem_runs?select=*&order=created_at.desc&limit=1"),
       optionalRead(SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY, "ecosystem_snapshot_releases?select=manifest&active=eq.true&is_public=eq.true&limit=1")
     ]);
 
@@ -281,7 +311,22 @@ module.exports = async function handler(req, res) {
     const approvedLast30d = publicSnapshot.activities.filter((activity) => hoursSince(activity.date_announced) <= 24 * 30).length;
     const schemaWarnings = [runsRead.warning, queueRead.warning].filter(Boolean);
     const llmConfigured = process.env.INGEST_LLM_ENABLED !== "false" && Boolean(process.env.GEMINI_API_KEY);
-    const findings = buildFindings({ latestBySource, queue: queueSummary, investorStatus, runWindow: runs, schemaWarnings, llmConfigured });
+    const lastPublicationAt = publicSnapshot.activities.map(row => row.approved_at).filter(Boolean).sort().at(-1) || null;
+    const approvedDataset = { latestActivityDate: publicSnapshot.latestActivityDate, lastPublicationAt };
+    const latestBatch = ecosystemRuns.ok ? ecosystemRuns.data[0] : null;
+    const release = ecosystemRelease.ok ? ecosystemRelease.data[0]?.manifest : null;
+    const ecosystem = {
+      configured: ecosystemRuns.ok && ecosystemRelease.ok,
+      latestBatch: latestBatch ? Object.fromEntries(["id", "batch_date", "status", "cadence", "mode", "fetches", "new_entities", "backlog", "created_at", "updated_at", "completed_at"].map(key => [key, latestBatch[key]])) : null,
+      lastPublicUpdate: release?.publishedAt || null,
+      version: release?.version || null,
+      coverage: release?.coverage || null,
+      status: latestBatch?.status || (ecosystemRuns.ok ? "not_run" : "unavailable"),
+      cadence: latestBatch?.cadence === "daily" ? "daily incremental; weekly comprehensive" : "weekly comprehensive",
+      nextExpectedCheck: latestBatch?.cadence === "daily" ? nextDailyCheck({hour:15,minute:0}) : null,
+      nextRetryAt: latestBatch?.status === "running" ? new Date(Date.now() + 120000).toISOString() : null,
+    };
+    const findings = buildFindings({ latestBySource, queue: queueSummary, investorStatus, runWindow: runs, schemaWarnings, llmConfigured, approvedDataset, ecosystem });
     const health = scoreHealth(findings);
 
     res.statusCode = 200;
@@ -300,7 +345,7 @@ module.exports = async function handler(req, res) {
         llmRejected: runs.reduce((sum, run) => sum + Number(run.llm_rejected_count || 0), 0),
         llmFailed: runs.reduce((sum, run) => sum + Number(run.llm_failed_count || 0), 0)
       },
-      ecosystem: { configured: ecosystemRuns.ok && ecosystemRelease.ok, latestBatch: ecosystemRuns.ok ? ecosystemRuns.data[0] || null : null, lastPublicUpdate: ecosystemRelease.ok ? ecosystemRelease.data[0]?.manifest?.publishedAt || null : null, version: ecosystemRelease.ok ? ecosystemRelease.data[0]?.manifest?.version || null : null, coverage: ecosystemRelease.ok ? ecosystemRelease.data[0]?.manifest?.coverage || null : null, status: ecosystemRuns.ok ? ecosystemRuns.data[0]?.status || "not_run" : "unavailable" },
+      ecosystem,
       reviewQueue: queueSummary,
       approvedDataset: {
         approvedRowsRead: publicSnapshot.counts.activities,
@@ -308,6 +353,8 @@ module.exports = async function handler(req, res) {
         companies: publicSnapshot.counts.companies,
         latestActivityDate: publicSnapshot.latestActivityDate,
         approvedLast30d,
+        lastPublicationAt,
+        eventFreshness: hoursSince(publicSnapshot.latestActivityDate) > 72 ? "stale" : "recent",
         sourceUniverse: "public-safe approved activities after active exclusions and company joins"
       },
       investorNormalization: investorStatus,
@@ -324,3 +371,5 @@ module.exports = async function handler(req, res) {
     return res.end(JSON.stringify({ ok: false, error: (error && error.message) || String(error) }));
   }
 };
+
+module.exports._test = { summarizeRuns, summarizeQueue, buildFindings, scoreHealth, nextDailyCheck };

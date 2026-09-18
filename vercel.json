@@ -18,6 +18,10 @@
   ],
   "rewrites": [
     {
+      "source": "/api/graph-refresh-daily",
+      "destination": "/api/pipeline-health?physicalAiRoute=graph-refresh-daily"
+    },
+    {
       "source": "/api/graph-snapshot",
       "destination": "/api/pipeline-health?physicalAiRoute=graph-snapshot"
     },
