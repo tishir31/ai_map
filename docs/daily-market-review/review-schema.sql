@@ -1,4 +1,4 @@
--- Reviewable artifact; not applied/activated. Generate migration filename with working Supabase CLI.
+-- Migration template for bounded public market review. Apply once after prerequisite schema review.
 begin;
 create table public.market_review_runs(
  id text primary key,run_date date not null unique,status text not null default 'running' check(status in('running','completed','partial')),

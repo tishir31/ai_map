@@ -61,7 +61,18 @@ async function known(f){await f.db.exec(`insert into companies(id,name,overview,
  await f.q('select private.resume_physical_ai_ecosystem()');assert.equal((await f.q("select count(*)::int as n from net.test_requests where job='market-review-daily'"))[0].n,2);
  for(const role of ['anon','authenticated','service_role'])assert.equal((await f.q("select has_function_privilege($1,'private.resume_physical_ai_market_review()','EXECUTE')as allow",[role]))[0].allow,false);
  assert.equal((await f.q("select schedule from cron.job where jobname='physical-ai-ecosystem-resume'"))[0].schedule,'*/2 * * * *');assert.equal((await f.q("select schedule from cron.job where jobname='physical-ai-market-review-daily'"))[0].schedule,'10,40 15,16 * * *');
- await f.db.exec('set role service_role');assert.equal((await f.q('select public.market_review_scheduler_status()as state'))[0].state.configured,true);await assert.rejects(f.q('select command from cron.job'));await f.db.exec('reset role');
+ // Fresh minimal-ACL baseline only: column grants deny command reads when no broader grant exists.
+ await f.db.exec('set role service_role');assert.deepEqual((await f.q('select public.market_review_scheduler_status()as state'))[0].state,{configured:true});await assert.rejects(f.q('select command from cron.job'));await f.db.exec('reset role');
+ // Hosted-like inherited ACL: PUBLIC table SELECT combines with explicit column grants.
+ // service_role bypasses the owner-only RLS policy; the fixed RPC still returns only a boolean.
+ await f.db.exec("alter table cron.job enable row level security;create policy cron_job_owner on cron.job using(username=current_user);grant select on cron.job to public;grant select(jobname,active,schedule)on cron.job to service_role;");
+ await f.db.exec('set role service_role');assert.equal((await f.q("select current_user as role,rolbypassrls from pg_roles where rolname=current_user"))[0].rolbypassrls,true);
+ assert((await f.q('select command from cron.job')).length>=3);assert.deepEqual((await f.q('select public.market_review_scheduler_status()as state'))[0].state,{configured:true});await f.db.exec('reset role');
+ for(const role of ['anon','authenticated']){
+  assert.equal((await f.q("select has_schema_privilege($1,'cron','USAGE')as allow",[role]))[0].allow,false);
+  assert.equal((await f.q("select has_function_privilege($1,'public.market_review_scheduler_status()','EXECUTE')as allow",[role]))[0].allow,false);
+  await f.db.exec('set role '+role);await assert.rejects(f.q('select command from cron.job'));await assert.rejects(f.q('select public.market_review_scheduler_status()'));await f.db.exec('reset role');
+ }
  await f.db.exec("update cron.job set active=false where jobname='physical-ai-market-review-daily'");assert.equal((await f.q('select public.market_review_scheduler_status()as state'))[0].state.configured,false);
  await f.db.exec("update cron.job set active=true;delete from cron.job where jobname='physical-ai-ecosystem-resume'");assert.equal((await f.q('select public.market_review_scheduler_status()as state'))[0].state.configured,false);
  await f.db.exec("insert into ecosystem_runs values('running','daily',current_date);create or replace function private.resume_physical_ai_market_review()returns bigint language plpgsql security invoker as $$begin raise exception 'Synthetic review-only failure';end$$;");
