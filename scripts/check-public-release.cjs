@@ -13,6 +13,7 @@ function filesUnder(directory) {
   });
 }
 assert.deepEqual(Object.keys(manifest.sha256).filter((file) => file.startsWith('physical-ai/')).sort(), filesUnder('physical-ai').sort(), 'Manifest must cover every current application file');
+for (const file of ['api', 'lib'].flatMap(filesUnder).filter(file => /\.(?:js|cjs)$/.test(file))) assert.ok(manifest.sha256[file], `Manifest must cover backend file: ${file}`);
 for (const [file, digest] of Object.entries(manifest.sha256)) assert.equal(crypto.createHash('sha256').update(fs.readFileSync(`${root}/${file}`)).digest('hex'), digest, file);
 const html = fs.readFileSync(`${root}/physical-ai/index.html`,'utf8');
 assert.match(html, /assets\/index-[^" ]+\.js/);
