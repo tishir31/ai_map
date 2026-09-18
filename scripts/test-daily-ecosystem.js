@@ -1,0 +1,15 @@
+"use strict";
+const assert = require("node:assert/strict");
+const worker=require("../lib/ecosystem-worker");
+const {createScheduledRefreshHandler}=require("../lib/graph-cron-handler");
+const {SCHEDULER_JOBS}=require("../lib/scheduler-auth");
+const sources=Array.from({length:45},(_,i)=>({id:`SRC-${i}`,url:`https://official.example/${i}`,kind:i===44?"company":"publication",verifiedIdentity:false}));
+const dataset={sources,areas:[{id:"world-models"}],communities:[{areaId:"world-models",sourceIds:sources.map(x=>x.id)}]};
+const registry=sources.map(source=>({url:source.url,descriptor:source,last_checked_at:`2026-09-${String(1+Number(source.id.slice(4))%18).padStart(2,"0")}`}));
+const plan=worker.planTasks({id:"daily",cadence:"daily",max_fetches:30},dataset,registry);
+assert.equal(plan.tasks.length,30);assert.equal(plan.tasks.some(t=>t.kind==="search"),false);assert.equal(plan.backlog,14);assert.equal(plan.tasks.some(t=>t.source_id==="SRC-44"),false,"Unverified company sources stay outside daily lane");
+assert(plan.backlogUrls.every(url=>!plan.tasks.some(t=>t.input.source.url===url)),"Remaining sources are preserved as a continuation cursor");
+assert.equal(worker.planTasks({id:"weekly",max_fetches:30},dataset,registry).tasks.filter(t=>t.kind==="search").length,1);
+const cooled=worker.planTasks({id:"daily",cadence:"daily",max_fetches:30},dataset,registry.map(row=>({...row,retry_after:"2099-01-01T00:00:00Z"})));assert.equal(cooled.tasks.length,0,"Sources in failure cooldown are not refetched");assert.equal(cooled.backlog,44,"Cooling sources remain explicitly incomplete coverage");
+assert(SCHEDULER_JOBS.has("graph-refresh-daily"));assert.equal(createScheduledRefreshHandler("daily").cadence,"daily");
+console.log("daily ecosystem tests passed: bounded known sources, no broad search, continuation retained");

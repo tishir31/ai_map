@@ -908,11 +908,12 @@ async function supabaseInsertRun(supabaseUrl, serviceRoleKey, run) {
   let r = await supabasePostRun(supabaseUrl, serviceRoleKey, run);
   if (!r.ok) {
     const detail = await r.text();
-    if (/llm_/i.test(detail)) {
-      const { llm_enriched_count, llm_rejected_count, llm_failed_count, ...legacyRun } = run;
+    if (/llm_|stop_reason|processed_items|requested_items|checkpoint/i.test(detail)) {
+      const { llm_enriched_count, llm_rejected_count, llm_failed_count, stop_reason, processed_items, requested_items, checkpoint, ...legacyRun } = run;
       r = await supabasePostRun(supabaseUrl, serviceRoleKey, legacyRun);
     }
   }
+  if (!r.ok) throw new Error(`Run telemetry write failed (${r.status})`);
 }
 
 module.exports = async function handler(req, res) {
@@ -981,10 +982,35 @@ module.exports = async function handler(req, res) {
     effectiveLookbackDays = plan.effectiveLookbackDays;
     rotationCycleDays = plan.rotationCycleDays;
   }
-  const window = {
+  let window = {
     ...refreshWindow(new Date(startedAt), effectiveLookbackDays),
     rotationCycleDays,
   };
+  const runId = authorization.schedulerRunDate
+    ? `run-gmail-scheduled-${authorization.schedulerRunDate}`
+    : `run-gmail-${Date.now().toString(36)}`;
+  let checkpoint = { processed: {}, completed: [] };
+  if (authorization.schedulerRunDate) {
+    const previous = await fetch(`${SUPABASE_URL}/rest/v1/collector_checkpoints?id=eq.${encodeURIComponent(runId)}&select=checkpoint,status&limit=1`, { headers: { apikey: SUPABASE_SERVICE_ROLE_KEY, Authorization: `Bearer ${SUPABASE_SERVICE_ROLE_KEY}` } });
+    if (!previous.ok) { res.statusCode = 502; return res.end(JSON.stringify({ ok: false, error: "Collector checkpoint read failed; retry without restarting the window." })); }
+    const rows = await previous.json();
+    if (rows[0]?.status === "completed") { res.statusCode = 200; return res.end(JSON.stringify({ ok: true, runId, duplicate: true, status: "completed" })); }
+    if (rows[0]?.checkpoint?.processed && Array.isArray(rows[0].checkpoint.completed)) checkpoint = rows[0].checkpoint;
+  }
+  // Freeze the scoped daily plan/window; provider ordering may change before retry.
+  if (Array.isArray(checkpoint.sources)) sources = checkpoint.sources;
+  else checkpoint.sources = sources;
+  if (checkpoint.window) window = checkpoint.window;
+  else checkpoint.window = window;
+  checkpoint.startedAt = checkpoint.startedAt || startedAt;
+  checkpoint.selected = checkpoint.selected || {};
+  async function saveCheckpoint(status) {
+    const response = await fetch(`${SUPABASE_URL}/rest/v1/collector_checkpoints?on_conflict=id`, {
+      method: "POST", headers: { apikey: SUPABASE_SERVICE_ROLE_KEY, Authorization: `Bearer ${SUPABASE_SERVICE_ROLE_KEY}`, "Content-Type": "application/json", Prefer: "resolution=merge-duplicates,return=minimal" },
+      body: JSON.stringify({ id: runId, checkpoint, status, updated_at: new Date().toISOString() })
+    });
+    if (!response.ok) throw new Error("Collector checkpoint write failed; selected window was not processed.");
+  }
   let totalCandidates = 0;
   let dedupedCount = 0;
   const skippedByReason = {};
@@ -1037,20 +1063,30 @@ module.exports = async function handler(req, res) {
       return Date.now() - startedMs > timeBudgetMs || processedItems >= maxItems;
     }
     for (const src of sources) {
+      if (checkpoint.completed.includes(src.query)) continue;
+      const processedKeys = new Set(checkpoint.processed[src.query] || []);
+      const newlyProcessed = [];
       if (budgetExceeded()) {
         stopReason = processedItems >= maxItems ? "max-items" : "time-budget";
         runStatus = "partial";
         break;
       }
-      const messages = await gmailList(accessToken, src.query, maxResults);
+      if (!Array.isArray(checkpoint.selected[src.query])) {
+        checkpoint.selected[src.query] = (await gmailList(accessToken, src.query, maxResults)).slice(0, maxResults);
+        // Persist exact IDs/metadata before processing. Cursor contents stay service-only.
+        if (authorization.schedulerRunDate) await saveCheckpoint("partial");
+      }
+      const messages = checkpoint.selected[src.query];
       const candidates = [];
       const sourceStats = { source: src.name, query: src.query, found: messages.length, processed: 0, written: 0, skipped: 0, stagedNew: 0, stagedUpdates: 0, skippedByReason: {} };
       for (const m of messages) {
+        if (processedKeys.has(m.id)) continue;
         if (budgetExceeded()) {
           stopReason = processedItems >= maxItems ? "max-items" : "time-budget";
           runStatus = "partial";
           break;
         }
+        newlyProcessed.push(m.id);
         processedItems += 1;
         sourceStats.processed += 1;
         const detail = await gmailGet(accessToken, m.id);
@@ -1097,6 +1133,8 @@ module.exports = async function handler(req, res) {
         }
       }
       const written = await supabaseUpsertReviewQueue(SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY, candidates);
+      checkpoint.processed[src.query] = [...processedKeys, ...newlyProcessed].slice(-100);
+      if (!stopReason) checkpoint.completed.push(src.query);
       totalCandidates += written;
       sourceStats.written = written;
       sourceStats.skipped = sourceStats.processed - written;
@@ -1109,31 +1147,50 @@ module.exports = async function handler(req, res) {
     res.statusCode = 502;
   }
 
-  const runId = authorization.schedulerRunDate
-    ? `run-gmail-scheduled-${authorization.schedulerRunDate}`
-    : `run-gmail-${Date.now().toString(36)}`;
+  const priorTotals = checkpoint.totals || {};
+  checkpoint.startedAt = checkpoint.startedAt || startedAt;
+  checkpoint.requestedBySource = checkpoint.requestedBySource || {};
+  for (const source of perSource) checkpoint.requestedBySource[source.query] = Math.max(checkpoint.requestedBySource[source.query] || 0, source.found);
+  checkpoint.totals = {
+    candidates: (priorTotals.candidates || 0) + totalCandidates,
+    deduped: (priorTotals.deduped || 0) + dedupedCount,
+    enriched: (priorTotals.enriched || 0) + intelligence.enriched,
+    rejected: (priorTotals.rejected || 0) + intelligence.rejected,
+    failed: (priorTotals.failed || 0) + intelligence.failed,
+    processed: (priorTotals.processed || 0) + processedItems,
+    requested: Object.values(checkpoint.requestedBySource).reduce((sum, value) => sum + value, 0)
+  };
   await supabaseInsertRun(SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY, {
     id: runId,
     source_name: "Gmail",
     source_type: "gmail",
     query: sources.map((s) => s.query).join(" | "),
-    started_at: startedAt,
+    started_at: checkpoint.startedAt,
     completed_at: new Date().toISOString(),
-    candidates_found: totalCandidates,
-    deduped_count: dedupedCount,
-    llm_enriched_count: intelligence.enriched,
-    llm_rejected_count: intelligence.rejected,
-    llm_failed_count: intelligence.failed,
-    status: runStatus
-  }).catch(() => undefined);
+    candidates_found: checkpoint.totals.candidates,
+    deduped_count: checkpoint.totals.deduped,
+    llm_enriched_count: checkpoint.totals.enriched,
+    llm_rejected_count: checkpoint.totals.rejected,
+    llm_failed_count: checkpoint.totals.failed,
+    status: runStatus,
+    stop_reason: stopReason || (errorMessage ? "provider-error" : null),
+    processed_items: checkpoint.totals.processed,
+    requested_items: checkpoint.totals.requested
+  }).catch(() => { errorMessage = "Run telemetry checkpoint could not be saved; retry is required."; res.statusCode = 502; });
 
-  res.statusCode = errorMessage ? res.statusCode : 200;
+  if (authorization.schedulerRunDate) {
+    await saveCheckpoint(errorMessage ? "failed" : runStatus).catch(() => { errorMessage = "Collector checkpoint could not be saved; retry is required."; res.statusCode = 502; });
+  }
+
+  res.statusCode = errorMessage ? res.statusCode : authorization.schedulerRunDate && runStatus === "partial" ? 503 : 200;
   res.setHeader("Content-Type", "application/json");
   return res.end(
     JSON.stringify({
       ok: !errorMessage,
       runId,
       duplicateSafe: Boolean(authorization.schedulerRunDate),
+      status: runStatus,
+      retryable: runStatus === "partial",
       window,
       candidates: totalCandidates,
       deduped: dedupedCount,
