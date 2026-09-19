@@ -122,6 +122,9 @@
     }
   ],
   "functions": {
+    "api/ingest-web-news.js": {
+      "maxDuration": 90
+    },
     "api/research-company.js": {
       "maxDuration": 90
     },

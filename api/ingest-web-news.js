@@ -18,6 +18,9 @@
 
 const { buildRotationPlan, isDateInWindow } = require("../lib/query-rotation");
 const { authorizeIngestRequest } = require("../lib/ingest-auth");
+const publicWeb = require("../lib/public-web");
+const graphApi = require("../lib/graph-api");
+const crypto=require("node:crypto");
 const {
   deterministicDuplicateAgreement,
   sourceBackedDealValueUsd
@@ -314,25 +317,34 @@ function parseRss(xml, maxResults) {
     const link = decodeXml((raw.match(/<link>([\s\S]*?)<\/link>/i) || [])[1]);
     const pubDateRaw = decodeXml((raw.match(/<pubDate>([\s\S]*?)<\/pubDate>/i) || [])[1]);
     const source = decodeXml((raw.match(/<source[^>]*>([\s\S]*?)<\/source>/i) || [])[1]);
-    const pubDate = pubDateRaw ? new Date(pubDateRaw).toISOString().slice(0, 10) : new Date().toISOString().slice(0, 10);
+    const dateTime=pubDateRaw?new Date(pubDateRaw):null;
+    const pubDate=dateTime && Number.isFinite(dateTime.valueOf())?dateTime.toISOString().slice(0,10):null;
     if (title && link) items.push({ title, link, pubDate, source });
     if (items.length >= maxResults) break;
   }
   return items;
 }
 
-async function googleNewsSearch(query, maxResults) {
+async function googleNewsSearch(query, maxResults, bounded = false) {
   const url = new URL("https://news.google.com/rss/search");
   url.searchParams.set("q", query);
   url.searchParams.set("hl", "en-US");
   url.searchParams.set("gl", "US");
   url.searchParams.set("ceid", "US:en");
-  const r = await fetch(url.toString(), { headers: { "User-Agent": "physical-ai-tracker/1.0" } });
+  if(bounded){
+    const page=await publicWeb.readPublicPage(url.href,0,Date.now()+9000,{allowXml:true});
+    if(page.status!==200)throw Error(`News RSS failed (${page.status})`);
+    const xml=String(page.text||''),openItems=(xml.match(/<item(?:\s|>)/gi)||[]).length,closedItems=(xml.match(/<\/item\s*>/gi)||[]).length;
+    if(!/<rss(?:\s|>)/i.test(xml)||!/<channel(?:\s|>)/i.test(xml)||!/<\/channel\s*>/i.test(xml)||!/<\/rss\s*>/i.test(xml)||openItems!==closedItems)throw Error('News RSS response malformed');
+    return parseRss(xml,maxResults).filter(item=>{try{publicWeb.parsePublicUrl(item.link);return true;}catch{return false;}});
+  }
+  const r = await fetch(url.toString(), { headers: { "User-Agent": "physical-ai-tracker/1.0" },signal:AbortSignal.timeout(9000) });
   if (!r.ok) throw new Error(`News RSS failed (${r.status})`);
   return parseRss(await r.text(), maxResults);
 }
 
-async function fetchArticleSnapshot(url) {
+async function fetchArticleSnapshot(url, bounded = false) {
+  if(bounded){const page=await publicWeb.readPublicPage(url);if(page.status<200||page.status>=300)throw Error(`Source HTTP ${page.status}`);return {ok:true,status:page.status,url:page.finalUrl,title:htmlMeta(page.text,/<title[^>]*>([\s\S]*?)<\/title>/i),text:stripHtml(page.text).slice(0,8000)};}
   const controller = new AbortController();
   const timer = setTimeout(() => controller.abort(), 7000);
   try {
@@ -457,40 +469,38 @@ function isSameFinancingRound(existing, candidate) {
 }
 
 function findExistingActivity(candidate, context) {
-  const candidateCompany = normalizeCompany(candidate.candidate_company);
+  const candidateCompany = normalize(candidate.candidate_company);
   const candidateUrl = normalizeUrl(candidate.source_url);
   if (!candidateCompany) return null;
   const matchingCompanyIds = new Set();
   for (const [companyId, name] of context.companyById.entries()) {
-    const existing = normalizeCompany(name);
-    if (existing && (existing === candidateCompany || existing.includes(candidateCompany) || candidateCompany.includes(existing))) {
+    const existing = normalize(name);
+    if (existing && existing === candidateCompany) {
       matchingCompanyIds.add(companyId);
     }
   }
-  if (matchingCompanyIds.size === 0) return null;
+  // An ambiguous or merely similar registry identity must reach analyst review,
+  // never become an automatic duplicate suppression.
+  if (matchingCompanyIds.size !== 1) return null;
   const activity = (context.activities || []).find((row) => {
     if (!matchingCompanyIds.has(row.company_id) || row.activity_type !== candidate.activity_type) return false;
-    if (candidateUrl && activityUrls(row).includes(candidateUrl)) return true;
-    return isSameFinancingRound(row, candidate);
+    // Cross-URL similarity is evidence for review, not deterministic identity.
+    return Boolean(candidateUrl && activityUrls(row).includes(candidateUrl));
   }) || null;
   if (!activity) return null;
   return { activity, exact: !hasNewFundingDetail(activity, candidate) };
 }
 
 function pendingDuplicate(candidate, context) {
-  const candidateCompany = normalizeCompany(candidate.candidate_company);
+  const candidateCompany = normalize(candidate.candidate_company);
   const candidateUrl = normalizeUrl(candidate.source_url);
+  const matchingCompanyIds = [...context.companyById.entries()].filter(([,name])=>normalize(name)===candidateCompany);
+  if (!candidateCompany || matchingCompanyIds.length !== 1) return false;
   return (context.pending || []).some((item) => {
-    if (candidateUrl && item.source_url && normalizeUrl(item.source_url) === candidateUrl) return true;
     if (item.activity_type !== candidate.activity_type) return false;
-    if (normalizeCompany(item.candidate_company) !== candidateCompany) return false;
+    if (normalize(item.candidate_company) !== candidateCompany) return false;
     if (daysBetween(item.candidate_date, candidate.candidate_date) > 14) return false;
-    if (sameDealValue(item.deal_value_usd, candidate.deal_value_usd)) return true;
-    const pendingText = `${item.description || ""} ${item.duplicate_of_activity_id || ""}`;
-    const candidateText = `${candidate.description || ""} ${candidate.snippet || ""} ${candidate.extracted_text || ""}`;
-    return extractRoundLabel(pendingText) && extractRoundLabel(pendingText) === extractRoundLabel(candidateText)
-      ? true
-      : tokenOverlap(pendingText, candidateText) >= 0.45;
+    return Boolean(candidateUrl && item.source_url && normalizeUrl(item.source_url) === candidateUrl);
   });
 }
 
@@ -661,6 +671,7 @@ async function adjudicateWithGemini(candidate, gate, context) {
     {
       method: "POST",
       headers: { "Content-Type": "application/json" },
+      signal:AbortSignal.timeout(20000),
       body: JSON.stringify({
         contents: [{ parts: [{ text: intelligencePrompt(candidate, gate, context) }] }],
         generationConfig: {
@@ -693,6 +704,7 @@ async function adjudicateWithOpenAi(candidate, gate, context) {
   if (!apiKey) return null;
   const response = await fetch("https://api.openai.com/v1/responses", {
     method: "POST",
+    signal:AbortSignal.timeout(20000),
     headers: {
       Authorization: `Bearer ${apiKey}`,
       "Content-Type": "application/json"
@@ -714,7 +726,8 @@ async function adjudicateWithOpenAi(candidate, gate, context) {
 
 async function adjudicateWithLlm(candidate, gate, context) {
   const attempts = [];
-  for (const provider of [adjudicateWithGemini, adjudicateWithOpenAi]) {
+  const providers=context?.publicCollectionBounded?[process.env.GEMINI_API_KEY?adjudicateWithGemini:adjudicateWithOpenAi]:[adjudicateWithGemini,adjudicateWithOpenAi];
+  for (const provider of providers) {
     try {
       const result = await provider(candidate, gate, context);
       if (result) return result;
@@ -843,6 +856,36 @@ module.exports = async function handler(req, res) {
     res.statusCode = 503;
     res.setHeader("Content-Type", "application/json");
     return res.end(JSON.stringify({ ok: false, error: "Web ingestion is not configured.", missingEnv: missing }));
+  }
+
+  if(authorization.schedulerRunDate){
+    try{
+      const asOf=authorization.schedulerRunDate,date=new Date(asOf+'T13:15:00Z');
+      let publicSources=DEFAULT_QUERIES;
+      if(process.env.INGEST_WEB_SOURCES){const parsed=JSON.parse(process.env.INGEST_WEB_SOURCES);if(!Array.isArray(parsed)||!parsed.length||parsed.length>8)throw Error('Invalid bounded public source configuration');publicSources=parsed;}
+      const rotation=buildRotationPlan(publicSources,date,{provider:'web',baseLookbackDays:MAX_LOOKBACK_DAYS});
+      const plan={sources:rotation.queries.slice(0,8),window:{...refreshWindow(date,rotation.effectiveLookbackDays),rotationCycleDays:rotation.rotationCycleDays}};
+      const config=graphApi.getConfig();
+      const result=await require('../lib/web-collection-worker').runWebCollection(config,asOf,plan,{
+        search:(query,max)=>googleNewsSearch(query,max,true),
+        process:async(item,sourceName,window)=>{
+          let article;
+          try{article=await fetchArticleSnapshot(item.link,true);}catch(error){error.phase='source';throw error;}
+          const candidate=buildCandidate(item,sourceName,article);
+          const provenance={sourceUrl:item.link,canonicalUrl:article.url,status:article.status,checkedAt:new Date().toISOString(),captureHash:crypto.createHash('sha256').update(article.text).digest('hex'),captureText:article.text};
+          let context;
+          try{context=await graphApi.restRequest(config,'web_collection_dedupe_context',{method:'POST',rpc:true,body:{}});}catch(error){error.phase='storage';error.provenance=provenance;throw error;}
+          context.companyById=new Map((context.companies||[]).map(company=>[company.id,company.name]));context.refreshWindow=window;context.publicCollectionBounded=true;
+          let staged=candidate;
+          if(llmEnabled({})){let decision;try{decision=await adjudicateWithLlm(candidate,{keep:true,reason:'llm-first'},context);}catch(error){error.phase='model';provenance.modelStatus='failed';error.provenance=provenance;throw error;}provenance.modelStatus=decision.keep?decision.status:'rejected';if(!decision.keep)return {disposition:'rejected',reason:'llm-rejected',details:decision.reason,provenance};staged=decision.candidate;}
+          const gate=gateCandidate(staged,context);if(!gate.keep)return {disposition:/duplicate/.test(gate.reason)?'duplicate':'rejected',reason:gate.reason,provenance};
+          if(gate.duplicateOfActivityId)staged.duplicate_of_activity_id=gate.duplicateOfActivityId;
+          return {disposition:'staged',candidate:staged,provenance};
+        }
+      });
+      res.statusCode=result.status==='running'?202:200;res.setHeader('Content-Type','application/json');
+      return res.end(JSON.stringify({ok:true,status:result.status,legacy:Boolean(result.legacy),retryable:result.status==='running',collection:require('../lib/web-collection-health').summarizeWebRun(result)}));
+    }catch(error){res.statusCode=502;res.setHeader('Content-Type','application/json');return res.end(JSON.stringify({ok:false,retryable:true,error:'Public collector continuation failed; durable lease/selection will recover.'}));}
   }
 
   let body = {};

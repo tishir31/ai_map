@@ -1,0 +1,10 @@
+'use strict';
+const assert=require('node:assert/strict'),health=require('../lib/web-collection-health');
+const active={ok:true,data:{configured:true}},missing={ok:false};
+const legacy={id:'legacy',startedAt:'2026-09-18T13:15:00Z',completedAt:'2026-09-18T13:15:49Z',status:'partial',candidatesFound:0};
+let h=health.webHealth(missing,missing,legacy,new Date('2026-09-18T16:00Z'),{ok:true,data:[]});assert.equal(h.latestRun.historicalUnrecoverable,true);assert.equal(h.latestRun.selected,null);assert.equal(h.latestRun.stopReason,'historical-checkpoint-missing');assert.equal(h.configured,false);assert.equal(h.overdue,false);
+assert.equal(health.backlogHealth(missing).pending,null);assert.equal(health.backlogHealth(missing).complete,false);
+const failed=health.webHealth({ok:true,data:[]},active,{...legacy,status:'failed'},new Date('2026-09-18T16:00Z'),{ok:true,data:[{status:'failed'}]});assert.equal(failed.latestRun.status,'failed');assert.equal(failed.latestRun.historicalUnrecoverable,false);
+assert.equal(health.webHealth({ok:true,data:[]},active,null,new Date('2026-09-18T13:24Z')).overdue,false);assert.equal(health.webHealth({ok:true,data:[]},active,null,new Date('2026-09-18T13:25Z')).overdue,true);assert.equal(health.webHealth({ok:true,data:[]},active,null,new Date('2026-09-18T20:00Z')).overdue,false);
+h=health.webHealth({ok:true,data:[{run_date:'2026-09-18',status:'running',selected:2,processed:1,remaining:1,input:'PRIVATE',started_at:'2026-09-18T13:15Z'}]},active,null,new Date('2026-09-18T14:00Z'));assert.equal(h.overdue,false);assert.equal(h.latestRun.remaining,1);assert(!JSON.stringify(h).includes('PRIVATE'));
+console.log('collection/backlog health tests passed: unknown never zero, failed/absence explicit, bounded overdue window and private projection');
