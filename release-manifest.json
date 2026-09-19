@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "release": "physical-ai-ecosystem-2026-09-19",
-  "builtAt": "2026-09-19T00:02:46.631Z",
-  "sourceCommit": "4c30e0fccb0be5e24bd6f94bf21928da83bc7129",
+  "builtAt": "2026-09-19T00:19:18.937Z",
+  "sourceCommit": "a26f6a124dca53cdd658ef0110a79c35417f83c9",
   "backendBaseCommit": "23f8baf1ef77eaa7bc8b0ac2d768e7c1ede9e231",
   "graphAsOf": "2026-09-07",
   "publicRoutes": [
