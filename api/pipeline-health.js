@@ -122,6 +122,13 @@ function summarizeRuns(runs) {
   return latestBySource;
 }
 
+function publicRunSummaries(latestBySource) {
+  return Object.fromEntries(Object.entries(latestBySource).map(([source, run]) => {
+    const { id: _internalId, ...safe } = run;
+    return [source, safe];
+  }));
+}
+
 function summarizeQueue(items) {
   const bySource = emptyCounts();
   const byAction = emptyCounts();
@@ -301,21 +308,23 @@ module.exports = async function handler(req, res) {
     const publicMarketReview = require("../lib/market-review-health").reviewHealth(publicReviewRead, new Date(), reviewSchedulerRead);
     const latestBySource = summarizeRuns(runs);
     const [webRunRead,webSchedulerRead,backlogRead]=await Promise.all([
-      optionalRead(SUPABASE_URL,SUPABASE_SERVICE_ROLE_KEY,"web_collection_runs?select=run_date,status,planned_queries,completed_queries,selected,processed,staged,duplicates,rejected,errors,remaining,stop_reason,started_at,last_progress_at,completed_at&order=run_date.desc&limit=1"),
+      optionalRead(SUPABASE_URL,SUPABASE_SERVICE_ROLE_KEY,"web_collection_runs?select=id,run_date,status,planned_queries,completed_queries,selected,processed,staged,duplicates,rejected,errors,remaining,stop_reason,started_at,last_progress_at,completed_at&order=run_date.desc&limit=1"),
       optionalRead(SUPABASE_URL,SUPABASE_SERVICE_ROLE_KEY,"rpc/web_collection_scheduler_status"),
       optionalRead(SUPABASE_URL,SUPABASE_SERVICE_ROLE_KEY,"rpc/backlog_triage_summary")
     ]);
     const legacyWeb=latestBySource["Public web news"];
     const legacyCheckpoint=legacyWeb?await optionalRead(SUPABASE_URL,SUPABASE_SERVICE_ROLE_KEY,`collector_checkpoints?id=eq.${encodeURIComponent(legacyWeb.id)}&select=status&limit=1`):{ok:true,data:[]};
+    const latestWebRun=webRunRead.ok?webRunRead.data?.[0]:null;
+    const webFailureRead=latestWebRun?.id?await optionalRead(SUPABASE_URL,SUPABASE_SERVICE_ROLE_KEY,`web_collection_tasks?select=status,reason:result->>reason&run_id=eq.${encodeURIComponent(latestWebRun.id)}&limit=1000`):{ok:true,data:[]};
     const collectionHealth=require("../lib/web-collection-health");
-    const webCollection=collectionHealth.webHealth(webRunRead,webSchedulerRead,legacyWeb,new Date(),legacyCheckpoint);
+    const webCollection=collectionHealth.webHealth(webRunRead,webSchedulerRead,legacyWeb,new Date(),legacyCheckpoint,webFailureRead);
     const backlogTriage=collectionHealth.backlogHealth(backlogRead);
     const queueSummary = summarizeQueue(queue);
     const investorStatus = {
       applied: investors.ok && activityInvestors.ok,
       investors: investors.ok ? investors.data.length : 0,
       activityInvestors: activityInvestors.ok ? activityInvestors.data.length : 0,
-      error: investors.ok && activityInvestors.ok ? undefined : investors.error || activityInvestors.error
+      warning: investors.ok && activityInvestors.ok ? undefined : "normalization-telemetry-unavailable"
     };
     const publicSnapshot = buildSnapshot({
       activities: approvedActivities,
@@ -324,7 +333,10 @@ module.exports = async function handler(req, res) {
       ingestionRuns: runs,
     });
     const approvedLast30d = publicSnapshot.activities.filter((activity) => hoursSince(activity.date_announced) <= 24 * 30).length;
-    const schemaWarnings = [runsRead.warning, queueRead.warning].filter(Boolean);
+    const schemaWarnings = [
+      runsRead.warning && "ingestion-run-compatibility-read",
+      queueRead.warning && "review-queue-compatibility-read",
+    ].filter(Boolean);
     const llmConfigured = process.env.INGEST_LLM_ENABLED !== "false" && Boolean(process.env.GEMINI_API_KEY);
     const lastPublicationAt = publicSnapshot.activities.map(row => row.approved_at).filter(Boolean).sort().at(-1) || null;
     const approvedDataset = { latestActivityDate: publicSnapshot.latestActivityDate, lastPublicationAt };
@@ -332,7 +344,7 @@ module.exports = async function handler(req, res) {
     const release = ecosystemRelease.ok ? ecosystemRelease.data[0]?.manifest : null;
     const ecosystem = {
       configured: ecosystemRuns.ok && ecosystemRelease.ok,
-      latestBatch: latestBatch ? Object.fromEntries(["id", "batch_date", "status", "cadence", "mode", "fetches", "new_entities", "backlog", "created_at", "updated_at", "completed_at"].map(key => [key, latestBatch[key]])) : null,
+      latestBatch: latestBatch ? Object.fromEntries(["batch_date", "status", "cadence", "mode", "fetches", "new_entities", "backlog", "created_at", "updated_at", "completed_at"].map(key => [key, latestBatch[key]])) : null,
       lastPublicUpdate: release?.publishedAt || null,
       version: release?.version || null,
       coverage: release?.coverage || null,
@@ -352,7 +364,7 @@ module.exports = async function handler(req, res) {
       health,
       findings,
       ingestion: {
-        latestBySource,
+        latestBySource: publicRunSummaries(latestBySource),
         recentRuns: runs.length,
         totalCandidatesFound: runs.reduce((sum, run) => sum + Number(run.candidates_found || 0), 0),
         totalDeduped: runs.reduce((sum, run) => sum + Number(run.deduped_count || 0), 0),
@@ -386,8 +398,8 @@ module.exports = async function handler(req, res) {
   } catch (error) {
     res.statusCode = 502;
     res.setHeader("Content-Type", "application/json");
-    return res.end(JSON.stringify({ ok: false, error: (error && error.message) || String(error) }));
+    return res.end(JSON.stringify({ ok: false, error: "Pipeline health is temporarily unavailable." }));
   }
 };
 
-module.exports._test = { summarizeRuns, summarizeQueue, buildFindings, scoreHealth, nextDailyCheck };
+module.exports._test = { summarizeRuns, publicRunSummaries, summarizeQueue, buildFindings, scoreHealth, nextDailyCheck };
