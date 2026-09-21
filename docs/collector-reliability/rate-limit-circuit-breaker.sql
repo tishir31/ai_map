@@ -5,8 +5,10 @@ create or replace function public.web_collection_rate_limit_guard()returns trigg
 begin
  if new.result->>'disposition'='error'and new.result->>'reason'='provider-rate-limit'then
   new.available_at:=greatest(new.available_at,now()+interval'30 minutes');
+  -- Freeze feeds too. Otherwise a feed completed during the item-lane cooldown
+  -- can create a new immediately eligible item that bypasses the pause.
   update public.web_collection_tasks set available_at=greatest(available_at,now()+interval'30 minutes'),updated_at=now()
-   where run_id=new.run_id and id<>new.id and kind='item'and status='pending';
+   where run_id=new.run_id and id<>new.id and status='pending';
  elsif new.result->>'disposition'is distinct from'error'and new.result is distinct from old.result then
   update public.web_collection_runs set stop_reason=null where id=new.run_id and stop_reason='provider-rate-limit';
  end if;
