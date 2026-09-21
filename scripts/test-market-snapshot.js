@@ -69,10 +69,30 @@ assert.equal(snapshot.activities.some((row) => row.id === "a-orphan"), false);
 assert.deepEqual(snapshot.companies.map((row) => row.id), ["c-safe"]);
 assert.equal(snapshot.counts.companies, 1);
 assert.equal(snapshot.counts.activeCompanies, 1);
+assert.deepEqual(snapshot.comparisonCoverage, { complete: true });
 assert.equal(snapshot.exclusions[0].note, null);
 assert.equal(snapshot.ingestionRuns[0].query, null);
 assert.equal(JSON.stringify(snapshot).includes("private query"), false);
 assert.equal(JSON.stringify(snapshot).includes("private note"), false);
 assert.equal(JSON.stringify(snapshot).includes("private@example.com"), false);
+
+const telemetryWindow = buildSnapshot({ activities: [base], companies: [{ id: "c-safe", name: "Safe Robotics", overview: "Robots", subsector: "robotics", geography: "United States", website: "https://safe.example", is_sample: false }], exclusions: [], ingestionRuns: Array.from({ length: 20 }, (_, index) => ({ id: `run-${index}`, source_name: "Public web", source_type: "rss", started_at: "2026-09-04", status: "completed" })) });
+assert.deepEqual(telemetryWindow.comparisonCoverage, { complete: true });
+
+const atCompanyCap = buildSnapshot({ activities: [], companies: Array.from({ length: 2000 }, (_, index) => ({ id: `c-${index}`, name: `Company ${index}`, is_sample: false })), exclusions: [], ingestionRuns: [] });
+assert.equal(atCompanyCap.comparisonCoverage.complete, false);
+const atExclusionCap = buildSnapshot({ activities: [], companies: [], exclusions: Array.from({ length: 2000 }, (_, index) => ({ id: `ex-${index}`, target_type: "activity", target_id: `a-${index}`, excluded_at: "2026-09-04" })), ingestionRuns: [] });
+assert.equal(atExclusionCap.comparisonCoverage.complete, false);
+
+const atActivityCap = buildSnapshot({
+  activities: Array.from({ length: 1000 }, (_, index) => ({ ...base, id: `a-cap-${index}`, source_id: `s-cap-${index}`, company_id: "c-missing" })),
+  companies: [{ id: "c-safe", name: "Safe Robotics", overview: "Robots", subsector: "robotics", geography: "United States", website: "https://safe.example", is_sample: false }],
+  exclusions: [],
+  ingestionRuns: [],
+});
+assert.equal(atActivityCap.activities.length < 1000, true);
+assert.equal(atActivityCap.comparisonCoverage.complete, false);
+assert.match(atActivityCap.comparisonCoverage.reason, /reached a read cap/);
+assert.equal(JSON.stringify(atActivityCap).includes("entered_by"), false);
 
 console.log("market snapshot tests passed");
