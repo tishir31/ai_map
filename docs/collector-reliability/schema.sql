@@ -21,6 +21,24 @@ alter table public.web_collection_daily_budget enable row level security;
 revoke all on public.web_collection_runs,public.web_collection_tasks,public.web_collection_daily_budget from public,anon,authenticated;
 grant all on public.web_collection_runs,public.web_collection_tasks,public.web_collection_daily_budget to service_role;
 
+-- A provider-wide 429 is not an item-specific failure. Pause the existing
+-- frozen queue before it burns every task's second attempt against the same
+-- unavailable provider. Ordinary source/model errors retain the five-minute
+-- item retry below, and the existing two-minute resumer performs the probe.
+create function public.web_collection_rate_limit_guard()returns trigger language plpgsql security invoker set search_path=''as $$
+begin
+ if new.result->>'disposition'='error'and new.result->>'reason'='provider-rate-limit'then
+  new.available_at:=greatest(new.available_at,now()+interval'30 minutes');
+  update public.web_collection_tasks set available_at=greatest(available_at,now()+interval'30 minutes'),updated_at=now()
+   where run_id=new.run_id and id<>new.id and kind='item'and status='pending';
+ elsif new.result->>'disposition'is distinct from'error'and new.result is distinct from old.result then
+  update public.web_collection_runs set stop_reason=null where id=new.run_id and stop_reason='provider-rate-limit';
+ end if;
+ return new;
+end$$;
+revoke all on function public.web_collection_rate_limit_guard()from public,anon,authenticated,service_role;
+create trigger web_collection_rate_limit_guard before update of result on public.web_collection_tasks for each row execute function public.web_collection_rate_limit_guard();
+
 create function public.summarize_web_collection_run(p_run_id text)returns jsonb language plpgsql security invoker set search_path=''as $$
 declare r public.web_collection_runs;n integer;model_enriched integer;model_rejected integer;model_failed integer;begin
  select * into r from public.web_collection_runs where id=p_run_id for update;if not found then raise exception 'Web collection run missing';end if;
