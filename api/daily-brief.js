@@ -151,6 +151,8 @@ function buildActions({ pending, latestRuns, approvedRows }) {
       actions.push({ priority: "high", action: `Investigate ${expected.sourceName}: no ingestion run recorded.` });
     } else if (run.status === "failed") {
       actions.push({ priority: "high", action: `Fix ${expected.sourceName}: latest ingestion run failed.` });
+    } else if (run.status === "partial") {
+      actions.push({ priority: "high", action: `Investigate ${expected.sourceName}: latest ingestion covered only part of its bounded source window.` });
     } else if (run.ageHours > expected.maxAgeHours) {
       actions.push({ priority: "medium", action: `Refresh ${expected.sourceName}: latest run is ${run.ageHours} hours old.` });
     }
