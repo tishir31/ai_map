@@ -63,7 +63,8 @@ async function run() {
         is_sample: false,
       },
     ]);
-    if (table === "review_queue_items" || table === "ingestion_runs") return jsonResponse([]);
+    if (table === "review_queue_items") return jsonResponse([]);
+    if (table === "ingestion_runs") return jsonResponse([{ source_name: "Public web news", source_type: "rss", started_at: new Date().toISOString(), completed_at: new Date().toISOString(), candidates_found: 0, deduped_count: 0, llm_enriched_count: 0, llm_rejected_count: 0, llm_failed_count: 2, status: "partial" }]);
     throw new Error(`Unexpected table: ${table}`);
   };
 
@@ -82,6 +83,7 @@ async function run() {
     assert.equal(payload.approvedRows[0].id, "a-public");
     assert.equal(JSON.stringify(payload).includes("Private Signal Robotics"), false);
     assert.equal(JSON.stringify(payload).includes("Approved private signal"), false);
+    assert(payload.recommendedActions.some((row) => row.priority === "high" && row.action.includes("latest ingestion covered only part")));
   } finally {
     global.fetch = savedFetch;
     if (savedUrl === undefined) delete process.env.SUPABASE_URL;

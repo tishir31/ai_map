@@ -10,9 +10,13 @@ At the same snapshot, 248 queue records were pending: 88 public-source records a
 
 The legacy run remains visible as `historical-checkpoint-missing`. The new acquisition function will not recreate or overwrite it.
 
+The next observed run on 2026-09-20 established the current delay cause. All eight feeds completed and froze 32 items. Nine were rejected by the bounded gates, while 23 ended in error: 22 `provider-rate-limit` and one `provider-response`. Attempt history recorded 46 rate-limited calls from 13:34 through 15:26 UTC. No item was staged. The daily review then correctly selected zero candidates because the queue contained no recent eligible public-source row. This is a provider-capacity failure in collection, not a missed scheduler or a human review judgment.
+
 ## Recovery contract
 
 Each UTC day freezes at most eight configured Google News RSS queries and at most four items per query. A request leases one task for 90 seconds and performs at most one feed fetch or one article/model attempt. Only one task in a run can hold an active lease. Each task gets two attempts with a five-minute delay after an error.
+
+`provider-rate-limit` is treated as a lane-wide dependency failure. One such result defers every pending frozen item for 30 minutes, so the existing two-minute resumer makes one bounded recovery probe after the pause instead of exhausting every item's second attempt. A subsequent non-error disposition clears the transient rate-limit stop reason. Other source/model errors keep their five-minute item retry, and all existing per-task and actual-day budgets remain in force. The additive `rate-limit-circuit-breaker.sql` installs this guard without resetting runs, tasks, queue rows, review state, or scheduler jobs.
 
 Attempts consume the ledger for the UTC day in which they actually execute. The hard limits are 16 feed attempts and 64 item attempts per UTC day. With 32 frozen items and two attempts each, model work cannot exceed 64 calls per day. The bounded path uses one already-configured model provider and never falls back to a second provider. Old runs resume their exact frozen inputs and consume the current day's budget. An exhausted task becomes terminal, so one failed run cannot retain an active lease indefinitely.
 

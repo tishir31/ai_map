@@ -10,6 +10,7 @@ assert.equal(queue.pending,2); assert.equal(queue.gmailOnly,1); assert.equal(que
 assert.equal(health.summarizeQueue(Array.from({length:1000},()=>({status:"pending"}))).complete,false);
 const latestBySource=health.summarizeRuns([{id:"run",source_name:"Gmail",status:"partial",started_at:new Date().toISOString(),stop_reason:"time-budget",checkpoint:{processed:{secret:["private-message-id"]}}}]);
 assert.equal(latestBySource.Gmail.stopReason,"time-budget");assert.equal(latestBySource.Gmail.processedItems,null);assert.equal(JSON.stringify(latestBySource).includes("private-message-id"),false);
+assert.equal(health.publicRunSummaries(latestBySource).Gmail.id,undefined);
 const findings=health.buildFindings({latestBySource,queue,investorStatus:{applied:true},runWindow:[],schemaWarnings:[],llmConfigured:true,approvedDataset:{latestActivityDate:"2026-09-01",lastPublicationAt:"2026-09-05"},ecosystem:{status:"partial"}});
 for(const code of ["latest-run-partial","event-age","publication-stall","ecosystem-partial"]) assert(findings.some(f=>f.code===code),code);
 assert.equal(health.nextDailyCheck({hour:13,minute:15},new Date("2026-09-18T13:16:00Z")),"2026-09-19T13:15:00.000Z");
@@ -19,20 +20,24 @@ console.log("pipeline health tests passed");
 const handler=require("../api/pipeline-health");
 process.env.SUPABASE_URL="https://db.example";process.env.SUPABASE_SERVICE_ROLE_KEY="test";
 const publicRow={id:"a-public",company_id:"c-public",date_announced:"2026-09-10",review_status:"approved",source_type:"press release",source_url:"https://official.example/news",confidence:"reported",is_sample:false,description:"A public source announcement.",approved_at:"2026-09-18T00:00:00Z"};
-global.fetch=async(url)=>({ok:true,json:async()=>{
+global.fetch=async(url)=>{
+ if(url.includes("/investors?"))return {ok:false,status:500,text:async()=>"PRIVATE DATABASE ERROR"};
+ return {ok:true,json:async()=>{
  if(url.includes("ingestion_runs?"))return [{id:"run",source_name:"Public web news",status:"partial",stop_reason:"time-budget",started_at:new Date().toISOString(),query:"PRIVATE QUERY"}];
  if(url.includes("review_queue_items?"))return [{id:"pending",status:"pending",source_type:"Gmail",created_at:"2026-05-20",candidate_date:"2026-09-16"}];
  if(url.includes("activities?"))return [publicRow,{...publicRow,id:"a-private",source_type:"Gmail",date_announced:"2026-09-18",approved_at:"2026-09-19T00:00:00Z"}];
  if(url.includes("companies?"))return [{id:"c-public",name:"Public company",is_sample:false}];
  if(url.includes("market_review_runs?"))return [{run_date:"2026-09-18",status:"completed",selected:0,reviewed:0,input:{candidateId:"PRIVATE REVIEW ID"}}];
  if(url.includes("rpc/market_review_scheduler_status"))return {configured:true};
- if(url.includes("web_collection_runs?"))return [];
+ if(url.includes("web_collection_runs?"))return [{id:"web-run",run_date:"2026-09-18",status:"partial",selected:1,processed:1,errors:1,remaining:0,stop_reason:"attempts-exhausted"}];
+ if(url.includes("web_collection_tasks?"))return [{status:"error",reason:"provider-rate-limit",privateCapture:"PRIVATE TASK CAPTURE"}];
  if(url.includes("rpc/web_collection_scheduler_status"))return {configured:true};
  if(url.includes("rpc/backlog_triage_summary"))return {pending:1,publicPending:0,privatePending:1,unknownSourcePending:0,asOf:"2026-09-18",capture:"PRIVATE BACKLOG"};
  if(url.includes("ecosystem_runs?"))return [{id:"eco",status:"partial",cadence:"daily",result:{private:"RAW CAPTURE"}}];
  if(url.includes("ecosystem_snapshot_releases?"))return [{manifest:{publishedAt:"2026-09-18",version:"test",coverage:{checked:1,remaining:2}}}];
  return [];
-}});
+ }};
+};
 (async()=>{
  const res={statusCode:0,setHeader(){},end(text){this.payload=JSON.parse(text);}};
  await handler({method:"GET",headers:{},query:{}},res);
@@ -40,7 +45,9 @@ global.fetch=async(url)=>({ok:true,json:async()=>{
  assert.equal(res.payload.approvedDataset.publicSafeRows,1);assert.equal(res.payload.approvedDataset.latestActivityDate,"2026-09-10");assert.equal(res.payload.approvedDataset.lastPublicationAt,"2026-09-18T00:00:00Z");
  assert.equal(res.payload.publicMarketReview.latestRun.selected,0);assert.equal(JSON.stringify(res.payload).includes("PRIVATE REVIEW ID"),false);
  assert.equal(res.payload.ecosystem.status,"partial");assert.equal(res.payload.reviewQueue.complete,true);
- assert.equal(res.payload.webCollection.latestRun.historicalUnrecoverable,true);assert.equal(res.payload.webCollection.latestRun.processed,null);assert.equal(res.payload.backlogTriage.pending,1);assert(!JSON.stringify(res.payload).includes("PRIVATE BACKLOG"));
+ assert.equal(res.payload.ecosystem.latestBatch.id,undefined);assert.equal(res.payload.ingestion.latestBySource["Public web news"].id,undefined);
+ assert.equal(res.payload.webCollection.latestRun.historicalUnrecoverable,false);assert.equal(res.payload.webCollection.latestRun.processed,1);assert.deepEqual(res.payload.webCollection.failures.byReason,{"provider-rate-limit":1});assert.equal(res.payload.backlogTriage.pending,1);assert(!JSON.stringify(res.payload).includes("PRIVATE BACKLOG"));assert(!JSON.stringify(res.payload).includes("PRIVATE TASK CAPTURE"));
+ assert.equal(res.payload.investorNormalization.warning,"normalization-telemetry-unavailable");assert.equal(JSON.stringify(res.payload).includes("PRIVATE DATABASE ERROR"),false);
  assert.equal(JSON.stringify(res.payload).includes("PRIVATE QUERY"),false);assert.equal(JSON.stringify(res.payload).includes("RAW CAPTURE"),false);
  console.log("pipeline health handler integration tests passed");
 })().catch(error=>{console.error(error);process.exitCode=1;});
