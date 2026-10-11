@@ -1,0 +1,345 @@
+snapshot_id,ai_scope,canonical_name,company_domain,company_id,country,country_iso2,metadata_validation,primary_subsector
+ai-vc-2026-f169451525da440d307e,physical_ai,ProModel,www.promodel.com,2502,United States,US,Research registry; country and classification may remain provisional.,
+ai-vc-2026-f169451525da440d307e,enabling_infrastructure,Protect AI,protectai.com,2503,United States,US,Research registry; country and classification may remain provisional.,
+ai-vc-2026-f169451525da440d307e,physical_ai,Q-Chem,www.q-chem.com,2504,United States,US,Research registry; country and classification may remain provisional.,
+ai-vc-2026-f169451525da440d307e,enabling_infrastructure,qbrobotics,qbrobotics.com,2505,Italy,IT,Research registry; country and classification may remain provisional.,
+ai-vc-2026-f169451525da440d307e,enabling_infrastructure,Qualcomm Dragonwing Robotics,www.qualcomm.com,2506,United States,US,Research registry; country and classification may remain provisional.,
+ai-vc-2026-f169451525da440d307e,digital_ai,QuantumBio,www.quantumbioinc.com,2507,United States,US,Research registry; country and classification may remain provisional.,
+ai-vc-2026-f169451525da440d307e,digital_ai,Qubit Pharmaceuticals,www.qubit-pharmaceuticals.com,2508,France,FR,Research registry; country and classification may remain provisional.,
+ai-vc-2026-f169451525da440d307e,physical_ai,QuesTek Innovations,www.questek.com,2509,United States,US,Research registry; country and classification may remain provisional.,
+ai-vc-2026-f169451525da440d307e,physical_ai,Radical AI,www.radical-ai.com,2510,United States,US,Research registry; country and classification may remain provisional.,
+ai-vc-2026-f169451525da440d307e,physical_ai,Rainbow Robotics,www.rainbow-robotics.com,2511,South Korea,KR,Research registry; country and classification may remain provisional.,
+ai-vc-2026-f169451525da440d307e,physical_ai,Raise Robotics,www.raiserobotics.com,2512,United States,US,Research registry; country and classification may remain provisional.,
+ai-vc-2026-f169451525da440d307e,physical_ai,Raven Industries,www.ravenind.com,2513,United States,US,Research registry; country and classification may remain provisional.,
+ai-vc-2026-f169451525da440d307e,digital_ai,Read AI,read.ai,2514,United States,US,Research registry; country and classification may remain provisional.,
+ai-vc-2026-f169451525da440d307e,physical_ai,READY Robotics,ready-robotics.com,2515,United States,US,Research registry; country and classification may remain provisional.,
+ai-vc-2026-f169451525da440d307e,physical_ai,Real-Time Innovations,www.rti.com,2516,United States,US,Research registry; country and classification may remain provisional.,
+ai-vc-2026-f169451525da440d307e,physical_ai,Realis Simulation,realis-simulation.com,2517,United Kingdom,GB,Research registry; country and classification may remain provisional.,
+ai-vc-2026-f169451525da440d307e,physical_ai,Realtime Robotics,rtr.ai,2518,United States,US,Research registry; country and classification may remain provisional.,
+ai-vc-2026-f169451525da440d307e,physical_ai,Red Cat / Teal Drones,redcat.red,2519,United States,US,Research registry; country and classification may remain provisional.,
+ai-vc-2026-f169451525da440d307e,physical_ai,Refraction AI,refraction.ai,2520,United States,US,Research registry; country and classification may remain provisional.,
+ai-vc-2026-f169451525da440d307e,physical_ai,Relay Robotics,relayrobotics.com,2521,United States,US,Research registry; country and classification may remain provisional.,
+ai-vc-2026-f169451525da440d307e,digital_ai,Relevance AI,relevanceai.com,2522,Australia,AU,Research registry; country and classification may remain provisional.,
+ai-vc-2026-f169451525da440d307e,physical_ai,RELEX Solutions,www.relexsolutions.com,2523,Finland,FI,Research registry; country and classification may remain provisional.,
+ai-vc-2026-f169451525da440d307e,physical_ai,Remcom,www.remcom.com,2524,United States,US,Research registry; country and classification may remain provisional.,
+ai-vc-2026-f169451525da440d307e,physical_ai,Rendered.ai,rendered.ai,2525,United States,US,Research registry; country and classification may remain provisional.,
+ai-vc-2026-f169451525da440d307e,physical_ai,Renesas Electronics (Altium),www.altium.com,2526,Japan / United States,,Research registry; country and classification may remain provisional.,
+ai-vc-2026-f169451525da440d307e,enabling_infrastructure,Replicate,replicate.com,2527,United States,US,Research registry; country and classification may remain provisional.,
+ai-vc-2026-f169451525da440d307e,physical_ai,Rescale,rescale.com,2528,United States,US,Research registry; country and classification may remain provisional.,
+ai-vc-2026-f169451525da440d307e,digital_ai,Resemble AI,resemble.ai,2529,United States,US,Research registry; country and classification may remain provisional.,
+ai-vc-2026-f169451525da440d307e,physical_ai,Revalize (PIPE-FLO),revalizesoftware.com,2530,United States,US,Research registry; country and classification may remain provisional.,
+ai-vc-2026-f169451525da440d307e,physical_ai,rFpro,rfpro.com,2531,United Kingdom,GB,Research registry; country and classification may remain provisional.,
+ai-vc-2026-f169451525da440d307e,physical_ai,RGo Robotics,rgo-robotics.ai,2532,Israel / United States,,Research registry; country and classification may remain provisional.,
+ai-vc-2026-f169451525da440d307e,physical_ai,Richtech Robotics,www.richtechrobotics.com,2533,United States,US,Research registry; country and classification may remain provisional.,
+ai-vc-2026-f169451525da440d307e,digital_ai,Robin AI,robinai.com,2534,United Kingdom,GB,Research registry; country and classification may remain provisional.,
+ai-vc-2026-f169451525da440d307e,enabling_infrastructure,RoboSense,www.robosense.ai,2535,China,CN,Research registry; country and classification may remain provisional.,
+ai-vc-2026-f169451525da440d307e,physical_ai,Robotics Plus,www.roboticsplus.co.nz,2536,New Zealand,NZ,Research registry; country and classification may remain provisional.,
+ai-vc-2026-f169451525da440d307e,enabling_infrastructure,Robotiq,robotiq.com,2537,Canada,CA,Research registry; country and classification may remain provisional.,
+ai-vc-2026-f169451525da440d307e,physical_ai,Robotis,www.robotis.us,2538,South Korea,KR,Research registry; country and classification may remain provisional.,
+ai-vc-2026-f169451525da440d307e,physical_ai,Roboto AI,www.roboto.ai,2539,United States,US,Research registry; country and classification may remain provisional.,
+ai-vc-2026-f169451525da440d307e,physical_ai,Rock Flow Dynamics,rfdyn.com,2540,United Kingdom,GB,Research registry; country and classification may remain provisional.,
+ai-vc-2026-f169451525da440d307e,physical_ai,Rockwell Automation,www.rockwellautomation.com,2541,United States,US,Research registry; country and classification may remain provisional.,
+ai-vc-2026-f169451525da440d307e,physical_ai,RTDS Technologies,www.rtds.com,2542,Canada,CA,Research registry; country and classification may remain provisional.,
+ai-vc-2026-f169451525da440d307e,physical_ai,Rugged Robotics,www.ruggedrobotics.com,2543,United States,US,Research registry; country and classification may remain provisional.,
+ai-vc-2026-f169451525da440d307e,physical_ai,Saab Seaeye,www.saabseaeye.com,2544,United Kingdom / Sweden,,Research registry; country and classification may remain provisional.,
+ai-vc-2026-f169451525da440d307e,physical_ai,SafeAI,www.safeai.ai,2545,United States,US,Research registry; country and classification may remain provisional.,
+ai-vc-2026-f169451525da440d307e,physical_ai,Saildrone,www.saildrone.com,2546,United States,US,Research registry; country and classification may remain provisional.,
+ai-vc-2026-f169451525da440d307e,physical_ai,Sama,www.sama.com,2547,United States / Kenya,,Research registry; country and classification may remain provisional.,
+ai-vc-2026-f169451525da440d307e,enabling_infrastructure,San Francisco Compute,sfcompute.com,2548,US,US,Research registry; country and classification may remain provisional.,
+ai-vc-2026-f169451525da440d307e,digital_ai,Sana,sanalabs.com,2549,Sweden,SE,Research registry; country and classification may remain provisional.,
+ai-vc-2026-f169451525da440d307e,physical_ai,Sanctuary AI,www.sanctuary.ai,2550,Canada,CA,Research registry; country and classification may remain provisional.,
+ai-vc-2026-f169451525da440d307e,physical_ai,SandboxAQ,www.sandboxaq.com,2551,United States,US,Research registry; country and classification may remain provisional.,
+ai-vc-2026-f169451525da440d307e,physical_ai,Sandvik (Deswik),www.deswik.com,2552,Sweden / Australia,,Research registry; country and classification may remain provisional.,
+ai-vc-2026-f169451525da440d307e,physical_ai,Sandvik AutoMine,www.rocktechnology.sandvik,2553,Sweden,SE,Research registry; country and classification may remain provisional.,
+ai-vc-2026-f169451525da440d307e,enabling_infrastructure,Scale AI,scale.com,2554,United States,US,Research registry; country and classification may remain provisional.,
+ai-vc-2026-f169451525da440d307e,enabling_infrastructure,Scantinel Photonics,scantinel.com,2555,Germany,DE,Research registry; country and classification may remain provisional.,
+ai-vc-2026-f169451525da440d307e,enabling_infrastructure,Schmalz,www.schmalz.com,2556,Germany,DE,Research registry; country and classification may remain provisional.,
+ai-vc-2026-f169451525da440d307e,physical_ai,Schneider Electric (AVEVA / ETAP),www.aveva.com,2557,France,FR,Research registry; country and classification may remain provisional.,
+ai-vc-2026-f169451525da440d307e,digital_ai,Schrödinger,www.schrodinger.com,2558,United States,US,Research registry; country and classification may remain provisional.,
+ai-vc-2026-f169451525da440d307e,enabling_infrastructure,SCHUNK,schunk.com,2559,Germany,DE,Research registry; country and classification may remain provisional.,
+ai-vc-2026-f169451525da440d307e,physical_ai,Scientific Forming Technologies Corporation,www.deform.com,2560,United States,US,Research registry; country and classification may remain provisional.,
+ai-vc-2026-f169451525da440d307e,physical_ai,Secondmind,www.secondmind.ai,2561,United Kingdom,GB,Research registry; country and classification may remain provisional.,
+ai-vc-2026-f169451525da440d307e,physical_ai,Sedaro,www.sedaro.com,2562,United States,US,Research registry; country and classification may remain provisional.,
+ai-vc-2026-f169451525da440d307e,physical_ai,Seneca,seneca.com,2563,United States,US,Research registry; country and classification may remain provisional.,
+ai-vc-2026-f169451525da440d307e,physical_ai,Sensmetry,sensmetry.com,2564,United Kingdom / Lithuania,,Research registry; country and classification may remain provisional.,
+ai-vc-2026-f169451525da440d307e,physical_ai,Sente Software,www.sentesoftware.co.uk,2565,United Kingdom,GB,Research registry; country and classification may remain provisional.,
+ai-vc-2026-f169451525da440d307e,physical_ai,Sevensense Robotics,new.abb.com,2566,Switzerland,CH,Research registry; country and classification may remain provisional.,
+ai-vc-2026-f169451525da440d307e,enabling_infrastructure,Seyond,www.seyond.com,2567,China / United States,,Research registry; country and classification may remain provisional.,
+ai-vc-2026-f169451525da440d307e,enabling_infrastructure,Shadow Robot Company,www.shadowrobot.com,2568,United Kingdom,GB,Research registry; country and classification may remain provisional.,
+ai-vc-2026-f169451525da440d307e,physical_ai,Shapr3D,shapr3d.com,2569,Hungary,HU,Research registry; country and classification may remain provisional.,
+ai-vc-2026-f169451525da440d307e,physical_ai,Siemens,www.sw.siemens.com,2570,Germany,DE,Research registry; country and classification may remain provisional.,
+ai-vc-2026-f169451525da440d307e,physical_ai,Siemens Digital Industries Software,www.sw.siemens.com,2571,Germany / United States,,Research registry; country and classification may remain provisional.,
+ai-vc-2026-f169451525da440d307e,physical_ai,Sight Machine,sightmachine.com,2572,United States,US,Research registry; country and classification may remain provisional.,
+ai-vc-2026-f169451525da440d307e,physical_ai,SIGMA Engineering,www.sigmasoft.de,2573,Germany,DE,Research registry; country and classification may remain provisional.,
+ai-vc-2026-f169451525da440d307e,enabling_infrastructure,SiLC Technologies,silc.com,2574,United States,US,Research registry; country and classification may remain provisional.,
+ai-vc-2026-f169451525da440d307e,physical_ai,Silvaco,silvaco.com,2575,United States,US,Research registry; country and classification may remain provisional.,
+ai-vc-2026-f169451525da440d307e,physical_ai,Sim&Cure,sim-and-cure.com,2576,France,FR,Research registry; country and classification may remain provisional.,
+ai-vc-2026-f169451525da440d307e,physical_ai,Simberian,www.simberian.com,2577,United States,US,Research registry; country and classification may remain provisional.,
+ai-vc-2026-f169451525da440d307e,physical_ai,SIMetrix Technologies,www.simetrix.co.uk,2578,United Kingdom,GB,Research registry; country and classification may remain provisional.,
+ai-vc-2026-f169451525da440d307e,physical_ai,Simphotek,simphotek.com,2579,United States,US,Research registry; country and classification may remain provisional.,
+ai-vc-2026-f169451525da440d307e,physical_ai,SimPlan,www.simplan.de,2580,Germany,DE,Research registry; country and classification may remain provisional.,
+ai-vc-2026-f169451525da440d307e,physical_ai,Simr,simr.com,2581,United States,US,Research registry; country and classification may remain provisional.,
+ai-vc-2026-f169451525da440d307e,physical_ai,Simreka,simreka.com,2582,Germany,DE,Research registry; country and classification may remain provisional.,
+ai-vc-2026-f169451525da440d307e,physical_ai,SimScale,www.simscale.com,2583,Germany,DE,Research registry; country and classification may remain provisional.,
+ai-vc-2026-f169451525da440d307e,physical_ai,Simthetiq,simthetiq.com,2584,Canada,CA,Research registry; country and classification may remain provisional.,
+ai-vc-2026-f169451525da440d307e,physical_ai,Simudyne,simudyne.com,2585,United Kingdom,GB,Research registry; country and classification may remain provisional.,
+ai-vc-2026-f169451525da440d307e,physical_ai,Simulab,simulab.com,2586,United States,US,Research registry; country and classification may remain provisional.,
+ai-vc-2026-f169451525da440d307e,digital_ai,Simulations Plus,www.simulations-plus.com,2587,United States,US,Research registry; country and classification may remain provisional.,
+ai-vc-2026-f169451525da440d307e,physical_ai,Simurghy,simurghy.com,2588,Netherlands,NL,Research registry; country and classification may remain provisional.,
+ai-vc-2026-f169451525da440d307e,physical_ai,SimX,www.simxvr.com,2589,United States,US,Research registry; country and classification may remain provisional.,
+ai-vc-2026-f169451525da440d307e,physical_ai,SkyCiv,skyciv.com,2590,Australia / United States,,Research registry; country and classification may remain provisional.,
+ai-vc-2026-f169451525da440d307e,physical_ai,Skyline Robotics,www.skylinerobotics.com,2591,Israel / United States,,Research registry; country and classification may remain provisional.,
+ai-vc-2026-f169451525da440d307e,physical_ai,Slingshot Aerospace,www.slingshotaerospace.com,2592,United States,US,Research registry; country and classification may remain provisional.,
+ai-vc-2026-f169451525da440d307e,physical_ai,Small Robot Company,www.smallrobotcompany.com,2593,United Kingdom,GB,Research registry; country and classification may remain provisional.,
+ai-vc-2026-f169451525da440d307e,enabling_infrastructure,SMC Corporation,www.smcworld.com,2594,Japan,JP,Research registry; country and classification may remain provisional.,
+ai-vc-2026-f169451525da440d307e,physical_ai,Smith+Nephew CORI,www.smith-nephew.com,2595,United Kingdom,GB,Research registry; country and classification may remain provisional.,
+ai-vc-2026-f169451525da440d307e,physical_ai,Snke (Snke Xplore),www.snke.com,2596,Germany,DE,Research registry; country and classification may remain provisional.,
+ai-vc-2026-f169451525da440d307e,physical_ai,SOFiSTiK,www.sofistik.com,2597,Germany,DE,Research registry; country and classification may remain provisional.,
+ai-vc-2026-f169451525da440d307e,enabling_infrastructure,Soft Robotics / Oxipital AI,www.oxipital.ai,2598,United States,US,Research registry; country and classification may remain provisional.,
+ai-vc-2026-f169451525da440d307e,physical_ai,SoftInWay,www.softinway.com,2599,United States,US,Research registry; country and classification may remain provisional.,
+ai-vc-2026-f169451525da440d307e,physical_ai,Software for Chemistry & Materials (SCM),www.scm.com,2600,Netherlands,NL,Research registry; country and classification may remain provisional.,
+ai-vc-2026-f169451525da440d307e,physical_ai,Sogeclair (OKTAL / Sydac),www.sogeclair.com,2601,France,FR,Research registry; country and classification may remain provisional.,
+ai-vc-2026-f169451525da440d307e,physical_ai,SolarCleano,solarcleano.com,2602,Luxembourg,LU,Research registry; country and classification may remain provisional.,
+ai-vc-2026-f169451525da440d307e,physical_ai,Solinftec,solinftec.com,2603,Brazil / United States,,Research registry; country and classification may remain provisional.,
+ai-vc-2026-f169451525da440d307e,physical_ai,Sonnet Software,www.sonnetsoftware.com,2604,United States,US,Research registry; country and classification may remain provisional.,
+ai-vc-2026-f169451525da440d307e,digital_ai,Sourcegraph,sourcegraph.com,2605,United States,US,Research registry; country and classification may remain provisional.,
+ai-vc-2026-f169451525da440d307e,digital_ai,Speak,speak.com,2606,United States,US,Research registry; country and classification may remain provisional.,
+ai-vc-2026-f169451525da440d307e,digital_ai,Speechmatics,speechmatics.com,2607,United Kingdom,GB,Research registry; country and classification may remain provisional.,
+ai-vc-2026-f169451525da440d307e,physical_ai,Speedgoat,www.speedgoat.com,2608,Switzerland,CH,Research registry; country and classification may remain provisional.,
+ai-vc-2026-f169451525da440d307e,physical_ai,Spyce,www.sweetgreen.com,2609,United States,US,Research registry; country and classification may remain provisional.,
+ai-vc-2026-f169451525da440d307e,physical_ai,ST Engineering (MAK Technologies),www.mak.com,2610,United States / Singapore,,Research registry; country and classification may remain provisional.,
+ai-vc-2026-f169451525da440d307e,digital_ai,StackBlitz,stackblitz.com,2611,United States,US,Research registry; country and classification may remain provisional.,
+ai-vc-2026-f169451525da440d307e,physical_ai,StruSoft,strusoft.com,2612,Sweden,SE,Research registry; country and classification may remain provisional.,
+ai-vc-2026-f169451525da440d307e,physical_ai,Stryker Mako,www.stryker.com,2613,United States,US,Research registry; country and classification may remain provisional.,
+ai-vc-2026-f169451525da440d307e,digital_ai,Suki,suki.ai,2614,United States,US,Research registry; country and classification may remain provisional.,
+ai-vc-2026-f169451525da440d307e,enabling_infrastructure,SuperAnnotate,superannotate.com,2615,United States,US,Research registry; country and classification may remain provisional.,
+ai-vc-2026-f169451525da440d307e,enabling_infrastructure,Surge AI,surgehq.ai,2616,United States,US,Research registry; country and classification may remain provisional.,
+ai-vc-2026-f169451525da440d307e,physical_ai,Surgical Science,surgicalscience.com,2617,Sweden,SE,Research registry; country and classification may remain provisional.,
+ai-vc-2026-f169451525da440d307e,physical_ai,Surgical Theater,surgicaltheater.com,2618,United States,US,Research registry; country and classification may remain provisional.,
+ai-vc-2026-f169451525da440d307e,physical_ai,SwarmFarm Robotics,www.swarmfarm.com,2619,Australia,AU,Research registry; country and classification may remain provisional.,
+ai-vc-2026-f169451525da440d307e,physical_ai,Swift Navigation,www.swiftnav.com,2620,United States,US,Research registry; country and classification may remain provisional.,
+ai-vc-2026-f169451525da440d307e,physical_ai,Synapticon,www.synapticon.com,2621,Germany,DE,Research registry; country and classification may remain provisional.,
+ai-vc-2026-f169451525da440d307e,physical_ai,Synopsys (including Ansys),www.synopsys.com,2622,United States,US,Research registry; country and classification may remain provisional.,
+ai-vc-2026-f169451525da440d307e,enabling_infrastructure,SynSense,www.synsense.ai,2623,Switzerland / China,,Research registry; country and classification may remain provisional.,
+ai-vc-2026-f169451525da440d307e,physical_ai,Synthesis AI,synthesis.ai,2624,United States,US,Research registry; country and classification may remain provisional.,
+ai-vc-2026-f169451525da440d307e,enabling_infrastructure,Synthesized,synthesized.io,2625,United Kingdom,GB,Research registry; country and classification may remain provisional.,
+ai-vc-2026-f169451525da440d307e,enabling_infrastructure,Syntiant,www.syntiant.com,2626,United States,US,Research registry; country and classification may remain provisional.,
+ai-vc-2026-f169451525da440d307e,enabling_infrastructure,SynTouch,www.syntouchinc.com,2627,United States,US,Research registry; country and classification may remain provisional.,
+ai-vc-2026-f169451525da440d307e,physical_ai,Take The Wind (Body Interact),bodyinteract.com,2628,Portugal,PT,Research registry; country and classification may remain provisional.,
+ai-vc-2026-f169451525da440d307e,physical_ai,Taurob,www.taurob.com,2629,Austria,AT,Research registry; country and classification may remain provisional.,
+ai-vc-2026-f169451525da440d307e,physical_ai,Techman Robot,www.tm-robot.com,2630,Taiwan,TW,Research registry; country and classification may remain provisional.,
+ai-vc-2026-f169451525da440d307e,physical_ai,Teledyne Marine,www.teledynemarine.com,2631,United States,US,Research registry; country and classification may remain provisional.,
+ai-vc-2026-f169451525da440d307e,physical_ai,Teleo,www.teleo.ai,2632,United States,US,Research registry; country and classification may remain provisional.,
+ai-vc-2026-f169451525da440d307e,physical_ai,Tensorfield Agriculture,www.tensorfield.ag,2633,United States,US,Research registry; country and classification may remain provisional.,
+ai-vc-2026-f169451525da440d307e,physical_ai,Tesla Autonomous Driving,www.tesla.com,2634,United States,US,Research registry; country and classification may remain provisional.,
+ai-vc-2026-f169451525da440d307e,physical_ai,Tesla Optimus,www.tesla.com,2635,United States,US,Research registry; country and classification may remain provisional.,
+ai-vc-2026-f169451525da440d307e,enabling_infrastructure,Tesollo,tesollo.com,2636,South Korea,KR,Research registry; country and classification may remain provisional.,
+ai-vc-2026-f169451525da440d307e,physical_ai,Tevel Aerobotics Technologies,www.tevel-tech.com,2637,Israel,IL,Research registry; country and classification may remain provisional.,
+ai-vc-2026-f169451525da440d307e,enabling_infrastructure,Texas Instruments TDA4,www.ti.com,2638,United States,US,Research registry; country and classification may remain provisional.,
+ai-vc-2026-f169451525da440d307e,physical_ai,Textron (TRU Simulation + Training),www.trusimulation.com,2639,United States,US,Research registry; country and classification may remain provisional.,
+ai-vc-2026-f169451525da440d307e,physical_ai,TGW Logistics,www.tgw-group.com,2640,Austria,AT,Research registry; country and classification may remain provisional.,
+ai-vc-2026-f169451525da440d307e,physical_ai,ThayerMahan,www.thayermahan.com,2641,United States,US,Research registry; country and classification may remain provisional.,
+ai-vc-2026-f169451525da440d307e,physical_ai,The AnyLogic Company,www.anylogic.com,2642,United States,US,Research registry; country and classification may remain provisional.,
+ai-vc-2026-f169451525da440d307e,physical_ai,The Bot Company,www.bot.co,2643,United States,US,Research registry; country and classification may remain provisional.,
+ai-vc-2026-f169451525da440d307e,physical_ai,Thermo-Calc Software,thermocalc.com,2644,Sweden,SE,Research registry; country and classification may remain provisional.,
+ai-vc-2026-f169451525da440d307e,physical_ai,Theseus,www.theseus.us,2645,United States,US,Research registry; country and classification may remain provisional.,
+ai-vc-2026-f169451525da440d307e,physical_ai,Third Wave Automation,thirdwave.ai,2646,United States,US,Research registry; country and classification may remain provisional.,
+ai-vc-2026-f169451525da440d307e,physical_ai,Toggle Robotics,www.toggle.is,2647,United States,US,Research registry; country and classification may remain provisional.,
+ai-vc-2026-f169451525da440d307e,enabling_infrastructure,Toloka,toloka.ai,2648,United States,US,Research registry; country and classification may remain provisional.,
+ai-vc-2026-f169451525da440d307e,physical_ai,Tomorrow Things,www.tomorrowthings.com,2649,Germany,DE,Research registry; country and classification may remain provisional.,
+ai-vc-2026-f169451525da440d307e,enabling_infrastructure,Tonic AI,tonic.ai,2650,United States,US,Research registry; country and classification may remain provisional.,
+ai-vc-2026-f169451525da440d307e,physical_ai,Tortuga AgTech,www.tortuga-agtech.com,2651,United States,US,Research registry; country and classification may remain provisional.,
+ai-vc-2026-f169451525da440d307e,physical_ai,TotalCAE,www.totalcae.com,2652,United States,US,Research registry; country and classification may remain provisional.,
+ai-vc-2026-f169451525da440d307e,enabling_infrastructure,Touchlab,touchlab.io,2653,United Kingdom,GB,Research registry; country and classification may remain provisional.,
+ai-vc-2026-f169451525da440d307e,physical_ai,Toyota Research Institute,www.tri.global,2654,United States / Japan,,Research registry; country and classification may remain provisional.,
+ai-vc-2026-f169451525da440d307e,digital_ai,Tractian,tractian.com,2655,United States,US,Research registry; country and classification may remain provisional.,
+ai-vc-2026-f169451525da440d307e,physical_ai,Transvalor,www.transvalor.com,2656,France,FR,Research registry; country and classification may remain provisional.,
+ai-vc-2026-f169451525da440d307e,physical_ai,TrianGraphics,www.triangraphics.de,2657,Germany,DE,Research registry; country and classification may remain provisional.,
+ai-vc-2026-f169451525da440d307e,physical_ai,Trimble,www.trimble.com,2658,United States,US,Research registry; country and classification may remain provisional.,
+ai-vc-2026-f169451525da440d307e,enabling_infrastructure,TruEra,truera.com,2659,United States,US,Research registry; country and classification may remain provisional.,
+ai-vc-2026-f169451525da440d307e,digital_ai,Truewind,truewind.ai,2660,United States,US,Research registry; country and classification may remain provisional.,
+ai-vc-2026-f169451525da440d307e,enabling_infrastructure,Turing,turing.com,2661,United States,US,Research registry; country and classification may remain provisional.,
+ai-vc-2026-f169451525da440d307e,physical_ai,TuSimple / CreateAI,www.createai.com,2662,China / United States,,Research registry; country and classification may remain provisional.,
+ai-vc-2026-f169451525da440d307e,physical_ai,Tutor Intelligence,tutorintelligence.com,2663,United States,US,Research registry; country and classification may remain provisional.,
+ai-vc-2026-f169451525da440d307e,physical_ai,twinzo,www.twinzo.eu,2664,Slovakia,SK,Research registry; country and classification may remain provisional.,
+ai-vc-2026-f169451525da440d307e,physical_ai,Typhoon HIL,www.typhoon-hil.com,2665,Switzerland / United States,,Research registry; country and classification may remain provisional.,
+ai-vc-2026-f169451525da440d307e,physical_ai,UberCloud,www.theubercloud.com,2666,Germany / United States,,Research registry; country and classification may remain provisional.,
+ai-vc-2026-f169451525da440d307e,physical_ai,Uhnder,uhnder.com,2667,United States,US,Research registry; country and classification may remain provisional.,
+ai-vc-2026-f169451525da440d307e,physical_ai,UL Solutions (HOMER Energy),www.homerenergy.com,2668,United States,US,Research registry; country and classification may remain provisional.,
+ai-vc-2026-f169451525da440d307e,physical_ai,Unifly,www.unifly.aero,2669,Belgium,BE,Research registry; country and classification may remain provisional.,
+ai-vc-2026-f169451525da440d307e,physical_ai,Unity Industry,unity.com,2670,United States,US,Research registry; country and classification may remain provisional.,
+ai-vc-2026-f169451525da440d307e,physical_ai,Unity Software,unity.com,2671,United States,US,Research registry; country and classification may remain provisional.,
+ai-vc-2026-f169451525da440d307e,physical_ai,Univista,www.univista-isg.com,2672,China,CN,Research registry; country and classification may remain provisional.,
+ai-vc-2026-f169451525da440d307e,digital_ai,Unlearn,www.unlearn.ai,2673,United States,US,Research registry; country and classification may remain provisional.,
+ai-vc-2026-f169451525da440d307e,enabling_infrastructure,Unsloth,unsloth.ai,2674,United States,US,Research registry; country and classification may remain provisional.,
+ai-vc-2026-f169451525da440d307e,physical_ai,Uptake,uptake.com,2675,United States,US,Research registry; country and classification may remain provisional.,
+ai-vc-2026-f169451525da440d307e,digital_ai,UptimeAI,uptimeai.com,2676,United States,US,Research registry; country and classification may remain provisional.,
+ai-vc-2026-f169451525da440d307e,physical_ai,URBX,urbx.com,2677,United States,US,Research registry; country and classification may remain provisional.,
+ai-vc-2026-f169451525da440d307e,enabling_infrastructure,V7,v7labs.com,2678,United Kingdom,GB,Research registry; country and classification may remain provisional.,
+ai-vc-2026-f169451525da440d307e,physical_ai,Vanderlande,www.vanderlande.com,2679,Netherlands,NL,Research registry; country and classification may remain provisional.,
+ai-vc-2026-f169451525da440d307e,physical_ai,VASP Software,www.vasp.at,2680,Austria,AT,Research registry; country and classification may remain provisional.,
+ai-vc-2026-f169451525da440d307e,physical_ai,Vayyar,vayyar.com,2681,Israel,IL,Research registry; country and classification may remain provisional.,
+ai-vc-2026-f169451525da440d307e,enabling_infrastructure,Vectara,vectara.com,2682,United States,US,Research registry; country and classification may remain provisional.,
+ai-vc-2026-f169451525da440d307e,physical_ai,Vector Informatik,www.vector.com,2683,Germany,DE,Research registry; country and classification may remain provisional.,
+ai-vc-2026-f169451525da440d307e,physical_ai,Velodyne Lidar,investors.ouster.com,2684,United States,US,Research registry; country and classification may remain provisional.,
+ai-vc-2026-f169451525da440d307e,digital_ai,VeriSIM Life,www.verisimlife.com,2685,United States,US,Research registry; country and classification may remain provisional.,
+ai-vc-2026-f169451525da440d307e,physical_ai,Verobotics,www.verobotics.com,2686,Israel,IL,Research registry; country and classification may remain provisional.,
+ai-vc-2026-f169451525da440d307e,physical_ai,Viam,www.viam.com,2687,United States,US,Research registry; country and classification may remain provisional.,
+ai-vc-2026-f169451525da440d307e,digital_ai,Vic.ai,vic.ai,2688,United States,US,Research registry; country and classification may remain provisional.,
+ai-vc-2026-f169451525da440d307e,physical_ai,Vicarious Surgical,www.vicarioussurgical.com,2689,United States,US,Research registry; country and classification may remain provisional.,
+ai-vc-2026-f169451525da440d307e,physical_ai,VirtaMed,www.virtamed.com,2690,Switzerland,CH,Research registry; country and classification may remain provisional.,
+ai-vc-2026-f169451525da440d307e,physical_ai,Virtonomy,www.virtonomy.io,2691,Germany,DE,Research registry; country and classification may remain provisional.,
+ai-vc-2026-f169451525da440d307e,physical_ai,Voxel51,voxel51.com,2692,United States,US,Research registry; country and classification may remain provisional.,
+ai-vc-2026-f169451525da440d307e,enabling_infrastructure,Voyant Photonics,voyantphotonics.com,2693,United States,US,Research registry; country and classification may remain provisional.,
+ai-vc-2026-f169451525da440d307e,physical_ai,Waabi World Simulator,waabi.ai,2694,Canada / United States,,Research registry; country and classification may remain provisional.,
+ai-vc-2026-f169451525da440d307e,physical_ai,Wavefunction,www.wavefun.com,2695,United States,US,Research registry; country and classification may remain provisional.,
+ai-vc-2026-f169451525da440d307e,physical_ai,Wayve GAIA,wayve.ai,2696,United Kingdom,GB,Research registry; country and classification may remain provisional.,
+ai-vc-2026-f169451525da440d307e,enabling_infrastructure,Weights & Biases,wandb.ai,2697,United States,US,Research registry; country and classification may remain provisional.,
+ai-vc-2026-f169451525da440d307e,physical_ai,Weir Group (Micromine),www.micromine.com,2698,United Kingdom / Australia,,Research registry; country and classification may remain provisional.,
+ai-vc-2026-f169451525da440d307e,enabling_infrastructure,WEISS Robotics,weiss-robotics.com,2699,Germany,DE,Research registry; country and classification may remain provisional.,
+ai-vc-2026-f169451525da440d307e,physical_ai,WestDev (Pulsonix),pulsonix.com,2700,United Kingdom,GB,Research registry; country and classification may remain provisional.,
+ai-vc-2026-f169451525da440d307e,physical_ai,Whitson,whitson.com,2701,Norway,NO,Research registry; country and classification may remain provisional.,
+ai-vc-2026-f169451525da440d307e,enabling_infrastructure,WhyLabs,whylabs.ai,2702,United States,US,Research registry; country and classification may remain provisional.,
+ai-vc-2026-f169451525da440d307e,physical_ai,Wind River,www.windriver.com,2703,United States,US,Research registry; country and classification may remain provisional.,
+ai-vc-2026-f169451525da440d307e,digital_ai,Windsurf,windsurf.com,2704,United States,US,Research registry; country and classification may remain provisional.,
+ai-vc-2026-f169451525da440d307e,physical_ai,WIPL-D,wipl-d.com,2705,Serbia,RS,Research registry; country and classification may remain provisional.,
+ai-vc-2026-f169451525da440d307e,physical_ai,Wolfram Research,www.wolfram.com,2706,United States,US,Research registry; country and classification may remain provisional.,
+ai-vc-2026-f169451525da440d307e,enabling_infrastructure,Wonik Robotics,www.wonikrobotics.com,2707,South Korea,KR,Research registry; country and classification may remain provisional.,
+ai-vc-2026-f169451525da440d307e,digital_ai,Writer,writer.com,2708,United States,US,Research registry; country and classification may remain provisional.,
+ai-vc-2026-f169451525da440d307e,physical_ai,X-EPIC,www.x-epic.com,2709,China,CN,Research registry; country and classification may remain provisional.,
+ai-vc-2026-f169451525da440d307e,digital_ai,Xaira Therapeutics,xaira.com,2710,United States,US,Research registry; country and classification may remain provisional.,
+ai-vc-2026-f169451525da440d307e,physical_ai,XMPro,xmpro.com,2711,United States / Australia,,Research registry; country and classification may remain provisional.,
+ai-vc-2026-f169451525da440d307e,physical_ai,Xpeedic,www.xpeedic.com,2712,China,CN,Research registry; country and classification may remain provisional.,
+ai-vc-2026-f169451525da440d307e,digital_ai,XtalPi,www.xtalpi.com,2713,China / United States,,Research registry; country and classification may remain provisional.,
+ai-vc-2026-f169451525da440d307e,physical_ai,Xwing,ir.jobyaviation.com,2714,United States,US,Research registry; country and classification may remain provisional.,
+ai-vc-2026-f169451525da440d307e,physical_ai,XYZ Robotics,www.xyzrobotics.com,2715,United States / China,,Research registry; country and classification may remain provisional.,
+ai-vc-2026-f169451525da440d307e,physical_ai,Yarbo,www.yarbo.com,2716,China / United States,,Research registry; country and classification may remain provisional.,
+ai-vc-2026-f169451525da440d307e,physical_ai,Yaskawa Motoman,www.motoman.com,2717,Japan,JP,Research registry; country and classification may remain provisional.,
+ai-vc-2026-f169451525da440d307e,physical_ai,Yokogawa Electric (KBC),www.kbc.global,2718,Japan / United Kingdom,,Research registry; country and classification may remain provisional.,
+ai-vc-2026-f169451525da440d307e,digital_ai,You.com,you.com,2719,United States,US,Research registry; country and classification may remain provisional.,
+ai-vc-2026-f169451525da440d307e,physical_ai,Zace Services (ZSOIL),www.zsoil.com,2720,Switzerland,CH,Research registry; country and classification may remain provisional.,
+ai-vc-2026-f169451525da440d307e,physical_ai,Zendar,www.zendar.io,2721,United States,US,Research registry; country and classification may remain provisional.,
+ai-vc-2026-f169451525da440d307e,enabling_infrastructure,ZenML,zenml.io,2722,Germany,DE,Research registry; country and classification may remain provisional.,
+ai-vc-2026-f169451525da440d307e,physical_ai,Zeromatter,zeromatter.com,2723,United States,US,Research registry; country and classification may remain provisional.,
+ai-vc-2026-f169451525da440d307e,enabling_infrastructure,Zilliz,zilliz.com,2724,United States,US,Research registry; country and classification may remain provisional.,
+ai-vc-2026-f169451525da440d307e,physical_ai,Zimmer Biomet ROSA,www.zimmerbiomet.com,2725,United States,US,Research registry; country and classification may remain provisional.,
+ai-vc-2026-f169451525da440d307e,enabling_infrastructure,Zimmer Group,www.zimmer-group.com,2726,Germany,DE,Research registry; country and classification may remain provisional.,
+ai-vc-2026-f169451525da440d307e,physical_ai,Zoo,zoo.dev,2727,United States,US,Research registry; country and classification may remain provisional.,
+ai-vc-2026-f169451525da440d307e,physical_ai,Zuken,www.zuken.com,2728,Japan,JP,Research registry; country and classification may remain provisional.,
+ai-vc-2026-f169451525da440d307e,physical_ai,Zurich MedTech,zmt.swiss,2729,Switzerland,CH,Research registry; country and classification may remain provisional.,
+ai-vc-2026-f169451525da440d307e,enabling_infrastructure,WEKA,www.weka.io,2730,United States,US,Research registry; country and classification may remain provisional.,
+ai-vc-2026-f169451525da440d307e,digital_ai,Hadrian (cybersecurity),hadrian.io,2731,Netherlands,NL,Research registry; country and classification may remain provisional.,cybersecurity
+ai-vc-2026-f169451525da440d307e,digital_ai,Nettle,,2732,,,Research registry; country and classification may remain provisional.,finance
+ai-vc-2026-f169451525da440d307e,enabling_infrastructure,Namespace,,2733,,,Research registry; country and classification may remain provisional.,developer_tools
+ai-vc-2026-f169451525da440d307e,digital_ai,Senso,,2734,,,Research registry; country and classification may remain provisional.,data_training_evaluation
+ai-vc-2026-f169451525da440d307e,,Zeta Global,,2735,,,Research registry; country and classification may remain provisional.,
+ai-vc-2026-f169451525da440d307e,digital_ai,Vizby,,2736,,,Research registry; country and classification may remain provisional.,sales_marketing
+ai-vc-2026-f169451525da440d307e,,Swap Commerce,,2737,,,Research registry; country and classification may remain provisional.,
+ai-vc-2026-f169451525da440d307e,digital_ai,Flowie,,2738,,,Research registry; country and classification may remain provisional.,finance
+ai-vc-2026-f169451525da440d307e,,Sovos,,2739,,,Research registry; country and classification may remain provisional.,
+ai-vc-2026-f169451525da440d307e,physical_ai,Sudo AI (Shanghai Sudo Technology),,2740,,,Research registry; country and classification may remain provisional.,humanoid_robotics
+ai-vc-2026-f169451525da440d307e,digital_ai,Ultravox,,2741,,,Research registry; country and classification may remain provisional.,customer_support_voice
+ai-vc-2026-f169451525da440d307e,,Inworld,,2742,,,Research registry; country and classification may remain provisional.,
+ai-vc-2026-f169451525da440d307e,digital_ai,Parakeet Health,,2743,,,Research registry; country and classification may remain provisional.,healthcare_biotech
+ai-vc-2026-f169451525da440d307e,digital_ai,DoubleO.ai,,2744,,,Research registry; country and classification may remain provisional.,sales_marketing
+ai-vc-2026-f169451525da440d307e,,ZoomInfo,,2745,,,Research registry; country and classification may remain provisional.,
+ai-vc-2026-f169451525da440d307e,enabling_infrastructure,Satlyt,,2746,,,Research registry; country and classification may remain provisional.,data_centers_power
+ai-vc-2026-f169451525da440d307e,enabling_infrastructure,CScale (fka CSpeed),,2747,,,Research registry; country and classification may remain provisional.,interconnect_memory
+ai-vc-2026-f169451525da440d307e,digital_ai,Atta,,2748,,,Research registry; country and classification may remain provisional.,data_training_evaluation
+ai-vc-2026-f169451525da440d307e,digital_ai,Marble,,2749,,,Research registry; country and classification may remain provisional.,finance
+ai-vc-2026-f169451525da440d307e,,Mitratech,,2750,,,Research registry; country and classification may remain provisional.,
+ai-vc-2026-f169451525da440d307e,digital_ai,Soul Machines,,2751,,,Research registry; country and classification may remain provisional.,customer_support_voice
+ai-vc-2026-f169451525da440d307e,,AppDirect,,2752,,,Research registry; country and classification may remain provisional.,
+ai-vc-2026-f169451525da440d307e,physical_ai,PickNik,,2753,,,Research registry; country and classification may remain provisional.,robotic_components
+ai-vc-2026-f169451525da440d307e,digital_ai,Rilo,,2754,,,Research registry; country and classification may remain provisional.,sales_marketing
+ai-vc-2026-f169451525da440d307e,digital_ai,50skills,,2755,,,Research registry; country and classification may remain provisional.,enterprise_agents
+ai-vc-2026-f169451525da440d307e,digital_ai,Pilgrim,,2756,,,Research registry; country and classification may remain provisional.,general_applications
+ai-vc-2026-f169451525da440d307e,digital_ai,Ryax Technologies,,2757,France,FR,Research registry; country and classification may remain provisional.,developer_tools
+ai-vc-2026-f169451525da440d307e,,Nutanix,,2758,,,Research registry; country and classification may remain provisional.,
+ai-vc-2026-f169451525da440d307e,digital_ai,Noxtua,,2759,,,Research registry; country and classification may remain provisional.,legal
+ai-vc-2026-f169451525da440d307e,digital_ai,mika,,2760,,,Research registry; country and classification may remain provisional.,finance
+ai-vc-2026-f169451525da440d307e,digital_ai,Heidi Health,,2761,,,Research registry; country and classification may remain provisional.,healthcare_biotech
+ai-vc-2026-f169451525da440d307e,digital_ai,BCI-Sonics (Huachao Shenkong),,2762,China,CN,Research registry; country and classification may remain provisional.,healthcare_biotech
+ai-vc-2026-f169451525da440d307e,digital_ai,AI Hospitality Group,,2763,,,Research registry; country and classification may remain provisional.,general_applications
+ai-vc-2026-f169451525da440d307e,digital_ai,Benford,,2764,,,Research registry; country and classification may remain provisional.,finance
+ai-vc-2026-f169451525da440d307e,digital_ai,Zuma,,2765,United States,US,Research registry; country and classification may remain provisional.,enterprise_agents
+ai-vc-2026-f169451525da440d307e,,Venn,,2766,,,Research registry; country and classification may remain provisional.,
+ai-vc-2026-f169451525da440d307e,digital_ai,Feldera,,2767,,,Research registry; country and classification may remain provisional.,developer_tools
+ai-vc-2026-f169451525da440d307e,,Microchip Technology,,2768,,,Research registry; country and classification may remain provisional.,
+ai-vc-2026-f169451525da440d307e,digital_ai,Moir,,2769,,,Research registry; country and classification may remain provisional.,cybersecurity
+ai-vc-2026-f169451525da440d307e,digital_ai,Kastle,,2770,,,Research registry; country and classification may remain provisional.,finance
+ai-vc-2026-f169451525da440d307e,digital_ai,Metris Energy,,2771,,,Research registry; country and classification may remain provisional.,general_applications
+ai-vc-2026-f169451525da440d307e,digital_ai,Shutu Technology,,2772,China,CN,Research registry; country and classification may remain provisional.,general_applications
+ai-vc-2026-f169451525da440d307e,digital_ai,Haize Labs,,2773,,,Research registry; country and classification may remain provisional.,data_training_evaluation
+ai-vc-2026-f169451525da440d307e,,Beacon,,2774,,,Research registry; country and classification may remain provisional.,
+ai-vc-2026-f169451525da440d307e,digital_ai,stealth-mode AI security startup,,2775,,,Research registry; country and classification may remain provisional.,cybersecurity
+ai-vc-2026-f169451525da440d307e,,eSentire,,2776,,,Research registry; country and classification may remain provisional.,
+ai-vc-2026-f169451525da440d307e,digital_ai,Hello Haven,,2777,,,Research registry; country and classification may remain provisional.,general_applications
+ai-vc-2026-f169451525da440d307e,digital_ai,Mantic,,2778,,,Research registry; country and classification may remain provisional.,general_applications
+ai-vc-2026-f169451525da440d307e,digital_ai,Flam,,2779,,,Research registry; country and classification may remain provisional.,creative_media
+ai-vc-2026-f169451525da440d307e,digital_ai,BoomerangHR,,2780,,,Research registry; country and classification may remain provisional.,general_applications
+ai-vc-2026-f169451525da440d307e,digital_ai,VerifAIX,,2781,,,Research registry; country and classification may remain provisional.,data_training_evaluation
+ai-vc-2026-f169451525da440d307e,digital_ai,Facilo,,2782,Japan,JP,Research registry; country and classification may remain provisional.,enterprise_agents
+ai-vc-2026-f169451525da440d307e,digital_ai,Adaptive,,2783,,,Research registry; country and classification may remain provisional.,finance
+ai-vc-2026-f169451525da440d307e,enabling_infrastructure,Tusk IC,,2784,,,Research registry; country and classification may remain provisional.,ai_chips
+ai-vc-2026-f169451525da440d307e,digital_ai,syte,,2785,,,Research registry; country and classification may remain provisional.,general_applications
+ai-vc-2026-f169451525da440d307e,digital_ai,Creem,,2786,,,Research registry; country and classification may remain provisional.,finance
+ai-vc-2026-f169451525da440d307e,digital_ai,Health Force,,2787,,,Research registry; country and classification may remain provisional.,healthcare_biotech
+ai-vc-2026-f169451525da440d307e,physical_ai,Rapta,,2788,,,Research registry; country and classification may remain provisional.,industrial_logistics_robotics
+ai-vc-2026-f169451525da440d307e,physical_ai,Motive,,2789,,,Research registry; country and classification may remain provisional.,industrial_logistics_robotics
+ai-vc-2026-f169451525da440d307e,physical_ai,Hello Robotaxi,,2790,China,CN,Research registry; country and classification may remain provisional.,autonomous_vehicles
+ai-vc-2026-f169451525da440d307e,digital_ai,Stilla.ai,,2791,,,Research registry; country and classification may remain provisional.,sales_marketing
+ai-vc-2026-f169451525da440d307e,digital_ai,LLMonade,,2792,,,Research registry; country and classification may remain provisional.,sales_marketing
+ai-vc-2026-f169451525da440d307e,,xSeek,,2793,,,Research registry; country and classification may remain provisional.,
+ai-vc-2026-f169451525da440d307e,digital_ai,Newwave Tech Foundry,,2794,Cambodia,KH,Research registry; country and classification may remain provisional.,general_applications
+ai-vc-2026-f169451525da440d307e,physical_ai,CloudNC,,2795,,,Research registry; country and classification may remain provisional.,industrial_logistics_robotics
+ai-vc-2026-f169451525da440d307e,enabling_infrastructure,Zankore,,2796,,,Research registry; country and classification may remain provisional.,inference_compute
+ai-vc-2026-f169451525da440d307e,digital_ai,UrgentIQ,,2797,,,Research registry; country and classification may remain provisional.,general_applications
+ai-vc-2026-f169451525da440d307e,digital_ai,Prime Minute,,2798,,,Research registry; country and classification may remain provisional.,general_applications
+ai-vc-2026-f169451525da440d307e,digital_ai,Thri5,,2799,,,Research registry; country and classification may remain provisional.,general_applications
+ai-vc-2026-f169451525da440d307e,digital_ai,Rhinovate (Dingxi Zhichuang),,2800,,,Research registry; country and classification may remain provisional.,general_applications
+ai-vc-2026-f169451525da440d307e,enabling_infrastructure,Stack Infrastructure (APAC portfolio),,2801,,,Research registry; country and classification may remain provisional.,data_centers_power
+ai-vc-2026-f169451525da440d307e,,AI Infrastructure Partnership and IFM Investors,,2802,,,Research registry; country and classification may remain provisional.,
+ai-vc-2026-f169451525da440d307e,physical_ai,Robotics and AI Institute,,2803,,,Research registry; country and classification may remain provisional.,robotics_foundation_models
+ai-vc-2026-f169451525da440d307e,,SoftBank Group,,2804,,,Research registry; country and classification may remain provisional.,
+ai-vc-2026-f169451525da440d307e,digital_ai,Velou,,2805,,,Research registry; country and classification may remain provisional.,search_knowledge
+ai-vc-2026-f169451525da440d307e,,Algolia,,2806,,,Research registry; country and classification may remain provisional.,
+ai-vc-2026-f169451525da440d307e,digital_ai,Torch Systems,,2807,,,Research registry; country and classification may remain provisional.,enterprise_agents
+ai-vc-2026-f169451525da440d307e,digital_ai,Cleavr,,2808,,,Research registry; country and classification may remain provisional.,general_applications
+ai-vc-2026-f169451525da440d307e,digital_ai,calliora,,2809,,,Research registry; country and classification may remain provisional.,healthcare_biotech
+ai-vc-2026-f169451525da440d307e,digital_ai,Netsec,,2810,,,Research registry; country and classification may remain provisional.,cybersecurity
+ai-vc-2026-f169451525da440d307e,digital_ai,Cori Clinical,,2811,,,Research registry; country and classification may remain provisional.,healthcare_biotech
+ai-vc-2026-f169451525da440d307e,digital_ai,Desible.ai,,2812,,,Research registry; country and classification may remain provisional.,finance
+ai-vc-2026-f169451525da440d307e,digital_ai,Boost.ai,,2813,,,Research registry; country and classification may remain provisional.,customer_support_voice
+ai-vc-2026-f169451525da440d307e,digital_ai,Monid,,2814,,,Research registry; country and classification may remain provisional.,general_applications
+ai-vc-2026-f169451525da440d307e,digital_ai,Santé,,2815,,,Research registry; country and classification may remain provisional.,general_applications
+ai-vc-2026-f169451525da440d307e,digital_ai,Rein Security,,2816,,,Research registry; country and classification may remain provisional.,cybersecurity
+ai-vc-2026-f169451525da440d307e,digital_ai,Verso,,2817,,,Research registry; country and classification may remain provisional.,sales_marketing
+ai-vc-2026-f169451525da440d307e,physical_ai,Persona,,2818,,,Research registry; country and classification may remain provisional.,general_applications
+ai-vc-2026-f169451525da440d307e,digital_ai,Augment Code (select assets),,2819,,,Research registry; country and classification may remain provisional.,coding_agents
+ai-vc-2026-f169451525da440d307e,,Harness,,2820,,,Research registry; country and classification may remain provisional.,
+ai-vc-2026-f169451525da440d307e,digital_ai,Hone,,2821,,,Research registry; country and classification may remain provisional.,enterprise_agents
+ai-vc-2026-f169451525da440d307e,digital_ai,Klarent,,2822,,,Research registry; country and classification may remain provisional.,developer_tools
+ai-vc-2026-f169451525da440d307e,digital_ai,Gudea,,2823,,,Research registry; country and classification may remain provisional.,sales_marketing
+ai-vc-2026-f169451525da440d307e,digital_ai,Besso,,2824,,,Research registry; country and classification may remain provisional.,enterprise_agents
+ai-vc-2026-f169451525da440d307e,physical_ai,Sabi,,2825,,,Research registry; country and classification may remain provisional.,general_applications
+ai-vc-2026-f169451525da440d307e,digital_ai,Ethiqly,,2826,,,Research registry; country and classification may remain provisional.,education
+ai-vc-2026-f169451525da440d307e,,Carnegie Learning,,2827,,,Research registry; country and classification may remain provisional.,
+ai-vc-2026-f169451525da440d307e,digital_ai,OllyGarden,,2828,,,Research registry; country and classification may remain provisional.,developer_tools
+ai-vc-2026-f169451525da440d307e,enabling_infrastructure,KONST,,2829,,,Research registry; country and classification may remain provisional.,data_centers_power
+ai-vc-2026-f169451525da440d307e,digital_ai,PlannerPal,,2830,,,Research registry; country and classification may remain provisional.,finance
+ai-vc-2026-f169451525da440d307e,digital_ai,Infino AI,,2831,,,Research registry; country and classification may remain provisional.,search_knowledge
+ai-vc-2026-f169451525da440d307e,physical_ai,Danu Robotics,,2832,,,Research registry; country and classification may remain provisional.,industrial_logistics_robotics
+ai-vc-2026-f169451525da440d307e,digital_ai,Aiera,,2833,,,Research registry; country and classification may remain provisional.,finance
+ai-vc-2026-f169451525da440d307e,,BlueMatrix,,2834,,,Research registry; country and classification may remain provisional.,
+ai-vc-2026-f169451525da440d307e,digital_ai,Blackford Analysis,,2835,,,Research registry; country and classification may remain provisional.,healthcare_biotech
+ai-vc-2026-f169451525da440d307e,,Sopris Capital,,2836,,,Research registry; country and classification may remain provisional.,
+ai-vc-2026-f169451525da440d307e,digital_ai,Strata,,2837,,,Research registry; country and classification may remain provisional.,sales_marketing
+ai-vc-2026-f169451525da440d307e,digital_ai,Mentlio,,2838,,,Research registry; country and classification may remain provisional.,coding_agents
+ai-vc-2026-f169451525da440d307e,digital_ai,Move AI,,2839,,,Research registry; country and classification may remain provisional.,creative_media
+ai-vc-2026-f169451525da440d307e,,Oxford Metrics (Vicon),,2840,,,Research registry; country and classification may remain provisional.,
+ai-vc-2026-f169451525da440d307e,digital_ai,Meticulous,,2841,,,Research registry; country and classification may remain provisional.,developer_tools
+ai-vc-2026-f169451525da440d307e,digital_ai,Peppermint,,2842,,,Research registry; country and classification may remain provisional.,general_applications
+ai-vc-2026-f169451525da440d307e,,Marvell,,2843,,,Research registry; country and classification may remain provisional.,
+ai-vc-2026-f169451525da440d307e,physical_ai,Medical Microinstruments,mmimicro.com,2844,United States,US,Research registry; country and classification may remain provisional.,medical_robotics
+ai-vc-2026-f169451525da440d307e,physical_ai,Halter,halterhq.com,2845,New Zealand,NZ,Research registry; country and classification may remain provisional.,agricultural_robotics

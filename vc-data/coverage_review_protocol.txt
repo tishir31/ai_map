@@ -1,0 +1,21 @@
+DATABASE COMPLETENESS REVIEW — 2026-10-11 SNAPSHOT
+
+Scope is worldwide AI, physical AI and enabling infrastructure company financings and AI-relevant acquisitions announced January1–October11,2026. Display thresholds are USD10m raised OR USD100m valuation/deal consideration. The underlying database also retains smaller, undisclosed, prospective, disputed and historical observations. It is a researched corpus, not a worldwide census.
+
+Checks included in the build
+1. Preserve every original input row and all291 uploaded CSV rows, all259 Atlas company profiles and all167 numeric Atlas financial snapshots.
+2. Account explicitly for all899 baseline unreviewed extractions, all1709 baseline discovery leads and all925 baseline company gaps. A pending or inaccessible outcome is visible and does not count as a verified deal.
+3. Require resolved leads to link to actual observations; validate company identities and source-backed acquisition-only relationships. A buyer's acquisition does not become its funding round.
+4. Check native currencies, amount qualifiers, missing values, date precision, announcement versus closing dates, current versus cumulative cash, commitments, debt and secondary components. Reject invalid monetary values and dangling references.
+5. Check known high-impact financing/lifecycle cases against economic invariants: one evolving OpenAI round, separate Anthropic rounds, Apptronik current extension, C2i final total, debt/facilities excluded from pure equity, and prior-year acquisition announcements outside the2026 announcement cohort.
+6. Match public exports to every retained observation and verify file hashes. Publish only explicitly allowed fields; strip private Gmail identifiers, mail URLs, email subjects, excerpts, raw notes, original source payloads and authentication data.
+
+Independent omission checks
+1. Give different agents disjoint region/month/subsector assignments. Have them discover candidate deals before they read the database company lists, then reconcile against ALL observations, aliases and pending queues. This helps reduce anchoring on the existing list.
+2. Compare independently assembled publisher, investor-portfolio, company-newsroom, regulatory-filing and specialist-directory deal lists. Syndicated copies of one press release are one evidence family. Measure independently found/matched/new/unresolved counts; overlap alone cannot prove completeness.
+3. Investigate sparse region/month/subsector cells. Low counts may reflect weak source coverage or a quiet market; retain that uncertainty. Review local-language reporting, especially outside dominant English-language sources.
+4. Review every pending high-value lead, every unresolved price/date conflict and the largest financing/M&A entries. Then sample smaller and undisclosed deals to check whether selective verification favored the most visible companies.
+5. Revisit baseline companies using their aliases and current domains; distinguish acquired companies, subsidiaries and asset bundles. Record actual queries, URLs opened, access failures and search dates. A failed search is not a no-deal conclusion.
+6. Check source-calendar coverage and boundary dates. Missing publisher weeks, pagination gaps and delayed reporting can hide deals. Keep source publication and actual announcement dates separate; do not invent an exact day from a month-only report.
+
+Return machine-readable findings with snapshot_id and matching event_ids, original currency amounts/bases, opened original source URLs and dates, concise paraphrased evidence, confidence and unresolved questions. Keep the canonical snapshot unchanged until each finding is reconciled. No heat score or fundraising-speed conclusion is part of this pass.

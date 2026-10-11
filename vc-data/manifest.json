@@ -1,0 +1,4830 @@
+{
+  "snapshot_id": "ai-vc-2026-f169451525da440d307e",
+  "database_sha256": "f169451525da440d307ed921af03595da4b932559c1691c6ead2ea63e4ff919b",
+  "created_at": "2026-10-11T21:37:51.379560+00:00",
+  "scope": {
+    "schema_version": "1.4",
+    "window_start": "2026-01-01",
+    "window_end": "2026-10-11",
+    "raised_threshold_usd": "10000000",
+    "valuation_threshold_usd": "100000000"
+  },
+  "display_rule": "USD10m raised OR USD100m company valuation/deal consideration",
+  "privacy_model": "Explicit allowlist; opaque private evidence; no message IDs, mail URLs, subjects, excerpts, raw notes, free-text claims or original payloads.",
+  "chunk_byte_limit": 100000,
+  "datasets": {
+    "companies": {
+      "rows": 2845,
+      "description": "Canonical company registry, including companies without linked deals.",
+      "fields": [
+        "snapshot_id",
+        "ai_scope",
+        "canonical_name",
+        "company_domain",
+        "company_id",
+        "country",
+        "country_iso2",
+        "metadata_validation",
+        "primary_subsector"
+      ]
+    },
+    "taxonomy": {
+      "rows": 31,
+      "description": "Subsector definitions used in the snapshot.",
+      "fields": [
+        "snapshot_id",
+        "default_ai_scope",
+        "label",
+        "subsector_id"
+      ]
+    },
+    "aliases": {
+      "rows": 3015,
+      "description": "Supported issuer naming aliases; subsidiaries and asset perimeters remain distinct.",
+      "fields": [
+        "snapshot_id",
+        "alias",
+        "company_id",
+        "normalized_alias"
+      ]
+    },
+    "events_all": {
+      "rows": 2828,
+      "description": "Every retained canonical event, including historical, pending, small and undisclosed observations.",
+      "fields": [
+        "snapshot_id",
+        "acquirer",
+        "ai_scope",
+        "analytical_eligible",
+        "announcement_date",
+        "announcement_month",
+        "closing_date",
+        "closing_date_basis",
+        "closing_date_precision",
+        "committed_amount",
+        "committed_amount_qualifier",
+        "committed_basis",
+        "committed_currency",
+        "company",
+        "company_domain",
+        "consideration_amount",
+        "consideration_amount_lower",
+        "consideration_amount_qualifier",
+        "consideration_amount_upper",
+        "consideration_amount_usd",
+        "consideration_basis",
+        "consideration_currency",
+        "consideration_fx_date",
+        "consideration_fx_date_basis",
+        "consideration_fx_source_url",
+        "consideration_fx_usd_per_unit",
+        "consideration_lower_usd",
+        "consideration_upper_usd",
+        "counting_priority",
+        "country",
+        "country_iso2",
+        "dashboard_eligible",
+        "date_basis",
+        "date_precision",
+        "event_id",
+        "event_status",
+        "event_type",
+        "extraction_method",
+        "extraction_review_status",
+        "financial_context_categories",
+        "funding_composition",
+        "has_blocking_quality_flag",
+        "has_supporting_web_source",
+        "in_announcement_window",
+        "in_closing_window",
+        "in_window",
+        "lifecycle_group_id",
+        "lifecycle_rank",
+        "primary_subsector",
+        "primary_web_confirmed",
+        "qualifies_threshold",
+        "raised_amount",
+        "raised_amount_basis",
+        "raised_amount_lower",
+        "raised_amount_qualifier",
+        "raised_amount_upper",
+        "raised_amount_usd",
+        "raised_currency",
+        "raised_fx_date",
+        "raised_fx_date_basis",
+        "raised_fx_source_url",
+        "raised_fx_usd_per_unit",
+        "raised_lower_usd",
+        "raised_upper_usd",
+        "review_status",
+        "round_label",
+        "source_count",
+        "subsector_label",
+        "threshold_state",
+        "valuation_amount",
+        "valuation_amount_lower",
+        "valuation_amount_qualifier",
+        "valuation_amount_upper",
+        "valuation_amount_usd",
+        "valuation_basis",
+        "valuation_currency",
+        "valuation_fx_date",
+        "valuation_fx_date_basis",
+        "valuation_fx_source_url",
+        "valuation_fx_usd_per_unit",
+        "valuation_lower_usd",
+        "valuation_upper_usd",
+        "web_confirmed"
+      ]
+    },
+    "core_equity_all": {
+      "rows": 1132,
+      "description": "Counting view for reviewed current-round pure equity with exact-day announcement and one preferred record per lifecycle.",
+      "fields": [
+        "snapshot_id",
+        "acquirer",
+        "ai_scope",
+        "analytical_eligible",
+        "announcement_date",
+        "announcement_month",
+        "closing_date",
+        "closing_date_basis",
+        "closing_date_precision",
+        "committed_amount",
+        "committed_amount_qualifier",
+        "committed_basis",
+        "committed_currency",
+        "company",
+        "company_domain",
+        "consideration_amount",
+        "consideration_amount_lower",
+        "consideration_amount_qualifier",
+        "consideration_amount_upper",
+        "consideration_amount_usd",
+        "consideration_basis",
+        "consideration_currency",
+        "consideration_fx_date",
+        "consideration_fx_date_basis",
+        "consideration_fx_source_url",
+        "consideration_fx_usd_per_unit",
+        "consideration_lower_usd",
+        "consideration_upper_usd",
+        "counting_priority",
+        "country",
+        "country_iso2",
+        "dashboard_eligible",
+        "date_basis",
+        "date_precision",
+        "event_id",
+        "event_status",
+        "event_type",
+        "extraction_method",
+        "extraction_review_status",
+        "financial_context_categories",
+        "funding_composition",
+        "has_blocking_quality_flag",
+        "has_supporting_web_source",
+        "in_announcement_window",
+        "in_closing_window",
+        "in_window",
+        "lifecycle_group_id",
+        "lifecycle_rank",
+        "primary_subsector",
+        "primary_web_confirmed",
+        "qualifies_threshold",
+        "raised_amount",
+        "raised_amount_basis",
+        "raised_amount_lower",
+        "raised_amount_qualifier",
+        "raised_amount_upper",
+        "raised_amount_usd",
+        "raised_currency",
+        "raised_fx_date",
+        "raised_fx_date_basis",
+        "raised_fx_source_url",
+        "raised_fx_usd_per_unit",
+        "raised_lower_usd",
+        "raised_upper_usd",
+        "review_status",
+        "round_label",
+        "source_count",
+        "subsector_label",
+        "threshold_state",
+        "valuation_amount",
+        "valuation_amount_lower",
+        "valuation_amount_qualifier",
+        "valuation_amount_upper",
+        "valuation_amount_usd",
+        "valuation_basis",
+        "valuation_currency",
+        "valuation_fx_date",
+        "valuation_fx_date_basis",
+        "valuation_fx_source_url",
+        "valuation_fx_usd_per_unit",
+        "valuation_lower_usd",
+        "valuation_upper_usd",
+        "web_confirmed"
+      ]
+    },
+    "core_equity_display": {
+      "rows": 902,
+      "description": "Core equity counting view restricted to the display threshold.",
+      "fields": [
+        "snapshot_id",
+        "acquirer",
+        "ai_scope",
+        "analytical_eligible",
+        "announcement_date",
+        "announcement_month",
+        "closing_date",
+        "closing_date_basis",
+        "closing_date_precision",
+        "committed_amount",
+        "committed_amount_qualifier",
+        "committed_basis",
+        "committed_currency",
+        "company",
+        "company_domain",
+        "consideration_amount",
+        "consideration_amount_lower",
+        "consideration_amount_qualifier",
+        "consideration_amount_upper",
+        "consideration_amount_usd",
+        "consideration_basis",
+        "consideration_currency",
+        "consideration_fx_date",
+        "consideration_fx_date_basis",
+        "consideration_fx_source_url",
+        "consideration_fx_usd_per_unit",
+        "consideration_lower_usd",
+        "consideration_upper_usd",
+        "counting_priority",
+        "country",
+        "country_iso2",
+        "dashboard_eligible",
+        "date_basis",
+        "date_precision",
+        "event_id",
+        "event_status",
+        "event_type",
+        "extraction_method",
+        "extraction_review_status",
+        "financial_context_categories",
+        "funding_composition",
+        "has_blocking_quality_flag",
+        "has_supporting_web_source",
+        "in_announcement_window",
+        "in_closing_window",
+        "in_window",
+        "lifecycle_group_id",
+        "lifecycle_rank",
+        "primary_subsector",
+        "primary_web_confirmed",
+        "qualifies_threshold",
+        "raised_amount",
+        "raised_amount_basis",
+        "raised_amount_lower",
+        "raised_amount_qualifier",
+        "raised_amount_upper",
+        "raised_amount_usd",
+        "raised_currency",
+        "raised_fx_date",
+        "raised_fx_date_basis",
+        "raised_fx_source_url",
+        "raised_fx_usd_per_unit",
+        "raised_lower_usd",
+        "raised_upper_usd",
+        "review_status",
+        "round_label",
+        "source_count",
+        "subsector_label",
+        "threshold_state",
+        "valuation_amount",
+        "valuation_amount_lower",
+        "valuation_amount_qualifier",
+        "valuation_amount_upper",
+        "valuation_amount_usd",
+        "valuation_basis",
+        "valuation_currency",
+        "valuation_fx_date",
+        "valuation_fx_date_basis",
+        "valuation_fx_source_url",
+        "valuation_fx_usd_per_unit",
+        "valuation_lower_usd",
+        "valuation_upper_usd",
+        "web_confirmed"
+      ]
+    },
+    "display_deals": {
+      "rows": 983,
+      "description": "Display view using USD10m raised OR USD100m valuation/consideration. Unknown-value cases remain in events_all.",
+      "fields": [
+        "snapshot_id",
+        "acquirer",
+        "ai_scope",
+        "analytical_eligible",
+        "announcement_date",
+        "announcement_month",
+        "closing_date",
+        "closing_date_basis",
+        "closing_date_precision",
+        "committed_amount",
+        "committed_amount_qualifier",
+        "committed_basis",
+        "committed_currency",
+        "company",
+        "company_domain",
+        "consideration_amount",
+        "consideration_amount_lower",
+        "consideration_amount_qualifier",
+        "consideration_amount_upper",
+        "consideration_amount_usd",
+        "consideration_basis",
+        "consideration_currency",
+        "consideration_fx_date",
+        "consideration_fx_date_basis",
+        "consideration_fx_source_url",
+        "consideration_fx_usd_per_unit",
+        "consideration_lower_usd",
+        "consideration_upper_usd",
+        "counting_priority",
+        "country",
+        "country_iso2",
+        "dashboard_eligible",
+        "date_basis",
+        "date_precision",
+        "event_id",
+        "event_status",
+        "event_type",
+        "extraction_method",
+        "extraction_review_status",
+        "financial_context_categories",
+        "funding_composition",
+        "has_blocking_quality_flag",
+        "has_supporting_web_source",
+        "in_announcement_window",
+        "in_closing_window",
+        "in_window",
+        "lifecycle_group_id",
+        "lifecycle_rank",
+        "primary_subsector",
+        "primary_web_confirmed",
+        "qualifies_threshold",
+        "raised_amount",
+        "raised_amount_basis",
+        "raised_amount_lower",
+        "raised_amount_qualifier",
+        "raised_amount_upper",
+        "raised_amount_usd",
+        "raised_currency",
+        "raised_fx_date",
+        "raised_fx_date_basis",
+        "raised_fx_source_url",
+        "raised_fx_usd_per_unit",
+        "raised_lower_usd",
+        "raised_upper_usd",
+        "review_status",
+        "round_label",
+        "source_count",
+        "subsector_label",
+        "threshold_state",
+        "valuation_amount",
+        "valuation_amount_lower",
+        "valuation_amount_qualifier",
+        "valuation_amount_upper",
+        "valuation_amount_usd",
+        "valuation_basis",
+        "valuation_currency",
+        "valuation_fx_date",
+        "valuation_fx_date_basis",
+        "valuation_fx_source_url",
+        "valuation_fx_usd_per_unit",
+        "valuation_lower_usd",
+        "valuation_upper_usd",
+        "web_confirmed"
+      ]
+    },
+    "ma_all": {
+      "rows": 346,
+      "description": "All acquisition observations and transaction stages.",
+      "fields": [
+        "snapshot_id",
+        "acquirer",
+        "ai_scope",
+        "analytical_eligible",
+        "announcement_date",
+        "announcement_month",
+        "closing_date",
+        "closing_date_basis",
+        "closing_date_precision",
+        "committed_amount",
+        "committed_amount_qualifier",
+        "committed_basis",
+        "committed_currency",
+        "company",
+        "company_domain",
+        "consideration_amount",
+        "consideration_amount_lower",
+        "consideration_amount_qualifier",
+        "consideration_amount_upper",
+        "consideration_amount_usd",
+        "consideration_basis",
+        "consideration_currency",
+        "consideration_fx_date",
+        "consideration_fx_date_basis",
+        "consideration_fx_source_url",
+        "consideration_fx_usd_per_unit",
+        "consideration_lower_usd",
+        "consideration_upper_usd",
+        "counting_priority",
+        "country",
+        "country_iso2",
+        "dashboard_eligible",
+        "date_basis",
+        "date_precision",
+        "event_id",
+        "event_status",
+        "event_type",
+        "extraction_method",
+        "extraction_review_status",
+        "financial_context_categories",
+        "funding_composition",
+        "has_blocking_quality_flag",
+        "has_supporting_web_source",
+        "in_announcement_window",
+        "in_closing_window",
+        "in_window",
+        "lifecycle_group_id",
+        "lifecycle_rank",
+        "primary_subsector",
+        "primary_web_confirmed",
+        "qualifies_threshold",
+        "raised_amount",
+        "raised_amount_basis",
+        "raised_amount_lower",
+        "raised_amount_qualifier",
+        "raised_amount_upper",
+        "raised_amount_usd",
+        "raised_currency",
+        "raised_fx_date",
+        "raised_fx_date_basis",
+        "raised_fx_source_url",
+        "raised_fx_usd_per_unit",
+        "raised_lower_usd",
+        "raised_upper_usd",
+        "review_status",
+        "round_label",
+        "source_count",
+        "subsector_label",
+        "threshold_state",
+        "valuation_amount",
+        "valuation_amount_lower",
+        "valuation_amount_qualifier",
+        "valuation_amount_upper",
+        "valuation_amount_usd",
+        "valuation_basis",
+        "valuation_currency",
+        "valuation_fx_date",
+        "valuation_fx_date_basis",
+        "valuation_fx_source_url",
+        "valuation_fx_usd_per_unit",
+        "valuation_lower_usd",
+        "valuation_upper_usd",
+        "web_confirmed"
+      ]
+    },
+    "ma_announcements_2026": {
+      "rows": 255,
+      "description": "One preferred acquisition record per lifecycle announced in the 2026 scope.",
+      "fields": [
+        "snapshot_id",
+        "acquirer",
+        "ai_scope",
+        "analytical_eligible",
+        "announcement_date",
+        "announcement_month",
+        "closing_date",
+        "closing_date_basis",
+        "closing_date_precision",
+        "committed_amount",
+        "committed_amount_qualifier",
+        "committed_basis",
+        "committed_currency",
+        "company",
+        "company_domain",
+        "consideration_amount",
+        "consideration_amount_lower",
+        "consideration_amount_qualifier",
+        "consideration_amount_upper",
+        "consideration_amount_usd",
+        "consideration_basis",
+        "consideration_currency",
+        "consideration_fx_date",
+        "consideration_fx_date_basis",
+        "consideration_fx_source_url",
+        "consideration_fx_usd_per_unit",
+        "consideration_lower_usd",
+        "consideration_upper_usd",
+        "counting_priority",
+        "country",
+        "country_iso2",
+        "dashboard_eligible",
+        "date_basis",
+        "date_precision",
+        "event_id",
+        "event_status",
+        "event_type",
+        "extraction_method",
+        "extraction_review_status",
+        "financial_context_categories",
+        "funding_composition",
+        "has_blocking_quality_flag",
+        "has_supporting_web_source",
+        "in_announcement_window",
+        "in_closing_window",
+        "in_window",
+        "lifecycle_group_id",
+        "lifecycle_rank",
+        "primary_subsector",
+        "primary_web_confirmed",
+        "qualifies_threshold",
+        "raised_amount",
+        "raised_amount_basis",
+        "raised_amount_lower",
+        "raised_amount_qualifier",
+        "raised_amount_upper",
+        "raised_amount_usd",
+        "raised_currency",
+        "raised_fx_date",
+        "raised_fx_date_basis",
+        "raised_fx_source_url",
+        "raised_fx_usd_per_unit",
+        "raised_lower_usd",
+        "raised_upper_usd",
+        "review_status",
+        "round_label",
+        "source_count",
+        "subsector_label",
+        "threshold_state",
+        "valuation_amount",
+        "valuation_amount_lower",
+        "valuation_amount_qualifier",
+        "valuation_amount_upper",
+        "valuation_amount_usd",
+        "valuation_basis",
+        "valuation_currency",
+        "valuation_fx_date",
+        "valuation_fx_date_basis",
+        "valuation_fx_source_url",
+        "valuation_fx_usd_per_unit",
+        "valuation_lower_usd",
+        "valuation_upper_usd",
+        "web_confirmed"
+      ]
+    },
+    "ma_closings_2026": {
+      "rows": 27,
+      "description": "One preferred acquisition record per lifecycle with a sourced closing date in the 2026 scope.",
+      "fields": [
+        "snapshot_id",
+        "acquirer",
+        "ai_scope",
+        "analytical_eligible",
+        "announcement_date",
+        "announcement_month",
+        "closing_date",
+        "closing_date_basis",
+        "closing_date_precision",
+        "committed_amount",
+        "committed_amount_qualifier",
+        "committed_basis",
+        "committed_currency",
+        "company",
+        "company_domain",
+        "consideration_amount",
+        "consideration_amount_lower",
+        "consideration_amount_qualifier",
+        "consideration_amount_upper",
+        "consideration_amount_usd",
+        "consideration_basis",
+        "consideration_currency",
+        "consideration_fx_date",
+        "consideration_fx_date_basis",
+        "consideration_fx_source_url",
+        "consideration_fx_usd_per_unit",
+        "consideration_lower_usd",
+        "consideration_upper_usd",
+        "counting_priority",
+        "country",
+        "country_iso2",
+        "dashboard_eligible",
+        "date_basis",
+        "date_precision",
+        "event_id",
+        "event_status",
+        "event_type",
+        "extraction_method",
+        "extraction_review_status",
+        "financial_context_categories",
+        "funding_composition",
+        "has_blocking_quality_flag",
+        "has_supporting_web_source",
+        "in_announcement_window",
+        "in_closing_window",
+        "in_window",
+        "lifecycle_group_id",
+        "lifecycle_rank",
+        "primary_subsector",
+        "primary_web_confirmed",
+        "qualifies_threshold",
+        "raised_amount",
+        "raised_amount_basis",
+        "raised_amount_lower",
+        "raised_amount_qualifier",
+        "raised_amount_upper",
+        "raised_amount_usd",
+        "raised_currency",
+        "raised_fx_date",
+        "raised_fx_date_basis",
+        "raised_fx_source_url",
+        "raised_fx_usd_per_unit",
+        "raised_lower_usd",
+        "raised_upper_usd",
+        "review_status",
+        "round_label",
+        "source_count",
+        "subsector_label",
+        "threshold_state",
+        "valuation_amount",
+        "valuation_amount_lower",
+        "valuation_amount_qualifier",
+        "valuation_amount_upper",
+        "valuation_amount_usd",
+        "valuation_basis",
+        "valuation_currency",
+        "valuation_fx_date",
+        "valuation_fx_date_basis",
+        "valuation_fx_source_url",
+        "valuation_fx_usd_per_unit",
+        "valuation_lower_usd",
+        "valuation_upper_usd",
+        "web_confirmed"
+      ]
+    },
+    "reviewed_deals": {
+      "rows": 1478,
+      "description": "Source-supported reviewed preferred announcements without blocking flags.",
+      "fields": [
+        "snapshot_id",
+        "acquirer",
+        "ai_scope",
+        "analytical_eligible",
+        "announcement_date",
+        "announcement_month",
+        "closing_date",
+        "closing_date_basis",
+        "closing_date_precision",
+        "committed_amount",
+        "committed_amount_qualifier",
+        "committed_basis",
+        "committed_currency",
+        "company",
+        "company_domain",
+        "consideration_amount",
+        "consideration_amount_lower",
+        "consideration_amount_qualifier",
+        "consideration_amount_upper",
+        "consideration_amount_usd",
+        "consideration_basis",
+        "consideration_currency",
+        "consideration_fx_date",
+        "consideration_fx_date_basis",
+        "consideration_fx_source_url",
+        "consideration_fx_usd_per_unit",
+        "consideration_lower_usd",
+        "consideration_upper_usd",
+        "counting_priority",
+        "country",
+        "country_iso2",
+        "dashboard_eligible",
+        "date_basis",
+        "date_precision",
+        "event_id",
+        "event_status",
+        "event_type",
+        "extraction_method",
+        "extraction_review_status",
+        "financial_context_categories",
+        "funding_composition",
+        "has_blocking_quality_flag",
+        "has_supporting_web_source",
+        "in_announcement_window",
+        "in_closing_window",
+        "in_window",
+        "lifecycle_group_id",
+        "lifecycle_rank",
+        "primary_subsector",
+        "primary_web_confirmed",
+        "qualifies_threshold",
+        "raised_amount",
+        "raised_amount_basis",
+        "raised_amount_lower",
+        "raised_amount_qualifier",
+        "raised_amount_upper",
+        "raised_amount_usd",
+        "raised_currency",
+        "raised_fx_date",
+        "raised_fx_date_basis",
+        "raised_fx_source_url",
+        "raised_fx_usd_per_unit",
+        "raised_lower_usd",
+        "raised_upper_usd",
+        "review_status",
+        "round_label",
+        "source_count",
+        "subsector_label",
+        "threshold_state",
+        "valuation_amount",
+        "valuation_amount_lower",
+        "valuation_amount_qualifier",
+        "valuation_amount_upper",
+        "valuation_amount_usd",
+        "valuation_basis",
+        "valuation_currency",
+        "valuation_fx_date",
+        "valuation_fx_date_basis",
+        "valuation_fx_source_url",
+        "valuation_fx_usd_per_unit",
+        "valuation_lower_usd",
+        "valuation_upper_usd",
+        "web_confirmed"
+      ]
+    },
+    "sources": {
+      "rows": 2040,
+      "description": "Public source links and publishers. Private evidence has opaque snapshot-scoped source IDs only.",
+      "fields": [
+        "snapshot_id",
+        "evidence_access",
+        "kind",
+        "published_date",
+        "publisher",
+        "source_id",
+        "source_url"
+      ]
+    },
+    "event_sources": {
+      "rows": 3549,
+      "description": "Event-to-evidence links, without email text or private summaries.",
+      "fields": [
+        "snapshot_id",
+        "event_id",
+        "source_id",
+        "source_role"
+      ]
+    },
+    "investors": {
+      "rows": 1614,
+      "description": "Investor names extracted as deal metadata.",
+      "fields": [
+        "snapshot_id",
+        "investor_id",
+        "name"
+      ]
+    },
+    "event_investors": {
+      "rows": 3033,
+      "description": "Deal investor relationships.",
+      "fields": [
+        "snapshot_id",
+        "event_id",
+        "investor_id"
+      ]
+    },
+    "lifecycle_groups": {
+      "rows": 2056,
+      "description": "Reconciliation groups. Use events_all.lifecycle_rank=1 for preferred observations.",
+      "fields": [
+        "snapshot_id",
+        "lifecycle_group_id",
+        "lifecycle_key",
+        "link_basis"
+      ]
+    },
+    "quality_flags": {
+      "rows": 4493,
+      "description": "Structured warning categories; raw private detail text is omitted.",
+      "fields": [
+        "snapshot_id",
+        "event_id",
+        "flag",
+        "flag_id",
+        "related_event_id",
+        "severity"
+      ]
+    },
+    "registry_records": {
+      "rows": 1331,
+      "description": "Every retained discovery-company record. A registry record is not a financing.",
+      "fields": [
+        "snapshot_id",
+        "company_id",
+        "registry_record_id",
+        "review_status"
+      ]
+    },
+    "registry_sources": {
+      "rows": 650,
+      "description": "Source links for discovery and directory records.",
+      "fields": [
+        "snapshot_id",
+        "registry_record_id",
+        "source_id",
+        "source_role"
+      ]
+    },
+    "company_financial_snapshots": {
+      "rows": 167,
+      "description": "Directory estimates, cumulative funding and valuation context. Never sum these as dated financing events.",
+      "fields": [
+        "snapshot_id",
+        "amount",
+        "amount_lower",
+        "amount_qualifier",
+        "amount_upper",
+        "as_of_date",
+        "as_of_month",
+        "basis",
+        "company_id",
+        "company_snapshot_id",
+        "context_only",
+        "currency",
+        "directory_value_not_native_transaction_currency",
+        "extraction_review_status",
+        "metric",
+        "observed_at",
+        "registry_record_id",
+        "review_status"
+      ]
+    },
+    "company_coverage": {
+      "rows": 2845,
+      "description": "Registry and financial-event coverage; zero linked events does not prove zero deals.",
+      "fields": [
+        "snapshot_id",
+        "ai_scope",
+        "atlas_registry_records",
+        "canonical_name",
+        "company_domain",
+        "company_id",
+        "country",
+        "country_iso2",
+        "country_normalization_state",
+        "coverage_state",
+        "financial_snapshot_records",
+        "funding_snapshot_records",
+        "history_checked_at",
+        "history_review_outcome",
+        "observed_2026_event_records",
+        "observed_core_equity_records",
+        "observed_event_records",
+        "primary_subsector",
+        "prior_registry_records",
+        "registry_review_status",
+        "registry_source_count",
+        "total_registry_records",
+        "valuation_snapshot_records"
+      ]
+    },
+    "observations_all": {
+      "rows": 2877,
+      "description": "One row per original retained event observation, projected to public financial facts. Conflicting assertions survive independently of preferred event values.",
+      "fields": [
+        "snapshot_id",
+        "ai_scope",
+        "announcement_date",
+        "announcement_month",
+        "asserted_company",
+        "closing_date",
+        "closing_date_basis",
+        "closing_date_precision",
+        "committed_amount",
+        "committed_amount_qualifier",
+        "committed_basis",
+        "committed_currency",
+        "consideration_amount",
+        "consideration_amount_lower",
+        "consideration_amount_qualifier",
+        "consideration_amount_upper",
+        "consideration_basis",
+        "consideration_currency",
+        "date_basis",
+        "date_precision",
+        "event_id",
+        "event_status",
+        "event_type",
+        "extraction_method",
+        "extraction_review_status",
+        "financial_context_categories",
+        "funding_composition",
+        "observation_id",
+        "primary_subsector",
+        "raised_amount",
+        "raised_amount_basis",
+        "raised_amount_lower",
+        "raised_amount_qualifier",
+        "raised_amount_upper",
+        "raised_currency",
+        "review_status",
+        "round_label",
+        "valuation_amount",
+        "valuation_amount_lower",
+        "valuation_amount_qualifier",
+        "valuation_amount_upper",
+        "valuation_basis",
+        "valuation_currency",
+        "web_confirmed"
+      ]
+    },
+    "observation_reviews": {
+      "rows": 1003,
+      "description": "Explicit observation dispositions with public evidence and paraphrased issue categories.",
+      "fields": [
+        "snapshot_id",
+        "checked_at",
+        "disposition",
+        "event_id",
+        "observation_id",
+        "public_evidence_urls",
+        "reason_categories",
+        "review_id"
+      ]
+    },
+    "leads_all": {
+      "rows": 1781,
+      "description": "Every retained discovery lead and disposition, including resolved and excluded context.",
+      "fields": [
+        "snapshot_id",
+        "checked_at",
+        "company",
+        "lead_id",
+        "public_evidence_urls",
+        "published_date",
+        "reason_categories",
+        "resolved_event_id",
+        "resolved_event_ids",
+        "source_url",
+        "status"
+      ]
+    },
+    "unresolved_leads": {
+      "rows": 492,
+      "description": "Pending and inaccessible leads; these are not verified transactions.",
+      "fields": [
+        "snapshot_id",
+        "checked_at",
+        "company",
+        "lead_id",
+        "public_evidence_urls",
+        "published_date",
+        "reason_categories",
+        "resolved_event_id",
+        "resolved_event_ids",
+        "source_url",
+        "status"
+      ]
+    },
+    "company_history_reviews": {
+      "rows": 923,
+      "description": "Actual company research queries, checked sources, dated dispositions and issuer/acquirer reference boundaries.",
+      "fields": [
+        "snapshot_id",
+        "checked_at",
+        "company",
+        "company_history_review_id",
+        "company_id",
+        "country_assertion",
+        "country_source_url",
+        "issuer_event_ids",
+        "public_opened_source_urls",
+        "public_source_urls",
+        "queries",
+        "reason_categories",
+        "related_acquisition_events",
+        "review_outcome"
+      ]
+    },
+    "source_coverage": {
+      "rows": 42,
+      "description": "Source-family calendar and pagination coverage. Private Gmail searches and raw limitations are not published.",
+      "fields": [
+        "snapshot_id",
+        "coverage_id",
+        "coverage_limit_categories",
+        "coverage_query_private",
+        "matched_records",
+        "pagination_complete",
+        "read_records",
+        "source_family",
+        "window_end",
+        "window_start"
+      ]
+    },
+    "completion_counts": {
+      "rows": 14,
+      "description": "Audit outcome counts, including pending and inaccessible cases.",
+      "fields": [
+        "snapshot_id",
+        "audit_type",
+        "outcome",
+        "reviewed_rows"
+      ]
+    },
+    "fx_rates": {
+      "rows": 99,
+      "description": "Sourced FX rates actually referenced by exported event conversions.",
+      "fields": [
+        "snapshot_id",
+        "currency",
+        "fx_rate_id",
+        "rate_date",
+        "source_url",
+        "usd_per_unit"
+      ]
+    },
+    "event_fx_conversions": {
+      "rows": 153,
+      "description": "Native monetary values are retained alongside explicit FX conversions.",
+      "fields": [
+        "snapshot_id",
+        "amount_field",
+        "conversion_date_basis",
+        "event_id",
+        "fx_rate_id",
+        "usd_amount",
+        "usd_lower",
+        "usd_upper"
+      ]
+    },
+    "company_search_logs": {
+      "rows": 462,
+      "description": "Logged indexed company searches; indexed URLs are not automatically claims of full article access.",
+      "fields": [
+        "snapshot_id",
+        "checked_at",
+        "company",
+        "indexed_source_urls",
+        "query",
+        "research_mode"
+      ]
+    }
+  },
+  "validation_checks": {
+    "observations_all_row_parity": true,
+    "events_all_row_parity": true,
+    "companies_row_parity": true,
+    "leads_all_row_parity": true,
+    "registry_records_row_parity": true,
+    "company_financial_snapshots_row_parity": true,
+    "observation_reviews_row_parity": true,
+    "company_history_reviews_row_parity": true,
+    "companies_json_csv_row_parity": true,
+    "taxonomy_json_csv_row_parity": true,
+    "aliases_json_csv_row_parity": true,
+    "events_all_json_csv_row_parity": true,
+    "core_equity_all_json_csv_row_parity": true,
+    "core_equity_display_json_csv_row_parity": true,
+    "display_deals_json_csv_row_parity": true,
+    "ma_all_json_csv_row_parity": true,
+    "ma_announcements_2026_json_csv_row_parity": true,
+    "ma_closings_2026_json_csv_row_parity": true,
+    "reviewed_deals_json_csv_row_parity": true,
+    "sources_json_csv_row_parity": true,
+    "event_sources_json_csv_row_parity": true,
+    "investors_json_csv_row_parity": true,
+    "event_investors_json_csv_row_parity": true,
+    "lifecycle_groups_json_csv_row_parity": true,
+    "quality_flags_json_csv_row_parity": true,
+    "registry_records_json_csv_row_parity": true,
+    "registry_sources_json_csv_row_parity": true,
+    "company_financial_snapshots_json_csv_row_parity": true,
+    "company_coverage_json_csv_row_parity": true,
+    "observations_all_json_csv_row_parity": true,
+    "observation_reviews_json_csv_row_parity": true,
+    "leads_all_json_csv_row_parity": true,
+    "unresolved_leads_json_csv_row_parity": true,
+    "company_history_reviews_json_csv_row_parity": true,
+    "source_coverage_json_csv_row_parity": true,
+    "completion_counts_json_csv_row_parity": true,
+    "fx_rates_json_csv_row_parity": true,
+    "event_fx_conversions_json_csv_row_parity": true,
+    "company_search_logs_json_csv_row_parity": true,
+    "private_markers_absent": true,
+    "mail_ids_absent": true,
+    "sender_addresses_absent": true,
+    "known_private_ids_absent": true,
+    "private_subject_samples_absent": true,
+    "private_excerpt_samples_absent": true,
+    "chunk_sizes_under_limit": true,
+    "all_file_hashes_match": true,
+    "database_unchanged_during_export": true,
+    "evidence_links_resolve": true,
+    "observations_resolve": true,
+    "no_raw_claim_fields": true
+  },
+  "privacy_sample_counts": {
+    "private_identifiers_checked": 440,
+    "private_subjects_checked": 200,
+    "private_excerpt_samples_checked": 40
+  },
+  "files": [
+    {
+      "path": "json/companies/part-000.json",
+      "bytes": 99911,
+      "sha256": "1035d057db6c6439c87720f3a0f78f94c6fa560f5aeebfd67ce57919936c9da8",
+      "rows": 303,
+      "dataset": "companies",
+      "format": "json"
+    },
+    {
+      "path": "json/companies/part-001.json",
+      "bytes": 99760,
+      "sha256": "cc861ad0de06ffb937e9d6866a6cfc12fa6ba51d08ba11d4559d76aeea5214f6",
+      "rows": 307,
+      "dataset": "companies",
+      "format": "json"
+    },
+    {
+      "path": "json/companies/part-002.json",
+      "bytes": 99795,
+      "sha256": "d1606f77f5613b0a90a3cfe136548a181cd2117494e7a6ac1fa1fa76fe229f04",
+      "rows": 315,
+      "dataset": "companies",
+      "format": "json"
+    },
+    {
+      "path": "json/companies/part-003.json",
+      "bytes": 99993,
+      "sha256": "d2fbad1cd9a25281fc5e4ed198cc2bbdb784487beca0176b1792f08cc3457ee0",
+      "rows": 315,
+      "dataset": "companies",
+      "format": "json"
+    },
+    {
+      "path": "json/companies/part-004.json",
+      "bytes": 99800,
+      "sha256": "2ba23950f6376833ccf04a19b32fbdf44ebd0fccdcfd80207e85ddc12e821213",
+      "rows": 318,
+      "dataset": "companies",
+      "format": "json"
+    },
+    {
+      "path": "json/companies/part-005.json",
+      "bytes": 99929,
+      "sha256": "134ecd60bc33f7c4c9a7dc8d104c41f11a79966e93eb799a2a2166655c5c3955",
+      "rows": 319,
+      "dataset": "companies",
+      "format": "json"
+    },
+    {
+      "path": "json/companies/part-006.json",
+      "bytes": 99848,
+      "sha256": "1510ac6ed52b858b38d36a01b49d3c85cc954ac9b19b8e7f77904115de353106",
+      "rows": 312,
+      "dataset": "companies",
+      "format": "json"
+    },
+    {
+      "path": "json/companies/part-007.json",
+      "bytes": 99913,
+      "sha256": "e76906938896d6311af9f26a2926fdebce1e687a652a7dadfffc2d396d9e96f4",
+      "rows": 307,
+      "dataset": "companies",
+      "format": "json"
+    },
+    {
+      "path": "json/companies/part-008.json",
+      "bytes": 99791,
+      "sha256": "6a4ec1499e63652c9738df663a8e4163ab887e0ed0ef4f5f82d0e460554fdb34",
+      "rows": 309,
+      "dataset": "companies",
+      "format": "json"
+    },
+    {
+      "path": "json/companies/part-009.json",
+      "bytes": 12375,
+      "sha256": "1ac073b9a8d412d4b0d543e62683cb5ce8463e19d1cd8500bc0961db85e5645f",
+      "rows": 40,
+      "dataset": "companies",
+      "format": "json"
+    },
+    {
+      "path": "csv/companies/part-000.csv",
+      "bytes": 99971,
+      "sha256": "965c9ef7d6d8c53ea93bd88bce15477542dfda98bc4d2205139eb90c53a14e43",
+      "rows": 590,
+      "dataset": "companies",
+      "format": "csv"
+    },
+    {
+      "path": "csv/companies/part-001.csv",
+      "bytes": 99984,
+      "sha256": "3f3611baeec7efa3b79df69d6081fbbdd8b93ae6834430e3a1778be1b80954ac",
+      "rows": 639,
+      "dataset": "companies",
+      "format": "csv"
+    },
+    {
+      "path": "csv/companies/part-002.csv",
+      "bytes": 99994,
+      "sha256": "e7a184ceedec752baa1dcde98dfe6ca9b29b674ddb71a16ef1757055e828136c",
+      "rows": 660,
+      "dataset": "companies",
+      "format": "csv"
+    },
+    {
+      "path": "csv/companies/part-003.csv",
+      "bytes": 99903,
+      "sha256": "d4ba2fbe0f5d70462493e9b87a5209156024da06df9f5a979b8e3e21b897b25e",
+      "rows": 612,
+      "dataset": "companies",
+      "format": "csv"
+    },
+    {
+      "path": "csv/companies/part-004.csv",
+      "bytes": 55371,
+      "sha256": "43ddfdbc116bb5c3d662edec19d40b513c13f291864034fe7a8cb286bf0a1ece",
+      "rows": 344,
+      "dataset": "companies",
+      "format": "csv"
+    },
+    {
+      "path": "json/taxonomy/part-000.json",
+      "bytes": 4623,
+      "sha256": "089c48cc5bead1a65bc4c8e61ede3e11b75066542b0449df0888644785abcece",
+      "rows": 31,
+      "dataset": "taxonomy",
+      "format": "json"
+    },
+    {
+      "path": "csv/taxonomy/part-000.csv",
+      "bytes": 2625,
+      "sha256": "2dfbd5d6f3320932c2c600cc0a60c9bc1252491349e418feb8ad997e9d3a24cb",
+      "rows": 31,
+      "dataset": "taxonomy",
+      "format": "csv"
+    },
+    {
+      "path": "json/aliases/part-000.json",
+      "bytes": 99914,
+      "sha256": "e64f22c05ce5333848aeb41aa12a5970109a83ca50a3554bb9210c0c1c62e0e2",
+      "rows": 805,
+      "dataset": "aliases",
+      "format": "json"
+    },
+    {
+      "path": "json/aliases/part-001.json",
+      "bytes": 99959,
+      "sha256": "7b15c2eb830a1241ac055f240bf2ad719477b2e1f92bab9aa217a7742334e0e2",
+      "rows": 835,
+      "dataset": "aliases",
+      "format": "json"
+    },
+    {
+      "path": "json/aliases/part-002.json",
+      "bytes": 99987,
+      "sha256": "3e3344f284a4109777f5a0535d388f0f8cd6d01e8a26542022ae38d1d76aab04",
+      "rows": 821,
+      "dataset": "aliases",
+      "format": "json"
+    },
+    {
+      "path": "json/aliases/part-003.json",
+      "bytes": 69398,
+      "sha256": "a7cb1fc017bee538ac648e3dfe344b33b3a68c419f96af1d292665b53874e0ed",
+      "rows": 554,
+      "dataset": "aliases",
+      "format": "json"
+    },
+    {
+      "path": "csv/aliases/part-000.csv",
+      "bytes": 99948,
+      "sha256": "8221e2c10471735dafee251c04bef09468f05c991bd3f374c98a212d30f9a2f7",
+      "rows": 1667,
+      "dataset": "aliases",
+      "format": "csv"
+    },
+    {
+      "path": "csv/aliases/part-001.csv",
+      "bytes": 82704,
+      "sha256": "3cc9df3b5b1d871201f8ebae94b464395fc53a93c1acd5288f8093eb5f10bf3f",
+      "rows": 1348,
+      "dataset": "aliases",
+      "format": "csv"
+    },
+    {
+      "path": "json/events_all/part-000.json",
+      "bytes": 99701,
+      "sha256": "8b33fa45c1a8f44d125fec0466c2ec863ffcc653b53d744870ce0d4a9f154f5e",
+      "rows": 42,
+      "dataset": "events_all",
+      "format": "json"
+    },
+    {
+      "path": "json/events_all/part-001.json",
+      "bytes": 97801,
+      "sha256": "f0b024f469adaaf1877e94295ffcae6a0cf49300c7e29adf81ed57b96a923a64",
+      "rows": 41,
+      "dataset": "events_all",
+      "format": "json"
+    },
+    {
+      "path": "json/events_all/part-002.json",
+      "bytes": 99980,
+      "sha256": "a2fc3b898ee33afe3dfd5ec0da7cbe999d6a50d8c16958ce01c0e0bc8d713faa",
+      "rows": 42,
+      "dataset": "events_all",
+      "format": "json"
+    },
+    {
+      "path": "json/events_all/part-003.json",
+      "bytes": 99660,
+      "sha256": "880bcd3a70ab163c10be6ea4c7e38676354daae5697e6a9ec38d34f67147001a",
+      "rows": 42,
+      "dataset": "events_all",
+      "format": "json"
+    },
+    {
+      "path": "json/events_all/part-004.json",
+      "bytes": 99725,
+      "sha256": "d373a5391f99fd8016b66ec2c2f4e5379069f68f65504980ac7baa3b487230c9",
+      "rows": 42,
+      "dataset": "events_all",
+      "format": "json"
+    },
+    {
+      "path": "json/events_all/part-005.json",
+      "bytes": 99736,
+      "sha256": "c91158d12f34cf2739eaac35cda716facf45a31f0fb867f3855bf4f1418738f7",
+      "rows": 42,
+      "dataset": "events_all",
+      "format": "json"
+    },
+    {
+      "path": "json/events_all/part-006.json",
+      "bytes": 99860,
+      "sha256": "014a0947995a8c0ce7655b1a1f0f2ed435339c3044d512cfa92d1535761dc5ff",
+      "rows": 42,
+      "dataset": "events_all",
+      "format": "json"
+    },
+    {
+      "path": "json/events_all/part-007.json",
+      "bytes": 98395,
+      "sha256": "f6233cd53a49a78a8cf0ed5be7cd4953dacccbb305862217d218fbad66f71d9a",
+      "rows": 41,
+      "dataset": "events_all",
+      "format": "json"
+    },
+    {
+      "path": "json/events_all/part-008.json",
+      "bytes": 98206,
+      "sha256": "30483bbcc45f9a5fb756a9cfd246f5ff652ea5b4e0f120594ba0399057a95427",
+      "rows": 41,
+      "dataset": "events_all",
+      "format": "json"
+    },
+    {
+      "path": "json/events_all/part-009.json",
+      "bytes": 98081,
+      "sha256": "31686f8716835e4491f592504b9920aa1a31ea34d2fbd0431a213b0c3f98253c",
+      "rows": 41,
+      "dataset": "events_all",
+      "format": "json"
+    },
+    {
+      "path": "json/events_all/part-010.json",
+      "bytes": 97854,
+      "sha256": "23f351d8f611715cfb92798a087edd4537f1feb035a163e389d7631bffe4f2b3",
+      "rows": 41,
+      "dataset": "events_all",
+      "format": "json"
+    },
+    {
+      "path": "json/events_all/part-011.json",
+      "bytes": 99953,
+      "sha256": "4e2ae17ed9cabba7753df2a897f20c232925240d90bece57f0af7e94448e94cc",
+      "rows": 42,
+      "dataset": "events_all",
+      "format": "json"
+    },
+    {
+      "path": "json/events_all/part-012.json",
+      "bytes": 97903,
+      "sha256": "e66e55b25eb912f541b21e782ac9df180f03848a700560f1125782a9aa4c17b6",
+      "rows": 41,
+      "dataset": "events_all",
+      "format": "json"
+    },
+    {
+      "path": "json/events_all/part-013.json",
+      "bytes": 98407,
+      "sha256": "e24f6fa6fba324f1337de0462753c73c5533d798877e18f854e37781c50a52fd",
+      "rows": 41,
+      "dataset": "events_all",
+      "format": "json"
+    },
+    {
+      "path": "json/events_all/part-014.json",
+      "bytes": 98457,
+      "sha256": "595d1a0fc5d085238a404a96d9795003c94c730e637db2ea68b8ddb35d6fb45d",
+      "rows": 41,
+      "dataset": "events_all",
+      "format": "json"
+    },
+    {
+      "path": "json/events_all/part-015.json",
+      "bytes": 98705,
+      "sha256": "7610e052c1dd2c062161b909d5e6214dfe60cf5d38775b019f562ff62a20992c",
+      "rows": 41,
+      "dataset": "events_all",
+      "format": "json"
+    },
+    {
+      "path": "json/events_all/part-016.json",
+      "bytes": 99159,
+      "sha256": "0a28ce487b1a66446c666d28b0978ab899aec727d1e9d635ec84e0fddde0137e",
+      "rows": 41,
+      "dataset": "events_all",
+      "format": "json"
+    },
+    {
+      "path": "json/events_all/part-017.json",
+      "bytes": 98068,
+      "sha256": "b281934f95b9a56c21351278558e8860afaaf3498071e0896eaa38157c0fb527",
+      "rows": 40,
+      "dataset": "events_all",
+      "format": "json"
+    },
+    {
+      "path": "json/events_all/part-018.json",
+      "bytes": 99503,
+      "sha256": "2886e13f14144864388961b732e3df46beabdb2508aaeff1cc76efcb20add704",
+      "rows": 41,
+      "dataset": "events_all",
+      "format": "json"
+    },
+    {
+      "path": "json/events_all/part-019.json",
+      "bytes": 99069,
+      "sha256": "d1e41d9db208314fb05c569191363635e65d6edebf77a56d24ffdaffb8c0f39e",
+      "rows": 41,
+      "dataset": "events_all",
+      "format": "json"
+    },
+    {
+      "path": "json/events_all/part-020.json",
+      "bytes": 98471,
+      "sha256": "f7165f622ab29851ae0a47ea1987c959a8d9ceaba8f4cb71e1597eef81399dea",
+      "rows": 41,
+      "dataset": "events_all",
+      "format": "json"
+    },
+    {
+      "path": "json/events_all/part-021.json",
+      "bytes": 98467,
+      "sha256": "7dd9da7523c96313cd34fc52e96c051a62d4d0beeda176a02e074e2b1f15e233",
+      "rows": 41,
+      "dataset": "events_all",
+      "format": "json"
+    },
+    {
+      "path": "json/events_all/part-022.json",
+      "bytes": 98253,
+      "sha256": "3fac4a97a6dca4f4bc5d6df380f4ffc665edc8ea2a9abc10fc8f2f33b33190ca",
+      "rows": 41,
+      "dataset": "events_all",
+      "format": "json"
+    },
+    {
+      "path": "json/events_all/part-023.json",
+      "bytes": 98613,
+      "sha256": "0718dd110f2f5f5a53fe74e09559343a332409471e8991867931b3cd380f4c0d",
+      "rows": 41,
+      "dataset": "events_all",
+      "format": "json"
+    },
+    {
+      "path": "json/events_all/part-024.json",
+      "bytes": 99953,
+      "sha256": "6a14b9570a219db3f854b8a4c09bca666f2f29987a15d1fcfb7a8fd604dc25c8",
+      "rows": 42,
+      "dataset": "events_all",
+      "format": "json"
+    },
+    {
+      "path": "json/events_all/part-025.json",
+      "bytes": 99671,
+      "sha256": "b9e1e4164088fa2c4e575e3b8cc8e27c119e8d83084954b7806345fb67c755ed",
+      "rows": 42,
+      "dataset": "events_all",
+      "format": "json"
+    },
+    {
+      "path": "json/events_all/part-026.json",
+      "bytes": 97737,
+      "sha256": "5166a158ba10510dc4a0550be24530776dfbbda770700c7d9271540a5aa79364",
+      "rows": 41,
+      "dataset": "events_all",
+      "format": "json"
+    },
+    {
+      "path": "json/events_all/part-027.json",
+      "bytes": 97705,
+      "sha256": "0d2dc89af72647a7cfec488e35269cbcee6c65ae7af0ee2367ca2b4f2f09ad12",
+      "rows": 41,
+      "dataset": "events_all",
+      "format": "json"
+    },
+    {
+      "path": "json/events_all/part-028.json",
+      "bytes": 98845,
+      "sha256": "e3567409a763ee02991c9e4de4a9e9c5ddbd92ae3c74caf61eca7c845edf1b9d",
+      "rows": 41,
+      "dataset": "events_all",
+      "format": "json"
+    },
+    {
+      "path": "json/events_all/part-029.json",
+      "bytes": 98110,
+      "sha256": "a1893cc909478861dd0cd44fde4992ba9a48ca80ae04b1ea57e57a6a66dc39b2",
+      "rows": 41,
+      "dataset": "events_all",
+      "format": "json"
+    },
+    {
+      "path": "json/events_all/part-030.json",
+      "bytes": 97837,
+      "sha256": "9b81619377e104de3b529db3c974d1c4fe14982ea7a21b2b20d9ef8028cca271",
+      "rows": 41,
+      "dataset": "events_all",
+      "format": "json"
+    },
+    {
+      "path": "json/events_all/part-031.json",
+      "bytes": 97889,
+      "sha256": "80f99de9d832b35ec42343925c0de0a2f24f0038522cb52ffa42d5193cd6b192",
+      "rows": 41,
+      "dataset": "events_all",
+      "format": "json"
+    },
+    {
+      "path": "json/events_all/part-032.json",
+      "bytes": 98318,
+      "sha256": "d2e47931e71d493ddbd2e51f41a6d738f0056c2f49cc0a8b9830c6855ee5806b",
+      "rows": 41,
+      "dataset": "events_all",
+      "format": "json"
+    },
+    {
+      "path": "json/events_all/part-033.json",
+      "bytes": 98004,
+      "sha256": "2bfb4b7d8943c27d66282fae0ffb3906f75a0617baae3bade5f688e545d4da83",
+      "rows": 41,
+      "dataset": "events_all",
+      "format": "json"
+    },
+    {
+      "path": "json/events_all/part-034.json",
+      "bytes": 97864,
+      "sha256": "398e5a73fc12016500317278140617a3d3546cae83fb4ab41619f9788253b7b5",
+      "rows": 41,
+      "dataset": "events_all",
+      "format": "json"
+    },
+    {
+      "path": "json/events_all/part-035.json",
+      "bytes": 98208,
+      "sha256": "3d8a91389fb64b58f886ec5ca6f58d862a894170619e5e2f307e9604bcc619c2",
+      "rows": 41,
+      "dataset": "events_all",
+      "format": "json"
+    },
+    {
+      "path": "json/events_all/part-036.json",
+      "bytes": 98068,
+      "sha256": "930a8f389efe8263fe21dd49c42ede9da52cca1a5356ea067baad8eaa47e740c",
+      "rows": 41,
+      "dataset": "events_all",
+      "format": "json"
+    },
+    {
+      "path": "json/events_all/part-037.json",
+      "bytes": 98239,
+      "sha256": "285b330a14aebf4e8fd0ed37848ad7ccb2e9a084bfbbfce220d89400ee1fd823",
+      "rows": 41,
+      "dataset": "events_all",
+      "format": "json"
+    },
+    {
+      "path": "json/events_all/part-038.json",
+      "bytes": 97770,
+      "sha256": "6baec2b5f88307fabf026e910a81a737f4a4e42abccad7c985de4695a4280379",
+      "rows": 41,
+      "dataset": "events_all",
+      "format": "json"
+    },
+    {
+      "path": "json/events_all/part-039.json",
+      "bytes": 99584,
+      "sha256": "2898a80b0a752aa903d7c9e952b40a22ad05ea381cdd1ac4b328ccc60a9daeca",
+      "rows": 42,
+      "dataset": "events_all",
+      "format": "json"
+    },
+    {
+      "path": "json/events_all/part-040.json",
+      "bytes": 99933,
+      "sha256": "d35f62d30ce2cfa5f4ad240c08db85bfd18ef7697c0a7e9c12657a2f12a09171",
+      "rows": 42,
+      "dataset": "events_all",
+      "format": "json"
+    },
+    {
+      "path": "json/events_all/part-041.json",
+      "bytes": 99766,
+      "sha256": "f0a45b6962a89648882815da83d290850889385e916ac5591e40784f0678e235",
+      "rows": 42,
+      "dataset": "events_all",
+      "format": "json"
+    },
+    {
+      "path": "json/events_all/part-042.json",
+      "bytes": 99983,
+      "sha256": "ccdc87892750685c830aad922a9b7d34ced8716f8bd545bad6c616ab3fdf8158",
+      "rows": 42,
+      "dataset": "events_all",
+      "format": "json"
+    },
+    {
+      "path": "json/events_all/part-043.json",
+      "bytes": 99873,
+      "sha256": "6de7c961c7be8ab8feff7d7eedf5f8a891353311d50211b695f89d5d460d3947",
+      "rows": 42,
+      "dataset": "events_all",
+      "format": "json"
+    },
+    {
+      "path": "json/events_all/part-044.json",
+      "bytes": 99089,
+      "sha256": "2d1aa4dec96605a6b0b29ca58f09365ba6a5a1c52f94b08fbd341e58203ad574",
+      "rows": 41,
+      "dataset": "events_all",
+      "format": "json"
+    },
+    {
+      "path": "json/events_all/part-045.json",
+      "bytes": 99230,
+      "sha256": "7433bfb34ab2941fab173118579c22beacdbd457cd7e9cf41749f9c886564765",
+      "rows": 41,
+      "dataset": "events_all",
+      "format": "json"
+    },
+    {
+      "path": "json/events_all/part-046.json",
+      "bytes": 97970,
+      "sha256": "6f0ce7c9cb8b3ef433948239a77f9d9058fdf9df98a5b03ad459693a835a2cdc",
+      "rows": 41,
+      "dataset": "events_all",
+      "format": "json"
+    },
+    {
+      "path": "json/events_all/part-047.json",
+      "bytes": 98867,
+      "sha256": "0aa3b3bfce74e8adb35ff5f257fe6a5f1539839ecb3e032f03fcac9fabd81a1b",
+      "rows": 41,
+      "dataset": "events_all",
+      "format": "json"
+    },
+    {
+      "path": "json/events_all/part-048.json",
+      "bytes": 98551,
+      "sha256": "5181b878229ecd8bcdc8df7026985e0aa71b99fb2054a1d3a879fdf161d40050",
+      "rows": 41,
+      "dataset": "events_all",
+      "format": "json"
+    },
+    {
+      "path": "json/events_all/part-049.json",
+      "bytes": 99076,
+      "sha256": "ac59b2ade32dec9d09d167cacd5761f0f365400df3d79d4e2fe6b8f7d8c077df",
+      "rows": 41,
+      "dataset": "events_all",
+      "format": "json"
+    },
+    {
+      "path": "json/events_all/part-050.json",
+      "bytes": 98376,
+      "sha256": "4a3e59dce91d9c97bc15c476f4e00795b68c4afca3494817e69e70597adb1581",
+      "rows": 41,
+      "dataset": "events_all",
+      "format": "json"
+    },
+    {
+      "path": "json/events_all/part-051.json",
+      "bytes": 99406,
+      "sha256": "bedc2b0591ffa7bec5f8df70f0e993c432cacc33d0402abecf0ee0ecfffabfed",
+      "rows": 41,
+      "dataset": "events_all",
+      "format": "json"
+    },
+    {
+      "path": "json/events_all/part-052.json",
+      "bytes": 98492,
+      "sha256": "92ca33bb4f456092a7bc853d7ef0aa1ee7cff237544e66aa32690443991a4a34",
+      "rows": 41,
+      "dataset": "events_all",
+      "format": "json"
+    },
+    {
+      "path": "json/events_all/part-053.json",
+      "bytes": 98904,
+      "sha256": "41bade9077e199d5388d32973ce959914e282e4e1a6431548afe38f5c639626d",
+      "rows": 41,
+      "dataset": "events_all",
+      "format": "json"
+    },
+    {
+      "path": "json/events_all/part-054.json",
+      "bytes": 99526,
+      "sha256": "3ea1a6a024f8c9503fd5aca6a1a3c1449aa7608ec7496cba2e981c5c3764ffcd",
+      "rows": 41,
+      "dataset": "events_all",
+      "format": "json"
+    },
+    {
+      "path": "json/events_all/part-055.json",
+      "bytes": 99011,
+      "sha256": "b4f406b79fc5076d7c834d2cfdd3515f33d521e9d975eed84b711bf1dba41411",
+      "rows": 41,
+      "dataset": "events_all",
+      "format": "json"
+    },
+    {
+      "path": "json/events_all/part-056.json",
+      "bytes": 98992,
+      "sha256": "bc4da65a41ee8df6b2c24af69042f740904eaabc2e0db8812d4f4232e93435b2",
+      "rows": 41,
+      "dataset": "events_all",
+      "format": "json"
+    },
+    {
+      "path": "json/events_all/part-057.json",
+      "bytes": 98440,
+      "sha256": "c25ddd2acf695b363a71806a955e75311fa6c991ccd285ae98f8d632eb2bb702",
+      "rows": 41,
+      "dataset": "events_all",
+      "format": "json"
+    },
+    {
+      "path": "json/events_all/part-058.json",
+      "bytes": 98493,
+      "sha256": "8c50bf5537f174a64e8cd44da9eda4e2db314fecbb6431c6e16b7bd1155c3842",
+      "rows": 41,
+      "dataset": "events_all",
+      "format": "json"
+    },
+    {
+      "path": "json/events_all/part-059.json",
+      "bytes": 99303,
+      "sha256": "b36402b35bf69f031723beaa027fd6512b7a6cdb93d87f9a53a296fba536a2b5",
+      "rows": 41,
+      "dataset": "events_all",
+      "format": "json"
+    },
+    {
+      "path": "json/events_all/part-060.json",
+      "bytes": 98986,
+      "sha256": "8f3523646ad8bf5fe48535cf02a57fb97a47b70355b855309dfc16ac657bc6d9",
+      "rows": 41,
+      "dataset": "events_all",
+      "format": "json"
+    },
+    {
+      "path": "json/events_all/part-061.json",
+      "bytes": 98510,
+      "sha256": "bc0a37404a03928ee525653d1dfe5ad112f756dff20c6320cbf3099072fadc34",
+      "rows": 41,
+      "dataset": "events_all",
+      "format": "json"
+    },
+    {
+      "path": "json/events_all/part-062.json",
+      "bytes": 99076,
+      "sha256": "60e798c446a86f428b8862ea12eac349c995ce228100ec99233c87aedf49e50f",
+      "rows": 41,
+      "dataset": "events_all",
+      "format": "json"
+    },
+    {
+      "path": "json/events_all/part-063.json",
+      "bytes": 98627,
+      "sha256": "163864721024aace7ddc0106e59cc4f8a3b38a843800b04e4308c446c59101fc",
+      "rows": 41,
+      "dataset": "events_all",
+      "format": "json"
+    },
+    {
+      "path": "json/events_all/part-064.json",
+      "bytes": 97900,
+      "sha256": "d0442255ba0709f51fc1c0642d8ebb9e24ed5d03a32d91e112b79385c1755122",
+      "rows": 41,
+      "dataset": "events_all",
+      "format": "json"
+    },
+    {
+      "path": "json/events_all/part-065.json",
+      "bytes": 98535,
+      "sha256": "d60d71d8aaf8909bd3a6f47fd59ba11f398f021c8a096de2cad235e26bda0884",
+      "rows": 41,
+      "dataset": "events_all",
+      "format": "json"
+    },
+    {
+      "path": "json/events_all/part-066.json",
+      "bytes": 97908,
+      "sha256": "d3ea61afc22fe2737ec134f00976d3e88718d122c78fc101781597727a5d1969",
+      "rows": 41,
+      "dataset": "events_all",
+      "format": "json"
+    },
+    {
+      "path": "json/events_all/part-067.json",
+      "bytes": 98485,
+      "sha256": "d405f2d8f0a3c0dc725d3a82e7635e0d10fe2379e697a9a5a4da252743947844",
+      "rows": 41,
+      "dataset": "events_all",
+      "format": "json"
+    },
+    {
+      "path": "json/events_all/part-068.json",
+      "bytes": 65106,
+      "sha256": "35b9ca56a5e60172d4488d899459d4a0176caec1ac4048fc4daa0d37b9b23dff",
+      "rows": 27,
+      "dataset": "events_all",
+      "format": "json"
+    },
+    {
+      "path": "csv/events_all/part-000.csv",
+      "bytes": 99983,
+      "sha256": "da0c90839b8b9b95e764a4f2b7e176ece6ae3b251bfef9b1a8776ba780f10d91",
+      "rows": 238,
+      "dataset": "events_all",
+      "format": "csv"
+    },
+    {
+      "path": "csv/events_all/part-001.csv",
+      "bytes": 99831,
+      "sha256": "6d3533ff8635311d82faf08313122b42ff531eac96372619aec4dadb100cfd2a",
+      "rows": 230,
+      "dataset": "events_all",
+      "format": "csv"
+    },
+    {
+      "path": "csv/events_all/part-002.csv",
+      "bytes": 99721,
+      "sha256": "7cd136a175033743ed488455630ae447c464533ba18fe4dfd68cb5b42b04141f",
+      "rows": 226,
+      "dataset": "events_all",
+      "format": "csv"
+    },
+    {
+      "path": "csv/events_all/part-003.csv",
+      "bytes": 99978,
+      "sha256": "225e1fe88bbc0c91e7b41280903f318ca062aae2fc1340d09e6e4473faae8412",
+      "rows": 208,
+      "dataset": "events_all",
+      "format": "csv"
+    },
+    {
+      "path": "csv/events_all/part-004.csv",
+      "bytes": 99729,
+      "sha256": "a6d449dbc1a54b3f77328b18dd49d9d78e8d8f6d0eb47da03da38a234ae87036",
+      "rows": 225,
+      "dataset": "events_all",
+      "format": "csv"
+    },
+    {
+      "path": "csv/events_all/part-005.csv",
+      "bytes": 99902,
+      "sha256": "c6ddf073c584c90bf0e34880a36e21f71621f2225b6edbfcae45a6cd01e6d542",
+      "rows": 223,
+      "dataset": "events_all",
+      "format": "csv"
+    },
+    {
+      "path": "csv/events_all/part-006.csv",
+      "bytes": 99894,
+      "sha256": "08d88c58f35fd51613fabdc427d5a700f5b4f68cef3c24fd5abd155c87d20089",
+      "rows": 223,
+      "dataset": "events_all",
+      "format": "csv"
+    },
+    {
+      "path": "csv/events_all/part-007.csv",
+      "bytes": 99733,
+      "sha256": "440cfa6448caebf2766163b4ebf0919a6289022c375f953a8e8c8339f0a73598",
+      "rows": 232,
+      "dataset": "events_all",
+      "format": "csv"
+    },
+    {
+      "path": "csv/events_all/part-008.csv",
+      "bytes": 99591,
+      "sha256": "47c945d2c5772db827c34dab409dc8b64fdac60bc73ab5a5e4e2918f6a31443c",
+      "rows": 214,
+      "dataset": "events_all",
+      "format": "csv"
+    },
+    {
+      "path": "csv/events_all/part-009.csv",
+      "bytes": 99788,
+      "sha256": "6a342ca84e737c986d4848f2e12b288dddabf1defa9f57ab00537d873b7cd9ff",
+      "rows": 213,
+      "dataset": "events_all",
+      "format": "csv"
+    },
+    {
+      "path": "csv/events_all/part-010.csv",
+      "bytes": 99880,
+      "sha256": "c0079d3768a0e952605e10e56d1c8803074d57e87b817164eca36320b8034106",
+      "rows": 212,
+      "dataset": "events_all",
+      "format": "csv"
+    },
+    {
+      "path": "csv/events_all/part-011.csv",
+      "bytes": 99902,
+      "sha256": "76dc3f0758a43dfa8ea85db73e80a20b5e9a3776127a312ef254071900e5b441",
+      "rows": 213,
+      "dataset": "events_all",
+      "format": "csv"
+    },
+    {
+      "path": "csv/events_all/part-012.csv",
+      "bytes": 77758,
+      "sha256": "e83a1a5bcc2f3a8dbc53aca36777e045eccbf37c14ce75e1bca1bf032dc2a8f8",
+      "rows": 171,
+      "dataset": "events_all",
+      "format": "csv"
+    },
+    {
+      "path": "json/core_equity_all/part-000.json",
+      "bytes": 99920,
+      "sha256": "38dc063871ce5dcde02e0679559a86aef097004f407fca9a54eaf825b2459de0",
+      "rows": 42,
+      "dataset": "core_equity_all",
+      "format": "json"
+    },
+    {
+      "path": "json/core_equity_all/part-001.json",
+      "bytes": 97735,
+      "sha256": "f85dfbc992183709f2c07947481f8383c7fd20177dd4e58b902b12e37c027bd0",
+      "rows": 41,
+      "dataset": "core_equity_all",
+      "format": "json"
+    },
+    {
+      "path": "json/core_equity_all/part-002.json",
+      "bytes": 98014,
+      "sha256": "5d9a7d9d91819fe1d2fabf4d31274c0811f83348460931f070743097627f8e99",
+      "rows": 41,
+      "dataset": "core_equity_all",
+      "format": "json"
+    },
+    {
+      "path": "json/core_equity_all/part-003.json",
+      "bytes": 97974,
+      "sha256": "193387ee90d9cc444e04030ae67e10c7fda56e240b665e6a953e42a8579e0ea9",
+      "rows": 41,
+      "dataset": "core_equity_all",
+      "format": "json"
+    },
+    {
+      "path": "json/core_equity_all/part-004.json",
+      "bytes": 97622,
+      "sha256": "e53128c46c34e9031ed34dfddfa37b91f04820edb8fc16501e4d71637976df6c",
+      "rows": 40,
+      "dataset": "core_equity_all",
+      "format": "json"
+    },
+    {
+      "path": "json/core_equity_all/part-005.json",
+      "bytes": 99071,
+      "sha256": "bfe2e5397ade4e3264e6136597c70dba8b751f34f6934b84093558b2248bfa17",
+      "rows": 41,
+      "dataset": "core_equity_all",
+      "format": "json"
+    },
+    {
+      "path": "json/core_equity_all/part-006.json",
+      "bytes": 97973,
+      "sha256": "bcced27922512863b79159f83e2c104e5f2b848373d9184e4643a31ccb893778",
+      "rows": 41,
+      "dataset": "core_equity_all",
+      "format": "json"
+    },
+    {
+      "path": "json/core_equity_all/part-007.json",
+      "bytes": 98417,
+      "sha256": "4ce7fbec7d42f6eeb91626ca79eb4f25dc8623c949f9da6b1f3f3828e3af436f",
+      "rows": 41,
+      "dataset": "core_equity_all",
+      "format": "json"
+    },
+    {
+      "path": "json/core_equity_all/part-008.json",
+      "bytes": 99744,
+      "sha256": "9bf41f9a70bcd007a921f5c2294cfc14f65b65df7bc309b384ad8421542a94f3",
+      "rows": 42,
+      "dataset": "core_equity_all",
+      "format": "json"
+    },
+    {
+      "path": "json/core_equity_all/part-009.json",
+      "bytes": 99968,
+      "sha256": "3c1551d299fa65c0f64da58d7286b96fa7971d27d42543c3625eb75f3e4aa86f",
+      "rows": 42,
+      "dataset": "core_equity_all",
+      "format": "json"
+    },
+    {
+      "path": "json/core_equity_all/part-010.json",
+      "bytes": 97860,
+      "sha256": "654c890aa3272ae557cba2050facf55f85266f05e10369c310a0e6e2ad43381b",
+      "rows": 41,
+      "dataset": "core_equity_all",
+      "format": "json"
+    },
+    {
+      "path": "json/core_equity_all/part-011.json",
+      "bytes": 98656,
+      "sha256": "eccb7fb4843514d86b7a7a1ecf8c14805e667a9044f63300a7a450db3afc0140",
+      "rows": 41,
+      "dataset": "core_equity_all",
+      "format": "json"
+    },
+    {
+      "path": "json/core_equity_all/part-012.json",
+      "bytes": 97812,
+      "sha256": "7bb2ac6dbb1e935ce44eee240b9377708b7dbf0c6e363f92708b4f132d2b8782",
+      "rows": 41,
+      "dataset": "core_equity_all",
+      "format": "json"
+    },
+    {
+      "path": "json/core_equity_all/part-013.json",
+      "bytes": 97770,
+      "sha256": "c6c56417ce4a69462d88c51052edcf4a82b572b5f4eed05050f35319c4ca4b3f",
+      "rows": 41,
+      "dataset": "core_equity_all",
+      "format": "json"
+    },
+    {
+      "path": "json/core_equity_all/part-014.json",
+      "bytes": 98057,
+      "sha256": "cb245722c646b0f21652a7378f0e036f9544be05d428765b342a37e81244ab3a",
+      "rows": 41,
+      "dataset": "core_equity_all",
+      "format": "json"
+    },
+    {
+      "path": "json/core_equity_all/part-015.json",
+      "bytes": 97899,
+      "sha256": "d3f5578cd29303dfe2348ab7b2e1d16f6d5214ef0578c39bd042401f84a25c39",
+      "rows": 41,
+      "dataset": "core_equity_all",
+      "format": "json"
+    },
+    {
+      "path": "json/core_equity_all/part-016.json",
+      "bytes": 97886,
+      "sha256": "f52d040d5fd3447a697788e8cb949506b6457bca9f164b115da9efb3a76f1030",
+      "rows": 41,
+      "dataset": "core_equity_all",
+      "format": "json"
+    },
+    {
+      "path": "json/core_equity_all/part-017.json",
+      "bytes": 97889,
+      "sha256": "7e3b7eb178725a1a58c08c420e644ea2faf8f910f734893f9c9453e481709075",
+      "rows": 41,
+      "dataset": "core_equity_all",
+      "format": "json"
+    },
+    {
+      "path": "json/core_equity_all/part-018.json",
+      "bytes": 98174,
+      "sha256": "7a70ce1dc69910f33e981928efecaaea427a2d7cda48a99553b072f10ad3c425",
+      "rows": 41,
+      "dataset": "core_equity_all",
+      "format": "json"
+    },
+    {
+      "path": "json/core_equity_all/part-019.json",
+      "bytes": 97617,
+      "sha256": "7ad0d2dbca816fdcb9206ea68d29e3ff21ef33664fd33be2fc8000626e38cee4",
+      "rows": 41,
+      "dataset": "core_equity_all",
+      "format": "json"
+    },
+    {
+      "path": "json/core_equity_all/part-020.json",
+      "bytes": 99857,
+      "sha256": "82dcc8bc28f138c22c77d17af87d1dafe24258d8ce28a12b943b973fa262d8f8",
+      "rows": 42,
+      "dataset": "core_equity_all",
+      "format": "json"
+    },
+    {
+      "path": "json/core_equity_all/part-021.json",
+      "bytes": 99575,
+      "sha256": "aacf1b23123c70abbc9fbb89791e25efea40ea66ab4f40471dcc5bfdb3191193",
+      "rows": 42,
+      "dataset": "core_equity_all",
+      "format": "json"
+    },
+    {
+      "path": "json/core_equity_all/part-022.json",
+      "bytes": 99771,
+      "sha256": "639971e6ef259be4cc768d9ce0938ebea06c557ad10e4ad82a11811f7712d739",
+      "rows": 42,
+      "dataset": "core_equity_all",
+      "format": "json"
+    },
+    {
+      "path": "json/core_equity_all/part-023.json",
+      "bytes": 98534,
+      "sha256": "b7df9bfb46bd5f869990fef23f50151e4e6f00fcbdb3ced1791a1d1f681e17a3",
+      "rows": 41,
+      "dataset": "core_equity_all",
+      "format": "json"
+    },
+    {
+      "path": "json/core_equity_all/part-024.json",
+      "bytes": 99313,
+      "sha256": "f480e9b4d73442c905a6e5463addb70aede81821a2d6fa1cb35a64bd11781a46",
+      "rows": 41,
+      "dataset": "core_equity_all",
+      "format": "json"
+    },
+    {
+      "path": "json/core_equity_all/part-025.json",
+      "bytes": 99709,
+      "sha256": "0196b2438275faf9e7fb925eea11bc15f62ec5757e7f96984b0857952bbbfc34",
+      "rows": 41,
+      "dataset": "core_equity_all",
+      "format": "json"
+    },
+    {
+      "path": "json/core_equity_all/part-026.json",
+      "bytes": 98916,
+      "sha256": "a439ab36d2729ddf3e7e26d1c21ade8ec9b7d94245b10115bb149508884a9a3f",
+      "rows": 41,
+      "dataset": "core_equity_all",
+      "format": "json"
+    },
+    {
+      "path": "json/core_equity_all/part-027.json",
+      "bytes": 48309,
+      "sha256": "c4691113b746b44e9a4bdb7e30078789376f19d37648a4df7d4eb72c02fd0cfa",
+      "rows": 20,
+      "dataset": "core_equity_all",
+      "format": "json"
+    },
+    {
+      "path": "csv/core_equity_all/part-000.csv",
+      "bytes": 99766,
+      "sha256": "e81b5d21c8031083ac52c15b7d5841c1e611ef8c32b992b7a9088d88a75b6f82",
+      "rows": 221,
+      "dataset": "core_equity_all",
+      "format": "csv"
+    },
+    {
+      "path": "csv/core_equity_all/part-001.csv",
+      "bytes": 99901,
+      "sha256": "4391c116f26097d8bf448cfa51368839102c8fe3fb50f26f9bc04fab3987a7e9",
+      "rows": 225,
+      "dataset": "core_equity_all",
+      "format": "csv"
+    },
+    {
+      "path": "csv/core_equity_all/part-002.csv",
+      "bytes": 99709,
+      "sha256": "f440b7218362fa71c4ddb3de830a569b1eafda0d5ea261c1717004994c1661e0",
+      "rows": 224,
+      "dataset": "core_equity_all",
+      "format": "csv"
+    },
+    {
+      "path": "csv/core_equity_all/part-003.csv",
+      "bytes": 99857,
+      "sha256": "d7d8079fb08a272c68cbf4f395346610a7a06ac4b43d432cd9615d2195b7fd8b",
+      "rows": 229,
+      "dataset": "core_equity_all",
+      "format": "csv"
+    },
+    {
+      "path": "csv/core_equity_all/part-004.csv",
+      "bytes": 99581,
+      "sha256": "b9d0bd8fbf4e2769f688b9c97cb1c312073d278bec249d1833ba89b6569307ac",
+      "rows": 213,
+      "dataset": "core_equity_all",
+      "format": "csv"
+    },
+    {
+      "path": "csv/core_equity_all/part-005.csv",
+      "bytes": 11008,
+      "sha256": "55823bbb4fd46fdddfd19069a64bd8eaf995898bef7dece96dedcfea8d172921",
+      "rows": 20,
+      "dataset": "core_equity_all",
+      "format": "csv"
+    },
+    {
+      "path": "json/core_equity_display/part-000.json",
+      "bytes": 99727,
+      "sha256": "168d8264ac2ed7b5bee54cc63e692c11bc93ad4eb4cd6d4a63dba067743d08fe",
+      "rows": 42,
+      "dataset": "core_equity_display",
+      "format": "json"
+    },
+    {
+      "path": "json/core_equity_display/part-001.json",
+      "bytes": 98009,
+      "sha256": "39c3d8bbdf4b2cf4a9c60ec54f68dded2d92ccc8b07a25ee67eed32f3e132656",
+      "rows": 41,
+      "dataset": "core_equity_display",
+      "format": "json"
+    },
+    {
+      "path": "json/core_equity_display/part-002.json",
+      "bytes": 97834,
+      "sha256": "0b14b7464a6b6785a2ffcd76a3e1219da5556465a1c8aca2edba5d29165de9dd",
+      "rows": 41,
+      "dataset": "core_equity_display",
+      "format": "json"
+    },
+    {
+      "path": "json/core_equity_display/part-003.json",
+      "bytes": 99051,
+      "sha256": "f965d3f383e015c01b35c7dd2ade1c8f5f54c43e64fd75499901dca00cc72321",
+      "rows": 41,
+      "dataset": "core_equity_display",
+      "format": "json"
+    },
+    {
+      "path": "json/core_equity_display/part-004.json",
+      "bytes": 99570,
+      "sha256": "70a4da7e9a6757b2c31cc7f6dbb3aef4f619c00ba7c194d0e93333ac37de1ec6",
+      "rows": 41,
+      "dataset": "core_equity_display",
+      "format": "json"
+    },
+    {
+      "path": "json/core_equity_display/part-005.json",
+      "bytes": 98042,
+      "sha256": "f594dc7dc10a6a23e629f6ab4322296c7108d62a39448fa61ab79d7715501393",
+      "rows": 41,
+      "dataset": "core_equity_display",
+      "format": "json"
+    },
+    {
+      "path": "json/core_equity_display/part-006.json",
+      "bytes": 98326,
+      "sha256": "b9e31fbf5f23c8eeff264e347f24106a2063ce1c6c57f6945fdb35615411ca3a",
+      "rows": 41,
+      "dataset": "core_equity_display",
+      "format": "json"
+    },
+    {
+      "path": "json/core_equity_display/part-007.json",
+      "bytes": 99775,
+      "sha256": "6588576cb54304a774d2b931b246cebc09241d6fc9875e794ebae3954542d1ca",
+      "rows": 42,
+      "dataset": "core_equity_display",
+      "format": "json"
+    },
+    {
+      "path": "json/core_equity_display/part-008.json",
+      "bytes": 97941,
+      "sha256": "34853cc9619e47813c8938c0dadf7ef4f2a2a71c61af9db89dd2ff137dddb204",
+      "rows": 41,
+      "dataset": "core_equity_display",
+      "format": "json"
+    },
+    {
+      "path": "json/core_equity_display/part-009.json",
+      "bytes": 97820,
+      "sha256": "801a7a8eeb9bed7061c385c2f62b9ded5620151b3d37040720c80e0d2cff3d13",
+      "rows": 41,
+      "dataset": "core_equity_display",
+      "format": "json"
+    },
+    {
+      "path": "json/core_equity_display/part-010.json",
+      "bytes": 97726,
+      "sha256": "861616874e2f3dcf08ff84e80ccd0c6651b4c951886b9c85bed416871014a40f",
+      "rows": 41,
+      "dataset": "core_equity_display",
+      "format": "json"
+    },
+    {
+      "path": "json/core_equity_display/part-011.json",
+      "bytes": 98157,
+      "sha256": "2a60658cf2fcde5d43d26a5c63c3a877955a151adb3a2d0d22f94298c33ca473",
+      "rows": 41,
+      "dataset": "core_equity_display",
+      "format": "json"
+    },
+    {
+      "path": "json/core_equity_display/part-012.json",
+      "bytes": 97814,
+      "sha256": "3d106198a226a4a265aeece690373cfea359d6548aad4fe96fa3d44143e5e4ca",
+      "rows": 41,
+      "dataset": "core_equity_display",
+      "format": "json"
+    },
+    {
+      "path": "json/core_equity_display/part-013.json",
+      "bytes": 97955,
+      "sha256": "8034597b755dd57c409c32d15c24fa472889880df2982acc5c58b9173f751488",
+      "rows": 41,
+      "dataset": "core_equity_display",
+      "format": "json"
+    },
+    {
+      "path": "json/core_equity_display/part-014.json",
+      "bytes": 98016,
+      "sha256": "784031c75570f4c2acf2e1b20c05ed8a250ce0c5c9711ba0b52905becfd159c9",
+      "rows": 41,
+      "dataset": "core_equity_display",
+      "format": "json"
+    },
+    {
+      "path": "json/core_equity_display/part-015.json",
+      "bytes": 97864,
+      "sha256": "8d2bcfde00cdc6d5604b29396b18e9eaf66f197bec8c78f8eb60dd371ed223e4",
+      "rows": 41,
+      "dataset": "core_equity_display",
+      "format": "json"
+    },
+    {
+      "path": "json/core_equity_display/part-016.json",
+      "bytes": 99444,
+      "sha256": "a82e082d84536af7aaffdc1cfa416cee8cf2f21325a4157fb1944fa3106eff9e",
+      "rows": 42,
+      "dataset": "core_equity_display",
+      "format": "json"
+    },
+    {
+      "path": "json/core_equity_display/part-017.json",
+      "bytes": 99654,
+      "sha256": "b93b8a3e8f1d98c9f6494e13fcd8ff00925c860b69eb6a44fc33cef8e25d0cba",
+      "rows": 42,
+      "dataset": "core_equity_display",
+      "format": "json"
+    },
+    {
+      "path": "json/core_equity_display/part-018.json",
+      "bytes": 98477,
+      "sha256": "e90c8c86b4aeb327c63a929104f86c9c5a1f5ca5d820bc47a2ab182a1cd12944",
+      "rows": 41,
+      "dataset": "core_equity_display",
+      "format": "json"
+    },
+    {
+      "path": "json/core_equity_display/part-019.json",
+      "bytes": 99175,
+      "sha256": "cb7c906a22c7c5b2e7900cc37ff7947a25b886b11dce6f5f82d478c5e8a3268a",
+      "rows": 41,
+      "dataset": "core_equity_display",
+      "format": "json"
+    },
+    {
+      "path": "json/core_equity_display/part-020.json",
+      "bytes": 99746,
+      "sha256": "e530a724ece275fa76f4725e531de5cabcca6eca2b0e765c9cefe0a3276bc0ed",
+      "rows": 41,
+      "dataset": "core_equity_display",
+      "format": "json"
+    },
+    {
+      "path": "json/core_equity_display/part-021.json",
+      "bytes": 89367,
+      "sha256": "583a1b11433f65ef89795813be5c60590697acc4ee50466cef508c9fe607623b",
+      "rows": 37,
+      "dataset": "core_equity_display",
+      "format": "json"
+    },
+    {
+      "path": "csv/core_equity_display/part-000.csv",
+      "bytes": 99981,
+      "sha256": "2a09d1d769fbc1d0649f4beb4f18065e728cd1f353481a8bbe4171b0ec202bd8",
+      "rows": 221,
+      "dataset": "core_equity_display",
+      "format": "csv"
+    },
+    {
+      "path": "csv/core_equity_display/part-001.csv",
+      "bytes": 99609,
+      "sha256": "18668e219a94630e531a03b00157be32d0f9d7061e4a580f95d78c378d63c652",
+      "rows": 225,
+      "dataset": "core_equity_display",
+      "format": "csv"
+    },
+    {
+      "path": "csv/core_equity_display/part-002.csv",
+      "bytes": 99758,
+      "sha256": "a215659abaf70d1309a3818f085b67cddcb5ed668ef874de72d4ba36ba50f03c",
+      "rows": 226,
+      "dataset": "core_equity_display",
+      "format": "csv"
+    },
+    {
+      "path": "csv/core_equity_display/part-003.csv",
+      "bytes": 99760,
+      "sha256": "5aa2627c3121010ca8e01c819536e86c45da9e269a2f061f36c45c6b2dd31237",
+      "rows": 216,
+      "dataset": "core_equity_display",
+      "format": "csv"
+    },
+    {
+      "path": "csv/core_equity_display/part-004.csv",
+      "bytes": 8237,
+      "sha256": "e9eefebdc4c8627e7b3bff5a60cc72d957ed40c43ead5705df4ad9f9f7b7425a",
+      "rows": 14,
+      "dataset": "core_equity_display",
+      "format": "csv"
+    },
+    {
+      "path": "json/display_deals/part-000.json",
+      "bytes": 99743,
+      "sha256": "007c3affefa7852969ce4e39e5ab44d0b0af325cddbcd2b4c91c6392c073e18e",
+      "rows": 42,
+      "dataset": "display_deals",
+      "format": "json"
+    },
+    {
+      "path": "json/display_deals/part-001.json",
+      "bytes": 97697,
+      "sha256": "b35105aeef8348008271fe36069a792c59bb584cac01773f6553b8c428fbb833",
+      "rows": 41,
+      "dataset": "display_deals",
+      "format": "json"
+    },
+    {
+      "path": "json/display_deals/part-002.json",
+      "bytes": 98020,
+      "sha256": "35f300efbb5c0e5554024e426be1bb25a2da3e8fbda7947e88e2e7193c07e401",
+      "rows": 41,
+      "dataset": "display_deals",
+      "format": "json"
+    },
+    {
+      "path": "json/display_deals/part-003.json",
+      "bytes": 98058,
+      "sha256": "48ff69efe18b2257457820b06d854fc54fb2f9411233aafe88e49da43e1e1eb7",
+      "rows": 41,
+      "dataset": "display_deals",
+      "format": "json"
+    },
+    {
+      "path": "json/display_deals/part-004.json",
+      "bytes": 97679,
+      "sha256": "ac92bbfc0ce280b51f06f56aa729b339269893e19d3371e47d88151cef7cab64",
+      "rows": 40,
+      "dataset": "display_deals",
+      "format": "json"
+    },
+    {
+      "path": "json/display_deals/part-005.json",
+      "bytes": 99449,
+      "sha256": "de1507ee4ffb09515ad990cdc1cffc24f01eeaa797818351db1ee3017e98e2d4",
+      "rows": 41,
+      "dataset": "display_deals",
+      "format": "json"
+    },
+    {
+      "path": "json/display_deals/part-006.json",
+      "bytes": 98068,
+      "sha256": "c8690cc7fb9d4dbbf1eb580b6e7f207042ded824c958deb7e025812c63bad086",
+      "rows": 41,
+      "dataset": "display_deals",
+      "format": "json"
+    },
+    {
+      "path": "json/display_deals/part-007.json",
+      "bytes": 98683,
+      "sha256": "d91833de24c0167f86d9b6575f72542ff312061a8941a46240adf3e077a3b2de",
+      "rows": 41,
+      "dataset": "display_deals",
+      "format": "json"
+    },
+    {
+      "path": "json/display_deals/part-008.json",
+      "bytes": 99663,
+      "sha256": "cd2b6efd84642a9b320bf1c48c013b71c6bbbcbfebb392214bf36b8b0c66d5e1",
+      "rows": 42,
+      "dataset": "display_deals",
+      "format": "json"
+    },
+    {
+      "path": "json/display_deals/part-009.json",
+      "bytes": 97727,
+      "sha256": "3dc96619b5c1ab0f2ebe16dbf6f0d6e7c25dea0a2a6dbd6fc22e644095bd90ec",
+      "rows": 41,
+      "dataset": "display_deals",
+      "format": "json"
+    },
+    {
+      "path": "json/display_deals/part-010.json",
+      "bytes": 97931,
+      "sha256": "4f11f11e71da65b1de250511f6f2088f31f0116eecb5ea96d79e1ebc5f29351e",
+      "rows": 41,
+      "dataset": "display_deals",
+      "format": "json"
+    },
+    {
+      "path": "json/display_deals/part-011.json",
+      "bytes": 97773,
+      "sha256": "7e3581d5e8efe671668bc225bc223d097d6f701ce415849c460c929699886f49",
+      "rows": 41,
+      "dataset": "display_deals",
+      "format": "json"
+    },
+    {
+      "path": "json/display_deals/part-012.json",
+      "bytes": 98092,
+      "sha256": "b7c6fd5793077785e4ffe5e950e85a8d5b727a52c3e90b17cf7942a770ee0245",
+      "rows": 41,
+      "dataset": "display_deals",
+      "format": "json"
+    },
+    {
+      "path": "json/display_deals/part-013.json",
+      "bytes": 97863,
+      "sha256": "a4a279fa8616165e9bedaad794d882ddf425bbea117ca6b604e86f808bc23a3b",
+      "rows": 41,
+      "dataset": "display_deals",
+      "format": "json"
+    },
+    {
+      "path": "json/display_deals/part-014.json",
+      "bytes": 97860,
+      "sha256": "4997f562b7d67def38a31aa326873917958a9a0241706623f4983dbf9c891bd5",
+      "rows": 41,
+      "dataset": "display_deals",
+      "format": "json"
+    },
+    {
+      "path": "json/display_deals/part-015.json",
+      "bytes": 97905,
+      "sha256": "e0a43fb8528d0976a2043457f79b63b9af9647167d23f26bbe13f8791aea7249",
+      "rows": 41,
+      "dataset": "display_deals",
+      "format": "json"
+    },
+    {
+      "path": "json/display_deals/part-016.json",
+      "bytes": 98008,
+      "sha256": "575428010b858bc427eb4a591078858cc51624a785647161fadfbcb08a7e7f84",
+      "rows": 41,
+      "dataset": "display_deals",
+      "format": "json"
+    },
+    {
+      "path": "json/display_deals/part-017.json",
+      "bytes": 99749,
+      "sha256": "860e418d3289fda96adde840723c0d3c9bcd36eb20759cfc2241b68835e76999",
+      "rows": 42,
+      "dataset": "display_deals",
+      "format": "json"
+    },
+    {
+      "path": "json/display_deals/part-018.json",
+      "bytes": 99503,
+      "sha256": "5b650d5c3d4ab56ab962fbe0431b34c9316b29f2e7013eaf2302322588678b71",
+      "rows": 42,
+      "dataset": "display_deals",
+      "format": "json"
+    },
+    {
+      "path": "json/display_deals/part-019.json",
+      "bytes": 97939,
+      "sha256": "4905771f591cc768f3f3f2083e4a40f83a09f9c9704e54b768878b0f29b107c3",
+      "rows": 41,
+      "dataset": "display_deals",
+      "format": "json"
+    },
+    {
+      "path": "json/display_deals/part-020.json",
+      "bytes": 99372,
+      "sha256": "f839a986d5083bddc02d0bb85384d058fb3dad5323e460d8cfc43b28dd545a04",
+      "rows": 41,
+      "dataset": "display_deals",
+      "format": "json"
+    },
+    {
+      "path": "json/display_deals/part-021.json",
+      "bytes": 99319,
+      "sha256": "1d0201e329786836f0b6b7548e1092d6a5aeaba40d3be7d72d42c9bbb913214d",
+      "rows": 41,
+      "dataset": "display_deals",
+      "format": "json"
+    },
+    {
+      "path": "json/display_deals/part-022.json",
+      "bytes": 99525,
+      "sha256": "c4562778fff532fbadccae94ade9a8e5eb09ac51e9084ab264216b78a120b4bb",
+      "rows": 41,
+      "dataset": "display_deals",
+      "format": "json"
+    },
+    {
+      "path": "json/display_deals/part-023.json",
+      "bytes": 89305,
+      "sha256": "6649353ed8894efd4dfbc191164b7134d1820b1d5fbbf708a1d36623ee3f5bd5",
+      "rows": 37,
+      "dataset": "display_deals",
+      "format": "json"
+    },
+    {
+      "path": "csv/display_deals/part-000.csv",
+      "bytes": 99884,
+      "sha256": "bb4999e5258aa4ddc5cadbfbb44b9949ac5a39193816dea732b1c9426a549daa",
+      "rows": 221,
+      "dataset": "display_deals",
+      "format": "csv"
+    },
+    {
+      "path": "csv/display_deals/part-001.csv",
+      "bytes": 99610,
+      "sha256": "534cf341450185d3d5f5501f21f7bf6c5ea33360f62e379acfc40f00f3e18e6d",
+      "rows": 222,
+      "dataset": "display_deals",
+      "format": "csv"
+    },
+    {
+      "path": "csv/display_deals/part-002.csv",
+      "bytes": 99951,
+      "sha256": "40c54764048a319c4fceea3c97d63d82d3ec151b94501e1a541b06a76c6b74f5",
+      "rows": 226,
+      "dataset": "display_deals",
+      "format": "csv"
+    },
+    {
+      "path": "csv/display_deals/part-003.csv",
+      "bytes": 99587,
+      "sha256": "7e20c2671898be2747efa93255abad9f68782b56414a6204c307ed5858f36868",
+      "rows": 222,
+      "dataset": "display_deals",
+      "format": "csv"
+    },
+    {
+      "path": "csv/display_deals/part-004.csv",
+      "bytes": 45673,
+      "sha256": "95e5c476e4b89631382f1c1477b5c5475e4cfb5eb8b5fa42a81b3ea9a21a3b66",
+      "rows": 92,
+      "dataset": "display_deals",
+      "format": "csv"
+    },
+    {
+      "path": "json/ma_all/part-000.json",
+      "bytes": 99153,
+      "sha256": "17e718f7266976317d95baff55ca06a03df6cb9dae7d35868be20ec400e0da67",
+      "rows": 42,
+      "dataset": "ma_all",
+      "format": "json"
+    },
+    {
+      "path": "json/ma_all/part-001.json",
+      "bytes": 99057,
+      "sha256": "e8bbc1d691a70e75ed7430db6b2163074a45b3f06b8d8762515bb6d616c3f8aa",
+      "rows": 42,
+      "dataset": "ma_all",
+      "format": "json"
+    },
+    {
+      "path": "json/ma_all/part-002.json",
+      "bytes": 99816,
+      "sha256": "8d4511de85b9348cc3daab19c628c3e4ce471c4bd1afe64cb93fdf0904843c13",
+      "rows": 42,
+      "dataset": "ma_all",
+      "format": "json"
+    },
+    {
+      "path": "json/ma_all/part-003.json",
+      "bytes": 98379,
+      "sha256": "4e409fd122e9f84a4c5231da3a82b42ed1a0784aa6590bd98578690f0aa68504",
+      "rows": 41,
+      "dataset": "ma_all",
+      "format": "json"
+    },
+    {
+      "path": "json/ma_all/part-004.json",
+      "bytes": 98581,
+      "sha256": "bcb33ee9d57741e33a5d73ddd3ecf151dd3d445192c738aae1b6242339b37c49",
+      "rows": 41,
+      "dataset": "ma_all",
+      "format": "json"
+    },
+    {
+      "path": "json/ma_all/part-005.json",
+      "bytes": 97744,
+      "sha256": "652c353793d718f2ce13f172c6d9e35912c588af5f544faa998ab55b082a7810",
+      "rows": 41,
+      "dataset": "ma_all",
+      "format": "json"
+    },
+    {
+      "path": "json/ma_all/part-006.json",
+      "bytes": 99816,
+      "sha256": "cf00371a88b5a49e6bed515937d646e77c13a00627ca62b746d2ff29fa50781a",
+      "rows": 42,
+      "dataset": "ma_all",
+      "format": "json"
+    },
+    {
+      "path": "json/ma_all/part-007.json",
+      "bytes": 99406,
+      "sha256": "53f9e04bbc6f7493c651d00faaf2f7c308423cace269cc6024ff56f89ef75e56",
+      "rows": 42,
+      "dataset": "ma_all",
+      "format": "json"
+    },
+    {
+      "path": "json/ma_all/part-008.json",
+      "bytes": 31173,
+      "sha256": "272ea3ea8dfd9d870ec3bd1d066513d388100ecada8daf8f158bdf4668e7b9af",
+      "rows": 13,
+      "dataset": "ma_all",
+      "format": "json"
+    },
+    {
+      "path": "csv/ma_all/part-000.csv",
+      "bytes": 99796,
+      "sha256": "36dcff525d1fbe28e579f03a700ca457f62b3fee94e5c233604d84ed9b0848e5",
+      "rows": 241,
+      "dataset": "ma_all",
+      "format": "csv"
+    },
+    {
+      "path": "csv/ma_all/part-001.csv",
+      "bytes": 44697,
+      "sha256": "45ff0e43406b362cc9cbfc9106f7512b4ba618d01999865987c65e747e94f0cd",
+      "rows": 105,
+      "dataset": "ma_all",
+      "format": "csv"
+    },
+    {
+      "path": "json/ma_announcements_2026/part-000.json",
+      "bytes": 99153,
+      "sha256": "17e718f7266976317d95baff55ca06a03df6cb9dae7d35868be20ec400e0da67",
+      "rows": 42,
+      "dataset": "ma_announcements_2026",
+      "format": "json"
+    },
+    {
+      "path": "json/ma_announcements_2026/part-001.json",
+      "bytes": 99107,
+      "sha256": "c9b1f24b12b6b2398aff6bbd768112cecb0260fd6e92b64a3baa49367f7da386",
+      "rows": 42,
+      "dataset": "ma_announcements_2026",
+      "format": "json"
+    },
+    {
+      "path": "json/ma_announcements_2026/part-002.json",
+      "bytes": 99797,
+      "sha256": "5a7ec17047e0c626c98e72b6fc44879e1c544523875a7cc20572eea1a6cf865e",
+      "rows": 42,
+      "dataset": "ma_announcements_2026",
+      "format": "json"
+    },
+    {
+      "path": "json/ma_announcements_2026/part-003.json",
+      "bytes": 98480,
+      "sha256": "36b902593ccf7340301ef4bc77cb6e12cd25dca3e3124b374b92c6180be1a5a8",
+      "rows": 41,
+      "dataset": "ma_announcements_2026",
+      "format": "json"
+    },
+    {
+      "path": "json/ma_announcements_2026/part-004.json",
+      "bytes": 98525,
+      "sha256": "52e034fc68064fdd04fd8f1ae567bece8027087fcadb5e6a889f0a1e75c871f9",
+      "rows": 41,
+      "dataset": "ma_announcements_2026",
+      "format": "json"
+    },
+    {
+      "path": "json/ma_announcements_2026/part-005.json",
+      "bytes": 99602,
+      "sha256": "702ea176896646bce9422c2b9c03e5b97ad9bfa6c4b20adb94ffbe23cab143a9",
+      "rows": 42,
+      "dataset": "ma_announcements_2026",
+      "format": "json"
+    },
+    {
+      "path": "json/ma_announcements_2026/part-006.json",
+      "bytes": 11983,
+      "sha256": "55e7ed7142a56edda2a0636298f4f9f0a6fc8dfec0fe79615ff223913df25cc3",
+      "rows": 5,
+      "dataset": "ma_announcements_2026",
+      "format": "json"
+    },
+    {
+      "path": "csv/ma_announcements_2026/part-000.csv",
+      "bytes": 99677,
+      "sha256": "9cf4a0db585a3c1fe1d6ebafbb9e9a06b4ebbc8669e1057bef669ba7d6d9ce92",
+      "rows": 241,
+      "dataset": "ma_announcements_2026",
+      "format": "csv"
+    },
+    {
+      "path": "csv/ma_announcements_2026/part-001.csv",
+      "bytes": 7231,
+      "sha256": "72b51a69a5160b0a2030bf63ded377afdd65ec0851f258936e53d12a3b0614bc",
+      "rows": 14,
+      "dataset": "ma_announcements_2026",
+      "format": "csv"
+    },
+    {
+      "path": "json/ma_closings_2026/part-000.json",
+      "bytes": 65342,
+      "sha256": "1de3126ae251d22f38f4f3e4efeb5ee0116c64a4ce3d0d54c8c44e1cdfae04b6",
+      "rows": 27,
+      "dataset": "ma_closings_2026",
+      "format": "json"
+    },
+    {
+      "path": "csv/ma_closings_2026/part-000.csv",
+      "bytes": 14096,
+      "sha256": "f250335c82e42f5e9d1e31c20b74d2f625901c178649fd9a132a07df3d31b241",
+      "rows": 27,
+      "dataset": "ma_closings_2026",
+      "format": "csv"
+    },
+    {
+      "path": "json/reviewed_deals/part-000.json",
+      "bytes": 99903,
+      "sha256": "a1caa03b6ad8643d77e8502c276a34fcfeb97ce295a0b3bea35583874bb576cc",
+      "rows": 42,
+      "dataset": "reviewed_deals",
+      "format": "json"
+    },
+    {
+      "path": "json/reviewed_deals/part-001.json",
+      "bytes": 99583,
+      "sha256": "8c7f2bb9ac8138b41c0642d3f170e21abd28e3360ed77c7a5f7597c86fadeadb",
+      "rows": 42,
+      "dataset": "reviewed_deals",
+      "format": "json"
+    },
+    {
+      "path": "json/reviewed_deals/part-002.json",
+      "bytes": 99347,
+      "sha256": "6068aa5cb12452f74e0cd40d23ee899001c489f90d356c4dc8f610a3d93a8a30",
+      "rows": 42,
+      "dataset": "reviewed_deals",
+      "format": "json"
+    },
+    {
+      "path": "json/reviewed_deals/part-003.json",
+      "bytes": 98114,
+      "sha256": "ae9c89880ccc16103a132cdc58fbf0db785f3ff188533a3c08d90fd68308b100",
+      "rows": 41,
+      "dataset": "reviewed_deals",
+      "format": "json"
+    },
+    {
+      "path": "json/reviewed_deals/part-004.json",
+      "bytes": 97676,
+      "sha256": "e676ba683895aae6695ed5aaebad3b280aa1cdd4e1d44e1517d3b590054b9f64",
+      "rows": 41,
+      "dataset": "reviewed_deals",
+      "format": "json"
+    },
+    {
+      "path": "json/reviewed_deals/part-005.json",
+      "bytes": 97922,
+      "sha256": "77869f0a6085eb949564384574856a4788a5d92ee9dcb956f13c68f8270a01e9",
+      "rows": 41,
+      "dataset": "reviewed_deals",
+      "format": "json"
+    },
+    {
+      "path": "json/reviewed_deals/part-006.json",
+      "bytes": 98098,
+      "sha256": "a728065bfbfa683d6799e8aa615c20542e0457fbb04abce4177130b53a03da56",
+      "rows": 41,
+      "dataset": "reviewed_deals",
+      "format": "json"
+    },
+    {
+      "path": "json/reviewed_deals/part-007.json",
+      "bytes": 98844,
+      "sha256": "7c0e5d216c1be2f258923d2dbdaa51186d8b389eca960400aa9c5c67bdfa4e5d",
+      "rows": 41,
+      "dataset": "reviewed_deals",
+      "format": "json"
+    },
+    {
+      "path": "json/reviewed_deals/part-008.json",
+      "bytes": 99285,
+      "sha256": "b16eea7039e0849d2788c4f44ea7e642935995206c0f4d67b287e1982e525dd8",
+      "rows": 41,
+      "dataset": "reviewed_deals",
+      "format": "json"
+    },
+    {
+      "path": "json/reviewed_deals/part-009.json",
+      "bytes": 99873,
+      "sha256": "75726772d5752201098618e39696f2a99f6cd6d8ea0b464d86c8ea08b217299f",
+      "rows": 41,
+      "dataset": "reviewed_deals",
+      "format": "json"
+    },
+    {
+      "path": "json/reviewed_deals/part-010.json",
+      "bytes": 99164,
+      "sha256": "943384d4a5d68be205400b8f0888bf0714f5d57d9fea5003c035a1bbfbdb845b",
+      "rows": 41,
+      "dataset": "reviewed_deals",
+      "format": "json"
+    },
+    {
+      "path": "json/reviewed_deals/part-011.json",
+      "bytes": 97967,
+      "sha256": "2766ea23b4bdd596fd1bd716c10aabaf8c1a29beee511fe312f0e1ae2e2d3bc1",
+      "rows": 41,
+      "dataset": "reviewed_deals",
+      "format": "json"
+    },
+    {
+      "path": "json/reviewed_deals/part-012.json",
+      "bytes": 98137,
+      "sha256": "7d8d8023aebb269777f63b4200f70ca375203699e89c6a319b4bc891815800ee",
+      "rows": 41,
+      "dataset": "reviewed_deals",
+      "format": "json"
+    },
+    {
+      "path": "json/reviewed_deals/part-013.json",
+      "bytes": 98637,
+      "sha256": "16e8f15fead6b78a18a06ebc15de9c6076e04039494d0c557f645fcafc0f371b",
+      "rows": 41,
+      "dataset": "reviewed_deals",
+      "format": "json"
+    },
+    {
+      "path": "json/reviewed_deals/part-014.json",
+      "bytes": 99556,
+      "sha256": "9760026e4e4bb26621ce7e5d93db4f6e3c9395cdb24ee3cc267fd843f2ca17ec",
+      "rows": 42,
+      "dataset": "reviewed_deals",
+      "format": "json"
+    },
+    {
+      "path": "json/reviewed_deals/part-015.json",
+      "bytes": 97777,
+      "sha256": "d243313e0a113d5b83f589e19f3ac9350fd0c445e34f6a45522f32910a4b0c60",
+      "rows": 41,
+      "dataset": "reviewed_deals",
+      "format": "json"
+    },
+    {
+      "path": "json/reviewed_deals/part-016.json",
+      "bytes": 97899,
+      "sha256": "2e2454506019276d4f488d43bd2896ab31a5f84175ea4f590630d0c938599e79",
+      "rows": 41,
+      "dataset": "reviewed_deals",
+      "format": "json"
+    },
+    {
+      "path": "json/reviewed_deals/part-017.json",
+      "bytes": 98722,
+      "sha256": "b730092ead122fef8ff0c4bbc99a154f86ff227eb33b55c895aea05c75cbb97d",
+      "rows": 41,
+      "dataset": "reviewed_deals",
+      "format": "json"
+    },
+    {
+      "path": "json/reviewed_deals/part-018.json",
+      "bytes": 97740,
+      "sha256": "dc6c1e2371844e3a9a32b4eae75370fa1b71a1598e6e07f27e7777dd579dc78f",
+      "rows": 41,
+      "dataset": "reviewed_deals",
+      "format": "json"
+    },
+    {
+      "path": "json/reviewed_deals/part-019.json",
+      "bytes": 97778,
+      "sha256": "c75bd2f1a396e7e1d9a835dc7f1e30e324ffe9c2d5f942473284f93b9e6c1700",
+      "rows": 41,
+      "dataset": "reviewed_deals",
+      "format": "json"
+    },
+    {
+      "path": "json/reviewed_deals/part-020.json",
+      "bytes": 98093,
+      "sha256": "d660e64875f29f779b696e731984cba35a5d72c30f71e0eecda49e8cde9079b1",
+      "rows": 41,
+      "dataset": "reviewed_deals",
+      "format": "json"
+    },
+    {
+      "path": "json/reviewed_deals/part-021.json",
+      "bytes": 97848,
+      "sha256": "ade0053a3b06a8a52b7aa534d658c8f388d62e6755a1a9a5accecf71edb345e5",
+      "rows": 41,
+      "dataset": "reviewed_deals",
+      "format": "json"
+    },
+    {
+      "path": "json/reviewed_deals/part-022.json",
+      "bytes": 97926,
+      "sha256": "9e17af0c5712c3d128c708e1350d4d1ed2e181587306d728ac6db3b78d28a4e0",
+      "rows": 41,
+      "dataset": "reviewed_deals",
+      "format": "json"
+    },
+    {
+      "path": "json/reviewed_deals/part-023.json",
+      "bytes": 97872,
+      "sha256": "3be7230f7c8b71fecfd80b40675f35e8b000a8dc997d6be3c074cdc111f7957b",
+      "rows": 41,
+      "dataset": "reviewed_deals",
+      "format": "json"
+    },
+    {
+      "path": "json/reviewed_deals/part-024.json",
+      "bytes": 98196,
+      "sha256": "d4f2442dcc83cf2b7442bb3bb13198129f6f1ef709ff47aaf8902773d8d95bac",
+      "rows": 41,
+      "dataset": "reviewed_deals",
+      "format": "json"
+    },
+    {
+      "path": "json/reviewed_deals/part-025.json",
+      "bytes": 97746,
+      "sha256": "682a636c9246f4f52dade8ba0ea568f3e1628a33e2a7b2fdb86edce9ba6c1840",
+      "rows": 41,
+      "dataset": "reviewed_deals",
+      "format": "json"
+    },
+    {
+      "path": "json/reviewed_deals/part-026.json",
+      "bytes": 99860,
+      "sha256": "b6095026e767436a4dc17de1f31ab977211d622fb30d71f20cabce82aed10cf2",
+      "rows": 42,
+      "dataset": "reviewed_deals",
+      "format": "json"
+    },
+    {
+      "path": "json/reviewed_deals/part-027.json",
+      "bytes": 99632,
+      "sha256": "3e6e5170e89675b691c824fde01f03674c3843037b33c3e851b8144acd81883d",
+      "rows": 42,
+      "dataset": "reviewed_deals",
+      "format": "json"
+    },
+    {
+      "path": "json/reviewed_deals/part-028.json",
+      "bytes": 99750,
+      "sha256": "3dea958467c39c4502379b5b711d313a21d7a37cdd3696e9bcd99eeaed209770",
+      "rows": 42,
+      "dataset": "reviewed_deals",
+      "format": "json"
+    },
+    {
+      "path": "json/reviewed_deals/part-029.json",
+      "bytes": 98410,
+      "sha256": "791f6e8bcf9235aad5a1114e2329f559750af67c60c6df9cf645929dbb7e78c8",
+      "rows": 41,
+      "dataset": "reviewed_deals",
+      "format": "json"
+    },
+    {
+      "path": "json/reviewed_deals/part-030.json",
+      "bytes": 98870,
+      "sha256": "59bc5d052e6631e96ff14833ef778134bca68f431fd707836690020b31c40519",
+      "rows": 41,
+      "dataset": "reviewed_deals",
+      "format": "json"
+    },
+    {
+      "path": "json/reviewed_deals/part-031.json",
+      "bytes": 99117,
+      "sha256": "81a156ffae5177220bca7ded821e48fe2702f1b5b0f0f7c2c7fa61f084d5501b",
+      "rows": 41,
+      "dataset": "reviewed_deals",
+      "format": "json"
+    },
+    {
+      "path": "json/reviewed_deals/part-032.json",
+      "bytes": 99496,
+      "sha256": "50159f3226ae79c2c708a5b9f5dea174dc1e2d24c4b08744b640fc6e82ef6b52",
+      "rows": 41,
+      "dataset": "reviewed_deals",
+      "format": "json"
+    },
+    {
+      "path": "json/reviewed_deals/part-033.json",
+      "bytes": 99122,
+      "sha256": "363ef5b14c81e59c19372b004dff6622e2eeababcc0bd685d4a7f706f730d13e",
+      "rows": 41,
+      "dataset": "reviewed_deals",
+      "format": "json"
+    },
+    {
+      "path": "json/reviewed_deals/part-034.json",
+      "bytes": 98316,
+      "sha256": "d63cc9cdd01ac0fdaaab5877023a4eb13205b95502c516b0785cc3dc458ebc53",
+      "rows": 41,
+      "dataset": "reviewed_deals",
+      "format": "json"
+    },
+    {
+      "path": "json/reviewed_deals/part-035.json",
+      "bytes": 86628,
+      "sha256": "43234a129339155f43062354a0d99cdf55dcf97ed2530b7f60c584d7b257fb9f",
+      "rows": 36,
+      "dataset": "reviewed_deals",
+      "format": "json"
+    },
+    {
+      "path": "csv/reviewed_deals/part-000.csv",
+      "bytes": 99864,
+      "sha256": "12dd13a5f74a09bb1eda52293f01247191bae9f307fe516cc1cca052de8f74cc",
+      "rows": 237,
+      "dataset": "reviewed_deals",
+      "format": "csv"
+    },
+    {
+      "path": "csv/reviewed_deals/part-001.csv",
+      "bytes": 99673,
+      "sha256": "d9877d375d3f549b9e2beadfe66782eb14e935df27544b42ccd92a288570ea72",
+      "rows": 215,
+      "dataset": "reviewed_deals",
+      "format": "csv"
+    },
+    {
+      "path": "csv/reviewed_deals/part-002.csv",
+      "bytes": 99643,
+      "sha256": "120cde3143d43db629f1e846f63d4f6b8fdf59d5d90e51bf5ae448781c8823f4",
+      "rows": 225,
+      "dataset": "reviewed_deals",
+      "format": "csv"
+    },
+    {
+      "path": "csv/reviewed_deals/part-003.csv",
+      "bytes": 99819,
+      "sha256": "41a3921f1e0e0ee913e3868023ae71be26ce20d69b29d089d3c5990e868d5fb8",
+      "rows": 224,
+      "dataset": "reviewed_deals",
+      "format": "csv"
+    },
+    {
+      "path": "csv/reviewed_deals/part-004.csv",
+      "bytes": 99610,
+      "sha256": "3cc49c01033a859b55cd74b2f0a5d121e54ca45ea47ae7e06064ab187dd3d229",
+      "rows": 227,
+      "dataset": "reviewed_deals",
+      "format": "csv"
+    },
+    {
+      "path": "csv/reviewed_deals/part-005.csv",
+      "bytes": 99564,
+      "sha256": "480fa7b6c144424c90b3dfd3be710bcd212547d9e6a58894d6e7c9aef5c7df17",
+      "rows": 218,
+      "dataset": "reviewed_deals",
+      "format": "csv"
+    },
+    {
+      "path": "csv/reviewed_deals/part-006.csv",
+      "bytes": 61978,
+      "sha256": "3615a404a253bc67757be136d1e6d0d13c6155b9b5d1748a943513381eedcb89",
+      "rows": 132,
+      "dataset": "reviewed_deals",
+      "format": "csv"
+    },
+    {
+      "path": "json/sources/part-000.json",
+      "bytes": 99700,
+      "sha256": "0a39b8f5d3ddf8f1dfd14427795a8c4fdd4ce9a45cf8aedbb223dc0653513b3a",
+      "rows": 414,
+      "dataset": "sources",
+      "format": "json"
+    },
+    {
+      "path": "json/sources/part-001.json",
+      "bytes": 99776,
+      "sha256": "69454f176a4d1b8a730f8a02985d209daa1dce0efebf7118c06a7c09a8e9faa4",
+      "rows": 351,
+      "dataset": "sources",
+      "format": "json"
+    },
+    {
+      "path": "json/sources/part-002.json",
+      "bytes": 99922,
+      "sha256": "62188731ac3f90aae46dd84f7304e1c558ec172a8c29a6b06b97a5ec6e53acf1",
+      "rows": 387,
+      "dataset": "sources",
+      "format": "json"
+    },
+    {
+      "path": "json/sources/part-003.json",
+      "bytes": 99946,
+      "sha256": "e52a89ad3d9cea8ae53f6ab8cc607739f2c2d3a1d3a8f8fd124e9f3bdf45c3d9",
+      "rows": 427,
+      "dataset": "sources",
+      "format": "json"
+    },
+    {
+      "path": "json/sources/part-004.json",
+      "bytes": 99929,
+      "sha256": "edb1efe1f842c30ee1cb67515c1cad07ef055f5c4e98a10cb00d9f2ee33943ea",
+      "rows": 405,
+      "dataset": "sources",
+      "format": "json"
+    },
+    {
+      "path": "json/sources/part-005.json",
+      "bytes": 15249,
+      "sha256": "4277f62cd707a55ad4f79ba201a23aa84790eb35f800a9c300c6697496e543a7",
+      "rows": 56,
+      "dataset": "sources",
+      "format": "json"
+    },
+    {
+      "path": "csv/sources/part-000.csv",
+      "bytes": 99864,
+      "sha256": "a074fe73301f8545f0898b5c833acae21ebe9293964912e4022dfb2a24a3b1dd",
+      "rows": 670,
+      "dataset": "sources",
+      "format": "csv"
+    },
+    {
+      "path": "csv/sources/part-001.csv",
+      "bytes": 99989,
+      "sha256": "876ac082553514372eeb392955678723ac5de26f796b97e37e0c20b47dd328ab",
+      "rows": 658,
+      "dataset": "sources",
+      "format": "csv"
+    },
+    {
+      "path": "csv/sources/part-002.csv",
+      "bytes": 93858,
+      "sha256": "328fa4e567f2fe159e3ee83687b8a4a140f7712352ab6d51f71da95a16bede87",
+      "rows": 712,
+      "dataset": "sources",
+      "format": "csv"
+    },
+    {
+      "path": "json/event_sources/part-000.json",
+      "bytes": 99978,
+      "sha256": "83ccd9812340766f5de850c673e428111ed0a0b5fdb4c4ffd5abcf49e69d994b",
+      "rows": 947,
+      "dataset": "event_sources",
+      "format": "json"
+    },
+    {
+      "path": "json/event_sources/part-001.json",
+      "bytes": 99917,
+      "sha256": "eaf51bd58042c8573b2cc197f79b81b9700d1b8ad78a515706b4a2f5a8c98ead",
+      "rows": 922,
+      "dataset": "event_sources",
+      "format": "json"
+    },
+    {
+      "path": "json/event_sources/part-002.json",
+      "bytes": 99900,
+      "sha256": "ff90bcc8b884eec5ba99917c83bfc3fc40e45b6c3d09d099835f0c6018c5fedb",
+      "rows": 919,
+      "dataset": "event_sources",
+      "format": "json"
+    },
+    {
+      "path": "json/event_sources/part-003.json",
+      "bytes": 81390,
+      "sha256": "7529d13591a6cec8d1973c24267d71aa589c60234352b24a593b6c3cf868fdb5",
+      "rows": 761,
+      "dataset": "event_sources",
+      "format": "json"
+    },
+    {
+      "path": "csv/event_sources/part-000.csv",
+      "bytes": 99996,
+      "sha256": "6872d6cc4f3f743f7f18d689de97eca57e46a6ffbc967f66fe0663d62835cfc7",
+      "rows": 1996,
+      "dataset": "event_sources",
+      "format": "csv"
+    },
+    {
+      "path": "csv/event_sources/part-001.csv",
+      "bytes": 78974,
+      "sha256": "c7a61da3403b0985432dd499b48f0e7c665320473e799316f25fc08a69629b24",
+      "rows": 1553,
+      "dataset": "event_sources",
+      "format": "csv"
+    },
+    {
+      "path": "json/investors/part-000.json",
+      "bytes": 99959,
+      "sha256": "dfb6f46ba4ad10ea7696b2f98759ed804179c9c8d98db2facd5c61f2f8d33ad4",
+      "rows": 1068,
+      "dataset": "investors",
+      "format": "json"
+    },
+    {
+      "path": "json/investors/part-001.json",
+      "bytes": 51819,
+      "sha256": "4935a51d2378eb63fe3f719c899af6dfaee2327399f1e07fc1d17fdd5679ac44",
+      "rows": 546,
+      "dataset": "investors",
+      "format": "json"
+    },
+    {
+      "path": "csv/investors/part-000.csv",
+      "bytes": 85631,
+      "sha256": "fbc786c96fff2db54a82530b035735a1a2b11a741ddd0d3834cafb1e7ea3ec13",
+      "rows": 1614,
+      "dataset": "investors",
+      "format": "csv"
+    },
+    {
+      "path": "json/event_investors/part-000.json",
+      "bytes": 99961,
+      "sha256": "a4249cf14a958fd7781c701568802b5163cd913b0a64c34f7fbe5fc72bc65600",
+      "rows": 1210,
+      "dataset": "event_investors",
+      "format": "json"
+    },
+    {
+      "path": "json/event_investors/part-001.json",
+      "bytes": 99964,
+      "sha256": "52b2bb04db38f1057bffe4476836a5880fdbd53f8568dcc8e4119d1a374d80bf",
+      "rows": 1186,
+      "dataset": "event_investors",
+      "format": "json"
+    },
+    {
+      "path": "json/event_investors/part-002.json",
+      "bytes": 53839,
+      "sha256": "89289841056f868e3f5828f599f23d57909a371e461f73298a75076875cfdf98",
+      "rows": 637,
+      "dataset": "event_investors",
+      "format": "json"
+    },
+    {
+      "path": "csv/event_investors/part-000.csv",
+      "bytes": 99996,
+      "sha256": "538d0a3c0d364629617f30248d819bb535eff73e1367a0b2a868d25acc2b28f8",
+      "rows": 2470,
+      "dataset": "event_investors",
+      "format": "csv"
+    },
+    {
+      "path": "csv/event_investors/part-001.csv",
+      "bytes": 23409,
+      "sha256": "02b63a56b27abba410cd8cb8b13ea9ced6f3a4da37bf88f802ec9189f3549707",
+      "rows": 563,
+      "dataset": "event_investors",
+      "format": "csv"
+    },
+    {
+      "path": "json/lifecycle_groups/part-000.json",
+      "bytes": 99967,
+      "sha256": "a6310ec122325d7e920ce9ac0fdf1f3a2eea9506fa706309cfd809684caf46d8",
+      "rows": 437,
+      "dataset": "lifecycle_groups",
+      "format": "json"
+    },
+    {
+      "path": "json/lifecycle_groups/part-001.json",
+      "bytes": 99846,
+      "sha256": "0668a271d49410e410881702dea1fca0cf5d231fea4bf66ff2eb676bdc166b7e",
+      "rows": 436,
+      "dataset": "lifecycle_groups",
+      "format": "json"
+    },
+    {
+      "path": "json/lifecycle_groups/part-002.json",
+      "bytes": 99926,
+      "sha256": "d06bcd71c5aa7d6682c50a0c31110ce7782aae3664d38fac092636722abd7426",
+      "rows": 435,
+      "dataset": "lifecycle_groups",
+      "format": "json"
+    },
+    {
+      "path": "json/lifecycle_groups/part-003.json",
+      "bytes": 99875,
+      "sha256": "ff7e4ec4525a78b5a90eda6f00b88135663374b87b028db0dec72bbdbe38aaa3",
+      "rows": 449,
+      "dataset": "lifecycle_groups",
+      "format": "json"
+    },
+    {
+      "path": "json/lifecycle_groups/part-004.json",
+      "bytes": 56531,
+      "sha256": "6d02c11894f71e742ea2fe60e26e173beaad81d9ab6dc2205edd213d99a6a803",
+      "rows": 299,
+      "dataset": "lifecycle_groups",
+      "format": "json"
+    },
+    {
+      "path": "csv/lifecycle_groups/part-000.csv",
+      "bytes": 99957,
+      "sha256": "6d117ca046b06f46334c60f70fbab6ad01ed3cadd0d9bd4bd2e5f279cceab486",
+      "rows": 637,
+      "dataset": "lifecycle_groups",
+      "format": "csv"
+    },
+    {
+      "path": "csv/lifecycle_groups/part-001.csv",
+      "bytes": 99866,
+      "sha256": "8b98d6c7c7cdab4805d023454497a4cdfb566cc09620914abd730e7018921817",
+      "rows": 634,
+      "dataset": "lifecycle_groups",
+      "format": "csv"
+    },
+    {
+      "path": "csv/lifecycle_groups/part-002.csv",
+      "bytes": 99914,
+      "sha256": "b4b80906b5d36bb506fab13c2e04096d6a77f2a3bea4df9d1d2600e5487e657a",
+      "rows": 714,
+      "dataset": "lifecycle_groups",
+      "format": "csv"
+    },
+    {
+      "path": "csv/lifecycle_groups/part-003.csv",
+      "bytes": 8590,
+      "sha256": "12245930b7892ff2c322bf49516e4be03b8ae1da549a946847e49100c90391b2",
+      "rows": 71,
+      "dataset": "lifecycle_groups",
+      "format": "csv"
+    },
+    {
+      "path": "json/quality_flags/part-000.json",
+      "bytes": 99873,
+      "sha256": "7370736da518bfb001cefd9910030596e846639339e755c12e4c47a4d68fc067",
+      "rows": 648,
+      "dataset": "quality_flags",
+      "format": "json"
+    },
+    {
+      "path": "json/quality_flags/part-001.json",
+      "bytes": 99943,
+      "sha256": "06c64565d55fd116b213bced792e76bd7715f67beb5d902e02826925baf97cbe",
+      "rows": 646,
+      "dataset": "quality_flags",
+      "format": "json"
+    },
+    {
+      "path": "json/quality_flags/part-002.json",
+      "bytes": 99932,
+      "sha256": "08289ccc9ca9bf75753bd85b6da0e004c0b3a3ea5d99f4cdcedd08d52bdba2cf",
+      "rows": 643,
+      "dataset": "quality_flags",
+      "format": "json"
+    },
+    {
+      "path": "json/quality_flags/part-003.json",
+      "bytes": 99886,
+      "sha256": "fc823c3dba925abd723fdeeed82749b16b98e54045548f76bb058fcd2af8f6c1",
+      "rows": 642,
+      "dataset": "quality_flags",
+      "format": "json"
+    },
+    {
+      "path": "json/quality_flags/part-004.json",
+      "bytes": 99888,
+      "sha256": "a0a796bdc6b769c798772c960401477176f2a0fb2dd9c3f07c2ad580f561901e",
+      "rows": 632,
+      "dataset": "quality_flags",
+      "format": "json"
+    },
+    {
+      "path": "json/quality_flags/part-005.json",
+      "bytes": 99889,
+      "sha256": "39ffa8eed2736222e6277d884005f6ee2f85d7eb1b1a8d14f208c67178a5cfa2",
+      "rows": 612,
+      "dataset": "quality_flags",
+      "format": "json"
+    },
+    {
+      "path": "json/quality_flags/part-006.json",
+      "bytes": 99880,
+      "sha256": "e89c8a8eaba934a1242b355201b1d5876063cbbfabc86ce8169b4c8439a68edd",
+      "rows": 607,
+      "dataset": "quality_flags",
+      "format": "json"
+    },
+    {
+      "path": "json/quality_flags/part-007.json",
+      "bytes": 10511,
+      "sha256": "2446ccd4b51e4d776486a224056785594d26792b06a450b805965692eefb8818",
+      "rows": 63,
+      "dataset": "quality_flags",
+      "format": "json"
+    },
+    {
+      "path": "csv/quality_flags/part-000.csv",
+      "bytes": 99988,
+      "sha256": "cff6965e35b1b7b1d3e18625a1a16db4a63007f0d433acd9ae45ccfcd5413696",
+      "rows": 1418,
+      "dataset": "quality_flags",
+      "format": "csv"
+    },
+    {
+      "path": "csv/quality_flags/part-001.csv",
+      "bytes": 99993,
+      "sha256": "a21fb13f46355a17efe018dddae4ec3fe125e6481b588b485a6658fb75db22bf",
+      "rows": 1394,
+      "dataset": "quality_flags",
+      "format": "csv"
+    },
+    {
+      "path": "csv/quality_flags/part-002.csv",
+      "bytes": 99979,
+      "sha256": "4255eeaff462746ff7f46a759036a8fc35e3a8b600aa5ea34f0d831fada684fb",
+      "rows": 1234,
+      "dataset": "quality_flags",
+      "format": "csv"
+    },
+    {
+      "path": "csv/quality_flags/part-003.csv",
+      "bytes": 38754,
+      "sha256": "e4272e305356cb1346ed8b63c8d175eacea0209212402dab08b71632436233b9",
+      "rows": 447,
+      "dataset": "quality_flags",
+      "format": "csv"
+    },
+    {
+      "path": "json/registry_records/part-000.json",
+      "bytes": 99983,
+      "sha256": "b4961a8d1ae7030caa3d317f0c9ae42b489ce7f1bdcc7ec3798dfb1a003dc8b7",
+      "rows": 812,
+      "dataset": "registry_records",
+      "format": "json"
+    },
+    {
+      "path": "json/registry_records/part-001.json",
+      "bytes": 64535,
+      "sha256": "1958a76b220444ea4c969de522b3bef2d0d01117d15cee3b8717065579335b43",
+      "rows": 519,
+      "dataset": "registry_records",
+      "format": "json"
+    },
+    {
+      "path": "csv/registry_records/part-000.csv",
+      "bytes": 71400,
+      "sha256": "2d9f4f442bd274e7cc72866f64c1283dc2f6fcbac069812957f15c73226bbc63",
+      "rows": 1331,
+      "dataset": "registry_records",
+      "format": "csv"
+    },
+    {
+      "path": "json/registry_sources/part-000.json",
+      "bytes": 74497,
+      "sha256": "ea6a5347ac9ca50c496b2bd45f6620b87709b87bccdd6f70168e2a1d0187774e",
+      "rows": 650,
+      "dataset": "registry_sources",
+      "format": "json"
+    },
+    {
+      "path": "csv/registry_sources/part-000.csv",
+      "bytes": 30998,
+      "sha256": "dff1e7ea7754d3dea6a686fdd5cdd84ab47db391b2de659a5e386727341bbdf7",
+      "rows": 650,
+      "dataset": "registry_sources",
+      "format": "csv"
+    },
+    {
+      "path": "json/company_financial_snapshots/part-000.json",
+      "bytes": 80968,
+      "sha256": "c85422709824621935c0656171c00217150f19fb572ec477351639744e915bd2",
+      "rows": 167,
+      "dataset": "company_financial_snapshots",
+      "format": "json"
+    },
+    {
+      "path": "csv/company_financial_snapshots/part-000.csv",
+      "bytes": 24944,
+      "sha256": "5ebab35eac01c4e4bc5049e69e3ab954045448e71c439825b1ab1684eb0ba139",
+      "rows": 167,
+      "dataset": "company_financial_snapshots",
+      "format": "csv"
+    },
+    {
+      "path": "json/company_coverage/part-000.json",
+      "bytes": 99536,
+      "sha256": "66c30ce358aae1d21dbac6e8621fae3443dc9efb859a919880f4ea4ed3e56e11",
+      "rows": 135,
+      "dataset": "company_coverage",
+      "format": "json"
+    },
+    {
+      "path": "json/company_coverage/part-001.json",
+      "bytes": 99299,
+      "sha256": "089ba3a052d0140fe0993e4716394ff992946bff3fc783bdf15c2135d75c5ab3",
+      "rows": 136,
+      "dataset": "company_coverage",
+      "format": "json"
+    },
+    {
+      "path": "json/company_coverage/part-002.json",
+      "bytes": 99899,
+      "sha256": "26ef45eec4499d2f77436f140cc43ac9930012f4089e47e38cbb50d1ea5597d5",
+      "rows": 139,
+      "dataset": "company_coverage",
+      "format": "json"
+    },
+    {
+      "path": "json/company_coverage/part-003.json",
+      "bytes": 99984,
+      "sha256": "353e99f6917ea1afcf1f1b04bdc1407b6b07152c70ccacb1a5cd916174d2ae52",
+      "rows": 142,
+      "dataset": "company_coverage",
+      "format": "json"
+    },
+    {
+      "path": "json/company_coverage/part-004.json",
+      "bytes": 99368,
+      "sha256": "4f4a8bfd74d410863821195a77999fe6677d04e592419420b2f17a8b111b8a7f",
+      "rows": 143,
+      "dataset": "company_coverage",
+      "format": "json"
+    },
+    {
+      "path": "json/company_coverage/part-005.json",
+      "bytes": 99765,
+      "sha256": "4af9985542678117f1019bf415317959898ebb157fb0cca8732b575bf349285e",
+      "rows": 145,
+      "dataset": "company_coverage",
+      "format": "json"
+    },
+    {
+      "path": "json/company_coverage/part-006.json",
+      "bytes": 99846,
+      "sha256": "6b77498c760841b14433821fa99fd9633de60f6afd117be4a8800bbc93c113d1",
+      "rows": 145,
+      "dataset": "company_coverage",
+      "format": "json"
+    },
+    {
+      "path": "json/company_coverage/part-007.json",
+      "bytes": 99791,
+      "sha256": "7000c65941c970f035ba3ed503bab6faff60be7b975220225b42aeb345a87ae3",
+      "rows": 145,
+      "dataset": "company_coverage",
+      "format": "json"
+    },
+    {
+      "path": "json/company_coverage/part-008.json",
+      "bytes": 99736,
+      "sha256": "2c975744f78d866e5ada1143ef8d1ce758d7ebac371b2c470003ada97aecc97a",
+      "rows": 144,
+      "dataset": "company_coverage",
+      "format": "json"
+    },
+    {
+      "path": "json/company_coverage/part-009.json",
+      "bytes": 99578,
+      "sha256": "5d00a491f4f595a9a7d277bf5548cec067f22f332774fd814c1161e2918fe4d3",
+      "rows": 145,
+      "dataset": "company_coverage",
+      "format": "json"
+    },
+    {
+      "path": "json/company_coverage/part-010.json",
+      "bytes": 99935,
+      "sha256": "5928d44951cba41577cad4dd3739e904bac8b47b2ef783da7ed65d80855f5605",
+      "rows": 146,
+      "dataset": "company_coverage",
+      "format": "json"
+    },
+    {
+      "path": "json/company_coverage/part-011.json",
+      "bytes": 99935,
+      "sha256": "db76609309af78ecced6e719105686ffff2ea799f86546ba72e037916b689841",
+      "rows": 146,
+      "dataset": "company_coverage",
+      "format": "json"
+    },
+    {
+      "path": "json/company_coverage/part-012.json",
+      "bytes": 99809,
+      "sha256": "6845135aa366d2214e335f2a7b1f8e3f84dcb7528514cab0a31171d4a50bc156",
+      "rows": 146,
+      "dataset": "company_coverage",
+      "format": "json"
+    },
+    {
+      "path": "json/company_coverage/part-013.json",
+      "bytes": 99708,
+      "sha256": "bb6b9ff34376b8a08cd2d14ecb573eb25fcae10f5a3bd5b25e9fd5942892166c",
+      "rows": 146,
+      "dataset": "company_coverage",
+      "format": "json"
+    },
+    {
+      "path": "json/company_coverage/part-014.json",
+      "bytes": 99809,
+      "sha256": "e8b58a8cd519bf2a2d73e474bfbe23d2597381b98914c51bfadc3ec32b0de191",
+      "rows": 132,
+      "dataset": "company_coverage",
+      "format": "json"
+    },
+    {
+      "path": "json/company_coverage/part-015.json",
+      "bytes": 99493,
+      "sha256": "ee4cd4c0a8d3f1abca7aa869c236f52c23c5a4f127e35f64e0175608f46bf757",
+      "rows": 130,
+      "dataset": "company_coverage",
+      "format": "json"
+    },
+    {
+      "path": "json/company_coverage/part-016.json",
+      "bytes": 99511,
+      "sha256": "f29c1a9e583ec5c1d3e35c2d7dd64e31fdb8d36da7a46902fcb567d7a9ee19f8",
+      "rows": 130,
+      "dataset": "company_coverage",
+      "format": "json"
+    },
+    {
+      "path": "json/company_coverage/part-017.json",
+      "bytes": 99395,
+      "sha256": "30f0f909258a9ec2703c1987786c1fd16c8c8be8192679dadad9c67b9d622e1d",
+      "rows": 131,
+      "dataset": "company_coverage",
+      "format": "json"
+    },
+    {
+      "path": "json/company_coverage/part-018.json",
+      "bytes": 99953,
+      "sha256": "00d49efa98dfaced76dd6d8ddd5f83633c0bb0bc5d81bc5aef8da8c6984c2d8f",
+      "rows": 131,
+      "dataset": "company_coverage",
+      "format": "json"
+    },
+    {
+      "path": "json/company_coverage/part-019.json",
+      "bytes": 99889,
+      "sha256": "898a6bb1956f356c1f332a122c5506dcd17033f560a308b5449329d60ea301e2",
+      "rows": 139,
+      "dataset": "company_coverage",
+      "format": "json"
+    },
+    {
+      "path": "json/company_coverage/part-020.json",
+      "bytes": 33301,
+      "sha256": "a3c9f33f51be06d204966953fa7dcdfdc1f6f74d091bdd7dfcce724a222fbb11",
+      "rows": 49,
+      "dataset": "company_coverage",
+      "format": "json"
+    },
+    {
+      "path": "csv/company_coverage/part-000.csv",
+      "bytes": 99910,
+      "sha256": "c6deb5ee0f5bd4cb7682848e74275fc48fe0734132393809210f86337fab51a2",
+      "rows": 527,
+      "dataset": "company_coverage",
+      "format": "csv"
+    },
+    {
+      "path": "csv/company_coverage/part-001.csv",
+      "bytes": 99995,
+      "sha256": "352a809e94cfcab4836279a8985d10efdc8ecaddc1ddb4f7db604d931f62d17b",
+      "rows": 669,
+      "dataset": "company_coverage",
+      "format": "csv"
+    },
+    {
+      "path": "csv/company_coverage/part-002.csv",
+      "bytes": 99974,
+      "sha256": "69a99d92084a9c77b2e4d668c95bf84854499c5f5b4622cf90a85f301ec4aa9b",
+      "rows": 690,
+      "dataset": "company_coverage",
+      "format": "csv"
+    },
+    {
+      "path": "csv/company_coverage/part-003.csv",
+      "bytes": 99926,
+      "sha256": "d844297660687eaa01847452eec2407fc70ba304bdb1d05969f6ff6d4363ffc9",
+      "rows": 480,
+      "dataset": "company_coverage",
+      "format": "csv"
+    },
+    {
+      "path": "csv/company_coverage/part-004.csv",
+      "bytes": 98465,
+      "sha256": "dcdb6dac1cc56bf4eda964490703959ac76543561efd66cc4b53f94f2227d761",
+      "rows": 479,
+      "dataset": "company_coverage",
+      "format": "csv"
+    },
+    {
+      "path": "json/observations_all/part-000.json",
+      "bytes": 99895,
+      "sha256": "ae643e769cc2900a03e24e336d8141a6d59b4cd5b4112a2c852a3eca01b75be3",
+      "rows": 76,
+      "dataset": "observations_all",
+      "format": "json"
+    },
+    {
+      "path": "json/observations_all/part-001.json",
+      "bytes": 98697,
+      "sha256": "572d67b747e05eb8fcc897d9ec1818a2e2ea9b4ece7cf07ffb773909658ae262",
+      "rows": 75,
+      "dataset": "observations_all",
+      "format": "json"
+    },
+    {
+      "path": "json/observations_all/part-002.json",
+      "bytes": 98984,
+      "sha256": "46acf77989a8ed1e02e73f95bba79a708329c1cf28efce2b9fd6c1a0e86e0b1b",
+      "rows": 75,
+      "dataset": "observations_all",
+      "format": "json"
+    },
+    {
+      "path": "json/observations_all/part-003.json",
+      "bytes": 99712,
+      "sha256": "e9bbfd0cd33389f4e2a52409145214d4e49a9225bb22b0b5018fbe37ee98530d",
+      "rows": 76,
+      "dataset": "observations_all",
+      "format": "json"
+    },
+    {
+      "path": "json/observations_all/part-004.json",
+      "bytes": 99535,
+      "sha256": "cda0e9b968f0538419409553a41ebbf26fcb980921313271027a52ffd71f5f77",
+      "rows": 75,
+      "dataset": "observations_all",
+      "format": "json"
+    },
+    {
+      "path": "json/observations_all/part-005.json",
+      "bytes": 99867,
+      "sha256": "38de29f8b15b9e2203c7c59235362a86314c7ac366aeddef4ff2e802c5bb3755",
+      "rows": 76,
+      "dataset": "observations_all",
+      "format": "json"
+    },
+    {
+      "path": "json/observations_all/part-006.json",
+      "bytes": 99694,
+      "sha256": "5be5bc59b49cd196ef09f8071211457d9ceff2e4699d328c2d6376d2b4275056",
+      "rows": 75,
+      "dataset": "observations_all",
+      "format": "json"
+    },
+    {
+      "path": "json/observations_all/part-007.json",
+      "bytes": 99162,
+      "sha256": "d664c48546ec0e37b20d47d146ccb8ad05912d97c93faa5774f972cc22e143d0",
+      "rows": 75,
+      "dataset": "observations_all",
+      "format": "json"
+    },
+    {
+      "path": "json/observations_all/part-008.json",
+      "bytes": 99697,
+      "sha256": "9686a8147b566c41b73fac9c997ad735d8b6d2f81bd91b809880f806af7e7603",
+      "rows": 75,
+      "dataset": "observations_all",
+      "format": "json"
+    },
+    {
+      "path": "json/observations_all/part-009.json",
+      "bytes": 99164,
+      "sha256": "845d07ff3dac69a2f729b2fb1d57d7c6e5bda9d0c749fb46d1a0a1103bcd10c2",
+      "rows": 77,
+      "dataset": "observations_all",
+      "format": "json"
+    },
+    {
+      "path": "json/observations_all/part-010.json",
+      "bytes": 99503,
+      "sha256": "01a1483a7dab9596ede0069616adfbc6c8b64fdc3f844daec389b4fbbb24a411",
+      "rows": 78,
+      "dataset": "observations_all",
+      "format": "json"
+    },
+    {
+      "path": "json/observations_all/part-011.json",
+      "bytes": 99475,
+      "sha256": "40eb85da1c9b56a1c4e2d8ccd5101e0168f35a803ad8dd370c7aeddbdbb2ecc4",
+      "rows": 78,
+      "dataset": "observations_all",
+      "format": "json"
+    },
+    {
+      "path": "json/observations_all/part-012.json",
+      "bytes": 99352,
+      "sha256": "0cc7b3b89dfa5bf359f3b408b1ce999501d634098fc2bbca19683dd9c81bcc49",
+      "rows": 78,
+      "dataset": "observations_all",
+      "format": "json"
+    },
+    {
+      "path": "json/observations_all/part-013.json",
+      "bytes": 99435,
+      "sha256": "98b0c5b22d7c06501fd52133251402b96f3be37821d88c7ba9a62f7d034203b2",
+      "rows": 78,
+      "dataset": "observations_all",
+      "format": "json"
+    },
+    {
+      "path": "json/observations_all/part-014.json",
+      "bytes": 99437,
+      "sha256": "2140b4bf11ba2ab4c7237b6a97baee6c6af46605e6961b024e4fcfeeb6435d75",
+      "rows": 78,
+      "dataset": "observations_all",
+      "format": "json"
+    },
+    {
+      "path": "json/observations_all/part-015.json",
+      "bytes": 99808,
+      "sha256": "831854426f0dced0a4b22ca06ebb3684e816c4856204f7566df4996c98ca1fc0",
+      "rows": 78,
+      "dataset": "observations_all",
+      "format": "json"
+    },
+    {
+      "path": "json/observations_all/part-016.json",
+      "bytes": 99837,
+      "sha256": "7b2a57ab25489b1bdd1a1695efd22e8cae492251f6687d98b3e1abe870b24fd7",
+      "rows": 78,
+      "dataset": "observations_all",
+      "format": "json"
+    },
+    {
+      "path": "json/observations_all/part-017.json",
+      "bytes": 99800,
+      "sha256": "9726ed66a8fba09df09b00e842bc23ed1e544f059db74f838b2dbb6b241892f3",
+      "rows": 78,
+      "dataset": "observations_all",
+      "format": "json"
+    },
+    {
+      "path": "json/observations_all/part-018.json",
+      "bytes": 99806,
+      "sha256": "8f0fca8ec83ecfb92f9871839428d7f54316883a30c552d6c3687bdac079df3c",
+      "rows": 78,
+      "dataset": "observations_all",
+      "format": "json"
+    },
+    {
+      "path": "json/observations_all/part-019.json",
+      "bytes": 99652,
+      "sha256": "04d6f179f32d73aac512a1d6d4610d98bf123433b0628d258403b63e50e32c41",
+      "rows": 78,
+      "dataset": "observations_all",
+      "format": "json"
+    },
+    {
+      "path": "json/observations_all/part-020.json",
+      "bytes": 99798,
+      "sha256": "925709b7cd7c1106da0790836a947418170316a29476084710aae6ad08679543",
+      "rows": 78,
+      "dataset": "observations_all",
+      "format": "json"
+    },
+    {
+      "path": "json/observations_all/part-021.json",
+      "bytes": 99652,
+      "sha256": "c4ca7d8175b9f7ce56080689c89350d367391e3f9d1093b194ef2b784f11ffbe",
+      "rows": 78,
+      "dataset": "observations_all",
+      "format": "json"
+    },
+    {
+      "path": "json/observations_all/part-022.json",
+      "bytes": 99903,
+      "sha256": "a89ef1e14a0ff1b98ec66c94d270408a4f5e6d7d52a26eb494643c2f7b60746f",
+      "rows": 78,
+      "dataset": "observations_all",
+      "format": "json"
+    },
+    {
+      "path": "json/observations_all/part-023.json",
+      "bytes": 99974,
+      "sha256": "7a3792a90e977ee254d1242786338b2077cd5b0a9d60ebc030fcd516f941a094",
+      "rows": 78,
+      "dataset": "observations_all",
+      "format": "json"
+    },
+    {
+      "path": "json/observations_all/part-024.json",
+      "bytes": 99217,
+      "sha256": "1af922ae4ead918209934fa9dcd46f1423195ac5bf72668872ef53cf5e229521",
+      "rows": 78,
+      "dataset": "observations_all",
+      "format": "json"
+    },
+    {
+      "path": "json/observations_all/part-025.json",
+      "bytes": 99532,
+      "sha256": "a92f89a7b029866c9b87db0a27c447a4697844c82b33438e7b0d69ed0f01ba31",
+      "rows": 78,
+      "dataset": "observations_all",
+      "format": "json"
+    },
+    {
+      "path": "json/observations_all/part-026.json",
+      "bytes": 99552,
+      "sha256": "6e65f2ce927175c62b152a7512d233fd24f1701081c288a43d3f428540a19ff9",
+      "rows": 78,
+      "dataset": "observations_all",
+      "format": "json"
+    },
+    {
+      "path": "json/observations_all/part-027.json",
+      "bytes": 99722,
+      "sha256": "d035e716b3f53a52efd59c035e3c87c1345d2cfd565d5c456339d73091efe70e",
+      "rows": 78,
+      "dataset": "observations_all",
+      "format": "json"
+    },
+    {
+      "path": "json/observations_all/part-028.json",
+      "bytes": 99402,
+      "sha256": "55431f88b1c471f0457a7df49250fb6d7a19a55f52cffa6af1495d0d4d0503e7",
+      "rows": 78,
+      "dataset": "observations_all",
+      "format": "json"
+    },
+    {
+      "path": "json/observations_all/part-029.json",
+      "bytes": 99765,
+      "sha256": "af5378093ac2fdbd3b7d5ff92d7271b150b6b58d7e248864df68142c5b975563",
+      "rows": 78,
+      "dataset": "observations_all",
+      "format": "json"
+    },
+    {
+      "path": "json/observations_all/part-030.json",
+      "bytes": 99487,
+      "sha256": "ac13a311dbb54a1e1c8f33696f89ae07a1bd554b9b040eed2d1fa57cf63ea14f",
+      "rows": 78,
+      "dataset": "observations_all",
+      "format": "json"
+    },
+    {
+      "path": "json/observations_all/part-031.json",
+      "bytes": 99298,
+      "sha256": "5cb1baa70c2d21a6d073fd690b3a221aa93cf59c988946a6ec028ccda7fe3e90",
+      "rows": 77,
+      "dataset": "observations_all",
+      "format": "json"
+    },
+    {
+      "path": "json/observations_all/part-032.json",
+      "bytes": 99490,
+      "sha256": "70641800529f3082ba630938dfae0b920a78e4c310e60b2c930514148f247f6a",
+      "rows": 77,
+      "dataset": "observations_all",
+      "format": "json"
+    },
+    {
+      "path": "json/observations_all/part-033.json",
+      "bytes": 98921,
+      "sha256": "2cc66e306db9667f474ccb760e498c1098c6ae8ecd1128e915b80cd0aa1d2f5e",
+      "rows": 75,
+      "dataset": "observations_all",
+      "format": "json"
+    },
+    {
+      "path": "json/observations_all/part-034.json",
+      "bytes": 99170,
+      "sha256": "f039c1521c9f2b1450492ac1f5ecae56ccc955c88bb7f95db4d6e8ded01880c8",
+      "rows": 77,
+      "dataset": "observations_all",
+      "format": "json"
+    },
+    {
+      "path": "json/observations_all/part-035.json",
+      "bytes": 99194,
+      "sha256": "62525ef50b5660a4278a844e64150ebc07b7cc2a941de84efcd3d6ce6ba74a58",
+      "rows": 77,
+      "dataset": "observations_all",
+      "format": "json"
+    },
+    {
+      "path": "json/observations_all/part-036.json",
+      "bytes": 99976,
+      "sha256": "dcddec2ddfa1c199bdb98e179b07a64a135b776c6b6c2b8c490c23e479094575",
+      "rows": 78,
+      "dataset": "observations_all",
+      "format": "json"
+    },
+    {
+      "path": "json/observations_all/part-037.json",
+      "bytes": 30342,
+      "sha256": "46181b7ff063f687df6bbfa974b27edbef149086946c24cce45b4e4f26ff571c",
+      "rows": 23,
+      "dataset": "observations_all",
+      "format": "json"
+    },
+    {
+      "path": "csv/observations_all/part-000.csv",
+      "bytes": 99781,
+      "sha256": "15b07698f5aa9cfe716068014edfb58cede26495c353c8acf8a2be520d570288",
+      "rows": 341,
+      "dataset": "observations_all",
+      "format": "csv"
+    },
+    {
+      "path": "csv/observations_all/part-001.csv",
+      "bytes": 99721,
+      "sha256": "a318f6c05128b03660953b35b8233cd2762cb032f82b8141c3506f9e1bf10b4f",
+      "rows": 336,
+      "dataset": "observations_all",
+      "format": "csv"
+    },
+    {
+      "path": "csv/observations_all/part-002.csv",
+      "bytes": 99882,
+      "sha256": "7d6168ed23d9aa8b7f38a3980f0749a01ffc64dc8c45d41a086a75c621e60101",
+      "rows": 412,
+      "dataset": "observations_all",
+      "format": "csv"
+    },
+    {
+      "path": "csv/observations_all/part-003.csv",
+      "bytes": 99947,
+      "sha256": "2271d4fc9cd240da79ab2834f83d5793fe900faf6e411211626b6e96cafe2fb0",
+      "rows": 407,
+      "dataset": "observations_all",
+      "format": "csv"
+    },
+    {
+      "path": "csv/observations_all/part-004.csv",
+      "bytes": 99832,
+      "sha256": "92b72bc93c932f20af9e0e4d8c9d06f2a805c21709b2a746c70eb0285a7c5b10",
+      "rows": 410,
+      "dataset": "observations_all",
+      "format": "csv"
+    },
+    {
+      "path": "csv/observations_all/part-005.csv",
+      "bytes": 99855,
+      "sha256": "b3c1a6fa4ab64a83ba143236fe0bc1f421eeed9c55f7c26162180339d4727db5",
+      "rows": 413,
+      "dataset": "observations_all",
+      "format": "csv"
+    },
+    {
+      "path": "csv/observations_all/part-006.csv",
+      "bytes": 99817,
+      "sha256": "add2489a9f37d45a213e6f60eb96d8384c03ed01f7b81b7682dd9517fa17acb8",
+      "rows": 383,
+      "dataset": "observations_all",
+      "format": "csv"
+    },
+    {
+      "path": "csv/observations_all/part-007.csv",
+      "bytes": 46023,
+      "sha256": "575b6e9c43ce373bf665e8163b8be924baf4f7fcd0cf8ece676571dd1f4afa0b",
+      "rows": 175,
+      "dataset": "observations_all",
+      "format": "csv"
+    },
+    {
+      "path": "json/observation_reviews/part-000.json",
+      "bytes": 99953,
+      "sha256": "799dd695cb25dbf0efb6d5f792f07c81d29e6b98ddd9df16baea89cb2c229a8b",
+      "rows": 373,
+      "dataset": "observation_reviews",
+      "format": "json"
+    },
+    {
+      "path": "json/observation_reviews/part-001.json",
+      "bytes": 99921,
+      "sha256": "a2ad972f68b351b4a77fa905a3894caa6b4173f5b5c9c8c612403af243e2aa57",
+      "rows": 410,
+      "dataset": "observation_reviews",
+      "format": "json"
+    },
+    {
+      "path": "json/observation_reviews/part-002.json",
+      "bytes": 56321,
+      "sha256": "8e7756a4e62b0009222396e774fc050ec26533000cf403fc8bc258f04e476207",
+      "rows": 220,
+      "dataset": "observation_reviews",
+      "format": "json"
+    },
+    {
+      "path": "csv/observation_reviews/part-000.csv",
+      "bytes": 99921,
+      "sha256": "2392db6fc6a28609f107881f551bdd3f4954c3d395e5da751e5c89591c78531e",
+      "rows": 778,
+      "dataset": "observation_reviews",
+      "format": "csv"
+    },
+    {
+      "path": "csv/observation_reviews/part-001.csv",
+      "bytes": 28930,
+      "sha256": "795febc4effa229026577fd37cd241aecf88274cd8e1e96f265a108ca618f7f1",
+      "rows": 225,
+      "dataset": "observation_reviews",
+      "format": "csv"
+    },
+    {
+      "path": "json/leads_all/part-000.json",
+      "bytes": 99848,
+      "sha256": "e917cc6d2c3dcb84061385a86f2c21cbde74f7089a6653889d074c515c5696b5",
+      "rows": 244,
+      "dataset": "leads_all",
+      "format": "json"
+    },
+    {
+      "path": "json/leads_all/part-001.json",
+      "bytes": 99880,
+      "sha256": "5e59731949d7466019d4a8830cdfd8eca4236b8859f2d7c76c360c9fef174bc1",
+      "rows": 263,
+      "dataset": "leads_all",
+      "format": "json"
+    },
+    {
+      "path": "json/leads_all/part-002.json",
+      "bytes": 99916,
+      "sha256": "36eb0dbd0d44857bd84899c82e765177e01d2340f48b89747755a47b491d1d4f",
+      "rows": 331,
+      "dataset": "leads_all",
+      "format": "json"
+    },
+    {
+      "path": "json/leads_all/part-003.json",
+      "bytes": 99712,
+      "sha256": "c75b511d3166d0c0bb50bc93ff8689d4bce173ec4ecd9b9ab15ea8d497218025",
+      "rows": 297,
+      "dataset": "leads_all",
+      "format": "json"
+    },
+    {
+      "path": "json/leads_all/part-004.json",
+      "bytes": 99741,
+      "sha256": "f7de40e2ad89df44193fbb57dde60914d5e280b00a3f4a411dfb53c5ace85125",
+      "rows": 226,
+      "dataset": "leads_all",
+      "format": "json"
+    },
+    {
+      "path": "json/leads_all/part-005.json",
+      "bytes": 99593,
+      "sha256": "c3db8bfb02cbd70839ebe5dce1f9fe1465ded97538a3c0b7c6b82a3173dda726",
+      "rows": 205,
+      "dataset": "leads_all",
+      "format": "json"
+    },
+    {
+      "path": "json/leads_all/part-006.json",
+      "bytes": 99752,
+      "sha256": "a45a5c8c0a00916b31d1aecbe6f0419829efce29b5229b82e57024613e5c496a",
+      "rows": 204,
+      "dataset": "leads_all",
+      "format": "json"
+    },
+    {
+      "path": "json/leads_all/part-007.json",
+      "bytes": 5875,
+      "sha256": "13d66b111176903f92b062ea130ce39aea3986ff6d36bc606bc5baf65d152b8b",
+      "rows": 11,
+      "dataset": "leads_all",
+      "format": "json"
+    },
+    {
+      "path": "csv/leads_all/part-000.csv",
+      "bytes": 99815,
+      "sha256": "85c801fcf7cd19574498860dba3fe9a5fcf4deaa4fecb400364b67043d80eeb4",
+      "rows": 450,
+      "dataset": "leads_all",
+      "format": "csv"
+    },
+    {
+      "path": "csv/leads_all/part-001.csv",
+      "bytes": 99852,
+      "sha256": "ddcae5e0f1aba057374b4dd1c72a9f86920428d654701e4f7be3784de55dd91b",
+      "rows": 734,
+      "dataset": "leads_all",
+      "format": "csv"
+    },
+    {
+      "path": "csv/leads_all/part-002.csv",
+      "bytes": 99900,
+      "sha256": "1063df47141c355e015fd8360a1f6d337b3578af696270f2747fa30e4bab183b",
+      "rows": 336,
+      "dataset": "leads_all",
+      "format": "csv"
+    },
+    {
+      "path": "csv/leads_all/part-003.csv",
+      "bytes": 81080,
+      "sha256": "d1b7077161bf4bbcd99a5ceb65e697a011c165ec0b949e1b11b2b2106925aa63",
+      "rows": 261,
+      "dataset": "leads_all",
+      "format": "csv"
+    },
+    {
+      "path": "json/unresolved_leads/part-000.json",
+      "bytes": 99939,
+      "sha256": "c19f6d6b264a7235ac072e335c8774f4f6f667f4e6cfdc00583750123126148f",
+      "rows": 291,
+      "dataset": "unresolved_leads",
+      "format": "json"
+    },
+    {
+      "path": "json/unresolved_leads/part-001.json",
+      "bytes": 92770,
+      "sha256": "d8a85deb0ce559022ac4b48095b4f43c993a353cc3bde0ef881b0f5a1065d3cf",
+      "rows": 201,
+      "dataset": "unresolved_leads",
+      "format": "json"
+    },
+    {
+      "path": "csv/unresolved_leads/part-000.csv",
+      "bytes": 99572,
+      "sha256": "8928cd45e38a7b1b87a8da4313324b645aaf15a7b13d07f9827802b79d6372b6",
+      "rows": 483,
+      "dataset": "unresolved_leads",
+      "format": "csv"
+    },
+    {
+      "path": "csv/unresolved_leads/part-001.csv",
+      "bytes": 3023,
+      "sha256": "b4b060b68790b5a89da9fa9314880d0f33d7e6c85ed8adabd1a416412fc6d78c",
+      "rows": 9,
+      "dataset": "unresolved_leads",
+      "format": "csv"
+    },
+    {
+      "path": "json/company_history_reviews/part-000.json",
+      "bytes": 98651,
+      "sha256": "28e88b72803a8483f65435f8d5ba8e6c907f8d5f487a1d800fbffd28bb1c0b0b",
+      "rows": 44,
+      "dataset": "company_history_reviews",
+      "format": "json"
+    },
+    {
+      "path": "json/company_history_reviews/part-001.json",
+      "bytes": 99116,
+      "sha256": "8b1574ee632abf32961c19f6ae42951780a8fd95bd6cdfbd2786dc259a614451",
+      "rows": 46,
+      "dataset": "company_history_reviews",
+      "format": "json"
+    },
+    {
+      "path": "json/company_history_reviews/part-002.json",
+      "bytes": 99469,
+      "sha256": "f12996b979455a261b22189d95c1900b0e732c2c5cb794e09f7808d92c3b7e39",
+      "rows": 44,
+      "dataset": "company_history_reviews",
+      "format": "json"
+    },
+    {
+      "path": "json/company_history_reviews/part-003.json",
+      "bytes": 99877,
+      "sha256": "0f173e264832ce962ef4de8b788cc4aca9287d84540bac8ac7a6066dbcebd652",
+      "rows": 48,
+      "dataset": "company_history_reviews",
+      "format": "json"
+    },
+    {
+      "path": "json/company_history_reviews/part-004.json",
+      "bytes": 98728,
+      "sha256": "cbeff57cfd667d03ac6f7638a7d3f80b5b22545edbd451555fc11f649c1b59b3",
+      "rows": 49,
+      "dataset": "company_history_reviews",
+      "format": "json"
+    },
+    {
+      "path": "json/company_history_reviews/part-005.json",
+      "bytes": 99808,
+      "sha256": "7a722270e62c67742e1db9820d929b5dfe59e93cfd38dc36b86a5e2161b20cef",
+      "rows": 47,
+      "dataset": "company_history_reviews",
+      "format": "json"
+    },
+    {
+      "path": "json/company_history_reviews/part-006.json",
+      "bytes": 99036,
+      "sha256": "733b9a0b0aa3d4585a62005efdeb868d49a0619578552e3a2d5a8b4f70e9027c",
+      "rows": 48,
+      "dataset": "company_history_reviews",
+      "format": "json"
+    },
+    {
+      "path": "json/company_history_reviews/part-007.json",
+      "bytes": 96919,
+      "sha256": "7caa69bf0c5dd20ab48cc1462598b5021960d144789e8cb14e2dd0dcec5729d2",
+      "rows": 45,
+      "dataset": "company_history_reviews",
+      "format": "json"
+    },
+    {
+      "path": "json/company_history_reviews/part-008.json",
+      "bytes": 99561,
+      "sha256": "16ad8db675b987e25878ae80e5f7e0e1af08337579a89bdb458288938704f8ad",
+      "rows": 48,
+      "dataset": "company_history_reviews",
+      "format": "json"
+    },
+    {
+      "path": "json/company_history_reviews/part-009.json",
+      "bytes": 99364,
+      "sha256": "b3189f4386d20dfd2ec146f0feac301d48ae540a1cbdfe43ee2be4156ad08d91",
+      "rows": 45,
+      "dataset": "company_history_reviews",
+      "format": "json"
+    },
+    {
+      "path": "json/company_history_reviews/part-010.json",
+      "bytes": 99378,
+      "sha256": "93a3285aaab11bffafa365680f48fc83126caae2243be9bd1d7a487e317aa39e",
+      "rows": 126,
+      "dataset": "company_history_reviews",
+      "format": "json"
+    },
+    {
+      "path": "json/company_history_reviews/part-011.json",
+      "bytes": 99760,
+      "sha256": "92f2638740c811f30ece4262a46be00d56df1da6c1ec5e651c601407611fee22",
+      "rows": 137,
+      "dataset": "company_history_reviews",
+      "format": "json"
+    },
+    {
+      "path": "json/company_history_reviews/part-012.json",
+      "bytes": 99562,
+      "sha256": "3bfb3c43eff97b709f0a434fb94805ebbbb9a83b24e3bd3d9bf785c211bfe0b8",
+      "rows": 142,
+      "dataset": "company_history_reviews",
+      "format": "json"
+    },
+    {
+      "path": "json/company_history_reviews/part-013.json",
+      "bytes": 39881,
+      "sha256": "2bc0b0888bfc2a6233f387f8a1e579300a97be20cb5635e74b614327e2b6fbe3",
+      "rows": 54,
+      "dataset": "company_history_reviews",
+      "format": "json"
+    },
+    {
+      "path": "csv/company_history_reviews/part-000.csv",
+      "bytes": 99154,
+      "sha256": "292585f93740177e4cac1934ecedf0fbcdfc085df8c7b1adb602606db7cb7e89",
+      "rows": 48,
+      "dataset": "company_history_reviews",
+      "format": "csv"
+    },
+    {
+      "path": "csv/company_history_reviews/part-001.csv",
+      "bytes": 98371,
+      "sha256": "f4b00d1687b1808d86ca3f9983f68dfbf9cebe283f9327afcdfbab7c4dbcf87a",
+      "rows": 50,
+      "dataset": "company_history_reviews",
+      "format": "csv"
+    },
+    {
+      "path": "csv/company_history_reviews/part-002.csv",
+      "bytes": 99456,
+      "sha256": "ab19a0d16cc784c454623a74ef07b44cffc8c81b616bbc1ecfc2c658ed2307ce",
+      "rows": 51,
+      "dataset": "company_history_reviews",
+      "format": "csv"
+    },
+    {
+      "path": "csv/company_history_reviews/part-003.csv",
+      "bytes": 98334,
+      "sha256": "d2b422ed5981d4b23e9b08ff137173fee68ce91c5e74ef9376553ba30feb3370",
+      "rows": 54,
+      "dataset": "company_history_reviews",
+      "format": "csv"
+    },
+    {
+      "path": "csv/company_history_reviews/part-004.csv",
+      "bytes": 99022,
+      "sha256": "998a4543e41f54590050e9c7d84580c26c4137553775e90413808d1bf1c8c71f",
+      "rows": 55,
+      "dataset": "company_history_reviews",
+      "format": "csv"
+    },
+    {
+      "path": "csv/company_history_reviews/part-005.csv",
+      "bytes": 99769,
+      "sha256": "328444392e44ec26cbcd49199587ca4e3025e2cbee69a0e0e61a72d2ca2a2c45",
+      "rows": 53,
+      "dataset": "company_history_reviews",
+      "format": "csv"
+    },
+    {
+      "path": "csv/company_history_reviews/part-006.csv",
+      "bytes": 99451,
+      "sha256": "f6c529cfabb39b029b6afe50a05bd73d570dece2585fe966011d0e8a98ee1382",
+      "rows": 52,
+      "dataset": "company_history_reviews",
+      "format": "csv"
+    },
+    {
+      "path": "csv/company_history_reviews/part-007.csv",
+      "bytes": 98947,
+      "sha256": "aafd791ec7f0509348a410bfaf34b6c6b49363aea395e2cf74f574e8cb26580d",
+      "rows": 53,
+      "dataset": "company_history_reviews",
+      "format": "csv"
+    },
+    {
+      "path": "csv/company_history_reviews/part-008.csv",
+      "bytes": 99809,
+      "sha256": "08808d5c3eca451355e178e53f5cf8c3b0bd49340a67287abd8e699c3cbe1da3",
+      "rows": 53,
+      "dataset": "company_history_reviews",
+      "format": "csv"
+    },
+    {
+      "path": "csv/company_history_reviews/part-009.csv",
+      "bytes": 99649,
+      "sha256": "a5704389f37f5215b3dfd3c2500d1999778877d4e995474551cb2b3037eb545a",
+      "rows": 201,
+      "dataset": "company_history_reviews",
+      "format": "csv"
+    },
+    {
+      "path": "csv/company_history_reviews/part-010.csv",
+      "bytes": 99823,
+      "sha256": "6377acb436df9f37999748bf1a9a6749ded1667dccf68c035a1f2616faf3beda",
+      "rows": 219,
+      "dataset": "company_history_reviews",
+      "format": "csv"
+    },
+    {
+      "path": "csv/company_history_reviews/part-011.csv",
+      "bytes": 17014,
+      "sha256": "2cc9a3314b4238d1662a43e3a3546879ebea6df3052215a9b8a155abc298f657",
+      "rows": 34,
+      "dataset": "company_history_reviews",
+      "format": "csv"
+    },
+    {
+      "path": "json/source_coverage/part-000.json",
+      "bytes": 15094,
+      "sha256": "63466d64b0303df06601c6e15eb8a8072e279786856015c1a3e7d0dd76238253",
+      "rows": 42,
+      "dataset": "source_coverage",
+      "format": "json"
+    },
+    {
+      "path": "csv/source_coverage/part-000.csv",
+      "bytes": 7428,
+      "sha256": "fd3efce27c85a53d5ab333ae2b194d3ab9b778498e74ce053bdd38a010a3f9e6",
+      "rows": 42,
+      "dataset": "source_coverage",
+      "format": "csv"
+    },
+    {
+      "path": "json/completion_counts/part-000.json",
+      "bytes": 1750,
+      "sha256": "9a5566d1c7ca885d1639db33428e6dfb9fdd5be9cca9ea2761fa389e73e6bb0c",
+      "rows": 14,
+      "dataset": "completion_counts",
+      "format": "json"
+    },
+    {
+      "path": "csv/completion_counts/part-000.csv",
+      "bytes": 939,
+      "sha256": "cfa565167fa00942f07a4cfb37f1e26b06ddaceabad6ff103be5466166679414",
+      "rows": 14,
+      "dataset": "completion_counts",
+      "format": "csv"
+    },
+    {
+      "path": "json/fx_rates/part-000.json",
+      "bytes": 21177,
+      "sha256": "8e2e1647c65fed68229f3fa104813f9b55cedd4eeef0acbe4ac7435614417c39",
+      "rows": 99,
+      "dataset": "fx_rates",
+      "format": "json"
+    },
+    {
+      "path": "csv/fx_rates/part-000.csv",
+      "bytes": 12529,
+      "sha256": "40a2c3b023b3c450f27752f83ce90321d7ecf9aebaac9e824318f50359bf6d96",
+      "rows": 99,
+      "dataset": "fx_rates",
+      "format": "csv"
+    },
+    {
+      "path": "json/event_fx_conversions/part-000.json",
+      "bytes": 34890,
+      "sha256": "1a8be4773743bdfab6e1bf7cf69c29c065ba6a1259a0aee240c7ffc35d908361",
+      "rows": 153,
+      "dataset": "event_fx_conversions",
+      "format": "json"
+    },
+    {
+      "path": "csv/event_fx_conversions/part-000.csv",
+      "bytes": 16168,
+      "sha256": "eb39f428b009ff33d7a35f90bbe763d3135ecb0da1d272f5ca9173a01d9ceb41",
+      "rows": 153,
+      "dataset": "event_fx_conversions",
+      "format": "csv"
+    },
+    {
+      "path": "json/company_search_logs/part-000.json",
+      "bytes": 98521,
+      "sha256": "543c795b94808c5977255d862e3edcd8fabd5fe585971e0af95e04a35a7693d1",
+      "rows": 50,
+      "dataset": "company_search_logs",
+      "format": "json"
+    },
+    {
+      "path": "json/company_search_logs/part-001.json",
+      "bytes": 98998,
+      "sha256": "727ed546e78c1675fe6feab7dce13af25b40e38cdb2d8417e655c674bff01f1f",
+      "rows": 52,
+      "dataset": "company_search_logs",
+      "format": "json"
+    },
+    {
+      "path": "json/company_search_logs/part-002.json",
+      "bytes": 99463,
+      "sha256": "440ef0c71476604dd60c2abe1006b8387b3d20e745dde6e09ce142640341d519",
+      "rows": 54,
+      "dataset": "company_search_logs",
+      "format": "json"
+    },
+    {
+      "path": "json/company_search_logs/part-003.json",
+      "bytes": 99007,
+      "sha256": "aa5734806893b19c22f1bc73da2876e09d48790f3084505d416d9921d91a29f6",
+      "rows": 56,
+      "dataset": "company_search_logs",
+      "format": "json"
+    },
+    {
+      "path": "json/company_search_logs/part-004.json",
+      "bytes": 98671,
+      "sha256": "e7b7e2496aaaf52278f302df72bab44ddc84286cb1b1c78f80fae60a8259b715",
+      "rows": 55,
+      "dataset": "company_search_logs",
+      "format": "json"
+    },
+    {
+      "path": "json/company_search_logs/part-005.json",
+      "bytes": 99542,
+      "sha256": "67030006cacc08285cb938d487a5e22c8429c3a762d3b305c8587e98759b8100",
+      "rows": 56,
+      "dataset": "company_search_logs",
+      "format": "json"
+    },
+    {
+      "path": "json/company_search_logs/part-006.json",
+      "bytes": 99250,
+      "sha256": "befa81fc7825f098f0c7e12990ec63c60445bda61718ca45d45e3d229e68afa8",
+      "rows": 55,
+      "dataset": "company_search_logs",
+      "format": "json"
+    },
+    {
+      "path": "json/company_search_logs/part-007.json",
+      "bytes": 99847,
+      "sha256": "356414cc64ffd32182508602caf906bb6295bb6f3ac95601bb0f1eab3609a95b",
+      "rows": 54,
+      "dataset": "company_search_logs",
+      "format": "json"
+    },
+    {
+      "path": "json/company_search_logs/part-008.json",
+      "bytes": 54743,
+      "sha256": "d40d82198f28b30a5e469381d9f21b26aa57df5f9b05b5ea391346d33c3a1048",
+      "rows": 30,
+      "dataset": "company_search_logs",
+      "format": "json"
+    },
+    {
+      "path": "csv/company_search_logs/part-000.csv",
+      "bytes": 98871,
+      "sha256": "f11d9093ad3aad5a6d7d98f6267f2425e42e1f1205a7926694cb9ccf8b8d2780",
+      "rows": 52,
+      "dataset": "company_search_logs",
+      "format": "csv"
+    },
+    {
+      "path": "csv/company_search_logs/part-001.csv",
+      "bytes": 99261,
+      "sha256": "932d1d1e27f9e4df5bfcc54a5e18c18610e9183d1b51a134eca5f7fa55a4d1f9",
+      "rows": 52,
+      "dataset": "company_search_logs",
+      "format": "csv"
+    },
+    {
+      "path": "csv/company_search_logs/part-002.csv",
+      "bytes": 99916,
+      "sha256": "34d842f7328cfd404214d1c44b3c581156bf50ae2919cd02202e75b88cebb663",
+      "rows": 58,
+      "dataset": "company_search_logs",
+      "format": "csv"
+    },
+    {
+      "path": "csv/company_search_logs/part-003.csv",
+      "bytes": 99676,
+      "sha256": "777a35ae9e75ab97a7e7f435a896c9d590be67577e59fb2be42ec4ab0a380f9f",
+      "rows": 58,
+      "dataset": "company_search_logs",
+      "format": "csv"
+    },
+    {
+      "path": "csv/company_search_logs/part-004.csv",
+      "bytes": 99937,
+      "sha256": "6e30a5e6c9d5baf6463ad009e5f012d0f50b5510b7f048542b416719ed1b566b",
+      "rows": 56,
+      "dataset": "company_search_logs",
+      "format": "csv"
+    },
+    {
+      "path": "csv/company_search_logs/part-005.csv",
+      "bytes": 97421,
+      "sha256": "869159762d7d0f18a267851a932eeed42708254d14f246077882d1fac0396500",
+      "rows": 56,
+      "dataset": "company_search_logs",
+      "format": "csv"
+    },
+    {
+      "path": "csv/company_search_logs/part-006.csv",
+      "bytes": 99924,
+      "sha256": "f20ccdfa7a9ce6c94c8847f2d91d05c18edd3eb6940b5c0f06e6b40f26f63c0c",
+      "rows": 57,
+      "dataset": "company_search_logs",
+      "format": "csv"
+    },
+    {
+      "path": "csv/company_search_logs/part-007.csv",
+      "bytes": 99874,
+      "sha256": "a66f714deb9ee0a2d3b5bad98348eaaa02c94c534978bb5f71d2044de54994ec",
+      "rows": 57,
+      "dataset": "company_search_logs",
+      "format": "csv"
+    },
+    {
+      "path": "csv/company_search_logs/part-008.csv",
+      "bytes": 30041,
+      "sha256": "b6b07c2201c782fe5c7d3b66c8779e4fc94edb6b3a7aa197ccb3397a6fe25998",
+      "rows": 16,
+      "dataset": "company_search_logs",
+      "format": "csv"
+    },
+    {
+      "path": "START_HERE.md",
+      "bytes": 1887,
+      "sha256": "7076f80d2748de3fce105383b67da1edcbcb9398273b949f4034d5385272a523"
+    },
+    {
+      "path": "methodology.md",
+      "bytes": 3673,
+      "sha256": "dc8be7a2da7cb764d3af5fef404c28ef78cefb2072c5fbfdc2e45d06f64872c2"
+    },
+    {
+      "path": "data_dictionary.md",
+      "bytes": 23134,
+      "sha256": "6a8e074458c93215ea01eadf77b7ffda7080185de0bb3fb7da72e60e95d3cbf0"
+    },
+    {
+      "path": "coverage_review_protocol.txt",
+      "bytes": 3739,
+      "sha256": "1da13e6cd521d845c8e2e61629a2b2ed2275f37e9217061c34842be312c24078"
+    },
+    {
+      "path": "AUDITOR_PROMPT.txt",
+      "bytes": 3537,
+      "sha256": "42516418a90d4b2a51746da1c3ef28608e9ab1f03d786c994bdd77e46af8d778"
+    },
+    {
+      "path": "load_snapshot.py",
+      "bytes": 10455,
+      "sha256": "e83f67a8736cb9f200c4cd741fcf96d72f4958194b7a4932a74231b1b293c464"
+    },
+    {
+      "path": "auditor_findings.schema.json",
+      "bytes": 5317,
+      "sha256": "c155c237b4ce8ae87968474aceee869524bdf68b7d6654d7fbea1f6dec837333"
+    },
+    {
+      "path": "privacy_and_parity_report.json",
+      "bytes": 2524,
+      "sha256": "72c58bf2542b86d0eec40a3b527532523188b8302369dfb7cbaf9fb177550c58"
+    }
+  ]
+}

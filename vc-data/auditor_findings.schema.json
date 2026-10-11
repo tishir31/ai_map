@@ -1,0 +1,231 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "auditor_findings.schema.json",
+  "title": "Independent AI-deals audit findings",
+  "type": "object",
+  "required": [
+    "snapshot_id",
+    "findings",
+    "coverage_log"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "snapshot_id": {
+      "const": "ai-vc-2026-f169451525da440d307e"
+    },
+    "findings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "finding_type",
+          "company",
+          "matching_event_ids",
+          "opened_sources",
+          "evidence_paraphrase",
+          "confidence",
+          "unresolved_questions"
+        ],
+        "properties": {
+          "finding_type": {
+            "enum": [
+              "missing_deal",
+              "correction",
+              "duplicate",
+              "entity_or_sector_error",
+              "unresolved"
+            ]
+          },
+          "company": {
+            "type": "string"
+          },
+          "domain": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "matching_event_ids": {
+            "type": "array",
+            "items": {
+              "type": "integer"
+            }
+          },
+          "announcement_date": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "date_precision": {
+            "enum": [
+              "day",
+              "month",
+              "unknown"
+            ]
+          },
+          "date_basis": {
+            "enum": [
+              "source_explicit",
+              "publication_proxy",
+              "unknown"
+            ]
+          },
+          "closing_date": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "event_type": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "event_status": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "round_label": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "financial_facts": {
+            "type": "object",
+            "description": "Native amounts/currencies, qualifiers, bounds, valuation/consideration bases, debt and commitment distinctions."
+          },
+          "buyer": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "investors": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "proposed_subsector": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "ai_relevance": {
+            "type": "string"
+          },
+          "opened_sources": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "object",
+              "required": [
+                "url",
+                "opened_at"
+              ],
+              "properties": {
+                "url": {
+                  "type": "string",
+                  "format": "uri"
+                },
+                "opened_at": {
+                  "type": "string"
+                },
+                "published_date": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                },
+                "source_role": {
+                  "enum": [
+                    "primary",
+                    "reporting",
+                    "lead"
+                  ]
+                }
+              }
+            }
+          },
+          "evidence_paraphrase": {
+            "type": "string"
+          },
+          "confidence": {
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          },
+          "unresolved_questions": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "coverage_log": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "scope",
+          "queries",
+          "candidates_found",
+          "matched",
+          "new",
+          "unresolved",
+          "access_failures",
+          "not_searched"
+        ],
+        "properties": {
+          "scope": {
+            "type": "string"
+          },
+          "queries": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "candidates_found": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "matched": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "new": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "unresolved": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "access_failures": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "not_searched": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    }
+  }
+}

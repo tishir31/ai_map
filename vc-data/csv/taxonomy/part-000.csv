@@ -1,0 +1,32 @@
+snapshot_id,default_ai_scope,label,subsector_id
+ai-vc-2026-f169451525da440d307e,digital_ai,Foundation models,foundation_models
+ai-vc-2026-f169451525da440d307e,enabling_infrastructure,Inference compute,inference_compute
+ai-vc-2026-f169451525da440d307e,enabling_infrastructure,Training compute,training_compute
+ai-vc-2026-f169451525da440d307e,enabling_infrastructure,AI chips,ai_chips
+ai-vc-2026-f169451525da440d307e,enabling_infrastructure,Interconnect and memory,interconnect_memory
+ai-vc-2026-f169451525da440d307e,enabling_infrastructure,Data centers and power,data_centers_power
+ai-vc-2026-f169451525da440d307e,digital_ai,Developer tools,developer_tools
+ai-vc-2026-f169451525da440d307e,digital_ai,"Data, training, and evaluation",data_training_evaluation
+ai-vc-2026-f169451525da440d307e,digital_ai,Enterprise agents,enterprise_agents
+ai-vc-2026-f169451525da440d307e,digital_ai,Coding agents,coding_agents
+ai-vc-2026-f169451525da440d307e,digital_ai,Customer support and voice,customer_support_voice
+ai-vc-2026-f169451525da440d307e,digital_ai,Cybersecurity,cybersecurity
+ai-vc-2026-f169451525da440d307e,digital_ai,Search and knowledge,search_knowledge
+ai-vc-2026-f169451525da440d307e,digital_ai,Creative media,creative_media
+ai-vc-2026-f169451525da440d307e,digital_ai,Healthcare and biotech,healthcare_biotech
+ai-vc-2026-f169451525da440d307e,digital_ai,Legal,legal
+ai-vc-2026-f169451525da440d307e,digital_ai,Finance,finance
+ai-vc-2026-f169451525da440d307e,digital_ai,Sales and marketing,sales_marketing
+ai-vc-2026-f169451525da440d307e,digital_ai,Education,education
+ai-vc-2026-f169451525da440d307e,digital_ai,General applications,general_applications
+ai-vc-2026-f169451525da440d307e,physical_ai,Robotics foundation models,robotics_foundation_models
+ai-vc-2026-f169451525da440d307e,physical_ai,Humanoid robotics,humanoid_robotics
+ai-vc-2026-f169451525da440d307e,physical_ai,Industrial and logistics robotics,industrial_logistics_robotics
+ai-vc-2026-f169451525da440d307e,physical_ai,Consumer and service robotics,consumer_service_robotics
+ai-vc-2026-f169451525da440d307e,physical_ai,Autonomous vehicles,autonomous_vehicles
+ai-vc-2026-f169451525da440d307e,physical_ai,Drones and defense,drones_defense
+ai-vc-2026-f169451525da440d307e,physical_ai,Agricultural robotics,agricultural_robotics
+ai-vc-2026-f169451525da440d307e,physical_ai,Medical robotics,medical_robotics
+ai-vc-2026-f169451525da440d307e,physical_ai,Maritime robotics,maritime_robotics
+ai-vc-2026-f169451525da440d307e,physical_ai,Robotic components,robotic_components
+ai-vc-2026-f169451525da440d307e,physical_ai,Simulation and digital twins,simulation_digital_twins
