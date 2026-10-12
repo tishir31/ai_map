@@ -1,43 +1,49 @@
 snapshot_id,coverage_id,coverage_limit_categories,coverage_query_private,matched_records,pagination_complete,read_records,source_family,window_end,window_start
-ai-vc-2026-f169451525da440d307e,1,"[""announcement_or_period_uncertain"",""needs_independent_confirmation""]",True,259,1,259,Physical AI Atlas,2026-10-11,2026-01-01
-ai-vc-2026-f169451525da440d307e,2,"[""access_required"",""announcement_or_period_uncertain"",""capacity_or_cumulative_not_current_cash"",""historical_context""]",True,31,1,31,Physical AI Atlas: China finance-bearing companies,2026-10-11,2026-01-01
-ai-vc-2026-f169451525da440d307e,3,"[""historical_context""]",True,30,1,30,Physical AI Atlas European/non-US/non-China financial references,2026-10-11,2026-01-01
-ai-vc-2026-f169451525da440d307e,4,"[""announcement_or_period_uncertain"",""capacity_or_cumulative_not_current_cash"",""historical_context""]",True,259,1,259,Physical AI Atlas news-only coverage safeguard,2026-10-11,2026-01-01
-ai-vc-2026-f169451525da440d307e,5,"[""needs_independent_confirmation""]",True,7,1,7,Physical AI Atlas priority financial source verification,2026-10-11,2026-01-01
-ai-vc-2026-f169451525da440d307e,6,"[""announcement_or_period_uncertain"",""historical_context""]",True,64,1,64,Physical AI Atlas US financial references,2026-10-11,2026-01-01
-ai-vc-2026-f169451525da440d307e,7,"[""announcement_or_period_uncertain"",""capacity_or_cumulative_not_current_cash"",""needs_independent_confirmation""]",True,126,1,126,physical_ai_atlas_completion,2026-10-11,2026-01-01
-ai-vc-2026-f169451525da440d307e,8,"[""access_required"",""announcement_or_period_uncertain"",""entity_or_recipient_uncertain"",""instrument_or_composition_uncertain"",""capacity_or_cumulative_not_current_cash""]",True,462,0,462,company_a_history_completion,2026-10-11,2026-01-01
-ai-vc-2026-f169451525da440d307e,9,"[""capacity_or_cumulative_not_current_cash""]",True,,0,,company_history_completion_a,2026-10-11,2026-01-01
-ai-vc-2026-f169451525da440d307e,10,"[""historical_context""]",True,,0,,Company-gap B primary-source research,2026-10-11,2026-01-01
-ai-vc-2026-f169451525da440d307e,11,"[""historical_context""]",True,0,1,0,Return on Security / TechCrunch completion,2026-10-11,2026-01-01
-ai-vc-2026-f169451525da440d307e,12,"[""announcement_or_period_uncertain"",""instrument_or_composition_uncertain"",""capacity_or_cumulative_not_current_cash"",""historical_context""]",True,,0,227,The Information H1 completeness review,2026-10-11,2026-01-01
-ai-vc-2026-f169451525da440d307e,13,"[""instrument_or_composition_uncertain"",""capacity_or_cumulative_not_current_cash""]",True,,0,,H2 full retained newsletter source review and targeted opened web sources,2026-10-11,2026-01-01
-ai-vc-2026-f169451525da440d307e,14,"[""entity_or_recipient_uncertain""]",True,,0,,other_b_fresh_primary_and_financial_context,,
-ai-vc-2026-f169451525da440d307e,15,"[""announcement_or_period_uncertain"",""entity_or_recipient_uncertain"",""instrument_or_composition_uncertain"",""needs_independent_confirmation""]",True,150,1,,Other newsletters bounded completion review,2026-10-11,2026-01-01
-ai-vc-2026-f169451525da440d307e,16,"[""announcement_or_period_uncertain""]",True,,0,,Other250..399 plus opened primary gaps,,
-ai-vc-2026-f169451525da440d307e,17,"[""review_context""]",True,,0,,Root completion source verification,2026-10-11,2026-01-01
-ai-vc-2026-f169451525da440d307e,18,"[""instrument_or_composition_uncertain"",""capacity_or_cumulative_not_current_cash"",""needs_independent_confirmation""]",True,,0,,Uploaded CSV financial-semantics follow-on manual source review,2026-10-11,2026-01-01
-ai-vc-2026-f169451525da440d307e,19,"[""announcement_or_period_uncertain""]",True,144,1,144,Gmail Axios/Pro Rata targeted AI and deal query,2026-10-11,2026-01-01
-ai-vc-2026-f169451525da440d307e,20,"[""instrument_or_composition_uncertain"",""capacity_or_cumulative_not_current_cash""]",True,64,1,64,Gmail Axios Pro Rata all newsletters crosscheck,2026-10-11,2026-01-01
-ai-vc-2026-f169451525da440d307e,21,"[""announcement_or_period_uncertain"",""entity_or_recipient_uncertain"",""historical_context""]",True,18,1,18,Return on Security,2026-10-11,2026-01-01
-ai-vc-2026-f169451525da440d307e,22,"[""announcement_or_period_uncertain""]",True,227,1,227,The Information Gmail H1,2026-06-30,2026-01-01
-ai-vc-2026-f169451525da440d307e,23,"[""announcement_or_period_uncertain""]",True,194,1,194,Gmail: The Information H2,2026-10-11,2026-07-01
-ai-vc-2026-f169451525da440d307e,24,"[""announcement_or_period_uncertain""]",True,206,1,206,Gmail: The Information H2 supplemental,2026-10-11,2026-07-01
-ai-vc-2026-f169451525da440d307e,25,"[""historical_context""]",True,37,1,37,Other VC newsletters — broad sender discovery,2026-10-11,2026-01-01
-ai-vc-2026-f169451525da440d307e,26,"[""historical_context""]",True,17,1,17,Other VC newsletters — funding subject discovery,2026-10-11,2026-01-01
-ai-vc-2026-f169451525da440d307e,27,"[""historical_context""]",True,1119,1,1098,Other newsletters — broad AI financing content discovery,2026-10-11,2026-01-01
-ai-vc-2026-f169451525da440d307e,28,"[""historical_context""]",True,57,1,57,Other named newsletters — subscription presence discovery,2026-10-11,2026-01-01
-ai-vc-2026-f169451525da440d307e,29,"[""historical_context""]",True,18,1,18,Return on Security full sender run,2026-10-11,2026-01-01
-ai-vc-2026-f169451525da440d307e,30,"[""historical_context""]",True,2,1,2,Greylock full sender run,2026-10-11,2026-01-01
-ai-vc-2026-f169451525da440d307e,31,"[""historical_context""]",True,20,1,20,Dealroom full sender run,2026-10-11,2026-01-01
-ai-vc-2026-f169451525da440d307e,32,"[""historical_context""]",True,40,1,40,Clouded Judgement funding run,2026-10-11,2026-01-01
-ai-vc-2026-f169451525da440d307e,33,"[""announcement_or_period_uncertain"",""historical_context""]",True,99,1,99,TechCrunch Gmail newsletters,2026-10-11,2026-01-01
-ai-vc-2026-f169451525da440d307e,34,"[""historical_context""]",True,1,1,1,Prior user research workbook v39,2026-10-11,2026-01-01
-ai-vc-2026-f169451525da440d307e,35,"[""announcement_or_period_uncertain"",""instrument_or_composition_uncertain"",""needs_independent_confirmation""]",True,100,1,100,User-provided CSV part1,2026-10-11,2026-01-01
-ai-vc-2026-f169451525da440d307e,36,"[""announcement_or_period_uncertain"",""instrument_or_composition_uncertain"",""needs_independent_confirmation""]",True,100,1,100,User-provided CSV (part 2),2026-10-11,2026-01-01
-ai-vc-2026-f169451525da440d307e,37,"[""announcement_or_period_uncertain"",""capacity_or_cumulative_not_current_cash"",""needs_independent_confirmation""]",True,91,1,91,User-provided CSV: rows 201–291,2026-10-11,2026-01-01
-ai-vc-2026-f169451525da440d307e,38,"[""capacity_or_cumulative_not_current_cash"",""historical_context""]",True,5,1,5,Primary web M&A verification,2026-10-11,2026-01-01
-ai-vc-2026-f169451525da440d307e,39,"[""capacity_or_cumulative_not_current_cash""]",True,0,0,0,Web primary announcements: major labs and legal AI,2026-10-11,2026-01-01
-ai-vc-2026-f169451525da440d307e,40,"[""capacity_or_cumulative_not_current_cash""]",True,0,0,0,Web primary announcements: physical AI and inference,2026-10-11,2026-01-01
-ai-vc-2026-f169451525da440d307e,41,"[""access_required"",""capacity_or_cumulative_not_current_cash""]",True,,0,,Web targeted scope-gap verification,2026-10-11,2026-01-01
-ai-vc-2026-f169451525da440d307e,42,"[""needs_independent_confirmation""]",True,0,0,0,Public X indexed search,2026-10-11,2026-01-01
+ai-vc-2026-0929ca943255500a9f5f,1,"[""announcement_or_period_uncertain"",""needs_independent_confirmation""]",True,259,1,259,Physical AI Atlas,2026-10-11,2026-01-01
+ai-vc-2026-0929ca943255500a9f5f,2,"[""access_required"",""announcement_or_period_uncertain"",""capacity_or_cumulative_not_current_cash"",""historical_context""]",True,31,1,31,Physical AI Atlas: China finance-bearing companies,2026-10-11,2026-01-01
+ai-vc-2026-0929ca943255500a9f5f,3,"[""historical_context""]",True,30,1,30,Physical AI Atlas European/non-US/non-China financial references,2026-10-11,2026-01-01
+ai-vc-2026-0929ca943255500a9f5f,4,"[""announcement_or_period_uncertain"",""capacity_or_cumulative_not_current_cash"",""historical_context""]",True,259,1,259,Physical AI Atlas news-only coverage safeguard,2026-10-11,2026-01-01
+ai-vc-2026-0929ca943255500a9f5f,5,"[""needs_independent_confirmation""]",True,7,1,7,Physical AI Atlas priority financial source verification,2026-10-11,2026-01-01
+ai-vc-2026-0929ca943255500a9f5f,6,"[""announcement_or_period_uncertain"",""historical_context""]",True,64,1,64,Physical AI Atlas US financial references,2026-10-11,2026-01-01
+ai-vc-2026-0929ca943255500a9f5f,7,"[""announcement_or_period_uncertain"",""capacity_or_cumulative_not_current_cash"",""needs_independent_confirmation""]",True,126,1,126,physical_ai_atlas_completion,2026-10-11,2026-01-01
+ai-vc-2026-0929ca943255500a9f5f,8,"[""access_required"",""announcement_or_period_uncertain"",""entity_or_recipient_uncertain"",""instrument_or_composition_uncertain"",""capacity_or_cumulative_not_current_cash""]",True,462,0,462,company_a_history_completion,2026-10-11,2026-01-01
+ai-vc-2026-0929ca943255500a9f5f,9,"[""capacity_or_cumulative_not_current_cash""]",True,,0,,company_history_completion_a,2026-10-11,2026-01-01
+ai-vc-2026-0929ca943255500a9f5f,10,"[""historical_context""]",True,,0,,Company-gap B primary-source research,2026-10-11,2026-01-01
+ai-vc-2026-0929ca943255500a9f5f,11,"[""historical_context""]",True,0,1,0,Return on Security / TechCrunch completion,2026-10-11,2026-01-01
+ai-vc-2026-0929ca943255500a9f5f,12,"[""announcement_or_period_uncertain"",""instrument_or_composition_uncertain"",""capacity_or_cumulative_not_current_cash"",""historical_context""]",True,,0,227,The Information H1 completeness review,2026-10-11,2026-01-01
+ai-vc-2026-0929ca943255500a9f5f,13,"[""instrument_or_composition_uncertain"",""capacity_or_cumulative_not_current_cash""]",True,,0,,H2 full retained newsletter source review and targeted opened web sources,2026-10-11,2026-01-01
+ai-vc-2026-0929ca943255500a9f5f,14,"[""entity_or_recipient_uncertain""]",True,,0,,other_b_fresh_primary_and_financial_context,,
+ai-vc-2026-0929ca943255500a9f5f,15,"[""announcement_or_period_uncertain"",""entity_or_recipient_uncertain"",""instrument_or_composition_uncertain"",""needs_independent_confirmation""]",True,150,1,,Other newsletters bounded completion review,2026-10-11,2026-01-01
+ai-vc-2026-0929ca943255500a9f5f,16,"[""announcement_or_period_uncertain""]",True,,0,,Other250..399 plus opened primary gaps,,
+ai-vc-2026-0929ca943255500a9f5f,17,"[""review_context""]",True,,0,,Root completion source verification,2026-10-11,2026-01-01
+ai-vc-2026-0929ca943255500a9f5f,18,"[""instrument_or_composition_uncertain"",""capacity_or_cumulative_not_current_cash"",""needs_independent_confirmation""]",True,,0,,Uploaded CSV financial-semantics follow-on manual source review,2026-10-11,2026-01-01
+ai-vc-2026-0929ca943255500a9f5f,19,"[""needs_independent_confirmation""]",True,,0,,External audit round 1 collateral discovery,2026-10-11,2026-01-01
+ai-vc-2026-0929ca943255500a9f5f,20,"[""announcement_or_period_uncertain"",""entity_or_recipient_uncertain"",""out_of_scope_context""]",True,,0,,External audit round 1 country metadata: bounded top 40 display issuer gaps,2026-10-11,2026-01-01
+ai-vc-2026-0929ca943255500a9f5f,21,"[""announcement_or_period_uncertain"",""entity_or_recipient_uncertain"",""historical_context""]",True,,0,,External audit round 1 / temporal-exclusion follow-up,2026-10-11,2026-01-01
+ai-vc-2026-0929ca943255500a9f5f,22,"[""access_required"",""capacity_or_cumulative_not_current_cash"",""needs_independent_confirmation""]",True,,1,,External independent agent audit round 1: findings 0–9,2026-10-11,2026-01-01
+ai-vc-2026-0929ca943255500a9f5f,23,"[""access_required"",""announcement_or_period_uncertain"",""entity_or_recipient_uncertain"",""instrument_or_composition_uncertain""]",True,,0,,External audit round 1 / missing B,2026-10-11,2026-01-01
+ai-vc-2026-0929ca943255500a9f5f,24,"[""access_required"",""announcement_or_period_uncertain"",""entity_or_recipient_uncertain""]",True,,1,,external_audit_round_1_missing_c,2026-10-11,2026-01-01
+ai-vc-2026-0929ca943255500a9f5f,25,"[""announcement_or_period_uncertain""]",True,144,1,144,Gmail Axios/Pro Rata targeted AI and deal query,2026-10-11,2026-01-01
+ai-vc-2026-0929ca943255500a9f5f,26,"[""instrument_or_composition_uncertain"",""capacity_or_cumulative_not_current_cash""]",True,64,1,64,Gmail Axios Pro Rata all newsletters crosscheck,2026-10-11,2026-01-01
+ai-vc-2026-0929ca943255500a9f5f,27,"[""announcement_or_period_uncertain"",""entity_or_recipient_uncertain"",""historical_context""]",True,18,1,18,Return on Security,2026-10-11,2026-01-01
+ai-vc-2026-0929ca943255500a9f5f,28,"[""announcement_or_period_uncertain""]",True,227,1,227,The Information Gmail H1,2026-06-30,2026-01-01
+ai-vc-2026-0929ca943255500a9f5f,29,"[""announcement_or_period_uncertain""]",True,194,1,194,Gmail: The Information H2,2026-10-11,2026-07-01
+ai-vc-2026-0929ca943255500a9f5f,30,"[""announcement_or_period_uncertain""]",True,206,1,206,Gmail: The Information H2 supplemental,2026-10-11,2026-07-01
+ai-vc-2026-0929ca943255500a9f5f,31,"[""historical_context""]",True,37,1,37,Other VC newsletters — broad sender discovery,2026-10-11,2026-01-01
+ai-vc-2026-0929ca943255500a9f5f,32,"[""historical_context""]",True,17,1,17,Other VC newsletters — funding subject discovery,2026-10-11,2026-01-01
+ai-vc-2026-0929ca943255500a9f5f,33,"[""historical_context""]",True,1119,1,1098,Other newsletters — broad AI financing content discovery,2026-10-11,2026-01-01
+ai-vc-2026-0929ca943255500a9f5f,34,"[""historical_context""]",True,57,1,57,Other named newsletters — subscription presence discovery,2026-10-11,2026-01-01
+ai-vc-2026-0929ca943255500a9f5f,35,"[""historical_context""]",True,18,1,18,Return on Security full sender run,2026-10-11,2026-01-01
+ai-vc-2026-0929ca943255500a9f5f,36,"[""historical_context""]",True,2,1,2,Greylock full sender run,2026-10-11,2026-01-01
+ai-vc-2026-0929ca943255500a9f5f,37,"[""historical_context""]",True,20,1,20,Dealroom full sender run,2026-10-11,2026-01-01
+ai-vc-2026-0929ca943255500a9f5f,38,"[""historical_context""]",True,40,1,40,Clouded Judgement funding run,2026-10-11,2026-01-01
+ai-vc-2026-0929ca943255500a9f5f,39,"[""announcement_or_period_uncertain"",""historical_context""]",True,99,1,99,TechCrunch Gmail newsletters,2026-10-11,2026-01-01
+ai-vc-2026-0929ca943255500a9f5f,40,"[""historical_context""]",True,1,1,1,Prior user research workbook v39,2026-10-11,2026-01-01
+ai-vc-2026-0929ca943255500a9f5f,41,"[""announcement_or_period_uncertain"",""instrument_or_composition_uncertain"",""needs_independent_confirmation""]",True,100,1,100,User-provided CSV part1,2026-10-11,2026-01-01
+ai-vc-2026-0929ca943255500a9f5f,42,"[""announcement_or_period_uncertain"",""instrument_or_composition_uncertain"",""needs_independent_confirmation""]",True,100,1,100,User-provided CSV (part 2),2026-10-11,2026-01-01
+ai-vc-2026-0929ca943255500a9f5f,43,"[""announcement_or_period_uncertain"",""capacity_or_cumulative_not_current_cash"",""needs_independent_confirmation""]",True,91,1,91,User-provided CSV: rows 201–291,2026-10-11,2026-01-01
+ai-vc-2026-0929ca943255500a9f5f,44,"[""capacity_or_cumulative_not_current_cash"",""historical_context""]",True,5,1,5,Primary web M&A verification,2026-10-11,2026-01-01
+ai-vc-2026-0929ca943255500a9f5f,45,"[""capacity_or_cumulative_not_current_cash""]",True,0,0,0,Web primary announcements: major labs and legal AI,2026-10-11,2026-01-01
+ai-vc-2026-0929ca943255500a9f5f,46,"[""capacity_or_cumulative_not_current_cash""]",True,0,0,0,Web primary announcements: physical AI and inference,2026-10-11,2026-01-01
+ai-vc-2026-0929ca943255500a9f5f,47,"[""access_required"",""capacity_or_cumulative_not_current_cash""]",True,,0,,Web targeted scope-gap verification,2026-10-11,2026-01-01
+ai-vc-2026-0929ca943255500a9f5f,48,"[""needs_independent_confirmation""]",True,0,0,0,Public X indexed search,2026-10-11,2026-01-01

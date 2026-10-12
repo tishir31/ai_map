@@ -11,7 +11,7 @@
   "additionalProperties": false,
   "properties": {
     "snapshot_id": {
-      "const": "ai-vc-2026-f169451525da440d307e"
+      "const": "ai-vc-2026-0929ca943255500a9f5f"
     },
     "findings": {
       "type": "array",

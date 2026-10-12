@@ -1,0 +1,18 @@
+snapshot_id,ai_scope,atlas_registry_records,canonical_name,company_domain,company_id,country,country_iso2,country_normalization_state,coverage_state,financial_snapshot_records,funding_snapshot_records,history_checked_at,history_review_outcome,observed_2026_event_records,observed_core_equity_records,observed_event_records,primary_subsector,prior_registry_records,registry_review_status,registry_source_count,total_registry_records,valuation_snapshot_records
+ai-vc-2026-0929ca943255500a9f5f,enabling_infrastructure,0,KONST,,2840,,,country_unknown,has_observed_events,0,0,,,1,0,1,data_centers_power,0,,0,0,0
+ai-vc-2026-0929ca943255500a9f5f,digital_ai,0,PlannerPal,,2841,,,country_unknown,has_observed_events,0,0,,,1,0,1,finance,0,,0,0,0
+ai-vc-2026-0929ca943255500a9f5f,digital_ai,0,Infino AI,,2842,,,country_unknown,has_observed_events,0,0,,,1,0,1,search_knowledge,0,,0,0,0
+ai-vc-2026-0929ca943255500a9f5f,physical_ai,0,Danu Robotics,,2843,,,country_unknown,has_observed_events,0,0,,,1,0,1,industrial_logistics_robotics,0,,0,0,0
+ai-vc-2026-0929ca943255500a9f5f,digital_ai,0,Aiera,,2844,,,country_unknown,has_observed_events,0,0,,,1,0,1,finance,0,,0,0,0
+ai-vc-2026-0929ca943255500a9f5f,,0,BlueMatrix,,2845,,,country_unknown,not_checked,0,0,,,0,0,0,,0,,0,0,0
+ai-vc-2026-0929ca943255500a9f5f,digital_ai,0,Blackford Analysis,,2846,,,country_unknown,has_observed_events,0,0,,,1,0,1,healthcare_biotech,0,,0,0,0
+ai-vc-2026-0929ca943255500a9f5f,,0,Sopris Capital,,2847,,,country_unknown,not_checked,0,0,,,0,0,0,,0,,0,0,0
+ai-vc-2026-0929ca943255500a9f5f,digital_ai,0,Strata,,2848,,,country_unknown,has_observed_events,0,0,,,1,0,1,sales_marketing,0,,0,0,0
+ai-vc-2026-0929ca943255500a9f5f,digital_ai,0,Mentlio,,2849,,,country_unknown,has_observed_events,0,0,,,1,0,1,coding_agents,0,,0,0,0
+ai-vc-2026-0929ca943255500a9f5f,digital_ai,0,Move AI,,2850,,,country_unknown,has_observed_events,0,0,,,1,0,1,creative_media,0,,0,0,0
+ai-vc-2026-0929ca943255500a9f5f,,0,Oxford Metrics (Vicon),,2851,,,country_unknown,not_checked,0,0,,,0,0,0,,0,,0,0,0
+ai-vc-2026-0929ca943255500a9f5f,digital_ai,0,Meticulous,,2852,,,country_unknown,has_observed_events,0,0,,,1,0,1,developer_tools,0,,0,0,0
+ai-vc-2026-0929ca943255500a9f5f,digital_ai,0,Peppermint,,2853,,,country_unknown,has_observed_events,0,0,,,1,0,1,general_applications,0,,0,0,0
+ai-vc-2026-0929ca943255500a9f5f,,0,Marvell,,2854,,,country_unknown,not_checked,0,0,,,0,0,0,,0,,0,0,0
+ai-vc-2026-0929ca943255500a9f5f,physical_ai,0,Medical Microinstruments,mmimicro.com,2855,United States,US,single_country_normalized,has_observed_events,0,0,,,1,0,1,medical_robotics,0,,0,0,0
+ai-vc-2026-0929ca943255500a9f5f,physical_ai,0,Halter,halterhq.com,2856,New Zealand,NZ,single_country_normalized,has_observed_events,0,0,,,1,1,1,agricultural_robotics,0,,0,0,0

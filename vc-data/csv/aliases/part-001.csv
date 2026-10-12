@@ -1,1349 +1,1446 @@
 snapshot_id,alias,company_id,normalized_alias
-ai-vc-2026-f169451525da440d307e,BuildForever,1501,buildforever
-ai-vc-2026-f169451525da440d307e,A&K Robotics,1502,a&k robotics
-ai-vc-2026-f169451525da440d307e,Sooth Labs,1503,sooth labs
-ai-vc-2026-f169451525da440d307e,Pudu Robotics,1504,pudu robotics
-ai-vc-2026-f169451525da440d307e,Omni,1505,omni
-ai-vc-2026-f169451525da440d307e,Human,1506,human
-ai-vc-2026-f169451525da440d307e,Cloudsmith,1507,cloudsmith
-ai-vc-2026-f169451525da440d307e,Orkes,1508,orkes
-ai-vc-2026-f169451525da440d307e,ComfyUI,1509,comfyui
-ai-vc-2026-f169451525da440d307e,SquareMind,1510,squaremind
-ai-vc-2026-f169451525da440d307e,Clarasight,1511,clarasight
-ai-vc-2026-f169451525da440d307e,Aidoc,1512,aidoc
-ai-vc-2026-f169451525da440d307e,Scout AI,1513,scout ai
-ai-vc-2026-f169451525da440d307e,Manifest OS,1514,manifest os
-ai-vc-2026-f169451525da440d307e,Actively,1515,actively
-ai-vc-2026-f169451525da440d307e,Windmill,1516,windmill
-ai-vc-2026-f169451525da440d307e,Shapes,1517,shapes
-ai-vc-2026-f169451525da440d307e,OpenLight,1518,openlight
-ai-vc-2026-f169451525da440d307e,The Deployment Company,1519,the deployment company
-ai-vc-2026-f169451525da440d307e,Panthalassa,1520,panthalassa
-ai-vc-2026-f169451525da440d307e,Reserv,1521,reserv
-ai-vc-2026-f169451525da440d307e,CopilotKit,1522,copilotkit
-ai-vc-2026-f169451525da440d307e,Blitzy,1523,blitzy
-ai-vc-2026-f169451525da440d307e,RadixArk,1524,radixark
-ai-vc-2026-f169451525da440d307e,Subquadratic,1525,subquadratic
-ai-vc-2026-f169451525da440d307e,Nace.AI,1526,nace.ai
-ai-vc-2026-f169451525da440d307e,Nyobolt,1527,nyobolt
-ai-vc-2026-f169451525da440d307e,Tessera Labs,1528,tessera labs
-ai-vc-2026-f169451525da440d307e,LiveEO,1529,liveeo
-ai-vc-2026-f169451525da440d307e,Nova Intelligence,1530,nova intelligence
-ai-vc-2026-f169451525da440d307e,Vori,1531,vori
-ai-vc-2026-f169451525da440d307e,Featherless.ai,1532,featherless.ai
-ai-vc-2026-f169451525da440d307e,District,1533,district
-ai-vc-2026-f169451525da440d307e,Cowboy Space Corporation,1534,cowboy space corporation
-ai-vc-2026-f169451525da440d307e,Lithosquare,1535,lithosquare
-ai-vc-2026-f169451525da440d307e,Ethos,1536,ethos
-ai-vc-2026-f169451525da440d307e,Basata,1537,basata
-ai-vc-2026-f169451525da440d307e,Vbot,1538,vbot
-ai-vc-2026-f169451525da440d307e,Frame Security,1539,frame security
-ai-vc-2026-f169451525da440d307e,Vapi,1540,vapi
-ai-vc-2026-f169451525da440d307e,Roadrunner,1541,roadrunner
-ai-vc-2026-f169451525da440d307e,Ciridae,1542,ciridae
-ai-vc-2026-f169451525da440d307e,Develo,1543,develo
-ai-vc-2026-f169451525da440d307e,Monaco,1544,monaco
-ai-vc-2026-f169451525da440d307e,Embat,1545,embat
-ai-vc-2026-f169451525da440d307e,Origin Lab,1546,origin lab
-ai-vc-2026-f169451525da440d307e,Multiverse,1547,multiverse
-ai-vc-2026-f169451525da440d307e,WIRobotics,1548,wirobotics
-ai-vc-2026-f169451525da440d307e,Gridcare,1549,gridcare
-ai-vc-2026-f169451525da440d307e,GovWell,1550,govwell
-ai-vc-2026-f169451525da440d307e,Wirestock,1551,wirestock
-ai-vc-2026-f169451525da440d307e,Sigma Computing,1552,sigma computing
-ai-vc-2026-f169451525da440d307e,Viktor,1553,viktor
-ai-vc-2026-f169451525da440d307e,Scope,1554,scope
-ai-vc-2026-f169451525da440d307e,Nof1,1555,nof1
-ai-vc-2026-f169451525da440d307e,Kin Health,1556,kin health
-ai-vc-2026-f169451525da440d307e,Zyphra,1557,zyphra
-ai-vc-2026-f169451525da440d307e,Radar,1558,radar
-ai-vc-2026-f169451525da440d307e,Bunch,1559,bunch
-ai-vc-2026-f169451525da440d307e,Ocean,1560,ocean
-ai-vc-2026-f169451525da440d307e,Hellbender,1561,hellbender
-ai-vc-2026-f169451525da440d307e,Eisen,1562,eisen
-ai-vc-2026-f169451525da440d307e,Socket,1563,socket
-ai-vc-2026-f169451525da440d307e,Findd,1564,findd
-ai-vc-2026-f169451525da440d307e,NanoCo,1565,nanoco
-ai-vc-2026-f169451525da440d307e,Stilta,1566,stilta
-ai-vc-2026-f169451525da440d307e,Tribal,1567,tribal
-ai-vc-2026-f169451525da440d307e,Hark,1568,hark
-ai-vc-2026-f169451525da440d307e,Farther,1569,farther
-ai-vc-2026-f169451525da440d307e,Moment,1570,moment
-ai-vc-2026-f169451525da440d307e,Quartermaster,1571,quartermaster
-ai-vc-2026-f169451525da440d307e,August Robotics,1572,august robotics
-ai-vc-2026-f169451525da440d307e,Arc,1573,arc
-ai-vc-2026-f169451525da440d307e,Catena Labs,1574,catena labs
-ai-vc-2026-f169451525da440d307e,NavigateAI,1575,navigateai
-ai-vc-2026-f169451525da440d307e,Perceptic,1576,perceptic
-ai-vc-2026-f169451525da440d307e,LightTable,1577,lighttable
-ai-vc-2026-f169451525da440d307e,Triomics,1578,triomics
-ai-vc-2026-f169451525da440d307e,Solstice,1579,solstice
-ai-vc-2026-f169451525da440d307e,Tensormesh,1580,tensormesh
-ai-vc-2026-f169451525da440d307e,RevEng.AI,1581,reveng.ai
-ai-vc-2026-f169451525da440d307e,Vast,1582,vast
-ai-vc-2026-f169451525da440d307e,XCena,1583,xcena
-ai-vc-2026-f169451525da440d307e,Corgi,1584,corgi
-ai-vc-2026-f169451525da440d307e,Garner Health,1585,garner health
-ai-vc-2026-f169451525da440d307e,Inherent,1586,inherent
-ai-vc-2026-f169451525da440d307e,Endra,1587,endra
-ai-vc-2026-f169451525da440d307e,Adaptive Innovations,1588,adaptive innovations
-ai-vc-2026-f169451525da440d307e,Findigs,1589,findigs
-ai-vc-2026-f169451525da440d307e,Lila Sciences,1590,lila sciences
-ai-vc-2026-f169451525da440d307e,AlphaSense,1591,alphasense
-ai-vc-2026-f169451525da440d307e,Collate,1592,collate
-ai-vc-2026-f169451525da440d307e,Wordsmith,1593,wordsmith
-ai-vc-2026-f169451525da440d307e,Honeycomb Insurance,1594,honeycomb insurance
-ai-vc-2026-f169451525da440d307e,Terra AI,1595,terra ai
-ai-vc-2026-f169451525da440d307e,PointFive,1596,pointfive
-ai-vc-2026-f169451525da440d307e,Infinity Constellation,1597,infinity constellation
-ai-vc-2026-f169451525da440d307e,Stepful,1598,stepful
-ai-vc-2026-f169451525da440d307e,Corca Research,1599,corca research
-ai-vc-2026-f169451525da440d307e,Uncovr,1600,uncovr
-ai-vc-2026-f169451525da440d307e,Respond.io,1601,respond.io
-ai-vc-2026-f169451525da440d307e,Arcade.dev,1602,arcade.dev
-ai-vc-2026-f169451525da440d307e,Cortea,1603,cortea
-ai-vc-2026-f169451525da440d307e,Probably,1604,probably
-ai-vc-2026-f169451525da440d307e,Copia Automation,1605,copia automation
-ai-vc-2026-f169451525da440d307e,Limitless Labs,1606,limitless labs
-ai-vc-2026-f169451525da440d307e,Gero,1607,gero
-ai-vc-2026-f169451525da440d307e,Odyssey,1608,odyssey
-ai-vc-2026-f169451525da440d307e,Genspark.ai,1609,genspark.ai
-ai-vc-2026-f169451525da440d307e,Conduct,1610,conduct
-ai-vc-2026-f169451525da440d307e,Convey,1611,convey
-ai-vc-2026-f169451525da440d307e,Pramaana Labs,1612,pramaana labs
-ai-vc-2026-f169451525da440d307e,Gradial,1613,gradial
-ai-vc-2026-f169451525da440d307e,Prosper AI,1614,prosper ai
-ai-vc-2026-f169451525da440d307e,Isometric,1615,isometric
-ai-vc-2026-f169451525da440d307e,Probook,1616,probook
-ai-vc-2026-f169451525da440d307e,Attention,1617,attention
-ai-vc-2026-f169451525da440d307e,Trase Systems,1618,trase systems
-ai-vc-2026-f169451525da440d307e,Sail Research,1619,sail research
-ai-vc-2026-f169451525da440d307e,XCures,1620,xcures
-ai-vc-2026-f169451525da440d307e,Ornn,1621,ornn
-ai-vc-2026-f169451525da440d307e,Coval,1622,coval
-ai-vc-2026-f169451525da440d307e,Seltz,1623,seltz
-ai-vc-2026-f169451525da440d307e,Straiker,1624,straiker
-ai-vc-2026-f169451525da440d307e,Warp,1625,warp
-ai-vc-2026-f169451525da440d307e,Patronus AI,1626,patronus ai
-ai-vc-2026-f169451525da440d307e,Pocket,1627,pocket
-ai-vc-2026-f169451525da440d307e,Kotoba Technologies,1628,kotoba technologies
-ai-vc-2026-f169451525da440d307e,Alan,1629,alan
-ai-vc-2026-f169451525da440d307e,Higgsfield AI,1630,higgsfield ai
-ai-vc-2026-f169451525da440d307e,Quantifind,1631,quantifind
-ai-vc-2026-f169451525da440d307e,Open Vision Engineering,1632,open vision engineering
-ai-vc-2026-f169451525da440d307e,Baz Technologies,1633,baz technologies
-ai-vc-2026-f169451525da440d307e,Global Technical Realty,1634,global technical realty
-ai-vc-2026-f169451525da440d307e,Neurophos,1635,neurophos
-ai-vc-2026-f169451525da440d307e,Matic Robot,1636,matic robot
-ai-vc-2026-f169451525da440d307e,Sakana AI,1637,sakana ai
-ai-vc-2026-f169451525da440d307e,Daytona,1638,daytona
-ai-vc-2026-f169451525da440d307e,ZaiNar,1639,zainar
-ai-vc-2026-f169451525da440d307e,Encord,1640,encord
-ai-vc-2026-f169451525da440d307e,SiFive,1641,sifive
-ai-vc-2026-f169451525da440d307e,GitButler,1642,gitbutler
-ai-vc-2026-f169451525da440d307e,Chapter,1643,chapter
-ai-vc-2026-f169451525da440d307e,Fleet,1644,fleet
-ai-vc-2026-f169451525da440d307e,Standard Intelligence,1645,standard intelligence
-ai-vc-2026-f169451525da440d307e,Dream Labs,1646,dream labs
-ai-vc-2026-f169451525da440d307e,One World AI,1647,one world ai
-ai-vc-2026-f169451525da440d307e,Sekai,1648,sekai
-ai-vc-2026-f169451525da440d307e,Observe,1649,observe
-ai-vc-2026-f169451525da440d307e,Snowflake,1650,snowflake
-ai-vc-2026-f169451525da440d307e,Battle Road Digital,1651,battle road digital
-ai-vc-2026-f169451525da440d307e,Human Native,1652,human native
-ai-vc-2026-f169451525da440d307e,Cloudflare,1653,cloudflare
-ai-vc-2026-f169451525da440d307e,InfiniGrow,1654,infinigrow
-ai-vc-2026-f169451525da440d307e,Amplitude,1655,amplitude
-ai-vc-2026-f169451525da440d307e,Hatch,1656,hatch
-ai-vc-2026-f169451525da440d307e,Yelp,1657,yelp
-ai-vc-2026-f169451525da440d307e,Hume AI,1658,hume ai
-ai-vc-2026-f169451525da440d307e,Common Sense Machines,1659,common sense machines
-ai-vc-2026-f169451525da440d307e,Google,1660,google
-ai-vc-2026-f169451525da440d307e,Hexus,1661,hexus
-ai-vc-2026-f169451525da440d307e,Q.ai,1662,q.ai
-ai-vc-2026-f169451525da440d307e,Koyeb,1663,koyeb
-ai-vc-2026-f169451525da440d307e,Vercept,1664,vercept
-ai-vc-2026-f169451525da440d307e,Cavalry,1665,cavalry
-ai-vc-2026-f169451525da440d307e,ProducerAI,1666,producerai
-ai-vc-2026-f169451525da440d307e,Google Labs,1667,google labs
-ai-vc-2026-f169451525da440d307e,Cal AI,1668,cal ai
-ai-vc-2026-f169451525da440d307e,MyFitnessPal,1669,myfitnesspal
-ai-vc-2026-f169451525da440d307e,Moltbook,1670,moltbook
-ai-vc-2026-f169451525da440d307e,Wiz,1671,wiz
-ai-vc-2026-f169451525da440d307e,Forethought,1672,forethought
-ai-vc-2026-f169451525da440d307e,Zendesk,1673,zendesk
-ai-vc-2026-f169451525da440d307e,Confluent,1674,confluent
-ai-vc-2026-f169451525da440d307e,IBM,1675,ibm
-ai-vc-2026-f169451525da440d307e,Cove,1676,cove
-ai-vc-2026-f169451525da440d307e,Microsoft,1677,microsoft
-ai-vc-2026-f169451525da440d307e,Astral,1678,astral
-ai-vc-2026-f169451525da440d307e,TBPN,1679,tbpn
-ai-vc-2026-f169451525da440d307e,Pronetx,1680,pronetx
-ai-vc-2026-f169451525da440d307e,Caylent,1681,caylent
-ai-vc-2026-f169451525da440d307e,Simtheory,1682,simtheory
-ai-vc-2026-f169451525da440d307e,Zebra Technologies robotics automation business,1683,zebra technologies robotics automation business
-ai-vc-2026-f169451525da440d307e,Stainless,1684,stainless
-ai-vc-2026-f169451525da440d307e,Fractional AI,1685,fractional ai
-ai-vc-2026-f169451525da440d307e,Anthropic and Blackstone joint venture,1686,anthropic and blackstone joint venture
-ai-vc-2026-f169451525da440d307e,Tenstorrent,1687,tenstorrent
-ai-vc-2026-f169451525da440d307e,Qualcomm,1688,qualcomm
-ai-vc-2026-f169451525da440d307e,Topaz Labs,1689,topaz labs
-ai-vc-2026-f169451525da440d307e,Adobe,1690,adobe
-ai-vc-2026-f169451525da440d307e,Deductive AI,1691,deductive ai
-ai-vc-2026-f169451525da440d307e,Elastic,1692,elastic
-ai-vc-2026-f169451525da440d307e,Contentful,1693,contentful
-ai-vc-2026-f169451525da440d307e,Lightning AI,1694,lightning ai
-ai-vc-2026-f169451525da440d307e,Rowan Digital Infrastructure,1695,rowan digital infrastructure
-ai-vc-2026-f169451525da440d307e,Ledgebrook,1696,ledgebrook
-ai-vc-2026-f169451525da440d307e,General Medicine,1697,general medicine
-ai-vc-2026-f169451525da440d307e,Mecka,1698,mecka
-ai-vc-2026-f169451525da440d307e,Hadrian,1699,hadrian
-ai-vc-2026-f169451525da440d307e,Healthleap,1700,healthleap
-ai-vc-2026-f169451525da440d307e,Vesta,1701,vesta
-ai-vc-2026-f169451525da440d307e,An unnamed stealth AI lab founded by Keyu Tian,1702,an unnamed stealth ai lab founded by keyu tian
-ai-vc-2026-f169451525da440d307e,Wally Health,1703,wally health
-ai-vc-2026-f169451525da440d307e,Ampersand,1704,ampersand
-ai-vc-2026-f169451525da440d307e,Vinci,1705,vinci
-ai-vc-2026-f169451525da440d307e,Turba Labs,1706,turba labs
-ai-vc-2026-f169451525da440d307e,Vitalize,1707,vitalize
-ai-vc-2026-f169451525da440d307e,Flai,1708,flai
-ai-vc-2026-f169451525da440d307e,WhiteLab Genomics,1709,whitelab genomics
-ai-vc-2026-f169451525da440d307e,Procuros,1710,procuros
-ai-vc-2026-f169451525da440d307e,Siena,1711,siena
-ai-vc-2026-f169451525da440d307e,Avarra,1712,avarra
-ai-vc-2026-f169451525da440d307e,Valon,1713,valon
-ai-vc-2026-f169451525da440d307e,Wiremind,1714,wiremind
-ai-vc-2026-f169451525da440d307e,Pandektes,1715,pandektes
-ai-vc-2026-f169451525da440d307e,Volantis,1716,volantis
-ai-vc-2026-f169451525da440d307e,Halluminate,1717,halluminate
-ai-vc-2026-f169451525da440d307e,CScale,1718,cscale
-ai-vc-2026-f169451525da440d307e,Miter,1719,miter
-ai-vc-2026-f169451525da440d307e,Restate,1720,restate
-ai-vc-2026-f169451525da440d307e,Kahua,1721,kahua
-ai-vc-2026-f169451525da440d307e,ai3Bio,1722,ai3bio
-ai-vc-2026-f169451525da440d307e,Knowin,1723,knowin
-ai-vc-2026-f169451525da440d307e,Precision Neuroscience,1724,precision neuroscience
-ai-vc-2026-f169451525da440d307e,BigHat Biosciences,1725,bighat biosciences
-ai-vc-2026-f169451525da440d307e,Basalt Health,1726,basalt health
-ai-vc-2026-f169451525da440d307e,Trebellar,1727,trebellar
-ai-vc-2026-f169451525da440d307e,Axya,1728,axya
-ai-vc-2026-f169451525da440d307e,Enveda,1729,enveda
-ai-vc-2026-f169451525da440d307e,Numeral,1730,numeral
-ai-vc-2026-f169451525da440d307e,UltraSight,1731,ultrasight
-ai-vc-2026-f169451525da440d307e,Confido,1732,confido
-ai-vc-2026-f169451525da440d307e,Baselayer,1733,baselayer
-ai-vc-2026-f169451525da440d307e,CellPoint,1734,cellpoint
-ai-vc-2026-f169451525da440d307e,Biolevate,1735,biolevate
-ai-vc-2026-f169451525da440d307e,FintechOS,1736,fintechos
-ai-vc-2026-f169451525da440d307e,GENISOM AI,1737,genisom ai
-ai-vc-2026-f169451525da440d307e,Spott,1738,spott
-ai-vc-2026-f169451525da440d307e,Naive AI,1739,naive ai
-ai-vc-2026-f169451525da440d307e,Mind,1740,mind
-ai-vc-2026-f169451525da440d307e,Raindrop,1741,raindrop
-ai-vc-2026-f169451525da440d307e,Anew Labs,1742,anew labs
-ai-vc-2026-f169451525da440d307e,Arcee AI,1743,arcee ai
-ai-vc-2026-f169451525da440d307e,Polaris Electro-Optics,1744,polaris electro-optics
-ai-vc-2026-f169451525da440d307e,BackOps,1745,backops
-ai-vc-2026-f169451525da440d307e,Loora,1746,loora
-ai-vc-2026-f169451525da440d307e,Veridion,1747,veridion
-ai-vc-2026-f169451525da440d307e,Rebuild,1748,rebuild
-ai-vc-2026-f169451525da440d307e,Complir,1749,complir
-ai-vc-2026-f169451525da440d307e,Ferry Health,1750,ferry health
-ai-vc-2026-f169451525da440d307e,Expanse,1751,expanse
-ai-vc-2026-f169451525da440d307e,Aristotle,1752,aristotle
-ai-vc-2026-f169451525da440d307e,Kairon Health,1753,kairon health
-ai-vc-2026-f169451525da440d307e,Scaffold,1754,scaffold
-ai-vc-2026-f169451525da440d307e,Cornelis,1755,cornelis
-ai-vc-2026-f169451525da440d307e,Xapien,1756,xapien
-ai-vc-2026-f169451525da440d307e,Archy,1757,archy
-ai-vc-2026-f169451525da440d307e,Arlequin AI,1758,arlequin ai
-ai-vc-2026-f169451525da440d307e,Epsilon Health,1759,epsilon health
-ai-vc-2026-f169451525da440d307e,GenHealth.ai,1760,genhealth.ai
-ai-vc-2026-f169451525da440d307e,Buildcheck AI,1761,buildcheck ai
-ai-vc-2026-f169451525da440d307e,Graph AI,1762,graph ai
-ai-vc-2026-f169451525da440d307e,Intermezzo,1763,intermezzo
-ai-vc-2026-f169451525da440d307e,Enigmata,1764,enigmata
-ai-vc-2026-f169451525da440d307e,Savvy Wealth,1765,savvy wealth
-ai-vc-2026-f169451525da440d307e,Inspiren,1766,inspiren
-ai-vc-2026-f169451525da440d307e,Lightfield,1767,lightfield
-ai-vc-2026-f169451525da440d307e,Harmoni,1768,harmoni
-ai-vc-2026-f169451525da440d307e,Overroute,1769,overroute
-ai-vc-2026-f169451525da440d307e,Onix,1770,onix
-ai-vc-2026-f169451525da440d307e,VideoGen,1771,videogen
-ai-vc-2026-f169451525da440d307e,Gaia,1772,gaia
-ai-vc-2026-f169451525da440d307e,Resect AI,1773,resect ai
-ai-vc-2026-f169451525da440d307e,Sirdab,1774,sirdab
-ai-vc-2026-f169451525da440d307e,Hivebotics,1775,hivebotics
-ai-vc-2026-f169451525da440d307e,Jaipur Robotics,1776,jaipur robotics
-ai-vc-2026-f169451525da440d307e,Fluencify,1777,fluencify
-ai-vc-2026-f169451525da440d307e,Haystack Robotics,1778,haystack robotics
-ai-vc-2026-f169451525da440d307e,Souk,1779,souk
-ai-vc-2026-f169451525da440d307e,Félix,1780,félix
-ai-vc-2026-f169451525da440d307e,DataAgent,1781,dataagent
-ai-vc-2026-f169451525da440d307e,Xorlab,1782,xorlab
-ai-vc-2026-f169451525da440d307e,Guickly,1783,guickly
-ai-vc-2026-f169451525da440d307e,Physical Super Intelligence,1784,physical super intelligence
-ai-vc-2026-f169451525da440d307e,Adaptyv Biosystems,1785,adaptyv biosystems
-ai-vc-2026-f169451525da440d307e,Clipto,1786,clipto
-ai-vc-2026-f169451525da440d307e,Blue Voice,1787,blue voice
-ai-vc-2026-f169451525da440d307e,Warpify Robotics,1788,warpify robotics
-ai-vc-2026-f169451525da440d307e,Digs,1789,digs
-ai-vc-2026-f169451525da440d307e,Transfyr Bio,1790,transfyr bio
-ai-vc-2026-f169451525da440d307e,Runable,1791,runable
-ai-vc-2026-f169451525da440d307e,Onos Health,1792,onos health
-ai-vc-2026-f169451525da440d307e,Liner,1793,liner
-ai-vc-2026-f169451525da440d307e,Celera Semiconductor,1794,celera semiconductor
-ai-vc-2026-f169451525da440d307e,Newcode,1795,newcode
-ai-vc-2026-f169451525da440d307e,amber,1796,amber
-ai-vc-2026-f169451525da440d307e,Dogotix,1797,dogotix
-ai-vc-2026-f169451525da440d307e,Callosum,1798,callosum
-ai-vc-2026-f169451525da440d307e,Rundoo,1799,rundoo
-ai-vc-2026-f169451525da440d307e,Relativity Networks,1800,relativity networks
-ai-vc-2026-f169451525da440d307e,Twin1 AI,1801,twin1 ai
-ai-vc-2026-f169451525da440d307e,Veeda AI,1802,veeda ai
-ai-vc-2026-f169451525da440d307e,Medly AI,1803,medly ai
-ai-vc-2026-f169451525da440d307e,Hypercubic,1804,hypercubic
-ai-vc-2026-f169451525da440d307e,Rillet,1805,rillet
-ai-vc-2026-f169451525da440d307e,Advancing Analytics,1806,advancing analytics
-ai-vc-2026-f169451525da440d307e,CAEPlus,1807,caeplus
-ai-vc-2026-f169451525da440d307e,Gravis Robotics,1808,gravis robotics
-ai-vc-2026-f169451525da440d307e,Terra Industries,1809,terra industries
-ai-vc-2026-f169451525da440d307e,Palona AI,1810,palona ai
-ai-vc-2026-f169451525da440d307e,Silicon Data,1811,silicon data
-ai-vc-2026-f169451525da440d307e,Thrive Holdings,1812,thrive holdings
-ai-vc-2026-f169451525da440d307e,Gravity,1813,gravity
-ai-vc-2026-f169451525da440d307e,ClearJet,1814,clearjet
-ai-vc-2026-f169451525da440d307e,Preview,1815,preview
-ai-vc-2026-f169451525da440d307e,Diald,1816,diald
-ai-vc-2026-f169451525da440d307e,Flagler Health,1817,flagler health
-ai-vc-2026-f169451525da440d307e,ApartmentIQ,1818,apartmentiq
-ai-vc-2026-f169451525da440d307e,Axle,1819,axle
-ai-vc-2026-f169451525da440d307e,Legio,1820,legio
-ai-vc-2026-f169451525da440d307e,Fisent Technologies,1821,fisent technologies
-ai-vc-2026-f169451525da440d307e,Volta Infrastructure,1822,volta infrastructure
-ai-vc-2026-f169451525da440d307e,VibeIQ,1823,vibeiq
-ai-vc-2026-f169451525da440d307e,Naïve,1824,naïve
-ai-vc-2026-f169451525da440d307e,Fluxco,1825,fluxco
-ai-vc-2026-f169451525da440d307e,Assured,1826,assured
-ai-vc-2026-f169451525da440d307e,Discovered Materials,1827,discovered materials
-ai-vc-2026-f169451525da440d307e,SiteVue AI,1828,sitevue ai
-ai-vc-2026-f169451525da440d307e,Inevitable AI Group,1829,inevitable ai group
-ai-vc-2026-f169451525da440d307e,Vexev,1830,vexev
-ai-vc-2026-f169451525da440d307e,Osmo,1831,osmo
-ai-vc-2026-f169451525da440d307e,RevealDx,1832,revealdx
-ai-vc-2026-f169451525da440d307e,Hulp,1833,hulp
-ai-vc-2026-f169451525da440d307e,Aurelius Systems,1834,aurelius systems
-ai-vc-2026-f169451525da440d307e,WindBorne Systems,1835,windborne systems
-ai-vc-2026-f169451525da440d307e,Mitti Labs,1836,mitti labs
-ai-vc-2026-f169451525da440d307e,Pinegap,1837,pinegap
-ai-vc-2026-f169451525da440d307e,Proxy Foods AI,1838,proxy foods ai
-ai-vc-2026-f169451525da440d307e,Relu,1839,relu
-ai-vc-2026-f169451525da440d307e,Convex,1840,convex
-ai-vc-2026-f169451525da440d307e,Maximum,1841,maximum
-ai-vc-2026-f169451525da440d307e,Delightree,1842,delightree
-ai-vc-2026-f169451525da440d307e,Buzz Solutions,1843,buzz solutions
-ai-vc-2026-f169451525da440d307e,HappyRobot,1844,happyrobot
-ai-vc-2026-f169451525da440d307e,Foundational Industries,1845,foundational industries
-ai-vc-2026-f169451525da440d307e,June AI,1846,june ai
-ai-vc-2026-f169451525da440d307e,Marquee,1847,marquee
-ai-vc-2026-f169451525da440d307e,Perceptual Robotics,1848,perceptual robotics
-ai-vc-2026-f169451525da440d307e,5U AI,1849,5u ai
-ai-vc-2026-f169451525da440d307e,Mozn,1850,mozn
-ai-vc-2026-f169451525da440d307e,Eliyan,1851,eliyan
-ai-vc-2026-f169451525da440d307e,Encore AI,1852,encore ai
-ai-vc-2026-f169451525da440d307e,Agon,1853,agon
-ai-vc-2026-f169451525da440d307e,Henry AI,1854,henry ai
-ai-vc-2026-f169451525da440d307e,Dili,1855,dili
-ai-vc-2026-f169451525da440d307e,Hint,1856,hint
-ai-vc-2026-f169451525da440d307e,Polar,1857,polar
-ai-vc-2026-f169451525da440d307e,Freehand,1858,freehand
-ai-vc-2026-f169451525da440d307e,Harmony,1859,harmony
-ai-vc-2026-f169451525da440d307e,COR,1860,cor
-ai-vc-2026-f169451525da440d307e,Epitel,1861,epitel
-ai-vc-2026-f169451525da440d307e,telli,1862,telli
-ai-vc-2026-f169451525da440d307e,Weave,1863,weave
-ai-vc-2026-f169451525da440d307e,Credible Data,1864,credible data
-ai-vc-2026-f169451525da440d307e,Pangram,1865,pangram
-ai-vc-2026-f169451525da440d307e,Antares Labs,1866,antares labs
-ai-vc-2026-f169451525da440d307e,Fincart,1867,fincart
-ai-vc-2026-f169451525da440d307e,Multiverse Computing,1868,multiverse computing
-ai-vc-2026-f169451525da440d307e,BusinessNext,1869,businessnext
-ai-vc-2026-f169451525da440d307e,Andrenam,1870,andrenam
-ai-vc-2026-f169451525da440d307e,kausable,1871,kausable
-ai-vc-2026-f169451525da440d307e,Dopl Technologies,1872,dopl technologies
-ai-vc-2026-f169451525da440d307e,Freight Hero,1873,freight hero
-ai-vc-2026-f169451525da440d307e,Pilot Protocol,1874,pilot protocol
-ai-vc-2026-f169451525da440d307e,PageMind,1875,pagemind
-ai-vc-2026-f169451525da440d307e,Solomei AI,1876,solomei ai
-ai-vc-2026-f169451525da440d307e,Enigma,1877,enigma
-ai-vc-2026-f169451525da440d307e,AegisAI,1878,aegisai
-ai-vc-2026-f169451525da440d307e,Paper,1879,paper
-ai-vc-2026-f169451525da440d307e,Ropedia,1880,ropedia
-ai-vc-2026-f169451525da440d307e,Elio,1881,elio
-ai-vc-2026-f169451525da440d307e,Trooly,1882,trooly
-ai-vc-2026-f169451525da440d307e,Cheiron,1883,cheiron
-ai-vc-2026-f169451525da440d307e,Coverwatch,1884,coverwatch
-ai-vc-2026-f169451525da440d307e,Workstreet,1885,workstreet
-ai-vc-2026-f169451525da440d307e,Cathedral,1886,cathedral
-ai-vc-2026-f169451525da440d307e,Genius AI (formerly GlossGenius),1887,genius ai (formerly glossgenius)
-ai-vc-2026-f169451525da440d307e,Transcripta Bio,1888,transcripta bio
-ai-vc-2026-f169451525da440d307e,1872,1889,1872
-ai-vc-2026-f169451525da440d307e,Petra Labs,1890,petra labs
-ai-vc-2026-f169451525da440d307e,StrongestLayer,1891,strongestlayer
-ai-vc-2026-f169451525da440d307e,Ossprey,1892,ossprey
-ai-vc-2026-f169451525da440d307e,Zafran Security,1893,zafran security
-ai-vc-2026-f169451525da440d307e,Cascade,1894,cascade
-ai-vc-2026-f169451525da440d307e,Neo,1895,neo
-ai-vc-2026-f169451525da440d307e,Natural,1896,natural
-ai-vc-2026-f169451525da440d307e,Empirical Security,1897,empirical security
-ai-vc-2026-f169451525da440d307e,Infinity,1898,infinity
-ai-vc-2026-f169451525da440d307e,Fora,1899,fora
-ai-vc-2026-f169451525da440d307e,Adapter,1900,adapter
-ai-vc-2026-f169451525da440d307e,Spectro Cloud,1901,spectro cloud
-ai-vc-2026-f169451525da440d307e,American Growth Insurance,1902,american growth insurance
-ai-vc-2026-f169451525da440d307e,Oak,1903,oak
-ai-vc-2026-f169451525da440d307e,Hemispheric,1904,hemispheric
-ai-vc-2026-f169451525da440d307e,Sable,1905,sable
-ai-vc-2026-f169451525da440d307e,Bunkerhill Health,1906,bunkerhill health
-ai-vc-2026-f169451525da440d307e,Neko Health,1907,neko health
-ai-vc-2026-f169451525da440d307e,InstaLily,1908,instalily
-ai-vc-2026-f169451525da440d307e,Rime,1909,rime
-ai-vc-2026-f169451525da440d307e,Overtone,1910,overtone
-ai-vc-2026-f169451525da440d307e,Gradium,1911,gradium
-ai-vc-2026-f169451525da440d307e,Augmodo,1912,augmodo
-ai-vc-2026-f169451525da440d307e,Oxylabs,1913,oxylabs
-ai-vc-2026-f169451525da440d307e,Tangos,1914,tangos
-ai-vc-2026-f169451525da440d307e,Even Realities,1915,even realities
-ai-vc-2026-f169451525da440d307e,EquiLibre Technologies,1916,equilibre technologies
-ai-vc-2026-f169451525da440d307e,Higharc,1917,higharc
-ai-vc-2026-f169451525da440d307e,Omen AI,1918,omen ai
-ai-vc-2026-f169451525da440d307e,MDOTM,1919,mdotm
-ai-vc-2026-f169451525da440d307e,Queue,1920,queue
-ai-vc-2026-f169451525da440d307e,Celestial AI,1921,celestial ai
-ai-vc-2026-f169451525da440d307e,Marvell Technology,1922,marvell technology
-ai-vc-2026-f169451525da440d307e,Xeal,1923,xeal
-ai-vc-2026-f169451525da440d307e,Intelligent Machines,1924,intelligent machines
-ai-vc-2026-f169451525da440d307e,Avathon,1925,avathon
-ai-vc-2026-f169451525da440d307e,Poolside,1926,poolside
-ai-vc-2026-f169451525da440d307e,d-Matrix,1927,d-matrix
-ai-vc-2026-f169451525da440d307e,Nuvacore,1928,nuvacore
-ai-vc-2026-f169451525da440d307e,Noeri,1929,noeri
-ai-vc-2026-f169451525da440d307e,Runta,1930,runta
-ai-vc-2026-f169451525da440d307e,Takeoff,1931,takeoff
-ai-vc-2026-f169451525da440d307e,Rain AI,1932,rain ai
-ai-vc-2026-f169451525da440d307e,UniPat,1933,unipat
-ai-vc-2026-f169451525da440d307e,Humanlaya,1934,humanlaya
-ai-vc-2026-f169451525da440d307e,TechWolf,1935,techwolf
-ai-vc-2026-f169451525da440d307e,Ensignia,1936,ensignia
-ai-vc-2026-f169451525da440d307e,Serval,1937,serval
-ai-vc-2026-f169451525da440d307e,trail ML,1938,trail ml
-ai-vc-2026-f169451525da440d307e,Collibra,1939,collibra
-ai-vc-2026-f169451525da440d307e,Dokai,1940,dokai
-ai-vc-2026-f169451525da440d307e,Bolt.new,1941,bolt.new
-ai-vc-2026-f169451525da440d307e,BotDojo,1942,botdojo
-ai-vc-2026-f169451525da440d307e,Mitratech Legal,1943,mitratech legal
-ai-vc-2026-f169451525da440d307e,Daybreak LLC,1944,daybreak llc
-ai-vc-2026-f169451525da440d307e,Statecraft,1945,statecraft
-ai-vc-2026-f169451525da440d307e,Row Zero,1946,row zero
-ai-vc-2026-f169451525da440d307e,Mila Health,1947,mila health
-ai-vc-2026-f169451525da440d307e,DexCare,1948,dexcare
-ai-vc-2026-f169451525da440d307e,Meridian Tech,1949,meridian tech
-ai-vc-2026-f169451525da440d307e,Dioxus Labs,1950,dioxus labs
-ai-vc-2026-f169451525da440d307e,Alif Semiconductor,1951,alif semiconductor
-ai-vc-2026-f169451525da440d307e,T5 Operations,1952,t5 operations
-ai-vc-2026-f169451525da440d307e,Salute,1953,salute
-ai-vc-2026-f169451525da440d307e,Kelvion,1954,kelvion
-ai-vc-2026-f169451525da440d307e,SLB,1955,slb
-ai-vc-2026-f169451525da440d307e,DryvIQ,1956,dryviq
-ai-vc-2026-f169451525da440d307e,Nasuni,1957,nasuni
-ai-vc-2026-f169451525da440d307e,Analytica Consulting,1958,analytica consulting
-ai-vc-2026-f169451525da440d307e,Imagenet,1959,imagenet
-ai-vc-2026-f169451525da440d307e,Tonner Drones,1960,tonner drones
-ai-vc-2026-f169451525da440d307e,Altruist,1961,altruist
-ai-vc-2026-f169451525da440d307e,Vanguard,1962,vanguard
-ai-vc-2026-f169451525da440d307e,Adroit Worldwide Media,1963,adroit worldwide media
-ai-vc-2026-f169451525da440d307e,Grainger,1964,grainger
-ai-vc-2026-f169451525da440d307e,FullyRamped,1965,fullyramped
-ai-vc-2026-f169451525da440d307e,Nooks,1966,nooks
-ai-vc-2026-f169451525da440d307e,DuckLabs,1967,ducklabs
-ai-vc-2026-f169451525da440d307e,Tai,1968,tai
-ai-vc-2026-f169451525da440d307e,Descartes Systems Group,1969,descartes systems group
-ai-vc-2026-f169451525da440d307e,Casper Studios,1970,casper studios
-ai-vc-2026-f169451525da440d307e,Ode with Anthropic,1971,ode with anthropic
-ai-vc-2026-f169451525da440d307e,Permiso Security,1972,permiso security
-ai-vc-2026-f169451525da440d307e,Okta,1973,okta
-ai-vc-2026-f169451525da440d307e,Anyscale,1974,anyscale
-ai-vc-2026-f169451525da440d307e,Wexler,1975,wexler
-ai-vc-2026-f169451525da440d307e,Cervo AI,1976,cervo ai
-ai-vc-2026-f169451525da440d307e,Altana,1977,altana
-ai-vc-2026-f169451525da440d307e,Moonnox,1978,moonnox
-ai-vc-2026-f169451525da440d307e,Certinia,1979,certinia
-ai-vc-2026-f169451525da440d307e,Personalis,1980,personalis
-ai-vc-2026-f169451525da440d307e,Tempus AI,1981,tempus ai
-ai-vc-2026-f169451525da440d307e,Bud,1982,bud
-ai-vc-2026-f169451525da440d307e,Mechanize,1983,mechanize
-ai-vc-2026-f169451525da440d307e,Lambda,1984,lambda
-ai-vc-2026-f169451525da440d307e,Sharon AI,1985,sharon ai
-ai-vc-2026-f169451525da440d307e,fal.ai,1986,fal.ai
-ai-vc-2026-f169451525da440d307e,fal,1986,fal
-ai-vc-2026-f169451525da440d307e,DensityAI,1987,densityai
-ai-vc-2026-f169451525da440d307e,Campfire,1988,campfire
-ai-vc-2026-f169451525da440d307e,Axiamatic,1989,axiamatic
-ai-vc-2026-f169451525da440d307e,Emmi AI,1990,emmi ai
-ai-vc-2026-f169451525da440d307e,Assort Health,1991,assort health
-ai-vc-2026-f169451525da440d307e,Blacksmith,1992,blacksmith
-ai-vc-2026-f169451525da440d307e,Root.io,1993,root.io
-ai-vc-2026-f169451525da440d307e,Aikido Security,1994,aikido security
-ai-vc-2026-f169451525da440d307e,Exa Labs,1995,exa labs
-ai-vc-2026-f169451525da440d307e,Arda,1996,arda
-ai-vc-2026-f169451525da440d307e,Embo,1997,embo
-ai-vc-2026-f169451525da440d307e,Ulysses,1998,ulysses
-ai-vc-2026-f169451525da440d307e,TARS Robotics,1999,tars robotics
-ai-vc-2026-f169451525da440d307e,Galaxea,2000,galaxea
-ai-vc-2026-f169451525da440d307e,X Square Robot,2001,x square robot
-ai-vc-2026-f169451525da440d307e,Olix,2002,olix
-ai-vc-2026-f169451525da440d307e,Arena,2003,arena
-ai-vc-2026-f169451525da440d307e,Tab,2004,tab
-ai-vc-2026-f169451525da440d307e,Atomic,2005,atomic
-ai-vc-2026-f169451525da440d307e,Treble,2006,treble
-ai-vc-2026-f169451525da440d307e,Fathom,2007,fathom
-ai-vc-2026-f169451525da440d307e,Superhuman,2008,superhuman
-ai-vc-2026-f169451525da440d307e,Hadrian (manufacturing),2009,hadrian (manufacturing)
-ai-vc-2026-f169451525da440d307e,Norm,2010,norm
-ai-vc-2026-f169451525da440d307e,HaloBraid,2011,halobraid
-ai-vc-2026-f169451525da440d307e,SOND,2012,sond
-ai-vc-2026-f169451525da440d307e,Trace,2013,trace
-ai-vc-2026-f169451525da440d307e,Gushwork,2014,gushwork
-ai-vc-2026-f169451525da440d307e,Mesh,2015,mesh
-ai-vc-2026-f169451525da440d307e,Photon,2016,photon
-ai-vc-2026-f169451525da440d307e,Poseidon Aerospace,2017,poseidon aerospace
-ai-vc-2026-f169451525da440d307e,Legato,2018,legato
-ai-vc-2026-f169451525da440d307e,Permiso,2019,permiso
-ai-vc-2026-f169451525da440d307e,3D Systems,2020,3d systems
-ai-vc-2026-f169451525da440d307e,a.i. solutions,2021,a.i. solutions
-ai-vc-2026-f169451525da440d307e,AB Dynamics (rFpro),2022,ab dynamics (rfpro)
-ai-vc-2026-f169451525da440d307e,Able Innovations,2023,able innovations
-ai-vc-2026-f169451525da440d307e,Abundant Robotics,2024,abundant robotics
-ai-vc-2026-f169451525da440d307e,Accuray,2025,accuray
-ai-vc-2026-f169451525da440d307e,Acellera,2026,acellera
-ai-vc-2026-f169451525da440d307e,Activ Surgical,2027,activ surgical
-ai-vc-2026-f169451525da440d307e,Ada,2028,ada
-ai-vc-2026-f169451525da440d307e,Adam,2029,adam
-ai-vc-2026-f169451525da440d307e,Adaptive Simulations,2030,adaptive simulations
-ai-vc-2026-f169451525da440d307e,Addnode Group / TECHNIA (Claytex),2031,addnode group / technia (claytex)
-ai-vc-2026-f169451525da440d307e,Adept,2032,adept
-ai-vc-2026-f169451525da440d307e,ADLINK Technology,2033,adlink technology
-ai-vc-2026-f169451525da440d307e,Advanced Construction Robotics,2034,advanced construction robotics
-ai-vc-2026-f169451525da440d307e,Aegis Software (Simio),2035,aegis software (simio)
-ai-vc-2026-f169451525da440d307e,Aescape,2036,aescape
-ai-vc-2026-f169451525da440d307e,Aethon,2037,aethon
-ai-vc-2026-f169451525da440d307e,Aeva,2038,aeva
-ai-vc-2026-f169451525da440d307e,AEye,2039,aeye
-ai-vc-2026-f169451525da440d307e,AGCO PTx,2040,agco ptx
-ai-vc-2026-f169451525da440d307e,AGILOX,2041,agilox
-ai-vc-2026-f169451525da440d307e,AirMap,2042,airmap
-ai-vc-2026-f169451525da440d307e,Akselos,2043,akselos
-ai-vc-2026-f169451525da440d307e,Aldec,2044,aldec
-ai-vc-2026-f169451525da440d307e,AllSpice,2045,allspice
-ai-vc-2026-f169451525da440d307e,Altitude Angel,2046,altitude angel
-ai-vc-2026-f169451525da440d307e,Alvascience,2047,alvascience
-ai-vc-2026-f169451525da440d307e,Amazon Robotics,2048,amazon robotics
-ai-vc-2026-f169451525da440d307e,Amazon Web Services,2049,amazon web services
-ai-vc-2026-f169451525da440d307e,Ambarella CVflow,2050,ambarella cvflow
-ai-vc-2026-f169451525da440d307e,Ambi Robotics,2051,ambi robotics
-ai-vc-2026-f169451525da440d307e,Ambience Healthcare,2052,ambience healthcare
-ai-vc-2026-f169451525da440d307e,AMD Kria,2053,amd kria
-ai-vc-2026-f169451525da440d307e,ANDRITZ,2054,andritz
-ai-vc-2026-f169451525da440d307e,Ansys,2055,ansys
-ai-vc-2026-f169451525da440d307e,Anyverse,2056,anyverse
-ai-vc-2026-f169451525da440d307e,Apex.AI,2057,apex.ai
-ai-vc-2026-f169451525da440d307e,Appen,2058,appen
-ai-vc-2026-f169451525da440d307e,Applied Flow Technology,2059,applied flow technology
-ai-vc-2026-f169451525da440d307e,Applied Intuition,2060,applied intuition
-ai-vc-2026-f169451525da440d307e,Applied Math Modeling,2061,applied math modeling
-ai-vc-2026-f169451525da440d307e,Applied Robotics,2062,applied robotics
-ai-vc-2026-f169451525da440d307e,aPriori,2063,apriori
-ai-vc-2026-f169451525da440d307e,Aqemia,2064,aqemia
-ai-vc-2026-f169451525da440d307e,Aquaveo,2065,aquaveo
-ai-vc-2026-f169451525da440d307e,Aras,2066,aras
-ai-vc-2026-f169451525da440d307e,Arbe Robotics,2067,arbe robotics
-ai-vc-2026-f169451525da440d307e,Artly Coffee,2068,artly coffee
-ai-vc-2026-f169451525da440d307e,Arup (Oasys),2069,arup (oasys)
-ai-vc-2026-f169451525da440d307e,ARX Robotics,2070,arx robotics
-ai-vc-2026-f169451525da440d307e,ASI Mining,2071,asi mining
-ai-vc-2026-f169451525da440d307e,AssemblyAI,2072,assemblyai
-ai-vc-2026-f169451525da440d307e,ATI Industrial Automation,2073,ati industrial automation
-ai-vc-2026-f169451525da440d307e,Attabotics,2074,attabotics
-ai-vc-2026-f169451525da440d307e,AUAR,2075,auar
-ai-vc-2026-f169451525da440d307e,Augment Code,2076,augment code
-ai-vc-2026-f169451525da440d307e,Augury,2077,augury
-ai-vc-2026-f169451525da440d307e,Aurel Systems,2078,aurel systems
-ai-vc-2026-f169451525da440d307e,Auterion,2079,auterion
-ai-vc-2026-f169451525da440d307e,Autodesk,2080,autodesk
-ai-vc-2026-f169451525da440d307e,Ava Robotics,2081,ava robotics
-ai-vc-2026-f169451525da440d307e,Avidbots,2082,avidbots
-ai-vc-2026-f169451525da440d307e,AVL List,2083,avl list
-ai-vc-2026-f169451525da440d307e,AVSimulation,2084,avsimulation
-ai-vc-2026-f169451525da440d307e,AVT Simulation,2085,avt simulation
-ai-vc-2026-f169451525da440d307e,AWS RoboMaker,2086,aws robomaker
-ai-vc-2026-f169451525da440d307e,BAE Systems (Bohemia Interactive Simulations),2087,bae systems (bohemia interactive simulations)
-ai-vc-2026-f169451525da440d307e,Baker Hughes,2088,baker hughes
-ai-vc-2026-f169451525da440d307e,Baraja,2089,baraja
-ai-vc-2026-f169451525da440d307e,Bear Flag Robotics,2090,bear flag robotics
-ai-vc-2026-f169451525da440d307e,Bentley Systems,2091,bentley systems
-ai-vc-2026-f169451525da440d307e,Berkshire Grey,2092,berkshire grey
-ai-vc-2026-f169451525da440d307e,BionicHIVE,2093,bionichive
-ai-vc-2026-f169451525da440d307e,BioSolveIT,2094,biosolveit
-ai-vc-2026-f169451525da440d307e,Black Forest Labs,2095,black forest labs
-ai-vc-2026-f169451525da440d307e,BlackBerry QNX,2096,blackberry qnx
-ai-vc-2026-f169451525da440d307e,Blaize,2097,blaize
-ai-vc-2026-f169451525da440d307e,Blickfeld,2098,blickfeld
-ai-vc-2026-f169451525da440d307e,Blue River Technology,2099,blue river technology
-ai-vc-2026-f169451525da440d307e,Blue Robotics,2100,blue robotics
-ai-vc-2026-f169451525da440d307e,Blue Yonder,2101,blue yonder
-ai-vc-2026-f169451525da440d307e,BlueBotics,2102,bluebotics
-ai-vc-2026-f169451525da440d307e,BMT (TUFLOW),2103,bmt (tuflow)
-ai-vc-2026-f169451525da440d307e,Bota Systems,2104,bota systems
-ai-vc-2026-f169451525da440d307e,BrainChip,2105,brainchip
-ai-vc-2026-f169451525da440d307e,Brainlab,2106,brainlab
-ai-vc-2026-f169451525da440d307e,Breaker Industries,2107,breaker industries
-ai-vc-2026-f169451525da440d307e,Breault Research Organization,2108,breault research organization
-ai-vc-2026-f169451525da440d307e,Bridge Appliances,2109,bridge appliances
-ai-vc-2026-f169451525da440d307e,Brightpick,2110,brightpick
-ai-vc-2026-f169451525da440d307e,Bryan Research & Engineering,2111,bryan research & engineering
-ai-vc-2026-f169451525da440d307e,Built Robotics,2112,built robotics
-ai-vc-2026-f169451525da440d307e,Cadence Design Systems,2113,cadence design systems
-ai-vc-2026-f169451525da440d307e,CAE,2114,cae
-ai-vc-2026-f169451525da440d307e,Cafe X,2115,cafe x
-ai-vc-2026-f169451525da440d307e,CalypsoAI,2116,calypsoai
-ai-vc-2026-f169451525da440d307e,Calytrix Technologies,2117,calytrix technologies
-ai-vc-2026-f169451525da440d307e,Canonical Ubuntu Robotics,2118,canonical ubuntu robotics
-ai-vc-2026-f169451525da440d307e,Canvas,2119,canvas
-ai-vc-2026-f169451525da440d307e,CARLA,2120,carla
-ai-vc-2026-f169451525da440d307e,Cartesia,2121,cartesia
-ai-vc-2026-f169451525da440d307e,Caterpillar (RPMGlobal),2122,caterpillar (rpmglobal)
-ai-vc-2026-f169451525da440d307e,Caterpillar Autonomous Haulage,2123,caterpillar autonomous haulage
-ai-vc-2026-f169451525da440d307e,Celus,2124,celus
-ai-vc-2026-f169451525da440d307e,CENOS,2125,cenos
-ai-vc-2026-f169451525da440d307e,Cepton,2126,cepton
-ai-vc-2026-f169451525da440d307e,Certara,2127,certara
-ai-vc-2026-f169451525da440d307e,Cerulion,2128,cerulion
-ai-vc-2026-f169451525da440d307e,Chef Robotics,2129,chef robotics
-ai-vc-2026-f169451525da440d307e,Chemical Computing Group,2130,chemical computing group
-ai-vc-2026-f169451525da440d307e,Chemstations,2131,chemstations
-ai-vc-2026-f169451525da440d307e,Chowbotics,2132,chowbotics
-ai-vc-2026-f169451525da440d307e,Chroma,2133,chroma
-ai-vc-2026-f169451525da440d307e,Citrine Informatics,2134,citrine informatics
-ai-vc-2026-f169451525da440d307e,Civ Robotics,2135,civ robotics
-ai-vc-2026-f169451525da440d307e,ClearCalcs,2136,clearcalcs
-ai-vc-2026-f169451525da440d307e,Clearpath Robotics,2137,clearpath robotics
-ai-vc-2026-f169451525da440d307e,CloudFactory,2138,cloudfactory
-ai-vc-2026-f169451525da440d307e,CMR Surgical,2139,cmr surgical
-ai-vc-2026-f169451525da440d307e,Cobalt AI,2140,cobalt ai
-ai-vc-2026-f169451525da440d307e,Coco Robotics,2141,coco robotics
-ai-vc-2026-f169451525da440d307e,Cognata,2142,cognata
-ai-vc-2026-f169451525da440d307e,Collaborative Robotics,2143,collaborative robotics
-ai-vc-2026-f169451525da440d307e,Composio,2144,composio
-ai-vc-2026-f169451525da440d307e,Computer Modelling Group,2145,computer modelling group
-ai-vc-2026-f169451525da440d307e,"Computers and Structures, Inc.",2146,"computers and structures, inc."
-ai-vc-2026-f169451525da440d307e,CompuTherm,2147,computherm
-ai-vc-2026-f169451525da440d307e,COMSOL,2148,comsol
-ai-vc-2026-f169451525da440d307e,Concepts NREC,2149,concepts nrec
-ai-vc-2026-f169451525da440d307e,Confident AI,2150,confident ai
-ai-vc-2026-f169451525da440d307e,Connect Tech,2151,connect tech
-ai-vc-2026-f169451525da440d307e,Constellation Software (Datamine),2152,constellation software (datamine)
-ai-vc-2026-f169451525da440d307e,Construction Robotics,2153,construction robotics
-ai-vc-2026-f169451525da440d307e,Contactile,2154,contactile
-ai-vc-2026-f169451525da440d307e,Convergent Science,2155,convergent science
-ai-vc-2026-f169451525da440d307e,Coppelia Robotics,2156,coppelia robotics
-ai-vc-2026-f169451525da440d307e,Coreform,2157,coreform
-ai-vc-2026-f169451525da440d307e,CoreTech System (Moldex3D),2158,coretech system (moldex3d)
-ai-vc-2026-f169451525da440d307e,CoreWeave (Monolith),2159,coreweave (monolith)
-ai-vc-2026-f169451525da440d307e,Cosmo Tech,2160,cosmo tech
-ai-vc-2026-f169451525da440d307e,Coupa (LLamasoft),2161,coupa (llamasoft)
-ai-vc-2026-f169451525da440d307e,cove.tool,2162,cove.tool
-ai-vc-2026-f169451525da440d307e,CPFD Software,2163,cpfd software
-ai-vc-2026-f169451525da440d307e,CreateASoft,2164,createasoft
-ai-vc-2026-f169451525da440d307e,Crescendo,2165,crescendo
-ai-vc-2026-f169451525da440d307e,Cresset,2166,cresset
-ai-vc-2026-f169451525da440d307e,Cresta,2167,cresta
-ai-vc-2026-f169451525da440d307e,CrewAI,2168,crewai
-ai-vc-2026-f169451525da440d307e,Cruise,2169,cruise
-ai-vc-2026-f169451525da440d307e,Cyberbotics,2170,cyberbotics
-ai-vc-2026-f169451525da440d307e,Cyberbotics Webots,2171,cyberbotics webots
-ai-vc-2026-f169451525da440d307e,Datagen,2172,datagen
-ai-vc-2026-f169451525da440d307e,Dataloop,2173,dataloop
-ai-vc-2026-f169451525da440d307e,Dedrone,2174,dedrone
-ai-vc-2026-f169451525da440d307e,Deep Origin,2175,deep origin
-ai-vc-2026-f169451525da440d307e,DEEP Robotics,2176,deep robotics
-ai-vc-2026-f169451525da440d307e,DENSO Robotics,2177,denso robotics
-ai-vc-2026-f169451525da440d307e,Descript,2178,descript
-ai-vc-2026-f169451525da440d307e,Design Simulation Technologies,2179,design simulation technologies
-ai-vc-2026-f169451525da440d307e,DesignBuilder Software,2180,designbuilder software
-ai-vc-2026-f169451525da440d307e,DesignSoft,2181,designsoft
-ai-vc-2026-f169451525da440d307e,DH-Robotics,2182,dh-robotics
-ai-vc-2026-f169451525da440d307e,DHI,2183,dhi
-ai-vc-2026-f169451525da440d307e,Digits,2184,digits
-ai-vc-2026-f169451525da440d307e,DIgSILENT,2185,digsilent
-ai-vc-2026-f169451525da440d307e,DimensionLab (Siml.ai),2186,dimensionlab (siml.ai)
-ai-vc-2026-f169451525da440d307e,Disney Research Kamino,2187,disney research kamino
-ai-vc-2026-f169451525da440d307e,Dive Solutions,2188,dive solutions
-ai-vc-2026-f169451525da440d307e,Dive Technologies,2189,dive technologies
-ai-vc-2026-f169451525da440d307e,Dlubal Software,2190,dlubal software
-ai-vc-2026-f169451525da440d307e,DNV,2191,dnv
-ai-vc-2026-f169451525da440d307e,Doosan Robotics,2192,doosan robotics
-ai-vc-2026-f169451525da440d307e,DroneShield,2193,droneshield
-ai-vc-2026-f169451525da440d307e,dSPACE,2194,dspace
-ai-vc-2026-f169451525da440d307e,Duality AI,2195,duality ai
-ai-vc-2026-f169451525da440d307e,Dynisma,2196,dynisma
-ai-vc-2026-f169451525da440d307e,EarthSense,2197,earthsense
-ai-vc-2026-f169451525da440d307e,Eaton (CYME),2198,eaton (cyme)
-ai-vc-2026-f169451525da440d307e,Echodyne,2199,echodyne
-ai-vc-2026-f169451525da440d307e,Ecoppia,2200,ecoppia
-ai-vc-2026-f169451525da440d307e,Edge Impulse,2201,edge impulse
-ai-vc-2026-f169451525da440d307e,Eightfold AI,2202,eightfold ai
-ai-vc-2026-f169451525da440d307e,Eka Robotics,2203,eka robotics
-ai-vc-2026-f169451525da440d307e,EKS InTec,2204,eks intec
-ai-vc-2026-f169451525da440d307e,Ekso Bionics,2205,ekso bionics
-ai-vc-2026-f169451525da440d307e,ELEM Biotech,2206,elem biotech
-ai-vc-2026-f169451525da440d307e,Elevate Healthcare,2207,elevate healthcare
-ai-vc-2026-f169451525da440d307e,Elicit,2208,elicit
-ai-vc-2026-f169451525da440d307e,EMAG Technologies,2209,emag technologies
-ai-vc-2026-f169451525da440d307e,Embark Trucks,2210,embark trucks
-ai-vc-2026-f169451525da440d307e,Emerson (AspenTech),2211,emerson (aspentech)
-ai-vc-2026-f169451525da440d307e,EMWorks,2212,emworks
-ai-vc-2026-f169451525da440d307e,Energid,2213,energid
-ai-vc-2026-f169451525da440d307e,Energy Exemplar,2214,energy exemplar
-ai-vc-2026-f169451525da440d307e,Energy Robotics,2215,energy robotics
-ai-vc-2026-f169451525da440d307e,Enfabrica,2216,enfabrica
-ai-vc-2026-f169451525da440d307e,ENGYS,2217,engys
-ai-vc-2026-f169451525da440d307e,Enverus (RatedPower),2218,enverus (ratedpower)
-ai-vc-2026-f169451525da440d307e,Epic Games Unreal Engine,2219,epic games unreal engine
-ai-vc-2026-f169451525da440d307e,Epiroc,2220,epiroc
-ai-vc-2026-f169451525da440d307e,Epirus,2221,epirus
-ai-vc-2026-f169451525da440d307e,EQUA Simulation,2222,equa simulation
-ai-vc-2026-f169451525da440d307e,eRoots Analytics,2223,eroots analytics
-ai-vc-2026-f169451525da440d307e,Essential AI,2224,essential ai
-ai-vc-2026-f169451525da440d307e,ESTECO,2225,esteco
-ai-vc-2026-f169451525da440d307e,Eudia,2226,eudia
-ai-vc-2026-f169451525da440d307e,EvenUp,2227,evenup
-ai-vc-2026-f169451525da440d307e,EvolutionaryScale,2228,evolutionaryscale
-ai-vc-2026-f169451525da440d307e,ExRobotics,2229,exrobotics
-ai-vc-2026-f169451525da440d307e,Exyn Technologies,2230,exyn technologies
-ai-vc-2026-f169451525da440d307e,Falkor (formerly Kongsberg Digital),2231,falkor (formerly kongsberg digital)
-ai-vc-2026-f169451525da440d307e,FANUC,2232,fanuc
-ai-vc-2026-f169451525da440d307e,FBR,2233,fbr
-ai-vc-2026-f169451525da440d307e,Ferroelectric Memory Company,2234,ferroelectric memory company
-ai-vc-2026-f169451525da440d307e,Festo,2235,festo
-ai-vc-2026-f169451525da440d307e,Fetch Robotics,2236,fetch robotics
-ai-vc-2026-f169451525da440d307e,Fine Software,2237,fine software
-ai-vc-2026-f169451525da440d307e,Fireflies.ai,2238,fireflies.ai
-ai-vc-2026-f169451525da440d307e,Fives ProSim,2239,fives prosim
-ai-vc-2026-f169451525da440d307e,Flexcompute,2240,flexcompute
-ai-vc-2026-f169451525da440d307e,FlightSafety International,2241,flightsafety international
-ai-vc-2026-f169451525da440d307e,Flite Software,2242,flite software
-ai-vc-2026-f169451525da440d307e,Flow Science,2243,flow science
-ai-vc-2026-f169451525da440d307e,Flyability,2244,flyability
-ai-vc-2026-f169451525da440d307e,FlytBase,2245,flytbase
-ai-vc-2026-f169451525da440d307e,Flytrex,2246,flytrex
-ai-vc-2026-f169451525da440d307e,Foretellix,2247,foretellix
-ai-vc-2026-f169451525da440d307e,Formant,2248,formant
-ai-vc-2026-f169451525da440d307e,Formic,2249,formic
-ai-vc-2026-f169451525da440d307e,Four Growers,2250,four growers
-ai-vc-2026-f169451525da440d307e,Foxglove,2251,foxglove
-ai-vc-2026-f169451525da440d307e,Freed,2252,freed
-ai-vc-2026-f169451525da440d307e,Freedom Robotics,2253,freedom robotics
-ai-vc-2026-f169451525da440d307e,FriendliAI,2254,friendliai
-ai-vc-2026-f169451525da440d307e,FundamentalVR,2255,fundamentalvr
-ai-vc-2026-f169451525da440d307e,FutureOn,2256,futureon
-ai-vc-2026-f169451525da440d307e,Gamma Technologies,2257,gamma technologies
-ai-vc-2026-f169451525da440d307e,Gaumard Scientific,2258,gaumard scientific
-ai-vc-2026-f169451525da440d307e,Gausium,2259,gausium
-ai-vc-2026-f169451525da440d307e,Gaussian,2260,gaussian
-ai-vc-2026-f169451525da440d307e,GE Vernova,2261,ge vernova
-ai-vc-2026-f169451525da440d307e,GelSight,2262,gelsight
-ai-vc-2026-f169451525da440d307e,General Dynamics Bluefin Robotics,2263,general dynamics bluefin robotics
-ai-vc-2026-f169451525da440d307e,Generate Biomedicines,2264,generate biomedicines
-ai-vc-2026-f169451525da440d307e,Genesis Embodied AI,2265,genesis embodied ai
-ai-vc-2026-f169451525da440d307e,GeoStru,2266,geostru
-ai-vc-2026-f169451525da440d307e,Ghost Robotics,2267,ghost robotics
-ai-vc-2026-f169451525da440d307e,Giga-DA,2268,giga-da
-ai-vc-2026-f169451525da440d307e,Giskard,2269,giskard
-ai-vc-2026-f169451525da440d307e,Glean,2270,glean
-ai-vc-2026-f169451525da440d307e,Global TCAD Solutions,2271,global tcad solutions
-ai-vc-2026-f169451525da440d307e,Globus Medical,2272,globus medical
-ai-vc-2026-f169451525da440d307e,Gong,2273,gong
-ai-vc-2026-f169451525da440d307e,Google DeepMind Robotics,2274,google deepmind robotics
-ai-vc-2026-f169451525da440d307e,Grabit,2275,grabit
-ai-vc-2026-f169451525da440d307e,Gradyent,2276,gradyent
-ai-vc-2026-f169451525da440d307e,Graitec,2277,graitec
-ai-vc-2026-f169451525da440d307e,Greeneye Technology,2278,greeneye technology
-ai-vc-2026-f169451525da440d307e,Greensea IQ,2279,greensea iq
-ai-vc-2026-f169451525da440d307e,Gretel,2280,gretel
-ai-vc-2026-f169451525da440d307e,Hailo,2281,hailo
-ai-vc-2026-f169451525da440d307e,Haiper,2282,haiper
-ai-vc-2026-f169451525da440d307e,Harmonic Drive,2283,harmonic drive
-ai-vc-2026-f169451525da440d307e,Harvest CROO Robotics,2284,harvest croo robotics
-ai-vc-2026-f169451525da440d307e,Haskoning (Lanner WITNESS),2285,haskoning (lanner witness)
-ai-vc-2026-f169451525da440d307e,HBK (VI-grade),2286,hbk (vi-grade)
-ai-vc-2026-f169451525da440d307e,HeartFlow,2287,heartflow
-ai-vc-2026-f169451525da440d307e,"Heat Transfer Research, Inc. (HTRI)",2288,"heat transfer research, inc. (htri)"
-ai-vc-2026-f169451525da440d307e,Hebbia,2289,hebbia
-ai-vc-2026-f169451525da440d307e,Hesai Technology,2290,hesai technology
-ai-vc-2026-f169451525da440d307e,Hexagon Autonomy & Positioning,2291,hexagon autonomy & positioning
-ai-vc-2026-f169451525da440d307e,Hexagon Manufacturing Intelligence,2292,hexagon manufacturing intelligence
-ai-vc-2026-f169451525da440d307e,Hexagon Mining,2293,hexagon mining
-ai-vc-2026-f169451525da440d307e,HeyGen,2294,heygen
-ai-vc-2026-f169451525da440d307e,Hillbot,2295,hillbot
-ai-vc-2026-f169451525da440d307e,HireEZ,2296,hireez
-ai-vc-2026-f169451525da440d307e,Honeywell,2297,honeywell
-ai-vc-2026-f169451525da440d307e,HP SitePrint,2298,hp siteprint
-ai-vc-2026-f169451525da440d307e,Huada Empyrean,2299,huada empyrean
-ai-vc-2026-f169451525da440d307e,Hugging Face LeRobot,2300,hugging face lerobot
-ai-vc-2026-f169451525da440d307e,Humanloop,2301,humanloop
-ai-vc-2026-f169451525da440d307e,Husqvarna Automower,2302,husqvarna automower
-ai-vc-2026-f169451525da440d307e,Hydroid,2303,hydroid
-ai-vc-2026-f169451525da440d307e,Hyperbolic,2304,hyperbolic
-ai-vc-2026-f169451525da440d307e,Hyphen,2305,hyphen
-ai-vc-2026-f169451525da440d307e,ICON (NONMEM),2306,icon (nonmem)
-ai-vc-2026-f169451525da440d307e,IDEA StatiCa,2307,idea statica
-ai-vc-2026-f169451525da440d307e,Ideogram,2308,ideogram
-ai-vc-2026-f169451525da440d307e,igus robotics,2309,igus robotics
-ai-vc-2026-f169451525da440d307e,Ike,2310,ike
-ai-vc-2026-f169451525da440d307e,INCONTROL Simulation Solutions,2311,incontrol simulation solutions
-ai-vc-2026-f169451525da440d307e,Inflection AI,2312,inflection ai
-ai-vc-2026-f169451525da440d307e,Innoviz Technologies,2313,innoviz technologies
-ai-vc-2026-f169451525da440d307e,InOrbit,2314,inorbit
-ai-vc-2026-f169451525da440d307e,Inprocess Technology and Consulting Group,2315,inprocess technology and consulting group
-ai-vc-2026-f169451525da440d307e,Insilico Medicine,2316,insilico medicine
-ai-vc-2026-f169451525da440d307e,InSilicoTrials,2317,insilicotrials
-ai-vc-2026-f169451525da440d307e,InSimo,2318,insimo
-ai-vc-2026-f169451525da440d307e,Integrated Engineering Software,2319,integrated engineering software
-ai-vc-2026-f169451525da440d307e,Integrated Environmental Solutions (IES),2320,integrated environmental solutions (ies)
-ai-vc-2026-f169451525da440d307e,Intelligen,2321,intelligen
-ai-vc-2026-f169451525da440d307e,Intrinsic,2322,intrinsic
-ai-vc-2026-f169451525da440d307e,Intrinsic (Alphabet),2323,intrinsic (alphabet)
-ai-vc-2026-f169451525da440d307e,Intuitive Surgical,2324,intuitive surgical
-ai-vc-2026-f169451525da440d307e,Invert Robotics,2325,invert robotics
-ai-vc-2026-f169451525da440d307e,Invisible Technologies,2326,invisible technologies
-ai-vc-2026-f169451525da440d307e,IPG Automotive,2327,ipg automotive
-ai-vc-2026-f169451525da440d307e,Iron Ox,2328,iron ox
-ai-vc-2026-f169451525da440d307e,Itasca Consulting Group,2329,itasca consulting group
-ai-vc-2026-f169451525da440d307e,Jacobs (Flood Modeller),2330,jacobs (flood modeller)
-ai-vc-2026-f169451525da440d307e,Jasper,2331,jasper
-ai-vc-2026-f169451525da440d307e,JITX,2332,jitx
-ai-vc-2026-f169451525da440d307e,John Deere Autonomous Solutions,2333,john deere autonomous solutions
-ai-vc-2026-f169451525da440d307e,Johnson & Johnson MedTech Robotics,2334,johnson & johnson medtech robotics
-ai-vc-2026-f169451525da440d307e,Kassow Robots,2335,kassow robots
-ai-vc-2026-f169451525da440d307e,Kawasaki Robotics,2336,kawasaki robotics
-ai-vc-2026-f169451525da440d307e,Keenon Robotics,2337,keenon robotics
-ai-vc-2026-f169451525da440d307e,Kepler Exploration Robot,2338,kepler exploration robot
-ai-vc-2026-f169451525da440d307e,Kevala,2339,kevala
-ai-vc-2026-f169451525da440d307e,Key Ward,2340,key ward
-ai-vc-2026-f169451525da440d307e,Kinara,2341,kinara
-ai-vc-2026-f169451525da440d307e,Kinaxis,2342,kinaxis
-ai-vc-2026-f169451525da440d307e,Kindred,2343,kindred
-ai-vc-2026-f169451525da440d307e,Kittl,2344,kittl
-ai-vc-2026-f169451525da440d307e,Kiwibot,2345,kiwibot
-ai-vc-2026-f169451525da440d307e,KNAPP,2346,knapp
-ai-vc-2026-f169451525da440d307e,Kneron,2347,kneron
-ai-vc-2026-f169451525da440d307e,Knightscope,2348,knightscope
-ai-vc-2026-f169451525da440d307e,Komatsu FrontRunner,2349,komatsu frontrunner
-ai-vc-2026-f169451525da440d307e,Kongsberg Discovery,2350,kongsberg discovery
-ai-vc-2026-f169451525da440d307e,Kratos Defense & Security Solutions,2351,kratos defense & security solutions
-ai-vc-2026-f169451525da440d307e,Kubota Smart Agriculture,2352,kubota smart agriculture
-ai-vc-2026-f169451525da440d307e,KUKA (Visual Components),2353,kuka (visual components)
-ai-vc-2026-f169451525da440d307e,Ladybug Tools,2354,ladybug tools
-ai-vc-2026-f169451525da440d307e,Laerdal Medical,2355,laerdal medical
-ai-vc-2026-f169451525da440d307e,Lakera,2356,lakera
-ai-vc-2026-f169451525da440d307e,Lam Research,2357,lam research
-ai-vc-2026-f169451525da440d307e,Lambda Research Corporation,2358,lambda research corporation
-ai-vc-2026-f169451525da440d307e,LambdaSim,2359,lambdasim
-ai-vc-2026-f169451525da440d307e,LanceDB,2360,lancedb
-ai-vc-2026-f169451525da440d307e,LangChain,2361,langchain
-ai-vc-2026-f169451525da440d307e,Latent Labs,2362,latent labs
-ai-vc-2026-f169451525da440d307e,LeddarTech,2363,leddartech
-ai-vc-2026-f169451525da440d307e,Lhasa Limited,2364,lhasa limited
-ai-vc-2026-f169451525da440d307e,Lifeward,2365,lifeward
-ai-vc-2026-f169451525da440d307e,Lightmatter,2366,lightmatter
-ai-vc-2026-f169451525da440d307e,LightTrans International,2367,lighttrans international
-ai-vc-2026-f169451525da440d307e,Lindy,2368,lindy
-ai-vc-2026-f169451525da440d307e,LionsBot,2369,lionsbot
-ai-vc-2026-f169451525da440d307e,Liquid AI,2370,liquid ai
-ai-vc-2026-f169451525da440d307e,Livox,2371,livox
-ai-vc-2026-f169451525da440d307e,LlamaIndex,2372,llamaindex
-ai-vc-2026-f169451525da440d307e,Locomation,2373,locomation
-ai-vc-2026-f169451525da440d307e,Logivations,2374,logivations
-ai-vc-2026-f169451525da440d307e,Luma AI,2375,luma ai
-ai-vc-2026-f169451525da440d307e,Luminance,2376,luminance
-ai-vc-2026-f169451525da440d307e,Luminar Technologies,2377,luminar technologies
-ai-vc-2026-f169451525da440d307e,Luminary Cloud,2378,luminary cloud
-ai-vc-2026-f169451525da440d307e,M-Star Simulations,2379,m-star simulations
-ai-vc-2026-f169451525da440d307e,machineering,2380,machineering
-ai-vc-2026-f169451525da440d307e,Magic,2381,magic
-ai-vc-2026-f169451525da440d307e,MAGMA,2382,magma
-ai-vc-2026-f169451525da440d307e,Makr Shakr,2383,makr shakr
-ai-vc-2026-f169451525da440d307e,Mammotion,2384,mammotion
-ai-vc-2026-f169451525da440d307e,Manitoba Hydro International,2385,manitoba hydro international
-ai-vc-2026-f169451525da440d307e,Maplesoft,2386,maplesoft
-ai-vc-2026-f169451525da440d307e,Marine AI,2387,marine ai
-ai-vc-2026-f169451525da440d307e,Mat3ra,2388,mat3ra
-ai-vc-2026-f169451525da440d307e,MatCalc Engineering,2389,matcalc engineering
-ai-vc-2026-f169451525da440d307e,Materialise,2390,materialise
-ai-vc-2026-f169451525da440d307e,Materials Design,2391,materials design
-ai-vc-2026-f169451525da440d307e,Math2Market,2392,math2market
-ai-vc-2026-f169451525da440d307e,MathWorks,2393,mathworks
-ai-vc-2026-f169451525da440d307e,maxon,2394,maxon
-ai-vc-2026-f169451525da440d307e,Medical-X,2395,medical-x
-ai-vc-2026-f169451525da440d307e,Medra,2396,medra
-ai-vc-2026-f169451525da440d307e,Medtronic Surgical Robotics,2397,medtronic surgical robotics
-ai-vc-2026-f169451525da440d307e,MemryX,2398,memryx
-ai-vc-2026-f169451525da440d307e,Mendaera,2399,mendaera
-ai-vc-2026-f169451525da440d307e,Mentice,2400,mentice
-ai-vc-2026-f169451525da440d307e,Merlin Labs,2401,merlin labs
-ai-vc-2026-f169451525da440d307e,Meta FAIR Embodied AI,2402,meta fair embodied ai
-ai-vc-2026-f169451525da440d307e,Metso,2403,metso
-ai-vc-2026-f169451525da440d307e,Mevea,2404,mevea
-ai-vc-2026-f169451525da440d307e,Microsoft AirSim,2405,microsoft airsim
-ai-vc-2026-f169451525da440d307e,MIDAS IT,2406,midas it
-ai-vc-2026-f169451525da440d307e,Midjourney,2407,midjourney
-ai-vc-2026-f169451525da440d307e,Milrem Robotics,2408,milrem robotics
-ai-vc-2026-f169451525da440d307e,Minitab (SIMUL8),2409,minitab (simul8)
-ai-vc-2026-f169451525da440d307e,Mistral AI (Emmi AI),2410,mistral ai (emmi ai)
-ai-vc-2026-f169451525da440d307e,Mitsubishi Electric Robotics,2411,mitsubishi electric robotics
-ai-vc-2026-f169451525da440d307e,Modelon,2412,modelon
-ai-vc-2026-f169451525da440d307e,Molecular Discovery,2413,molecular discovery
-ai-vc-2026-f169451525da440d307e,Moley Robotics,2414,moley robotics
-ai-vc-2026-f169451525da440d307e,Molsoft,2415,molsoft
-ai-vc-2026-f169451525da440d307e,Moon Surgical,2416,moon surgical
-ai-vc-2026-f169451525da440d307e,MORAI,2417,morai
-ai-vc-2026-f169451525da440d307e,Moveworks,2418,moveworks
-ai-vc-2026-f169451525da440d307e,MuJoCo,2419,mujoco
-ai-vc-2026-f169451525da440d307e,Murf AI,2420,murf ai
-ai-vc-2026-f169451525da440d307e,Myomo,2421,myomo
-ai-vc-2026-f169451525da440d307e,Nabla,2422,nabla
-ai-vc-2026-f169451525da440d307e,Nabtesco Precision Equipment,2423,nabtesco precision equipment
-ai-vc-2026-f169451525da440d307e,Nala Robotics,2424,nala robotics
-ai-vc-2026-f169451525da440d307e,Navier AI,2425,navier ai
-ai-vc-2026-f169451525da440d307e,Near Earth Autonomy,2426,near earth autonomy
-ai-vc-2026-f169451525da440d307e,Nemetschek Group,2427,nemetschek group
-ai-vc-2026-f169451525da440d307e,NEPLAN,2428,neplan
-ai-vc-2026-f169451525da440d307e,Neubility,2429,neubility
-ai-vc-2026-f169451525da440d307e,Neural Concept,2430,neural concept
-ai-vc-2026-f169451525da440d307e,Neural Physics,2431,neural physics
-ai-vc-2026-f169451525da440d307e,NeuReality,2432,neureality
-ai-vc-2026-f169451525da440d307e,Nexobot,2433,nexobot
-ai-vc-2026-f169451525da440d307e,Noah Medical,2434,noah medical
-ai-vc-2026-f169451525da440d307e,Noble Machines,2435,noble machines
-ai-vc-2026-f169451525da440d307e,NobleAI,2436,nobleai
-ai-vc-2026-f169451525da440d307e,Noma Security,2437,noma security
-ai-vc-2026-f169451525da440d307e,Notion,2438,notion
-ai-vc-2026-f169451525da440d307e,Novadiscovery,2439,novadiscovery
-ai-vc-2026-f169451525da440d307e,Novarm (DipTrace),2440,novarm (diptrace)
-ai-vc-2026-f169451525da440d307e,nTop,2441,ntop
-ai-vc-2026-f169451525da440d307e,Numem,2442,numem
-ai-vc-2026-f169451525da440d307e,Numeric,2443,numeric
-ai-vc-2026-f169451525da440d307e,NVIDIA Cosmos,2444,nvidia cosmos
-ai-vc-2026-f169451525da440d307e,NVIDIA Jetson,2445,nvidia jetson
-ai-vc-2026-f169451525da440d307e,NVIDIA Omniverse,2446,nvidia omniverse
-ai-vc-2026-f169451525da440d307e,NVIDIA Physical AI Platform,2447,nvidia physical ai platform
-ai-vc-2026-f169451525da440d307e,NXP eIQ and i.MX,2448,nxp eiq and i.mx
-ai-vc-2026-f169451525da440d307e,o9 Solutions,2449,o9 solutions
-ai-vc-2026-f169451525da440d307e,Observe.AI,2450,observe.ai
-ai-vc-2026-f169451525da440d307e,Ocado Technology,2451,ocado technology
-ai-vc-2026-f169451525da440d307e,Ocean Infinity,2452,ocean infinity
-ai-vc-2026-f169451525da440d307e,OctoAI,2453,octoai
-ai-vc-2026-f169451525da440d307e,Okibo,2454,okibo
-ai-vc-2026-f169451525da440d307e,OLI Systems,2455,oli systems
-ai-vc-2026-f169451525da440d307e,Oliasoft,2456,oliasoft
-ai-vc-2026-f169451525da440d307e,OMRON Robotics,2457,omron robotics
-ai-vc-2026-f169451525da440d307e,OnRobot,2458,onrobot
-ai-vc-2026-f169451525da440d307e,OnSpec Robotics,2459,onspec robotics
-ai-vc-2026-f169451525da440d307e,OPAL-RT Technologies,2460,opal-rt technologies
-ai-vc-2026-f169451525da440d307e,Open Source Robotics Alliance,2461,open source robotics alliance
-ai-vc-2026-f169451525da440d307e,Opentrons,2462,opentrons
-ai-vc-2026-f169451525da440d307e,Opsys Tech,2463,opsys tech
-ai-vc-2026-f169451525da440d307e,Optibrium,2464,optibrium
-ai-vc-2026-f169451525da440d307e,Optiwave Systems,2465,optiwave systems
-ai-vc-2026-f169451525da440d307e,Orca AI,2466,orca ai
-ai-vc-2026-f169451525da440d307e,Orchard Robotics,2467,orchard robotics
-ai-vc-2026-f169451525da440d307e,OSARO,2468,osaro
-ai-vc-2026-f169451525da440d307e,Osso VR,2469,osso vr
-ai-vc-2026-f169451525da440d307e,Otter.ai,2470,otter.ai
-ai-vc-2026-f169451525da440d307e,Ottopia,2471,ottopia
-ai-vc-2026-f169451525da440d307e,Ouster,2472,ouster
-ai-vc-2026-f169451525da440d307e,Paradox,2473,paradox
-ai-vc-2026-f169451525da440d307e,Parallel Domain,2474,parallel domain
-ai-vc-2026-f169451525da440d307e,Paxton,2475,paxton
-ai-vc-2026-f169451525da440d307e,Percepto,2476,percepto
-ai-vc-2026-f169451525da440d307e,Perceptron AI,2477,perceptron ai
-ai-vc-2026-f169451525da440d307e,Petroleum Experts,2478,petroleum experts
-ai-vc-2026-f169451525da440d307e,Phantom Auto,2479,phantom auto
-ai-vc-2026-f169451525da440d307e,Photon Design,2480,photon design
-ai-vc-2026-f169451525da440d307e,Photon Engineering,2481,photon engineering
-ai-vc-2026-f169451525da440d307e,Photoroom,2482,photoroom
-ai-vc-2026-f169451525da440d307e,Physiomics,2483,physiomics
-ai-vc-2026-f169451525da440d307e,Piab,2484,piab
-ai-vc-2026-f169451525da440d307e,Pickle Robot,2485,pickle robot
-ai-vc-2026-f169451525da440d307e,Picnic Works,2486,picnic works
-ai-vc-2026-f169451525da440d307e,Pika,2487,pika
-ai-vc-2026-f169451525da440d307e,Pinecone,2488,pinecone
-ai-vc-2026-f169451525da440d307e,Pitch Technologies,2489,pitch technologies
-ai-vc-2026-f169451525da440d307e,PlanOpSim,2490,planopsim
-ai-vc-2026-f169451525da440d307e,PlayAI,2491,playai
-ai-vc-2026-f169451525da440d307e,Plexim,2492,plexim
-ai-vc-2026-f169451525da440d307e,Plus One Robotics,2493,plus one robotics
-ai-vc-2026-f169451525da440d307e,Point One Navigation,2494,point one navigation
-ai-vc-2026-f169451525da440d307e,Polymath Robotics,2495,polymath robotics
-ai-vc-2026-f169451525da440d307e,PowerWorld Corporation,2496,powerworld corporation
-ai-vc-2026-f169451525da440d307e,PrecisionOS,2497,precisionos
-ai-vc-2026-f169451525da440d307e,Predibase,2498,predibase
-ai-vc-2026-f169451525da440d307e,Primarius Technologies,2499,primarius technologies
-ai-vc-2026-f169451525da440d307e,PROCEPT BioRobotics,2500,procept biorobotics
-ai-vc-2026-f169451525da440d307e,Prolific,2501,prolific
-ai-vc-2026-f169451525da440d307e,ProModel,2502,promodel
-ai-vc-2026-f169451525da440d307e,Protect AI,2503,protect ai
-ai-vc-2026-f169451525da440d307e,Q-Chem,2504,q-chem
-ai-vc-2026-f169451525da440d307e,qbrobotics,2505,qbrobotics
-ai-vc-2026-f169451525da440d307e,Qualcomm Dragonwing Robotics,2506,qualcomm dragonwing robotics
-ai-vc-2026-f169451525da440d307e,QuantumBio,2507,quantumbio
-ai-vc-2026-f169451525da440d307e,Qubit Pharmaceuticals,2508,qubit pharmaceuticals
-ai-vc-2026-f169451525da440d307e,QuesTek Innovations,2509,questek innovations
-ai-vc-2026-f169451525da440d307e,Radical AI,2510,radical ai
-ai-vc-2026-f169451525da440d307e,Rainbow Robotics,2511,rainbow robotics
-ai-vc-2026-f169451525da440d307e,Raise Robotics,2512,raise robotics
-ai-vc-2026-f169451525da440d307e,Raven Industries,2513,raven industries
-ai-vc-2026-f169451525da440d307e,Read AI,2514,read ai
-ai-vc-2026-f169451525da440d307e,READY Robotics,2515,ready robotics
-ai-vc-2026-f169451525da440d307e,Real-Time Innovations,2516,real-time innovations
-ai-vc-2026-f169451525da440d307e,Realis Simulation,2517,realis simulation
-ai-vc-2026-f169451525da440d307e,Realtime Robotics,2518,realtime robotics
-ai-vc-2026-f169451525da440d307e,Red Cat / Teal Drones,2519,red cat / teal drones
-ai-vc-2026-f169451525da440d307e,Refraction AI,2520,refraction ai
-ai-vc-2026-f169451525da440d307e,Relay Robotics,2521,relay robotics
-ai-vc-2026-f169451525da440d307e,Relevance AI,2522,relevance ai
-ai-vc-2026-f169451525da440d307e,RELEX Solutions,2523,relex solutions
-ai-vc-2026-f169451525da440d307e,Remcom,2524,remcom
-ai-vc-2026-f169451525da440d307e,Rendered.ai,2525,rendered.ai
-ai-vc-2026-f169451525da440d307e,Renesas Electronics (Altium),2526,renesas electronics (altium)
-ai-vc-2026-f169451525da440d307e,Replicate,2527,replicate
-ai-vc-2026-f169451525da440d307e,Rescale,2528,rescale
-ai-vc-2026-f169451525da440d307e,Resemble AI,2529,resemble ai
-ai-vc-2026-f169451525da440d307e,Revalize (PIPE-FLO),2530,revalize (pipe-flo)
-ai-vc-2026-f169451525da440d307e,rFpro,2531,rfpro
-ai-vc-2026-f169451525da440d307e,RGo Robotics,2532,rgo robotics
-ai-vc-2026-f169451525da440d307e,Richtech Robotics,2533,richtech robotics
-ai-vc-2026-f169451525da440d307e,Robin AI,2534,robin ai
-ai-vc-2026-f169451525da440d307e,RoboSense,2535,robosense
-ai-vc-2026-f169451525da440d307e,Robotics Plus,2536,robotics plus
-ai-vc-2026-f169451525da440d307e,Robotiq,2537,robotiq
-ai-vc-2026-f169451525da440d307e,Robotis,2538,robotis
-ai-vc-2026-f169451525da440d307e,Roboto AI,2539,roboto ai
-ai-vc-2026-f169451525da440d307e,Rock Flow Dynamics,2540,rock flow dynamics
-ai-vc-2026-f169451525da440d307e,Rockwell Automation,2541,rockwell automation
-ai-vc-2026-f169451525da440d307e,RTDS Technologies,2542,rtds technologies
-ai-vc-2026-f169451525da440d307e,Rugged Robotics,2543,rugged robotics
-ai-vc-2026-f169451525da440d307e,Saab Seaeye,2544,saab seaeye
-ai-vc-2026-f169451525da440d307e,SafeAI,2545,safeai
-ai-vc-2026-f169451525da440d307e,Saildrone,2546,saildrone
-ai-vc-2026-f169451525da440d307e,Sama,2547,sama
-ai-vc-2026-f169451525da440d307e,San Francisco Compute,2548,san francisco compute
-ai-vc-2026-f169451525da440d307e,Sana,2549,sana
-ai-vc-2026-f169451525da440d307e,Sanctuary AI,2550,sanctuary ai
-ai-vc-2026-f169451525da440d307e,SandboxAQ,2551,sandboxaq
-ai-vc-2026-f169451525da440d307e,Sandvik (Deswik),2552,sandvik (deswik)
-ai-vc-2026-f169451525da440d307e,Sandvik AutoMine,2553,sandvik automine
-ai-vc-2026-f169451525da440d307e,Scale AI,2554,scale ai
-ai-vc-2026-f169451525da440d307e,Scantinel Photonics,2555,scantinel photonics
-ai-vc-2026-f169451525da440d307e,Schmalz,2556,schmalz
-ai-vc-2026-f169451525da440d307e,Schneider Electric (AVEVA / ETAP),2557,schneider electric (aveva / etap)
-ai-vc-2026-f169451525da440d307e,Schrödinger,2558,schrödinger
-ai-vc-2026-f169451525da440d307e,SCHUNK,2559,schunk
-ai-vc-2026-f169451525da440d307e,Scientific Forming Technologies Corporation,2560,scientific forming technologies corporation
-ai-vc-2026-f169451525da440d307e,Secondmind,2561,secondmind
-ai-vc-2026-f169451525da440d307e,Sedaro,2562,sedaro
-ai-vc-2026-f169451525da440d307e,Seneca,2563,seneca
-ai-vc-2026-f169451525da440d307e,Sensmetry,2564,sensmetry
-ai-vc-2026-f169451525da440d307e,Sente Software,2565,sente software
-ai-vc-2026-f169451525da440d307e,Sevensense Robotics,2566,sevensense robotics
-ai-vc-2026-f169451525da440d307e,Seyond,2567,seyond
-ai-vc-2026-f169451525da440d307e,Shadow Robot Company,2568,shadow robot company
-ai-vc-2026-f169451525da440d307e,Shapr3D,2569,shapr3d
-ai-vc-2026-f169451525da440d307e,Siemens,2570,siemens
-ai-vc-2026-f169451525da440d307e,Siemens Digital Industries Software,2571,siemens digital industries software
-ai-vc-2026-f169451525da440d307e,Sight Machine,2572,sight machine
-ai-vc-2026-f169451525da440d307e,SIGMA Engineering,2573,sigma engineering
-ai-vc-2026-f169451525da440d307e,SiLC Technologies,2574,silc technologies
-ai-vc-2026-f169451525da440d307e,Silvaco,2575,silvaco
-ai-vc-2026-f169451525da440d307e,Sim&Cure,2576,sim&cure
-ai-vc-2026-f169451525da440d307e,Simberian,2577,simberian
-ai-vc-2026-f169451525da440d307e,SIMetrix Technologies,2578,simetrix technologies
-ai-vc-2026-f169451525da440d307e,Simphotek,2579,simphotek
-ai-vc-2026-f169451525da440d307e,SimPlan,2580,simplan
-ai-vc-2026-f169451525da440d307e,Simr,2581,simr
-ai-vc-2026-f169451525da440d307e,Simreka,2582,simreka
-ai-vc-2026-f169451525da440d307e,SimScale,2583,simscale
-ai-vc-2026-f169451525da440d307e,Simthetiq,2584,simthetiq
-ai-vc-2026-f169451525da440d307e,Simudyne,2585,simudyne
-ai-vc-2026-f169451525da440d307e,Simulab,2586,simulab
-ai-vc-2026-f169451525da440d307e,Simulations Plus,2587,simulations plus
-ai-vc-2026-f169451525da440d307e,Simurghy,2588,simurghy
-ai-vc-2026-f169451525da440d307e,SimX,2589,simx
-ai-vc-2026-f169451525da440d307e,SkyCiv,2590,skyciv
-ai-vc-2026-f169451525da440d307e,Skyline Robotics,2591,skyline robotics
-ai-vc-2026-f169451525da440d307e,Slingshot Aerospace,2592,slingshot aerospace
-ai-vc-2026-f169451525da440d307e,Small Robot Company,2593,small robot company
-ai-vc-2026-f169451525da440d307e,SMC Corporation,2594,smc corporation
-ai-vc-2026-f169451525da440d307e,Smith+Nephew CORI,2595,smith+nephew cori
-ai-vc-2026-f169451525da440d307e,Snke (Snke Xplore),2596,snke (snke xplore)
-ai-vc-2026-f169451525da440d307e,SOFiSTiK,2597,sofistik
-ai-vc-2026-f169451525da440d307e,Soft Robotics / Oxipital AI,2598,soft robotics / oxipital ai
-ai-vc-2026-f169451525da440d307e,SoftInWay,2599,softinway
-ai-vc-2026-f169451525da440d307e,Software for Chemistry & Materials (SCM),2600,software for chemistry & materials (scm)
-ai-vc-2026-f169451525da440d307e,Sogeclair (OKTAL / Sydac),2601,sogeclair (oktal / sydac)
-ai-vc-2026-f169451525da440d307e,SolarCleano,2602,solarcleano
-ai-vc-2026-f169451525da440d307e,Solinftec,2603,solinftec
-ai-vc-2026-f169451525da440d307e,Sonnet Software,2604,sonnet software
-ai-vc-2026-f169451525da440d307e,Sourcegraph,2605,sourcegraph
-ai-vc-2026-f169451525da440d307e,Speak,2606,speak
-ai-vc-2026-f169451525da440d307e,Speechmatics,2607,speechmatics
-ai-vc-2026-f169451525da440d307e,Speedgoat,2608,speedgoat
-ai-vc-2026-f169451525da440d307e,Spyce,2609,spyce
-ai-vc-2026-f169451525da440d307e,ST Engineering (MAK Technologies),2610,st engineering (mak technologies)
-ai-vc-2026-f169451525da440d307e,StackBlitz,2611,stackblitz
-ai-vc-2026-f169451525da440d307e,StruSoft,2612,strusoft
-ai-vc-2026-f169451525da440d307e,Stryker Mako,2613,stryker mako
-ai-vc-2026-f169451525da440d307e,Suki,2614,suki
-ai-vc-2026-f169451525da440d307e,SuperAnnotate,2615,superannotate
-ai-vc-2026-f169451525da440d307e,Surge AI,2616,surge ai
-ai-vc-2026-f169451525da440d307e,Surgical Science,2617,surgical science
-ai-vc-2026-f169451525da440d307e,Surgical Theater,2618,surgical theater
-ai-vc-2026-f169451525da440d307e,SwarmFarm Robotics,2619,swarmfarm robotics
-ai-vc-2026-f169451525da440d307e,Swift Navigation,2620,swift navigation
-ai-vc-2026-f169451525da440d307e,Synapticon,2621,synapticon
-ai-vc-2026-f169451525da440d307e,Synopsys (including Ansys),2622,synopsys (including ansys)
-ai-vc-2026-f169451525da440d307e,SynSense,2623,synsense
-ai-vc-2026-f169451525da440d307e,Synthesis AI,2624,synthesis ai
-ai-vc-2026-f169451525da440d307e,Synthesized,2625,synthesized
-ai-vc-2026-f169451525da440d307e,Syntiant,2626,syntiant
-ai-vc-2026-f169451525da440d307e,SynTouch,2627,syntouch
-ai-vc-2026-f169451525da440d307e,Take The Wind (Body Interact),2628,take the wind (body interact)
-ai-vc-2026-f169451525da440d307e,Taurob,2629,taurob
-ai-vc-2026-f169451525da440d307e,Techman Robot,2630,techman robot
-ai-vc-2026-f169451525da440d307e,Teledyne Marine,2631,teledyne marine
-ai-vc-2026-f169451525da440d307e,Teleo,2632,teleo
-ai-vc-2026-f169451525da440d307e,Tensorfield Agriculture,2633,tensorfield agriculture
-ai-vc-2026-f169451525da440d307e,Tesla Autonomous Driving,2634,tesla autonomous driving
-ai-vc-2026-f169451525da440d307e,Tesla Optimus,2635,tesla optimus
-ai-vc-2026-f169451525da440d307e,Tesollo,2636,tesollo
-ai-vc-2026-f169451525da440d307e,Tevel Aerobotics Technologies,2637,tevel aerobotics technologies
-ai-vc-2026-f169451525da440d307e,Texas Instruments TDA4,2638,texas instruments tda4
-ai-vc-2026-f169451525da440d307e,Textron (TRU Simulation + Training),2639,textron (tru simulation + training)
-ai-vc-2026-f169451525da440d307e,TGW Logistics,2640,tgw logistics
-ai-vc-2026-f169451525da440d307e,ThayerMahan,2641,thayermahan
-ai-vc-2026-f169451525da440d307e,The AnyLogic Company,2642,the anylogic company
-ai-vc-2026-f169451525da440d307e,The Bot Company,2643,the bot company
-ai-vc-2026-f169451525da440d307e,Thermo-Calc Software,2644,thermo-calc software
-ai-vc-2026-f169451525da440d307e,Theseus,2645,theseus
-ai-vc-2026-f169451525da440d307e,Third Wave Automation,2646,third wave automation
-ai-vc-2026-f169451525da440d307e,Toggle Robotics,2647,toggle robotics
-ai-vc-2026-f169451525da440d307e,Toloka,2648,toloka
-ai-vc-2026-f169451525da440d307e,Tomorrow Things,2649,tomorrow things
-ai-vc-2026-f169451525da440d307e,Tonic AI,2650,tonic ai
-ai-vc-2026-f169451525da440d307e,Tortuga AgTech,2651,tortuga agtech
-ai-vc-2026-f169451525da440d307e,TotalCAE,2652,totalcae
-ai-vc-2026-f169451525da440d307e,Touchlab,2653,touchlab
-ai-vc-2026-f169451525da440d307e,Toyota Research Institute,2654,toyota research institute
-ai-vc-2026-f169451525da440d307e,Tractian,2655,tractian
-ai-vc-2026-f169451525da440d307e,Transvalor,2656,transvalor
-ai-vc-2026-f169451525da440d307e,TrianGraphics,2657,triangraphics
-ai-vc-2026-f169451525da440d307e,Trimble,2658,trimble
-ai-vc-2026-f169451525da440d307e,TruEra,2659,truera
-ai-vc-2026-f169451525da440d307e,Truewind,2660,truewind
-ai-vc-2026-f169451525da440d307e,Turing,2661,turing
-ai-vc-2026-f169451525da440d307e,TuSimple / CreateAI,2662,tusimple / createai
-ai-vc-2026-f169451525da440d307e,Tutor Intelligence,2663,tutor intelligence
-ai-vc-2026-f169451525da440d307e,twinzo,2664,twinzo
-ai-vc-2026-f169451525da440d307e,Typhoon HIL,2665,typhoon hil
-ai-vc-2026-f169451525da440d307e,UberCloud,2666,ubercloud
-ai-vc-2026-f169451525da440d307e,Uhnder,2667,uhnder
-ai-vc-2026-f169451525da440d307e,UL Solutions (HOMER Energy),2668,ul solutions (homer energy)
-ai-vc-2026-f169451525da440d307e,Unifly,2669,unifly
-ai-vc-2026-f169451525da440d307e,Unity Industry,2670,unity industry
-ai-vc-2026-f169451525da440d307e,Unity Software,2671,unity software
-ai-vc-2026-f169451525da440d307e,Univista,2672,univista
-ai-vc-2026-f169451525da440d307e,Unlearn,2673,unlearn
-ai-vc-2026-f169451525da440d307e,Unsloth,2674,unsloth
-ai-vc-2026-f169451525da440d307e,Uptake,2675,uptake
-ai-vc-2026-f169451525da440d307e,UptimeAI,2676,uptimeai
-ai-vc-2026-f169451525da440d307e,URBX,2677,urbx
-ai-vc-2026-f169451525da440d307e,V7,2678,v7
-ai-vc-2026-f169451525da440d307e,v7 labs,2678,v7 labs
-ai-vc-2026-f169451525da440d307e,Vanderlande,2679,vanderlande
-ai-vc-2026-f169451525da440d307e,VASP Software,2680,vasp software
-ai-vc-2026-f169451525da440d307e,Vayyar,2681,vayyar
-ai-vc-2026-f169451525da440d307e,Vectara,2682,vectara
-ai-vc-2026-f169451525da440d307e,Vector Informatik,2683,vector informatik
-ai-vc-2026-f169451525da440d307e,Velodyne Lidar,2684,velodyne lidar
-ai-vc-2026-f169451525da440d307e,VeriSIM Life,2685,verisim life
-ai-vc-2026-f169451525da440d307e,Verobotics,2686,verobotics
-ai-vc-2026-f169451525da440d307e,Viam,2687,viam
-ai-vc-2026-f169451525da440d307e,Vic.ai,2688,vic.ai
-ai-vc-2026-f169451525da440d307e,Vicarious Surgical,2689,vicarious surgical
-ai-vc-2026-f169451525da440d307e,VirtaMed,2690,virtamed
-ai-vc-2026-f169451525da440d307e,Virtonomy,2691,virtonomy
-ai-vc-2026-f169451525da440d307e,Voxel51,2692,voxel51
-ai-vc-2026-f169451525da440d307e,Voyant Photonics,2693,voyant photonics
-ai-vc-2026-f169451525da440d307e,Waabi World Simulator,2694,waabi world simulator
-ai-vc-2026-f169451525da440d307e,Wavefunction,2695,wavefunction
-ai-vc-2026-f169451525da440d307e,Wayve GAIA,2696,wayve gaia
-ai-vc-2026-f169451525da440d307e,Weights & Biases,2697,weights & biases
-ai-vc-2026-f169451525da440d307e,Weir Group (Micromine),2698,weir group (micromine)
-ai-vc-2026-f169451525da440d307e,WEISS Robotics,2699,weiss robotics
-ai-vc-2026-f169451525da440d307e,WestDev (Pulsonix),2700,westdev (pulsonix)
-ai-vc-2026-f169451525da440d307e,Whitson,2701,whitson
-ai-vc-2026-f169451525da440d307e,WhyLabs,2702,whylabs
-ai-vc-2026-f169451525da440d307e,Wind River,2703,wind river
-ai-vc-2026-f169451525da440d307e,Windsurf,2704,windsurf
-ai-vc-2026-f169451525da440d307e,WIPL-D,2705,wipl-d
-ai-vc-2026-f169451525da440d307e,Wolfram Research,2706,wolfram research
-ai-vc-2026-f169451525da440d307e,Wonik Robotics,2707,wonik robotics
-ai-vc-2026-f169451525da440d307e,Writer,2708,writer
-ai-vc-2026-f169451525da440d307e,X-EPIC,2709,x-epic
-ai-vc-2026-f169451525da440d307e,Xaira Therapeutics,2710,xaira therapeutics
-ai-vc-2026-f169451525da440d307e,XMPro,2711,xmpro
-ai-vc-2026-f169451525da440d307e,Xpeedic,2712,xpeedic
-ai-vc-2026-f169451525da440d307e,XtalPi,2713,xtalpi
-ai-vc-2026-f169451525da440d307e,Xwing,2714,xwing
-ai-vc-2026-f169451525da440d307e,XYZ Robotics,2715,xyz robotics
-ai-vc-2026-f169451525da440d307e,Yarbo,2716,yarbo
-ai-vc-2026-f169451525da440d307e,Yaskawa Motoman,2717,yaskawa motoman
-ai-vc-2026-f169451525da440d307e,Yokogawa Electric (KBC),2718,yokogawa electric (kbc)
-ai-vc-2026-f169451525da440d307e,You.com,2719,you.com
-ai-vc-2026-f169451525da440d307e,Zace Services (ZSOIL),2720,zace services (zsoil)
-ai-vc-2026-f169451525da440d307e,Zendar,2721,zendar
-ai-vc-2026-f169451525da440d307e,ZenML,2722,zenml
-ai-vc-2026-f169451525da440d307e,Zeromatter,2723,zeromatter
-ai-vc-2026-f169451525da440d307e,Zilliz,2724,zilliz
-ai-vc-2026-f169451525da440d307e,Zimmer Biomet ROSA,2725,zimmer biomet rosa
-ai-vc-2026-f169451525da440d307e,Zimmer Group,2726,zimmer group
-ai-vc-2026-f169451525da440d307e,Zoo,2727,zoo
-ai-vc-2026-f169451525da440d307e,Zuken,2728,zuken
-ai-vc-2026-f169451525da440d307e,Zurich MedTech,2729,zurich medtech
-ai-vc-2026-f169451525da440d307e,WEKA,2730,weka
-ai-vc-2026-f169451525da440d307e,Hadrian (cybersecurity),2731,hadrian (cybersecurity)
-ai-vc-2026-f169451525da440d307e,Nettle,2732,nettle
-ai-vc-2026-f169451525da440d307e,Namespace,2733,namespace
-ai-vc-2026-f169451525da440d307e,Senso,2734,senso
-ai-vc-2026-f169451525da440d307e,Zeta Global,2735,zeta global
-ai-vc-2026-f169451525da440d307e,Vizby,2736,vizby
-ai-vc-2026-f169451525da440d307e,Swap Commerce,2737,swap commerce
-ai-vc-2026-f169451525da440d307e,Flowie,2738,flowie
-ai-vc-2026-f169451525da440d307e,Sovos,2739,sovos
-ai-vc-2026-f169451525da440d307e,Sudo AI (Shanghai Sudo Technology),2740,sudo ai (shanghai sudo technology)
-ai-vc-2026-f169451525da440d307e,Ultravox,2741,ultravox
-ai-vc-2026-f169451525da440d307e,Inworld,2742,inworld
-ai-vc-2026-f169451525da440d307e,Parakeet Health,2743,parakeet health
-ai-vc-2026-f169451525da440d307e,DoubleO.ai,2744,doubleo.ai
-ai-vc-2026-f169451525da440d307e,ZoomInfo,2745,zoominfo
-ai-vc-2026-f169451525da440d307e,Satlyt,2746,satlyt
-ai-vc-2026-f169451525da440d307e,CScale (fka CSpeed),2747,cscale (fka cspeed)
-ai-vc-2026-f169451525da440d307e,Atta,2748,atta
-ai-vc-2026-f169451525da440d307e,Marble,2749,marble
-ai-vc-2026-f169451525da440d307e,Mitratech,2750,mitratech
-ai-vc-2026-f169451525da440d307e,Soul Machines,2751,soul machines
-ai-vc-2026-f169451525da440d307e,AppDirect,2752,appdirect
-ai-vc-2026-f169451525da440d307e,PickNik,2753,picknik
-ai-vc-2026-f169451525da440d307e,Rilo,2754,rilo
-ai-vc-2026-f169451525da440d307e,50skills,2755,50skills
-ai-vc-2026-f169451525da440d307e,Pilgrim,2756,pilgrim
-ai-vc-2026-f169451525da440d307e,Ryax Technologies,2757,ryax technologies
-ai-vc-2026-f169451525da440d307e,Nutanix,2758,nutanix
-ai-vc-2026-f169451525da440d307e,Noxtua,2759,noxtua
-ai-vc-2026-f169451525da440d307e,mika,2760,mika
-ai-vc-2026-f169451525da440d307e,Heidi Health,2761,heidi health
-ai-vc-2026-f169451525da440d307e,BCI-Sonics (Huachao Shenkong),2762,bci-sonics (huachao shenkong)
-ai-vc-2026-f169451525da440d307e,AI Hospitality Group,2763,ai hospitality group
-ai-vc-2026-f169451525da440d307e,Benford,2764,benford
-ai-vc-2026-f169451525da440d307e,Zuma,2765,zuma
-ai-vc-2026-f169451525da440d307e,Venn,2766,venn
-ai-vc-2026-f169451525da440d307e,Feldera,2767,feldera
-ai-vc-2026-f169451525da440d307e,Microchip Technology,2768,microchip technology
-ai-vc-2026-f169451525da440d307e,Moir,2769,moir
-ai-vc-2026-f169451525da440d307e,Kastle,2770,kastle
-ai-vc-2026-f169451525da440d307e,Metris Energy,2771,metris energy
-ai-vc-2026-f169451525da440d307e,Shutu Technology,2772,shutu technology
-ai-vc-2026-f169451525da440d307e,Haize Labs,2773,haize labs
-ai-vc-2026-f169451525da440d307e,Beacon,2774,beacon
-ai-vc-2026-f169451525da440d307e,stealth-mode AI security startup,2775,stealth-mode ai security startup
-ai-vc-2026-f169451525da440d307e,eSentire,2776,esentire
-ai-vc-2026-f169451525da440d307e,Hello Haven,2777,hello haven
-ai-vc-2026-f169451525da440d307e,Mantic,2778,mantic
-ai-vc-2026-f169451525da440d307e,Flam,2779,flam
-ai-vc-2026-f169451525da440d307e,BoomerangHR,2780,boomeranghr
-ai-vc-2026-f169451525da440d307e,VerifAIX,2781,verifaix
-ai-vc-2026-f169451525da440d307e,Facilo,2782,facilo
-ai-vc-2026-f169451525da440d307e,Adaptive,2783,adaptive
-ai-vc-2026-f169451525da440d307e,Tusk IC,2784,tusk ic
-ai-vc-2026-f169451525da440d307e,syte,2785,syte
-ai-vc-2026-f169451525da440d307e,Creem,2786,creem
-ai-vc-2026-f169451525da440d307e,Health Force,2787,health force
-ai-vc-2026-f169451525da440d307e,Rapta,2788,rapta
-ai-vc-2026-f169451525da440d307e,Motive,2789,motive
-ai-vc-2026-f169451525da440d307e,Hello Robotaxi,2790,hello robotaxi
-ai-vc-2026-f169451525da440d307e,Stilla.ai,2791,stilla.ai
-ai-vc-2026-f169451525da440d307e,LLMonade,2792,llmonade
-ai-vc-2026-f169451525da440d307e,xSeek,2793,xseek
-ai-vc-2026-f169451525da440d307e,Newwave Tech Foundry,2794,newwave tech foundry
-ai-vc-2026-f169451525da440d307e,CloudNC,2795,cloudnc
-ai-vc-2026-f169451525da440d307e,Zankore,2796,zankore
-ai-vc-2026-f169451525da440d307e,UrgentIQ,2797,urgentiq
-ai-vc-2026-f169451525da440d307e,Prime Minute,2798,prime minute
-ai-vc-2026-f169451525da440d307e,Thri5,2799,thri5
-ai-vc-2026-f169451525da440d307e,Rhinovate (Dingxi Zhichuang),2800,rhinovate (dingxi zhichuang)
-ai-vc-2026-f169451525da440d307e,Stack Infrastructure (APAC portfolio),2801,stack infrastructure (apac portfolio)
-ai-vc-2026-f169451525da440d307e,AI Infrastructure Partnership and IFM Investors,2802,ai infrastructure partnership and ifm investors
-ai-vc-2026-f169451525da440d307e,Robotics and AI Institute,2803,robotics and ai institute
-ai-vc-2026-f169451525da440d307e,SoftBank Group,2804,softbank group
-ai-vc-2026-f169451525da440d307e,Velou,2805,velou
-ai-vc-2026-f169451525da440d307e,Algolia,2806,algolia
-ai-vc-2026-f169451525da440d307e,Torch Systems,2807,torch systems
-ai-vc-2026-f169451525da440d307e,Cleavr,2808,cleavr
-ai-vc-2026-f169451525da440d307e,calliora,2809,calliora
-ai-vc-2026-f169451525da440d307e,Netsec,2810,netsec
-ai-vc-2026-f169451525da440d307e,Cori Clinical,2811,cori clinical
-ai-vc-2026-f169451525da440d307e,Desible.ai,2812,desible.ai
-ai-vc-2026-f169451525da440d307e,Boost.ai,2813,boost.ai
-ai-vc-2026-f169451525da440d307e,Monid,2814,monid
-ai-vc-2026-f169451525da440d307e,Santé,2815,santé
-ai-vc-2026-f169451525da440d307e,Rein Security,2816,rein security
-ai-vc-2026-f169451525da440d307e,Verso,2817,verso
-ai-vc-2026-f169451525da440d307e,Persona,2818,persona
-ai-vc-2026-f169451525da440d307e,Augment Code (select assets),2819,augment code (select assets)
-ai-vc-2026-f169451525da440d307e,Harness,2820,harness
-ai-vc-2026-f169451525da440d307e,Hone,2821,hone
-ai-vc-2026-f169451525da440d307e,Klarent,2822,klarent
-ai-vc-2026-f169451525da440d307e,Gudea,2823,gudea
-ai-vc-2026-f169451525da440d307e,Besso,2824,besso
-ai-vc-2026-f169451525da440d307e,Sabi,2825,sabi
-ai-vc-2026-f169451525da440d307e,Ethiqly,2826,ethiqly
-ai-vc-2026-f169451525da440d307e,Carnegie Learning,2827,carnegie learning
-ai-vc-2026-f169451525da440d307e,OllyGarden,2828,ollygarden
-ai-vc-2026-f169451525da440d307e,KONST,2829,konst
-ai-vc-2026-f169451525da440d307e,PlannerPal,2830,plannerpal
-ai-vc-2026-f169451525da440d307e,Infino AI,2831,infino ai
-ai-vc-2026-f169451525da440d307e,Danu Robotics,2832,danu robotics
-ai-vc-2026-f169451525da440d307e,Aiera,2833,aiera
-ai-vc-2026-f169451525da440d307e,BlueMatrix,2834,bluematrix
-ai-vc-2026-f169451525da440d307e,Blackford Analysis,2835,blackford analysis
-ai-vc-2026-f169451525da440d307e,Sopris Capital,2836,sopris capital
-ai-vc-2026-f169451525da440d307e,Strata,2837,strata
-ai-vc-2026-f169451525da440d307e,Mentlio,2838,mentlio
-ai-vc-2026-f169451525da440d307e,Move AI,2839,move ai
-ai-vc-2026-f169451525da440d307e,move ai (assets),2839,move ai (assets)
-ai-vc-2026-f169451525da440d307e,Oxford Metrics (Vicon),2840,oxford metrics (vicon)
-ai-vc-2026-f169451525da440d307e,Meticulous,2841,meticulous
-ai-vc-2026-f169451525da440d307e,Peppermint,2842,peppermint
-ai-vc-2026-f169451525da440d307e,Marvell,2843,marvell
-ai-vc-2026-f169451525da440d307e,Medical Microinstruments,2844,medical microinstruments
-ai-vc-2026-f169451525da440d307e,Halter,2845,halter
+ai-vc-2026-0929ca943255500a9f5f,Hypercore,1417,hypercore
+ai-vc-2026-0929ca943255500a9f5f,Elevāt,1418,elevāt
+ai-vc-2026-0929ca943255500a9f5f,MatX,1419,matx
+ai-vc-2026-0929ca943255500a9f5f,SambaNova Systems,1420,sambanova systems
+ai-vc-2026-0929ca943255500a9f5f,Basis,1421,basis
+ai-vc-2026-0929ca943255500a9f5f,Harper,1422,harper
+ai-vc-2026-0929ca943255500a9f5f,Letter AI,1423,letter ai
+ai-vc-2026-0929ca943255500a9f5f,Koah,1424,koah
+ai-vc-2026-0929ca943255500a9f5f,Comp,1425,comp
+ai-vc-2026-0929ca943255500a9f5f,Spirit AI,1426,spirit ai
+ai-vc-2026-0929ca943255500a9f5f,RLWRLD,1427,rlwrld
+ai-vc-2026-0929ca943255500a9f5f,MeltPlan,1428,meltplan
+ai-vc-2026-0929ca943255500a9f5f,QuiverAI,1429,quiverai
+ai-vc-2026-0929ca943255500a9f5f,Luminos.AI,1430,luminos.ai
+ai-vc-2026-0929ca943255500a9f5f,AI² Robotics,1431,ai² robotics
+ai-vc-2026-0929ca943255500a9f5f,Reflection AI,1432,reflection ai
+ai-vc-2026-0929ca943255500a9f5f,Ease Health,1433,ease health
+ai-vc-2026-0929ca943255500a9f5f,Guild.ai,1434,guild.ai
+ai-vc-2026-0929ca943255500a9f5f,Firmable,1435,firmable
+ai-vc-2026-0929ca943255500a9f5f,Akave,1436,akave
+ai-vc-2026-0929ca943255500a9f5f,Grow Therapy,1437,grow therapy
+ai-vc-2026-0929ca943255500a9f5f,JetStream Security,1438,jetstream security
+ai-vc-2026-0929ca943255500a9f5f,ZyG,1439,zyg
+ai-vc-2026-0929ca943255500a9f5f,City Detect,1440,city detect
+ai-vc-2026-0929ca943255500a9f5f,Mega,1441,mega
+ai-vc-2026-0929ca943255500a9f5f,Advocacy,1442,advocacy
+ai-vc-2026-0929ca943255500a9f5f,AMI Labs,1443,ami labs
+ai-vc-2026-0929ca943255500a9f5f,ami,1443,ami
+ai-vc-2026-0929ca943255500a9f5f,advanced machine intelligence,1443,advanced machine intelligence
+ai-vc-2026-0929ca943255500a9f5f,Eridu,1444,eridu
+ai-vc-2026-0929ca943255500a9f5f,Kai,1445,kai
+ai-vc-2026-0929ca943255500a9f5f,Isembard,1446,isembard
+ai-vc-2026-0929ca943255500a9f5f,Dify,1447,dify
+ai-vc-2026-0929ca943255500a9f5f,Sandbar,1448,sandbar
+ai-vc-2026-0929ca943255500a9f5f,Avvoka,1449,avvoka
+ai-vc-2026-0929ca943255500a9f5f,Axiomatic AI,1450,axiomatic ai
+ai-vc-2026-0929ca943255500a9f5f,Escape,1451,escape
+ai-vc-2026-0929ca943255500a9f5f,Augur,1452,augur
+ai-vc-2026-0929ca943255500a9f5f,Nectir,1453,nectir
+ai-vc-2026-0929ca943255500a9f5f,Nexthop AI,1454,nexthop ai
+ai-vc-2026-0929ca943255500a9f5f,Rhoda AI,1455,rhoda ai
+ai-vc-2026-0929ca943255500a9f5f,Qevlar AI,1456,qevlar ai
+ai-vc-2026-0929ca943255500a9f5f,Translucent,1457,translucent
+ai-vc-2026-0929ca943255500a9f5f,AgentMail,1458,agentmail
+ai-vc-2026-0929ca943255500a9f5f,Axiom Math,1459,axiom math
+ai-vc-2026-0929ca943255500a9f5f,Standard Kernel,1460,standard kernel
+ai-vc-2026-0929ca943255500a9f5f,Rox,1461,rox
+ai-vc-2026-0929ca943255500a9f5f,Sunday Robotics,1462,sunday robotics
+ai-vc-2026-0929ca943255500a9f5f,Scanner,1463,scanner
+ai-vc-2026-0929ca943255500a9f5f,Great Sky,1464,great sky
+ai-vc-2026-0929ca943255500a9f5f,Nyne,1465,nyne
+ai-vc-2026-0929ca943255500a9f5f,Fuse,1466,fuse
+ai-vc-2026-0929ca943255500a9f5f,Halcyon,1467,halcyon
+ai-vc-2026-0929ca943255500a9f5f,Standard Template Labs,1468,standard template labs
+ai-vc-2026-0929ca943255500a9f5f,Hanover Park,1469,hanover park
+ai-vc-2026-0929ca943255500a9f5f,Knox Systems,1470,knox systems
+ai-vc-2026-0929ca943255500a9f5f,Andromeda,1471,andromeda
+ai-vc-2026-0929ca943255500a9f5f,Paraform,1472,paraform
+ai-vc-2026-0929ca943255500a9f5f,Edra,1473,edra
+ai-vc-2026-0929ca943255500a9f5f,Eragon,1474,eragon
+ai-vc-2026-0929ca943255500a9f5f,Manifold,1475,manifold
+ai-vc-2026-0929ca943255500a9f5f,Verily Health,1476,verily health
+ai-vc-2026-0929ca943255500a9f5f,Latent Health,1477,latent health
+ai-vc-2026-0929ca943255500a9f5f,Doctronic,1478,doctronic
+ai-vc-2026-0929ca943255500a9f5f,Pado AI,1479,pado ai
+ai-vc-2026-0929ca943255500a9f5f,Kandou AI,1480,kandou ai
+ai-vc-2026-0929ca943255500a9f5f,Dash0,1481,dash0
+ai-vc-2026-0929ca943255500a9f5f,Highlight AI,1482,highlight ai
+ai-vc-2026-0929ca943255500a9f5f,Lace,1483,lace
+ai-vc-2026-0929ca943255500a9f5f,Littlebird,1484,littlebird
+ai-vc-2026-0929ca943255500a9f5f,Qualified Health,1485,qualified health
+ai-vc-2026-0929ca943255500a9f5f,Amity,1486,amity
+ai-vc-2026-0929ca943255500a9f5f,NoTraffic,1487,notraffic
+ai-vc-2026-0929ca943255500a9f5f,Doss,1488,doss
+ai-vc-2026-0929ca943255500a9f5f,Spade,1489,spade
+ai-vc-2026-0929ca943255500a9f5f,Isara,1490,isara
+ai-vc-2026-0929ca943255500a9f5f,Deccan AI,1491,deccan ai
+ai-vc-2026-0929ca943255500a9f5f,Catalog,1492,catalog
+ai-vc-2026-0929ca943255500a9f5f,Qodo,1493,qodo
+ai-vc-2026-0929ca943255500a9f5f,Worth,1494,worth
+ai-vc-2026-0929ca943255500a9f5f,ScaleOps,1495,scaleops
+ai-vc-2026-0929ca943255500a9f5f,Mantis Biotech,1496,mantis biotech
+ai-vc-2026-0929ca943255500a9f5f,9fin,1497,9fin
+ai-vc-2026-0929ca943255500a9f5f,Sona,1498,sona
+ai-vc-2026-0929ca943255500a9f5f,Cognichip,1499,cognichip
+ai-vc-2026-0929ca943255500a9f5f,Linx Security,1500,linx security
+ai-vc-2026-0929ca943255500a9f5f,Treeline,1501,treeline
+ai-vc-2026-0929ca943255500a9f5f,Galaxea AI,1502,galaxea ai
+ai-vc-2026-0929ca943255500a9f5f,Xoople,1503,xoople
+ai-vc-2026-0929ca943255500a9f5f,Noon,1504,noon
+ai-vc-2026-0929ca943255500a9f5f,Moonbounce,1505,moonbounce
+ai-vc-2026-0929ca943255500a9f5f,Firmus Technologies,1506,firmus technologies
+ai-vc-2026-0929ca943255500a9f5f,Natter,1507,natter
+ai-vc-2026-0929ca943255500a9f5f,Beacon Biosignals,1508,beacon biosignals
+ai-vc-2026-0929ca943255500a9f5f,NeuBird AI,1509,neubird ai
+ai-vc-2026-0929ca943255500a9f5f,Ridge AI,1510,ridge ai
+ai-vc-2026-0929ca943255500a9f5f,Hermeus,1511,hermeus
+ai-vc-2026-0929ca943255500a9f5f,Aria Networks,1512,aria networks
+ai-vc-2026-0929ca943255500a9f5f,Modus,1513,modus
+ai-vc-2026-0929ca943255500a9f5f,True Footage,1514,true footage
+ai-vc-2026-0929ca943255500a9f5f,Mappedin,1515,mappedin
+ai-vc-2026-0929ca943255500a9f5f,ShengShu,1516,shengshu
+ai-vc-2026-0929ca943255500a9f5f,Elorian,1517,elorian
+ai-vc-2026-0929ca943255500a9f5f,nEye.ai,1518,neye.ai
+ai-vc-2026-0929ca943255500a9f5f,Mintlify,1519,mintlify
+ai-vc-2026-0929ca943255500a9f5f,Bluefish,1520,bluefish
+ai-vc-2026-0929ca943255500a9f5f,Hilbert,1521,hilbert
+ai-vc-2026-0929ca943255500a9f5f,Gizmo,1522,gizmo
+ai-vc-2026-0929ca943255500a9f5f,Loop,1523,loop
+ai-vc-2026-0929ca943255500a9f5f,Expo,1524,expo
+ai-vc-2026-0929ca943255500a9f5f,Solidroad,1525,solidroad
+ai-vc-2026-0929ca943255500a9f5f,TextQL,1526,textql
+ai-vc-2026-0929ca943255500a9f5f,Zenskar,1527,zenskar
+ai-vc-2026-0929ca943255500a9f5f,Terra,1528,terra
+ai-vc-2026-0929ca943255500a9f5f,GRAI,1529,grai
+ai-vc-2026-0929ca943255500a9f5f,Reliable Robotics,1530,reliable robotics
+ai-vc-2026-0929ca943255500a9f5f,AcuityMD,1531,acuitymd
+ai-vc-2026-0929ca943255500a9f5f,NeoCognition,1532,neocognition
+ai-vc-2026-0929ca943255500a9f5f,Monk,1533,monk
+ai-vc-2026-0929ca943255500a9f5f,Humble,1534,humble
+ai-vc-2026-0929ca943255500a9f5f,Collov Labs,1535,collov labs
+ai-vc-2026-0929ca943255500a9f5f,Smart Robotics,1536,smart robotics
+ai-vc-2026-0929ca943255500a9f5f,BuildForever,1537,buildforever
+ai-vc-2026-0929ca943255500a9f5f,A&K Robotics,1538,a&k robotics
+ai-vc-2026-0929ca943255500a9f5f,Sooth Labs,1539,sooth labs
+ai-vc-2026-0929ca943255500a9f5f,Pudu Robotics,1540,pudu robotics
+ai-vc-2026-0929ca943255500a9f5f,Omni,1541,omni
+ai-vc-2026-0929ca943255500a9f5f,Human,1542,human
+ai-vc-2026-0929ca943255500a9f5f,Cloudsmith,1543,cloudsmith
+ai-vc-2026-0929ca943255500a9f5f,Orkes,1544,orkes
+ai-vc-2026-0929ca943255500a9f5f,ComfyUI,1545,comfyui
+ai-vc-2026-0929ca943255500a9f5f,SquareMind,1546,squaremind
+ai-vc-2026-0929ca943255500a9f5f,Clarasight,1547,clarasight
+ai-vc-2026-0929ca943255500a9f5f,Aidoc,1548,aidoc
+ai-vc-2026-0929ca943255500a9f5f,Scout AI,1549,scout ai
+ai-vc-2026-0929ca943255500a9f5f,Manifest OS,1550,manifest os
+ai-vc-2026-0929ca943255500a9f5f,Actively,1551,actively
+ai-vc-2026-0929ca943255500a9f5f,Windmill,1552,windmill
+ai-vc-2026-0929ca943255500a9f5f,Shapes,1553,shapes
+ai-vc-2026-0929ca943255500a9f5f,OpenLight,1554,openlight
+ai-vc-2026-0929ca943255500a9f5f,Panthalassa,1555,panthalassa
+ai-vc-2026-0929ca943255500a9f5f,Reserv,1556,reserv
+ai-vc-2026-0929ca943255500a9f5f,CopilotKit,1557,copilotkit
+ai-vc-2026-0929ca943255500a9f5f,Blitzy,1558,blitzy
+ai-vc-2026-0929ca943255500a9f5f,RadixArk,1559,radixark
+ai-vc-2026-0929ca943255500a9f5f,Subquadratic,1560,subquadratic
+ai-vc-2026-0929ca943255500a9f5f,Nace.AI,1561,nace.ai
+ai-vc-2026-0929ca943255500a9f5f,Nyobolt,1562,nyobolt
+ai-vc-2026-0929ca943255500a9f5f,Tessera Labs,1563,tessera labs
+ai-vc-2026-0929ca943255500a9f5f,LiveEO,1564,liveeo
+ai-vc-2026-0929ca943255500a9f5f,Nova Intelligence,1565,nova intelligence
+ai-vc-2026-0929ca943255500a9f5f,Vori,1566,vori
+ai-vc-2026-0929ca943255500a9f5f,Featherless.ai,1567,featherless.ai
+ai-vc-2026-0929ca943255500a9f5f,District,1568,district
+ai-vc-2026-0929ca943255500a9f5f,Cowboy Space Corporation,1569,cowboy space corporation
+ai-vc-2026-0929ca943255500a9f5f,Lithosquare,1570,lithosquare
+ai-vc-2026-0929ca943255500a9f5f,Ethos,1571,ethos
+ai-vc-2026-0929ca943255500a9f5f,Basata,1572,basata
+ai-vc-2026-0929ca943255500a9f5f,Vbot,1573,vbot
+ai-vc-2026-0929ca943255500a9f5f,Frame Security,1574,frame security
+ai-vc-2026-0929ca943255500a9f5f,Vapi,1575,vapi
+ai-vc-2026-0929ca943255500a9f5f,Roadrunner,1576,roadrunner
+ai-vc-2026-0929ca943255500a9f5f,Ciridae,1577,ciridae
+ai-vc-2026-0929ca943255500a9f5f,Develo,1578,develo
+ai-vc-2026-0929ca943255500a9f5f,Monaco,1579,monaco
+ai-vc-2026-0929ca943255500a9f5f,Embat,1580,embat
+ai-vc-2026-0929ca943255500a9f5f,Origin Lab,1581,origin lab
+ai-vc-2026-0929ca943255500a9f5f,Multiverse,1582,multiverse
+ai-vc-2026-0929ca943255500a9f5f,WIRobotics,1583,wirobotics
+ai-vc-2026-0929ca943255500a9f5f,Gridcare,1584,gridcare
+ai-vc-2026-0929ca943255500a9f5f,GovWell,1585,govwell
+ai-vc-2026-0929ca943255500a9f5f,Wirestock,1586,wirestock
+ai-vc-2026-0929ca943255500a9f5f,Sigma Computing,1587,sigma computing
+ai-vc-2026-0929ca943255500a9f5f,Viktor,1588,viktor
+ai-vc-2026-0929ca943255500a9f5f,Scope,1589,scope
+ai-vc-2026-0929ca943255500a9f5f,Nof1,1590,nof1
+ai-vc-2026-0929ca943255500a9f5f,Kin Health,1591,kin health
+ai-vc-2026-0929ca943255500a9f5f,Zyphra,1592,zyphra
+ai-vc-2026-0929ca943255500a9f5f,Radar,1593,radar
+ai-vc-2026-0929ca943255500a9f5f,Bunch,1594,bunch
+ai-vc-2026-0929ca943255500a9f5f,Ocean,1595,ocean
+ai-vc-2026-0929ca943255500a9f5f,Hellbender,1596,hellbender
+ai-vc-2026-0929ca943255500a9f5f,Eisen,1597,eisen
+ai-vc-2026-0929ca943255500a9f5f,Socket,1598,socket
+ai-vc-2026-0929ca943255500a9f5f,Findd,1599,findd
+ai-vc-2026-0929ca943255500a9f5f,NanoCo,1600,nanoco
+ai-vc-2026-0929ca943255500a9f5f,Stilta,1601,stilta
+ai-vc-2026-0929ca943255500a9f5f,Tribal,1602,tribal
+ai-vc-2026-0929ca943255500a9f5f,Hark,1603,hark
+ai-vc-2026-0929ca943255500a9f5f,Farther,1604,farther
+ai-vc-2026-0929ca943255500a9f5f,Moment,1605,moment
+ai-vc-2026-0929ca943255500a9f5f,Quartermaster,1606,quartermaster
+ai-vc-2026-0929ca943255500a9f5f,August Robotics,1607,august robotics
+ai-vc-2026-0929ca943255500a9f5f,Arc,1608,arc
+ai-vc-2026-0929ca943255500a9f5f,Catena Labs,1609,catena labs
+ai-vc-2026-0929ca943255500a9f5f,NavigateAI,1610,navigateai
+ai-vc-2026-0929ca943255500a9f5f,Perceptic,1611,perceptic
+ai-vc-2026-0929ca943255500a9f5f,LightTable,1612,lighttable
+ai-vc-2026-0929ca943255500a9f5f,Triomics,1613,triomics
+ai-vc-2026-0929ca943255500a9f5f,Solstice,1614,solstice
+ai-vc-2026-0929ca943255500a9f5f,Tensormesh,1615,tensormesh
+ai-vc-2026-0929ca943255500a9f5f,RevEng.AI,1616,reveng.ai
+ai-vc-2026-0929ca943255500a9f5f,Vast,1617,vast
+ai-vc-2026-0929ca943255500a9f5f,XCena,1618,xcena
+ai-vc-2026-0929ca943255500a9f5f,Corgi,1619,corgi
+ai-vc-2026-0929ca943255500a9f5f,Garner Health,1620,garner health
+ai-vc-2026-0929ca943255500a9f5f,Inherent,1621,inherent
+ai-vc-2026-0929ca943255500a9f5f,Endra,1622,endra
+ai-vc-2026-0929ca943255500a9f5f,Adaptive Innovations,1623,adaptive innovations
+ai-vc-2026-0929ca943255500a9f5f,Findigs,1624,findigs
+ai-vc-2026-0929ca943255500a9f5f,Lila Sciences,1625,lila sciences
+ai-vc-2026-0929ca943255500a9f5f,AlphaSense,1626,alphasense
+ai-vc-2026-0929ca943255500a9f5f,Collate,1627,collate
+ai-vc-2026-0929ca943255500a9f5f,Honeycomb Insurance,1628,honeycomb insurance
+ai-vc-2026-0929ca943255500a9f5f,Terra AI,1629,terra ai
+ai-vc-2026-0929ca943255500a9f5f,PointFive,1630,pointfive
+ai-vc-2026-0929ca943255500a9f5f,Infinity Constellation,1631,infinity constellation
+ai-vc-2026-0929ca943255500a9f5f,Stepful,1632,stepful
+ai-vc-2026-0929ca943255500a9f5f,Corca Research,1633,corca research
+ai-vc-2026-0929ca943255500a9f5f,Uncovr,1634,uncovr
+ai-vc-2026-0929ca943255500a9f5f,Respond.io,1635,respond.io
+ai-vc-2026-0929ca943255500a9f5f,Arcade.dev,1636,arcade.dev
+ai-vc-2026-0929ca943255500a9f5f,Cortea,1637,cortea
+ai-vc-2026-0929ca943255500a9f5f,Probably,1638,probably
+ai-vc-2026-0929ca943255500a9f5f,Copia Automation,1639,copia automation
+ai-vc-2026-0929ca943255500a9f5f,Limitless Labs,1640,limitless labs
+ai-vc-2026-0929ca943255500a9f5f,Gero,1641,gero
+ai-vc-2026-0929ca943255500a9f5f,Odyssey,1642,odyssey
+ai-vc-2026-0929ca943255500a9f5f,Genspark.ai,1643,genspark.ai
+ai-vc-2026-0929ca943255500a9f5f,Conduct,1644,conduct
+ai-vc-2026-0929ca943255500a9f5f,Convey,1645,convey
+ai-vc-2026-0929ca943255500a9f5f,Pramaana Labs,1646,pramaana labs
+ai-vc-2026-0929ca943255500a9f5f,Gradial,1647,gradial
+ai-vc-2026-0929ca943255500a9f5f,Prosper AI,1648,prosper ai
+ai-vc-2026-0929ca943255500a9f5f,Isometric,1649,isometric
+ai-vc-2026-0929ca943255500a9f5f,Probook,1650,probook
+ai-vc-2026-0929ca943255500a9f5f,Attention,1651,attention
+ai-vc-2026-0929ca943255500a9f5f,Trase Systems,1652,trase systems
+ai-vc-2026-0929ca943255500a9f5f,Sail Research,1653,sail research
+ai-vc-2026-0929ca943255500a9f5f,XCures,1654,xcures
+ai-vc-2026-0929ca943255500a9f5f,Ornn,1655,ornn
+ai-vc-2026-0929ca943255500a9f5f,Coval,1656,coval
+ai-vc-2026-0929ca943255500a9f5f,Seltz,1657,seltz
+ai-vc-2026-0929ca943255500a9f5f,Straiker,1658,straiker
+ai-vc-2026-0929ca943255500a9f5f,Warp,1659,warp
+ai-vc-2026-0929ca943255500a9f5f,Pocket,1660,pocket
+ai-vc-2026-0929ca943255500a9f5f,Kotoba Technologies,1661,kotoba technologies
+ai-vc-2026-0929ca943255500a9f5f,Alan,1662,alan
+ai-vc-2026-0929ca943255500a9f5f,Higgsfield AI,1663,higgsfield ai
+ai-vc-2026-0929ca943255500a9f5f,Quantifind,1664,quantifind
+ai-vc-2026-0929ca943255500a9f5f,Open Vision Engineering,1665,open vision engineering
+ai-vc-2026-0929ca943255500a9f5f,Baz Technologies,1666,baz technologies
+ai-vc-2026-0929ca943255500a9f5f,Global Technical Realty,1667,global technical realty
+ai-vc-2026-0929ca943255500a9f5f,Neurophos,1668,neurophos
+ai-vc-2026-0929ca943255500a9f5f,Sakana AI,1669,sakana ai
+ai-vc-2026-0929ca943255500a9f5f,Daytona,1670,daytona
+ai-vc-2026-0929ca943255500a9f5f,ZaiNar,1671,zainar
+ai-vc-2026-0929ca943255500a9f5f,Encord,1672,encord
+ai-vc-2026-0929ca943255500a9f5f,SiFive,1673,sifive
+ai-vc-2026-0929ca943255500a9f5f,GitButler,1674,gitbutler
+ai-vc-2026-0929ca943255500a9f5f,Chapter,1675,chapter
+ai-vc-2026-0929ca943255500a9f5f,Fleet,1676,fleet
+ai-vc-2026-0929ca943255500a9f5f,Standard Intelligence,1677,standard intelligence
+ai-vc-2026-0929ca943255500a9f5f,Dream Labs,1678,dream labs
+ai-vc-2026-0929ca943255500a9f5f,One World AI,1679,one world ai
+ai-vc-2026-0929ca943255500a9f5f,Sekai,1680,sekai
+ai-vc-2026-0929ca943255500a9f5f,Observe,1681,observe
+ai-vc-2026-0929ca943255500a9f5f,Snowflake,1682,snowflake
+ai-vc-2026-0929ca943255500a9f5f,Battle Road Digital,1683,battle road digital
+ai-vc-2026-0929ca943255500a9f5f,Human Native,1684,human native
+ai-vc-2026-0929ca943255500a9f5f,Cloudflare,1685,cloudflare
+ai-vc-2026-0929ca943255500a9f5f,InfiniGrow,1686,infinigrow
+ai-vc-2026-0929ca943255500a9f5f,Amplitude,1687,amplitude
+ai-vc-2026-0929ca943255500a9f5f,Hatch,1688,hatch
+ai-vc-2026-0929ca943255500a9f5f,Yelp,1689,yelp
+ai-vc-2026-0929ca943255500a9f5f,Hume AI,1690,hume ai
+ai-vc-2026-0929ca943255500a9f5f,Common Sense Machines,1691,common sense machines
+ai-vc-2026-0929ca943255500a9f5f,Google,1692,google
+ai-vc-2026-0929ca943255500a9f5f,Hexus,1693,hexus
+ai-vc-2026-0929ca943255500a9f5f,Koyeb,1694,koyeb
+ai-vc-2026-0929ca943255500a9f5f,Vercept,1695,vercept
+ai-vc-2026-0929ca943255500a9f5f,Cavalry,1696,cavalry
+ai-vc-2026-0929ca943255500a9f5f,ProducerAI,1697,producerai
+ai-vc-2026-0929ca943255500a9f5f,Google Labs,1698,google labs
+ai-vc-2026-0929ca943255500a9f5f,Cal AI,1699,cal ai
+ai-vc-2026-0929ca943255500a9f5f,MyFitnessPal,1700,myfitnesspal
+ai-vc-2026-0929ca943255500a9f5f,Moltbook,1701,moltbook
+ai-vc-2026-0929ca943255500a9f5f,Wiz,1702,wiz
+ai-vc-2026-0929ca943255500a9f5f,Forethought,1703,forethought
+ai-vc-2026-0929ca943255500a9f5f,Zendesk,1704,zendesk
+ai-vc-2026-0929ca943255500a9f5f,Confluent,1705,confluent
+ai-vc-2026-0929ca943255500a9f5f,IBM,1706,ibm
+ai-vc-2026-0929ca943255500a9f5f,Cove,1707,cove
+ai-vc-2026-0929ca943255500a9f5f,Microsoft,1708,microsoft
+ai-vc-2026-0929ca943255500a9f5f,Astral,1709,astral
+ai-vc-2026-0929ca943255500a9f5f,TBPN,1710,tbpn
+ai-vc-2026-0929ca943255500a9f5f,Pronetx,1711,pronetx
+ai-vc-2026-0929ca943255500a9f5f,Caylent,1712,caylent
+ai-vc-2026-0929ca943255500a9f5f,Simtheory,1713,simtheory
+ai-vc-2026-0929ca943255500a9f5f,Stainless,1714,stainless
+ai-vc-2026-0929ca943255500a9f5f,Fractional AI,1715,fractional ai
+ai-vc-2026-0929ca943255500a9f5f,Anthropic and Blackstone joint venture,1716,anthropic and blackstone joint venture
+ai-vc-2026-0929ca943255500a9f5f,Tenstorrent,1717,tenstorrent
+ai-vc-2026-0929ca943255500a9f5f,Qualcomm,1718,qualcomm
+ai-vc-2026-0929ca943255500a9f5f,Topaz Labs,1719,topaz labs
+ai-vc-2026-0929ca943255500a9f5f,Adobe,1720,adobe
+ai-vc-2026-0929ca943255500a9f5f,Deductive AI,1721,deductive ai
+ai-vc-2026-0929ca943255500a9f5f,Elastic,1722,elastic
+ai-vc-2026-0929ca943255500a9f5f,Contentful,1723,contentful
+ai-vc-2026-0929ca943255500a9f5f,Lightning AI,1724,lightning ai
+ai-vc-2026-0929ca943255500a9f5f,Rowan Digital Infrastructure,1725,rowan digital infrastructure
+ai-vc-2026-0929ca943255500a9f5f,Ledgebrook,1726,ledgebrook
+ai-vc-2026-0929ca943255500a9f5f,General Medicine,1727,general medicine
+ai-vc-2026-0929ca943255500a9f5f,Hadrian (cybersecurity),1728,hadrian (cybersecurity)
+ai-vc-2026-0929ca943255500a9f5f,Healthleap,1729,healthleap
+ai-vc-2026-0929ca943255500a9f5f,Vesta,1730,vesta
+ai-vc-2026-0929ca943255500a9f5f,An unnamed stealth AI lab founded by Keyu Tian,1731,an unnamed stealth ai lab founded by keyu tian
+ai-vc-2026-0929ca943255500a9f5f,Wally Health,1732,wally health
+ai-vc-2026-0929ca943255500a9f5f,Vinci,1733,vinci
+ai-vc-2026-0929ca943255500a9f5f,Turba Labs,1734,turba labs
+ai-vc-2026-0929ca943255500a9f5f,Vitalize,1735,vitalize
+ai-vc-2026-0929ca943255500a9f5f,Flai,1736,flai
+ai-vc-2026-0929ca943255500a9f5f,WhiteLab Genomics,1737,whitelab genomics
+ai-vc-2026-0929ca943255500a9f5f,Procuros,1738,procuros
+ai-vc-2026-0929ca943255500a9f5f,Siena,1739,siena
+ai-vc-2026-0929ca943255500a9f5f,Avarra,1740,avarra
+ai-vc-2026-0929ca943255500a9f5f,Valon,1741,valon
+ai-vc-2026-0929ca943255500a9f5f,Wiremind,1742,wiremind
+ai-vc-2026-0929ca943255500a9f5f,Pandektes,1743,pandektes
+ai-vc-2026-0929ca943255500a9f5f,Volantis,1744,volantis
+ai-vc-2026-0929ca943255500a9f5f,Halluminate,1745,halluminate
+ai-vc-2026-0929ca943255500a9f5f,CScale,1746,cscale
+ai-vc-2026-0929ca943255500a9f5f,Miter,1747,miter
+ai-vc-2026-0929ca943255500a9f5f,Restate,1748,restate
+ai-vc-2026-0929ca943255500a9f5f,Kahua,1749,kahua
+ai-vc-2026-0929ca943255500a9f5f,ai3Bio,1750,ai3bio
+ai-vc-2026-0929ca943255500a9f5f,Knowin,1751,knowin
+ai-vc-2026-0929ca943255500a9f5f,Precision Neuroscience,1752,precision neuroscience
+ai-vc-2026-0929ca943255500a9f5f,BigHat Biosciences,1753,bighat biosciences
+ai-vc-2026-0929ca943255500a9f5f,Basalt Health,1754,basalt health
+ai-vc-2026-0929ca943255500a9f5f,Trebellar,1755,trebellar
+ai-vc-2026-0929ca943255500a9f5f,Axya,1756,axya
+ai-vc-2026-0929ca943255500a9f5f,Enveda,1757,enveda
+ai-vc-2026-0929ca943255500a9f5f,Numeral,1758,numeral
+ai-vc-2026-0929ca943255500a9f5f,UltraSight,1759,ultrasight
+ai-vc-2026-0929ca943255500a9f5f,Confido,1760,confido
+ai-vc-2026-0929ca943255500a9f5f,Baselayer,1761,baselayer
+ai-vc-2026-0929ca943255500a9f5f,CellPoint,1762,cellpoint
+ai-vc-2026-0929ca943255500a9f5f,Biolevate,1763,biolevate
+ai-vc-2026-0929ca943255500a9f5f,FintechOS,1764,fintechos
+ai-vc-2026-0929ca943255500a9f5f,GENISOM AI,1765,genisom ai
+ai-vc-2026-0929ca943255500a9f5f,Spott,1766,spott
+ai-vc-2026-0929ca943255500a9f5f,Naive AI,1767,naive ai
+ai-vc-2026-0929ca943255500a9f5f,Mind,1768,mind
+ai-vc-2026-0929ca943255500a9f5f,Raindrop,1769,raindrop
+ai-vc-2026-0929ca943255500a9f5f,Anew Labs,1770,anew labs
+ai-vc-2026-0929ca943255500a9f5f,Arcee AI,1771,arcee ai
+ai-vc-2026-0929ca943255500a9f5f,Polaris Electro-Optics,1772,polaris electro-optics
+ai-vc-2026-0929ca943255500a9f5f,BackOps,1773,backops
+ai-vc-2026-0929ca943255500a9f5f,Loora,1774,loora
+ai-vc-2026-0929ca943255500a9f5f,Veridion,1775,veridion
+ai-vc-2026-0929ca943255500a9f5f,Rebuild,1776,rebuild
+ai-vc-2026-0929ca943255500a9f5f,Complir,1777,complir
+ai-vc-2026-0929ca943255500a9f5f,Ferry Health,1778,ferry health
+ai-vc-2026-0929ca943255500a9f5f,Expanse,1779,expanse
+ai-vc-2026-0929ca943255500a9f5f,Aristotle,1780,aristotle
+ai-vc-2026-0929ca943255500a9f5f,Kairon Health,1781,kairon health
+ai-vc-2026-0929ca943255500a9f5f,Scaffold,1782,scaffold
+ai-vc-2026-0929ca943255500a9f5f,Cornelis,1783,cornelis
+ai-vc-2026-0929ca943255500a9f5f,Xapien,1784,xapien
+ai-vc-2026-0929ca943255500a9f5f,Archy,1785,archy
+ai-vc-2026-0929ca943255500a9f5f,Arlequin AI,1786,arlequin ai
+ai-vc-2026-0929ca943255500a9f5f,Epsilon Health,1787,epsilon health
+ai-vc-2026-0929ca943255500a9f5f,GenHealth.ai,1788,genhealth.ai
+ai-vc-2026-0929ca943255500a9f5f,Buildcheck AI,1789,buildcheck ai
+ai-vc-2026-0929ca943255500a9f5f,Graph AI,1790,graph ai
+ai-vc-2026-0929ca943255500a9f5f,Intermezzo,1791,intermezzo
+ai-vc-2026-0929ca943255500a9f5f,Enigmata,1792,enigmata
+ai-vc-2026-0929ca943255500a9f5f,Savvy Wealth,1793,savvy wealth
+ai-vc-2026-0929ca943255500a9f5f,Inspiren,1794,inspiren
+ai-vc-2026-0929ca943255500a9f5f,Lightfield,1795,lightfield
+ai-vc-2026-0929ca943255500a9f5f,Harmoni,1796,harmoni
+ai-vc-2026-0929ca943255500a9f5f,Overroute,1797,overroute
+ai-vc-2026-0929ca943255500a9f5f,Onix,1798,onix
+ai-vc-2026-0929ca943255500a9f5f,VideoGen,1799,videogen
+ai-vc-2026-0929ca943255500a9f5f,Gaia,1800,gaia
+ai-vc-2026-0929ca943255500a9f5f,Resect AI,1801,resect ai
+ai-vc-2026-0929ca943255500a9f5f,Sirdab,1802,sirdab
+ai-vc-2026-0929ca943255500a9f5f,Hivebotics,1803,hivebotics
+ai-vc-2026-0929ca943255500a9f5f,Jaipur Robotics,1804,jaipur robotics
+ai-vc-2026-0929ca943255500a9f5f,Fluencify,1805,fluencify
+ai-vc-2026-0929ca943255500a9f5f,Haystack Robotics,1806,haystack robotics
+ai-vc-2026-0929ca943255500a9f5f,Souk,1807,souk
+ai-vc-2026-0929ca943255500a9f5f,Félix,1808,félix
+ai-vc-2026-0929ca943255500a9f5f,DataAgent,1809,dataagent
+ai-vc-2026-0929ca943255500a9f5f,Xorlab,1810,xorlab
+ai-vc-2026-0929ca943255500a9f5f,Guickly,1811,guickly
+ai-vc-2026-0929ca943255500a9f5f,Adaptyv Biosystems,1812,adaptyv biosystems
+ai-vc-2026-0929ca943255500a9f5f,Clipto,1813,clipto
+ai-vc-2026-0929ca943255500a9f5f,Blue Voice,1814,blue voice
+ai-vc-2026-0929ca943255500a9f5f,Warpify Robotics,1815,warpify robotics
+ai-vc-2026-0929ca943255500a9f5f,Digs,1816,digs
+ai-vc-2026-0929ca943255500a9f5f,Runable,1817,runable
+ai-vc-2026-0929ca943255500a9f5f,Onos Health,1818,onos health
+ai-vc-2026-0929ca943255500a9f5f,Liner,1819,liner
+ai-vc-2026-0929ca943255500a9f5f,Celera Semiconductor,1820,celera semiconductor
+ai-vc-2026-0929ca943255500a9f5f,Newcode,1821,newcode
+ai-vc-2026-0929ca943255500a9f5f,amber,1822,amber
+ai-vc-2026-0929ca943255500a9f5f,Dogotix,1823,dogotix
+ai-vc-2026-0929ca943255500a9f5f,Callosum,1824,callosum
+ai-vc-2026-0929ca943255500a9f5f,Rundoo,1825,rundoo
+ai-vc-2026-0929ca943255500a9f5f,Relativity Networks,1826,relativity networks
+ai-vc-2026-0929ca943255500a9f5f,Twin1 AI,1827,twin1 ai
+ai-vc-2026-0929ca943255500a9f5f,Veeda AI,1828,veeda ai
+ai-vc-2026-0929ca943255500a9f5f,Medly AI,1829,medly ai
+ai-vc-2026-0929ca943255500a9f5f,Hypercubic,1830,hypercubic
+ai-vc-2026-0929ca943255500a9f5f,Rillet,1831,rillet
+ai-vc-2026-0929ca943255500a9f5f,Advancing Analytics,1832,advancing analytics
+ai-vc-2026-0929ca943255500a9f5f,CAEPlus,1833,caeplus
+ai-vc-2026-0929ca943255500a9f5f,Gravis Robotics,1834,gravis robotics
+ai-vc-2026-0929ca943255500a9f5f,Terra Industries,1835,terra industries
+ai-vc-2026-0929ca943255500a9f5f,Palona AI,1836,palona ai
+ai-vc-2026-0929ca943255500a9f5f,Silicon Data,1837,silicon data
+ai-vc-2026-0929ca943255500a9f5f,Thrive Holdings,1838,thrive holdings
+ai-vc-2026-0929ca943255500a9f5f,Gravity,1839,gravity
+ai-vc-2026-0929ca943255500a9f5f,ClearJet,1840,clearjet
+ai-vc-2026-0929ca943255500a9f5f,Preview,1841,preview
+ai-vc-2026-0929ca943255500a9f5f,Diald,1842,diald
+ai-vc-2026-0929ca943255500a9f5f,Flagler Health,1843,flagler health
+ai-vc-2026-0929ca943255500a9f5f,ApartmentIQ,1844,apartmentiq
+ai-vc-2026-0929ca943255500a9f5f,Axle,1845,axle
+ai-vc-2026-0929ca943255500a9f5f,Legio,1846,legio
+ai-vc-2026-0929ca943255500a9f5f,Fisent Technologies,1847,fisent technologies
+ai-vc-2026-0929ca943255500a9f5f,Volta Infrastructure,1848,volta infrastructure
+ai-vc-2026-0929ca943255500a9f5f,VibeIQ,1849,vibeiq
+ai-vc-2026-0929ca943255500a9f5f,Naïve,1850,naïve
+ai-vc-2026-0929ca943255500a9f5f,Fluxco,1851,fluxco
+ai-vc-2026-0929ca943255500a9f5f,Assured,1852,assured
+ai-vc-2026-0929ca943255500a9f5f,Discovered Materials,1853,discovered materials
+ai-vc-2026-0929ca943255500a9f5f,SiteVue AI,1854,sitevue ai
+ai-vc-2026-0929ca943255500a9f5f,Inevitable AI Group,1855,inevitable ai group
+ai-vc-2026-0929ca943255500a9f5f,Vexev,1856,vexev
+ai-vc-2026-0929ca943255500a9f5f,Osmo,1857,osmo
+ai-vc-2026-0929ca943255500a9f5f,RevealDx,1858,revealdx
+ai-vc-2026-0929ca943255500a9f5f,Hulp,1859,hulp
+ai-vc-2026-0929ca943255500a9f5f,Aurelius Systems,1860,aurelius systems
+ai-vc-2026-0929ca943255500a9f5f,WindBorne Systems,1861,windborne systems
+ai-vc-2026-0929ca943255500a9f5f,Mitti Labs,1862,mitti labs
+ai-vc-2026-0929ca943255500a9f5f,Pinegap,1863,pinegap
+ai-vc-2026-0929ca943255500a9f5f,Proxy Foods AI,1864,proxy foods ai
+ai-vc-2026-0929ca943255500a9f5f,Relu,1865,relu
+ai-vc-2026-0929ca943255500a9f5f,Convex,1866,convex
+ai-vc-2026-0929ca943255500a9f5f,Maximum,1867,maximum
+ai-vc-2026-0929ca943255500a9f5f,Delightree,1868,delightree
+ai-vc-2026-0929ca943255500a9f5f,Buzz Solutions,1869,buzz solutions
+ai-vc-2026-0929ca943255500a9f5f,HappyRobot,1870,happyrobot
+ai-vc-2026-0929ca943255500a9f5f,Foundational Industries,1871,foundational industries
+ai-vc-2026-0929ca943255500a9f5f,June AI,1872,june ai
+ai-vc-2026-0929ca943255500a9f5f,Marquee,1873,marquee
+ai-vc-2026-0929ca943255500a9f5f,Perceptual Robotics,1874,perceptual robotics
+ai-vc-2026-0929ca943255500a9f5f,5U AI,1875,5u ai
+ai-vc-2026-0929ca943255500a9f5f,Mozn,1876,mozn
+ai-vc-2026-0929ca943255500a9f5f,Eliyan,1877,eliyan
+ai-vc-2026-0929ca943255500a9f5f,Encore AI,1878,encore ai
+ai-vc-2026-0929ca943255500a9f5f,Agon,1879,agon
+ai-vc-2026-0929ca943255500a9f5f,Henry AI,1880,henry ai
+ai-vc-2026-0929ca943255500a9f5f,Dili,1881,dili
+ai-vc-2026-0929ca943255500a9f5f,Hint,1882,hint
+ai-vc-2026-0929ca943255500a9f5f,Polar,1883,polar
+ai-vc-2026-0929ca943255500a9f5f,Freehand,1884,freehand
+ai-vc-2026-0929ca943255500a9f5f,Harmony,1885,harmony
+ai-vc-2026-0929ca943255500a9f5f,COR,1886,cor
+ai-vc-2026-0929ca943255500a9f5f,Epitel,1887,epitel
+ai-vc-2026-0929ca943255500a9f5f,telli,1888,telli
+ai-vc-2026-0929ca943255500a9f5f,Weave,1889,weave
+ai-vc-2026-0929ca943255500a9f5f,Credible Data,1890,credible data
+ai-vc-2026-0929ca943255500a9f5f,Pangram,1891,pangram
+ai-vc-2026-0929ca943255500a9f5f,Antares Labs,1892,antares labs
+ai-vc-2026-0929ca943255500a9f5f,Fincart,1893,fincart
+ai-vc-2026-0929ca943255500a9f5f,Multiverse Computing,1894,multiverse computing
+ai-vc-2026-0929ca943255500a9f5f,BusinessNext,1895,businessnext
+ai-vc-2026-0929ca943255500a9f5f,Andrenam,1896,andrenam
+ai-vc-2026-0929ca943255500a9f5f,kausable,1897,kausable
+ai-vc-2026-0929ca943255500a9f5f,Dopl Technologies,1898,dopl technologies
+ai-vc-2026-0929ca943255500a9f5f,Freight Hero,1899,freight hero
+ai-vc-2026-0929ca943255500a9f5f,Pilot Protocol,1900,pilot protocol
+ai-vc-2026-0929ca943255500a9f5f,PageMind,1901,pagemind
+ai-vc-2026-0929ca943255500a9f5f,Solomei AI,1902,solomei ai
+ai-vc-2026-0929ca943255500a9f5f,AegisAI,1903,aegisai
+ai-vc-2026-0929ca943255500a9f5f,Paper,1904,paper
+ai-vc-2026-0929ca943255500a9f5f,Ropedia,1905,ropedia
+ai-vc-2026-0929ca943255500a9f5f,Elio,1906,elio
+ai-vc-2026-0929ca943255500a9f5f,Trooly,1907,trooly
+ai-vc-2026-0929ca943255500a9f5f,Cheiron,1908,cheiron
+ai-vc-2026-0929ca943255500a9f5f,Coverwatch,1909,coverwatch
+ai-vc-2026-0929ca943255500a9f5f,Workstreet,1910,workstreet
+ai-vc-2026-0929ca943255500a9f5f,Cathedral,1911,cathedral
+ai-vc-2026-0929ca943255500a9f5f,Transcripta Bio,1912,transcripta bio
+ai-vc-2026-0929ca943255500a9f5f,1872,1913,1872
+ai-vc-2026-0929ca943255500a9f5f,Petra Labs,1914,petra labs
+ai-vc-2026-0929ca943255500a9f5f,StrongestLayer,1915,strongestlayer
+ai-vc-2026-0929ca943255500a9f5f,Ossprey,1916,ossprey
+ai-vc-2026-0929ca943255500a9f5f,Zafran Security,1917,zafran security
+ai-vc-2026-0929ca943255500a9f5f,Cascade,1918,cascade
+ai-vc-2026-0929ca943255500a9f5f,Neo,1919,neo
+ai-vc-2026-0929ca943255500a9f5f,Natural,1920,natural
+ai-vc-2026-0929ca943255500a9f5f,Empirical Security,1921,empirical security
+ai-vc-2026-0929ca943255500a9f5f,Infinity,1922,infinity
+ai-vc-2026-0929ca943255500a9f5f,Fora,1923,fora
+ai-vc-2026-0929ca943255500a9f5f,Adapter,1924,adapter
+ai-vc-2026-0929ca943255500a9f5f,Spectro Cloud,1925,spectro cloud
+ai-vc-2026-0929ca943255500a9f5f,American Growth Insurance,1926,american growth insurance
+ai-vc-2026-0929ca943255500a9f5f,Oak,1927,oak
+ai-vc-2026-0929ca943255500a9f5f,Hemispheric,1928,hemispheric
+ai-vc-2026-0929ca943255500a9f5f,Sable,1929,sable
+ai-vc-2026-0929ca943255500a9f5f,Bunkerhill Health,1930,bunkerhill health
+ai-vc-2026-0929ca943255500a9f5f,Neko Health,1931,neko health
+ai-vc-2026-0929ca943255500a9f5f,InstaLily,1932,instalily
+ai-vc-2026-0929ca943255500a9f5f,Rime,1933,rime
+ai-vc-2026-0929ca943255500a9f5f,Overtone,1934,overtone
+ai-vc-2026-0929ca943255500a9f5f,Gradium,1935,gradium
+ai-vc-2026-0929ca943255500a9f5f,Augmodo,1936,augmodo
+ai-vc-2026-0929ca943255500a9f5f,Oxylabs,1937,oxylabs
+ai-vc-2026-0929ca943255500a9f5f,Tangos,1938,tangos
+ai-vc-2026-0929ca943255500a9f5f,Even Realities,1939,even realities
+ai-vc-2026-0929ca943255500a9f5f,EquiLibre Technologies,1940,equilibre technologies
+ai-vc-2026-0929ca943255500a9f5f,Higharc,1941,higharc
+ai-vc-2026-0929ca943255500a9f5f,Omen AI,1942,omen ai
+ai-vc-2026-0929ca943255500a9f5f,MDOTM,1943,mdotm
+ai-vc-2026-0929ca943255500a9f5f,Queue,1944,queue
+ai-vc-2026-0929ca943255500a9f5f,Celestial AI,1945,celestial ai
+ai-vc-2026-0929ca943255500a9f5f,Marvell Technology,1946,marvell technology
+ai-vc-2026-0929ca943255500a9f5f,Xeal,1947,xeal
+ai-vc-2026-0929ca943255500a9f5f,Intelligent Machines,1948,intelligent machines
+ai-vc-2026-0929ca943255500a9f5f,Avathon,1949,avathon
+ai-vc-2026-0929ca943255500a9f5f,Poolside,1950,poolside
+ai-vc-2026-0929ca943255500a9f5f,d-Matrix,1951,d-matrix
+ai-vc-2026-0929ca943255500a9f5f,Nuvacore,1952,nuvacore
+ai-vc-2026-0929ca943255500a9f5f,Noeri,1953,noeri
+ai-vc-2026-0929ca943255500a9f5f,Runta,1954,runta
+ai-vc-2026-0929ca943255500a9f5f,Takeoff,1955,takeoff
+ai-vc-2026-0929ca943255500a9f5f,Rain AI,1956,rain ai
+ai-vc-2026-0929ca943255500a9f5f,UniPat,1957,unipat
+ai-vc-2026-0929ca943255500a9f5f,Humanlaya,1958,humanlaya
+ai-vc-2026-0929ca943255500a9f5f,TechWolf,1959,techwolf
+ai-vc-2026-0929ca943255500a9f5f,Ensignia,1960,ensignia
+ai-vc-2026-0929ca943255500a9f5f,Serval,1961,serval
+ai-vc-2026-0929ca943255500a9f5f,trail ML,1962,trail ml
+ai-vc-2026-0929ca943255500a9f5f,Collibra,1963,collibra
+ai-vc-2026-0929ca943255500a9f5f,Dokai,1964,dokai
+ai-vc-2026-0929ca943255500a9f5f,Bolt.new,1965,bolt.new
+ai-vc-2026-0929ca943255500a9f5f,BotDojo,1966,botdojo
+ai-vc-2026-0929ca943255500a9f5f,Mitratech Legal,1967,mitratech legal
+ai-vc-2026-0929ca943255500a9f5f,Daybreak LLC,1968,daybreak llc
+ai-vc-2026-0929ca943255500a9f5f,Statecraft,1969,statecraft
+ai-vc-2026-0929ca943255500a9f5f,Row Zero,1970,row zero
+ai-vc-2026-0929ca943255500a9f5f,Mila Health,1971,mila health
+ai-vc-2026-0929ca943255500a9f5f,DexCare,1972,dexcare
+ai-vc-2026-0929ca943255500a9f5f,Meridian Tech,1973,meridian tech
+ai-vc-2026-0929ca943255500a9f5f,Dioxus Labs,1974,dioxus labs
+ai-vc-2026-0929ca943255500a9f5f,Alif Semiconductor,1975,alif semiconductor
+ai-vc-2026-0929ca943255500a9f5f,T5 Operations,1976,t5 operations
+ai-vc-2026-0929ca943255500a9f5f,Salute,1977,salute
+ai-vc-2026-0929ca943255500a9f5f,Kelvion,1978,kelvion
+ai-vc-2026-0929ca943255500a9f5f,SLB,1979,slb
+ai-vc-2026-0929ca943255500a9f5f,DryvIQ,1980,dryviq
+ai-vc-2026-0929ca943255500a9f5f,Nasuni,1981,nasuni
+ai-vc-2026-0929ca943255500a9f5f,Analytica Consulting,1982,analytica consulting
+ai-vc-2026-0929ca943255500a9f5f,Imagenet,1983,imagenet
+ai-vc-2026-0929ca943255500a9f5f,Tonner Drones,1984,tonner drones
+ai-vc-2026-0929ca943255500a9f5f,Altruist,1985,altruist
+ai-vc-2026-0929ca943255500a9f5f,Vanguard,1986,vanguard
+ai-vc-2026-0929ca943255500a9f5f,Adroit Worldwide Media,1987,adroit worldwide media
+ai-vc-2026-0929ca943255500a9f5f,Grainger,1988,grainger
+ai-vc-2026-0929ca943255500a9f5f,FullyRamped,1989,fullyramped
+ai-vc-2026-0929ca943255500a9f5f,Nooks,1990,nooks
+ai-vc-2026-0929ca943255500a9f5f,DuckLabs,1991,ducklabs
+ai-vc-2026-0929ca943255500a9f5f,Tai,1992,tai
+ai-vc-2026-0929ca943255500a9f5f,Descartes Systems Group,1993,descartes systems group
+ai-vc-2026-0929ca943255500a9f5f,Casper Studios,1994,casper studios
+ai-vc-2026-0929ca943255500a9f5f,Ode with Anthropic,1995,ode with anthropic
+ai-vc-2026-0929ca943255500a9f5f,Anyscale,1996,anyscale
+ai-vc-2026-0929ca943255500a9f5f,Wexler,1997,wexler
+ai-vc-2026-0929ca943255500a9f5f,Cervo AI,1998,cervo ai
+ai-vc-2026-0929ca943255500a9f5f,Altana,1999,altana
+ai-vc-2026-0929ca943255500a9f5f,Moonnox,2000,moonnox
+ai-vc-2026-0929ca943255500a9f5f,Certinia,2001,certinia
+ai-vc-2026-0929ca943255500a9f5f,Personalis,2002,personalis
+ai-vc-2026-0929ca943255500a9f5f,Tempus AI,2003,tempus ai
+ai-vc-2026-0929ca943255500a9f5f,Bud,2004,bud
+ai-vc-2026-0929ca943255500a9f5f,Mechanize,2005,mechanize
+ai-vc-2026-0929ca943255500a9f5f,Lambda,2006,lambda
+ai-vc-2026-0929ca943255500a9f5f,Sharon AI,2007,sharon ai
+ai-vc-2026-0929ca943255500a9f5f,fal.ai,2008,fal.ai
+ai-vc-2026-0929ca943255500a9f5f,fal,2008,fal
+ai-vc-2026-0929ca943255500a9f5f,DensityAI,2009,densityai
+ai-vc-2026-0929ca943255500a9f5f,Campfire,2010,campfire
+ai-vc-2026-0929ca943255500a9f5f,Axiamatic,2011,axiamatic
+ai-vc-2026-0929ca943255500a9f5f,Assort Health,2012,assort health
+ai-vc-2026-0929ca943255500a9f5f,Blacksmith,2013,blacksmith
+ai-vc-2026-0929ca943255500a9f5f,Root.io,2014,root.io
+ai-vc-2026-0929ca943255500a9f5f,Aikido Security,2015,aikido security
+ai-vc-2026-0929ca943255500a9f5f,Exa Labs,2016,exa labs
+ai-vc-2026-0929ca943255500a9f5f,Arda,2017,arda
+ai-vc-2026-0929ca943255500a9f5f,Embo,2018,embo
+ai-vc-2026-0929ca943255500a9f5f,Ulysses,2019,ulysses
+ai-vc-2026-0929ca943255500a9f5f,TARS Robotics,2020,tars robotics
+ai-vc-2026-0929ca943255500a9f5f,Galaxea,2021,galaxea
+ai-vc-2026-0929ca943255500a9f5f,Olix,2022,olix
+ai-vc-2026-0929ca943255500a9f5f,Arena,2023,arena
+ai-vc-2026-0929ca943255500a9f5f,Tab,2024,tab
+ai-vc-2026-0929ca943255500a9f5f,Atomic,2025,atomic
+ai-vc-2026-0929ca943255500a9f5f,Fathom,2026,fathom
+ai-vc-2026-0929ca943255500a9f5f,Superhuman,2027,superhuman
+ai-vc-2026-0929ca943255500a9f5f,Hadrian (manufacturing),2028,hadrian (manufacturing)
+ai-vc-2026-0929ca943255500a9f5f,Norm,2029,norm
+ai-vc-2026-0929ca943255500a9f5f,HaloBraid,2030,halobraid
+ai-vc-2026-0929ca943255500a9f5f,SOND,2031,sond
+ai-vc-2026-0929ca943255500a9f5f,Trace,2032,trace
+ai-vc-2026-0929ca943255500a9f5f,Mesh,2033,mesh
+ai-vc-2026-0929ca943255500a9f5f,Photon,2034,photon
+ai-vc-2026-0929ca943255500a9f5f,Poseidon Aerospace,2035,poseidon aerospace
+ai-vc-2026-0929ca943255500a9f5f,Legato,2036,legato
+ai-vc-2026-0929ca943255500a9f5f,3D Systems,2037,3d systems
+ai-vc-2026-0929ca943255500a9f5f,a.i. solutions,2038,a.i. solutions
+ai-vc-2026-0929ca943255500a9f5f,AB Dynamics (rFpro),2039,ab dynamics (rfpro)
+ai-vc-2026-0929ca943255500a9f5f,Able Innovations,2040,able innovations
+ai-vc-2026-0929ca943255500a9f5f,Abundant Robotics,2041,abundant robotics
+ai-vc-2026-0929ca943255500a9f5f,Accuray,2042,accuray
+ai-vc-2026-0929ca943255500a9f5f,Acellera,2043,acellera
+ai-vc-2026-0929ca943255500a9f5f,Activ Surgical,2044,activ surgical
+ai-vc-2026-0929ca943255500a9f5f,Ada,2045,ada
+ai-vc-2026-0929ca943255500a9f5f,Adam,2046,adam
+ai-vc-2026-0929ca943255500a9f5f,Adaptive Simulations,2047,adaptive simulations
+ai-vc-2026-0929ca943255500a9f5f,Addnode Group / TECHNIA (Claytex),2048,addnode group / technia (claytex)
+ai-vc-2026-0929ca943255500a9f5f,Adept,2049,adept
+ai-vc-2026-0929ca943255500a9f5f,ADLINK Technology,2050,adlink technology
+ai-vc-2026-0929ca943255500a9f5f,Advanced Construction Robotics,2051,advanced construction robotics
+ai-vc-2026-0929ca943255500a9f5f,Aegis Software (Simio),2052,aegis software (simio)
+ai-vc-2026-0929ca943255500a9f5f,Aescape,2053,aescape
+ai-vc-2026-0929ca943255500a9f5f,Aethon,2054,aethon
+ai-vc-2026-0929ca943255500a9f5f,Aeva,2055,aeva
+ai-vc-2026-0929ca943255500a9f5f,AEye,2056,aeye
+ai-vc-2026-0929ca943255500a9f5f,AGCO PTx,2057,agco ptx
+ai-vc-2026-0929ca943255500a9f5f,AGILOX,2058,agilox
+ai-vc-2026-0929ca943255500a9f5f,AirMap,2059,airmap
+ai-vc-2026-0929ca943255500a9f5f,Akselos,2060,akselos
+ai-vc-2026-0929ca943255500a9f5f,Aldec,2061,aldec
+ai-vc-2026-0929ca943255500a9f5f,AllSpice,2062,allspice
+ai-vc-2026-0929ca943255500a9f5f,Altitude Angel,2063,altitude angel
+ai-vc-2026-0929ca943255500a9f5f,Alvascience,2064,alvascience
+ai-vc-2026-0929ca943255500a9f5f,Amazon Robotics,2065,amazon robotics
+ai-vc-2026-0929ca943255500a9f5f,Amazon Web Services,2066,amazon web services
+ai-vc-2026-0929ca943255500a9f5f,Ambarella CVflow,2067,ambarella cvflow
+ai-vc-2026-0929ca943255500a9f5f,Ambi Robotics,2068,ambi robotics
+ai-vc-2026-0929ca943255500a9f5f,Ambience Healthcare,2069,ambience healthcare
+ai-vc-2026-0929ca943255500a9f5f,AMD Kria,2070,amd kria
+ai-vc-2026-0929ca943255500a9f5f,ANDRITZ,2071,andritz
+ai-vc-2026-0929ca943255500a9f5f,Ansys,2072,ansys
+ai-vc-2026-0929ca943255500a9f5f,Anyverse,2073,anyverse
+ai-vc-2026-0929ca943255500a9f5f,Apex.AI,2074,apex.ai
+ai-vc-2026-0929ca943255500a9f5f,Appen,2075,appen
+ai-vc-2026-0929ca943255500a9f5f,Applied Flow Technology,2076,applied flow technology
+ai-vc-2026-0929ca943255500a9f5f,Applied Intuition,2077,applied intuition
+ai-vc-2026-0929ca943255500a9f5f,Applied Math Modeling,2078,applied math modeling
+ai-vc-2026-0929ca943255500a9f5f,Applied Robotics,2079,applied robotics
+ai-vc-2026-0929ca943255500a9f5f,aPriori,2080,apriori
+ai-vc-2026-0929ca943255500a9f5f,Aqemia,2081,aqemia
+ai-vc-2026-0929ca943255500a9f5f,Aquaveo,2082,aquaveo
+ai-vc-2026-0929ca943255500a9f5f,Aras,2083,aras
+ai-vc-2026-0929ca943255500a9f5f,Arbe Robotics,2084,arbe robotics
+ai-vc-2026-0929ca943255500a9f5f,Artly Coffee,2085,artly coffee
+ai-vc-2026-0929ca943255500a9f5f,Arup (Oasys),2086,arup (oasys)
+ai-vc-2026-0929ca943255500a9f5f,ARX Robotics,2087,arx robotics
+ai-vc-2026-0929ca943255500a9f5f,ASI Mining,2088,asi mining
+ai-vc-2026-0929ca943255500a9f5f,AssemblyAI,2089,assemblyai
+ai-vc-2026-0929ca943255500a9f5f,ATI Industrial Automation,2090,ati industrial automation
+ai-vc-2026-0929ca943255500a9f5f,Attabotics,2091,attabotics
+ai-vc-2026-0929ca943255500a9f5f,AUAR,2092,auar
+ai-vc-2026-0929ca943255500a9f5f,Augment Code,2093,augment code
+ai-vc-2026-0929ca943255500a9f5f,Augury,2094,augury
+ai-vc-2026-0929ca943255500a9f5f,Aurel Systems,2095,aurel systems
+ai-vc-2026-0929ca943255500a9f5f,Auterion,2096,auterion
+ai-vc-2026-0929ca943255500a9f5f,Autodesk,2097,autodesk
+ai-vc-2026-0929ca943255500a9f5f,Ava Robotics,2098,ava robotics
+ai-vc-2026-0929ca943255500a9f5f,Avidbots,2099,avidbots
+ai-vc-2026-0929ca943255500a9f5f,AVL List,2100,avl list
+ai-vc-2026-0929ca943255500a9f5f,AVSimulation,2101,avsimulation
+ai-vc-2026-0929ca943255500a9f5f,AVT Simulation,2102,avt simulation
+ai-vc-2026-0929ca943255500a9f5f,AWS RoboMaker,2103,aws robomaker
+ai-vc-2026-0929ca943255500a9f5f,BAE Systems (Bohemia Interactive Simulations),2104,bae systems (bohemia interactive simulations)
+ai-vc-2026-0929ca943255500a9f5f,Baker Hughes,2105,baker hughes
+ai-vc-2026-0929ca943255500a9f5f,Baraja,2106,baraja
+ai-vc-2026-0929ca943255500a9f5f,Bear Flag Robotics,2107,bear flag robotics
+ai-vc-2026-0929ca943255500a9f5f,Bentley Systems,2108,bentley systems
+ai-vc-2026-0929ca943255500a9f5f,Berkshire Grey,2109,berkshire grey
+ai-vc-2026-0929ca943255500a9f5f,BionicHIVE,2110,bionichive
+ai-vc-2026-0929ca943255500a9f5f,BioSolveIT,2111,biosolveit
+ai-vc-2026-0929ca943255500a9f5f,Black Forest Labs,2112,black forest labs
+ai-vc-2026-0929ca943255500a9f5f,BlackBerry QNX,2113,blackberry qnx
+ai-vc-2026-0929ca943255500a9f5f,Blaize,2114,blaize
+ai-vc-2026-0929ca943255500a9f5f,Blickfeld,2115,blickfeld
+ai-vc-2026-0929ca943255500a9f5f,Blue River Technology,2116,blue river technology
+ai-vc-2026-0929ca943255500a9f5f,Blue Robotics,2117,blue robotics
+ai-vc-2026-0929ca943255500a9f5f,Blue Yonder,2118,blue yonder
+ai-vc-2026-0929ca943255500a9f5f,BlueBotics,2119,bluebotics
+ai-vc-2026-0929ca943255500a9f5f,BMT (TUFLOW),2120,bmt (tuflow)
+ai-vc-2026-0929ca943255500a9f5f,Bota Systems,2121,bota systems
+ai-vc-2026-0929ca943255500a9f5f,BrainChip,2122,brainchip
+ai-vc-2026-0929ca943255500a9f5f,Brainlab,2123,brainlab
+ai-vc-2026-0929ca943255500a9f5f,Breaker Industries,2124,breaker industries
+ai-vc-2026-0929ca943255500a9f5f,Breault Research Organization,2125,breault research organization
+ai-vc-2026-0929ca943255500a9f5f,Bridge Appliances,2126,bridge appliances
+ai-vc-2026-0929ca943255500a9f5f,Brightpick,2127,brightpick
+ai-vc-2026-0929ca943255500a9f5f,Bryan Research & Engineering,2128,bryan research & engineering
+ai-vc-2026-0929ca943255500a9f5f,Built Robotics,2129,built robotics
+ai-vc-2026-0929ca943255500a9f5f,CAE,2130,cae
+ai-vc-2026-0929ca943255500a9f5f,Cafe X,2131,cafe x
+ai-vc-2026-0929ca943255500a9f5f,CalypsoAI,2132,calypsoai
+ai-vc-2026-0929ca943255500a9f5f,Calytrix Technologies,2133,calytrix technologies
+ai-vc-2026-0929ca943255500a9f5f,Canonical Ubuntu Robotics,2134,canonical ubuntu robotics
+ai-vc-2026-0929ca943255500a9f5f,Canvas,2135,canvas
+ai-vc-2026-0929ca943255500a9f5f,CARLA,2136,carla
+ai-vc-2026-0929ca943255500a9f5f,Cartesia,2137,cartesia
+ai-vc-2026-0929ca943255500a9f5f,Caterpillar (RPMGlobal),2138,caterpillar (rpmglobal)
+ai-vc-2026-0929ca943255500a9f5f,Caterpillar Autonomous Haulage,2139,caterpillar autonomous haulage
+ai-vc-2026-0929ca943255500a9f5f,Celus,2140,celus
+ai-vc-2026-0929ca943255500a9f5f,CENOS,2141,cenos
+ai-vc-2026-0929ca943255500a9f5f,Cepton,2142,cepton
+ai-vc-2026-0929ca943255500a9f5f,Certara,2143,certara
+ai-vc-2026-0929ca943255500a9f5f,Cerulion,2144,cerulion
+ai-vc-2026-0929ca943255500a9f5f,Chef Robotics,2145,chef robotics
+ai-vc-2026-0929ca943255500a9f5f,Chemical Computing Group,2146,chemical computing group
+ai-vc-2026-0929ca943255500a9f5f,Chemstations,2147,chemstations
+ai-vc-2026-0929ca943255500a9f5f,Chowbotics,2148,chowbotics
+ai-vc-2026-0929ca943255500a9f5f,Chroma,2149,chroma
+ai-vc-2026-0929ca943255500a9f5f,Citrine Informatics,2150,citrine informatics
+ai-vc-2026-0929ca943255500a9f5f,Civ Robotics,2151,civ robotics
+ai-vc-2026-0929ca943255500a9f5f,ClearCalcs,2152,clearcalcs
+ai-vc-2026-0929ca943255500a9f5f,Clearpath Robotics,2153,clearpath robotics
+ai-vc-2026-0929ca943255500a9f5f,CloudFactory,2154,cloudfactory
+ai-vc-2026-0929ca943255500a9f5f,CMR Surgical,2155,cmr surgical
+ai-vc-2026-0929ca943255500a9f5f,Cobalt AI,2156,cobalt ai
+ai-vc-2026-0929ca943255500a9f5f,Coco Robotics,2157,coco robotics
+ai-vc-2026-0929ca943255500a9f5f,Cognata,2158,cognata
+ai-vc-2026-0929ca943255500a9f5f,Collaborative Robotics,2159,collaborative robotics
+ai-vc-2026-0929ca943255500a9f5f,Composio,2160,composio
+ai-vc-2026-0929ca943255500a9f5f,Computer Modelling Group,2161,computer modelling group
+ai-vc-2026-0929ca943255500a9f5f,"Computers and Structures, Inc.",2162,"computers and structures, inc."
+ai-vc-2026-0929ca943255500a9f5f,CompuTherm,2163,computherm
+ai-vc-2026-0929ca943255500a9f5f,COMSOL,2164,comsol
+ai-vc-2026-0929ca943255500a9f5f,Concepts NREC,2165,concepts nrec
+ai-vc-2026-0929ca943255500a9f5f,Confident AI,2166,confident ai
+ai-vc-2026-0929ca943255500a9f5f,Connect Tech,2167,connect tech
+ai-vc-2026-0929ca943255500a9f5f,Constellation Software (Datamine),2168,constellation software (datamine)
+ai-vc-2026-0929ca943255500a9f5f,Construction Robotics,2169,construction robotics
+ai-vc-2026-0929ca943255500a9f5f,Contactile,2170,contactile
+ai-vc-2026-0929ca943255500a9f5f,Convergent Science,2171,convergent science
+ai-vc-2026-0929ca943255500a9f5f,Coppelia Robotics,2172,coppelia robotics
+ai-vc-2026-0929ca943255500a9f5f,Coreform,2173,coreform
+ai-vc-2026-0929ca943255500a9f5f,CoreTech System (Moldex3D),2174,coretech system (moldex3d)
+ai-vc-2026-0929ca943255500a9f5f,Cosmo Tech,2175,cosmo tech
+ai-vc-2026-0929ca943255500a9f5f,Coupa (LLamasoft),2176,coupa (llamasoft)
+ai-vc-2026-0929ca943255500a9f5f,cove.tool,2177,cove.tool
+ai-vc-2026-0929ca943255500a9f5f,CPFD Software,2178,cpfd software
+ai-vc-2026-0929ca943255500a9f5f,CreateASoft,2179,createasoft
+ai-vc-2026-0929ca943255500a9f5f,Crescendo,2180,crescendo
+ai-vc-2026-0929ca943255500a9f5f,Cresset,2181,cresset
+ai-vc-2026-0929ca943255500a9f5f,Cresta,2182,cresta
+ai-vc-2026-0929ca943255500a9f5f,CrewAI,2183,crewai
+ai-vc-2026-0929ca943255500a9f5f,Cruise,2184,cruise
+ai-vc-2026-0929ca943255500a9f5f,Cyberbotics,2185,cyberbotics
+ai-vc-2026-0929ca943255500a9f5f,Cyberbotics Webots,2186,cyberbotics webots
+ai-vc-2026-0929ca943255500a9f5f,Datagen,2187,datagen
+ai-vc-2026-0929ca943255500a9f5f,Dataloop,2188,dataloop
+ai-vc-2026-0929ca943255500a9f5f,Dedrone,2189,dedrone
+ai-vc-2026-0929ca943255500a9f5f,Deep Origin,2190,deep origin
+ai-vc-2026-0929ca943255500a9f5f,DEEP Robotics,2191,deep robotics
+ai-vc-2026-0929ca943255500a9f5f,DENSO Robotics,2192,denso robotics
+ai-vc-2026-0929ca943255500a9f5f,Descript,2193,descript
+ai-vc-2026-0929ca943255500a9f5f,Design Simulation Technologies,2194,design simulation technologies
+ai-vc-2026-0929ca943255500a9f5f,DesignBuilder Software,2195,designbuilder software
+ai-vc-2026-0929ca943255500a9f5f,DesignSoft,2196,designsoft
+ai-vc-2026-0929ca943255500a9f5f,DH-Robotics,2197,dh-robotics
+ai-vc-2026-0929ca943255500a9f5f,DHI,2198,dhi
+ai-vc-2026-0929ca943255500a9f5f,Digits,2199,digits
+ai-vc-2026-0929ca943255500a9f5f,DIgSILENT,2200,digsilent
+ai-vc-2026-0929ca943255500a9f5f,DimensionLab (Siml.ai),2201,dimensionlab (siml.ai)
+ai-vc-2026-0929ca943255500a9f5f,Disney Research Kamino,2202,disney research kamino
+ai-vc-2026-0929ca943255500a9f5f,Dive Solutions,2203,dive solutions
+ai-vc-2026-0929ca943255500a9f5f,Dive Technologies,2204,dive technologies
+ai-vc-2026-0929ca943255500a9f5f,Dlubal Software,2205,dlubal software
+ai-vc-2026-0929ca943255500a9f5f,DNV,2206,dnv
+ai-vc-2026-0929ca943255500a9f5f,Doosan Robotics,2207,doosan robotics
+ai-vc-2026-0929ca943255500a9f5f,DroneShield,2208,droneshield
+ai-vc-2026-0929ca943255500a9f5f,dSPACE,2209,dspace
+ai-vc-2026-0929ca943255500a9f5f,Duality AI,2210,duality ai
+ai-vc-2026-0929ca943255500a9f5f,Dynisma,2211,dynisma
+ai-vc-2026-0929ca943255500a9f5f,EarthSense,2212,earthsense
+ai-vc-2026-0929ca943255500a9f5f,Eaton (CYME),2213,eaton (cyme)
+ai-vc-2026-0929ca943255500a9f5f,Echodyne,2214,echodyne
+ai-vc-2026-0929ca943255500a9f5f,Ecoppia,2215,ecoppia
+ai-vc-2026-0929ca943255500a9f5f,Edge Impulse,2216,edge impulse
+ai-vc-2026-0929ca943255500a9f5f,Eightfold AI,2217,eightfold ai
+ai-vc-2026-0929ca943255500a9f5f,Eka Robotics,2218,eka robotics
+ai-vc-2026-0929ca943255500a9f5f,EKS InTec,2219,eks intec
+ai-vc-2026-0929ca943255500a9f5f,Ekso Bionics,2220,ekso bionics
+ai-vc-2026-0929ca943255500a9f5f,ELEM Biotech,2221,elem biotech
+ai-vc-2026-0929ca943255500a9f5f,Elevate Healthcare,2222,elevate healthcare
+ai-vc-2026-0929ca943255500a9f5f,Elicit,2223,elicit
+ai-vc-2026-0929ca943255500a9f5f,EMAG Technologies,2224,emag technologies
+ai-vc-2026-0929ca943255500a9f5f,Embark Trucks,2225,embark trucks
+ai-vc-2026-0929ca943255500a9f5f,Emerson (AspenTech),2226,emerson (aspentech)
+ai-vc-2026-0929ca943255500a9f5f,EMWorks,2227,emworks
+ai-vc-2026-0929ca943255500a9f5f,Energid,2228,energid
+ai-vc-2026-0929ca943255500a9f5f,Energy Exemplar,2229,energy exemplar
+ai-vc-2026-0929ca943255500a9f5f,Energy Robotics,2230,energy robotics
+ai-vc-2026-0929ca943255500a9f5f,Enfabrica,2231,enfabrica
+ai-vc-2026-0929ca943255500a9f5f,ENGYS,2232,engys
+ai-vc-2026-0929ca943255500a9f5f,Enverus (RatedPower),2233,enverus (ratedpower)
+ai-vc-2026-0929ca943255500a9f5f,Epic Games Unreal Engine,2234,epic games unreal engine
+ai-vc-2026-0929ca943255500a9f5f,Epiroc,2235,epiroc
+ai-vc-2026-0929ca943255500a9f5f,Epirus,2236,epirus
+ai-vc-2026-0929ca943255500a9f5f,EQUA Simulation,2237,equa simulation
+ai-vc-2026-0929ca943255500a9f5f,eRoots Analytics,2238,eroots analytics
+ai-vc-2026-0929ca943255500a9f5f,Essential AI,2239,essential ai
+ai-vc-2026-0929ca943255500a9f5f,ESTECO,2240,esteco
+ai-vc-2026-0929ca943255500a9f5f,Eudia,2241,eudia
+ai-vc-2026-0929ca943255500a9f5f,EvenUp,2242,evenup
+ai-vc-2026-0929ca943255500a9f5f,EvolutionaryScale,2243,evolutionaryscale
+ai-vc-2026-0929ca943255500a9f5f,ExRobotics,2244,exrobotics
+ai-vc-2026-0929ca943255500a9f5f,Exyn Technologies,2245,exyn technologies
+ai-vc-2026-0929ca943255500a9f5f,Falkor (formerly Kongsberg Digital),2246,falkor (formerly kongsberg digital)
+ai-vc-2026-0929ca943255500a9f5f,FANUC,2247,fanuc
+ai-vc-2026-0929ca943255500a9f5f,FBR,2248,fbr
+ai-vc-2026-0929ca943255500a9f5f,Ferroelectric Memory Company,2249,ferroelectric memory company
+ai-vc-2026-0929ca943255500a9f5f,Festo,2250,festo
+ai-vc-2026-0929ca943255500a9f5f,Fetch Robotics,2251,fetch robotics
+ai-vc-2026-0929ca943255500a9f5f,Fine Software,2252,fine software
+ai-vc-2026-0929ca943255500a9f5f,Fireflies.ai,2253,fireflies.ai
+ai-vc-2026-0929ca943255500a9f5f,Fives ProSim,2254,fives prosim
+ai-vc-2026-0929ca943255500a9f5f,Flexcompute,2255,flexcompute
+ai-vc-2026-0929ca943255500a9f5f,FlightSafety International,2256,flightsafety international
+ai-vc-2026-0929ca943255500a9f5f,Flite Software,2257,flite software
+ai-vc-2026-0929ca943255500a9f5f,Flow Science,2258,flow science
+ai-vc-2026-0929ca943255500a9f5f,Flyability,2259,flyability
+ai-vc-2026-0929ca943255500a9f5f,FlytBase,2260,flytbase
+ai-vc-2026-0929ca943255500a9f5f,Flytrex,2261,flytrex
+ai-vc-2026-0929ca943255500a9f5f,Foretellix,2262,foretellix
+ai-vc-2026-0929ca943255500a9f5f,Formant,2263,formant
+ai-vc-2026-0929ca943255500a9f5f,Formic,2264,formic
+ai-vc-2026-0929ca943255500a9f5f,Four Growers,2265,four growers
+ai-vc-2026-0929ca943255500a9f5f,Foxglove,2266,foxglove
+ai-vc-2026-0929ca943255500a9f5f,Freed,2267,freed
+ai-vc-2026-0929ca943255500a9f5f,Freedom Robotics,2268,freedom robotics
+ai-vc-2026-0929ca943255500a9f5f,FriendliAI,2269,friendliai
+ai-vc-2026-0929ca943255500a9f5f,FundamentalVR,2270,fundamentalvr
+ai-vc-2026-0929ca943255500a9f5f,FutureOn,2271,futureon
+ai-vc-2026-0929ca943255500a9f5f,Gamma Technologies,2272,gamma technologies
+ai-vc-2026-0929ca943255500a9f5f,Gaumard Scientific,2273,gaumard scientific
+ai-vc-2026-0929ca943255500a9f5f,Gausium,2274,gausium
+ai-vc-2026-0929ca943255500a9f5f,Gaussian,2275,gaussian
+ai-vc-2026-0929ca943255500a9f5f,GE Vernova,2276,ge vernova
+ai-vc-2026-0929ca943255500a9f5f,GelSight,2277,gelsight
+ai-vc-2026-0929ca943255500a9f5f,General Dynamics Bluefin Robotics,2278,general dynamics bluefin robotics
+ai-vc-2026-0929ca943255500a9f5f,Generate Biomedicines,2279,generate biomedicines
+ai-vc-2026-0929ca943255500a9f5f,Genesis Embodied AI,2280,genesis embodied ai
+ai-vc-2026-0929ca943255500a9f5f,GeoStru,2281,geostru
+ai-vc-2026-0929ca943255500a9f5f,Ghost Robotics,2282,ghost robotics
+ai-vc-2026-0929ca943255500a9f5f,Giga-DA,2283,giga-da
+ai-vc-2026-0929ca943255500a9f5f,Giskard,2284,giskard
+ai-vc-2026-0929ca943255500a9f5f,Glean,2285,glean
+ai-vc-2026-0929ca943255500a9f5f,Global TCAD Solutions,2286,global tcad solutions
+ai-vc-2026-0929ca943255500a9f5f,Globus Medical,2287,globus medical
+ai-vc-2026-0929ca943255500a9f5f,Gong,2288,gong
+ai-vc-2026-0929ca943255500a9f5f,Google DeepMind Robotics,2289,google deepmind robotics
+ai-vc-2026-0929ca943255500a9f5f,Grabit,2290,grabit
+ai-vc-2026-0929ca943255500a9f5f,Gradyent,2291,gradyent
+ai-vc-2026-0929ca943255500a9f5f,Graitec,2292,graitec
+ai-vc-2026-0929ca943255500a9f5f,Greeneye Technology,2293,greeneye technology
+ai-vc-2026-0929ca943255500a9f5f,Greensea IQ,2294,greensea iq
+ai-vc-2026-0929ca943255500a9f5f,Gretel,2295,gretel
+ai-vc-2026-0929ca943255500a9f5f,Hailo,2296,hailo
+ai-vc-2026-0929ca943255500a9f5f,Haiper,2297,haiper
+ai-vc-2026-0929ca943255500a9f5f,Harmonic Drive,2298,harmonic drive
+ai-vc-2026-0929ca943255500a9f5f,Harvest CROO Robotics,2299,harvest croo robotics
+ai-vc-2026-0929ca943255500a9f5f,Haskoning (Lanner WITNESS),2300,haskoning (lanner witness)
+ai-vc-2026-0929ca943255500a9f5f,HBK (VI-grade),2301,hbk (vi-grade)
+ai-vc-2026-0929ca943255500a9f5f,HeartFlow,2302,heartflow
+ai-vc-2026-0929ca943255500a9f5f,"Heat Transfer Research, Inc. (HTRI)",2303,"heat transfer research, inc. (htri)"
+ai-vc-2026-0929ca943255500a9f5f,Hebbia,2304,hebbia
+ai-vc-2026-0929ca943255500a9f5f,Hesai Technology,2305,hesai technology
+ai-vc-2026-0929ca943255500a9f5f,Hexagon Autonomy & Positioning,2306,hexagon autonomy & positioning
+ai-vc-2026-0929ca943255500a9f5f,Hexagon Manufacturing Intelligence,2307,hexagon manufacturing intelligence
+ai-vc-2026-0929ca943255500a9f5f,Hexagon Mining,2308,hexagon mining
+ai-vc-2026-0929ca943255500a9f5f,HeyGen,2309,heygen
+ai-vc-2026-0929ca943255500a9f5f,Hillbot,2310,hillbot
+ai-vc-2026-0929ca943255500a9f5f,HireEZ,2311,hireez
+ai-vc-2026-0929ca943255500a9f5f,Honeywell,2312,honeywell
+ai-vc-2026-0929ca943255500a9f5f,HP SitePrint,2313,hp siteprint
+ai-vc-2026-0929ca943255500a9f5f,Huada Empyrean,2314,huada empyrean
+ai-vc-2026-0929ca943255500a9f5f,Hugging Face LeRobot,2315,hugging face lerobot
+ai-vc-2026-0929ca943255500a9f5f,Humanloop,2316,humanloop
+ai-vc-2026-0929ca943255500a9f5f,Husqvarna Automower,2317,husqvarna automower
+ai-vc-2026-0929ca943255500a9f5f,Hydroid,2318,hydroid
+ai-vc-2026-0929ca943255500a9f5f,Hyperbolic,2319,hyperbolic
+ai-vc-2026-0929ca943255500a9f5f,Hyphen,2320,hyphen
+ai-vc-2026-0929ca943255500a9f5f,ICON (NONMEM),2321,icon (nonmem)
+ai-vc-2026-0929ca943255500a9f5f,IDEA StatiCa,2322,idea statica
+ai-vc-2026-0929ca943255500a9f5f,Ideogram,2323,ideogram
+ai-vc-2026-0929ca943255500a9f5f,igus robotics,2324,igus robotics
+ai-vc-2026-0929ca943255500a9f5f,Ike,2325,ike
+ai-vc-2026-0929ca943255500a9f5f,INCONTROL Simulation Solutions,2326,incontrol simulation solutions
+ai-vc-2026-0929ca943255500a9f5f,Inflection AI,2327,inflection ai
+ai-vc-2026-0929ca943255500a9f5f,Innoviz Technologies,2328,innoviz technologies
+ai-vc-2026-0929ca943255500a9f5f,InOrbit,2329,inorbit
+ai-vc-2026-0929ca943255500a9f5f,Inprocess Technology and Consulting Group,2330,inprocess technology and consulting group
+ai-vc-2026-0929ca943255500a9f5f,Insilico Medicine,2331,insilico medicine
+ai-vc-2026-0929ca943255500a9f5f,InSilicoTrials,2332,insilicotrials
+ai-vc-2026-0929ca943255500a9f5f,InSimo,2333,insimo
+ai-vc-2026-0929ca943255500a9f5f,Integrated Engineering Software,2334,integrated engineering software
+ai-vc-2026-0929ca943255500a9f5f,Integrated Environmental Solutions (IES),2335,integrated environmental solutions (ies)
+ai-vc-2026-0929ca943255500a9f5f,Intelligen,2336,intelligen
+ai-vc-2026-0929ca943255500a9f5f,Intrinsic,2337,intrinsic
+ai-vc-2026-0929ca943255500a9f5f,Intrinsic (Alphabet),2338,intrinsic (alphabet)
+ai-vc-2026-0929ca943255500a9f5f,Intuitive Surgical,2339,intuitive surgical
+ai-vc-2026-0929ca943255500a9f5f,Invert Robotics,2340,invert robotics
+ai-vc-2026-0929ca943255500a9f5f,Invisible Technologies,2341,invisible technologies
+ai-vc-2026-0929ca943255500a9f5f,IPG Automotive,2342,ipg automotive
+ai-vc-2026-0929ca943255500a9f5f,Iron Ox,2343,iron ox
+ai-vc-2026-0929ca943255500a9f5f,Itasca Consulting Group,2344,itasca consulting group
+ai-vc-2026-0929ca943255500a9f5f,Jacobs (Flood Modeller),2345,jacobs (flood modeller)
+ai-vc-2026-0929ca943255500a9f5f,Jasper,2346,jasper
+ai-vc-2026-0929ca943255500a9f5f,JITX,2347,jitx
+ai-vc-2026-0929ca943255500a9f5f,John Deere Autonomous Solutions,2348,john deere autonomous solutions
+ai-vc-2026-0929ca943255500a9f5f,Johnson & Johnson MedTech Robotics,2349,johnson & johnson medtech robotics
+ai-vc-2026-0929ca943255500a9f5f,Kassow Robots,2350,kassow robots
+ai-vc-2026-0929ca943255500a9f5f,Kawasaki Robotics,2351,kawasaki robotics
+ai-vc-2026-0929ca943255500a9f5f,Keenon Robotics,2352,keenon robotics
+ai-vc-2026-0929ca943255500a9f5f,Kepler Exploration Robot,2353,kepler exploration robot
+ai-vc-2026-0929ca943255500a9f5f,Kevala,2354,kevala
+ai-vc-2026-0929ca943255500a9f5f,Key Ward,2355,key ward
+ai-vc-2026-0929ca943255500a9f5f,Kinara,2356,kinara
+ai-vc-2026-0929ca943255500a9f5f,Kinaxis,2357,kinaxis
+ai-vc-2026-0929ca943255500a9f5f,Kindred,2358,kindred
+ai-vc-2026-0929ca943255500a9f5f,Kittl,2359,kittl
+ai-vc-2026-0929ca943255500a9f5f,Kiwibot,2360,kiwibot
+ai-vc-2026-0929ca943255500a9f5f,KNAPP,2361,knapp
+ai-vc-2026-0929ca943255500a9f5f,Kneron,2362,kneron
+ai-vc-2026-0929ca943255500a9f5f,Knightscope,2363,knightscope
+ai-vc-2026-0929ca943255500a9f5f,Komatsu FrontRunner,2364,komatsu frontrunner
+ai-vc-2026-0929ca943255500a9f5f,Kongsberg Discovery,2365,kongsberg discovery
+ai-vc-2026-0929ca943255500a9f5f,Kratos Defense & Security Solutions,2366,kratos defense & security solutions
+ai-vc-2026-0929ca943255500a9f5f,Kubota Smart Agriculture,2367,kubota smart agriculture
+ai-vc-2026-0929ca943255500a9f5f,KUKA (Visual Components),2368,kuka (visual components)
+ai-vc-2026-0929ca943255500a9f5f,Ladybug Tools,2369,ladybug tools
+ai-vc-2026-0929ca943255500a9f5f,Laerdal Medical,2370,laerdal medical
+ai-vc-2026-0929ca943255500a9f5f,Lakera,2371,lakera
+ai-vc-2026-0929ca943255500a9f5f,Lam Research,2372,lam research
+ai-vc-2026-0929ca943255500a9f5f,Lambda Research Corporation,2373,lambda research corporation
+ai-vc-2026-0929ca943255500a9f5f,LambdaSim,2374,lambdasim
+ai-vc-2026-0929ca943255500a9f5f,LanceDB,2375,lancedb
+ai-vc-2026-0929ca943255500a9f5f,LangChain,2376,langchain
+ai-vc-2026-0929ca943255500a9f5f,Latent Labs,2377,latent labs
+ai-vc-2026-0929ca943255500a9f5f,LeddarTech,2378,leddartech
+ai-vc-2026-0929ca943255500a9f5f,Lhasa Limited,2379,lhasa limited
+ai-vc-2026-0929ca943255500a9f5f,Lifeward,2380,lifeward
+ai-vc-2026-0929ca943255500a9f5f,Lightmatter,2381,lightmatter
+ai-vc-2026-0929ca943255500a9f5f,LightTrans International,2382,lighttrans international
+ai-vc-2026-0929ca943255500a9f5f,Lindy,2383,lindy
+ai-vc-2026-0929ca943255500a9f5f,LionsBot,2384,lionsbot
+ai-vc-2026-0929ca943255500a9f5f,Liquid AI,2385,liquid ai
+ai-vc-2026-0929ca943255500a9f5f,Livox,2386,livox
+ai-vc-2026-0929ca943255500a9f5f,LlamaIndex,2387,llamaindex
+ai-vc-2026-0929ca943255500a9f5f,Locomation,2388,locomation
+ai-vc-2026-0929ca943255500a9f5f,Logivations,2389,logivations
+ai-vc-2026-0929ca943255500a9f5f,Luma AI,2390,luma ai
+ai-vc-2026-0929ca943255500a9f5f,Luminance,2391,luminance
+ai-vc-2026-0929ca943255500a9f5f,Luminar Technologies,2392,luminar technologies
+ai-vc-2026-0929ca943255500a9f5f,Luminary Cloud,2393,luminary cloud
+ai-vc-2026-0929ca943255500a9f5f,M-Star Simulations,2394,m-star simulations
+ai-vc-2026-0929ca943255500a9f5f,machineering,2395,machineering
+ai-vc-2026-0929ca943255500a9f5f,Magic,2396,magic
+ai-vc-2026-0929ca943255500a9f5f,MAGMA,2397,magma
+ai-vc-2026-0929ca943255500a9f5f,Makr Shakr,2398,makr shakr
+ai-vc-2026-0929ca943255500a9f5f,Mammotion,2399,mammotion
+ai-vc-2026-0929ca943255500a9f5f,Manitoba Hydro International,2400,manitoba hydro international
+ai-vc-2026-0929ca943255500a9f5f,Maplesoft,2401,maplesoft
+ai-vc-2026-0929ca943255500a9f5f,Marine AI,2402,marine ai
+ai-vc-2026-0929ca943255500a9f5f,Mat3ra,2403,mat3ra
+ai-vc-2026-0929ca943255500a9f5f,MatCalc Engineering,2404,matcalc engineering
+ai-vc-2026-0929ca943255500a9f5f,Materialise,2405,materialise
+ai-vc-2026-0929ca943255500a9f5f,Materials Design,2406,materials design
+ai-vc-2026-0929ca943255500a9f5f,Math2Market,2407,math2market
+ai-vc-2026-0929ca943255500a9f5f,MathWorks,2408,mathworks
+ai-vc-2026-0929ca943255500a9f5f,maxon,2409,maxon
+ai-vc-2026-0929ca943255500a9f5f,Medical-X,2410,medical-x
+ai-vc-2026-0929ca943255500a9f5f,Medra,2411,medra
+ai-vc-2026-0929ca943255500a9f5f,Medtronic Surgical Robotics,2412,medtronic surgical robotics
+ai-vc-2026-0929ca943255500a9f5f,MemryX,2413,memryx
+ai-vc-2026-0929ca943255500a9f5f,Mendaera,2414,mendaera
+ai-vc-2026-0929ca943255500a9f5f,Mentice,2415,mentice
+ai-vc-2026-0929ca943255500a9f5f,Merlin Labs,2416,merlin labs
+ai-vc-2026-0929ca943255500a9f5f,Meta FAIR Embodied AI,2417,meta fair embodied ai
+ai-vc-2026-0929ca943255500a9f5f,Metso,2418,metso
+ai-vc-2026-0929ca943255500a9f5f,Mevea,2419,mevea
+ai-vc-2026-0929ca943255500a9f5f,Microsoft AirSim,2420,microsoft airsim
+ai-vc-2026-0929ca943255500a9f5f,MIDAS IT,2421,midas it
+ai-vc-2026-0929ca943255500a9f5f,Midjourney,2422,midjourney
+ai-vc-2026-0929ca943255500a9f5f,Milrem Robotics,2423,milrem robotics
+ai-vc-2026-0929ca943255500a9f5f,Minitab (SIMUL8),2424,minitab (simul8)
+ai-vc-2026-0929ca943255500a9f5f,Mitsubishi Electric Robotics,2425,mitsubishi electric robotics
+ai-vc-2026-0929ca943255500a9f5f,Modelon,2426,modelon
+ai-vc-2026-0929ca943255500a9f5f,Molecular Discovery,2427,molecular discovery
+ai-vc-2026-0929ca943255500a9f5f,Moley Robotics,2428,moley robotics
+ai-vc-2026-0929ca943255500a9f5f,Molsoft,2429,molsoft
+ai-vc-2026-0929ca943255500a9f5f,Moon Surgical,2430,moon surgical
+ai-vc-2026-0929ca943255500a9f5f,MORAI,2431,morai
+ai-vc-2026-0929ca943255500a9f5f,Moveworks,2432,moveworks
+ai-vc-2026-0929ca943255500a9f5f,MuJoCo,2433,mujoco
+ai-vc-2026-0929ca943255500a9f5f,Murf AI,2434,murf ai
+ai-vc-2026-0929ca943255500a9f5f,Myomo,2435,myomo
+ai-vc-2026-0929ca943255500a9f5f,Nabla,2436,nabla
+ai-vc-2026-0929ca943255500a9f5f,Nabtesco Precision Equipment,2437,nabtesco precision equipment
+ai-vc-2026-0929ca943255500a9f5f,Nala Robotics,2438,nala robotics
+ai-vc-2026-0929ca943255500a9f5f,Navier AI,2439,navier ai
+ai-vc-2026-0929ca943255500a9f5f,Near Earth Autonomy,2440,near earth autonomy
+ai-vc-2026-0929ca943255500a9f5f,Nemetschek Group,2441,nemetschek group
+ai-vc-2026-0929ca943255500a9f5f,NEPLAN,2442,neplan
+ai-vc-2026-0929ca943255500a9f5f,Neubility,2443,neubility
+ai-vc-2026-0929ca943255500a9f5f,Neural Concept,2444,neural concept
+ai-vc-2026-0929ca943255500a9f5f,Neural Physics,2445,neural physics
+ai-vc-2026-0929ca943255500a9f5f,NeuReality,2446,neureality
+ai-vc-2026-0929ca943255500a9f5f,Nexobot,2447,nexobot
+ai-vc-2026-0929ca943255500a9f5f,Noah Medical,2448,noah medical
+ai-vc-2026-0929ca943255500a9f5f,Noble Machines,2449,noble machines
+ai-vc-2026-0929ca943255500a9f5f,NobleAI,2450,nobleai
+ai-vc-2026-0929ca943255500a9f5f,Noma Security,2451,noma security
+ai-vc-2026-0929ca943255500a9f5f,Notion,2452,notion
+ai-vc-2026-0929ca943255500a9f5f,Novadiscovery,2453,novadiscovery
+ai-vc-2026-0929ca943255500a9f5f,Novarm (DipTrace),2454,novarm (diptrace)
+ai-vc-2026-0929ca943255500a9f5f,nTop,2455,ntop
+ai-vc-2026-0929ca943255500a9f5f,Numem,2456,numem
+ai-vc-2026-0929ca943255500a9f5f,Numeric,2457,numeric
+ai-vc-2026-0929ca943255500a9f5f,NVIDIA Cosmos,2458,nvidia cosmos
+ai-vc-2026-0929ca943255500a9f5f,NVIDIA Jetson,2459,nvidia jetson
+ai-vc-2026-0929ca943255500a9f5f,NVIDIA Omniverse,2460,nvidia omniverse
+ai-vc-2026-0929ca943255500a9f5f,NVIDIA Physical AI Platform,2461,nvidia physical ai platform
+ai-vc-2026-0929ca943255500a9f5f,NXP eIQ and i.MX,2462,nxp eiq and i.mx
+ai-vc-2026-0929ca943255500a9f5f,o9 Solutions,2463,o9 solutions
+ai-vc-2026-0929ca943255500a9f5f,Observe.AI,2464,observe.ai
+ai-vc-2026-0929ca943255500a9f5f,Ocado Technology,2465,ocado technology
+ai-vc-2026-0929ca943255500a9f5f,Ocean Infinity,2466,ocean infinity
+ai-vc-2026-0929ca943255500a9f5f,OctoAI,2467,octoai
+ai-vc-2026-0929ca943255500a9f5f,Okibo,2468,okibo
+ai-vc-2026-0929ca943255500a9f5f,OLI Systems,2469,oli systems
+ai-vc-2026-0929ca943255500a9f5f,Oliasoft,2470,oliasoft
+ai-vc-2026-0929ca943255500a9f5f,OMRON Robotics,2471,omron robotics
+ai-vc-2026-0929ca943255500a9f5f,OnRobot,2472,onrobot
+ai-vc-2026-0929ca943255500a9f5f,OnSpec Robotics,2473,onspec robotics
+ai-vc-2026-0929ca943255500a9f5f,OPAL-RT Technologies,2474,opal-rt technologies
+ai-vc-2026-0929ca943255500a9f5f,Open Source Robotics Alliance,2475,open source robotics alliance
+ai-vc-2026-0929ca943255500a9f5f,Opentrons,2476,opentrons
+ai-vc-2026-0929ca943255500a9f5f,Opsys Tech,2477,opsys tech
+ai-vc-2026-0929ca943255500a9f5f,Optibrium,2478,optibrium
+ai-vc-2026-0929ca943255500a9f5f,Optiwave Systems,2479,optiwave systems
+ai-vc-2026-0929ca943255500a9f5f,Orca AI,2480,orca ai
+ai-vc-2026-0929ca943255500a9f5f,Orchard Robotics,2481,orchard robotics
+ai-vc-2026-0929ca943255500a9f5f,OSARO,2482,osaro
+ai-vc-2026-0929ca943255500a9f5f,Osso VR,2483,osso vr
+ai-vc-2026-0929ca943255500a9f5f,Otter.ai,2484,otter.ai
+ai-vc-2026-0929ca943255500a9f5f,Ottopia,2485,ottopia
+ai-vc-2026-0929ca943255500a9f5f,Ouster,2486,ouster
+ai-vc-2026-0929ca943255500a9f5f,Paradox,2487,paradox
+ai-vc-2026-0929ca943255500a9f5f,Parallel Domain,2488,parallel domain
+ai-vc-2026-0929ca943255500a9f5f,Paxton,2489,paxton
+ai-vc-2026-0929ca943255500a9f5f,Percepto,2490,percepto
+ai-vc-2026-0929ca943255500a9f5f,Perceptron AI,2491,perceptron ai
+ai-vc-2026-0929ca943255500a9f5f,Petroleum Experts,2492,petroleum experts
+ai-vc-2026-0929ca943255500a9f5f,Phantom Auto,2493,phantom auto
+ai-vc-2026-0929ca943255500a9f5f,Photon Design,2494,photon design
+ai-vc-2026-0929ca943255500a9f5f,Photon Engineering,2495,photon engineering
+ai-vc-2026-0929ca943255500a9f5f,Photoroom,2496,photoroom
+ai-vc-2026-0929ca943255500a9f5f,Physiomics,2497,physiomics
+ai-vc-2026-0929ca943255500a9f5f,Piab,2498,piab
+ai-vc-2026-0929ca943255500a9f5f,Pickle Robot,2499,pickle robot
+ai-vc-2026-0929ca943255500a9f5f,Picnic Works,2500,picnic works
+ai-vc-2026-0929ca943255500a9f5f,Pika,2501,pika
+ai-vc-2026-0929ca943255500a9f5f,Pinecone,2502,pinecone
+ai-vc-2026-0929ca943255500a9f5f,Pitch Technologies,2503,pitch technologies
+ai-vc-2026-0929ca943255500a9f5f,PlanOpSim,2504,planopsim
+ai-vc-2026-0929ca943255500a9f5f,PlayAI,2505,playai
+ai-vc-2026-0929ca943255500a9f5f,Plexim,2506,plexim
+ai-vc-2026-0929ca943255500a9f5f,Plus One Robotics,2507,plus one robotics
+ai-vc-2026-0929ca943255500a9f5f,Point One Navigation,2508,point one navigation
+ai-vc-2026-0929ca943255500a9f5f,Polymath Robotics,2509,polymath robotics
+ai-vc-2026-0929ca943255500a9f5f,PowerWorld Corporation,2510,powerworld corporation
+ai-vc-2026-0929ca943255500a9f5f,PrecisionOS,2511,precisionos
+ai-vc-2026-0929ca943255500a9f5f,Predibase,2512,predibase
+ai-vc-2026-0929ca943255500a9f5f,Primarius Technologies,2513,primarius technologies
+ai-vc-2026-0929ca943255500a9f5f,PROCEPT BioRobotics,2514,procept biorobotics
+ai-vc-2026-0929ca943255500a9f5f,Prolific,2515,prolific
+ai-vc-2026-0929ca943255500a9f5f,ProModel,2516,promodel
+ai-vc-2026-0929ca943255500a9f5f,Protect AI,2517,protect ai
+ai-vc-2026-0929ca943255500a9f5f,Q-Chem,2518,q-chem
+ai-vc-2026-0929ca943255500a9f5f,qbrobotics,2519,qbrobotics
+ai-vc-2026-0929ca943255500a9f5f,Qualcomm Dragonwing Robotics,2520,qualcomm dragonwing robotics
+ai-vc-2026-0929ca943255500a9f5f,QuantumBio,2521,quantumbio
+ai-vc-2026-0929ca943255500a9f5f,Qubit Pharmaceuticals,2522,qubit pharmaceuticals
+ai-vc-2026-0929ca943255500a9f5f,QuesTek Innovations,2523,questek innovations
+ai-vc-2026-0929ca943255500a9f5f,Radical AI,2524,radical ai
+ai-vc-2026-0929ca943255500a9f5f,Rainbow Robotics,2525,rainbow robotics
+ai-vc-2026-0929ca943255500a9f5f,Raise Robotics,2526,raise robotics
+ai-vc-2026-0929ca943255500a9f5f,Raven Industries,2527,raven industries
+ai-vc-2026-0929ca943255500a9f5f,Read AI,2528,read ai
+ai-vc-2026-0929ca943255500a9f5f,READY Robotics,2529,ready robotics
+ai-vc-2026-0929ca943255500a9f5f,Real-Time Innovations,2530,real-time innovations
+ai-vc-2026-0929ca943255500a9f5f,Realis Simulation,2531,realis simulation
+ai-vc-2026-0929ca943255500a9f5f,Realtime Robotics,2532,realtime robotics
+ai-vc-2026-0929ca943255500a9f5f,Red Cat / Teal Drones,2533,red cat / teal drones
+ai-vc-2026-0929ca943255500a9f5f,Refraction AI,2534,refraction ai
+ai-vc-2026-0929ca943255500a9f5f,Relay Robotics,2535,relay robotics
+ai-vc-2026-0929ca943255500a9f5f,Relevance AI,2536,relevance ai
+ai-vc-2026-0929ca943255500a9f5f,RELEX Solutions,2537,relex solutions
+ai-vc-2026-0929ca943255500a9f5f,Remcom,2538,remcom
+ai-vc-2026-0929ca943255500a9f5f,Rendered.ai,2539,rendered.ai
+ai-vc-2026-0929ca943255500a9f5f,Renesas Electronics (Altium),2540,renesas electronics (altium)
+ai-vc-2026-0929ca943255500a9f5f,Replicate,2541,replicate
+ai-vc-2026-0929ca943255500a9f5f,Rescale,2542,rescale
+ai-vc-2026-0929ca943255500a9f5f,Resemble AI,2543,resemble ai
+ai-vc-2026-0929ca943255500a9f5f,Revalize (PIPE-FLO),2544,revalize (pipe-flo)
+ai-vc-2026-0929ca943255500a9f5f,rFpro,2545,rfpro
+ai-vc-2026-0929ca943255500a9f5f,RGo Robotics,2546,rgo robotics
+ai-vc-2026-0929ca943255500a9f5f,Richtech Robotics,2547,richtech robotics
+ai-vc-2026-0929ca943255500a9f5f,Robin AI,2548,robin ai
+ai-vc-2026-0929ca943255500a9f5f,RoboSense,2549,robosense
+ai-vc-2026-0929ca943255500a9f5f,Robotics Plus,2550,robotics plus
+ai-vc-2026-0929ca943255500a9f5f,Robotiq,2551,robotiq
+ai-vc-2026-0929ca943255500a9f5f,Robotis,2552,robotis
+ai-vc-2026-0929ca943255500a9f5f,Roboto AI,2553,roboto ai
+ai-vc-2026-0929ca943255500a9f5f,Rock Flow Dynamics,2554,rock flow dynamics
+ai-vc-2026-0929ca943255500a9f5f,Rockwell Automation,2555,rockwell automation
+ai-vc-2026-0929ca943255500a9f5f,RTDS Technologies,2556,rtds technologies
+ai-vc-2026-0929ca943255500a9f5f,Rugged Robotics,2557,rugged robotics
+ai-vc-2026-0929ca943255500a9f5f,Saab Seaeye,2558,saab seaeye
+ai-vc-2026-0929ca943255500a9f5f,SafeAI,2559,safeai
+ai-vc-2026-0929ca943255500a9f5f,Saildrone,2560,saildrone
+ai-vc-2026-0929ca943255500a9f5f,Sama,2561,sama
+ai-vc-2026-0929ca943255500a9f5f,San Francisco Compute,2562,san francisco compute
+ai-vc-2026-0929ca943255500a9f5f,Sana,2563,sana
+ai-vc-2026-0929ca943255500a9f5f,Sanctuary AI,2564,sanctuary ai
+ai-vc-2026-0929ca943255500a9f5f,SandboxAQ,2565,sandboxaq
+ai-vc-2026-0929ca943255500a9f5f,Sandvik (Deswik),2566,sandvik (deswik)
+ai-vc-2026-0929ca943255500a9f5f,Sandvik AutoMine,2567,sandvik automine
+ai-vc-2026-0929ca943255500a9f5f,Scale AI,2568,scale ai
+ai-vc-2026-0929ca943255500a9f5f,Scantinel Photonics,2569,scantinel photonics
+ai-vc-2026-0929ca943255500a9f5f,Schmalz,2570,schmalz
+ai-vc-2026-0929ca943255500a9f5f,Schneider Electric (AVEVA / ETAP),2571,schneider electric (aveva / etap)
+ai-vc-2026-0929ca943255500a9f5f,Schrödinger,2572,schrödinger
+ai-vc-2026-0929ca943255500a9f5f,SCHUNK,2573,schunk
+ai-vc-2026-0929ca943255500a9f5f,Scientific Forming Technologies Corporation,2574,scientific forming technologies corporation
+ai-vc-2026-0929ca943255500a9f5f,Secondmind,2575,secondmind
+ai-vc-2026-0929ca943255500a9f5f,Sedaro,2576,sedaro
+ai-vc-2026-0929ca943255500a9f5f,Seneca,2577,seneca
+ai-vc-2026-0929ca943255500a9f5f,Sensmetry,2578,sensmetry
+ai-vc-2026-0929ca943255500a9f5f,Sente Software,2579,sente software
+ai-vc-2026-0929ca943255500a9f5f,Sevensense Robotics,2580,sevensense robotics
+ai-vc-2026-0929ca943255500a9f5f,Seyond,2581,seyond
+ai-vc-2026-0929ca943255500a9f5f,Shadow Robot Company,2582,shadow robot company
+ai-vc-2026-0929ca943255500a9f5f,Shapr3D,2583,shapr3d
+ai-vc-2026-0929ca943255500a9f5f,Siemens,2584,siemens
+ai-vc-2026-0929ca943255500a9f5f,Siemens Digital Industries Software,2585,siemens digital industries software
+ai-vc-2026-0929ca943255500a9f5f,Sight Machine,2586,sight machine
+ai-vc-2026-0929ca943255500a9f5f,SIGMA Engineering,2587,sigma engineering
+ai-vc-2026-0929ca943255500a9f5f,SiLC Technologies,2588,silc technologies
+ai-vc-2026-0929ca943255500a9f5f,Silvaco,2589,silvaco
+ai-vc-2026-0929ca943255500a9f5f,Sim&Cure,2590,sim&cure
+ai-vc-2026-0929ca943255500a9f5f,Simberian,2591,simberian
+ai-vc-2026-0929ca943255500a9f5f,SIMetrix Technologies,2592,simetrix technologies
+ai-vc-2026-0929ca943255500a9f5f,Simphotek,2593,simphotek
+ai-vc-2026-0929ca943255500a9f5f,SimPlan,2594,simplan
+ai-vc-2026-0929ca943255500a9f5f,Simr,2595,simr
+ai-vc-2026-0929ca943255500a9f5f,Simreka,2596,simreka
+ai-vc-2026-0929ca943255500a9f5f,SimScale,2597,simscale
+ai-vc-2026-0929ca943255500a9f5f,Simthetiq,2598,simthetiq
+ai-vc-2026-0929ca943255500a9f5f,Simudyne,2599,simudyne
+ai-vc-2026-0929ca943255500a9f5f,Simulab,2600,simulab
+ai-vc-2026-0929ca943255500a9f5f,Simulations Plus,2601,simulations plus
+ai-vc-2026-0929ca943255500a9f5f,Simurghy,2602,simurghy
+ai-vc-2026-0929ca943255500a9f5f,SimX,2603,simx
+ai-vc-2026-0929ca943255500a9f5f,SkyCiv,2604,skyciv
+ai-vc-2026-0929ca943255500a9f5f,Skyline Robotics,2605,skyline robotics
+ai-vc-2026-0929ca943255500a9f5f,Slingshot Aerospace,2606,slingshot aerospace
+ai-vc-2026-0929ca943255500a9f5f,Small Robot Company,2607,small robot company
+ai-vc-2026-0929ca943255500a9f5f,SMC Corporation,2608,smc corporation
+ai-vc-2026-0929ca943255500a9f5f,Smith+Nephew CORI,2609,smith+nephew cori
+ai-vc-2026-0929ca943255500a9f5f,Snke (Snke Xplore),2610,snke (snke xplore)
+ai-vc-2026-0929ca943255500a9f5f,SOFiSTiK,2611,sofistik
+ai-vc-2026-0929ca943255500a9f5f,Soft Robotics / Oxipital AI,2612,soft robotics / oxipital ai
+ai-vc-2026-0929ca943255500a9f5f,SoftInWay,2613,softinway
+ai-vc-2026-0929ca943255500a9f5f,Software for Chemistry & Materials (SCM),2614,software for chemistry & materials (scm)
+ai-vc-2026-0929ca943255500a9f5f,Sogeclair (OKTAL / Sydac),2615,sogeclair (oktal / sydac)
+ai-vc-2026-0929ca943255500a9f5f,SolarCleano,2616,solarcleano
+ai-vc-2026-0929ca943255500a9f5f,Solinftec,2617,solinftec
+ai-vc-2026-0929ca943255500a9f5f,Sonnet Software,2618,sonnet software
+ai-vc-2026-0929ca943255500a9f5f,Sourcegraph,2619,sourcegraph
+ai-vc-2026-0929ca943255500a9f5f,Speak,2620,speak
+ai-vc-2026-0929ca943255500a9f5f,Speechmatics,2621,speechmatics
+ai-vc-2026-0929ca943255500a9f5f,Speedgoat,2622,speedgoat
+ai-vc-2026-0929ca943255500a9f5f,Spyce,2623,spyce
+ai-vc-2026-0929ca943255500a9f5f,ST Engineering (MAK Technologies),2624,st engineering (mak technologies)
+ai-vc-2026-0929ca943255500a9f5f,StackBlitz,2625,stackblitz
+ai-vc-2026-0929ca943255500a9f5f,StruSoft,2626,strusoft
+ai-vc-2026-0929ca943255500a9f5f,Stryker Mako,2627,stryker mako
+ai-vc-2026-0929ca943255500a9f5f,Suki,2628,suki
+ai-vc-2026-0929ca943255500a9f5f,SuperAnnotate,2629,superannotate
+ai-vc-2026-0929ca943255500a9f5f,Surge AI,2630,surge ai
+ai-vc-2026-0929ca943255500a9f5f,Surgical Science,2631,surgical science
+ai-vc-2026-0929ca943255500a9f5f,Surgical Theater,2632,surgical theater
+ai-vc-2026-0929ca943255500a9f5f,SwarmFarm Robotics,2633,swarmfarm robotics
+ai-vc-2026-0929ca943255500a9f5f,Swift Navigation,2634,swift navigation
+ai-vc-2026-0929ca943255500a9f5f,Synapticon,2635,synapticon
+ai-vc-2026-0929ca943255500a9f5f,Synopsys (including Ansys),2636,synopsys (including ansys)
+ai-vc-2026-0929ca943255500a9f5f,SynSense,2637,synsense
+ai-vc-2026-0929ca943255500a9f5f,Synthesis AI,2638,synthesis ai
+ai-vc-2026-0929ca943255500a9f5f,Synthesized,2639,synthesized
+ai-vc-2026-0929ca943255500a9f5f,Syntiant,2640,syntiant
+ai-vc-2026-0929ca943255500a9f5f,SynTouch,2641,syntouch
+ai-vc-2026-0929ca943255500a9f5f,Take The Wind (Body Interact),2642,take the wind (body interact)
+ai-vc-2026-0929ca943255500a9f5f,Taurob,2643,taurob
+ai-vc-2026-0929ca943255500a9f5f,Techman Robot,2644,techman robot
+ai-vc-2026-0929ca943255500a9f5f,Teledyne Marine,2645,teledyne marine
+ai-vc-2026-0929ca943255500a9f5f,Teleo,2646,teleo
+ai-vc-2026-0929ca943255500a9f5f,Tensorfield Agriculture,2647,tensorfield agriculture
+ai-vc-2026-0929ca943255500a9f5f,Tesla Autonomous Driving,2648,tesla autonomous driving
+ai-vc-2026-0929ca943255500a9f5f,Tesla Optimus,2649,tesla optimus
+ai-vc-2026-0929ca943255500a9f5f,Tesollo,2650,tesollo
+ai-vc-2026-0929ca943255500a9f5f,Tevel Aerobotics Technologies,2651,tevel aerobotics technologies
+ai-vc-2026-0929ca943255500a9f5f,Texas Instruments TDA4,2652,texas instruments tda4
+ai-vc-2026-0929ca943255500a9f5f,Textron (TRU Simulation + Training),2653,textron (tru simulation + training)
+ai-vc-2026-0929ca943255500a9f5f,TGW Logistics,2654,tgw logistics
+ai-vc-2026-0929ca943255500a9f5f,ThayerMahan,2655,thayermahan
+ai-vc-2026-0929ca943255500a9f5f,The AnyLogic Company,2656,the anylogic company
+ai-vc-2026-0929ca943255500a9f5f,The Bot Company,2657,the bot company
+ai-vc-2026-0929ca943255500a9f5f,Thermo-Calc Software,2658,thermo-calc software
+ai-vc-2026-0929ca943255500a9f5f,Theseus,2659,theseus
+ai-vc-2026-0929ca943255500a9f5f,Third Wave Automation,2660,third wave automation
+ai-vc-2026-0929ca943255500a9f5f,Toggle Robotics,2661,toggle robotics
+ai-vc-2026-0929ca943255500a9f5f,Toloka,2662,toloka
+ai-vc-2026-0929ca943255500a9f5f,Tomorrow Things,2663,tomorrow things
+ai-vc-2026-0929ca943255500a9f5f,Tonic AI,2664,tonic ai
+ai-vc-2026-0929ca943255500a9f5f,Tortuga AgTech,2665,tortuga agtech
+ai-vc-2026-0929ca943255500a9f5f,TotalCAE,2666,totalcae
+ai-vc-2026-0929ca943255500a9f5f,Touchlab,2667,touchlab
+ai-vc-2026-0929ca943255500a9f5f,Toyota Research Institute,2668,toyota research institute
+ai-vc-2026-0929ca943255500a9f5f,Tractian,2669,tractian
+ai-vc-2026-0929ca943255500a9f5f,Transvalor,2670,transvalor
+ai-vc-2026-0929ca943255500a9f5f,TrianGraphics,2671,triangraphics
+ai-vc-2026-0929ca943255500a9f5f,Trimble,2672,trimble
+ai-vc-2026-0929ca943255500a9f5f,TruEra,2673,truera
+ai-vc-2026-0929ca943255500a9f5f,Truewind,2674,truewind
+ai-vc-2026-0929ca943255500a9f5f,Turing,2675,turing
+ai-vc-2026-0929ca943255500a9f5f,TuSimple / CreateAI,2676,tusimple / createai
+ai-vc-2026-0929ca943255500a9f5f,Tutor Intelligence,2677,tutor intelligence
+ai-vc-2026-0929ca943255500a9f5f,twinzo,2678,twinzo
+ai-vc-2026-0929ca943255500a9f5f,Typhoon HIL,2679,typhoon hil
+ai-vc-2026-0929ca943255500a9f5f,UberCloud,2680,ubercloud
+ai-vc-2026-0929ca943255500a9f5f,Uhnder,2681,uhnder
+ai-vc-2026-0929ca943255500a9f5f,UL Solutions (HOMER Energy),2682,ul solutions (homer energy)
+ai-vc-2026-0929ca943255500a9f5f,Unifly,2683,unifly
+ai-vc-2026-0929ca943255500a9f5f,Unity Industry,2684,unity industry
+ai-vc-2026-0929ca943255500a9f5f,Unity Software,2685,unity software
+ai-vc-2026-0929ca943255500a9f5f,Univista,2686,univista
+ai-vc-2026-0929ca943255500a9f5f,Unlearn,2687,unlearn
+ai-vc-2026-0929ca943255500a9f5f,Unsloth,2688,unsloth
+ai-vc-2026-0929ca943255500a9f5f,Uptake,2689,uptake
+ai-vc-2026-0929ca943255500a9f5f,UptimeAI,2690,uptimeai
+ai-vc-2026-0929ca943255500a9f5f,URBX,2691,urbx
+ai-vc-2026-0929ca943255500a9f5f,V7,2692,v7
+ai-vc-2026-0929ca943255500a9f5f,v7 labs,2692,v7 labs
+ai-vc-2026-0929ca943255500a9f5f,Vanderlande,2693,vanderlande
+ai-vc-2026-0929ca943255500a9f5f,VASP Software,2694,vasp software
+ai-vc-2026-0929ca943255500a9f5f,Vayyar,2695,vayyar
+ai-vc-2026-0929ca943255500a9f5f,Vectara,2696,vectara
+ai-vc-2026-0929ca943255500a9f5f,Vector Informatik,2697,vector informatik
+ai-vc-2026-0929ca943255500a9f5f,Velodyne Lidar,2698,velodyne lidar
+ai-vc-2026-0929ca943255500a9f5f,VeriSIM Life,2699,verisim life
+ai-vc-2026-0929ca943255500a9f5f,Verobotics,2700,verobotics
+ai-vc-2026-0929ca943255500a9f5f,Viam,2701,viam
+ai-vc-2026-0929ca943255500a9f5f,Vic.ai,2702,vic.ai
+ai-vc-2026-0929ca943255500a9f5f,Vicarious Surgical,2703,vicarious surgical
+ai-vc-2026-0929ca943255500a9f5f,VirtaMed,2704,virtamed
+ai-vc-2026-0929ca943255500a9f5f,Virtonomy,2705,virtonomy
+ai-vc-2026-0929ca943255500a9f5f,Voxel51,2706,voxel51
+ai-vc-2026-0929ca943255500a9f5f,Voyant Photonics,2707,voyant photonics
+ai-vc-2026-0929ca943255500a9f5f,Waabi World Simulator,2708,waabi world simulator
+ai-vc-2026-0929ca943255500a9f5f,Wavefunction,2709,wavefunction
+ai-vc-2026-0929ca943255500a9f5f,Wayve GAIA,2710,wayve gaia
+ai-vc-2026-0929ca943255500a9f5f,Weights & Biases,2711,weights & biases
+ai-vc-2026-0929ca943255500a9f5f,Weir Group (Micromine),2712,weir group (micromine)
+ai-vc-2026-0929ca943255500a9f5f,WEISS Robotics,2713,weiss robotics
+ai-vc-2026-0929ca943255500a9f5f,WestDev (Pulsonix),2714,westdev (pulsonix)
+ai-vc-2026-0929ca943255500a9f5f,Whitson,2715,whitson
+ai-vc-2026-0929ca943255500a9f5f,WhyLabs,2716,whylabs
+ai-vc-2026-0929ca943255500a9f5f,Wind River,2717,wind river
+ai-vc-2026-0929ca943255500a9f5f,Windsurf,2718,windsurf
+ai-vc-2026-0929ca943255500a9f5f,WIPL-D,2719,wipl-d
+ai-vc-2026-0929ca943255500a9f5f,Wolfram Research,2720,wolfram research
+ai-vc-2026-0929ca943255500a9f5f,Wonik Robotics,2721,wonik robotics
+ai-vc-2026-0929ca943255500a9f5f,Writer,2722,writer
+ai-vc-2026-0929ca943255500a9f5f,X-EPIC,2723,x-epic
+ai-vc-2026-0929ca943255500a9f5f,Xaira Therapeutics,2724,xaira therapeutics
+ai-vc-2026-0929ca943255500a9f5f,XMPro,2725,xmpro
+ai-vc-2026-0929ca943255500a9f5f,Xpeedic,2726,xpeedic
+ai-vc-2026-0929ca943255500a9f5f,XtalPi,2727,xtalpi
+ai-vc-2026-0929ca943255500a9f5f,Xwing,2728,xwing
+ai-vc-2026-0929ca943255500a9f5f,XYZ Robotics,2729,xyz robotics
+ai-vc-2026-0929ca943255500a9f5f,Yarbo,2730,yarbo
+ai-vc-2026-0929ca943255500a9f5f,Yaskawa Motoman,2731,yaskawa motoman
+ai-vc-2026-0929ca943255500a9f5f,Yokogawa Electric (KBC),2732,yokogawa electric (kbc)
+ai-vc-2026-0929ca943255500a9f5f,You.com,2733,you.com
+ai-vc-2026-0929ca943255500a9f5f,Zace Services (ZSOIL),2734,zace services (zsoil)
+ai-vc-2026-0929ca943255500a9f5f,Zendar,2735,zendar
+ai-vc-2026-0929ca943255500a9f5f,ZenML,2736,zenml
+ai-vc-2026-0929ca943255500a9f5f,Zeromatter,2737,zeromatter
+ai-vc-2026-0929ca943255500a9f5f,Zilliz,2738,zilliz
+ai-vc-2026-0929ca943255500a9f5f,Zimmer Biomet ROSA,2739,zimmer biomet rosa
+ai-vc-2026-0929ca943255500a9f5f,Zimmer Group,2740,zimmer group
+ai-vc-2026-0929ca943255500a9f5f,Zoo,2741,zoo
+ai-vc-2026-0929ca943255500a9f5f,Zuken,2742,zuken
+ai-vc-2026-0929ca943255500a9f5f,Zurich MedTech,2743,zurich medtech
+ai-vc-2026-0929ca943255500a9f5f,WEKA,2744,weka
+ai-vc-2026-0929ca943255500a9f5f,Nettle,2745,nettle
+ai-vc-2026-0929ca943255500a9f5f,Namespace,2746,namespace
+ai-vc-2026-0929ca943255500a9f5f,Senso,2747,senso
+ai-vc-2026-0929ca943255500a9f5f,Zeta Global,2748,zeta global
+ai-vc-2026-0929ca943255500a9f5f,Vizby,2749,vizby
+ai-vc-2026-0929ca943255500a9f5f,Swap Commerce,2750,swap commerce
+ai-vc-2026-0929ca943255500a9f5f,Flowie,2751,flowie
+ai-vc-2026-0929ca943255500a9f5f,Sovos,2752,sovos
+ai-vc-2026-0929ca943255500a9f5f,Sudo AI (Shanghai Sudo Technology),2753,sudo ai (shanghai sudo technology)
+ai-vc-2026-0929ca943255500a9f5f,Ultravox,2754,ultravox
+ai-vc-2026-0929ca943255500a9f5f,Inworld,2755,inworld
+ai-vc-2026-0929ca943255500a9f5f,Parakeet Health,2756,parakeet health
+ai-vc-2026-0929ca943255500a9f5f,DoubleO.ai,2757,doubleo.ai
+ai-vc-2026-0929ca943255500a9f5f,ZoomInfo,2758,zoominfo
+ai-vc-2026-0929ca943255500a9f5f,Satlyt,2759,satlyt
+ai-vc-2026-0929ca943255500a9f5f,CScale (fka CSpeed),2760,cscale (fka cspeed)
+ai-vc-2026-0929ca943255500a9f5f,Atta,2761,atta
+ai-vc-2026-0929ca943255500a9f5f,Marble,2762,marble
+ai-vc-2026-0929ca943255500a9f5f,Mitratech,2763,mitratech
+ai-vc-2026-0929ca943255500a9f5f,Soul Machines,2764,soul machines
+ai-vc-2026-0929ca943255500a9f5f,AppDirect,2765,appdirect
+ai-vc-2026-0929ca943255500a9f5f,Rilo,2766,rilo
+ai-vc-2026-0929ca943255500a9f5f,50skills,2767,50skills
+ai-vc-2026-0929ca943255500a9f5f,Pilgrim,2768,pilgrim
+ai-vc-2026-0929ca943255500a9f5f,Ryax Technologies,2769,ryax technologies
+ai-vc-2026-0929ca943255500a9f5f,Nutanix,2770,nutanix
+ai-vc-2026-0929ca943255500a9f5f,Noxtua,2771,noxtua
+ai-vc-2026-0929ca943255500a9f5f,mika,2772,mika
+ai-vc-2026-0929ca943255500a9f5f,BCI-Sonics (Huachao Shenkong),2773,bci-sonics (huachao shenkong)
+ai-vc-2026-0929ca943255500a9f5f,AI Hospitality Group,2774,ai hospitality group
+ai-vc-2026-0929ca943255500a9f5f,Benford,2775,benford
+ai-vc-2026-0929ca943255500a9f5f,Zuma,2776,zuma
+ai-vc-2026-0929ca943255500a9f5f,Venn,2777,venn
+ai-vc-2026-0929ca943255500a9f5f,Feldera,2778,feldera
+ai-vc-2026-0929ca943255500a9f5f,Microchip Technology,2779,microchip technology
+ai-vc-2026-0929ca943255500a9f5f,Moir,2780,moir
+ai-vc-2026-0929ca943255500a9f5f,Kastle,2781,kastle
+ai-vc-2026-0929ca943255500a9f5f,Metris Energy,2782,metris energy
+ai-vc-2026-0929ca943255500a9f5f,Shutu Technology,2783,shutu technology
+ai-vc-2026-0929ca943255500a9f5f,Haize Labs,2784,haize labs
+ai-vc-2026-0929ca943255500a9f5f,Beacon,2785,beacon
+ai-vc-2026-0929ca943255500a9f5f,stealth-mode AI security startup,2786,stealth-mode ai security startup
+ai-vc-2026-0929ca943255500a9f5f,eSentire,2787,esentire
+ai-vc-2026-0929ca943255500a9f5f,Hello Haven,2788,hello haven
+ai-vc-2026-0929ca943255500a9f5f,Mantic,2789,mantic
+ai-vc-2026-0929ca943255500a9f5f,Flam,2790,flam
+ai-vc-2026-0929ca943255500a9f5f,BoomerangHR,2791,boomeranghr
+ai-vc-2026-0929ca943255500a9f5f,VerifAIX,2792,verifaix
+ai-vc-2026-0929ca943255500a9f5f,Facilo,2793,facilo
+ai-vc-2026-0929ca943255500a9f5f,Adaptive,2794,adaptive
+ai-vc-2026-0929ca943255500a9f5f,Tusk IC,2795,tusk ic
+ai-vc-2026-0929ca943255500a9f5f,syte,2796,syte
+ai-vc-2026-0929ca943255500a9f5f,Creem,2797,creem
+ai-vc-2026-0929ca943255500a9f5f,Health Force,2798,health force
+ai-vc-2026-0929ca943255500a9f5f,Rapta,2799,rapta
+ai-vc-2026-0929ca943255500a9f5f,Motive,2800,motive
+ai-vc-2026-0929ca943255500a9f5f,Hello Robotaxi,2801,hello robotaxi
+ai-vc-2026-0929ca943255500a9f5f,Stilla.ai,2802,stilla.ai
+ai-vc-2026-0929ca943255500a9f5f,LLMonade,2803,llmonade
+ai-vc-2026-0929ca943255500a9f5f,xSeek,2804,xseek
+ai-vc-2026-0929ca943255500a9f5f,Newwave Tech Foundry,2805,newwave tech foundry
+ai-vc-2026-0929ca943255500a9f5f,CloudNC,2806,cloudnc
+ai-vc-2026-0929ca943255500a9f5f,Zankore,2807,zankore
+ai-vc-2026-0929ca943255500a9f5f,UrgentIQ,2808,urgentiq
+ai-vc-2026-0929ca943255500a9f5f,Prime Minute,2809,prime minute
+ai-vc-2026-0929ca943255500a9f5f,Thri5,2810,thri5
+ai-vc-2026-0929ca943255500a9f5f,Rhinovate (Dingxi Zhichuang),2811,rhinovate (dingxi zhichuang)
+ai-vc-2026-0929ca943255500a9f5f,Stack Infrastructure (APAC portfolio),2812,stack infrastructure (apac portfolio)
+ai-vc-2026-0929ca943255500a9f5f,AI Infrastructure Partnership and IFM Investors,2813,ai infrastructure partnership and ifm investors
+ai-vc-2026-0929ca943255500a9f5f,Robotics and AI Institute,2814,robotics and ai institute
+ai-vc-2026-0929ca943255500a9f5f,SoftBank Group,2815,softbank group
+ai-vc-2026-0929ca943255500a9f5f,Velou,2816,velou
+ai-vc-2026-0929ca943255500a9f5f,Algolia,2817,algolia
+ai-vc-2026-0929ca943255500a9f5f,Torch Systems,2818,torch systems
+ai-vc-2026-0929ca943255500a9f5f,Cleavr,2819,cleavr
+ai-vc-2026-0929ca943255500a9f5f,calliora,2820,calliora
+ai-vc-2026-0929ca943255500a9f5f,Netsec,2821,netsec
+ai-vc-2026-0929ca943255500a9f5f,Cori Clinical,2822,cori clinical
+ai-vc-2026-0929ca943255500a9f5f,Desible.ai,2823,desible.ai
+ai-vc-2026-0929ca943255500a9f5f,Boost.ai,2824,boost.ai
+ai-vc-2026-0929ca943255500a9f5f,Monid,2825,monid
+ai-vc-2026-0929ca943255500a9f5f,Santé,2826,santé
+ai-vc-2026-0929ca943255500a9f5f,Rein Security,2827,rein security
+ai-vc-2026-0929ca943255500a9f5f,Verso,2828,verso
+ai-vc-2026-0929ca943255500a9f5f,Persona,2829,persona
+ai-vc-2026-0929ca943255500a9f5f,Augment Code (select assets),2830,augment code (select assets)
+ai-vc-2026-0929ca943255500a9f5f,Harness,2831,harness
+ai-vc-2026-0929ca943255500a9f5f,Hone,2832,hone
+ai-vc-2026-0929ca943255500a9f5f,Klarent,2833,klarent
+ai-vc-2026-0929ca943255500a9f5f,Gudea,2834,gudea
+ai-vc-2026-0929ca943255500a9f5f,Besso,2835,besso
+ai-vc-2026-0929ca943255500a9f5f,Sabi,2836,sabi
+ai-vc-2026-0929ca943255500a9f5f,Ethiqly,2837,ethiqly
+ai-vc-2026-0929ca943255500a9f5f,Carnegie Learning,2838,carnegie learning
+ai-vc-2026-0929ca943255500a9f5f,OllyGarden,2839,ollygarden
+ai-vc-2026-0929ca943255500a9f5f,KONST,2840,konst
+ai-vc-2026-0929ca943255500a9f5f,PlannerPal,2841,plannerpal
+ai-vc-2026-0929ca943255500a9f5f,Infino AI,2842,infino ai
+ai-vc-2026-0929ca943255500a9f5f,Danu Robotics,2843,danu robotics
+ai-vc-2026-0929ca943255500a9f5f,Aiera,2844,aiera
+ai-vc-2026-0929ca943255500a9f5f,BlueMatrix,2845,bluematrix
+ai-vc-2026-0929ca943255500a9f5f,Blackford Analysis,2846,blackford analysis
+ai-vc-2026-0929ca943255500a9f5f,Sopris Capital,2847,sopris capital
+ai-vc-2026-0929ca943255500a9f5f,Strata,2848,strata
+ai-vc-2026-0929ca943255500a9f5f,Mentlio,2849,mentlio
+ai-vc-2026-0929ca943255500a9f5f,Move AI,2850,move ai
+ai-vc-2026-0929ca943255500a9f5f,move ai (assets),2850,move ai (assets)
+ai-vc-2026-0929ca943255500a9f5f,Oxford Metrics (Vicon),2851,oxford metrics (vicon)
+ai-vc-2026-0929ca943255500a9f5f,Meticulous,2852,meticulous
+ai-vc-2026-0929ca943255500a9f5f,Peppermint,2853,peppermint
+ai-vc-2026-0929ca943255500a9f5f,Marvell,2854,marvell
+ai-vc-2026-0929ca943255500a9f5f,Medical Microinstruments,2855,medical microinstruments
+ai-vc-2026-0929ca943255500a9f5f,Halter,2856,halter
