@@ -1,46 +1,22 @@
-# AI and Physical AI deal database: 2024–2026 coverage update
+# AI / Physical AI financing coverage database
 
-Snapshot `ai-deals-coverage-442701c0d55527e04f40` covers October 1, 2024 through October 11, 2026. It contains 5,059 retained event records, including financing, acquisition and valuation observations, and 5,618 source observations. All 2,921 original event IDs are preserved; 2,138 records were added and 502 existing canonical records were revised.
+Snapshot: `ai-deals-coverage-e5302dcff6b1b4e58bc8`. Coverage: October 1, 2024 through October 11, 2026. Comparison windows are October 2024–September 2025 and October 2025–September 2026, plus the October 1–11 update.
 
-Research status is **OPEN**. This release fills public-source gaps and documents the remaining uncertainty. It does not certify a complete worldwide market denominator or provide trend analysis.
+This release applies verified decisions from all 67 findings in the Claude audit of `ai-deals-coverage-442701c0d55527e04f40`. It adds 58 retained records (56 financing disclosures and 2 licensing/talent context records), reconciles 28 explicit duplicate relationships, corrects material funding/valuation mistakes, and resolves issuer/subsector errors. All 5,059 audited event IDs and all 5,618 prior source observations remain recoverable. See [finding-by-finding decisions](AUDIT_RESPONSE_2026_10_12.json).
 
-| Period | Inclusive coverage |
-| --- | --- |
-| Prior comparison year | October 1, 2024–September 30, 2025 |
-| Recent comparison year | October 1, 2025–September 30, 2026 |
-| October update | October 1–11, 2026 |
+There are **5,117 retained event records** and **5,793 observations**. Retained records include duplicates, commitments, context, rumors and uncertain timing; they are not a unique-deal count. The convenience views contain 2,948 supported financing disclosures, 2,928 linked episodes, and 1,430 strict core equity cutoff records. These are evidence cohorts, not completeness estimates.
 
-From a clone of the repository, create the portable database with:
+The 32 broad subsectors and original 61-category framework are both available. `finer_taxonomy`, `company_finer_classifications`, and `event_entity_classifications` record category definitions, issuer links and provenance. Canonical event/company rows now carry finer-category fields. Reviewed business classifications, inherited framework classifications, broad-only mappings and unassigned cases are explicitly distinguished. A broad classification cannot by itself distinguish the multiple fine categories beneath it. Generic data-center developers, utilities and batteries are not automatically classified as AI power/cooling technology. Sales/marketing and maritime classifications use disclosed workflow/model or autonomous-defense business categories when supported; their fine category can remain unassigned.
+
+Use `events_all` for the retained register, `observations_all` for untouched prior assertions, `credible_financing_disclosures` for supported financing facts with uncertainty, and `financing_episodes` for explicit grouping. Use `comparison_core_equity` and its cutoff variant only for the narrow core cohort. Legacy helper datasets preserve earlier membership and are not the comparison authority. Financing scopes distinguish startup/operating-company finance, corporate JV/project commitments, reported initial capitalization, and non-financing context. Date ranges are retrospective financing intervals or conservative season enclosures; their anchor date is not an invented announcement day.
+
+Load all chunks, not only GitHub's first preview:
 
 ```sh
-python3 vc-data/coverage-2024-2026/load_snapshot.py --output ai_deals_2024_2026_public.sqlite
+python3 vc-data/coverage-2024-2026/load_snapshot.py --directory vc-data/coverage-2024-2026 --output /tmp/ai-deals-public.sqlite
+python3 vc-data/coverage-2024-2026/validate_release.py
 ```
 
-The Python standard-library loader verifies every listed hash, file size, row count and snapshot ID before writing SQLite. Download every part listed in [manifest.json](manifest.json); GitHub previews show only part of large datasets. JSON is typed; CSV uses `\N` for null and preserves empty strings separately. Existing output files are protected by default.
+`manifest.json` declares files, SHA-256 hashes, rows and fields. Public exports contain no raw research payloads, source-cache bodies, private mail IDs/links or local paths. CSV nulls use `\N`. Python's standard library is sufficient to reconstruct and validate the public SQLite database.
 
-| Dataset or file | Purpose |
-| --- | --- |
-| `events_all`, `observations_all` | Full retained corpus and recoverable original assertions; records include context and unconfirmed items. |
-| `credible_financing_disclosures` | Supported financing with a public source URL, a safely assigned comparison period and qualified amounts. Excludes talks, rumors, cumulative funding, targets and explicitly suppressed duplicates. |
-| `financing_episodes` | Links repeated closings and financing components into documented episodes; `member_event_ids` and `financing_types` make the grouping inspectable. |
-| `comparison_core_equity`, `comparison_core_equity_cutoff` | Narrow uniform equity subsets across both years, using the same source, timing, composition and cutoff rules. They do not establish market completeness. |
-| `completion_reviews`, `completion_event_lineage`, `completion_duplicate_decisions` | Source decisions, original IDs, changed records and explicit duplicate suppression. |
-| `completion_round_components`, `completion_financial_claims` | Incremental amounts, disclosed totals and commitments that must not be added twice. |
-| `discovery_review_queue` | Claimed amounts, dates, subsectors, source links and decisions for discovery leads. Unverified claims are separate from countable financing. |
-| [coverage_audit.json](coverage_audit.json) | 352 subsector/period cells, source coverage, boundary uncertainty and open claims. |
-| [source_sweeps.json](source_sweeps.json) | Source families, search coverage and decision counts. |
-| [methodology.md](methodology.md) | Evidence, dates, amount interpretation and limits. |
-| [validation_receipt.json](validation_receipt.json), [public_validation_receipt.json](public_validation_receipt.json) | Canonical integrity/semantics checks and public JSON/CSV/SQLite checks. |
-| [AUDITOR_PROMPT.txt](AUDITOR_PROMPT.txt) | Independent omission and verification checks. |
-
-Use `financing_episodes` to inspect financing activity, then its linked disclosures to choose the relevant financing types and amounts. A package may include credit capacity; a reported commitment is not evidence that all cash was drawn. Bounds, missing amounts, combined rounds and unallocated participation remain explicit. Missing is never zero.
-
-The 61 saved framework categories are retained in [taxonomy_crosswalk.json](taxonomy_crosswalk.json). The current public taxonomy has 32 broader subsectors. Finer classifications are preserved when available and remain incomplete for newly discovered companies; the 32-sector audit does not certify coverage of all 61 categories.
-
-Older compatibility views and helper tables retain their previous memberships or review scopes while exposing current canonical values. Use the new comparison views and coverage audit for the expanded periods. Counts of held and pending leads include duplicates, non-AI businesses, funds, awards, small rounds and unresolved timing; they are not counts of missing deals.
-
-No private mail identifiers, links, subjects, bodies, raw source-cache text or raw research assertion/review payloads are exported. Public financial facts, publisher/date metadata and opaque source IDs are retained. The manifest's database digest identifies the local research master; the separately reconstructed public SQLite digest appears in the public validation receipt.
-
-Tech.eu Funding Explorer records are attributed under [CC BY 4.0](https://funding.tech.eu/api-docs). Record-specific source links remain attached to the corresponding deals. Sources can share the same original press release, so source counts do not prove independent corroboration or completeness.
-
-To rerun the portable checks from a clone, use `python3 vc-data/coverage-2024-2026/validate_release.py`. The amount-completeness label refers to the disclosures included in each episode; other reported package totals and uncertainty remain in the linked financial-claims table.
+Read [methodology](methodology.md), [audit response](AUDIT_RESPONSE_2026_10_12.json), [coverage gaps](coverage_audit.json), [source sweep decisions](source_sweeps.json), and [auditor prompt](AUDITOR_PROMPT.txt). Research remains **OPEN**: independent recall, remaining business classifications and discovery claims still require work. No trend analysis, heat scores or investment recommendations have been calculated.

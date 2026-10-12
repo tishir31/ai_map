@@ -32,6 +32,24 @@ def main():
   sources={r['source_id']:r for r in datasets['sources']['rows']}
   public_events={r['event_id'] for r in datasets['event_sources']['rows'] if isinstance(sources[r['source_id']]['source_url'],str) and sources[r['source_id']]['source_url'].startswith(('https://','http://'))}
   check('supported_financing_has_public_urls',disclosed<=public_events)
+  events={r['event_id']:r for r in datasets['events_all']['rows']}
+  check('all_5059_audited_event_ids_retained',set(range(1,5060))<=set(events))
+  check('finer_framework_has_61_categories',len(datasets['finer_taxonomy']['rows'])==61)
+  check('event_classification_links_cover_all_records',{r['event_id'] for r in datasets['event_entity_classifications']['rows']}==set(events))
+  company_ids={r['company_id'] for r in datasets['companies']['rows']}
+  check('event_company_links_resolve',all(e['company_id'] is None or e['company_id'] in company_ids for e in events.values()))
+  check('Omni_primary_funding_and_valuation_distinct',events[4330]['raised_amount']==90000000 and events[4330]['valuation_amount']==1500000000)
+  check('Emergent_and_Partly_valuation_as_funding_errors_fixed',events[2315]['raised_amount']==130000000 and events[4943]['raised_amount']==50000000)
+  check('Delos_issuers_distinct',events[650]['company_id']!=events[3282]['company_id'])
+  check('broker_claim_not_in_verified_financing',3055 not in disclosed)
+  schema=json.loads((root/'auditor_findings.schema.json').read_text())
+  import re
+  check('auditor_schema_accepts_current_snapshot',bool(re.fullmatch(schema['properties']['snapshot_id']['pattern'],manifest['snapshot_id'])) and 'const' not in schema['properties']['snapshot_id'])
+  response=json.loads((root/'AUDIT_RESPONSE_2026_10_12.json').read_text())
+  check('audit_response_covers_all_findings_and_current_release',len(response['findings'])==67 and response['snapshot_id']==manifest['snapshot_id'] and response['trends_calculated'] is False)
+  check('audit_response_event_ids_resolve',all(eid in events for f in response['findings'] for eid in f['result_event_ids']))
+  actual_names={p.name for p in root.iterdir()}
+  check('auditor_document_links_match_actual_filename_case','methodology.md' in actual_names and 'methodology.md' in (root/'AUDITOR_PROMPT.txt').read_text() and '(methodology.md)' in (root/'README.md').read_text())
   db.close()
  result={'snapshot_id':manifest['snapshot_id'],'datasets':len(datasets),'dataset_rows':sum(len(d['rows']) for d in datasets.values()),'passed':sum(c['passed'] for c in checks),'failed':sum(not c['passed'] for c in checks),'market_completeness_certified':False,'checks':checks}
  print(json.dumps(result,indent=2))

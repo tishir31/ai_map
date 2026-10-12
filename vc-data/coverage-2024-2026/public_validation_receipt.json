@@ -1,11 +1,11 @@
 {
-  "snapshot_id": "ai-deals-coverage-442701c0d55527e04f40",
-  "manifest_sha256": "f54f44ebdb8e0ff50348edc8c07c79444fa9f5e5e00e6ee985b013e2ce47d1b2",
-  "public_sqlite_sha256": "d9d6a92c13254a440cbcf0a7e85dae496874926acbf7871ccc620417c8608df5",
-  "datasets": 51,
-  "dataset_rows": 100572,
-  "data_files": 834,
-  "passed": 119,
+  "snapshot_id": "ai-deals-coverage-e5302dcff6b1b4e58bc8",
+  "manifest_sha256": "3a816b4ba42aa90e44becf05a35ae4b3d03d1d08d993703d1e24d7b58cdf2687",
+  "public_sqlite_sha256": "e13d27f2572d1170b763317625659b41f6c4e5cdfdab6179e49c3a13d29e6b57",
+  "datasets": 57,
+  "dataset_rows": 113756,
+  "data_files": 980,
+  "passed": 137,
   "failed": 0,
   "market_completeness_certified": false,
   "checks": [
@@ -550,6 +550,66 @@
       "detail": null
     },
     {
+      "check": "csv_value_and_null_parity:audit_event_changes",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "sqlite_value_type_and_null_parity:audit_event_changes",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "csv_value_and_null_parity:company_identity_redirects",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "sqlite_value_type_and_null_parity:company_identity_redirects",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "csv_value_and_null_parity:finer_taxonomy",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "sqlite_value_type_and_null_parity:finer_taxonomy",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "csv_value_and_null_parity:company_finer_classifications",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "sqlite_value_type_and_null_parity:company_finer_classifications",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "csv_value_and_null_parity:event_entity_classifications",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "sqlite_value_type_and_null_parity:event_entity_classifications",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "csv_value_and_null_parity:audit_input_provenance",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "sqlite_value_type_and_null_parity:audit_input_provenance",
+      "passed": true,
+      "detail": null
+    },
+    {
       "check": "csv_value_and_null_parity:completion_reviews",
       "passed": true,
       "detail": null
@@ -576,6 +636,36 @@
     },
     {
       "check": "all_original_observation_values_retained",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "all_5059_audited_event_ids_retained",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "all_5618_audited_observations_preserved_in_public_export",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "all_61_finer_taxonomy_categories_exported",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "public_finer_classification_provenance_covers_all_events",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "auditor_schema_no_obsolete_snapshot_constant",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "all_67_audit_findings_have_release_decisions",
       "passed": true,
       "detail": null
     },

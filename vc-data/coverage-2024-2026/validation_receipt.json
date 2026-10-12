@@ -1,7 +1,7 @@
 {
-  "snapshot_id": "ai-deals-coverage-442701c0d55527e04f40",
-  "database_sha256": "a9c27e9158175f06474d5a99920eafb7c800c6f9e4437c65f2efc6b45573caf4",
-  "passed": 539,
+  "snapshot_id": "ai-deals-coverage-e5302dcff6b1b4e58bc8",
+  "database_sha256": "c2fa01637bcd542807d8fa6d68869efd6ebe4119dc2082757e9dbc9bf92b0b28",
+  "passed": 595,
   "failed": 0,
   "coverage_certified": false,
   "checks": [
@@ -27,6 +27,21 @@
     },
     {
       "check": "all_original_observation_values_retained",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "immutable_independently_audited_input_sha256",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "all_5059_independently_audited_event_ids_retained",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "all_5618_independently_audited_observations_preserved",
       "passed": true,
       "detail": null
     },
@@ -2697,6 +2712,271 @@
     },
     {
       "check": "research_status_remains_open",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "audit_financial_fact:4330:raised_amount",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "audit_financial_fact:4330:valuation_amount",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "audit_financial_fact:4409:raised_amount",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "audit_financial_fact:2315:raised_amount",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "audit_financial_fact:4943:raised_amount",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "audit_financial_fact:4943:valuation_amount",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "audit_financial_fact:375:raised_amount",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "audit_financial_fact:375:raised_currency",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "audit_financial_fact:681:raised_amount",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "audit_financial_fact:1360:raised_amount_lower",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "audit_financial_fact:1360:raised_currency",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "audit_financial_fact:3055:event_status",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "audit_financial_fact:1878:announcement_date",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "audit_financial_fact:1691:announcement_date",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "audit_financial_fact:4638:raised_amount",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "unconfirmed_Physical_Intelligence_broker_claim_not_verified",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "broker_claim_discovery_review_no_longer_accepted",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "distinct_Delos_issuers_not_merged",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "homonyms_have_distinct_company_links:5035:3181",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "homonyms_have_distinct_company_links:3708:5040",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "homonyms_have_distinct_company_links:1822:337",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "homonyms_have_distinct_company_links:4638:221",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "homonyms_have_distinct_company_links:3803:3180",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "runbuggy_counts_once_in_original_comparison_year",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "finer_framework_contains_61_unique_categories",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "canonical_event_company_links_resolve",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "finer_categories_resolve_for_company_and_event",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "company_coverage_uses_current_finer_classification",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "event_entity_resolution_status_is_explicit",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "fine_classification_covers_every_retained_event_with_explicit_unknowns",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "project_JV_commitments_still_not_cash",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "licensing_talent_transactions_excluded_from_funding",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "retrospective_intervals_valid_and_not_exact_days",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "58_audit_backfills_have_public_provenance",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "discovery_issuer_and_period_reconciliation:silverwood:b00bb75c7219aee84e37",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "discovery_issuer_and_period_reconciliation:vca:6cf3e5e769f13fe6ad43",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "discovery_issuer_and_period_reconciliation:vca:ae6b4adc8734d1453866",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "discovery_issuer_and_period_reconciliation:vca:b4a63457ccd13099285b",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "discovery_issuer_and_period_reconciliation:vca:eaa2f707906f7a2ce99f",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "discovery_issuer_and_period_reconciliation:vca:0c617dab936cbb166ed6",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "discovery_issuer_and_period_reconciliation:vca:5f86923905df7b946ba6",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "discovery_issuer_and_period_reconciliation:vca:8f27d0f07bddb23eae12",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "discovery_issuer_and_period_reconciliation:vca:040543d4edaca576d1e5",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "discovery_issuer_and_period_reconciliation:vca:dcea82fe0d3d83f694ce",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "discovery_issuer_and_period_reconciliation:vca:4220e4758bc9899becb5",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "discovery_issuer_and_period_reconciliation:vca:d27ee3915e9eee6c201f",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "unrelated_X_Bow_PsiQuantum_and_Qunnect_leads_not_promoted",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "MiniMax_completed_rounds_preserve_announcement_uncertainty",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Filevine_unallocated_400m_not_one_current_period_raise",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "StepFun_qualitative_hundreds_amount_has_no_point_but_passes_cutoff",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Aidoc_historical_and_2026_rounds_both_retained",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Sakana_Series_B_and_Google_investment_both_retained",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "audit_changes_reference_retained_events_and_prior_snapshot",
       "passed": true,
       "detail": null
     }

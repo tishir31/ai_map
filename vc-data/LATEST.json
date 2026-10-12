@@ -1,5 +1,5 @@
 {
-  "snapshot_id": "ai-deals-coverage-442701c0d55527e04f40",
+  "snapshot_id": "ai-deals-coverage-e5302dcff6b1b4e58bc8",
   "path": "coverage-2024-2026",
   "manifest": "coverage-2024-2026/manifest.json",
   "scope": {
@@ -7,5 +7,7 @@
     "end_inclusive": "2026-10-11"
   },
   "research_status": "OPEN",
-  "no_trends_calculated": true
+  "no_trends_calculated": true,
+  "audited_previous_snapshot_id": "ai-deals-coverage-442701c0d55527e04f40",
+  "audit_response": "coverage-2024-2026/AUDIT_RESPONSE_2026_10_12.json"
 }

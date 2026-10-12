@@ -1,6 +1,6 @@
 Audit this AI and Physical AI financing database for material omissions and factual errors. Do not analyze funding trends or recommend sectors.
 
-Read README.md, methodology.md, manifest.json, coverage_audit.json, source_sweeps.json and taxonomy_crosswalk.json. Load every JSON chunk through load_snapshot.py; a GitHub preview or first CSV part is not the full dataset. Always cite snapshot_id together with event_id/candidate_id.
+Read README.md, methodology.md, manifest.json, coverage_audit.json, source_sweeps.json, AUDIT_RESPONSE_2026_10_12.json, finer_taxonomy and taxonomy_crosswalk.json. Load every JSON chunk through load_snapshot.py; a GitHub preview or first CSV part is not the full dataset. Always cite snapshot_id together with event_id/candidate_id.
 
 Audit BOTH October 2024-September 2025 and October 2025-September 2026, plus October 1-11, 2026. Check every subsector against original issuer/investor/counsel announcements and reputable financial or technology journalism. Identifiable journalist and issuer social posts are acceptable. The saved framework has 61 categories; the broader database taxonomy has 32 and finer classification remains incomplete.
 
@@ -13,3 +13,5 @@ For each proposed addition or correction give: company and issuer domain/identit
 Check the cutoff of $10m raised OR $100m valuation only when evidence supports it. Unknown amount/valuation is not zero and is not automatically below the cutoff. Public-market and acquisition context is separate from private financing.
 
 Technical checks confirm data integrity, reconstruction and financial semantics; they do not certify completeness. Sources share original press releases and do not provide an independent denominator. Do not claim a completeness percentage from source overlap. Return evidence-backed findings and sector/period coverage gaps using the existing auditor_findings.schema.json where applicable. Preserve this published snapshot; submit proposed revisions separately.
+
+Current snapshot: ai-deals-coverage-e5302dcff6b1b4e58bc8. The earlier Claude audit was against ai-deals-coverage-442701c0d55527e04f40. Read its implemented response before repeating findings. Check company_id and domain for homonyms, the explicit duplicate decision table, category provenance, and retrospective date intervals. The auditor schema snapshot_id must match manifest.json exactly.

@@ -1,14 +1,26 @@
 {
-  "snapshot_id": "ai-deals-coverage-442701c0d55527e04f40",
+  "snapshot_id": "ai-deals-coverage-e5302dcff6b1b4e58bc8",
   "base_snapshot_id": "ai-vc-2026-0929ca943255500a9f5f",
   "base_event_records": 2921,
-  "reviewed_candidates": 4799,
-  "added_or_updated_events": 2640,
-  "added_event_records": 2138,
+  "reviewed_candidates": 4858,
+  "added_or_updated_events": 2698,
+  "added_event_records": 2196,
   "updated_existing_event_records": 502,
-  "event_records": 5059,
-  "retained_observations": 5618,
-  "pending_candidates": 766,
+  "event_records": 5117,
+  "retained_observations": 5793,
+  "pending_candidates": 765,
   "no_trends_calculated": true,
-  "research_status": "OPEN"
+  "research_status": "OPEN",
+  "verified_audit": {
+    "audited_snapshot_id": "ai-deals-coverage-442701c0d55527e04f40",
+    "new_audit_event_records": 58,
+    "explicit_audit_duplicate_decisions": 28,
+    "issuer_identity_decisions": 12,
+    "field_patch_decisions": 40,
+    "fine_framework_categories": 61,
+    "events_with_finer_category": 2296,
+    "broad_event_classification_corrections": 88,
+    "all_audited_event_ids_retained": true,
+    "no_trends_calculated": true
+  }
 }

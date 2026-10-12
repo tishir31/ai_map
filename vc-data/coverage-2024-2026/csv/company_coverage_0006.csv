@@ -1,353 +1,305 @@
-snapshot_id,ai_scope,atlas_registry_records,canonical_name,company_domain,company_id,country,country_iso2,country_normalization_state,coverage_state,financial_snapshot_records,funding_snapshot_records,history_checked_at,history_review_outcome,observed_2026_event_records,observed_core_equity_records,observed_event_records,primary_subsector,prior_registry_records,registry_review_status,registry_source_count,total_registry_records,valuation_snapshot_records
-ai-deals-coverage-442701c0d55527e04f40,digital_ai,0,Naive AI,\N,1767,CN,CN,single_country_normalized,has_observed_events,0,0,\N,\N,2,0,2,foundation_models,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,digital_ai,0,Mind,\N,1768,US,US,single_country_normalized,has_observed_events,0,0,\N,\N,1,2,2,cybersecurity,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,digital_ai,0,Raindrop,\N,1769,US,US,single_country_normalized,has_observed_events,0,0,\N,\N,3,1,3,enterprise_agents,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,digital_ai,0,Anew Labs,\N,1770,CN,CN,single_country_normalized,has_observed_events,0,0,\N,\N,2,1,2,healthcare_biotech,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,digital_ai,0,Arcee AI,\N,1771,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,1,1,foundation_models,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,enabling_infrastructure,0,Polaris Electro-Optics,\N,1772,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,1,1,interconnect_memory,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,digital_ai,0,BackOps,\N,1773,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,1,1,enterprise_agents,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,digital_ai,0,Loora,\N,1774,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,1,1,education,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,digital_ai,0,Veridion,\N,1775,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,2,1,2,data_training_evaluation,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,digital_ai,0,Rebuild,\N,1776,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,1,1,finance,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,digital_ai,0,Complir,complir.io,1777,Denmark,DK,country_unknown,has_observed_events,0,0,\N,\N,1,1,2,enterprise_agents,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,digital_ai,0,Ferry Health,\N,1778,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,2,1,2,healthcare_biotech,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,enabling_infrastructure,0,Expanse,\N,1779,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,1,1,training_compute,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,digital_ai,0,Aristotle,\N,1780,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,0,1,education,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,digital_ai,0,Kairon Health,\N,1781,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,1,1,healthcare_biotech,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,digital_ai,0,Scaffold,\N,1782,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,1,1,enterprise_agents,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,enabling_infrastructure,0,Cornelis,\N,1783,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,2,0,2,interconnect_memory,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,digital_ai,0,Xapien,\N,1784,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,2,1,2,enterprise_agents,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,digital_ai,0,Archy,\N,1785,US,US,single_country_normalized,has_observed_events,0,0,\N,\N,2,2,3,healthcare_biotech,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,digital_ai,0,Arlequin AI,arlq.ai,1786,France,FR,country_unknown,has_observed_events,0,0,\N,\N,1,1,2,general_applications,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,digital_ai,0,Epsilon Health,\N,1787,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,0,1,healthcare_biotech,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,digital_ai,0,GenHealth.ai,\N,1788,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,1,1,healthcare_biotech,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,digital_ai,0,Buildcheck AI,\N,1789,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,1,1,enterprise_agents,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,digital_ai,0,Graph AI,\N,1790,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,2,2,healthcare_biotech,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,digital_ai,0,Intermezzo,\N,1791,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,1,1,finance,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,digital_ai,0,Enigmata,\N,1792,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,1,1,cybersecurity,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,digital_ai,0,Savvy Wealth,\N,1793,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,2,2,finance,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,digital_ai,0,Inspiren,\N,1794,US,US,single_country_normalized,has_observed_events,0,0,\N,\N,1,2,2,healthcare_biotech,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,digital_ai,0,Lightfield,\N,1795,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,1,1,sales_marketing,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,digital_ai,0,Harmoni,\N,1796,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,1,1,enterprise_agents,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,digital_ai,0,Overroute,\N,1797,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,0,1,customer_support_voice,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,digital_ai,0,Onix,\N,1798,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,1,1,search_knowledge,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,digital_ai,0,VideoGen,\N,1799,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,1,1,creative_media,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,digital_ai,0,Gaia,\N,1800,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,1,1,search_knowledge,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,digital_ai,0,Resect AI,\N,1801,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,1,1,data_training_evaluation,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,digital_ai,0,Sirdab,\N,1802,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,1,1,enterprise_agents,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,physical_ai,0,Hivebotics,\N,1803,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,1,1,industrial_logistics_robotics,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,physical_ai,0,Jaipur Robotics,\N,1804,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,1,1,industrial_logistics_robotics,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,digital_ai,0,Fluencify,\N,1805,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,1,1,sales_marketing,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,physical_ai,0,Haystack Robotics,\N,1806,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,1,1,industrial_logistics_robotics,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,digital_ai,0,Souk,\N,1807,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,1,1,sales_marketing,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,digital_ai,0,Félix,\N,1808,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,1,1,finance,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,digital_ai,0,DataAgent,\N,1809,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,1,1,enterprise_agents,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,digital_ai,0,Xorlab,\N,1810,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,1,1,cybersecurity,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,enabling_infrastructure,0,Guickly,\N,1811,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,1,1,developer_tools,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,digital_ai,0,Adaptyv Biosystems,\N,1812,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,1,1,healthcare_biotech,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,digital_ai,0,Clipto,\N,1813,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,2,1,2,search_knowledge,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,digital_ai,0,Blue Voice,\N,1814,US,US,single_country_normalized,has_observed_events,0,0,\N,\N,1,1,1,customer_support_voice,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,physical_ai,0,Warpify Robotics,\N,1815,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,1,1,industrial_logistics_robotics,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,digital_ai,0,Digs,\N,1816,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,1,1,enterprise_agents,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,digital_ai,0,Runable,\N,1817,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,1,1,enterprise_agents,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,digital_ai,0,Onos Health,\N,1818,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,1,1,healthcare_biotech,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,digital_ai,0,Liner,\N,1819,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,1,1,search_knowledge,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,enabling_infrastructure,0,Celera Semiconductor,\N,1820,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,1,1,ai_chips,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,digital_ai,0,Newcode,\N,1821,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,1,1,legal,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,digital_ai,0,amber,\N,1822,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,1,1,search_knowledge,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,physical_ai,0,Dogotix,\N,1823,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,0,1,humanoid_robotics,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,enabling_infrastructure,0,Callosum,callosum.com,1824,UK,GB,country_unknown,has_observed_events,0,0,\N,\N,2,1,2,ai_chips,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,digital_ai,0,Rundoo,\N,1825,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,2,1,2,enterprise_agents,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,enabling_infrastructure,0,Relativity Networks,\N,1826,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,1,2,interconnect_memory,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,digital_ai,0,Twin1 AI,\N,1827,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,1,1,enterprise_agents,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,physical_ai,0,Veeda AI,\N,1828,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,0,1,robotics_foundation_models,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,digital_ai,0,Medly AI,\N,1829,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,1,1,education,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,digital_ai,0,Hypercubic,\N,1830,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,1,1,finance,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,digital_ai,0,Rillet,\N,1831,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,2,3,4,finance,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,enabling_infrastructure,0,Advancing Analytics,\N,1832,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,0,1,data_training_evaluation,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,enabling_infrastructure,0,CAEPlus,\N,1833,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,0,1,data_centers_power,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,physical_ai,0,Gravis Robotics,\N,1834,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,1,1,industrial_logistics_robotics,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,physical_ai,0,Terra Industries,\N,1835,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,1,1,drones_defense,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,digital_ai,0,Palona AI,\N,1836,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,1,1,customer_support_voice,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,digital_ai,0,Silicon Data,\N,1837,US,US,single_country_normalized,has_observed_events,0,0,\N,\N,1,2,2,data_training_evaluation,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,digital_ai,0,Thrive Holdings,\N,1838,US,US,single_country_normalized,has_observed_events,0,0,\N,\N,1,1,1,enterprise_agents,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,digital_ai,0,Gravity,\N,1839,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,2,2,general_applications,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,digital_ai,0,ClearJet,\N,1840,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,0,1,general_applications,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,digital_ai,0,Preview,\N,1841,US,US,single_country_normalized,has_observed_events,0,0,\N,\N,1,1,1,creative_media,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,digital_ai,0,Diald,\N,1842,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,1,1,general_applications,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,digital_ai,0,Flagler Health,\N,1843,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,1,1,healthcare_biotech,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,digital_ai,0,ApartmentIQ,\N,1844,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,0,1,sales_marketing,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,digital_ai,0,Axle,\N,1845,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,1,1,finance,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,digital_ai,0,Legio,\N,1846,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,1,1,cybersecurity,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,digital_ai,0,Fisent Technologies,\N,1847,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,1,1,enterprise_agents,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,enabling_infrastructure,0,Volta Infrastructure,\N,1848,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,2,0,2,data_centers_power,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,digital_ai,0,VibeIQ,\N,1849,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,0,1,creative_media,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,digital_ai,0,Naïve,\N,1850,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,2,2,2,enterprise_agents,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,digital_ai,0,Fluxco,\N,1851,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,1,1,enterprise_agents,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,digital_ai,0,Assured,\N,1852,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,2,2,2,healthcare_biotech,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,enabling_infrastructure,0,Discovered Materials,\N,1853,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,1,1,ai_chips,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,digital_ai,0,SiteVue AI,\N,1854,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,1,1,general_applications,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,digital_ai,0,Inevitable AI Group,\N,1855,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,1,1,enterprise_agents,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,physical_ai,0,Vexev,\N,1856,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,1,1,medical_robotics,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,digital_ai,0,Osmo,\N,1857,US,US,single_country_normalized,has_observed_events,0,0,\N,\N,2,2,2,creative_media,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,digital_ai,0,RevealDx,\N,1858,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,0,1,healthcare_biotech,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,digital_ai,0,Hulp,\N,1859,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,1,1,enterprise_agents,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,physical_ai,0,Aurelius Systems,\N,1860,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,2,2,drones_defense,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,physical_ai,0,WindBorne Systems,\N,1861,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,1,1,simulation_digital_twins,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,digital_ai,0,Mitti Labs,\N,1862,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,1,1,general_applications,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,digital_ai,0,Pinegap,\N,1863,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,1,1,finance,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,digital_ai,0,Proxy Foods AI,\N,1864,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,1,1,general_applications,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,digital_ai,0,Relu,\N,1865,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,1,1,healthcare_biotech,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,enabling_infrastructure,0,Convex,\N,1866,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,1,1,developer_tools,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,digital_ai,0,Maximum,\N,1867,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,0,1,finance,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,digital_ai,0,Delightree,\N,1868,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,0,1,enterprise_agents,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,physical_ai,0,Buzz Solutions,\N,1869,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,1,1,general_applications,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,digital_ai,0,HappyRobot,\N,1870,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,3,3,enterprise_agents,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,physical_ai,0,Foundational Industries,\N,1871,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,2,1,2,industrial_logistics_robotics,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,digital_ai,0,June AI,\N,1872,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,1,1,enterprise_agents,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,digital_ai,0,Marquee,\N,1873,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,1,1,enterprise_agents,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,physical_ai,0,Perceptual Robotics,\N,1874,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,1,1,drones_defense,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,digital_ai,0,5U AI,\N,1875,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,1,1,enterprise_agents,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,digital_ai,0,Mozn,\N,1876,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,0,1,cybersecurity,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,enabling_infrastructure,0,Eliyan,\N,1877,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,3,0,3,interconnect_memory,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,digital_ai,0,Encore AI,\N,1878,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,1,1,customer_support_voice,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,physical_ai,0,Agon,\N,1879,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,1,1,drones_defense,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,digital_ai,0,Henry AI,\N,1880,US,US,single_country_normalized,has_observed_events,0,0,\N,\N,1,2,2,enterprise_agents,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,digital_ai,0,Dili,\N,1881,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,2,1,2,enterprise_agents,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,digital_ai,0,Hint,\N,1882,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,1,1,general_applications,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,digital_ai,0,Polar,\N,1883,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,1,1,search_knowledge,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,digital_ai,0,Freehand,\N,1884,US,US,single_country_normalized,has_observed_events,0,0,\N,\N,1,0,1,enterprise_agents,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,digital_ai,0,Harmony,\N,1885,US,US,single_country_normalized,has_observed_events,0,0,\N,\N,1,0,1,enterprise_agents,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,digital_ai,0,COR,\N,1886,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,0,1,enterprise_agents,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,digital_ai,0,Epitel,\N,1887,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,1,1,healthcare_biotech,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,digital_ai,0,telli,\N,1888,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,1,1,customer_support_voice,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,enabling_infrastructure,0,Weave,\N,1889,US,US,single_country_normalized,has_observed_events,0,0,\N,\N,1,1,1,developer_tools,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,digital_ai,0,Credible Data,\N,1890,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,1,1,data_training_evaluation,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,digital_ai,0,Pangram,\N,1891,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,2,2,data_training_evaluation,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,digital_ai,0,Antares Labs,\N,1892,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,1,1,search_knowledge,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,digital_ai,0,Fincart,\N,1893,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,1,1,enterprise_agents,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,enabling_infrastructure,0,Multiverse Computing,\N,1894,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,1,1,inference_compute,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,digital_ai,0,BusinessNext,\N,1895,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,1,1,finance,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,physical_ai,0,Andrenam,\N,1896,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,0,1,maritime_robotics,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,digital_ai,0,kausable,\N,1897,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,1,1,foundation_models,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,physical_ai,0,Dopl Technologies,\N,1898,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,1,1,medical_robotics,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,digital_ai,0,Freight Hero,\N,1899,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,1,1,enterprise_agents,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,digital_ai,0,Pilot Protocol,\N,1900,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,1,1,enterprise_agents,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,digital_ai,0,PageMind,\N,1901,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,1,1,search_knowledge,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,digital_ai,0,Solomei AI,\N,1902,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,0,1,general_applications,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,digital_ai,0,AegisAI,\N,1903,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,1,1,cybersecurity,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,digital_ai,0,Paper,\N,1904,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,1,1,creative_media,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,digital_ai,0,Ropedia,\N,1905,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,0,1,data_training_evaluation,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,physical_ai,0,Elio,\N,1906,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,0,1,robotic_components,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,digital_ai,0,Trooly,\N,1907,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,1,1,customer_support_voice,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,digital_ai,0,Cheiron,\N,1908,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,1,1,healthcare_biotech,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,digital_ai,0,Coverwatch,\N,1909,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,0,1,finance,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,digital_ai,0,Workstreet,\N,1910,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,2,0,2,cybersecurity,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,physical_ai,0,Cathedral,\N,1911,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,1,1,drones_defense,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,digital_ai,0,Transcripta Bio,\N,1912,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,1,1,healthcare_biotech,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,physical_ai,0,1872,\N,1913,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,1,1,industrial_logistics_robotics,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,digital_ai,0,Petra Labs,\N,1914,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,1,1,sales_marketing,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,digital_ai,0,StrongestLayer,\N,1915,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,1,2,cybersecurity,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,digital_ai,0,Ossprey,\N,1916,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,1,1,cybersecurity,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,digital_ai,0,Zafran Security,\N,1917,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,0,1,cybersecurity,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,digital_ai,0,Cascade,\N,1918,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,0,1,enterprise_agents,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,digital_ai,0,Neo,\N,1919,US,US,single_country_normalized,has_observed_events,0,0,\N,\N,1,0,1,cybersecurity,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,digital_ai,0,Natural,\N,1920,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,1,1,finance,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,digital_ai,0,Empirical Security,\N,1921,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,2,2,cybersecurity,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,enabling_infrastructure,0,Infinity,\N,1922,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,1,1,inference_compute,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,digital_ai,0,Fora,\N,1923,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,0,1,general_applications,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,digital_ai,0,Adapter,\N,1924,US,US,single_country_normalized,has_observed_events,0,0,\N,\N,1,1,1,general_applications,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,digital_ai,0,Spectro Cloud,\N,1925,US,US,single_country_normalized,has_observed_events,0,0,\N,\N,1,1,1,developer_tools,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,digital_ai,0,American Growth Insurance,\N,1926,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,1,1,finance,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,digital_ai,0,Oak,\N,1927,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,1,1,cybersecurity,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,digital_ai,0,Hemispheric,\N,1928,IL,IL,single_country_normalized,has_observed_events,0,0,\N,\N,1,1,1,healthcare_biotech,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,digital_ai,0,Sable,\N,1929,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,1,1,general_applications,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,digital_ai,0,Bunkerhill Health,\N,1930,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,2,1,2,healthcare_biotech,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,digital_ai,0,Neko Health,\N,1931,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,1,1,healthcare_biotech,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,digital_ai,0,InstaLily,\N,1932,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,2,2,enterprise_agents,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,digital_ai,0,Rime,\N,1933,US,US,single_country_normalized,has_observed_events,0,0,\N,\N,1,1,1,customer_support_voice,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,digital_ai,0,Overtone,\N,1934,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,1,1,general_applications,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,digital_ai,0,Gradium,gradium.ai,1935,France,FR,country_unknown,has_observed_events,0,0,\N,\N,1,2,2,customer_support_voice,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,digital_ai,0,Augmodo,\N,1936,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,3,3,general_applications,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,enabling_infrastructure,0,Oxylabs,\N,1937,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,1,1,data_training_evaluation,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,digital_ai,0,Tangos,\N,1938,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,1,1,finance,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,digital_ai,0,Even Realities,\N,1939,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,1,1,general_applications,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,digital_ai,0,EquiLibre Technologies,\N,1940,CZ,CZ,single_country_normalized,has_observed_events,0,0,\N,\N,2,1,2,foundation_models,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,digital_ai,0,Higharc,\N,1941,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,2,2,2,enterprise_agents,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,physical_ai,0,Omen AI,\N,1942,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,2,2,2,robotic_components,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,digital_ai,0,MDOTM,\N,1943,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,2,1,2,finance,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,physical_ai,0,Queue,\N,1944,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,2,1,2,industrial_logistics_robotics,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,enabling_infrastructure,0,Celestial AI,celestial.ai,1945,United States,US,single_country_normalized,has_observed_events,0,0,\N,\N,0,0,3,interconnect_memory,1,needs_review,0,1,0
-ai-deals-coverage-442701c0d55527e04f40,\N,0,Marvell Technology,\N,1946,\N,\N,country_unknown,not_checked,0,0,\N,\N,0,0,0,\N,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,enabling_infrastructure,0,Xeal,\N,1947,United States,US,single_country_normalized,has_observed_events,0,0,\N,\N,1,0,1,data_centers_power,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,physical_ai,0,Intelligent Machines,\N,1948,United States,US,single_country_normalized,has_observed_events,0,0,\N,\N,1,0,1,industrial_logistics_robotics,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,physical_ai,0,Avathon,\N,1949,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,0,1,enterprise_agents,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,digital_ai,0,Poolside,poolside.ai,1950,United States,US,single_country_normalized,has_observed_events,0,0,\N,\N,2,1,3,foundation_models,1,needs_review,0,1,0
-ai-deals-coverage-442701c0d55527e04f40,enabling_infrastructure,0,d-Matrix,www.d-matrix.ai,1951,United States,US,single_country_normalized,has_observed_events,0,0,\N,\N,2,1,3,ai_chips,1,needs_review,0,1,0
-ai-deals-coverage-442701c0d55527e04f40,enabling_infrastructure,0,Nuvacore,\N,1952,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,0,1,ai_chips,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,digital_ai,0,Noeri,\N,1953,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,0,1,foundation_models,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,enabling_infrastructure,0,Runta,\N,1954,United States,US,single_country_normalized,has_observed_events,0,0,\N,\N,1,0,1,developer_tools,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,digital_ai,0,Takeoff,\N,1955,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,0,1,enterprise_agents,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,enabling_infrastructure,0,Rain AI,\N,1956,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,0,0,1,ai_chips,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,digital_ai,0,UniPat,\N,1957,China,CN,single_country_normalized,has_observed_events,0,0,\N,\N,1,0,1,data_training_evaluation,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,digital_ai,0,Humanlaya,\N,1958,China,CN,single_country_normalized,has_observed_events,0,0,\N,\N,1,0,1,data_training_evaluation,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,digital_ai,0,TechWolf,\N,1959,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,2,0,2,enterprise_agents,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,digital_ai,0,Ensignia,\N,1960,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,2,0,2,cybersecurity,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,\N,0,Serval,\N,1961,\N,\N,country_unknown,not_checked,0,0,\N,\N,0,0,0,\N,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,digital_ai,0,trail ML,\N,1962,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,2,0,2,data_training_evaluation,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,\N,0,Collibra,\N,1963,\N,\N,country_unknown,not_checked,0,0,\N,\N,0,0,0,\N,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,digital_ai,0,Dokai,\N,1964,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,2,0,2,sales_marketing,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,\N,0,Bolt.new,\N,1965,\N,\N,country_unknown,not_checked,0,0,\N,\N,0,0,0,\N,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,digital_ai,0,BotDojo,\N,1966,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,2,0,2,legal,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,\N,0,Mitratech Legal,\N,1967,\N,\N,country_unknown,not_checked,0,0,\N,\N,0,0,0,\N,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,digital_ai,0,Daybreak LLC,\N,1968,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,0,1,enterprise_agents,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,\N,0,Statecraft,\N,1969,\N,\N,country_unknown,not_checked,0,0,\N,\N,0,0,0,\N,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,digital_ai,0,Row Zero,\N,1970,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,2,1,3,general_applications,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,digital_ai,0,Mila Health,\N,1971,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,2,0,2,healthcare_biotech,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,\N,0,DexCare,\N,1972,\N,\N,country_unknown,not_checked,0,0,\N,\N,0,0,0,\N,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,digital_ai,0,Meridian Tech,trymeridian.com,1973,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,2,0,2,sales_marketing,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,enabling_infrastructure,0,Dioxus Labs,\N,1974,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,0,1,developer_tools,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,enabling_infrastructure,0,Alif Semiconductor,\N,1975,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,2,0,2,ai_chips,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,enabling_infrastructure,0,T5 Operations,\N,1976,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,0,1,data_centers_power,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,\N,0,Salute,\N,1977,\N,\N,country_unknown,not_checked,0,0,\N,\N,0,0,0,\N,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,enabling_infrastructure,0,Kelvion,\N,1978,DE,DE,single_country_normalized,has_observed_events,0,0,2026-10-11,deal_found,1,0,1,data_centers_power,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,physical_ai,0,SLB,www.slb.com,1979,United States,US,single_country_normalized,related_deal_found,0,0,2026-10-11,related_deal_found,0,0,0,\N,1,needs_review,0,1,0
-ai-deals-coverage-442701c0d55527e04f40,enabling_infrastructure,0,DryvIQ,\N,1980,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,0,1,data_training_evaluation,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,\N,0,Nasuni,\N,1981,\N,\N,country_unknown,not_checked,0,0,\N,\N,0,0,0,\N,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,digital_ai,0,Analytica Consulting,\N,1982,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,0,1,healthcare_biotech,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,\N,0,Imagenet,\N,1983,\N,\N,country_unknown,not_checked,0,0,\N,\N,0,0,0,\N,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,\N,0,Tonner Drones,\N,1984,\N,\N,country_unknown,not_checked,0,0,\N,\N,0,0,0,\N,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,digital_ai,0,Altruist,\N,1985,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,1,2,finance,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,\N,0,Vanguard,\N,1986,\N,\N,country_unknown,not_checked,0,0,\N,\N,0,0,0,\N,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,physical_ai,0,Adroit Worldwide Media,\N,1987,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,0,1,general_applications,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,\N,0,Grainger,\N,1988,\N,\N,country_unknown,not_checked,0,0,\N,\N,0,0,0,\N,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,digital_ai,0,FullyRamped,\N,1989,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,1,2,sales_marketing,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,digital_ai,0,Nooks,\N,1990,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,0,1,1,sales_marketing,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,enabling_infrastructure,0,DuckLabs,\N,1991,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,0,1,developer_tools,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,digital_ai,0,Tai,\N,1992,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,0,1,enterprise_agents,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,\N,0,Descartes Systems Group,\N,1993,\N,\N,country_unknown,not_checked,0,0,\N,\N,0,0,0,\N,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,digital_ai,0,Casper Studios,\N,1994,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,0,1,enterprise_agents,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,\N,0,Ode with Anthropic,\N,1995,\N,\N,country_unknown,not_checked,0,0,\N,\N,0,0,0,\N,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,enabling_infrastructure,0,Anyscale,anyscale.com,1996,United States,US,single_country_normalized,has_observed_events,0,0,\N,\N,1,0,1,inference_compute,1,needs_review,0,1,0
-ai-deals-coverage-442701c0d55527e04f40,digital_ai,0,Wexler,\N,1997,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,0,1,legal,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,digital_ai,0,Cervo AI,\N,1998,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,0,1,legal,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,\N,0,Altana,\N,1999,\N,\N,country_unknown,not_checked,0,0,\N,\N,0,0,0,\N,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,digital_ai,0,Moonnox,\N,2000,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,0,1,enterprise_agents,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,\N,0,Certinia,\N,2001,\N,\N,country_unknown,not_checked,0,0,\N,\N,0,0,0,\N,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,digital_ai,0,Personalis,\N,2002,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,0,1,healthcare_biotech,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,\N,0,Tempus AI,\N,2003,\N,\N,country_unknown,not_checked,0,0,\N,\N,0,0,0,\N,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,digital_ai,0,Bud,\N,2004,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,0,1,coding_agents,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,digital_ai,0,Mechanize,\N,2005,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,2,0,2,coding_agents,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,enabling_infrastructure,0,Lambda,lambda.ai,2006,United States,US,single_country_normalized,has_observed_events,0,0,\N,\N,4,2,7,neocloud_gpu_capacity,1,needs_review,0,1,0
-ai-deals-coverage-442701c0d55527e04f40,enabling_infrastructure,0,Sharon AI,\N,2007,Australia,AU,single_country_normalized,has_observed_events,0,0,\N,\N,1,0,1,inference_compute,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,enabling_infrastructure,0,fal.ai,fal.ai,2008,US,US,single_country_normalized,has_observed_events,0,0,\N,\N,1,3,4,inference_compute,1,needs_review,0,1,0
-ai-deals-coverage-442701c0d55527e04f40,enabling_infrastructure,0,DensityAI,\N,2009,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,2,0,2,ai_chips,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,digital_ai,0,Campfire,\N,2010,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,1,2,finance,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,digital_ai,0,Axiamatic,\N,2011,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,1,1,enterprise_agents,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,digital_ai,0,Assort Health,\N,2012,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,2,2,5,healthcare_biotech,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,digital_ai,0,Blacksmith,\N,2013,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,1,1,developer_tools,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,digital_ai,0,Root.io,\N,2014,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,0,1,cybersecurity,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,digital_ai,0,Aikido Security,\N,2015,Belgium,BE,single_country_normalized,has_observed_events,0,0,\N,\N,1,0,1,cybersecurity,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,digital_ai,0,Exa Labs,\N,2016,United States,US,single_country_normalized,has_observed_events,0,0,\N,\N,1,1,1,search_knowledge,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,physical_ai,0,Arda,\N,2017,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,0,1,industrial_logistics_robotics,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,physical_ai,0,Embo,\N,2018,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,0,1,robotics_foundation_models,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,physical_ai,0,Ulysses,\N,2019,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,1,1,drones_defense,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,physical_ai,0,TARS Robotics,\N,2020,China,CN,single_country_normalized,has_observed_events,0,0,\N,\N,1,0,1,robotics_foundation_models,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,physical_ai,0,Galaxea,\N,2021,China,CN,single_country_normalized,has_observed_events,0,0,\N,\N,1,0,1,robotics_foundation_models,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,enabling_infrastructure,0,Olix,olix.com,2022,UK,GB,country_unknown,has_observed_events,0,0,\N,\N,2,0,2,ai_chips,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,digital_ai,0,Arena,\N,2023,US,US,single_country_normalized,has_observed_events,0,0,2026-10-11,deal_found,2,1,2,data_training_evaluation,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,digital_ai,0,Tab,\N,2024,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,0,1,general_applications,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,digital_ai,0,Atomic,\N,2025,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,2,1,3,enterprise_agents,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,digital_ai,0,Fathom,\N,2026,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,0,1,enterprise_agents,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,\N,0,Superhuman,\N,2027,\N,\N,country_unknown,not_checked,0,0,\N,\N,0,0,0,\N,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,physical_ai,0,Hadrian (manufacturing),\N,2028,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,0,1,industrial_logistics_robotics,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,digital_ai,0,Norm,\N,2029,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,1,1,legal,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,physical_ai,0,HaloBraid,\N,2030,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,0,1,robotic_components,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,digital_ai,0,SOND,\N,2031,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,1,1,general_applications,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,digital_ai,0,Trace,\N,2032,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,1,1,enterprise_agents,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,enabling_infrastructure,0,Mesh,\N,2033,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,1,1,interconnect_memory,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,digital_ai,0,Photon,\N,2034,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,3,1,3,healthcare_biotech,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,physical_ai,0,Poseidon Aerospace,\N,2035,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,2,1,2,drones_defense,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,digital_ai,0,Legato,\N,2036,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,0,1,healthcare_biotech,0,\N,0,0,0
-ai-deals-coverage-442701c0d55527e04f40,physical_ai,0,3D Systems,www.3dsystems.com,2037,United States,US,single_country_normalized,no_event_found_in_sources_checked,0,0,2026-10-11,no_event_found_in_sources_checked,0,0,0,\N,1,needs_review,0,1,0
-ai-deals-coverage-442701c0d55527e04f40,physical_ai,0,a.i. solutions,ai-solutions.com,2038,United States,US,single_country_normalized,no_event_found_in_sources_checked,0,0,2026-10-11,no_event_found_in_sources_checked,0,0,0,\N,1,needs_review,0,1,0
-ai-deals-coverage-442701c0d55527e04f40,physical_ai,0,AB Dynamics (rFpro),rfpro.com,2039,United Kingdom,GB,single_country_normalized,no_event_found_in_sources_checked,0,0,2026-10-11,no_event_found_in_sources_checked,0,0,0,\N,1,needs_review,0,1,0
-ai-deals-coverage-442701c0d55527e04f40,physical_ai,0,Able Innovations,www.ableinnovations.com,2040,Canada,CA,single_country_normalized,no_event_found_in_sources_checked,0,0,2026-10-11,no_event_found_in_sources_checked,0,0,0,\N,1,needs_review,0,1,0
-ai-deals-coverage-442701c0d55527e04f40,physical_ai,0,Abundant Robotics,www.abundantrobotics.com,2041,United States,US,single_country_normalized,no_event_found_in_sources_checked,0,0,2026-10-11,no_event_found_in_sources_checked,0,0,0,\N,1,needs_review,0,1,0
-ai-deals-coverage-442701c0d55527e04f40,physical_ai,0,Accuray,www.accuray.com,2042,United States,US,single_country_normalized,no_event_found_in_sources_checked,0,0,2026-10-11,no_event_found_in_sources_checked,0,0,0,\N,1,needs_review,0,1,0
-ai-deals-coverage-442701c0d55527e04f40,digital_ai,0,Acellera,www.acellera.com,2043,Spain,ES,single_country_normalized,no_event_found_in_sources_checked,0,0,2026-10-11,no_event_found_in_sources_checked,0,0,0,\N,1,needs_review,0,1,0
-ai-deals-coverage-442701c0d55527e04f40,physical_ai,0,Activ Surgical,www.activsurgical.com,2044,United States,US,single_country_normalized,no_event_found_in_sources_checked,0,0,2026-10-11,no_event_found_in_sources_checked,0,0,0,\N,1,needs_review,0,1,0
-ai-deals-coverage-442701c0d55527e04f40,digital_ai,0,Ada,ada.cx,2045,Canada,CA,single_country_normalized,no_event_found_in_sources_checked,0,0,2026-10-11,no_event_found_in_sources_checked,0,0,0,\N,1,needs_review,0,1,0
-ai-deals-coverage-442701c0d55527e04f40,physical_ai,0,Adam,adam.new,2046,United States,US,single_country_normalized,no_event_found_in_sources_checked,0,0,2026-10-11,no_event_found_in_sources_checked,0,0,0,\N,1,needs_review,0,1,0
-ai-deals-coverage-442701c0d55527e04f40,physical_ai,0,Adaptive Simulations,www.adaptivesim.com,2047,Sweden,SE,single_country_normalized,no_event_found_in_sources_checked,0,0,2026-10-11,no_event_found_in_sources_checked,0,0,0,\N,1,needs_review,0,1,0
-ai-deals-coverage-442701c0d55527e04f40,physical_ai,0,Addnode Group / TECHNIA (Claytex),www.claytex.com,2048,Sweden / United Kingdom,\N,multi_country,no_event_found_in_sources_checked,0,0,2026-10-11,no_event_found_in_sources_checked,0,0,0,\N,1,needs_review,0,1,0
-ai-deals-coverage-442701c0d55527e04f40,digital_ai,0,Adept,adept.ai,2049,United States,US,single_country_normalized,no_event_found_in_sources_checked,0,0,2026-10-11,no_event_found_in_sources_checked,0,0,0,\N,1,needs_review,0,1,0
-ai-deals-coverage-442701c0d55527e04f40,enabling_infrastructure,0,ADLINK Technology,www.adlinktech.com,2050,Taiwan,TW,single_country_normalized,no_event_found_in_sources_checked,0,0,2026-10-11,no_event_found_in_sources_checked,0,0,0,\N,1,needs_review,0,1,0
-ai-deals-coverage-442701c0d55527e04f40,physical_ai,0,Advanced Construction Robotics,www.constructionrobots.com,2051,United States,US,single_country_normalized,no_event_found_in_sources_checked,0,0,2026-10-11,no_event_found_in_sources_checked,0,0,0,\N,1,needs_review,0,1,0
-ai-deals-coverage-442701c0d55527e04f40,physical_ai,0,Aegis Software (Simio),www.simio.com,2052,United States,US,single_country_normalized,historical_context_only,0,0,2026-10-11,historical_context_only,0,0,0,\N,1,needs_review,0,1,0
-ai-deals-coverage-442701c0d55527e04f40,physical_ai,0,Aescape,www.aescape.com,2053,United States,US,single_country_normalized,has_observed_events,0,0,2026-10-11,historical_context_only,0,0,1,consumer_service_robotics,1,needs_review,0,1,0
-ai-deals-coverage-442701c0d55527e04f40,physical_ai,0,Aethon,aethon.com,2054,United States,US,single_country_normalized,no_event_found_in_sources_checked,0,0,2026-10-11,no_event_found_in_sources_checked,0,0,0,\N,1,needs_review,0,1,0
-ai-deals-coverage-442701c0d55527e04f40,enabling_infrastructure,0,Aeva,www.aeva.com,2055,United States,US,single_country_normalized,no_event_found_in_sources_checked,0,0,2026-10-11,no_event_found_in_sources_checked,0,0,0,\N,1,needs_review,0,1,0
-ai-deals-coverage-442701c0d55527e04f40,enabling_infrastructure,0,AEye,www.aeye.ai,2056,United States,US,single_country_normalized,no_event_found_in_sources_checked,0,0,2026-10-11,no_event_found_in_sources_checked,0,0,0,\N,1,needs_review,0,1,0
-ai-deals-coverage-442701c0d55527e04f40,physical_ai,0,AGCO PTx,www.ptxag.com,2057,United States,US,single_country_normalized,no_event_found_in_sources_checked,0,0,2026-10-11,no_event_found_in_sources_checked,0,0,0,\N,1,needs_review,0,1,0
-ai-deals-coverage-442701c0d55527e04f40,physical_ai,0,AGILOX,www.agilox.net,2058,Austria,AT,single_country_normalized,no_event_found_in_sources_checked,0,0,2026-10-11,no_event_found_in_sources_checked,0,0,0,\N,1,needs_review,0,1,0
-ai-deals-coverage-442701c0d55527e04f40,physical_ai,0,AirMap,www.airmap.com,2059,United States,US,single_country_normalized,no_event_found_in_sources_checked,0,0,2026-10-11,no_event_found_in_sources_checked,0,0,0,\N,1,needs_review,0,1,0
-ai-deals-coverage-442701c0d55527e04f40,physical_ai,0,Akselos,akselos.com,2060,Switzerland,CH,single_country_normalized,no_event_found_in_sources_checked,0,0,2026-10-11,no_event_found_in_sources_checked,0,0,0,\N,1,needs_review,0,1,0
-ai-deals-coverage-442701c0d55527e04f40,physical_ai,0,Aldec,www.aldec.com,2061,United States,US,single_country_normalized,no_event_found_in_sources_checked,0,0,2026-10-11,no_event_found_in_sources_checked,0,0,0,\N,1,needs_review,0,1,0
-ai-deals-coverage-442701c0d55527e04f40,physical_ai,0,AllSpice,allspice.io,2062,United States,US,single_country_normalized,has_observed_events,0,0,2026-10-11,no_event_found_in_sources_checked,0,1,1,\N,1,needs_review,0,1,0
-ai-deals-coverage-442701c0d55527e04f40,physical_ai,0,Altitude Angel,www.altitudeangel.com,2063,United Kingdom,GB,single_country_normalized,historical_context_only,0,0,2026-10-11,historical_context_only,0,0,0,\N,1,needs_review,0,1,0
-ai-deals-coverage-442701c0d55527e04f40,digital_ai,0,Alvascience,www.alvascience.com,2064,Italy,IT,single_country_normalized,no_event_found_in_sources_checked,0,0,2026-10-11,no_event_found_in_sources_checked,0,0,0,\N,1,needs_review,0,1,0
-ai-deals-coverage-442701c0d55527e04f40,physical_ai,0,Amazon Robotics,www.aboutamazon.com,2065,United States,US,single_country_normalized,no_event_found_in_sources_checked,0,0,2026-10-11,no_event_found_in_sources_checked,0,0,0,\N,1,needs_review,0,1,0
-ai-deals-coverage-442701c0d55527e04f40,physical_ai,0,Amazon Web Services,aws.amazon.com,2066,United States,US,single_country_normalized,no_event_found_in_sources_checked,0,0,2026-10-11,no_event_found_in_sources_checked,0,0,0,\N,1,needs_review,0,1,0
-ai-deals-coverage-442701c0d55527e04f40,enabling_infrastructure,0,Ambarella CVflow,www.ambarella.com,2067,United States,US,single_country_normalized,no_event_found_in_sources_checked,0,0,2026-10-11,no_event_found_in_sources_checked,0,0,0,\N,1,needs_review,0,1,0
-ai-deals-coverage-442701c0d55527e04f40,physical_ai,0,Ambi Robotics,www.ambirobotics.com,2068,United States,US,single_country_normalized,no_event_found_in_sources_checked,0,0,2026-10-11,no_event_found_in_sources_checked,0,0,0,\N,1,needs_review,0,1,0
-ai-deals-coverage-442701c0d55527e04f40,digital_ai,0,Ambience Healthcare,ambiencehealthcare.com,2069,United States,US,single_country_normalized,has_observed_events,0,0,2026-10-11,no_event_found_in_sources_checked,0,1,1,healthcare_biotech,1,needs_review,0,1,0
-ai-deals-coverage-442701c0d55527e04f40,enabling_infrastructure,0,AMD Kria,www.amd.com,2070,United States,US,single_country_normalized,no_event_found_in_sources_checked,0,0,2026-10-11,no_event_found_in_sources_checked,0,0,0,\N,1,needs_review,0,1,0
-ai-deals-coverage-442701c0d55527e04f40,physical_ai,0,ANDRITZ,www.andritz.com,2071,Austria,AT,single_country_normalized,no_event_found_in_sources_checked,0,0,2026-10-11,no_event_found_in_sources_checked,0,0,0,\N,1,needs_review,0,1,0
-ai-deals-coverage-442701c0d55527e04f40,physical_ai,0,Ansys,www.ansys.com,2072,United States,US,single_country_normalized,no_event_found_in_sources_checked,0,0,2026-10-11,no_event_found_in_sources_checked,0,0,0,\N,1,needs_review,0,1,0
-ai-deals-coverage-442701c0d55527e04f40,physical_ai,0,Anyverse,anyverse.ai,2073,Spain,ES,single_country_normalized,no_event_found_in_sources_checked,0,0,2026-10-11,no_event_found_in_sources_checked,0,0,0,\N,1,needs_review,0,1,0
-ai-deals-coverage-442701c0d55527e04f40,physical_ai,0,Apex.AI,www.apex.ai,2074,United States / Germany,\N,multi_country,no_event_found_in_sources_checked,0,0,2026-10-11,no_event_found_in_sources_checked,0,0,0,\N,1,needs_review,0,1,0
-ai-deals-coverage-442701c0d55527e04f40,physical_ai,0,Appen,www.appen.com,2075,Australia,AU,single_country_normalized,no_event_found_in_sources_checked,0,0,2026-10-11,no_event_found_in_sources_checked,0,0,0,\N,1,needs_review,0,1,0
-ai-deals-coverage-442701c0d55527e04f40,physical_ai,0,Applied Flow Technology,www.aft.com,2076,United States,US,single_country_normalized,no_event_found_in_sources_checked,0,0,2026-10-11,no_event_found_in_sources_checked,0,0,0,\N,1,needs_review,0,1,0
-ai-deals-coverage-442701c0d55527e04f40,physical_ai,0,Applied Intuition,www.appliedintuition.com,2077,United States,US,single_country_normalized,has_observed_events,0,0,2026-10-11,no_event_found_in_sources_checked,0,0,1,\N,1,needs_review,0,1,0
-ai-deals-coverage-442701c0d55527e04f40,physical_ai,0,Applied Math Modeling,www.appliedmathmodeling.com,2078,United States,US,single_country_normalized,no_event_found_in_sources_checked,0,0,2026-10-11,no_event_found_in_sources_checked,0,0,0,\N,1,needs_review,0,1,0
-ai-deals-coverage-442701c0d55527e04f40,enabling_infrastructure,0,Applied Robotics,www.appliedrobotics.com,2079,United States,US,single_country_normalized,no_event_found_in_sources_checked,0,0,2026-10-11,no_event_found_in_sources_checked,0,0,0,\N,1,needs_review,0,1,0
-ai-deals-coverage-442701c0d55527e04f40,physical_ai,0,aPriori,www.apriori.com,2080,United States,US,single_country_normalized,no_event_found_in_sources_checked,0,0,2026-10-11,no_event_found_in_sources_checked,0,0,0,\N,1,needs_review,0,1,0
-ai-deals-coverage-442701c0d55527e04f40,digital_ai,0,Aqemia,www.aqemia.com,2081,France,FR,single_country_normalized,no_event_found_in_sources_checked,0,0,2026-10-11,no_event_found_in_sources_checked,0,0,0,\N,1,needs_review,0,1,0
-ai-deals-coverage-442701c0d55527e04f40,physical_ai,0,Aquaveo,www.aquaveo.com,2082,United States,US,single_country_normalized,no_event_found_in_sources_checked,0,0,2026-10-11,no_event_found_in_sources_checked,0,0,0,\N,1,needs_review,0,1,0
-ai-deals-coverage-442701c0d55527e04f40,physical_ai,0,Aras,aras.com,2083,United States,US,single_country_normalized,no_event_found_in_sources_checked,0,0,2026-10-11,no_event_found_in_sources_checked,0,0,0,\N,1,needs_review,0,1,0
-ai-deals-coverage-442701c0d55527e04f40,physical_ai,0,Arbe Robotics,arberobotics.com,2084,Israel,IL,single_country_normalized,no_event_found_in_sources_checked,0,0,2026-10-11,no_event_found_in_sources_checked,0,0,0,\N,1,needs_review,0,1,0
-ai-deals-coverage-442701c0d55527e04f40,physical_ai,0,Artly Coffee,artly.coffee,2085,United States,US,single_country_normalized,no_event_found_in_sources_checked,0,0,2026-10-11,no_event_found_in_sources_checked,0,0,0,\N,1,needs_review,0,1,0
-ai-deals-coverage-442701c0d55527e04f40,physical_ai,0,Arup (Oasys),www.oasys-software.com,2086,United Kingdom,GB,single_country_normalized,no_event_found_in_sources_checked,0,0,2026-10-11,no_event_found_in_sources_checked,0,0,0,\N,1,needs_review,0,1,0
-ai-deals-coverage-442701c0d55527e04f40,physical_ai,0,ARX Robotics,www.arx-robotics.com,2087,Germany,DE,single_country_normalized,has_observed_events,0,0,2026-10-11,no_event_found_in_sources_checked,0,0,2,drones_defense,1,needs_review,0,1,0
-ai-deals-coverage-442701c0d55527e04f40,physical_ai,0,ASI Mining,www.epirocgroup.com,2088,United States,US,single_country_normalized,no_event_found_in_sources_checked,0,0,2026-10-11,no_event_found_in_sources_checked,0,0,0,\N,1,needs_review,0,1,0
-ai-deals-coverage-442701c0d55527e04f40,digital_ai,0,AssemblyAI,assemblyai.com,2089,United States,US,single_country_normalized,no_event_found_in_sources_checked,0,0,2026-10-11,no_event_found_in_sources_checked,0,0,0,\N,1,needs_review,0,1,0
-ai-deals-coverage-442701c0d55527e04f40,enabling_infrastructure,0,ATI Industrial Automation,www.ati-ia.com,2090,United States,US,single_country_normalized,no_event_found_in_sources_checked,0,0,2026-10-11,no_event_found_in_sources_checked,0,0,0,\N,1,needs_review,0,1,0
-ai-deals-coverage-442701c0d55527e04f40,physical_ai,0,Attabotics,www.attabotics.com,2091,Canada,CA,single_country_normalized,no_event_found_in_sources_checked,0,0,2026-10-11,no_event_found_in_sources_checked,0,0,0,\N,1,needs_review,0,1,0
-ai-deals-coverage-442701c0d55527e04f40,physical_ai,0,AUAR,www.auar.io,2092,United Kingdom,GB,single_country_normalized,no_event_found_in_sources_checked,0,0,2026-10-11,no_event_found_in_sources_checked,0,0,0,\N,1,needs_review,0,1,0
-ai-deals-coverage-442701c0d55527e04f40,digital_ai,0,Augment Code,augmentcode.com,2093,United States,US,single_country_normalized,no_event_found_in_sources_checked,0,0,2026-10-11,no_event_found_in_sources_checked,0,0,0,\N,1,needs_review,0,1,0
-ai-deals-coverage-442701c0d55527e04f40,digital_ai,0,Augury,augury.com,2094,United States,US,single_country_normalized,has_observed_events,0,0,2026-10-11,no_event_found_in_sources_checked,0,1,1,general_applications,1,needs_review,0,1,0
-ai-deals-coverage-442701c0d55527e04f40,physical_ai,0,Aurel Systems,www.aurelsystems.com,2095,Canada,CA,single_country_normalized,no_event_found_in_sources_checked,0,0,2026-10-11,no_event_found_in_sources_checked,0,0,0,\N,1,needs_review,0,1,0
-ai-deals-coverage-442701c0d55527e04f40,physical_ai,0,Auterion,auterion.com,2096,Switzerland / United States,\N,multi_country,has_observed_events,0,0,2026-10-11,no_event_found_in_sources_checked,0,1,2,\N,1,needs_review,0,1,0
-ai-deals-coverage-442701c0d55527e04f40,physical_ai,0,Autodesk,www.autodesk.com,2097,United States,US,single_country_normalized,no_event_found_in_sources_checked,0,0,2026-10-11,no_event_found_in_sources_checked,0,0,0,\N,1,needs_review,0,1,0
-ai-deals-coverage-442701c0d55527e04f40,physical_ai,0,Ava Robotics,avarobotics.com,2098,United States,US,single_country_normalized,no_event_found_in_sources_checked,0,0,2026-10-11,no_event_found_in_sources_checked,0,0,0,\N,1,needs_review,0,1,0
-ai-deals-coverage-442701c0d55527e04f40,physical_ai,0,Avidbots,avidbots.com,2099,Canada,CA,single_country_normalized,no_event_found_in_sources_checked,0,0,2026-10-11,no_event_found_in_sources_checked,0,0,0,\N,1,needs_review,0,1,0
-ai-deals-coverage-442701c0d55527e04f40,physical_ai,0,AVL List,www.avl.com,2100,Austria,AT,single_country_normalized,no_event_found_in_sources_checked,0,0,2026-10-11,no_event_found_in_sources_checked,0,0,0,\N,1,needs_review,0,1,0
-ai-deals-coverage-442701c0d55527e04f40,physical_ai,0,AVSimulation,www.avsimulation.com,2101,France,FR,single_country_normalized,no_event_found_in_sources_checked,0,0,2026-10-11,no_event_found_in_sources_checked,0,0,0,\N,1,needs_review,0,1,0
-ai-deals-coverage-442701c0d55527e04f40,physical_ai,0,AVT Simulation,www.avtsim.com,2102,United States,US,single_country_normalized,no_event_found_in_sources_checked,0,0,2026-10-11,no_event_found_in_sources_checked,0,0,0,\N,1,needs_review,0,1,0
-ai-deals-coverage-442701c0d55527e04f40,physical_ai,0,AWS RoboMaker,aws.amazon.com,2103,United States,US,single_country_normalized,no_event_found_in_sources_checked,0,0,2026-10-11,no_event_found_in_sources_checked,0,0,0,\N,1,needs_review,0,1,0
-ai-deals-coverage-442701c0d55527e04f40,physical_ai,0,BAE Systems (Bohemia Interactive Simulations),bisimulations.com,2104,United Kingdom,GB,single_country_normalized,no_event_found_in_sources_checked,0,0,2026-10-11,no_event_found_in_sources_checked,0,0,0,\N,1,needs_review,0,1,0
-ai-deals-coverage-442701c0d55527e04f40,physical_ai,0,Baker Hughes,www.bakerhughes.com,2105,United States,US,single_country_normalized,no_event_found_in_sources_checked,0,0,2026-10-11,no_event_found_in_sources_checked,0,0,0,\N,1,needs_review,0,1,0
-ai-deals-coverage-442701c0d55527e04f40,physical_ai,0,Baraja,www.baraja.com,2106,Australia,AU,single_country_normalized,no_event_found_in_sources_checked,0,0,2026-10-11,no_event_found_in_sources_checked,0,0,0,\N,1,needs_review,0,1,0
-ai-deals-coverage-442701c0d55527e04f40,physical_ai,0,Bear Flag Robotics,www.deere.com,2107,United States,US,single_country_normalized,no_event_found_in_sources_checked,0,0,2026-10-11,no_event_found_in_sources_checked,0,0,0,\N,1,needs_review,0,1,0
-ai-deals-coverage-442701c0d55527e04f40,physical_ai,0,Bentley Systems,www.bentley.com,2108,United States,US,single_country_normalized,no_event_found_in_sources_checked,0,0,2026-10-11,no_event_found_in_sources_checked,0,0,0,\N,1,needs_review,0,1,0
-ai-deals-coverage-442701c0d55527e04f40,physical_ai,0,Berkshire Grey,www.berkshiregrey.com,2109,United States,US,single_country_normalized,no_event_found_in_sources_checked,0,0,2026-10-11,no_event_found_in_sources_checked,0,0,0,\N,1,needs_review,0,1,0
-ai-deals-coverage-442701c0d55527e04f40,physical_ai,0,BionicHIVE,www.bionichive.com,2110,Israel,IL,single_country_normalized,no_event_found_in_sources_checked,0,0,2026-10-11,no_event_found_in_sources_checked,0,0,0,\N,1,needs_review,0,1,0
-ai-deals-coverage-442701c0d55527e04f40,digital_ai,0,BioSolveIT,www.biosolveit.de,2111,Germany,DE,single_country_normalized,no_event_found_in_sources_checked,0,0,2026-10-11,no_event_found_in_sources_checked,0,0,0,\N,1,needs_review,0,1,0
-ai-deals-coverage-442701c0d55527e04f40,digital_ai,0,Black Forest Labs,blackforestlabs.ai,2112,Germany,DE,single_country_normalized,has_observed_events,0,0,2026-10-11,no_event_found_in_sources_checked,0,1,2,\N,1,needs_review,0,1,0
-ai-deals-coverage-442701c0d55527e04f40,physical_ai,0,BlackBerry QNX,blackberry.qnx.com,2113,Canada,CA,single_country_normalized,no_event_found_in_sources_checked,0,0,2026-10-11,no_event_found_in_sources_checked,0,0,0,\N,1,needs_review,0,1,0
-ai-deals-coverage-442701c0d55527e04f40,enabling_infrastructure,0,Blaize,www.blaize.com,2114,United States,US,single_country_normalized,no_event_found_in_sources_checked,0,0,2026-10-11,no_event_found_in_sources_checked,0,0,0,\N,1,needs_review,0,1,0
-ai-deals-coverage-442701c0d55527e04f40,physical_ai,0,Blickfeld,www.blickfeld.com,2115,Germany,DE,single_country_normalized,no_event_found_in_sources_checked,0,0,2026-10-11,no_event_found_in_sources_checked,0,0,0,\N,1,needs_review,0,1,0
-ai-deals-coverage-442701c0d55527e04f40,physical_ai,0,Blue River Technology,www.bluerivertechnology.com,2116,United States,US,single_country_normalized,no_event_found_in_sources_checked,0,0,2026-10-11,no_event_found_in_sources_checked,0,0,0,\N,1,needs_review,0,1,0
-ai-deals-coverage-442701c0d55527e04f40,physical_ai,0,Blue Robotics,bluerobotics.com,2117,United States,US,single_country_normalized,no_event_found_in_sources_checked,0,0,2026-10-11,no_event_found_in_sources_checked,0,0,0,\N,1,needs_review,0,1,0
-ai-deals-coverage-442701c0d55527e04f40,physical_ai,0,Blue Yonder,blueyonder.com,2118,United States,US,single_country_normalized,no_event_found_in_sources_checked,0,0,2026-10-11,no_event_found_in_sources_checked,0,0,0,\N,1,needs_review,0,1,0
+snapshot_id,ai_scope,atlas_registry_records,canonical_name,company_domain,company_id,country,country_iso2,country_normalization_state,coverage_state,financial_snapshot_records,funding_snapshot_records,history_checked_at,history_review_outcome,observed_2026_event_records,observed_core_equity_records,observed_event_records,primary_subsector,prior_registry_records,registry_review_status,registry_source_count,total_registry_records,valuation_snapshot_records,finer_subsector,finer_classification_status,identity_resolution_status
+ai-deals-coverage-e5302dcff6b1b4e58bc8,digital_ai,0,Deccan AI,\N,1491,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,1,1,data_training_evaluation,0,\N,0,0,0,\N,unassigned_requires_business_review,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,digital_ai,0,Catalog,\N,1492,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,1,1,sales_marketing,0,\N,0,0,0,\N,unassigned_requires_business_review,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,digital_ai,0,Qodo,qodo.ai,1493,Israel,IL,single_country_normalized,has_observed_events,0,0,\N,\N,2,0,2,coding_agents,1,needs_review,0,1,0,coding,inherited_framework_classification,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,digital_ai,0,Worth,\N,1494,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,1,1,finance,0,\N,0,0,0,finance,mapped_from_existing_broad_classification,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,enabling_infrastructure,0,ScaleOps,\N,1495,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,2,1,2,inference_compute,0,\N,0,0,0,\N,unassigned_requires_business_review,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,digital_ai,0,Mantis Biotech,\N,1496,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,1,1,healthcare_biotech,0,\N,0,0,0,\N,unassigned_requires_business_review,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,digital_ai,0,9fin,\N,1497,GB,GB,single_country_normalized,has_observed_events,0,0,\N,\N,1,1,1,finance,0,\N,0,0,0,finance,mapped_from_existing_broad_classification,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,digital_ai,0,Sona,\N,1498,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,1,1,general_applications,0,\N,0,0,0,\N,unassigned_requires_business_review,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,enabling_infrastructure,0,Cognichip,\N,1499,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,2,2,3,ai_chips,0,\N,0,0,0,\N,unassigned_requires_business_review,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,digital_ai,0,Linx Security,\N,1500,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,2,2,2,cybersecurity,0,\N,0,0,0,security,mapped_from_existing_broad_classification,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,digital_ai,0,Treeline,\N,1501,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,2,1,2,enterprise_agents,0,\N,0,0,0,\N,unassigned_requires_business_review,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,physical_ai,0,Galaxea AI,\N,1502,CN,CN,single_country_normalized,has_observed_events,0,0,\N,\N,1,1,2,humanoid_robotics,0,\N,0,0,0,humanoid,mapped_from_existing_broad_classification,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,digital_ai,0,Xoople,xoople.com,1503,Spain,ES,country_unknown,has_observed_events,0,0,\N,\N,1,1,3,data_training_evaluation,0,\N,0,0,0,\N,unassigned_requires_business_review,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,digital_ai,0,Noon,\N,1504,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,1,1,developer_tools,0,\N,0,0,0,\N,unassigned_requires_business_review,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,digital_ai,0,Moonbounce,\N,1505,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,1,1,data_training_evaluation,0,\N,0,0,0,\N,unassigned_requires_business_review,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,enabling_infrastructure,0,Firmus Technologies,\N,1506,AU,AU,single_country_normalized,has_observed_events,0,0,2026-10-11,deal_found,1,1,1,data_centers_power,0,\N,0,0,0,\N,unassigned_requires_business_review,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,digital_ai,0,Natter,\N,1507,US,US,single_country_normalized,has_observed_events,0,0,\N,\N,1,0,1,enterprise_agents,0,\N,0,0,0,\N,unassigned_requires_business_review,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,digital_ai,0,Beacon Biosignals,\N,1508,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,2,1,3,healthcare_biotech,0,\N,0,0,0,\N,unassigned_requires_business_review,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,digital_ai,0,NeuBird AI,\N,1509,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,0,1,developer_tools,0,\N,0,0,0,\N,unassigned_requires_business_review,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,digital_ai,0,Ridge AI,\N,1510,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,1,1,data_training_evaluation,0,\N,0,0,0,\N,unassigned_requires_business_review,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,physical_ai,0,Hermeus,\N,1511,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,2,1,2,drones_defense,0,\N,0,0,0,\N,unassigned_requires_business_review,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,enabling_infrastructure,0,Aria Networks,\N,1512,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,1,1,interconnect_memory,0,\N,0,0,0,\N,unassigned_requires_business_review,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,digital_ai,0,Modus,\N,1513,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,0,1,finance,0,\N,0,0,0,finance,mapped_from_existing_broad_classification,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,digital_ai,0,True Footage,\N,1514,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,1,1,general_applications,0,\N,0,0,0,\N,unassigned_requires_business_review,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,physical_ai,0,Mappedin,\N,1515,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,1,1,simulation_digital_twins,0,\N,0,0,0,\N,unassigned_requires_business_review,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,digital_ai,0,ShengShu,\N,1516,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,1,1,creative_media,0,\N,0,0,0,\N,unassigned_requires_business_review,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,digital_ai,0,Elorian,\N,1517,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,1,1,foundation_models,0,\N,0,0,0,\N,unassigned_requires_business_review,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,enabling_infrastructure,0,nEye.ai,\N,1518,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,1,1,interconnect_memory,0,\N,0,0,0,\N,unassigned_requires_business_review,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,digital_ai,0,Mintlify,\N,1519,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,1,1,coding_agents,0,\N,0,0,0,coding,mapped_from_existing_broad_classification,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,digital_ai,0,Bluefish,\N,1520,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,2,2,sales_marketing,0,\N,0,0,0,\N,unassigned_requires_business_review,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,digital_ai,0,Hilbert,\N,1521,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,1,1,general_applications,0,\N,0,0,0,\N,unassigned_requires_business_review,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,digital_ai,0,Gizmo,\N,1522,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,1,1,education,0,\N,0,0,0,education,mapped_from_existing_broad_classification,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,digital_ai,0,Loop,\N,1523,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,1,1,general_applications,0,\N,0,0,0,\N,unassigned_requires_business_review,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,digital_ai,0,Expo,\N,1524,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,1,1,developer_tools,0,\N,0,0,0,\N,unassigned_requires_business_review,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,digital_ai,0,Solidroad,\N,1525,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,0,1,customer_support_voice,0,\N,0,0,0,service,mapped_from_existing_broad_classification,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,digital_ai,0,TextQL,\N,1526,US,US,single_country_normalized,has_observed_events,0,0,\N,\N,1,1,1,general_applications,0,\N,0,0,0,\N,unassigned_requires_business_review,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,digital_ai,0,Zenskar,\N,1527,US,US,single_country_normalized,has_observed_events,0,0,\N,\N,1,1,1,finance,0,\N,0,0,0,finance,mapped_from_existing_broad_classification,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,physical_ai,0,Terra,\N,1528,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,1,1,drones_defense,0,\N,0,0,0,\N,unassigned_requires_business_review,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,digital_ai,0,GRAI,\N,1529,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,1,1,creative_media,0,\N,0,0,0,\N,unassigned_requires_business_review,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,physical_ai,0,Reliable Robotics,reliable.co,1530,United States,US,single_country_normalized,has_observed_events,0,0,\N,\N,1,1,1,autonomous_vehicles,1,needs_review,0,1,0,drone,inherited_framework_classification,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,digital_ai,0,AcuityMD,\N,1531,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,0,1,healthcare_biotech,0,\N,0,0,0,\N,unassigned_requires_business_review,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,digital_ai,0,NeoCognition,\N,1532,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,1,1,foundation_models,0,\N,0,0,0,\N,unassigned_requires_business_review,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,digital_ai,0,Monk,\N,1533,US,US,single_country_normalized,has_observed_events,0,0,\N,\N,1,1,1,finance,0,\N,0,0,0,finance,mapped_from_existing_broad_classification,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,physical_ai,0,Humble,\N,1534,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,1,1,autonomous_vehicles,0,\N,0,0,0,av,mapped_from_existing_broad_classification,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,digital_ai,0,Collov Labs,\N,1535,US,US,single_country_normalized,has_observed_events,0,0,\N,\N,1,1,1,enterprise_agents,0,\N,0,0,0,\N,unassigned_requires_business_review,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,physical_ai,0,Smart Robotics,\N,1536,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,1,1,industrial_logistics_robotics,0,\N,0,0,0,\N,unassigned_requires_business_review,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,digital_ai,0,BuildForever,\N,1537,US,US,single_country_normalized,has_observed_events,0,0,\N,\N,1,1,1,general_applications,0,\N,0,0,0,\N,unassigned_requires_business_review,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,physical_ai,0,A&K Robotics,\N,1538,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,1,1,autonomous_vehicles,0,\N,0,0,0,av,mapped_from_existing_broad_classification,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,digital_ai,0,Sooth Labs,\N,1539,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,1,1,foundation_models,0,\N,0,0,0,\N,unassigned_requires_business_review,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,physical_ai,0,Pudu Robotics,www.pudurobotics.com,1540,China,CN,single_country_normalized,has_observed_events,0,0,\N,\N,1,0,1,consumer_service_robotics,1,needs_review,0,1,0,service-robot,inherited_framework_classification,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,digital_ai,0,Omni,\N,1541,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,2,1,2,enterprise_agents,0,\N,0,0,0,\N,unassigned_requires_business_review,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,digital_ai,0,Human,\N,1542,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,0,1,healthcare_biotech,0,\N,0,0,0,\N,unassigned_requires_business_review,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,digital_ai,0,Cloudsmith,\N,1543,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,1,1,developer_tools,0,\N,0,0,0,\N,unassigned_requires_business_review,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,digital_ai,0,Orkes,\N,1544,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,0,1,developer_tools,0,\N,0,0,0,\N,unassigned_requires_business_review,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,digital_ai,0,ComfyUI,\N,1545,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,1,1,creative_media,0,\N,0,0,0,\N,unassigned_requires_business_review,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,physical_ai,0,SquareMind,\N,1546,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,1,1,medical_robotics,0,\N,0,0,0,medical-robot,mapped_from_existing_broad_classification,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,digital_ai,0,Clarasight,\N,1547,US,US,single_country_normalized,has_observed_events,0,0,\N,\N,1,1,1,enterprise_agents,0,\N,0,0,0,\N,unassigned_requires_business_review,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,digital_ai,0,Aidoc,aidoc.com,1548,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,2,2,healthcare_biotech,0,\N,0,0,0,health,reviewed_public_business_scope,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,physical_ai,0,Scout AI,\N,1549,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,1,1,drones_defense,0,\N,0,0,0,\N,unassigned_requires_business_review,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,digital_ai,0,Manifest OS,\N,1550,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,0,1,legal,0,\N,0,0,0,legal,mapped_from_existing_broad_classification,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,digital_ai,0,Actively,\N,1551,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,1,1,sales_marketing,0,\N,0,0,0,\N,unassigned_requires_business_review,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,digital_ai,0,Windmill,\N,1552,US,US,single_country_normalized,has_observed_events,0,0,\N,\N,2,1,2,enterprise_agents,0,\N,0,0,0,\N,unassigned_requires_business_review,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,digital_ai,0,Shapes,\N,1553,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,1,1,enterprise_agents,0,\N,0,0,0,\N,unassigned_requires_business_review,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,enabling_infrastructure,0,OpenLight,\N,1554,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,2,2,interconnect_memory,0,\N,0,0,0,\N,unassigned_requires_business_review,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,enabling_infrastructure,0,Panthalassa,\N,1555,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,0,1,data_centers_power,0,\N,0,0,0,\N,unassigned_requires_business_review,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,digital_ai,0,Reserv,\N,1556,US,US,single_country_normalized,has_observed_events,0,0,\N,\N,1,2,3,finance,0,\N,0,0,0,finance,mapped_from_existing_broad_classification,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,digital_ai,0,CopilotKit,\N,1557,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,1,1,developer_tools,0,\N,0,0,0,\N,unassigned_requires_business_review,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,digital_ai,0,Blitzy,\N,1558,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,0,1,coding_agents,0,\N,0,0,0,coding,mapped_from_existing_broad_classification,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,enabling_infrastructure,0,RadixArk,\N,1559,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,1,1,inference_compute,0,\N,0,0,0,\N,unassigned_requires_business_review,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,digital_ai,0,Subquadratic,\N,1560,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,1,1,foundation_models,0,\N,0,0,0,\N,unassigned_requires_business_review,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,digital_ai,0,Nace.AI,\N,1561,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,0,1,developer_tools,0,\N,0,0,0,\N,unassigned_requires_business_review,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,physical_ai,0,Nyobolt,\N,1562,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,1,2,robotic_components,0,\N,0,0,0,\N,unassigned_requires_business_review,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,digital_ai,0,Tessera Labs,\N,1563,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,0,1,enterprise_agents,0,\N,0,0,0,\N,unassigned_requires_business_review,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,digital_ai,0,LiveEO,\N,1564,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,1,1,general_applications,0,\N,0,0,0,\N,unassigned_requires_business_review,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,digital_ai,0,Nova Intelligence,novaintelligence.com,1565,US,US,single_country_normalized,has_observed_events,0,0,\N,\N,1,1,1,coding_agents,0,\N,0,0,0,coding,mapped_from_existing_broad_classification,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,digital_ai,0,Vori,\N,1566,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,1,1,general_applications,0,\N,0,0,0,\N,unassigned_requires_business_review,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,enabling_infrastructure,0,Featherless.ai,\N,1567,US,US,single_country_normalized,has_observed_events,0,0,\N,\N,1,1,1,inference_compute,0,\N,0,0,0,\N,unassigned_requires_business_review,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,digital_ai,0,District,\N,1568,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,1,1,general_applications,0,\N,0,0,0,\N,unassigned_requires_business_review,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,enabling_infrastructure,0,Cowboy Space Corporation,\N,1569,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,1,1,data_centers_power,0,\N,0,0,0,\N,unassigned_requires_business_review,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,digital_ai,0,Lithosquare,\N,1570,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,1,1,general_applications,0,\N,0,0,0,\N,unassigned_requires_business_review,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,digital_ai,0,Ethos,\N,1571,GB,GB,single_country_normalized,has_observed_events,0,0,\N,\N,1,2,2,finance,0,\N,0,0,0,finance,mapped_from_existing_broad_classification,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,digital_ai,0,Basata,\N,1572,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,1,1,healthcare_biotech,0,\N,0,0,0,\N,unassigned_requires_business_review,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,physical_ai,0,Vbot,\N,1573,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,1,1,humanoid_robotics,0,\N,0,0,0,humanoid,mapped_from_existing_broad_classification,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,digital_ai,0,Frame Security,\N,1574,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,0,1,cybersecurity,0,\N,0,0,0,security,mapped_from_existing_broad_classification,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,digital_ai,0,Vapi,\N,1575,US,US,single_country_normalized,has_observed_events,0,0,\N,\N,1,0,1,customer_support_voice,0,\N,0,0,0,service,mapped_from_existing_broad_classification,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,digital_ai,0,Roadrunner,\N,1576,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,0,1,general_applications,0,\N,0,0,0,\N,unassigned_requires_business_review,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,digital_ai,0,Ciridae,\N,1577,US,US,single_country_normalized,has_observed_events,0,0,\N,\N,1,0,1,enterprise_agents,0,\N,0,0,0,\N,unassigned_requires_business_review,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,digital_ai,0,Develo,\N,1578,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,1,1,healthcare_biotech,0,\N,0,0,0,\N,unassigned_requires_business_review,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,digital_ai,0,Monaco,\N,1579,US,US,single_country_normalized,has_observed_events,0,0,\N,\N,1,1,1,sales_marketing,0,\N,0,0,0,\N,unassigned_requires_business_review,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,digital_ai,0,Embat,\N,1580,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,1,1,finance,0,\N,0,0,0,finance,mapped_from_existing_broad_classification,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,physical_ai,0,Origin Lab,\N,1581,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,1,1,simulation_digital_twins,0,\N,0,0,0,\N,unassigned_requires_business_review,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,digital_ai,0,Multiverse,\N,1582,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,1,1,education,0,\N,0,0,0,education,mapped_from_existing_broad_classification,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,physical_ai,0,WIRobotics,\N,1583,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,1,1,humanoid_robotics,0,\N,0,0,0,humanoid,mapped_from_existing_broad_classification,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,enabling_infrastructure,0,Gridcare,\N,1584,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,1,1,data_centers_power,0,\N,0,0,0,\N,unassigned_requires_business_review,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,digital_ai,0,GovWell,\N,1585,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,1,1,enterprise_agents,0,\N,0,0,0,\N,unassigned_requires_business_review,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,digital_ai,0,Wirestock,\N,1586,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,1,1,data_training_evaluation,0,\N,0,0,0,\N,unassigned_requires_business_review,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,digital_ai,0,Sigma Computing,\N,1587,US,US,single_country_normalized,has_observed_events,0,0,2026-10-11,deal_found,1,1,1,data_training_evaluation,0,\N,0,0,0,\N,unassigned_requires_business_review,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,digital_ai,0,Viktor,\N,1588,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,1,1,enterprise_agents,0,\N,0,0,0,\N,unassigned_requires_business_review,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,digital_ai,0,Scope,\N,1589,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,1,1,general_applications,0,\N,0,0,0,\N,unassigned_requires_business_review,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,digital_ai,0,Nof1,\N,1590,US,US,single_country_normalized,has_observed_events,0,0,\N,\N,1,1,1,finance,0,\N,0,0,0,finance,mapped_from_existing_broad_classification,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,digital_ai,0,Kin Health,\N,1591,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,1,1,healthcare_biotech,0,\N,0,0,0,\N,unassigned_requires_business_review,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,digital_ai,0,Zyphra,\N,1592,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,0,1,foundation_models,0,\N,0,0,0,\N,unassigned_requires_business_review,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,physical_ai,0,Radar,\N,1593,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,0,1,robotic_components,0,\N,0,0,0,\N,unassigned_requires_business_review,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,digital_ai,0,Bunch,\N,1594,DE,DE,single_country_normalized,has_observed_events,0,0,\N,\N,1,1,1,finance,0,\N,0,0,0,finance,mapped_from_existing_broad_classification,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,digital_ai,0,Ocean,\N,1595,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,2,1,2,cybersecurity,0,\N,0,0,0,security,mapped_from_existing_broad_classification,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,physical_ai,0,Hellbender,\N,1596,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,1,1,robotic_components,0,\N,0,0,0,\N,unassigned_requires_business_review,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,digital_ai,0,Eisen,\N,1597,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,0,1,finance,0,\N,0,0,0,finance,mapped_from_existing_broad_classification,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,digital_ai,0,Socket,\N,1598,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,2,2,cybersecurity,0,\N,0,0,0,security,mapped_from_existing_broad_classification,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,digital_ai,0,Findd,\N,1599,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,0,1,general_applications,0,\N,0,0,0,\N,unassigned_requires_business_review,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,digital_ai,0,NanoCo,\N,1600,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,1,1,enterprise_agents,0,\N,0,0,0,\N,unassigned_requires_business_review,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,digital_ai,0,Stilta,\N,1601,SE,SE,single_country_normalized,has_observed_events,0,0,\N,\N,2,1,2,legal,0,\N,0,0,0,legal,mapped_from_existing_broad_classification,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,digital_ai,0,Tribal,\N,1602,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,1,1,enterprise_agents,0,\N,0,0,0,\N,unassigned_requires_business_review,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,digital_ai,0,Hark,\N,1603,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,4,2,4,foundation_models,0,\N,0,0,0,\N,unassigned_requires_business_review,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,digital_ai,0,Farther,\N,1604,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,1,1,finance,0,\N,0,0,0,finance,mapped_from_existing_broad_classification,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,digital_ai,0,Moment,\N,1605,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,1,1,finance,0,\N,0,0,0,finance,mapped_from_existing_broad_classification,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,digital_ai,0,Quartermaster,\N,1606,US,US,single_country_normalized,has_observed_events,0,0,\N,\N,2,1,2,general_applications,0,\N,0,0,0,\N,unassigned_requires_business_review,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,physical_ai,0,August Robotics,\N,1607,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,1,1,industrial_logistics_robotics,0,\N,0,0,0,\N,unassigned_requires_business_review,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,digital_ai,0,Arc,\N,1608,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,1,1,customer_support_voice,0,\N,0,0,0,service,mapped_from_existing_broad_classification,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,digital_ai,0,Catena Labs,\N,1609,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,1,2,finance,0,\N,0,0,0,finance,mapped_from_existing_broad_classification,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,digital_ai,0,NavigateAI,\N,1610,US,US,single_country_normalized,has_observed_events,0,0,\N,\N,1,1,1,general_applications,0,\N,0,0,0,\N,unassigned_requires_business_review,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,digital_ai,0,Perceptic,\N,1611,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,0,1,healthcare_biotech,0,\N,0,0,0,\N,unassigned_requires_business_review,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,digital_ai,0,LightTable,\N,1612,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,1,1,general_applications,0,\N,0,0,0,\N,unassigned_requires_business_review,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,digital_ai,0,Triomics,\N,1613,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,0,1,healthcare_biotech,0,\N,0,0,0,\N,unassigned_requires_business_review,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,digital_ai,0,Solstice,\N,1614,US,US,single_country_normalized,has_observed_events,0,0,\N,\N,1,1,1,sales_marketing,0,\N,0,0,0,\N,unassigned_requires_business_review,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,enabling_infrastructure,0,Tensormesh,\N,1615,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,0,1,inference_compute,0,\N,0,0,0,\N,unassigned_requires_business_review,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,digital_ai,0,RevEng.AI,\N,1616,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,1,1,cybersecurity,0,\N,0,0,0,security,mapped_from_existing_broad_classification,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,digital_ai,0,Vast,\N,1617,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,0,1,creative_media,0,\N,0,0,0,\N,unassigned_requires_business_review,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,enabling_infrastructure,0,XCena,\N,1618,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,2,2,2,interconnect_memory,0,\N,0,0,0,\N,unassigned_requires_business_review,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,digital_ai,0,Corgi,\N,1619,US,US,single_country_normalized,has_observed_events,0,0,2026-10-11,deal_found,3,2,3,finance,0,\N,0,0,0,finance,mapped_from_existing_broad_classification,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,digital_ai,0,Garner Health,\N,1620,US,US,single_country_normalized,has_observed_events,0,0,2026-10-11,deal_found,3,2,3,healthcare_biotech,0,\N,0,0,0,\N,unassigned_requires_business_review,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,digital_ai,0,Inherent,inherentlabs.ai,1621,UK,GB,country_unknown,has_observed_events,0,0,\N,\N,2,1,2,general_applications,0,\N,0,0,0,\N,unassigned_requires_business_review,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,digital_ai,0,Endra,\N,1622,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,1,1,enterprise_agents,0,\N,0,0,0,\N,unassigned_requires_business_review,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,digital_ai,0,Adaptive Innovations,\N,1623,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,1,1,healthcare_biotech,0,\N,0,0,0,\N,unassigned_requires_business_review,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,digital_ai,0,Findigs,\N,1624,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,1,1,general_applications,0,\N,0,0,0,\N,unassigned_requires_business_review,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,digital_ai,0,Lila Sciences,lila.ai,1625,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,2,4,healthcare_biotech,0,\N,0,0,0,\N,unassigned_requires_business_review,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,digital_ai,0,AlphaSense,\N,1626,US,US,single_country_normalized,has_observed_events,0,0,2026-10-11,deal_found,1,0,1,search_knowledge,0,\N,0,0,0,search,mapped_from_existing_broad_classification,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,digital_ai,0,Collate,\N,1627,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,2,2,data_training_evaluation,0,\N,0,0,0,\N,unassigned_requires_business_review,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,digital_ai,0,Honeycomb Insurance,\N,1628,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,0,1,finance,0,\N,0,0,0,finance,mapped_from_existing_broad_classification,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,digital_ai,0,Terra AI,\N,1629,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,0,1,general_applications,0,\N,0,0,0,\N,unassigned_requires_business_review,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,digital_ai,0,PointFive,\N,1630,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,2,2,developer_tools,0,\N,0,0,0,\N,unassigned_requires_business_review,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,digital_ai,0,Infinity Constellation,\N,1631,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,1,1,enterprise_agents,0,\N,0,0,0,\N,unassigned_requires_business_review,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,digital_ai,0,Stepful,\N,1632,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,2,2,education,0,\N,0,0,0,education,mapped_from_existing_broad_classification,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,digital_ai,0,Corca Research,\N,1633,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,1,1,foundation_models,0,\N,0,0,0,\N,unassigned_requires_business_review,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,digital_ai,0,Uncovr,\N,1634,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,1,1,healthcare_biotech,0,\N,0,0,0,\N,unassigned_requires_business_review,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,digital_ai,0,Respond.io,\N,1635,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,1,1,customer_support_voice,0,\N,0,0,0,service,mapped_from_existing_broad_classification,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,digital_ai,0,Arcade.dev,\N,1636,US,US,single_country_normalized,has_observed_events,0,0,\N,\N,1,1,1,developer_tools,0,\N,0,0,0,\N,unassigned_requires_business_review,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,digital_ai,0,Cortea,\N,1637,DE,DE,single_country_normalized,has_observed_events,0,0,\N,\N,1,1,1,finance,0,\N,0,0,0,finance,mapped_from_existing_broad_classification,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,digital_ai,0,Probably,\N,1638,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,1,1,data_training_evaluation,0,\N,0,0,0,\N,unassigned_requires_business_review,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,digital_ai,0,Copia Automation,copia.io,1639,US,US,single_country_normalized,has_observed_events,0,0,\N,\N,1,0,1,coding_agents,0,\N,0,0,0,coding,mapped_from_existing_broad_classification,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,digital_ai,0,Limitless Labs,\N,1640,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,1,1,developer_tools,0,\N,0,0,0,\N,unassigned_requires_business_review,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,digital_ai,0,Gero,\N,1641,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,1,1,healthcare_biotech,0,\N,0,0,0,\N,unassigned_requires_business_review,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,physical_ai,0,Odyssey,odyssey.ml,1642,United States,US,single_country_normalized,has_observed_events,0,0,\N,\N,1,0,2,robotics_foundation_models,1,needs_review,0,1,0,world-model,reviewed_public_business_scope,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,digital_ai,0,Genspark.ai,\N,1643,US,US,single_country_normalized,has_observed_events,0,0,\N,\N,1,1,1,enterprise_agents,0,\N,0,0,0,\N,unassigned_requires_business_review,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,digital_ai,0,Conduct,\N,1644,GB,GB,single_country_normalized,has_observed_events,0,0,\N,\N,1,1,1,enterprise_agents,0,\N,0,0,0,\N,unassigned_requires_business_review,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,digital_ai,0,Convey,\N,1645,US,US,single_country_normalized,has_observed_events,0,0,\N,\N,1,1,1,enterprise_agents,0,\N,0,0,0,\N,unassigned_requires_business_review,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,digital_ai,0,Pramaana Labs,\N,1646,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,0,1,data_training_evaluation,0,\N,0,0,0,\N,unassigned_requires_business_review,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,digital_ai,0,Gradial,\N,1647,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,2,2,sales_marketing,0,\N,0,0,0,\N,unassigned_requires_business_review,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,digital_ai,0,Prosper AI,\N,1648,US,US,single_country_normalized,has_observed_events,0,0,\N,\N,1,0,1,customer_support_voice,0,\N,0,0,0,service,mapped_from_existing_broad_classification,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,digital_ai,0,Isometric,\N,1649,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,1,1,finance,0,\N,0,0,0,finance,mapped_from_existing_broad_classification,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,digital_ai,0,Probook,\N,1650,US,US,single_country_normalized,has_observed_events,0,0,\N,\N,1,1,1,general_applications,0,\N,0,0,0,\N,unassigned_requires_business_review,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,digital_ai,0,Attention,\N,1651,US,US,single_country_normalized,has_observed_events,0,0,\N,\N,1,1,1,sales_marketing,0,\N,0,0,0,\N,unassigned_requires_business_review,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,digital_ai,0,Trase Systems,\N,1652,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,1,1,enterprise_agents,0,\N,0,0,0,\N,unassigned_requires_business_review,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,enabling_infrastructure,0,Sail Research,\N,1653,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,0,1,inference_compute,0,\N,0,0,0,\N,unassigned_requires_business_review,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,digital_ai,0,XCures,\N,1654,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,1,1,healthcare_biotech,0,\N,0,0,0,\N,unassigned_requires_business_review,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,digital_ai,0,Ornn,\N,1655,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,2,2,finance,0,\N,0,0,0,finance,mapped_from_existing_broad_classification,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,digital_ai,0,Coval,\N,1656,US,US,single_country_normalized,has_observed_events,0,0,\N,\N,1,1,1,data_training_evaluation,0,\N,0,0,0,\N,unassigned_requires_business_review,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,digital_ai,0,Seltz,\N,1657,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,1,1,search_knowledge,0,\N,0,0,0,search,mapped_from_existing_broad_classification,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,digital_ai,0,Straiker,\N,1658,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,1,2,cybersecurity,0,\N,0,0,0,security,mapped_from_existing_broad_classification,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,digital_ai,0,Warp,\N,1659,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,1,1,finance,0,\N,0,0,0,finance,mapped_from_existing_broad_classification,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,digital_ai,0,Pocket,heypocket.com,1660,US,US,single_country_normalized,has_observed_events,0,0,\N,\N,1,0,1,general_applications,0,\N,0,0,0,\N,unassigned_requires_business_review,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,digital_ai,0,Kotoba Technologies,\N,1661,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,1,1,customer_support_voice,0,\N,0,0,0,service,mapped_from_existing_broad_classification,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,digital_ai,0,Alan,\N,1662,FR,FR,single_country_normalized,has_observed_events,0,0,2026-10-11,deal_found,1,1,1,healthcare_biotech,0,\N,0,0,0,\N,unassigned_requires_business_review,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,digital_ai,0,Higgsfield AI,\N,1663,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,2,0,2,creative_media,0,\N,0,0,0,\N,unassigned_requires_business_review,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,digital_ai,0,Quantifind,\N,1664,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,2,1,2,finance,0,\N,0,0,0,finance,mapped_from_existing_broad_classification,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,digital_ai,0,Open Vision Engineering,\N,1665,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,2,1,2,general_applications,0,\N,0,0,0,\N,unassigned_requires_business_review,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,digital_ai,0,Baz Technologies,\N,1666,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,1,1,cybersecurity,0,\N,0,0,0,security,mapped_from_existing_broad_classification,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,enabling_infrastructure,0,Global Technical Realty,\N,1667,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,1,1,data_centers_power,0,\N,0,0,0,\N,unassigned_requires_business_review,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,enabling_infrastructure,0,Neurophos,\N,1668,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,1,1,ai_chips,0,\N,0,0,0,\N,unassigned_requires_business_review,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,digital_ai,0,Sakana AI,sakana.ai,1669,Japan,JP,single_country_normalized,has_observed_events,0,0,\N,\N,1,1,2,foundation_models,1,needs_review,0,1,0,labs,reviewed_public_business_scope,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,digital_ai,0,Daytona,\N,1670,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,1,1,developer_tools,0,\N,0,0,0,\N,unassigned_requires_business_review,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,physical_ai,0,ZaiNar,\N,1671,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,0,1,robotic_components,0,\N,0,0,0,\N,unassigned_requires_business_review,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,digital_ai,0,Encord,encord.com,1672,United States,US,single_country_normalized,has_observed_events,0,0,\N,\N,1,1,1,data_training_evaluation,1,needs_review,0,1,0,labeling,inherited_framework_classification,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,enabling_infrastructure,0,SiFive,\N,1673,US,US,single_country_normalized,has_observed_events,0,0,2026-10-11,deal_found,1,0,1,ai_chips,0,\N,0,0,0,\N,unassigned_requires_business_review,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,digital_ai,0,GitButler,\N,1674,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,1,1,developer_tools,0,\N,0,0,0,\N,unassigned_requires_business_review,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,digital_ai,0,Chapter,\N,1675,US,US,single_country_normalized,has_observed_events,0,0,2026-10-11,deal_found,1,1,1,finance,0,\N,0,0,0,finance,mapped_from_existing_broad_classification,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,digital_ai,0,Fleet,\N,1676,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,0,1,data_training_evaluation,0,\N,0,0,0,\N,unassigned_requires_business_review,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,digital_ai,0,Standard Intelligence,\N,1677,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,1,1,foundation_models,0,\N,0,0,0,\N,unassigned_requires_business_review,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,physical_ai,0,Dream Labs,\N,1678,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,0,1,robotics_foundation_models,0,\N,0,0,0,\N,unassigned_requires_business_review,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,physical_ai,0,One World AI,\N,1679,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,0,1,simulation_digital_twins,0,\N,0,0,0,\N,unassigned_requires_business_review,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,digital_ai,0,Sekai,\N,1680,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,2,1,2,creative_media,0,\N,0,0,0,\N,unassigned_requires_business_review,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,digital_ai,0,Observe,\N,1681,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,1,2,developer_tools,0,\N,0,0,0,\N,unassigned_requires_business_review,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,\N,0,Snowflake,\N,1682,\N,\N,country_unknown,not_checked,0,0,\N,\N,0,0,0,\N,0,\N,0,0,0,\N,unassigned_requires_business_review,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,physical_ai,0,Battle Road Digital,\N,1683,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,0,1,simulation_digital_twins,0,\N,0,0,0,\N,unassigned_requires_business_review,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,digital_ai,0,Human Native,\N,1684,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,0,1,data_training_evaluation,0,\N,0,0,0,\N,unassigned_requires_business_review,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,\N,0,Cloudflare,\N,1685,\N,\N,country_unknown,not_checked,0,0,\N,\N,0,0,0,\N,0,\N,0,0,0,\N,unassigned_requires_business_review,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,digital_ai,0,InfiniGrow,\N,1686,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,0,1,sales_marketing,0,\N,0,0,0,\N,unassigned_requires_business_review,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,\N,0,Amplitude,\N,1687,\N,\N,country_unknown,not_checked,0,0,\N,\N,0,0,0,\N,0,\N,0,0,0,\N,unassigned_requires_business_review,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,digital_ai,0,Hatch,\N,1688,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,0,1,customer_support_voice,0,\N,0,0,0,service,mapped_from_existing_broad_classification,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,\N,0,Yelp,\N,1689,\N,\N,country_unknown,not_checked,0,0,\N,\N,0,0,0,\N,0,\N,0,0,0,\N,unassigned_requires_business_review,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,digital_ai,0,Hume AI,hume.ai,1690,United States,US,single_country_normalized,has_observed_events,0,0,\N,\N,1,0,1,customer_support_voice,1,needs_review,0,1,0,audio,inherited_framework_classification,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,digital_ai,0,Common Sense Machines,\N,1691,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,0,1,creative_media,0,\N,0,0,0,\N,unassigned_requires_business_review,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,\N,0,Google,\N,1692,\N,\N,country_unknown,not_checked,0,0,\N,\N,0,0,0,\N,0,\N,0,0,0,\N,unassigned_requires_business_review,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,digital_ai,0,Hexus,\N,1693,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,0,1,creative_media,0,\N,0,0,0,\N,unassigned_requires_business_review,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,enabling_infrastructure,0,Koyeb,\N,1694,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,0,1,inference_compute,0,\N,0,0,0,\N,unassigned_requires_business_review,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,digital_ai,0,Vercept,\N,1695,United States,US,single_country_normalized,has_observed_events,0,0,\N,\N,2,0,2,enterprise_agents,0,\N,0,0,0,\N,unassigned_requires_business_review,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,digital_ai,0,Cavalry,\N,1696,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,0,1,creative_media,0,\N,0,0,0,\N,unassigned_requires_business_review,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,digital_ai,0,ProducerAI,\N,1697,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,0,1,creative_media,0,\N,0,0,0,\N,unassigned_requires_business_review,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,\N,0,Google Labs,\N,1698,\N,\N,country_unknown,not_checked,0,0,\N,\N,0,0,0,\N,0,\N,0,0,0,\N,unassigned_requires_business_review,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,digital_ai,0,Cal AI,\N,1699,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,0,1,healthcare_biotech,0,\N,0,0,0,\N,unassigned_requires_business_review,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,\N,0,MyFitnessPal,\N,1700,\N,\N,country_unknown,not_checked,0,0,\N,\N,0,0,0,\N,0,\N,0,0,0,\N,unassigned_requires_business_review,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,digital_ai,0,Moltbook,\N,1701,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,2,0,2,general_applications,0,\N,0,0,0,\N,unassigned_requires_business_review,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,digital_ai,0,Wiz,wiz.io,1702,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,0,2,cybersecurity,0,\N,0,0,0,security,mapped_from_existing_broad_classification,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,digital_ai,0,Forethought,\N,1703,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,0,1,customer_support_voice,0,\N,0,0,0,service,mapped_from_existing_broad_classification,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,\N,0,Zendesk,\N,1704,\N,\N,country_unknown,not_checked,0,0,\N,\N,0,0,0,\N,0,\N,0,0,0,\N,unassigned_requires_business_review,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,digital_ai,0,Confluent,confluent.io,1705,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,0,2,data_training_evaluation,0,\N,0,0,0,\N,unassigned_requires_business_review,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,physical_ai,0,IBM,www.ibm.com,1706,United States,US,single_country_normalized,no_event_found_in_sources_checked,0,0,2026-10-11,no_event_found_in_sources_checked,0,0,0,\N,1,needs_review,0,1,0,twin,inherited_framework_classification,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,digital_ai,0,Cove,\N,1707,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,0,1,enterprise_agents,0,\N,0,0,0,\N,unassigned_requires_business_review,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,physical_ai,0,Microsoft,azure.microsoft.com,1708,United States,US,single_country_normalized,related_deal_found,0,0,2026-10-11,related_deal_found,0,0,0,\N,1,needs_review,0,1,0,twin,inherited_framework_classification,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,digital_ai,0,Astral,\N,1709,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,0,1,developer_tools,0,\N,0,0,0,\N,unassigned_requires_business_review,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,digital_ai,0,TBPN,\N,1710,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,0,1,creative_media,0,\N,0,0,0,\N,unassigned_requires_business_review,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,digital_ai,0,Pronetx,\N,1711,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,0,1,customer_support_voice,0,\N,0,0,0,service,mapped_from_existing_broad_classification,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,\N,0,Caylent,\N,1712,\N,\N,country_unknown,not_checked,0,0,\N,\N,0,0,0,\N,0,\N,0,0,0,\N,unassigned_requires_business_review,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,digital_ai,0,Simtheory,\N,1713,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,0,1,enterprise_agents,0,\N,0,0,0,\N,unassigned_requires_business_review,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,digital_ai,0,Stainless,\N,1714,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,0,1,developer_tools,0,\N,0,0,0,\N,unassigned_requires_business_review,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,digital_ai,0,Fractional AI,\N,1715,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,0,1,enterprise_agents,0,\N,0,0,0,\N,unassigned_requires_business_review,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,\N,0,Anthropic and Blackstone joint venture,\N,1716,\N,\N,country_unknown,not_checked,0,0,\N,\N,0,0,0,\N,0,\N,0,0,0,\N,unassigned_requires_business_review,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,enabling_infrastructure,0,Tenstorrent,tenstorrent.com,1717,United States,US,single_country_normalized,has_observed_events,0,0,\N,\N,1,1,2,ai_chips,1,needs_review,0,1,0,dc-chip,inherited_framework_classification,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,\N,0,Qualcomm,\N,1718,\N,\N,country_unknown,not_checked,0,0,\N,\N,0,0,0,\N,0,\N,0,0,0,\N,unassigned_requires_business_review,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,digital_ai,0,Topaz Labs,\N,1719,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,0,1,creative_media,0,\N,0,0,0,\N,unassigned_requires_business_review,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,\N,0,Adobe,\N,1720,\N,\N,country_unknown,not_checked,0,0,\N,\N,0,0,0,\N,0,\N,0,0,0,\N,unassigned_requires_business_review,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,digital_ai,0,Deductive AI,\N,1721,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,0,1,developer_tools,0,\N,0,0,0,\N,unassigned_requires_business_review,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,\N,0,Elastic,\N,1722,\N,\N,country_unknown,not_checked,0,0,\N,\N,0,0,0,\N,0,\N,0,0,0,\N,unassigned_requires_business_review,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,digital_ai,0,Contentful,\N,1723,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,0,1,data_training_evaluation,0,\N,0,0,0,\N,unassigned_requires_business_review,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,enabling_infrastructure,0,Lightning AI,\N,1724,US,US,single_country_normalized,has_observed_events,0,0,2026-10-11,deal_found,1,0,1,training_compute,0,\N,0,0,0,training,mapped_from_existing_broad_classification,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,enabling_infrastructure,0,Rowan Digital Infrastructure,\N,1725,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,0,1,data_centers_power,0,\N,0,0,0,\N,unassigned_requires_business_review,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,digital_ai,0,Ledgebrook,\N,1726,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,2,1,2,finance,0,\N,0,0,0,finance,mapped_from_existing_broad_classification,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,digital_ai,0,General Medicine,\N,1727,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,1,1,healthcare_biotech,0,\N,0,0,0,\N,unassigned_requires_business_review,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,digital_ai,0,Hadrian (cybersecurity),hadrian.io,1728,Netherlands,NL,single_country_normalized,has_observed_events,0,0,\N,\N,2,1,2,cybersecurity,0,\N,0,0,0,security,mapped_from_existing_broad_classification,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,digital_ai,0,Healthleap,\N,1729,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,2,0,3,healthcare_biotech,0,\N,0,0,0,\N,unassigned_requires_business_review,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,digital_ai,0,Vesta,\N,1730,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,2,1,2,finance,0,\N,0,0,0,finance,mapped_from_existing_broad_classification,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,physical_ai,0,An unnamed stealth AI lab founded by Keyu Tian,\N,1731,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,1,1,robotics_foundation_models,0,\N,0,0,0,\N,unassigned_requires_business_review,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,digital_ai,0,Wally Health,\N,1732,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,1,1,healthcare_biotech,0,\N,0,0,0,\N,unassigned_requires_business_review,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,physical_ai,0,Vinci,\N,1733,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,2,1,2,simulation_digital_twins,0,\N,0,0,0,\N,unassigned_requires_business_review,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,enabling_infrastructure,0,Turba Labs,\N,1734,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,2,0,2,inference_compute,0,\N,0,0,0,\N,unassigned_requires_business_review,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,digital_ai,0,Vitalize,\N,1735,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,2,1,2,healthcare_biotech,0,\N,0,0,0,\N,unassigned_requires_business_review,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,digital_ai,0,Flai,\N,1736,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,2,1,2,enterprise_agents,0,\N,0,0,0,\N,unassigned_requires_business_review,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,digital_ai,0,WhiteLab Genomics,\N,1737,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,2,1,2,healthcare_biotech,0,\N,0,0,0,\N,unassigned_requires_business_review,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,digital_ai,0,Procuros,\N,1738,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,2,1,2,enterprise_agents,0,\N,0,0,0,\N,unassigned_requires_business_review,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,digital_ai,0,Siena,\N,1739,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,2,1,2,customer_support_voice,0,\N,0,0,0,service,mapped_from_existing_broad_classification,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,digital_ai,0,Avarra,\N,1740,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,2,1,3,sales_marketing,0,\N,0,0,0,\N,unassigned_requires_business_review,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,digital_ai,0,Valon,\N,1741,US,US,single_country_normalized,has_observed_events,0,0,2026-10-11,deal_found,2,1,2,finance,0,\N,0,0,0,finance,mapped_from_existing_broad_classification,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,digital_ai,0,Wiremind,\N,1742,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,1,1,general_applications,0,\N,0,0,0,\N,unassigned_requires_business_review,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,digital_ai,0,Pandektes,\N,1743,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,2,1,2,legal,0,\N,0,0,0,legal,mapped_from_existing_broad_classification,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,enabling_infrastructure,0,Volantis,\N,1744,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,2,1,2,interconnect_memory,0,\N,0,0,0,\N,unassigned_requires_business_review,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,digital_ai,0,Halluminate,\N,1745,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,2,1,2,data_training_evaluation,0,\N,0,0,0,\N,unassigned_requires_business_review,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,enabling_infrastructure,0,CScale,\N,1746,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,2,1,2,interconnect_memory,0,\N,0,0,0,\N,unassigned_requires_business_review,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,digital_ai,0,Miter,\N,1747,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,3,1,3,enterprise_agents,0,\N,0,0,0,\N,unassigned_requires_business_review,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,digital_ai,0,Restate,\N,1748,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,2,1,2,developer_tools,0,\N,0,0,0,\N,unassigned_requires_business_review,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,digital_ai,0,Kahua,\N,1749,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,0,1,enterprise_agents,0,\N,0,0,0,\N,unassigned_requires_business_review,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,digital_ai,0,ai3Bio,\N,1750,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,1,1,healthcare_biotech,0,\N,0,0,0,\N,unassigned_requires_business_review,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,physical_ai,0,Knowin,\N,1751,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,1,1,industrial_logistics_robotics,0,\N,0,0,0,\N,unassigned_requires_business_review,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,digital_ai,0,Precision Neuroscience,\N,1752,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,2,2,healthcare_biotech,0,\N,0,0,0,\N,unassigned_requires_business_review,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,digital_ai,0,BigHat Biosciences,\N,1753,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,2,1,2,healthcare_biotech,0,\N,0,0,0,\N,unassigned_requires_business_review,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,digital_ai,0,Basalt Health,\N,1754,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,1,1,healthcare_biotech,0,\N,0,0,0,\N,unassigned_requires_business_review,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,digital_ai,0,Trebellar,\N,1755,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,2,1,2,enterprise_agents,0,\N,0,0,0,\N,unassigned_requires_business_review,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,digital_ai,0,Axya,\N,1756,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,2,1,2,enterprise_agents,0,\N,0,0,0,\N,unassigned_requires_business_review,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,digital_ai,0,Enveda,\N,1757,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,2,2,4,healthcare_biotech,0,\N,0,0,0,\N,unassigned_requires_business_review,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,digital_ai,0,Numeral,\N,1758,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,2,2,3,finance,0,\N,0,0,0,finance,mapped_from_existing_broad_classification,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,digital_ai,0,UltraSight,\N,1759,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,2,1,2,healthcare_biotech,0,\N,0,0,0,\N,unassigned_requires_business_review,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,digital_ai,0,Confido,\N,1760,US,US,single_country_normalized,has_observed_events,0,0,\N,\N,1,1,1,enterprise_agents,0,\N,0,0,0,\N,unassigned_requires_business_review,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,digital_ai,0,Baselayer,\N,1761,US,US,single_country_normalized,has_observed_events,0,0,\N,\N,2,1,2,cybersecurity,0,\N,0,0,0,security,mapped_from_existing_broad_classification,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,digital_ai,0,CellPoint,\N,1762,UK,GB,single_country_normalized,has_observed_events,0,0,\N,\N,1,1,1,finance,0,\N,0,0,0,finance,mapped_from_existing_broad_classification,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,digital_ai,0,Biolevate,\N,1763,FR,FR,single_country_normalized,has_observed_events,0,0,\N,\N,2,1,2,healthcare_biotech,0,\N,0,0,0,\N,unassigned_requires_business_review,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,digital_ai,0,FintechOS,\N,1764,UK,GB,single_country_normalized,has_observed_events,0,0,\N,\N,1,0,1,finance,0,\N,0,0,0,finance,mapped_from_existing_broad_classification,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,physical_ai,0,GENISOM AI,\N,1765,CN,CN,single_country_normalized,has_observed_events,0,0,\N,\N,1,1,1,industrial_logistics_robotics,0,\N,0,0,0,\N,unassigned_requires_business_review,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,digital_ai,0,Spott,\N,1766,BE,BE,single_country_normalized,has_observed_events,0,0,\N,\N,2,1,2,enterprise_agents,0,\N,0,0,0,\N,unassigned_requires_business_review,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,digital_ai,0,Naive AI,\N,1767,CN,CN,single_country_normalized,has_observed_events,0,0,\N,\N,2,0,2,foundation_models,0,\N,0,0,0,\N,unassigned_requires_business_review,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,digital_ai,0,Mind,\N,1768,US,US,single_country_normalized,has_observed_events,0,0,\N,\N,0,1,1,cybersecurity,0,\N,0,0,0,security,mapped_from_existing_broad_classification,alias_of_company_1266
+ai-deals-coverage-e5302dcff6b1b4e58bc8,digital_ai,0,Raindrop,\N,1769,US,US,single_country_normalized,has_observed_events,0,0,\N,\N,3,1,3,enterprise_agents,0,\N,0,0,0,\N,unassigned_requires_business_review,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,digital_ai,0,Anew Labs,\N,1770,CN,CN,single_country_normalized,has_observed_events,0,0,\N,\N,2,1,2,healthcare_biotech,0,\N,0,0,0,\N,unassigned_requires_business_review,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,digital_ai,0,Arcee AI,\N,1771,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,1,1,foundation_models,0,\N,0,0,0,\N,unassigned_requires_business_review,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,enabling_infrastructure,0,Polaris Electro-Optics,\N,1772,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,1,1,interconnect_memory,0,\N,0,0,0,\N,unassigned_requires_business_review,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,digital_ai,0,BackOps,\N,1773,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,1,1,enterprise_agents,0,\N,0,0,0,\N,unassigned_requires_business_review,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,digital_ai,0,Loora,\N,1774,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,1,1,education,0,\N,0,0,0,education,mapped_from_existing_broad_classification,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,digital_ai,0,Veridion,\N,1775,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,2,1,2,data_training_evaluation,0,\N,0,0,0,\N,unassigned_requires_business_review,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,digital_ai,0,Rebuild,\N,1776,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,1,1,finance,0,\N,0,0,0,finance,mapped_from_existing_broad_classification,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,digital_ai,0,Complir,complir.io,1777,Denmark,DK,country_unknown,has_observed_events,0,0,\N,\N,1,1,2,enterprise_agents,0,\N,0,0,0,\N,unassigned_requires_business_review,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,digital_ai,0,Ferry Health,\N,1778,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,2,1,2,healthcare_biotech,0,\N,0,0,0,\N,unassigned_requires_business_review,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,enabling_infrastructure,0,Expanse,\N,1779,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,1,1,training_compute,0,\N,0,0,0,training,mapped_from_existing_broad_classification,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,digital_ai,0,Aristotle,\N,1780,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,0,1,education,0,\N,0,0,0,education,mapped_from_existing_broad_classification,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,digital_ai,0,Kairon Health,\N,1781,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,1,1,healthcare_biotech,0,\N,0,0,0,\N,unassigned_requires_business_review,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,digital_ai,0,Scaffold,\N,1782,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,1,1,enterprise_agents,0,\N,0,0,0,\N,unassigned_requires_business_review,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,enabling_infrastructure,0,Cornelis,\N,1783,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,2,0,2,interconnect_memory,0,\N,0,0,0,\N,unassigned_requires_business_review,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,digital_ai,0,Xapien,\N,1784,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,2,1,2,enterprise_agents,0,\N,0,0,0,\N,unassigned_requires_business_review,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,digital_ai,0,Archy,\N,1785,US,US,single_country_normalized,has_observed_events,0,0,\N,\N,2,2,3,healthcare_biotech,0,\N,0,0,0,\N,unassigned_requires_business_review,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,digital_ai,0,Arlequin AI,arlq.ai,1786,France,FR,country_unknown,has_observed_events,0,0,\N,\N,1,1,2,general_applications,0,\N,0,0,0,\N,unassigned_requires_business_review,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,digital_ai,0,Epsilon Health,\N,1787,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,0,1,healthcare_biotech,0,\N,0,0,0,\N,unassigned_requires_business_review,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,digital_ai,0,GenHealth.ai,\N,1788,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,1,1,healthcare_biotech,0,\N,0,0,0,\N,unassigned_requires_business_review,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,digital_ai,0,Buildcheck AI,\N,1789,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,1,1,enterprise_agents,0,\N,0,0,0,\N,unassigned_requires_business_review,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,digital_ai,0,Graph AI,\N,1790,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,2,2,healthcare_biotech,0,\N,0,0,0,\N,unassigned_requires_business_review,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,digital_ai,0,Intermezzo,\N,1791,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,1,1,finance,0,\N,0,0,0,finance,mapped_from_existing_broad_classification,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,digital_ai,0,Enigmata,\N,1792,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,1,1,cybersecurity,0,\N,0,0,0,security,mapped_from_existing_broad_classification,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,digital_ai,0,Savvy Wealth,\N,1793,\N,\N,country_unknown,has_observed_events,0,0,\N,\N,1,2,2,finance,0,\N,0,0,0,finance,mapped_from_existing_broad_classification,\N
+ai-deals-coverage-e5302dcff6b1b4e58bc8,digital_ai,0,Inspiren,\N,1794,US,US,single_country_normalized,has_observed_events,0,0,\N,\N,1,2,2,healthcare_biotech,0,\N,0,0,0,\N,unassigned_requires_business_review,\N

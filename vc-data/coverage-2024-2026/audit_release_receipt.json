@@ -1,0 +1,14 @@
+{
+  "snapshot_id": "ai-deals-coverage-e5302dcff6b1b4e58bc8",
+  "audited_previous_snapshot_id": "ai-deals-coverage-442701c0d55527e04f40",
+  "canonical_checks_passed": 595,
+  "public_export_checks_passed": 137,
+  "portable_checks_passed": 135,
+  "manifest_sha256": "3a816b4ba42aa90e44becf05a35ae4b3d03d1d08d993703d1e24d7b58cdf2687",
+  "database_sha256": "c2fa01637bcd542807d8fa6d68869efd6ebe4119dc2082757e9dbc9bf92b0b28",
+  "market_completeness_certified": false,
+  "trends_calculated": false,
+  "audit_findings": 67,
+  "new_retained_records": 58,
+  "explicit_duplicate_relationships_reconciled": 28
+}

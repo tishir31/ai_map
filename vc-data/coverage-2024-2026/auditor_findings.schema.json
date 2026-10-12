@@ -11,7 +11,9 @@
   "additionalProperties": false,
   "properties": {
     "snapshot_id": {
-      "const": "ai-vc-2026-0929ca943255500a9f5f"
+      "type": "string",
+      "pattern": "^ai-deals-coverage-[a-f0-9]{20}$",
+      "description": "Must equal the snapshot_id in manifest.json for the release being audited."
     },
     "findings": {
       "type": "array",
@@ -61,15 +63,14 @@
             "enum": [
               "day",
               "month",
+              "year",
+              "range",
               "unknown"
             ]
           },
           "date_basis": {
-            "enum": [
-              "source_explicit",
-              "publication_proxy",
-              "unknown"
-            ]
+            "type": "string",
+            "description": "Source timing convention; preserve publication proxies, retrospective disclosures and bounded intervals."
           },
           "closing_date": {
             "type": [
