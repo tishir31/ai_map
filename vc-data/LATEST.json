@@ -1,0 +1,11 @@
+{
+  "snapshot_id": "ai-deals-coverage-442701c0d55527e04f40",
+  "path": "coverage-2024-2026",
+  "manifest": "coverage-2024-2026/manifest.json",
+  "scope": {
+    "start": "2024-10-01",
+    "end_inclusive": "2026-10-11"
+  },
+  "research_status": "OPEN",
+  "no_trends_calculated": true
+}

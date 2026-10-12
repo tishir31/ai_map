@@ -1,0 +1,15 @@
+Audit this AI and Physical AI financing database for material omissions and factual errors. Do not analyze funding trends or recommend sectors.
+
+Read README.md, methodology.md, manifest.json, coverage_audit.json, source_sweeps.json and taxonomy_crosswalk.json. Load every JSON chunk through load_snapshot.py; a GitHub preview or first CSV part is not the full dataset. Always cite snapshot_id together with event_id/candidate_id.
+
+Audit BOTH October 2024-September 2025 and October 2025-September 2026, plus October 1-11, 2026. Check every subsector against original issuer/investor/counsel announcements and reputable financial or technology journalism. Identifiable journalist and issuer social posts are acceptable. The saved framework has 61 categories; the broader database taxonomy has 32 and finer classification remains incomplete.
+
+Prioritize deal recall, consistent periods and credible ballpark amounts. Do not spend time reconciling insignificant $35m/$38m variants or minor legal financing terms. Do investigate materially wrong currency, issuer, date/window, cumulative funding, valuation-as-funding, target-as-completed-financing and duplicate counting.
+
+Search events_all, observations_all, aliases, completion_reviews, completion_event_lineage, financing_episodes and discovery_review_queue before proposing an addition. A second closing or aggregate package is not automatically a new round. An unreviewed/held claim is not proof of another missing deal. Private or unavailable evidence is represented by opaque source ID/publisher/date; seek public corroboration where possible.
+
+For each proposed addition or correction give: company and issuer domain/identity; subsector and finer category if known; event type; original date or bounded date precision; current native amount/currency or undisclosed amount; current-versus-cumulative/package basis; original source URL(s); existing linked IDs or why no matching record exists; verified fields and remaining uncertainty. Distinguish corroborated transactions, leads needing corroboration, scope exclusions and unresolved boundaries.
+
+Check the cutoff of $10m raised OR $100m valuation only when evidence supports it. Unknown amount/valuation is not zero and is not automatically below the cutoff. Public-market and acquisition context is separate from private financing.
+
+Technical checks confirm data integrity, reconstruction and financial semantics; they do not certify completeness. Sources share original press releases and do not provide an independent denominator. Do not claim a completeness percentage from source overlap. Return evidence-backed findings and sector/period coverage gaps using the existing auditor_findings.schema.json where applicable. Preserve this published snapshot; submit proposed revisions separately.

@@ -1,0 +1,141 @@
+{
+  "snapshot_id": "ai-deals-coverage-442701c0d55527e04f40",
+  "research_status": "OPEN",
+  "market_completeness_certified": false,
+  "no_trends_calculated": true,
+  "candidate_records": 5565,
+  "curated_decisions": 4799,
+  "pending_claims": 766,
+  "pending_count_is_missing_deal_count": false,
+  "source_family_decisions": {
+    "gmi_debt_component": {
+      "candidates": 1,
+      "decisions": {
+        "accepted_with_limits": 1
+      }
+    },
+    "original_index": {
+      "candidates": 67,
+      "decisions": {
+        "accepted_with_limits": 12,
+        "duplicate_disclosure": 55
+      }
+    },
+    "robo2u": {
+      "candidates": 604,
+      "decisions": {
+        "accepted": 18,
+        "accepted_with_limits": 147,
+        "out_of_scope_public_market": 16,
+        "duplicate_reconciled": 6,
+        "cohort_or_award_context": 238,
+        "below_material_discovery_threshold": 106,
+        "scope_review_required": 1,
+        "needs_round_reconciliation": 13,
+        "not_completed_financing": 2,
+        "needs_access_or_corroboration": 19,
+        "duplicate_disclosure": 33,
+        "not_a_company_financing": 3,
+        "out_of_scope_secondary": 1,
+        "out_of_scope_non_dilutive_award": 1
+      }
+    },
+    "silverwood": {
+      "candidates": 763,
+      "decisions": {
+        "duplicate_disclosure": 214,
+        "awaiting_source_reconciliation": 410,
+        "accepted_with_limits": 88,
+        "needs_access_or_corroboration": 2,
+        "needs_round_reconciliation": 13,
+        "not_completed_financing": 2,
+        "accepted": 28,
+        "needs_timing_and_amount": 4,
+        "out_of_scope_period": 2
+      }
+    },
+    "tech_eu": {
+      "candidates": 609,
+      "decisions": {
+        "duplicate_disclosure": 87,
+        "accepted_with_limits": 149,
+        "awaiting_source_reconciliation": 356,
+        "accepted": 4,
+        "needs_round_reconciliation": 2,
+        "out_of_scope_public_market_financing": 4,
+        "needs_timing_and_amount": 1,
+        "scope_review_required": 2,
+        "needs_access_or_corroboration": 3,
+        "out_of_scope_non_dilutive_award": 1
+      }
+    },
+    "v39": {
+      "candidates": 226,
+      "decisions": {
+        "accepted": 193,
+        "accepted_with_limits": 30,
+        "not_completed_financing": 2,
+        "duplicate_disclosure": 1
+      }
+    },
+    "vca": {
+      "candidates": 3269,
+      "decisions": {
+        "accepted": 803,
+        "scope_review_required": 279,
+        "duplicate_disclosure": 127,
+        "needs_access_or_corroboration": 43,
+        "out_of_ai_scope": 31,
+        "out_of_scope_fund_vehicle": 60,
+        "accepted_with_limits": 1147,
+        "screened_no_issuer_ai_evidence": 752,
+        "needs_timing_and_amount": 1,
+        "needs_round_reconciliation": 2,
+        "needs_company_identity_corroboration": 2,
+        "not_a_company_financing": 21,
+        "out_of_scope_period": 1
+      }
+    },
+    "verified": {
+      "candidates": 26,
+      "decisions": {
+        "accepted": 10,
+        "accepted_with_limits": 15,
+        "duplicate_disclosure": 1
+      }
+    }
+  },
+  "source_scope_notes": [
+    {
+      "family": "VCA Online",
+      "url": "https://www.vcaonline.com/news/archive/2025/",
+      "scope": "2024, 2025 and 2026 archives, restricted to October 2024-October 11 2026; releases carried by this publisher, not all US financings. Syndication is correlated."
+    },
+    {
+      "family": "Tech.eu Funding Explorer",
+      "url": "https://funding.tech.eu/api-docs",
+      "scope": "AI-tagged records plus material broader funding cross-check and company product profiles; editorial tagging and publication timing can omit or delay deals.",
+      "license": "CC BY 4.0"
+    },
+    {
+      "family": "Robotics discovery indexes",
+      "url": "https://robo2u.com/",
+      "scope": "Original-source reconciliation of material robotics leads; cohorts, awards, IPOs and small/uncertain figures separated."
+    },
+    {
+      "family": "Silverwood Partners",
+      "url": "https://silverwoodpartners.com/insights/",
+      "scope": "Selected technology, healthcare and consumer weekly compilations from Q4 2024 through February 2026, with targeted original-source verification. Coverage is not continuous through the October update."
+    },
+    {
+      "family": "Original issuer and journalist cross-checks",
+      "scope": "Recovered prior framework records, US megaround originals and targeted gap/boundary searches; source links attached to individual records."
+    }
+  ],
+  "limits": [
+    "Source families overlap and are not independent market censuses.",
+    "Review counts include screening, exclusions and held claims, not only verified financings.",
+    "No commercial deal-level export was supplied.",
+    "Public coverage remains unmeasured beyond the documented corpus."
+  ]
+}

@@ -1,0 +1,608 @@
+{
+  "snapshot_id": "ai-deals-coverage-442701c0d55527e04f40",
+  "manifest_sha256": "f54f44ebdb8e0ff50348edc8c07c79444fa9f5e5e00e6ee985b013e2ce47d1b2",
+  "public_sqlite_sha256": "d9d6a92c13254a440cbcf0a7e85dae496874926acbf7871ccc620417c8608df5",
+  "datasets": 51,
+  "dataset_rows": 100572,
+  "data_files": 834,
+  "passed": 119,
+  "failed": 0,
+  "market_completeness_certified": false,
+  "checks": [
+    {
+      "check": "all_manifest_hashes_sizes_rows_and_snapshot_ids",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "all_data_chunks_within_declared_byte_limit",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "expanded_scope_exact",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "research_remains_open_and_no_trends",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "private_payload_columns_excluded",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "raw_private_candidate_table_excluded",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "no_private_mail_links_or_identifier_fields",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "no_local_private_workspace_paths",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "reconstructed_sqlite_integrity",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "reconstructed_metadata_manifest_hash",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "csv_value_and_null_parity:companies",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "sqlite_value_type_and_null_parity:companies",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "csv_value_and_null_parity:taxonomy",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "sqlite_value_type_and_null_parity:taxonomy",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "csv_value_and_null_parity:aliases",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "sqlite_value_type_and_null_parity:aliases",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "csv_value_and_null_parity:events_all",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "sqlite_value_type_and_null_parity:events_all",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "csv_value_and_null_parity:core_equity_all",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "sqlite_value_type_and_null_parity:core_equity_all",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "csv_value_and_null_parity:core_equity_display",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "sqlite_value_type_and_null_parity:core_equity_display",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "csv_value_and_null_parity:equity_round_announcements",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "sqlite_value_type_and_null_parity:equity_round_announcements",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "csv_value_and_null_parity:display_deals",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "sqlite_value_type_and_null_parity:display_deals",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "csv_value_and_null_parity:ma_all",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "sqlite_value_type_and_null_parity:ma_all",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "csv_value_and_null_parity:ma_announcements_2026",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "sqlite_value_type_and_null_parity:ma_announcements_2026",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "csv_value_and_null_parity:ma_closings_2026",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "sqlite_value_type_and_null_parity:ma_closings_2026",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "csv_value_and_null_parity:reviewed_deals",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "sqlite_value_type_and_null_parity:reviewed_deals",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "csv_value_and_null_parity:sources",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "sqlite_value_type_and_null_parity:sources",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "csv_value_and_null_parity:event_sources",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "sqlite_value_type_and_null_parity:event_sources",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "csv_value_and_null_parity:investors",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "sqlite_value_type_and_null_parity:investors",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "csv_value_and_null_parity:event_investors",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "sqlite_value_type_and_null_parity:event_investors",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "csv_value_and_null_parity:lifecycle_groups",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "sqlite_value_type_and_null_parity:lifecycle_groups",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "csv_value_and_null_parity:quality_flags",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "sqlite_value_type_and_null_parity:quality_flags",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "csv_value_and_null_parity:reviewed_event_relationships",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "sqlite_value_type_and_null_parity:reviewed_event_relationships",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "csv_value_and_null_parity:registry_records",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "sqlite_value_type_and_null_parity:registry_records",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "csv_value_and_null_parity:registry_sources",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "sqlite_value_type_and_null_parity:registry_sources",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "csv_value_and_null_parity:company_financial_snapshots",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "sqlite_value_type_and_null_parity:company_financial_snapshots",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "csv_value_and_null_parity:company_coverage",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "sqlite_value_type_and_null_parity:company_coverage",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "csv_value_and_null_parity:observations_all",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "sqlite_value_type_and_null_parity:observations_all",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "csv_value_and_null_parity:public_market_context_facts",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "sqlite_value_type_and_null_parity:public_market_context_facts",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "csv_value_and_null_parity:observation_reviews",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "sqlite_value_type_and_null_parity:observation_reviews",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "csv_value_and_null_parity:leads_all",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "sqlite_value_type_and_null_parity:leads_all",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "csv_value_and_null_parity:unresolved_leads",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "sqlite_value_type_and_null_parity:unresolved_leads",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "csv_value_and_null_parity:company_history_reviews",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "sqlite_value_type_and_null_parity:company_history_reviews",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "csv_value_and_null_parity:audited_country_assertions",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "sqlite_value_type_and_null_parity:audited_country_assertions",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "csv_value_and_null_parity:country_availability_metrics",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "sqlite_value_type_and_null_parity:country_availability_metrics",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "csv_value_and_null_parity:source_coverage",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "sqlite_value_type_and_null_parity:source_coverage",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "csv_value_and_null_parity:completion_counts",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "sqlite_value_type_and_null_parity:completion_counts",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "csv_value_and_null_parity:fx_rates",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "sqlite_value_type_and_null_parity:fx_rates",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "csv_value_and_null_parity:event_fx_conversions",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "sqlite_value_type_and_null_parity:event_fx_conversions",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "csv_value_and_null_parity:company_search_logs",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "sqlite_value_type_and_null_parity:company_search_logs",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "csv_value_and_null_parity:external_audit_response",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "sqlite_value_type_and_null_parity:external_audit_response",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "csv_value_and_null_parity:comparison_equity_announcements",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "sqlite_value_type_and_null_parity:comparison_equity_announcements",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "csv_value_and_null_parity:comparison_core_equity",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "sqlite_value_type_and_null_parity:comparison_core_equity",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "csv_value_and_null_parity:comparison_core_equity_cutoff",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "sqlite_value_type_and_null_parity:comparison_core_equity_cutoff",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "csv_value_and_null_parity:credible_financing_disclosures",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "sqlite_value_type_and_null_parity:credible_financing_disclosures",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "csv_value_and_null_parity:financing_episodes",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "sqlite_value_type_and_null_parity:financing_episodes",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "csv_value_and_null_parity:completion_periods",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "sqlite_value_type_and_null_parity:completion_periods",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "csv_value_and_null_parity:completion_event_lineage",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "sqlite_value_type_and_null_parity:completion_event_lineage",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "csv_value_and_null_parity:completion_round_components",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "sqlite_value_type_and_null_parity:completion_round_components",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "csv_value_and_null_parity:completion_financial_claims",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "sqlite_value_type_and_null_parity:completion_financial_claims",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "csv_value_and_null_parity:completion_canonical_normalizations",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "sqlite_value_type_and_null_parity:completion_canonical_normalizations",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "csv_value_and_null_parity:completion_duplicate_decisions",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "sqlite_value_type_and_null_parity:completion_duplicate_decisions",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "csv_value_and_null_parity:completion_company_classifications",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "sqlite_value_type_and_null_parity:completion_company_classifications",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "csv_value_and_null_parity:completion_reviews",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "sqlite_value_type_and_null_parity:completion_reviews",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "csv_value_and_null_parity:discovery_review_queue",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "sqlite_value_type_and_null_parity:discovery_review_queue",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "all_original_events_retained",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "all_original_observation_values_retained",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "episode_members_resolve_and_partition_disclosures",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "explicit_duplicates_absent_from_financing_views",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Tech_eu_license_attributed",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "loader_rejects_corrupted_file_hash",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "loader_rejects_manifest_path_escape",
+      "passed": true,
+      "detail": null
+    }
+  ]
+}

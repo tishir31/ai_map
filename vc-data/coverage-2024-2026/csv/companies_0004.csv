@@ -1,0 +1,752 @@
+snapshot_id,ai_scope,canonical_name,company_domain,company_id,country,country_iso2,metadata_validation,primary_subsector
+ai-deals-coverage-442701c0d55527e04f40,enabling_infrastructure,Gretel,gretel.ai,2295,United States,US,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,enabling_infrastructure,Hailo,hailo.ai,2296,Israel,IL,Research registry; country and classification may remain provisional.,ai_chips
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Haiper,haiper.ai,2297,United Kingdom,GB,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,enabling_infrastructure,Harmonic Drive,www.harmonicdrive.net,2298,Japan / United States,\N,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Harvest CROO Robotics,harvestcroo.com,2299,United States,US,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Haskoning (Lanner WITNESS),www.lanner.com,2300,Netherlands / United Kingdom,\N,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,HBK (VI-grade),www.vi-grade.com,2301,Germany,DE,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,HeartFlow,www.heartflow.com,2302,United States,US,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,"Heat Transfer Research, Inc. (HTRI)",www.htri.net,2303,United States,US,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Hebbia,hebbia.ai,2304,United States,US,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,enabling_infrastructure,Hesai Technology,www.hesaitech.com,2305,China,CN,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Hexagon Autonomy & Positioning,hexagon.com,2306,Canada / Sweden,\N,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Hexagon Manufacturing Intelligence,hexagon.com,2307,Sweden / United Kingdom,\N,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Hexagon Mining,hexagon.com,2308,Sweden / United States,\N,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,HeyGen,heygen.com,2309,United States,US,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Hillbot,www.hillbot.ai,2310,United States / Singapore,\N,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,HireEZ,hireez.com,2311,United States,US,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Honeywell,process.honeywell.com,2312,United States,US,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,HP SitePrint,www.hp.com,2313,Spain / United States,\N,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Huada Empyrean,www.empyrean-tech.com,2314,China,CN,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Hugging Face LeRobot,huggingface.co,2315,France / United States,\N,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,enabling_infrastructure,Humanloop,humanloop.com,2316,United Kingdom,GB,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Husqvarna Automower,www.husqvarna.com,2317,Sweden,SE,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Hydroid,tsd.huntingtoningalls.com,2318,United States,US,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,enabling_infrastructure,Hyperbolic,hyperbolic.xyz,2319,United States,US,Research registry; country and classification may remain provisional.,neocloud_gpu_capacity
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Hyphen,usehyphen.com,2320,United States,US,Research registry; country and classification may remain provisional.,consumer_service_robotics
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,ICON (NONMEM),www.iconplc.com,2321,Ireland,IE,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,IDEA StatiCa,www.ideastatica.com,2322,Czech Republic,CZ,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Ideogram,ideogram.ai,2323,Canada,CA,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,enabling_infrastructure,igus robotics,www.igus.com,2324,Germany,DE,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Ike,www.nuro.ai,2325,United States,US,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,INCONTROL Simulation Solutions,www.incontrolsim.com,2326,Netherlands,NL,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Inflection AI,inflection.ai,2327,United States,US,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,enabling_infrastructure,Innoviz Technologies,innoviz.tech,2328,Israel,IL,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,InOrbit,www.inorbit.ai,2329,United States,US,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Inprocess Technology and Consulting Group,www.inprocessgroup.com,2330,Spain,ES,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Insilico Medicine,insilico.com,2331,Hong Kong / United States,\N,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,InSilicoTrials,insilicotrials.com,2332,Italy / United States,\N,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,InSimo,www.insimo.com,2333,France,FR,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Integrated Engineering Software,www.integratedsoft.com,2334,Canada,CA,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Integrated Environmental Solutions (IES),www.iesve.com,2335,United Kingdom,GB,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Intelligen,www.intelligen.com,2336,United States,US,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Intrinsic,www.intrinsic.ai,2337,United States,US,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Intrinsic (Alphabet),www.intrinsic.ai,2338,United States,US,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Intuitive Surgical,www.intuitive.com,2339,United States,US,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Invert Robotics,www.invertrobotics.com,2340,New Zealand / Ireland,\N,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,enabling_infrastructure,Invisible Technologies,invisible.co,2341,United States,US,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,IPG Automotive,www.ipg-automotive.com,2342,Germany,DE,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Iron Ox,ironox.com,2343,United States,US,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Itasca Consulting Group,itascasoftware.com,2344,United States,US,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Jacobs (Flood Modeller),www.floodmodeller.com,2345,United States / United Kingdom,\N,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Jasper,jasper.ai,2346,United States,US,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,JITX,jitx.com,2347,United States,US,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,John Deere Autonomous Solutions,www.deere.com,2348,United States,US,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Johnson & Johnson MedTech Robotics,www.jnjmedtech.com,2349,United States,US,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Kassow Robots,www.kassowrobots.com,2350,Denmark,DK,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Kawasaki Robotics,kawasakirobotics.com,2351,Japan,JP,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Keenon Robotics,www.keenon.com,2352,China,CN,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Kepler Exploration Robot,www.gotokepler.com,2353,China,CN,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Kevala,kevala.com,2354,United States,US,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Key Ward,keyward.io,2355,Germany,DE,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,enabling_infrastructure,Kinara,www.nxp.com,2356,United States,US,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Kinaxis,www.kinaxis.com,2357,Canada,CA,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Kindred,www.ocadogroup.com,2358,United States,US,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Kittl,kittl.com,2359,Germany,DE,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Kiwibot,www.kiwibot.com,2360,United States / Colombia,\N,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,KNAPP,www.knapp.com,2361,Austria,AT,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,enabling_infrastructure,Kneron,www.kneron.com,2362,United States / Taiwan,\N,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Knightscope,www.knightscope.com,2363,United States,US,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Komatsu FrontRunner,www.komatsu.com,2364,Japan,JP,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Kongsberg Discovery,www.kongsberg.com,2365,Norway,NO,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Kratos Defense & Security Solutions,www.kratosdefense.com,2366,United States,US,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Kubota Smart Agriculture,www.kubota.com,2367,Japan,JP,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,KUKA (Visual Components),www.visualcomponents.com,2368,Germany / Finland,\N,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Ladybug Tools,www.ladybug.tools,2369,United States,US,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Laerdal Medical,laerdal.com,2370,Norway,NO,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,enabling_infrastructure,Lakera,lakera.ai,2371,Switzerland,CH,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Lam Research,www.coventor.com,2372,United States,US,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Lambda Research Corporation,lambdares.com,2373,United States,US,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,LambdaSim,lambdasim.ai,2374,United States,US,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,enabling_infrastructure,LanceDB,lancedb.com,2375,United States,US,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,enabling_infrastructure,LangChain,langchain.com,2376,United States,US,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Latent Labs,latentlabs.com,2377,United Kingdom,GB,Research registry; country and classification may remain provisional.,healthcare_biotech
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,LeddarTech,leddartech.com,2378,Canada,CA,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Lhasa Limited,www.lhasalimited.org,2379,United Kingdom,GB,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Lifeward,golifeward.com,2380,Israel / United States,\N,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,enabling_infrastructure,Lightmatter,lightmatter.co,2381,United States,US,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,LightTrans International,www.lighttrans.com,2382,Germany,DE,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Lindy,lindy.ai,2383,United States,US,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,LionsBot,www.lionsbot.com,2384,Singapore,SG,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Liquid AI,liquid.ai,2385,United States,US,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Livox,www.livoxtech.com,2386,China,CN,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,LlamaIndex,llamaindex.ai,2387,United States,US,Research registry; country and classification may remain provisional.,developer_tools
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Locomation,locomation.ai,2388,United States,US,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Logivations,www.logivations.com,2389,Germany,DE,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Luma AI,lumalabs.ai,2390,United States,US,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Luminance,luminance.com,2391,United Kingdom,GB,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,enabling_infrastructure,Luminar Technologies,www.luminartech.com,2392,United States,US,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Luminary Cloud,luminarycloud.com,2393,United States,US,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,M-Star Simulations,mstarcfd.com,2394,United States,US,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,machineering,www.machineering.com,2395,Germany,DE,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Magic,magic.dev,2396,United States,US,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,MAGMA,www.magmasoft.com,2397,Germany,DE,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Makr Shakr,www.makrshakr.com,2398,Italy,IT,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Mammotion,mammotion.com,2399,China,CN,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Manitoba Hydro International,www.pscad.com,2400,Canada,CA,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Maplesoft,www.maplesoft.com,2401,Canada,CA,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Marine AI,www.marineai.co.uk,2402,United Kingdom,GB,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Mat3ra,mat3ra.com,2403,United States,US,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,MatCalc Engineering,www.matcalc-engineering.com,2404,Austria,AT,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Materialise,www.materialise.com,2405,Belgium,BE,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Materials Design,www.materialsdesign.com,2406,United States,US,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Math2Market,www.math2market.com,2407,Germany,DE,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,MathWorks,www.mathworks.com,2408,United States,US,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,enabling_infrastructure,maxon,www.maxongroup.com,2409,Switzerland,CH,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Medical-X,medical-x.com,2410,Netherlands,NL,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Medra,www.medra.ai,2411,United States,US,Research registry; country and classification may remain provisional.,medical_robotics
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Medtronic Surgical Robotics,www.medtronic.com,2412,Ireland / United States,\N,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,enabling_infrastructure,MemryX,memryx.com,2413,United States,US,Research registry; country and classification may remain provisional.,ai_chips
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Mendaera,www.mendaera.com,2414,United States,US,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Mentice,www.mentice.com,2415,Sweden,SE,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Merlin Labs,www.merlinlabs.com,2416,United States,US,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Meta FAIR Embodied AI,ai.meta.com,2417,United States,US,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Metso,www.metso.com,2418,Finland,FI,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Mevea,mevea.com,2419,Finland,FI,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Microsoft AirSim,github.com,2420,United States,US,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,MIDAS IT,www.midasuser.com,2421,South Korea,KR,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Midjourney,midjourney.com,2422,United States,US,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Milrem Robotics,milremrobotics.com,2423,Estonia,EE,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Minitab (SIMUL8),www.simul8.com,2424,United States / United Kingdom,\N,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Mitsubishi Electric Robotics,www.mitsubishielectric.com,2425,Japan,JP,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Modelon,modelon.com,2426,Sweden,SE,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Molecular Discovery,www.moldiscovery.com,2427,United Kingdom / Italy,\N,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Moley Robotics,moley.com,2428,United Kingdom,GB,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Molsoft,www.molsoft.com,2429,United States,US,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Moon Surgical,www.moonsurgical.com,2430,France / United States,\N,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,MORAI,www.morai.ai,2431,South Korea,KR,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Moveworks,moveworks.com,2432,United States,US,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,MuJoCo,mujoco.org,2433,United States,US,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Murf AI,murf.ai,2434,United States,US,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Myomo,myomo.com,2435,United States,US,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Nabla,nabla.com,2436,France,FR,Research registry; country and classification may remain provisional.,healthcare_biotech
+ai-deals-coverage-442701c0d55527e04f40,enabling_infrastructure,Nabtesco Precision Equipment,precision.nabtesco.com,2437,Japan,JP,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Nala Robotics,nalarobotics.com,2438,United States,US,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Navier AI,navier.ai,2439,United States,US,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Near Earth Autonomy,www.nearearth.aero,2440,United States,US,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Nemetschek Group,www.nemetschek.com,2441,Germany,DE,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,NEPLAN,www.neplan.ch,2442,Switzerland,CH,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Neubility,www.neubility.co.kr,2443,South Korea,KR,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Neural Concept,neuralconcept.com,2444,Switzerland,CH,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Neural Physics,www.neuralphysics.ai,2445,United States,US,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,enabling_infrastructure,NeuReality,neureality.ai,2446,Israel,IL,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Nexobot,nexobot.com.au,2447,Australia,AU,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Noah Medical,www.noahmed.com,2448,United States,US,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Noble Machines,www.noblemachines.ai,2449,United States,US,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,NobleAI,www.noble.ai,2450,United States,US,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,enabling_infrastructure,Noma Security,noma.security,2451,United States,US,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Notion,notion.so,2452,United States,US,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Novadiscovery,www.novadiscovery.com,2453,France,FR,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Novarm (DipTrace),diptrace.com,2454,Ukraine,UA,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,nTop,ntop.com,2455,United States,US,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,enabling_infrastructure,Numem,numem.com,2456,United States,US,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Numeric,numeric.io,2457,United States,US,Research registry; country and classification may remain provisional.,finance
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,NVIDIA Cosmos,www.nvidia.com,2458,United States,US,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,enabling_infrastructure,NVIDIA Jetson,www.nvidia.com,2459,United States,US,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,NVIDIA Omniverse,www.nvidia.com,2460,United States,US,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,NVIDIA Physical AI Platform,www.nvidia.com,2461,United States,US,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,enabling_infrastructure,NXP eIQ and i.MX,www.nxp.com,2462,Netherlands,NL,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,o9 Solutions,o9solutions.com,2463,United States,US,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Observe.AI,observe.ai,2464,United States,US,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Ocado Technology,www.ocadogroup.com,2465,United Kingdom,GB,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Ocean Infinity,oceaninfinity.com,2466,United Kingdom,GB,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,enabling_infrastructure,OctoAI,octo.ai,2467,United States,US,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Okibo,okibo.com,2468,Israel,IL,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,OLI Systems,www.olisystems.com,2469,United States,US,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Oliasoft,www.oliasoft.com,2470,Norway,NO,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,OMRON Robotics,automation.omron.com,2471,Japan,JP,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,enabling_infrastructure,OnRobot,onrobot.com,2472,Denmark,DK,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,OnSpec Robotics,robotics.eddyfi.com,2473,Canada,CA,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,OPAL-RT Technologies,www.opal-rt.com,2474,Canada,CA,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Open Source Robotics Alliance,osralliance.org,2475,Global,\N,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Opentrons,opentrons.com,2476,United States,US,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,enabling_infrastructure,Opsys Tech,opsys-tech.com,2477,Israel,IL,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Optibrium,optibrium.com,2478,United Kingdom,GB,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Optiwave Systems,optiwave.com,2479,Canada,CA,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Orca AI,www.orca-ai.io,2480,Israel / United Kingdom,\N,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Orchard Robotics,www.orchard-robotics.com,2481,United States,US,Research registry; country and classification may remain provisional.,agricultural_robotics
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,OSARO,osaro.com,2482,United States,US,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Osso VR,www.ossovr.com,2483,United States,US,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Otter.ai,otter.ai,2484,United States,US,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Ottopia,ottopia.tech,2485,Israel,IL,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,enabling_infrastructure,Ouster,ouster.com,2486,United States,US,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Paradox,paradox.ai,2487,United States,US,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Parallel Domain,paralleldomain.com,2488,United States,US,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Paxton,paxton.ai,2489,United States,US,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Percepto,percepto.co,2490,Israel / United States,\N,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Perceptron AI,perceptron.inc,2491,United States,US,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Petroleum Experts,www.petex.com,2492,United Kingdom,GB,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Phantom Auto,phantom.auto,2493,United States,US,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Photon Design,www.photond.com,2494,United Kingdom,GB,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Photon Engineering,photonengr.com,2495,United States,US,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Photoroom,photoroom.com,2496,France,FR,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Physiomics,www.physiomics.co.uk,2497,United Kingdom,GB,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,enabling_infrastructure,Piab,www.piab.com,2498,Sweden,SE,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Pickle Robot,www.picklerobot.com,2499,United States,US,Research registry; country and classification may remain provisional.,industrial_logistics_robotics
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Picnic Works,picnicworks.com,2500,United States,US,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Pika,pika.art,2501,United States,US,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,enabling_infrastructure,Pinecone,pinecone.io,2502,United States,US,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Pitch Technologies,pitchtechnologies.com,2503,Sweden,SE,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,PlanOpSim,planopsim.com,2504,Belgium,BE,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,PlayAI,play.ai,2505,United States,US,Research registry; country and classification may remain provisional.,customer_support_voice
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Plexim,www.plexim.com,2506,Switzerland,CH,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Plus One Robotics,www.plusonerobotics.com,2507,United States,US,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Point One Navigation,pointonenav.com,2508,United States,US,Research registry; country and classification may remain provisional.,robotic_components
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Polymath Robotics,www.polymathrobotics.com,2509,United States,US,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,PowerWorld Corporation,www.powerworld.com,2510,United States,US,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,PrecisionOS,www.precisionostech.com,2511,Canada,CA,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,enabling_infrastructure,Predibase,predibase.com,2512,United States,US,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Primarius Technologies,www.primarius-tech.com,2513,China,CN,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,PROCEPT BioRobotics,www.procept-biorobotics.com,2514,United States,US,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,enabling_infrastructure,Prolific,prolific.com,2515,United Kingdom,GB,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,ProModel,www.promodel.com,2516,United States,US,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,enabling_infrastructure,Protect AI,protectai.com,2517,United States,US,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Q-Chem,www.q-chem.com,2518,United States,US,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,enabling_infrastructure,qbrobotics,qbrobotics.com,2519,Italy,IT,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,enabling_infrastructure,Qualcomm Dragonwing Robotics,www.qualcomm.com,2520,United States,US,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,QuantumBio,www.quantumbioinc.com,2521,United States,US,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Qubit Pharmaceuticals,www.qubit-pharmaceuticals.com,2522,France,FR,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,QuesTek Innovations,www.questek.com,2523,United States,US,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Radical AI,www.radical-ai.com,2524,United States,US,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Rainbow Robotics,www.rainbow-robotics.com,2525,South Korea,KR,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Raise Robotics,www.raiserobotics.com,2526,United States,US,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Raven Industries,www.ravenind.com,2527,United States,US,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Read AI,read.ai,2528,United States,US,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,READY Robotics,ready-robotics.com,2529,United States,US,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Real-Time Innovations,www.rti.com,2530,United States,US,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Realis Simulation,realis-simulation.com,2531,United Kingdom,GB,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Realtime Robotics,rtr.ai,2532,United States,US,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Red Cat / Teal Drones,redcat.red,2533,United States,US,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Refraction AI,refraction.ai,2534,United States,US,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Relay Robotics,relayrobotics.com,2535,United States,US,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Relevance AI,relevanceai.com,2536,Australia,AU,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,RELEX Solutions,www.relexsolutions.com,2537,Finland,FI,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Remcom,www.remcom.com,2538,United States,US,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Rendered.ai,rendered.ai,2539,United States,US,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Renesas Electronics (Altium),www.altium.com,2540,Japan / United States,\N,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,enabling_infrastructure,Replicate,replicate.com,2541,United States,US,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Rescale,rescale.com,2542,United States,US,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Resemble AI,resemble.ai,2543,United States,US,Research registry; country and classification may remain provisional.,cybersecurity
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Revalize (PIPE-FLO),revalizesoftware.com,2544,United States,US,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,rFpro,rfpro.com,2545,United Kingdom,GB,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,RGo Robotics,rgo-robotics.ai,2546,Israel / United States,\N,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Richtech Robotics,www.richtechrobotics.com,2547,United States,US,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Robin AI,robinai.com,2548,United Kingdom,GB,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,enabling_infrastructure,RoboSense,www.robosense.ai,2549,China,CN,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Robotics Plus,www.roboticsplus.co.nz,2550,New Zealand,NZ,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,enabling_infrastructure,Robotiq,robotiq.com,2551,Canada,CA,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Robotis,www.robotis.us,2552,South Korea,KR,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Roboto AI,www.roboto.ai,2553,United States,US,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Rock Flow Dynamics,rfdyn.com,2554,United Kingdom,GB,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Rockwell Automation,www.rockwellautomation.com,2555,United States,US,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,RTDS Technologies,www.rtds.com,2556,Canada,CA,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Rugged Robotics,www.ruggedrobotics.com,2557,United States,US,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Saab Seaeye,www.saabseaeye.com,2558,United Kingdom / Sweden,\N,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,SafeAI,www.safeai.ai,2559,United States,US,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Saildrone,www.saildrone.com,2560,United States,US,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Sama,www.sama.com,2561,United States / Kenya,\N,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,enabling_infrastructure,San Francisco Compute,sfcompute.com,2562,US,US,Research registry; country and classification may remain provisional.,neocloud_gpu_capacity
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Sana,sanalabs.com,2563,Sweden,SE,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Sanctuary AI,www.sanctuary.ai,2564,Canada,CA,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,SandboxAQ,www.sandboxaq.com,2565,United States,US,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Sandvik (Deswik),www.deswik.com,2566,Sweden / Australia,\N,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Sandvik AutoMine,www.rocktechnology.sandvik,2567,Sweden,SE,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,enabling_infrastructure,Scale AI,scale.com,2568,United States,US,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,enabling_infrastructure,Scantinel Photonics,scantinel.com,2569,Germany,DE,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,enabling_infrastructure,Schmalz,www.schmalz.com,2570,Germany,DE,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Schneider Electric (AVEVA / ETAP),www.aveva.com,2571,France,FR,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Schrödinger,www.schrodinger.com,2572,United States,US,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,enabling_infrastructure,SCHUNK,schunk.com,2573,Germany,DE,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Scientific Forming Technologies Corporation,www.deform.com,2574,United States,US,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Secondmind,www.secondmind.ai,2575,United Kingdom,GB,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Sedaro,www.sedaro.com,2576,United States,US,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Seneca,seneca.com,2577,United States,US,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Sensmetry,sensmetry.com,2578,United Kingdom / Lithuania,\N,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Sente Software,www.sentesoftware.co.uk,2579,United Kingdom,GB,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Sevensense Robotics,new.abb.com,2580,Switzerland,CH,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,enabling_infrastructure,Seyond,www.seyond.com,2581,China / United States,\N,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,enabling_infrastructure,Shadow Robot Company,www.shadowrobot.com,2582,United Kingdom,GB,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Shapr3D,shapr3d.com,2583,Hungary,HU,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Siemens,www.sw.siemens.com,2584,Germany,DE,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Siemens Digital Industries Software,www.sw.siemens.com,2585,Germany / United States,\N,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Sight Machine,sightmachine.com,2586,United States,US,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,SIGMA Engineering,www.sigmasoft.de,2587,Germany,DE,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,enabling_infrastructure,SiLC Technologies,silc.com,2588,United States,US,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Silvaco,silvaco.com,2589,United States,US,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Sim&Cure,sim-and-cure.com,2590,France,FR,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Simberian,www.simberian.com,2591,United States,US,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,SIMetrix Technologies,www.simetrix.co.uk,2592,United Kingdom,GB,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Simphotek,simphotek.com,2593,United States,US,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,SimPlan,www.simplan.de,2594,Germany,DE,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Simr,simr.com,2595,United States,US,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Simreka,simreka.com,2596,Germany,DE,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,SimScale,www.simscale.com,2597,Germany,DE,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Simthetiq,simthetiq.com,2598,Canada,CA,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Simudyne,simudyne.com,2599,United Kingdom,GB,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Simulab,simulab.com,2600,United States,US,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Simulations Plus,www.simulations-plus.com,2601,United States,US,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Simurghy,simurghy.com,2602,Netherlands,NL,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,SimX,www.simxvr.com,2603,United States,US,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,SkyCiv,skyciv.com,2604,Australia / United States,\N,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Skyline Robotics,www.skylinerobotics.com,2605,Israel / United States,\N,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Slingshot Aerospace,www.slingshotaerospace.com,2606,United States,US,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Small Robot Company,www.smallrobotcompany.com,2607,United Kingdom,GB,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,enabling_infrastructure,SMC Corporation,www.smcworld.com,2608,Japan,JP,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Smith+Nephew CORI,www.smith-nephew.com,2609,United Kingdom,GB,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Snke (Snke Xplore),www.snke.com,2610,Germany,DE,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,SOFiSTiK,www.sofistik.com,2611,Germany,DE,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,enabling_infrastructure,Soft Robotics / Oxipital AI,www.oxipital.ai,2612,United States,US,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,SoftInWay,www.softinway.com,2613,United States,US,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Software for Chemistry & Materials (SCM),www.scm.com,2614,Netherlands,NL,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Sogeclair (OKTAL / Sydac),www.sogeclair.com,2615,France,FR,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,SolarCleano,solarcleano.com,2616,Luxembourg,LU,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Solinftec,solinftec.com,2617,Brazil / United States,\N,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Sonnet Software,www.sonnetsoftware.com,2618,United States,US,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Sourcegraph,sourcegraph.com,2619,United States,US,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Speak,speak.com,2620,United States,US,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Speechmatics,speechmatics.com,2621,United Kingdom,GB,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Speedgoat,www.speedgoat.com,2622,Switzerland,CH,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Spyce,www.sweetgreen.com,2623,United States,US,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,ST Engineering (MAK Technologies),www.mak.com,2624,United States / Singapore,\N,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,StackBlitz,stackblitz.com,2625,United States,US,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,StruSoft,strusoft.com,2626,Sweden,SE,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Stryker Mako,www.stryker.com,2627,United States,US,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Suki,suki.ai,2628,United States,US,Research registry; country and classification may remain provisional.,healthcare_biotech
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,SuperAnnotate,superannotate.com,2629,United States,US,Research registry; country and classification may remain provisional.,data_training_evaluation
+ai-deals-coverage-442701c0d55527e04f40,enabling_infrastructure,Surge AI,surgehq.ai,2630,United States,US,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Surgical Science,surgicalscience.com,2631,Sweden,SE,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Surgical Theater,surgicaltheater.com,2632,United States,US,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,SwarmFarm Robotics,www.swarmfarm.com,2633,Australia,AU,Research registry; country and classification may remain provisional.,agricultural_robotics
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Swift Navigation,www.swiftnav.com,2634,United States,US,Research registry; country and classification may remain provisional.,robotic_components
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Synapticon,www.synapticon.com,2635,Germany,DE,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Synopsys (including Ansys),www.synopsys.com,2636,United States,US,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,enabling_infrastructure,SynSense,www.synsense.ai,2637,Switzerland / China,\N,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Synthesis AI,synthesis.ai,2638,United States,US,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,enabling_infrastructure,Synthesized,synthesized.io,2639,United Kingdom,GB,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,enabling_infrastructure,Syntiant,www.syntiant.com,2640,United States,US,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,enabling_infrastructure,SynTouch,www.syntouchinc.com,2641,United States,US,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Take The Wind (Body Interact),bodyinteract.com,2642,Portugal,PT,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Taurob,www.taurob.com,2643,Austria,AT,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Techman Robot,www.tm-robot.com,2644,Taiwan,TW,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Teledyne Marine,www.teledynemarine.com,2645,United States,US,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Teleo,www.teleo.ai,2646,United States,US,Research registry; country and classification may remain provisional.,industrial_logistics_robotics
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Tensorfield Agriculture,www.tensorfield.ag,2647,United States,US,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Tesla Autonomous Driving,www.tesla.com,2648,United States,US,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Tesla Optimus,www.tesla.com,2649,United States,US,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,enabling_infrastructure,Tesollo,tesollo.com,2650,South Korea,KR,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Tevel Aerobotics Technologies,www.tevel-tech.com,2651,Israel,IL,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,enabling_infrastructure,Texas Instruments TDA4,www.ti.com,2652,United States,US,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Textron (TRU Simulation + Training),www.trusimulation.com,2653,United States,US,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,TGW Logistics,www.tgw-group.com,2654,Austria,AT,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,ThayerMahan,www.thayermahan.com,2655,United States,US,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,The AnyLogic Company,www.anylogic.com,2656,United States,US,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,The Bot Company,www.bot.co,2657,United States,US,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Thermo-Calc Software,thermocalc.com,2658,Sweden,SE,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Theseus,www.theseus.us,2659,United States,US,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Third Wave Automation,thirdwave.ai,2660,United States,US,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Toggle Robotics,www.toggle.is,2661,United States,US,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Toloka,toloka.ai,2662,United States,US,Research registry; country and classification may remain provisional.,data_training_evaluation
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Tomorrow Things,www.tomorrowthings.com,2663,Germany,DE,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,enabling_infrastructure,Tonic AI,tonic.ai,2664,United States,US,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Tortuga AgTech,www.tortuga-agtech.com,2665,United States,US,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,TotalCAE,www.totalcae.com,2666,United States,US,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,enabling_infrastructure,Touchlab,touchlab.io,2667,United Kingdom,GB,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Toyota Research Institute,www.tri.global,2668,United States / Japan,\N,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Tractian,tractian.com,2669,United States,US,Research registry; country and classification may remain provisional.,general_applications
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Transvalor,www.transvalor.com,2670,France,FR,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,TrianGraphics,www.triangraphics.de,2671,Germany,DE,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Trimble,www.trimble.com,2672,United States,US,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,enabling_infrastructure,TruEra,truera.com,2673,United States,US,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Truewind,truewind.ai,2674,United States,US,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Turing,turing.com,2675,United States,US,Research registry; country and classification may remain provisional.,data_training_evaluation
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,TuSimple / CreateAI,www.createai.com,2676,China / United States,\N,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Tutor Intelligence,tutorintelligence.com,2677,United States,US,Research registry; country and classification may remain provisional.,industrial_logistics_robotics
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,twinzo,www.twinzo.eu,2678,Slovakia,SK,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Typhoon HIL,www.typhoon-hil.com,2679,Switzerland / United States,\N,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,UberCloud,www.theubercloud.com,2680,Germany / United States,\N,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Uhnder,uhnder.com,2681,United States,US,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,UL Solutions (HOMER Energy),www.homerenergy.com,2682,United States,US,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Unifly,www.unifly.aero,2683,Belgium,BE,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Unity Industry,unity.com,2684,United States,US,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Unity Software,unity.com,2685,United States,US,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Univista,www.univista-isg.com,2686,China,CN,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Unlearn,www.unlearn.ai,2687,United States,US,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,enabling_infrastructure,Unsloth,unsloth.ai,2688,United States,US,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Uptake,uptake.com,2689,United States,US,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,UptimeAI,uptimeai.com,2690,United States,US,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,URBX,urbx.com,2691,United States,US,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,enabling_infrastructure,V7,v7labs.com,2692,United Kingdom,GB,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Vanderlande,www.vanderlande.com,2693,Netherlands,NL,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,VASP Software,www.vasp.at,2694,Austria,AT,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Vayyar,vayyar.com,2695,Israel,IL,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,enabling_infrastructure,Vectara,vectara.com,2696,United States,US,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Vector Informatik,www.vector.com,2697,Germany,DE,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Velodyne Lidar,investors.ouster.com,2698,United States,US,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,VeriSIM Life,www.verisimlife.com,2699,United States,US,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Verobotics,www.verobotics.com,2700,Israel,IL,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Viam,www.viam.com,2701,United States,US,Research registry; country and classification may remain provisional.,developer_tools
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Vic.ai,vic.ai,2702,United States,US,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Vicarious Surgical,www.vicarioussurgical.com,2703,United States,US,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,VirtaMed,www.virtamed.com,2704,Switzerland,CH,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Virtonomy,www.virtonomy.io,2705,Germany,DE,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Voxel51,voxel51.com,2706,United States,US,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,enabling_infrastructure,Voyant Photonics,voyantphotonics.com,2707,United States,US,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Waabi World Simulator,waabi.ai,2708,Canada / United States,\N,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Wavefunction,www.wavefun.com,2709,United States,US,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Wayve GAIA,wayve.ai,2710,United Kingdom,GB,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,enabling_infrastructure,Weights & Biases,wandb.ai,2711,United States,US,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Weir Group (Micromine),www.micromine.com,2712,United Kingdom / Australia,\N,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,enabling_infrastructure,WEISS Robotics,weiss-robotics.com,2713,Germany,DE,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,WestDev (Pulsonix),pulsonix.com,2714,United Kingdom,GB,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Whitson,whitson.com,2715,Norway,NO,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,enabling_infrastructure,WhyLabs,whylabs.ai,2716,United States,US,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Wind River,www.windriver.com,2717,United States,US,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Windsurf,windsurf.com,2718,United States,US,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,WIPL-D,wipl-d.com,2719,Serbia,RS,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Wolfram Research,www.wolfram.com,2720,United States,US,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Wonik Robotics,www.wonikrobotics.com,2721,South Korea,KR,Research registry; country and classification may remain provisional.,robotic_components
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Writer,writer.com,2722,United States,US,Research registry; country and classification may remain provisional.,enterprise_agents
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,X-EPIC,www.x-epic.com,2723,China,CN,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Xaira Therapeutics,xaira.com,2724,United States,US,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,XMPro,xmpro.com,2725,United States / Australia,\N,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Xpeedic,www.xpeedic.com,2726,China,CN,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,XtalPi,www.xtalpi.com,2727,China / United States,\N,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Xwing,ir.jobyaviation.com,2728,United States,US,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,XYZ Robotics,www.xyzrobotics.com,2729,United States / China,\N,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Yarbo,www.yarbo.com,2730,China / United States,\N,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Yaskawa Motoman,www.motoman.com,2731,Japan,JP,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Yokogawa Electric (KBC),www.kbc.global,2732,Japan / United Kingdom,\N,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,You.com,you.com,2733,United States,US,Research registry; country and classification may remain provisional.,search_knowledge
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Zace Services (ZSOIL),www.zsoil.com,2734,Switzerland,CH,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Zendar,www.zendar.io,2735,United States,US,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,enabling_infrastructure,ZenML,zenml.io,2736,Germany,DE,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Zeromatter,zeromatter.com,2737,United States,US,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,enabling_infrastructure,Zilliz,zilliz.com,2738,United States,US,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Zimmer Biomet ROSA,www.zimmerbiomet.com,2739,United States,US,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,enabling_infrastructure,Zimmer Group,www.zimmer-group.com,2740,Germany,DE,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Zoo,zoo.dev,2741,United States,US,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Zuken,www.zuken.com,2742,Japan,JP,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Zurich MedTech,zmt.swiss,2743,Switzerland,CH,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,enabling_infrastructure,WEKA,www.weka.io,2744,United States,US,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Nettle,\N,2745,\N,\N,Research registry; country and classification may remain provisional.,finance
+ai-deals-coverage-442701c0d55527e04f40,enabling_infrastructure,Namespace,\N,2746,\N,\N,Research registry; country and classification may remain provisional.,developer_tools
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Senso,\N,2747,\N,\N,Research registry; country and classification may remain provisional.,data_training_evaluation
+ai-deals-coverage-442701c0d55527e04f40,\N,Zeta Global,\N,2748,\N,\N,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Vizby,\N,2749,\N,\N,Research registry; country and classification may remain provisional.,sales_marketing
+ai-deals-coverage-442701c0d55527e04f40,\N,Swap Commerce,\N,2750,\N,\N,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Flowie,\N,2751,\N,\N,Research registry; country and classification may remain provisional.,finance
+ai-deals-coverage-442701c0d55527e04f40,\N,Sovos,\N,2752,\N,\N,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Sudo AI (Shanghai Sudo Technology),\N,2753,\N,\N,Research registry; country and classification may remain provisional.,humanoid_robotics
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Ultravox,\N,2754,\N,\N,Research registry; country and classification may remain provisional.,customer_support_voice
+ai-deals-coverage-442701c0d55527e04f40,\N,Inworld,\N,2755,\N,\N,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Parakeet Health,\N,2756,\N,\N,Research registry; country and classification may remain provisional.,healthcare_biotech
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,DoubleO.ai,\N,2757,\N,\N,Research registry; country and classification may remain provisional.,sales_marketing
+ai-deals-coverage-442701c0d55527e04f40,\N,ZoomInfo,\N,2758,\N,\N,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,enabling_infrastructure,Satlyt,\N,2759,\N,\N,Research registry; country and classification may remain provisional.,data_centers_power
+ai-deals-coverage-442701c0d55527e04f40,enabling_infrastructure,CScale (fka CSpeed),\N,2760,\N,\N,Research registry; country and classification may remain provisional.,interconnect_memory
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Atta,\N,2761,\N,\N,Research registry; country and classification may remain provisional.,data_training_evaluation
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Marble,\N,2762,\N,\N,Research registry; country and classification may remain provisional.,finance
+ai-deals-coverage-442701c0d55527e04f40,\N,Mitratech,\N,2763,\N,\N,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Soul Machines,\N,2764,\N,\N,Research registry; country and classification may remain provisional.,customer_support_voice
+ai-deals-coverage-442701c0d55527e04f40,\N,AppDirect,\N,2765,\N,\N,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Rilo,\N,2766,\N,\N,Research registry; country and classification may remain provisional.,sales_marketing
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,50skills,\N,2767,\N,\N,Research registry; country and classification may remain provisional.,enterprise_agents
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Pilgrim,\N,2768,\N,\N,Research registry; country and classification may remain provisional.,general_applications
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Ryax Technologies,\N,2769,France,FR,Research registry; country and classification may remain provisional.,developer_tools
+ai-deals-coverage-442701c0d55527e04f40,\N,Nutanix,\N,2770,\N,\N,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Noxtua,\N,2771,\N,\N,Research registry; country and classification may remain provisional.,legal
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,mika,\N,2772,\N,\N,Research registry; country and classification may remain provisional.,finance
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,BCI-Sonics (Huachao Shenkong),\N,2773,China,CN,Research registry; country and classification may remain provisional.,healthcare_biotech
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,AI Hospitality Group,\N,2774,\N,\N,Research registry; country and classification may remain provisional.,general_applications
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Benford,\N,2775,\N,\N,Research registry; country and classification may remain provisional.,finance
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Zuma,\N,2776,United States,US,Research registry; country and classification may remain provisional.,enterprise_agents
+ai-deals-coverage-442701c0d55527e04f40,\N,Venn,\N,2777,\N,\N,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Feldera,\N,2778,\N,\N,Research registry; country and classification may remain provisional.,developer_tools
+ai-deals-coverage-442701c0d55527e04f40,\N,Microchip Technology,\N,2779,\N,\N,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Moir,\N,2780,\N,\N,Research registry; country and classification may remain provisional.,cybersecurity
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Kastle,\N,2781,\N,\N,Research registry; country and classification may remain provisional.,finance
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Metris Energy,\N,2782,\N,\N,Research registry; country and classification may remain provisional.,general_applications
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Shutu Technology,\N,2783,China,CN,Research registry; country and classification may remain provisional.,robotic_components
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Haize Labs,\N,2784,\N,\N,Research registry; country and classification may remain provisional.,data_training_evaluation
+ai-deals-coverage-442701c0d55527e04f40,\N,Beacon,\N,2785,\N,\N,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,stealth-mode AI security startup,\N,2786,\N,\N,Research registry; country and classification may remain provisional.,cybersecurity
+ai-deals-coverage-442701c0d55527e04f40,\N,eSentire,\N,2787,\N,\N,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Hello Haven,\N,2788,\N,\N,Research registry; country and classification may remain provisional.,general_applications
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Mantic,\N,2789,\N,\N,Research registry; country and classification may remain provisional.,general_applications
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Flam,\N,2790,\N,\N,Research registry; country and classification may remain provisional.,creative_media
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,BoomerangHR,\N,2791,\N,\N,Research registry; country and classification may remain provisional.,general_applications
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,VerifAIX,\N,2792,\N,\N,Research registry; country and classification may remain provisional.,data_training_evaluation
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Facilo,\N,2793,Japan,JP,Research registry; country and classification may remain provisional.,enterprise_agents
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Adaptive,\N,2794,\N,\N,Research registry; country and classification may remain provisional.,coding_agents
+ai-deals-coverage-442701c0d55527e04f40,enabling_infrastructure,Tusk IC,\N,2795,\N,\N,Research registry; country and classification may remain provisional.,ai_chips
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,syte,\N,2796,\N,\N,Research registry; country and classification may remain provisional.,general_applications
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Creem,\N,2797,\N,\N,Research registry; country and classification may remain provisional.,finance
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Health Force,\N,2798,\N,\N,Research registry; country and classification may remain provisional.,healthcare_biotech
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Rapta,\N,2799,\N,\N,Research registry; country and classification may remain provisional.,industrial_logistics_robotics
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Motive,\N,2800,\N,\N,Research registry; country and classification may remain provisional.,general_applications
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Hello Robotaxi,\N,2801,China,CN,Research registry; country and classification may remain provisional.,autonomous_vehicles
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Stilla.ai,\N,2802,\N,\N,Research registry; country and classification may remain provisional.,sales_marketing
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,LLMonade,\N,2803,\N,\N,Research registry; country and classification may remain provisional.,sales_marketing
+ai-deals-coverage-442701c0d55527e04f40,\N,xSeek,\N,2804,\N,\N,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Newwave Tech Foundry,\N,2805,Cambodia,KH,Research registry; country and classification may remain provisional.,general_applications
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,CloudNC,\N,2806,\N,\N,Research registry; country and classification may remain provisional.,industrial_logistics_robotics
+ai-deals-coverage-442701c0d55527e04f40,enabling_infrastructure,Zankore,\N,2807,\N,\N,Research registry; country and classification may remain provisional.,inference_compute
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,UrgentIQ,\N,2808,\N,\N,Research registry; country and classification may remain provisional.,general_applications
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Prime Minute,\N,2809,\N,\N,Research registry; country and classification may remain provisional.,general_applications
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Thri5,\N,2810,\N,\N,Research registry; country and classification may remain provisional.,general_applications
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Rhinovate (Dingxi Zhichuang),\N,2811,\N,\N,Research registry; country and classification may remain provisional.,general_applications
+ai-deals-coverage-442701c0d55527e04f40,enabling_infrastructure,Stack Infrastructure (APAC portfolio),\N,2812,\N,\N,Research registry; country and classification may remain provisional.,data_centers_power
+ai-deals-coverage-442701c0d55527e04f40,\N,AI Infrastructure Partnership and IFM Investors,\N,2813,\N,\N,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Robotics and AI Institute,\N,2814,\N,\N,Research registry; country and classification may remain provisional.,robotics_foundation_models
+ai-deals-coverage-442701c0d55527e04f40,\N,SoftBank Group,\N,2815,\N,\N,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Velou,\N,2816,\N,\N,Research registry; country and classification may remain provisional.,search_knowledge
+ai-deals-coverage-442701c0d55527e04f40,\N,Algolia,\N,2817,\N,\N,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Torch Systems,\N,2818,\N,\N,Research registry; country and classification may remain provisional.,general_applications
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Cleavr,\N,2819,\N,\N,Research registry; country and classification may remain provisional.,general_applications
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,calliora,\N,2820,\N,\N,Research registry; country and classification may remain provisional.,healthcare_biotech
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Netsec,\N,2821,\N,\N,Research registry; country and classification may remain provisional.,cybersecurity
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Cori Clinical,\N,2822,\N,\N,Research registry; country and classification may remain provisional.,healthcare_biotech
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Desible.ai,\N,2823,\N,\N,Research registry; country and classification may remain provisional.,finance
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Boost.ai,\N,2824,\N,\N,Research registry; country and classification may remain provisional.,customer_support_voice
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Monid,\N,2825,\N,\N,Research registry; country and classification may remain provisional.,general_applications
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Santé,\N,2826,\N,\N,Research registry; country and classification may remain provisional.,enterprise_agents
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Rein Security,\N,2827,\N,\N,Research registry; country and classification may remain provisional.,cybersecurity
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Verso,\N,2828,\N,\N,Research registry; country and classification may remain provisional.,sales_marketing
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Persona,\N,2829,\N,\N,Research registry; country and classification may remain provisional.,general_applications
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Augment Code (select assets),\N,2830,\N,\N,Research registry; country and classification may remain provisional.,coding_agents
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Harness,\N,2831,\N,\N,Research registry; country and classification may remain provisional.,developer_tools
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Hone,\N,2832,\N,\N,Research registry; country and classification may remain provisional.,enterprise_agents
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Klarent,\N,2833,\N,\N,Research registry; country and classification may remain provisional.,developer_tools
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Gudea,\N,2834,\N,\N,Research registry; country and classification may remain provisional.,sales_marketing
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Besso,\N,2835,\N,\N,Research registry; country and classification may remain provisional.,enterprise_agents
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Sabi,\N,2836,\N,\N,Research registry; country and classification may remain provisional.,general_applications
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Ethiqly,\N,2837,\N,\N,Research registry; country and classification may remain provisional.,education
+ai-deals-coverage-442701c0d55527e04f40,\N,Carnegie Learning,\N,2838,\N,\N,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,OllyGarden,\N,2839,\N,\N,Research registry; country and classification may remain provisional.,developer_tools
+ai-deals-coverage-442701c0d55527e04f40,enabling_infrastructure,KONST,\N,2840,\N,\N,Research registry; country and classification may remain provisional.,data_centers_power
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,PlannerPal,\N,2841,\N,\N,Research registry; country and classification may remain provisional.,finance
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Infino AI,\N,2842,\N,\N,Research registry; country and classification may remain provisional.,search_knowledge
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Danu Robotics,\N,2843,\N,\N,Research registry; country and classification may remain provisional.,industrial_logistics_robotics
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Aiera,\N,2844,\N,\N,Research registry; country and classification may remain provisional.,finance
+ai-deals-coverage-442701c0d55527e04f40,\N,BlueMatrix,\N,2845,\N,\N,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Blackford Analysis,\N,2846,\N,\N,Research registry; country and classification may remain provisional.,healthcare_biotech
+ai-deals-coverage-442701c0d55527e04f40,\N,Sopris Capital,\N,2847,\N,\N,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Strata,\N,2848,\N,\N,Research registry; country and classification may remain provisional.,sales_marketing
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Mentlio,\N,2849,\N,\N,Research registry; country and classification may remain provisional.,coding_agents
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Move AI,\N,2850,\N,\N,Research registry; country and classification may remain provisional.,creative_media
+ai-deals-coverage-442701c0d55527e04f40,\N,Oxford Metrics (Vicon),\N,2851,\N,\N,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Meticulous,\N,2852,\N,\N,Research registry; country and classification may remain provisional.,developer_tools
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Peppermint,\N,2853,\N,\N,Research registry; country and classification may remain provisional.,finance
+ai-deals-coverage-442701c0d55527e04f40,\N,Marvell,\N,2854,\N,\N,Research registry; country and classification may remain provisional.,\N
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Medical Microinstruments,mmimicro.com,2855,United States,US,Research registry; country and classification may remain provisional.,medical_robotics
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Halter,halterhq.com,2856,New Zealand,NZ,Research registry; country and classification may remain provisional.,agricultural_robotics
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Genesis AI (genesis-ai.com),genesis-ai.com,2857,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,robotics_foundation_models
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Cognition (cognition.ai),cognition.ai,2858,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,coding_agents
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Nimble Robotics,\N,2859,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,industrial_logistics_robotics
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Path Robotics,\N,2860,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,industrial_logistics_robotics
+ai-deals-coverage-442701c0d55527e04f40,enabling_infrastructure,Runware,runware.ai,2861,UK,GB,Identity reconciled to cited financial disclosure; headquarters not inferred.,inference_compute
+ai-deals-coverage-442701c0d55527e04f40,enabling_infrastructure,Oriole Networks,\N,2862,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,interconnect_memory
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,paretos,paretos.com,2863,Germany,DE,Identity reconciled to cited financial disclosure; headquarters not inferred.,general_applications
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Vara,varahealthcare.com,2864,Germany,DE,Identity reconciled to cited financial disclosure; headquarters not inferred.,general_applications
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Plato,platoapp.ai,2865,Germany,DE,Identity reconciled to cited financial disclosure; headquarters not inferred.,enterprise_agents
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Slip Robotics,\N,2866,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,industrial_logistics_robotics
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Bioptimus,\N,2867,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,healthcare_biotech
+ai-deals-coverage-442701c0d55527e04f40,enabling_infrastructure,nexos.ai,nexos.ai,2868,Lithuania,LT,Identity reconciled to cited financial disclosure; headquarters not inferred.,inference_compute
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Nobi,nobi.life,2869,Belgium,BE,Identity reconciled to cited financial disclosure; headquarters not inferred.,healthcare_biotech
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,indigo.ai,indigo.ai,2870,Italy,IT,Identity reconciled to cited financial disclosure; headquarters not inferred.,customer_support_voice
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Spore.Bio,spore.bio,2871,France,FR,Identity reconciled to cited financial disclosure; headquarters not inferred.,healthcare_biotech
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Allen Control Systems,\N,2872,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,drones_defense
+ai-deals-coverage-442701c0d55527e04f40,enabling_infrastructure,cartagon.ai,\N,2873,Spain,ES,Identity reconciled to cited financial disclosure; headquarters not inferred.,neocloud_gpu_capacity
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,TurinTech,turintech.ai,2874,UK,GB,Identity reconciled to cited financial disclosure; headquarters not inferred.,coding_agents
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Rerun,rerun.io,2875,Sweden,SE,Identity reconciled to cited financial disclosure; headquarters not inferred.,developer_tools
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Parallel,beparallel.com,2876,France,FR,Identity reconciled to cited financial disclosure; headquarters not inferred.,healthcare_biotech
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,pyannoteAI,pyannote.ai,2877,France,FR,Identity reconciled to cited financial disclosure; headquarters not inferred.,customer_support_voice
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Solve Intelligence,solveintelligence.com,2878,UK,GB,Identity reconciled to cited financial disclosure; headquarters not inferred.,legal
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Rulemapping Group,rulemapping.com,2879,Germany,DE,Identity reconciled to cited financial disclosure; headquarters not inferred.,legal
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,CX2,\N,2880,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,drones_defense
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Recraft,recraft.ai,2881,UK,GB,Identity reconciled to cited financial disclosure; headquarters not inferred.,creative_media
+ai-deals-coverage-442701c0d55527e04f40,enabling_infrastructure,Doubleword,doubleword.ai,2882,UK,GB,Identity reconciled to cited financial disclosure; headquarters not inferred.,inference_compute
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Veesion,veesion.io,2883,France,FR,Identity reconciled to cited financial disclosure; headquarters not inferred.,robotic_components
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,SpAItial,spaitial.ai,2884,UK,GB,Identity reconciled to cited financial disclosure; headquarters not inferred.,robotics_foundation_models
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Beewise,\N,2885,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,agricultural_robotics
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,ForSight Robotics,\N,2886,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,medical_robotics
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Raphe mPhibr,\N,2887,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,drones_defense
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Shinkei Systems,\N,2888,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,agricultural_robotics
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Tacta Systems,\N,2889,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,robotic_components
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Unitree,\N,2890,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,humanoid_robotics
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Treefera,treefera.com,2891,UK,GB,Identity reconciled to cited financial disclosure; headquarters not inferred.,general_applications
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Jua,jua.ai,2892,Switzerland,CH,Identity reconciled to cited financial disclosure; headquarters not inferred.,general_applications
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Skyral,skyral.com,2893,UK,GB,Identity reconciled to cited financial disclosure; headquarters not inferred.,simulation_digital_twins
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,4AG Robotics,\N,2894,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,agricultural_robotics
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Gradient Labs,gradient-labs.ai,2895,UK,GB,Identity reconciled to cited financial disclosure; headquarters not inferred.,enterprise_agents
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Aiphoria,aiphoria.ai,2896,Cyprus,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,customer_support_voice
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Tzafon,tzafon.ai,2897,Sweden,SE,Identity reconciled to cited financial disclosure; headquarters not inferred.,enterprise_agents
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Archestra,archestra.ai,2898,UK,GB,Identity reconciled to cited financial disclosure; headquarters not inferred.,enterprise_agents
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Ronovo Surgical,\N,2899,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,medical_robotics
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,TetherIA,\N,2900,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,robotic_components
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Charm Therapeutics,charmtx.com,2901,UK,GB,Identity reconciled to cited financial disclosure; headquarters not inferred.,healthcare_biotech
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,DRUID,druidai.com,2902,Romania,RO,Identity reconciled to cited financial disclosure; headquarters not inferred.,enterprise_agents
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Mimica,mimica.ai,2903,UK,GB,Identity reconciled to cited financial disclosure; headquarters not inferred.,enterprise_agents
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,StratifAI,stratifai.com,2904,Germany,DE,Identity reconciled to cited financial disclosure; headquarters not inferred.,healthcare_biotech
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Dexory,\N,2905,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,industrial_logistics_robotics
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Tihive,tihive.com,2906,France,FR,Identity reconciled to cited financial disclosure; headquarters not inferred.,robotic_components
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Resistant AI,resistant.ai,2907,Czech Republic,CZ,Identity reconciled to cited financial disclosure; headquarters not inferred.,cybersecurity
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Riff,riff.new,2908,Norway,NO,Identity reconciled to cited financial disclosure; headquarters not inferred.,coding_agents
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Aeva Technologies,\N,2909,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,robotic_components
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,CHAOS Industries,\N,2910,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,drones_defense
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Linkerbot,\N,2911,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,robotic_components
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Neros,\N,2912,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,drones_defense
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Teradar,\N,2913,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,robotic_components
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Aily Labs,ailylabs.com,2914,Germany,DE,Identity reconciled to cited financial disclosure; headquarters not inferred.,enterprise_agents
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Valliance,valliance.ai,2915,UK,GB,Identity reconciled to cited financial disclosure; headquarters not inferred.,general_applications
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Cerrion,cerrion.com,2916,Switzerland,CH,Identity reconciled to cited financial disclosure; headquarters not inferred.,industrial_logistics_robotics
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Procure AI,procure.ai,2917,UK,GB,Identity reconciled to cited financial disclosure; headquarters not inferred.,enterprise_agents
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Surgerii Robotics,\N,2918,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,medical_robotics
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Duvo,duvo.ai,2919,Czech Republic,CZ,Identity reconciled to cited financial disclosure; headquarters not inferred.,enterprise_agents
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Assaia,assaia.com,2920,Switzerland,CH,Identity reconciled to cited financial disclosure; headquarters not inferred.,general_applications
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Matta,matta.ai,2921,UK,GB,Identity reconciled to cited financial disclosure; headquarters not inferred.,industrial_logistics_robotics
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Spoor,spoor.ai,2922,Norway,NO,Identity reconciled to cited financial disclosure; headquarters not inferred.,general_applications
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Mirelo,mirelo.ai,2923,Germany,DE,Identity reconciled to cited financial disclosure; headquarters not inferred.,creative_media
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Reface,reface.ai,2924,Ukraine,UA,Identity reconciled to cited financial disclosure; headquarters not inferred.,creative_media
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Cypien AI,cypien.ai,2925,Türkiye,TR,Identity reconciled to cited financial disclosure; headquarters not inferred.,general_applications
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,HOLYWATER,holywater.tech,2926,Ukraine,UA,Identity reconciled to cited financial disclosure; headquarters not inferred.,creative_media
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,AI2 Robotics,\N,2927,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,humanoid_robotics
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Algorized,\N,2928,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,robotic_components
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Beijing Innovation Center of Humanoid Robotics (X-Humanoid),\N,2929,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,humanoid_robotics
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Draganfly,\N,2930,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,drones_defense
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Polaron,polaron.ai,2931,UK,GB,Identity reconciled to cited financial disclosure; headquarters not inferred.,simulation_digital_twins
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Andercore,andercore.com,2932,Germany,DE,Identity reconciled to cited financial disclosure; headquarters not inferred.,general_applications
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Electric Twin,electrictwin.com,2933,UK,GB,Identity reconciled to cited financial disclosure; headquarters not inferred.,simulation_digital_twins
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Agaton,agaton.ai,2934,Sweden,SE,Identity reconciled to cited financial disclosure; headquarters not inferred.,sales_marketing
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,ValkaAI,valka.ai,2935,Czech Republic,CZ,Identity reconciled to cited financial disclosure; headquarters not inferred.,foundation_models
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Foresight,foresight.works,2936,UK,GB,Identity reconciled to cited financial disclosure; headquarters not inferred.,finance
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Flexzo AI,flexzo.com,2937,UK,GB,Identity reconciled to cited financial disclosure; headquarters not inferred.,healthcare_biotech
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Robotera (Robot Era),\N,2938,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,humanoid_robotics
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Nesto,nesto-software.com,2939,Germany,DE,Identity reconciled to cited financial disclosure; headquarters not inferred.,general_applications
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Replenit,replen.it,2940,Poland,PL,Identity reconciled to cited financial disclosure; headquarters not inferred.,general_applications
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,VisioLab,visiolab.io,2941,Germany,DE,Identity reconciled to cited financial disclosure; headquarters not inferred.,general_applications
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,BLP Digital,blp.digital,2942,Switzerland,CH,Identity reconciled to cited financial disclosure; headquarters not inferred.,enterprise_agents
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Logicc,logicc.com,2943,Germany,DE,Identity reconciled to cited financial disclosure; headquarters not inferred.,general_applications
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Xynova (Xynova Future),\N,2944,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,robotic_components
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Qutwo,qutwo.com,2945,Finland,FI,Identity reconciled to cited financial disclosure; headquarters not inferred.,foundation_models
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,White Circle,whitecircle.ai,2946,France,FR,Identity reconciled to cited financial disclosure; headquarters not inferred.,cybersecurity
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Fifth Dimension AI,fifthdimensionai.com,2947,UK,GB,Identity reconciled to cited financial disclosure; headquarters not inferred.,enterprise_agents
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Unframe,unframe.ai,2948,Germany,DE,Identity reconciled to cited financial disclosure; headquarters not inferred.,enterprise_agents
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Anyverse Dynamics,\N,2949,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,humanoid_robotics
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Proception,\N,2950,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,robotic_components
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Shihang Intelligent (Seahi Robotics),\N,2951,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,maritime_robotics
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Stark (Stark Defence),\N,2952,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,drones_defense
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Theker,\N,2953,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,industrial_logistics_robotics
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Westmag,\N,2954,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,robotic_components
+ai-deals-coverage-442701c0d55527e04f40,enabling_infrastructure,Gigaton,gigaton.co,2955,UK,GB,Identity reconciled to cited financial disclosure; headquarters not inferred.,data_centers_power
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Airspeed,goairspeed.com,2956,UK,GB,Identity reconciled to cited financial disclosure; headquarters not inferred.,sales_marketing
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Promake,promake.ai,2957,Türkiye,TR,Identity reconciled to cited financial disclosure; headquarters not inferred.,general_applications
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Comand AI,enduringdefense.com,2958,France,FR,Identity reconciled to cited financial disclosure; headquarters not inferred.,drones_defense
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Axis Robotics,\N,2959,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,data_training_evaluation
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Cytronic,\N,2960,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,industrial_logistics_robotics
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,FPF Defense,\N,2961,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,drones_defense
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Greenjets,\N,2962,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,drones_defense
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Magnendo,\N,2963,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,medical_robotics
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,RoboParty,\N,2964,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,humanoid_robotics
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Robotruck,\N,2965,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,autonomous_vehicles
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Sinian Smart Driving (Sinoauto),\N,2966,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,autonomous_vehicles
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,T2,\N,2967,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,autonomous_vehicles
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Turing (autonomous driving),\N,2968,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,autonomous_vehicles
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Yimu Technology,\N,2969,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,robotic_components
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,microagi,\N,2970,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,industrial_logistics_robotics
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Hive,hiveautonomy.no,2971,UK,GB,Identity reconciled to cited financial disclosure; headquarters not inferred.,robotics_foundation_models
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Polysense,polysense.ai,2972,Belgium,BE,Identity reconciled to cited financial disclosure; headquarters not inferred.,industrial_logistics_robotics
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Marker,marker.page,2973,UK,GB,Identity reconciled to cited financial disclosure; headquarters not inferred.,creative_media
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Mach42,mach42.ai,2974,UK,GB,Identity reconciled to cited financial disclosure; headquarters not inferred.,simulation_digital_twins
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Arrakis,arrakis.tech,2975,UK,GB,Identity reconciled to cited financial disclosure; headquarters not inferred.,enterprise_agents
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Datapizza,datapizza.com,2976,Italy,IT,Identity reconciled to cited financial disclosure; headquarters not inferred.,enterprise_agents
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Intropy,intropy.ai,2977,UK,GB,Identity reconciled to cited financial disclosure; headquarters not inferred.,general_applications
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Andromeda Surgical,\N,2978,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,medical_robotics
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Atlas Motion,\N,2979,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,robotic_components
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Cambridge Aerospace,\N,2980,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,drones_defense
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Deep Sea Homo Sapiens,\N,2981,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,maritime_robotics
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Demark Precision,\N,2982,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,robotic_components
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Dogotix (XPeng Robotics),\N,2983,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,humanoid_robotics
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Dronus,\N,2984,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,drones_defense
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Guao Technology,\N,2985,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,industrial_logistics_robotics
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,INFIFORCE,\N,2986,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,robotics_foundation_models
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Jiangsu Yiyou Robot Technology,\N,2987,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,robotic_components
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Knowin (Nuoyin Intelligent),\N,2988,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,consumer_service_robotics
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,LINXAI Robotics,\N,2989,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,industrial_logistics_robotics
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Linghou Robot,\N,2990,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,industrial_logistics_robotics
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Lingkong Electronic Technology,\N,2991,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,drones_defense
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Lupin Dental,\N,2992,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,medical_robotics
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,MileBot Robotics,\N,2993,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,medical_robotics
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,NdotLight,\N,2994,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,data_training_evaluation
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Noosphere Labs,\N,2995,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,robotics_foundation_models
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Ommo Technologies,\N,2996,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,robotics_foundation_models
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Qi'an Technology,\N,2997,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,drones_defense
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Shanghai Moushen Intelligent Technology,\N,2998,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,humanoid_robotics
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Sharpa,\N,2999,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,robotic_components
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,SiFly,\N,3000,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,drones_defense
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Talls Intelligent,\N,3001,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,robotic_components
+ai-deals-coverage-442701c0d55527e04f40,enabling_infrastructure,Weifan Intelligent,\N,3002,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,ai_chips
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Omilia,omilia.com,3003,Cyprus,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,customer_support_voice
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Repodo,repodo.com,3004,Denmark,DK,Identity reconciled to cited financial disclosure; headquarters not inferred.,general_applications
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,AIDIN Robotics,\N,3005,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,robotic_components
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Algomatic Dynamics,\N,3006,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,robotic_components
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Deneb Medical,\N,3007,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,medical_robotics
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,ENCOS,\N,3008,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,robotic_components
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Excelland Robotics,\N,3009,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,consumer_service_robotics
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Gongzhi Marine,\N,3010,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,maritime_robotics
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Kinetix AI,\N,3011,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,humanoid_robotics
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Medical Microinstruments (MMI),\N,3012,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,medical_robotics
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Orcauboat (OrcaTech),\N,3013,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,maritime_robotics
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Qubot,\N,3014,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,medical_robotics
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Viabot,\N,3015,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,consumer_service_robotics
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Watney Robotics,\N,3016,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,industrial_logistics_robotics
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Yincheng Intelligence,\N,3017,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,industrial_logistics_robotics
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Zhongyi Embodied Intelligence,\N,3018,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,robotics_foundation_models
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Delos,delos.so,3019,France,FR,Identity reconciled to cited financial disclosure; headquarters not inferred.,customer_support_voice
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Blockbrain,blockbrain.ai,3020,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,enterprise_agents
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Northslope Technologies,\N,3021,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,enterprise_agents
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Prenosis,prenosis.com,3022,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,healthcare_biotech
+ai-deals-coverage-442701c0d55527e04f40,enabling_infrastructure,Optalysys,optalysys.com,3023,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,ai_chips
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Articul8 AI,\N,3024,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,enterprise_agents
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Looki (AI wearables),\N,3025,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,general_applications
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Edison Scientific,\N,3026,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,healthcare_biotech
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Vinci4D,getvinci.ai,3027,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,simulation_digital_twins
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Gravis Robotics (gravisrobotics.com),gravisrobotics.com,3028,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,industrial_logistics_robotics
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Valthos,\N,3029,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,healthcare_biotech
+ai-deals-coverage-442701c0d55527e04f40,enabling_infrastructure,Tachyum,tachyum.com,3030,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,ai_chips
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,David AI,withdavid.ai,3031,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,data_training_evaluation
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Prezent,prezent.ai,3032,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,creative_media
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Atomic Industries,atomic.industries,3033,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,industrial_logistics_robotics
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Comfy,\N,3034,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,creative_media
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Omnea,\N,3035,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,enterprise_agents
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Ultralytics,\N,3036,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,robotic_components
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Hyperbound,\N,3037,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,sales_marketing
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,MarqVision,\N,3038,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,legal
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Atolio,\N,3039,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,search_knowledge
+ai-deals-coverage-442701c0d55527e04f40,enabling_infrastructure,Lightelligence,xztech.ai,3040,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,ai_chips
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Attio,attio.com,3041,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,sales_marketing
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,ZeroClick,\N,3042,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,sales_marketing
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Pylon (usepylon.com),usepylon.com,3043,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,customer_support_voice
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Cline,\N,3044,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,coding_agents
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Ultromics,ultromics.com,3045,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,healthcare_biotech

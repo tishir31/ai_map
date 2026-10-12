@@ -1,0 +1,17 @@
+# Evidence and coverage method
+
+The task prioritizes finding real transactions across the two comparison years and the October update. Credible estimates in the right ballpark are sufficient: small amount variants do not create extra rounds. Verification focuses on issuer identity, AI product scope, financing existence, period, current-versus-cumulative funding, currency and duplicate counting.
+
+Company, investor and transaction-counsel announcements are preferred. Reputable original financial/technology reporting and identifiable company or journalist social posts are accepted. Licensed editorial deal records and dated issuer-release syndication supplement discovery. Investment-bank compilations and robotics indexes are discovery sources; their claims may require original-source reconciliation. Automated or untraceable aggregators cannot establish an accepted financing.
+
+Every accepted review has public source links and field-verification metadata. Acceptance with limits preserves uncertainty about timing, amount allocation or composition. Screening, excluded claims and held claims have separate decisions; those decisions do not verify a transaction. The release preserves all original observations, including records whose evidence remains private or unavailable.
+
+When the issuer's original dated financial disclosure is available, it anchors timing. Journalist/counsel/editorial publication dates are explicit proxies when actual announcement timing is unknown. Retrospectively disclosed financing dates retain their reported period and precision. A month/year placeholder is not an invented day; a date span must fit entirely inside one comparison period to enter the comparison financing views. Boundary disputes remain inspectable in source decisions and claims.
+
+USD passes through unchanged. Supported foreign-currency amounts use contemporaneous or preceding ECB business-day reference rates, within seven days and never from a future date. Month precision uses a labeled month-start reference estimate. Native amounts/currencies remain available. Missing or unavailable FX does not convert a record to zero or certify it below the cutoff.
+
+Valuation, lifetime funding, revenue, investor fund size, customer orders, targets and financing commitments are distinct facts. Only enough composition detail is retained to prevent materially wrong funding totals and double counting. Repeated closings, extensions and package components receive explicit links when evidence supports them. Similar names or numbers alone do not justify merging different issuers or rounds.
+
+Retained event counts include context records and are not deal-volume estimates. Supported disclosures, linked financing episodes and strict core equity are different projections. The strict core is a narrower evidence cohort; it is not a completeness estimate. Legacy compatibility/helper datasets retain their original review scopes. The coverage audit reports corpus coverage and unresolved claims by subsector and period, with unknown geography retained explicitly.
+
+Public source sweeps overlap and are syndicated. No commercial deal-level export or independent worldwide denominator was available. Exhaustiveness and statistical recall are unmeasured. The research status remains OPEN while corroboration, finer framework classification and residual omission checks remain outstanding. No growth ratios, heat scores, rankings or investment recommendations are produced.

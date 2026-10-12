@@ -1,0 +1,764 @@
+snapshot_id,ai_scope,canonical_name,company_domain,company_id,country,country_iso2,metadata_validation,primary_subsector
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,BrightAI,\N,3046,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,robotic_components
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,EndoQuest Robotics,\N,3047,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,medical_robotics
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,One Biosciences,\N,3048,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,healthcare_biotech
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Synthflow,\N,3049,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,customer_support_voice
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Neuron23,\N,3050,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,healthcare_biotech
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,EnsoData,\N,3051,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,healthcare_biotech
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Cluely,\N,3052,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,general_applications
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Sword Health,\N,3053,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,healthcare_biotech
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,HOPPR,\N,3054,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,healthcare_biotech
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Uncountable,\N,3055,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,general_applications
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Ellipsis Health,\N,3056,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,healthcare_biotech
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Sema4.ai,\N,3057,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,enterprise_agents
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Toma,\N,3058,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,customer_support_voice
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Aive,\N,3059,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,creative_media
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Netic,\N,3060,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,sales_marketing
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Matterworks,\N,3061,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,healthcare_biotech
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Prepared,\N,3062,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,general_applications
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Chalk,\N,3063,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,data_training_evaluation
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Outcomes4me,\N,3064,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,healthcare_biotech
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,DataHub,\N,3065,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,data_training_evaluation
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Persist AI,\N,3066,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,healthcare_biotech
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Samaya AI,\N,3067,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,finance
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,TurbineOne,\N,3068,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,drones_defense
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Forethought (forethought.ai),forethought.ai,3069,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,customer_support_voice
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Cohere Health,coherehealth.com,3070,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,healthcare_biotech
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,AssetWatch,\N,3071,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,robotic_components
+ai-deals-coverage-442701c0d55527e04f40,enabling_infrastructure,VSORA,vsora.com,3072,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,ai_chips
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Anumana,\N,3073,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,healthcare_biotech
+ai-deals-coverage-442701c0d55527e04f40,enabling_infrastructure,Auradine,\N,3074,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,ai_chips
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Krea,\N,3075,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,creative_media
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Brisk Teaching,\N,3076,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,education
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Buynomics,\N,3077,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,sales_marketing
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Firsthand (firsthand.ai),firsthand.ai,3078,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,sales_marketing
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Auxia,\N,3079,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,sales_marketing
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,CompScience,\N,3080,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,finance
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Backflip (backflip.ai),backflip.ai,3081,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,simulation_digital_twins
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Twelve Labs,\N,3082,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,creative_media
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,LambdaTest,\N,3083,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,developer_tools
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Ask Sage,\N,3084,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,enterprise_agents
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,RapidCanvas,\N,3085,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,enterprise_agents
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Wherobots,\N,3086,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,data_training_evaluation
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Cradle,cradle.bio,3087,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,healthcare_biotech
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Lightning AI (lightning.ai),lightning.ai,3088,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,developer_tools
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,New Lantern,\N,3089,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,healthcare_biotech
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Tessl,tessl.io,3090,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,coding_agents
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Cogna,\N,3091,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,enterprise_agents
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Mediaire,\N,3092,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,healthcare_biotech
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,CynLr,\N,3093,India,IN,Identity reconciled to cited financial disclosure; headquarters not inferred.,industrial_logistics_robotics
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Aignostics,aignostics.com,3094,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,healthcare_biotech
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Simbe,simberobotics.com,3095,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,industrial_logistics_robotics
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Genmo,genmo.ai,3096,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,creative_media
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Genie AI,\N,3097,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,legal
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Highlight,\N,3098,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,enterprise_agents
+ai-deals-coverage-442701c0d55527e04f40,enabling_infrastructure,Lumen Orbit,lumenorbit.com,3099,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,data_centers_power
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Infinitus Systems,\N,3100,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,healthcare_biotech
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Dyania Health,dyaniahealth.com,3101,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,healthcare_biotech
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Distributional,\N,3102,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,data_training_evaluation
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,CytoVale,\N,3103,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,healthcare_biotech
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,RadiantGraph,\N,3104,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,healthcare_biotech
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Voyage AI,voyageai.com,3105,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,search_knowledge
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Valdera,\N,3106,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,enterprise_agents
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Nym,\N,3107,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,healthcare_biotech
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Numa,\N,3108,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,customer_support_voice
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Vizit,\N,3109,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,sales_marketing
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Billables AI,\N,3110,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,legal
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,AirOps,\N,3111,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,sales_marketing
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Vieu,\N,3112,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,sales_marketing
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Tildei,\N,3113,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,sales_marketing
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Kiva AI,\N,3114,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,data_training_evaluation
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Vectorize,\N,3115,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,data_training_evaluation
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Centaur Labs,\N,3116,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,data_training_evaluation
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Noetica AI,\N,3117,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,legal
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Relyance AI,\N,3118,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,cybersecurity
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Neuron7.ai,\N,3119,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,customer_support_voice
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Beacon AI,\N,3120,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,autonomous_vehicles
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Herald,\N,3121,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,finance
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,BackOps.ai,\N,3122,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,enterprise_agents
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Tako,\N,3123,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,search_knowledge
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Rollstack,\N,3124,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,enterprise_agents
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Counsel Health,\N,3125,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,healthcare_biotech
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,TollBit,\N,3126,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,data_training_evaluation
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Concentric AI,\N,3127,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,cybersecurity
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Pathos AI,\N,3128,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,healthcare_biotech
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Brightwave,\N,3129,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,finance
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Verax AI,\N,3130,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,data_training_evaluation
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Regal,\N,3131,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,customer_support_voice
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Cornerstone AI,\N,3132,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,healthcare_biotech
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Bifrost,\N,3133,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,simulation_digital_twins
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,MOTORMIA,\N,3134,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,general_applications
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Delos Insurance Solutions,\N,3135,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,finance
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Spot AI,\N,3136,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,general_applications
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Advex AI,\N,3137,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,data_training_evaluation
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Thesys,\N,3138,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,enterprise_agents
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,PuppyGraph,\N,3139,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,data_training_evaluation
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,UnifyApps,\N,3140,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,enterprise_agents
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Connecty AI,\N,3141,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,data_training_evaluation
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Shiru,\N,3142,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,healthcare_biotech
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Alison.ai,\N,3143,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,sales_marketing
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Zeplyn,\N,3144,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,finance
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Sunthetics,\N,3145,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,general_applications
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Influur,\N,3146,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,sales_marketing
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Revisto,\N,3147,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,healthcare_biotech
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Distyl AI,\N,3148,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,enterprise_agents
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Keychain,\N,3149,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,general_applications
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Agentio,\N,3150,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,sales_marketing
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Revv,\N,3151,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,general_applications
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Cardo AI,\N,3152,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,finance
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Theo Ai,\N,3153,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,legal
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,DANNCE.AI,\N,3154,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,healthcare_biotech
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Cofactor AI,\N,3155,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,healthcare_biotech
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Range,\N,3156,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,finance
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Nurture Boss,\N,3157,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,customer_support_voice
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,PhotoniCare,\N,3158,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,healthcare_biotech
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Cake,cake.ai,3159,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,developer_tools
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,GROWL,\N,3160,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,general_applications
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Axiado,\N,3161,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,cybersecurity
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,enSights,\N,3162,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,general_applications
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,CAT Labs,\N,3163,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,cybersecurity
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Sightglass,\N,3164,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,finance
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,GovSignals,\N,3165,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,enterprise_agents
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Astrix Security,\N,3166,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,cybersecurity
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Aampe,\N,3167,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,sales_marketing
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Capstan Medical,\N,3168,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,medical_robotics
+ai-deals-coverage-442701c0d55527e04f40,enabling_infrastructure,Azimuth AI,\N,3169,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,ai_chips
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,NeuBird,\N,3170,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,enterprise_agents
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Evinced,\N,3171,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,developer_tools
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Zest AI,\N,3172,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,finance
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Mantis Robotics,\N,3173,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,industrial_logistics_robotics
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Anatomy Financial,\N,3174,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,healthcare_biotech
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Hamming.ai,\N,3175,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,data_training_evaluation
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Justt,\N,3176,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,finance
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,boon AI,\N,3177,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,enterprise_agents
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Confido Health,\N,3178,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,customer_support_voice
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Tenor,\N,3179,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,education
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Leap Financial,\N,3180,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,finance
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Bluenote AI,\N,3181,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,healthcare_biotech
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Stellar,\N,3182,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,enterprise_agents
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Jones,\N,3183,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,finance
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Deep Vector,\N,3184,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,finance
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Grove,\N,3185,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,healthcare_biotech
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Pipe17,\N,3186,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,enterprise_agents
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Conceivable Life Sciences,\N,3187,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,medical_robotics
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,BforeAI,\N,3188,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,cybersecurity
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Maki,\N,3189,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,enterprise_agents
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Rockfish Data,rockfish.ai,3190,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,data_training_evaluation
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Reeco,\N,3191,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,enterprise_agents
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Thoras.ai,\N,3192,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,developer_tools
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Eve,\N,3193,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,legal
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Coram AI,\N,3194,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,cybersecurity
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Guidesly,\N,3195,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,general_applications
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Percipio Health,\N,3196,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,healthcare_biotech
+ai-deals-coverage-442701c0d55527e04f40,enabling_infrastructure,NovoLINC,\N,3197,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,data_centers_power
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Qumis,\N,3198,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,finance
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Teal,\N,3199,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,general_applications
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Eleos,\N,3200,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,healthcare_biotech
+ai-deals-coverage-442701c0d55527e04f40,enabling_infrastructure,Baya Systems,\N,3201,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,interconnect_memory
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Ati Motors,\N,3202,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,industrial_logistics_robotics
+ai-deals-coverage-442701c0d55527e04f40,enabling_infrastructure,Pipeshift,\N,3203,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,inference_compute
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Applied Labs,\N,3204,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,customer_support_voice
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,SafelyYou,\N,3205,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,healthcare_biotech
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Atomicwork,\N,3206,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,enterprise_agents
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Delfina,\N,3207,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,healthcare_biotech
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Earth AI,\N,3208,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,general_applications
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Quibim,\N,3209,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,healthcare_biotech
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,WiseLayer,\N,3210,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,finance
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Bluwhale,\N,3211,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,data_training_evaluation
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,VideaHealth,\N,3212,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,healthcare_biotech
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Gallabox,\N,3213,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,customer_support_voice
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,UVeye,\N,3214,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,general_applications
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Waterlily,\N,3215,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,finance
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Observo AI,\N,3216,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,data_training_evaluation
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Athenic AI,\N,3217,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,enterprise_agents
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Final Round AI,\N,3218,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,general_applications
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Backline,\N,3219,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,cybersecurity
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Unwrap,\N,3220,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,customer_support_voice
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Jump,\N,3221,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,finance
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Affineon Health,\N,3222,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,healthcare_biotech
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Semgrep,\N,3223,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,cybersecurity
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,GetWhys,\N,3224,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,sales_marketing
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Astra Security,\N,3225,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,cybersecurity
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Centerseat,\N,3226,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,cybersecurity
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Cognida.ai,\N,3227,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,enterprise_agents
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,DevAI,\N,3228,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,enterprise_agents
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,TaxGPT,\N,3229,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,finance
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Pendulum,\N,3230,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,enterprise_agents
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Self Inspection,\N,3231,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,general_applications
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Nirmata,\N,3232,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,developer_tools
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Datalign,\N,3233,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,finance
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,ConverzAI,\N,3234,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,enterprise_agents
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Sardine,\N,3235,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,finance
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Lingopal.ai,\N,3236,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,creative_media
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Keragon,\N,3237,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,healthcare_biotech
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Integrail,\N,3238,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,enterprise_agents
+ai-deals-coverage-442701c0d55527e04f40,enabling_infrastructure,EnCharge AI,\N,3239,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,ai_chips
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Prenuvo,\N,3240,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,healthcare_biotech
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,DiligentIQ,\N,3241,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,finance
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Incept AI,\N,3242,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,customer_support_voice
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Valid,\N,3243,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,sales_marketing
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Everstar,\N,3244,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,enterprise_agents
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Gomboc AI,\N,3245,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,cybersecurity
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,CredCore,\N,3246,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,finance
+ai-deals-coverage-442701c0d55527e04f40,enabling_infrastructure,CTGT,\N,3247,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,training_compute
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Loxo,\N,3248,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,enterprise_agents
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Auditoria.AI,\N,3249,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,finance
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Edera,\N,3250,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,cybersecurity
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Lockchain.ai,\N,3251,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,cybersecurity
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,HouseWhisper,\N,3252,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,enterprise_agents
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Adaptive Insurance,\N,3253,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,finance
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,VerAI Discoveries,\N,3254,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,general_applications
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Bridgetown Research,\N,3255,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,finance
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Turing (theturingcompany.com),theturingcompany.com,3256,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,general_applications
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,SimCare AI,\N,3257,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,education
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Deepnight,\N,3258,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,drones_defense
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Quanta,\N,3259,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,finance
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,HeyMilo,\N,3260,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,enterprise_agents
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Momentic,\N,3261,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,coding_agents
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Uniti AI,\N,3262,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,sales_marketing
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Ataraxis AI,\N,3263,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,healthcare_biotech
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Zeitview,\N,3264,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,general_applications
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Knostic,\N,3265,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,cybersecurity
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Tiga.ai,\N,3266,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,sales_marketing
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,AIceberg,\N,3267,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,cybersecurity
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Peer Global,\N,3268,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,creative_media
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,GovEagle,\N,3269,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,enterprise_agents
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Nirvana Insurance,\N,3270,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,finance
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Uthana,\N,3271,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,creative_media
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Podqi,\N,3272,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,legal
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Onyx,\N,3273,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,search_knowledge
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Wolf Games,\N,3274,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,creative_media
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Bria,\N,3275,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,creative_media
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Nimblemind.ai,\N,3276,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,healthcare_biotech
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,257,\N,3277,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,general_applications
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Equipt.ai,\N,3278,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,enterprise_agents
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Arcade.dev (arcade.dev),arcade.dev,3279,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,developer_tools
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,CaseBlink,\N,3280,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,legal
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Proscia,\N,3281,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,healthcare_biotech
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Tera,\N,3282,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,robotic_components
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Evident Vascular,\N,3283,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,healthcare_biotech
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Sympera AI,\N,3284,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,finance
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Crstl,\N,3285,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,enterprise_agents
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Lumber,\N,3286,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,enterprise_agents
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Arcade,arcade.ai,3287,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,creative_media
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Contoro Robotics,\N,3288,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,industrial_logistics_robotics
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,GetReal Security,\N,3289,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,cybersecurity
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,SplxAI,\N,3290,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,cybersecurity
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Mendel,\N,3291,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,finance
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Hakimo,\N,3292,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,general_applications
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Layer Health,\N,3293,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,healthcare_biotech
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Yutori,\N,3294,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,general_applications
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Chord,\N,3295,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,sales_marketing
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Taxo,\N,3296,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,healthcare_biotech
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,MenuSifu,\N,3297,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,enterprise_agents
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Kay.ai,\N,3298,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,finance
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Gable,\N,3299,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,data_training_evaluation
+ai-deals-coverage-442701c0d55527e04f40,enabling_infrastructure,Retym,\N,3300,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,interconnect_memory
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Hi Auto,\N,3301,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,customer_support_voice
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,TwinKnowledge,\N,3302,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,general_applications
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Opsera,\N,3303,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,developer_tools
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Hydrolix,\N,3304,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,data_training_evaluation
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Redpanda,\N,3305,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,data_training_evaluation
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,heyLibby,\N,3306,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,customer_support_voice
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Tracera,\N,3307,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,enterprise_agents
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Aurascape,\N,3308,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,cybersecurity
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Octane,\N,3309,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,cybersecurity
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Tessell,\N,3310,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,data_training_evaluation
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Ottometric,\N,3311,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,autonomous_vehicles
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,DIAMO,\N,3312,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,finance
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Rondah AI,\N,3313,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,healthcare_biotech
+ai-deals-coverage-442701c0d55527e04f40,enabling_infrastructure,nEye Systems,\N,3314,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,interconnect_memory
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Bliss Aesthetics,\N,3315,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,healthcare_biotech
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,illumicell AI,\N,3316,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,healthcare_biotech
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Thoughtful.ai,\N,3317,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,healthcare_biotech
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Octolane,\N,3318,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,sales_marketing
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Phantom Neuro,\N,3319,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,medical_robotics
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Corvic AI,\N,3320,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,search_knowledge
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,IUNU,\N,3321,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,general_applications
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,frontline.io,\N,3322,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,simulation_digital_twins
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Blue Onion,\N,3323,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,finance
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Bauplan,\N,3324,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,data_training_evaluation
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Arcana Labs,\N,3325,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,creative_media
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,1Fort,\N,3326,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,finance
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Spur,\N,3327,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,developer_tools
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Kenzo Security,\N,3328,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,cybersecurity
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Ascertain,\N,3329,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,healthcare_biotech
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Sentra,\N,3330,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,cybersecurity
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Manychat,\N,3331,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,customer_support_voice
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Recce,\N,3332,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,developer_tools
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Nourish,\N,3333,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,healthcare_biotech
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Amplifier Security,\N,3334,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,cybersecurity
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Instrumentl,\N,3335,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,general_applications
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Channel Factory,\N,3336,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,sales_marketing
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Gestalt Diagnostics,\N,3337,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,healthcare_biotech
+ai-deals-coverage-442701c0d55527e04f40,enabling_infrastructure,Utilidata,\N,3338,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,data_centers_power
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Blooming Health,\N,3339,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,healthcare_biotech
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Near Space Labs,\N,3340,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,data_training_evaluation
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Basil Systems,\N,3341,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,healthcare_biotech
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,VOC.AI,\N,3342,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,customer_support_voice
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Sennos,\N,3343,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,industrial_logistics_robotics
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,TeamOhana,\N,3344,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,enterprise_agents
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Pallie AI,\N,3345,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,general_applications
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Persona (withpersona.com),withpersona.com,3346,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,cybersecurity
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Plenful,\N,3347,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,healthcare_biotech
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,PilotDesk,\N,3348,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,sales_marketing
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Field Materials,\N,3349,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,enterprise_agents
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Gruve.ai,\N,3350,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,enterprise_agents
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Astronomer,\N,3351,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,data_training_evaluation
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,EdgeRunner AI,\N,3352,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,foundation_models
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Inductive Bio,\N,3353,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,healthcare_biotech
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,TSOLife,\N,3354,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,healthcare_biotech
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Carta Healthcare,\N,3355,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,healthcare_biotech
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Impact Analytics,\N,3356,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,enterprise_agents
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,CodeAnt AI,\N,3357,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,coding_agents
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,OX Security,\N,3358,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,cybersecurity
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,CueZen,\N,3359,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,healthcare_biotech
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Clarium,\N,3360,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,healthcare_biotech
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,TensorStax,\N,3361,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,data_training_evaluation
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Stash,\N,3362,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,finance
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Theom,\N,3363,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,cybersecurity
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Hyperbots,\N,3364,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,finance
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Stackpack,\N,3365,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,enterprise_agents
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Adopt AI,\N,3366,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,enterprise_agents
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Pluto Bio,\N,3367,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,healthcare_biotech
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,ThriveAI,\N,3368,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,enterprise_agents
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Openlayer,\N,3369,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,data_training_evaluation
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Kovr.ai,\N,3370,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,cybersecurity
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Akido Labs,\N,3371,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,healthcare_biotech
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Metafoodx,\N,3372,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,general_applications
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Button Finance,\N,3373,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,finance
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Mura,\N,3374,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,enterprise_agents
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Barndoor AI,\N,3375,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,developer_tools
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Greenlite AI,\N,3376,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,finance
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Zoca,\N,3377,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,sales_marketing
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,WellTheory,\N,3378,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,healthcare_biotech
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Rhino Federated Computing,\N,3379,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,data_training_evaluation
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,StackHawk,\N,3380,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,cybersecurity
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Siro,\N,3381,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,sales_marketing
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,AgileBlue,\N,3382,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,cybersecurity
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Pallet,\N,3383,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,enterprise_agents
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Superblocks,\N,3384,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,coding_agents
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Clear Current,\N,3385,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,enterprise_agents
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,CloudZero,\N,3386,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,developer_tools
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Creatify,\N,3387,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,sales_marketing
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Context,context.inc,3388,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,enterprise_agents
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Atomic Canyon,\N,3389,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,search_knowledge
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Uplinq,\N,3390,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,finance
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Unbound,\N,3391,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,cybersecurity
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,pWin.ai,\N,3392,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,enterprise_agents
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,AgentSmyth,\N,3393,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,finance
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Deep Sentinel,\N,3394,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,general_applications
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Trustifi,\N,3395,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,cybersecurity
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Voxel,\N,3396,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,general_applications
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Ciroos,\N,3397,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,enterprise_agents
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Simetrik,\N,3398,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,finance
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Obvio,\N,3399,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,general_applications
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Impart Security,\N,3400,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,cybersecurity
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Thread AI,\N,3401,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,developer_tools
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Guardz,\N,3402,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,cybersecurity
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Pactum,\N,3403,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,enterprise_agents
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Laurel,\N,3404,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,enterprise_agents
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,AIM Intelligent Machines,\N,3405,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,autonomous_vehicles
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Trustible,\N,3406,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,data_training_evaluation
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Somnee,\N,3407,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,healthcare_biotech
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Aethero,\N,3408,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,drones_defense
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Daybreak,\N,3409,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,enterprise_agents
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,FERMÀT,\N,3410,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,sales_marketing
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Outset,\N,3411,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,customer_support_voice
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Bolo AI,\N,3412,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,enterprise_agents
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Landbase,\N,3413,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,sales_marketing
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Autonomize AI,\N,3414,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,healthcare_biotech
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Iterate.ai,\N,3415,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,enterprise_agents
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Canary Technologies,\N,3416,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,customer_support_voice
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Parallel Bio,\N,3417,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,healthcare_biotech
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Conveyor,\N,3418,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,sales_marketing
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Warp (wearewarp.com),wearewarp.com,3419,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,industrial_logistics_robotics
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Pano AI,\N,3420,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,general_applications
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,WorkWhile,\N,3421,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,enterprise_agents
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Teamworks,\N,3422,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,general_applications
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Amaros,amaros.ai,3423,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,healthcare_biotech
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Ramp,ramp.com,3424,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,finance
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Maven AGI,\N,3425,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,customer_support_voice
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,SportsVisio,\N,3426,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,creative_media
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Typedef,\N,3427,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,developer_tools
+ai-deals-coverage-442701c0d55527e04f40,enabling_infrastructure,Snowcap Compute,\N,3428,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,ai_chips
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Spinwheel,\N,3429,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,finance
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Arine,\N,3430,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,healthcare_biotech
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Blank Metal,\N,3431,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,enterprise_agents
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,PhotoDay,\N,3432,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,creative_media
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Mandolin,\N,3433,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,healthcare_biotech
+ai-deals-coverage-442701c0d55527e04f40,enabling_infrastructure,EFFECT Photonics,\N,3434,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,interconnect_memory
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Clearspeed,\N,3435,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,cybersecurity
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Ubie,\N,3436,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,healthcare_biotech
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,DataBahn.ai,\N,3437,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,data_training_evaluation
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Audos,\N,3438,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,general_applications
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Levelpath,\N,3439,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,enterprise_agents
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Campfire (campfire.ai),campfire.ai,3440,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,finance
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,LogicFlo,\N,3441,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,healthcare_biotech
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Argon AI,\N,3442,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,healthcare_biotech
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Sundial,\N,3443,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,data_training_evaluation
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Phil,\N,3444,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,healthcare_biotech
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Parspec,\N,3445,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,enterprise_agents
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Castellum.AI,\N,3446,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,finance
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,MaintainX,maintainx.com,3447,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,general_applications
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Nominal (nominal.so),nominal.so,3448,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,finance
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Polimorphic,\N,3449,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,customer_support_voice
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,AirMDR,\N,3450,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,cybersecurity
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Vellum,\N,3451,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,developer_tools
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Virtru,\N,3452,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,cybersecurity
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Helios,\N,3453,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,enterprise_agents
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Callidus Legal AI,\N,3454,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,legal
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Heron,\N,3455,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,finance
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Unify,\N,3456,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,sales_marketing
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Tavrn,\N,3457,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,legal
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Felt,\N,3458,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,general_applications
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,ProductNow,\N,3459,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,enterprise_agents
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Exodigo,\N,3460,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,general_applications
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,H2Ok Innovations,\N,3461,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,general_applications
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,FlyGuys,\N,3462,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,data_training_evaluation
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Rwazi,\N,3463,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,sales_marketing
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Hadrian,\N,3464,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,industrial_logistics_robotics
+ai-deals-coverage-442701c0d55527e04f40,enabling_infrastructure,GigaIO,\N,3465,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,inference_compute
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Confident Security,\N,3466,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,cybersecurity
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,LeadStory,\N,3467,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,search_knowledge
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Eton Solutions,\N,3468,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,finance
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Nexxa.ai,\N,3469,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,enterprise_agents
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Delve,\N,3470,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,cybersecurity
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Scrunch AI,scrunchai.com,3471,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,sales_marketing
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Asylon,\N,3472,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,drones_defense
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,BetterComp,\N,3473,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,general_applications
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Vanta,\N,3474,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,cybersecurity
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Vaudit,\N,3475,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,sales_marketing
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Volca,\N,3476,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,customer_support_voice
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,UgenticAI,\N,3477,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,enterprise_agents
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Olto,\N,3478,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,sales_marketing
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,TakeUp,\N,3479,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,general_applications
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Dropzone AI,\N,3480,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,cybersecurity
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,E2B,\N,3481,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,developer_tools
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Lumana,\N,3482,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,general_applications
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Reveal Technology,\N,3483,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,drones_defense
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Sparrow,\N,3484,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,general_applications
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Planted Solar,\N,3485,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,industrial_logistics_robotics
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Caspian,\N,3486,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,enterprise_agents
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,lakeFS,\N,3487,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,data_training_evaluation
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Retab,\N,3488,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,data_training_evaluation
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Legion,legionsecurity.ai,3489,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,cybersecurity
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,PlayerZero,\N,3490,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,developer_tools
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,C8 Health,\N,3491,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,healthcare_biotech
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,FloVision Solutions,\N,3492,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,general_applications
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Caseflood.ai,\N,3493,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,legal
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Wallarm,\N,3494,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,cybersecurity
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,SAFE,safe.security,3495,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,cybersecurity
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,KredosAi,\N,3496,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,finance
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Moonshine AI,\N,3497,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,customer_support_voice
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Metaforms,\N,3498,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,sales_marketing
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Runloop,\N,3499,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,developer_tools
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Cline (cline.bot),cline.bot,3500,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,coding_agents
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Knit,\N,3501,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,sales_marketing
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Carbyne,\N,3502,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,customer_support_voice
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Pantomath,\N,3503,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,data_training_evaluation
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Lyric,\N,3504,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,enterprise_agents
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,ketteQ,\N,3505,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,enterprise_agents
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,August,\N,3506,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,legal
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Vendict,\N,3507,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,cybersecurity
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,OLarry,\N,3508,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,finance
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Stavtar Solutions,stavtar.com,3509,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,finance
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Elion,\N,3510,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,healthcare_biotech
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Casap,\N,3511,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,finance
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,August Health,\N,3512,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,healthcare_biotech
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Perle,\N,3513,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,data_training_evaluation
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Kustomer,\N,3514,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,customer_support_voice
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Translucent AI,\N,3515,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,healthcare_biotech
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Capacity (capacity.com),capacity.com,3516,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,customer_support_voice
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Tahoe Therapeutics,tahoebio.ai,3517,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,healthcare_biotech
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Laurel (laurel.ai),laurel.ai,3518,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,legal
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Squint,\N,3519,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,general_applications
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,GoodShip,\N,3520,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,enterprise_agents
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Dealops,\N,3521,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,sales_marketing
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Evertune,\N,3522,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,sales_marketing
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Drivepoint,\N,3523,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,finance
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Protege,\N,3524,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,data_training_evaluation
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Citizen Health,\N,3525,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,healthcare_biotech
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,XOPS,\N,3526,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,enterprise_agents
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,IVIX,\N,3527,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,finance
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Tote.ai,\N,3528,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,general_applications
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Swept AI,\N,3529,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,data_training_evaluation
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Medallion,\N,3530,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,healthcare_biotech
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Eight Sleep,\N,3531,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,healthcare_biotech
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Functionize,\N,3532,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,developer_tools
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,TensorZero,\N,3533,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,developer_tools
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Convoke,\N,3534,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,healthcare_biotech
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Zipline AI,\N,3535,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,developer_tools
+ai-deals-coverage-442701c0d55527e04f40,enabling_infrastructure,Aalo Atomics,\N,3536,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,data_centers_power
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Zed,\N,3537,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,coding_agents
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Wisdom,\N,3538,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,healthcare_biotech
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Cascala Health,\N,3539,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,healthcare_biotech
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Seemplicity,\N,3540,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,cybersecurity
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Ontic,\N,3541,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,general_applications
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Method AI,\N,3542,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,healthcare_biotech
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,CVector,\N,3543,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,data_training_evaluation
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Definite,\N,3544,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,data_training_evaluation
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,WizCommerce,\N,3545,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,enterprise_agents
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Barti,\N,3546,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,healthcare_biotech
+ai-deals-coverage-442701c0d55527e04f40,enabling_infrastructure,Splight,\N,3547,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,data_centers_power
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Kira,\N,3548,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,finance
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Nauta,\N,3549,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,enterprise_agents
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,AiGent,\N,3550,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,general_applications
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Loman AI,\N,3551,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,customer_support_voice
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Aurelian,\N,3552,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,customer_support_voice
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Welcome Tech,\N,3553,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,general_applications
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Central,\N,3554,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,enterprise_agents
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Reveal HealthTech,\N,3555,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,healthcare_biotech
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,MagicDoor,\N,3556,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,enterprise_agents
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,ID.me,\N,3557,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,cybersecurity
+ai-deals-coverage-442701c0d55527e04f40,enabling_infrastructure,Mojo Vision,\N,3558,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,interconnect_memory
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Euclid Power,\N,3559,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,enterprise_agents
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Augment,goaugment.com,3560,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,enterprise_agents
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Hello Patient,\N,3561,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,customer_support_voice
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Elysian,\N,3562,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,finance
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Recall.ai,\N,3563,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,developer_tools
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Ketryx,\N,3564,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,developer_tools
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Fiveonefour,\N,3565,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,developer_tools
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,ProRataAI,\N,3566,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,search_knowledge
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,SCOREalytics,\N,3567,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,legal
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Cassidy,\N,3568,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,enterprise_agents
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,LightSpun,\N,3569,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,healthcare_biotech
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Nuclearn,\N,3570,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,enterprise_agents
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Ridge Biotechnologies,\N,3571,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,healthcare_biotech
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Pathwork,\N,3572,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,finance
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Adaptive Security,\N,3573,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,cybersecurity
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,LocalExpress,\N,3574,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,data_training_evaluation
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Aurva,\N,3575,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,cybersecurity
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Procense,\N,3576,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,enterprise_agents
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Lōvu Health,\N,3577,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,healthcare_biotech
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Rendezvous Robotics,\N,3578,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,general_applications
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Brain Co.,\N,3579,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,enterprise_agents
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Penguin Ai,\N,3580,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,healthcare_biotech
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Quack,\N,3581,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,customer_support_voice
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Sophont,\N,3582,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,healthcare_biotech
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,GreenLite,greenlite.com,3583,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,enterprise_agents
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Tabs,\N,3584,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,finance
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,DRUID AI,\N,3585,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,enterprise_agents
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,CreatorDB,\N,3586,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,sales_marketing
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,WorkFusion,\N,3587,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,finance
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Airia,\N,3588,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,enterprise_agents
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Ethosphere,\N,3589,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,sales_marketing
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Trially AI,\N,3590,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,healthcare_biotech
+ai-deals-coverage-442701c0d55527e04f40,enabling_infrastructure,Omni Design Technologies,\N,3591,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,interconnect_memory
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Aleph,\N,3592,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,finance
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Markup AI,\N,3593,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,creative_media
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Envive AI,\N,3594,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,sales_marketing
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Irregular (irregular.com),irregular.com,3595,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,cybersecurity
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,PassiveLogic,\N,3596,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,simulation_digital_twins
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Centari,\N,3597,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,legal
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Sevaro Health,\N,3598,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,healthcare_biotech
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Vibranium Labs,\N,3599,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,developer_tools
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,InCountry,\N,3600,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,cybersecurity
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,AppZen,\N,3601,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,finance
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Salt AI,\N,3602,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,healthcare_biotech
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Tilt,\N,3603,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,finance
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Testkube,\N,3604,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,developer_tools
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Moneta Health,\N,3605,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,healthcare_biotech
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Judi Health (Capital Rx),judi.health,3606,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,healthcare_biotech
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Obot AI,\N,3607,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,developer_tools
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Amplio,\N,3608,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,enterprise_agents
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Signal AI,signal-ai.com,3609,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,search_knowledge
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Valence,\N,3610,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,general_applications
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Bonsai Health,\N,3611,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,healthcare_biotech
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Maximor,\N,3612,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,finance
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Alex,\N,3613,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,general_applications
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Alvys,\N,3614,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,enterprise_agents
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Zania,\N,3615,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,cybersecurity
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,InOrbit.AI,\N,3616,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,developer_tools
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Price.com,\N,3617,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,general_applications
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,RunBuggy,\N,3618,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,enterprise_agents
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Vibe.co,vibe.co,3619,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,sales_marketing
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,AiM Medical Robotics,\N,3620,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,medical_robotics
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,AdPipe,\N,3621,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,creative_media
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Gelt,\N,3622,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,finance
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Datawizz,\N,3623,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,foundation_models
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Longeye,\N,3624,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,legal
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Baselane,\N,3625,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,finance
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,AudioShake,\N,3626,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,creative_media
+ai-deals-coverage-442701c0d55527e04f40,enabling_infrastructure,Phaidra,\N,3627,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,data_centers_power
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Apiphani,\N,3628,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,enterprise_agents
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Oath Surgical,\N,3629,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,healthcare_biotech
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Bee Maps,\N,3630,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,data_training_evaluation
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Peer AI,\N,3631,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,healthcare_biotech
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,ConCntric,\N,3632,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,enterprise_agents
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Tycho AI,\N,3633,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,drones_defense
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Realm.Security,\N,3634,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,cybersecurity
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Quilter,\N,3635,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,developer_tools
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,HiOctave,\N,3636,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,customer_support_voice
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,QuoteWell,\N,3637,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,finance
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,375ai,\N,3638,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,data_training_evaluation
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Focal,\N,3639,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,finance
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Foundation Health,\N,3640,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,healthcare_biotech
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Vulcan Technologies,\N,3641,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,legal
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,HOOTL,\N,3642,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,healthcare_biotech
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Glide Identity,\N,3643,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,cybersecurity
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Planera,\N,3644,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,enterprise_agents
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Reducto,\N,3645,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,data_training_evaluation
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Dreamdata,\N,3646,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,sales_marketing
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Basis Theory,\N,3647,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,finance
+ai-deals-coverage-442701c0d55527e04f40,enabling_infrastructure,Vertical Semiconductor,\N,3648,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,ai_chips
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Aragorn AI,\N,3649,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,enterprise_agents
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Viven,\N,3650,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,enterprise_agents
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Vantaca,\N,3651,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,general_applications
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Bexorg,\N,3652,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,healthcare_biotech
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Second Nature,\N,3653,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,sales_marketing
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Weave Bio,\N,3654,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,healthcare_biotech
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Strella,\N,3655,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,sales_marketing
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Aboon,\N,3656,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,finance
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Armstrong,\N,3657,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,industrial_logistics_robotics
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Sage Care,\N,3658,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,healthcare_biotech
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Fourier Health,\N,3659,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,healthcare_biotech
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Magic (hospitality platform),\N,3660,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,enterprise_agents
+ai-deals-coverage-442701c0d55527e04f40,enabling_infrastructure,Arbor Energy,\N,3661,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,data_centers_power
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Estuary,\N,3662,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,data_training_evaluation
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Moonshot AI (website optimization),\N,3663,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,sales_marketing
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Acelab,\N,3664,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,enterprise_agents
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Hyro,\N,3665,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,healthcare_biotech
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Streetbeat,\N,3666,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,finance
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Bricklayer AI,\N,3667,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,cybersecurity
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Darwin AI,\N,3668,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,enterprise_agents
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,ConductorOne,\N,3669,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,cybersecurity
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Polygraf AI,\N,3670,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,cybersecurity
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,CoreStory,\N,3671,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,coding_agents
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Sublime Security,\N,3672,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,cybersecurity
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Syllo,\N,3673,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,legal
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Socratix AI,\N,3674,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,cybersecurity
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Spacial,\N,3675,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,enterprise_agents
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Uptiq.ai,\N,3676,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,finance
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Electric Mind,\N,3677,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,enterprise_agents
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Arya Health,\N,3678,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,healthcare_biotech
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,VeroSkills,\N,3679,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,general_applications
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,TestSprite,\N,3680,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,coding_agents
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,xMEMS,\N,3681,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,robotic_components
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Infravision,\N,3682,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,drones_defense
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Beacon Software,\N,3683,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,enterprise_agents
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Ruli.ai,\N,3684,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,legal
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Reevo,\N,3685,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,sales_marketing
+ai-deals-coverage-442701c0d55527e04f40,enabling_infrastructure,Creekstone Energy,\N,3686,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,data_centers_power
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Mindsmith,\N,3687,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,education
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,CommanderAI,\N,3688,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,sales_marketing
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Procurement Sciences,\N,3689,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,enterprise_agents
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Inception,\N,3690,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,foundation_models
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,DualBird,\N,3691,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,data_training_evaluation
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Avallon,\N,3692,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,finance
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Fastbreak AI,\N,3693,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,general_applications
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,IndustrialMind.ai,\N,3694,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,enterprise_agents
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Iambic,\N,3695,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,healthcare_biotech
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Gamma,\N,3696,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,creative_media
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,1mind,\N,3697,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,sales_marketing
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Uare.ai,\N,3698,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,foundation_models
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,GC AI,\N,3699,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,legal
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,BoomPop,\N,3700,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,general_applications
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,WisdomAI,\N,3701,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,enterprise_agents
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Joy,\N,3702,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,general_applications
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Attentive.ai,\N,3703,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,enterprise_agents
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Scribe,\N,3704,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,enterprise_agents
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,CoRun.ai,\N,3705,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,enterprise_agents
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,OnRamp,\N,3706,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,sales_marketing
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Clairity,\N,3707,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,healthcare_biotech
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Anzen,\N,3708,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,finance
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Vida,\N,3709,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,customer_support_voice
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Confidein,\N,3710,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,general_applications
+ai-deals-coverage-442701c0d55527e04f40,enabling_infrastructure,Fabric8Labs,\N,3711,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,data_centers_power
+ai-deals-coverage-442701c0d55527e04f40,enabling_infrastructure,Exowatt,\N,3712,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,data_centers_power
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Bindwell,\N,3713,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,general_applications
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Alembic,\N,3714,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,sales_marketing
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Shipday,\N,3715,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,enterprise_agents
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Span,\N,3716,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,developer_tools
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,OpenHands,\N,3717,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,coding_agents
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Xenia,\N,3718,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,general_applications
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Barker,\N,3719,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,finance
+ai-deals-coverage-442701c0d55527e04f40,enabling_infrastructure,Amperesand,\N,3720,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,data_centers_power
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Jiga,\N,3721,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,enterprise_agents
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Chargeflow,\N,3722,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,finance
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Nudge Security,\N,3723,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,cybersecurity
+ai-deals-coverage-442701c0d55527e04f40,enabling_infrastructure,Hammerhead AI,\N,3724,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,data_centers_power
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Bedrock Data,\N,3725,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,cybersecurity
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,AI Proteins,\N,3726,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,healthcare_biotech
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Doppel,\N,3727,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,cybersecurity
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Orion,\N,3728,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,cybersecurity
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,TULU,\N,3729,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,general_applications
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Synthio Labs,\N,3730,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,healthcare_biotech
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,KERV.ai,\N,3731,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,creative_media
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Profluent,\N,3732,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,healthcare_biotech
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Modern Life,\N,3733,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,finance
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Kaaj,\N,3734,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,finance
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Genspark,\N,3735,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,enterprise_agents
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Parallax Worlds,\N,3736,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,simulation_digital_twins
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Sorcero,\N,3737,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,healthcare_biotech
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Opti,\N,3738,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,cybersecurity
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Onton,\N,3739,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,general_applications
+ai-deals-coverage-442701c0d55527e04f40,enabling_infrastructure,Mixx Technologies,\N,3740,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,interconnect_memory
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Nevis,\N,3741,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,finance
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Clipbook,\N,3742,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,sales_marketing
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Minitap,\N,3743,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,developer_tools
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Axiado Corporation,\N,3744,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,cybersecurity
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,PermitFlow,\N,3745,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,enterprise_agents
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Excelsior Sciences,\N,3746,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,healthcare_biotech
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Unlimited Industries,\N,3747,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,enterprise_agents
+ai-deals-coverage-442701c0d55527e04f40,enabling_infrastructure,Lemurian Labs,\N,3748,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,inference_compute
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Supper,\N,3749,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,data_training_evaluation
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Autolane,\N,3750,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,autonomous_vehicles
+ai-deals-coverage-442701c0d55527e04f40,enabling_infrastructure,ZincFive,\N,3751,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,data_centers_power
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,7AI,\N,3752,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,cybersecurity
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,imper.ai,\N,3753,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,cybersecurity
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Lumia,\N,3754,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,cybersecurity
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Govstream.ai,\N,3755,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,enterprise_agents
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Scowtt,\N,3756,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,sales_marketing
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Safebooks AI,\N,3757,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,finance
+ai-deals-coverage-442701c0d55527e04f40,physical_ai,Pryzm,\N,3758,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,drones_defense
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Opine,\N,3759,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,sales_marketing
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Saviynt,\N,3760,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,cybersecurity
+ai-deals-coverage-442701c0d55527e04f40,enabling_infrastructure,Boom Supersonic,\N,3761,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,data_centers_power
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,BoodleBox,\N,3762,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,education
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Surf,\N,3763,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,finance
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,PsiThera,\N,3764,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,healthcare_biotech
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Fluency,\N,3765,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,sales_marketing
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Verisoul,\N,3766,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,cybersecurity
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Valerie Health,\N,3767,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,healthcare_biotech
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Nanit,\N,3768,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,healthcare_biotech
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Drive Health,\N,3769,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,healthcare_biotech
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,FINNY,\N,3770,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,finance
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Kargo.ai,\N,3771,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,general_applications
+ai-deals-coverage-442701c0d55527e04f40,enabling_infrastructure,Lucidean,\N,3772,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,interconnect_memory
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,BriefCatch,\N,3773,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,legal
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Spangle AI,\N,3774,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,sales_marketing
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Cloudforce,\N,3775,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,developer_tools
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Corgi Insurance,\N,3776,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,finance
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Torq,\N,3777,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,cybersecurity
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,VieCure,\N,3778,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,healthcare_biotech
+ai-deals-coverage-442701c0d55527e04f40,enabling_infrastructure,Quadric,\N,3779,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,ai_chips
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Vista AI,\N,3780,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,healthcare_biotech
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Pinch AI,\N,3781,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,cybersecurity
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,GovDash,\N,3782,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,enterprise_agents
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,OTTO SPORT AI,\N,3783,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,general_applications
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Tulip,\N,3784,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,enterprise_agents
+ai-deals-coverage-442701c0d55527e04f40,enabling_infrastructure,Ethernovia,\N,3785,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,interconnect_memory
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Renterra,\N,3786,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,general_applications
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,PraxisPro,\N,3787,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,sales_marketing
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,AiStrike,\N,3788,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,cybersecurity
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Claim Health,\N,3789,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,healthcare_biotech
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Mendra,\N,3790,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,healthcare_biotech
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Yuki,\N,3791,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,data_training_evaluation
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Cambio,\N,3792,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,enterprise_agents
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Mia Labs,\N,3793,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,customer_support_voice
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Railway,\N,3794,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,developer_tools
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Mine,\N,3795,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,finance
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Visitt,\N,3796,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,enterprise_agents
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Phia,\N,3797,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,general_applications
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Fiddler,\N,3798,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,data_training_evaluation
+ai-deals-coverage-442701c0d55527e04f40,enabling_infrastructure,Lucend,\N,3799,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,data_centers_power
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Datatruck,\N,3800,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,enterprise_agents
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Slice Global Equity,\N,3801,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,finance
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,GrubMarket,\N,3802,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,enterprise_agents
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,BizTrip AI,\N,3803,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,enterprise_agents
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,CloudForge,\N,3804,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,sales_marketing
+ai-deals-coverage-442701c0d55527e04f40,enabling_infrastructure,MaiaEdge,\N,3805,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,interconnect_memory
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,RADICL,\N,3806,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,cybersecurity
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Synthpop,\N,3807,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,healthcare_biotech
+ai-deals-coverage-442701c0d55527e04f40,digital_ai,Lunar Energy,\N,3808,\N,\N,Identity reconciled to cited financial disclosure; headquarters not inferred.,general_applications
