@@ -1,0 +1,1586 @@
+{
+  "snapshot_id": "ai-deals-coverage-f306b86a0dee4b8c561e",
+  "assessment_status": "COMPLETE",
+  "assessment_date": "2026-10-13",
+  "completion_standard_sha256": "1f2f0d6c6dbae6626f6326e6b7455ab8d61d4978aa9b3ad55ae6143e754ac8e2",
+  "reference_selection_sha256": "57d6dc926257a5466cdf93566811fa0148815dd6528cedd9e4d3eaac247b930c",
+  "predecessor_snapshot_id": "ai-deals-coverage-a101d6ec0385b334e0f9",
+  "predecessor_master_sha256": "d99b2acb89877da7a51ba87d345e25cb460d5d74b3e853b55c1df3fd6e07cd6e",
+  "verdict": "READY_WITH_SPECIFIC_EXCLUSIONS",
+  "full_61_subsector_heatmap_ready": false,
+  "qualified_comparison_subsectors": [
+    "defense",
+    "health",
+    "humanoid",
+    "industrial-robot",
+    "robot-model",
+    "science",
+    "warehouse"
+  ],
+  "excluded_comparison_subsectors": [
+    "agri",
+    "assistants",
+    "audio",
+    "av",
+    "cad",
+    "coding",
+    "components",
+    "construction",
+    "control",
+    "creative",
+    "dc-chip",
+    "delivery",
+    "deployment",
+    "drone",
+    "eda",
+    "edge-chip",
+    "education",
+    "engineering-flow",
+    "eval",
+    "expert",
+    "finance",
+    "hr",
+    "industrial",
+    "inference",
+    "labeling",
+    "labs",
+    "language",
+    "legal",
+    "medical-robot",
+    "memory",
+    "neocloud",
+    "network",
+    "observability",
+    "orchestration",
+    "perception",
+    "physical-sim",
+    "physics-ai",
+    "power-cooling",
+    "retrieval",
+    "robot-data",
+    "search",
+    "security",
+    "sensor",
+    "service",
+    "service-robot",
+    "solver",
+    "synthetic",
+    "systems",
+    "telemetry",
+    "training",
+    "twin",
+    "visual",
+    "workflow",
+    "world-model"
+  ],
+  "excluded_comparison_cells": [
+    {
+      "finer_subsector": "labs",
+      "period_id": "prior_12m",
+      "reason": "Fewer than two independent reference publishing families across the comparison window."
+    },
+    {
+      "finer_subsector": "labs",
+      "period_id": "recent_12m",
+      "reason": "Fewer than two independent reference publishing families across the comparison window."
+    },
+    {
+      "finer_subsector": "language",
+      "period_id": "prior_12m",
+      "reason": "Fewer than three eligible independently selected reference episodes in this period. Fewer than two independent reference publishing families across the comparison window."
+    },
+    {
+      "finer_subsector": "language",
+      "period_id": "recent_12m",
+      "reason": "Fewer than three eligible independently selected reference episodes in this period. Fewer than two independent reference publishing families across the comparison window."
+    },
+    {
+      "finer_subsector": "visual",
+      "period_id": "prior_12m",
+      "reason": "Fewer than three eligible independently selected reference episodes in this period. Fewer than two independent reference publishing families across the comparison window."
+    },
+    {
+      "finer_subsector": "visual",
+      "period_id": "recent_12m",
+      "reason": "Fewer than three eligible independently selected reference episodes in this period. Fewer than two independent reference publishing families across the comparison window."
+    },
+    {
+      "finer_subsector": "audio",
+      "period_id": "prior_12m",
+      "reason": "Fewer than three eligible independently selected reference episodes in this period. Fewer than two independent reference publishing families across the comparison window."
+    },
+    {
+      "finer_subsector": "audio",
+      "period_id": "recent_12m",
+      "reason": "Fewer than two independent reference publishing families across the comparison window."
+    },
+    {
+      "finer_subsector": "inference",
+      "period_id": "prior_12m",
+      "reason": "Fewer than two independent reference publishing families across the comparison window."
+    },
+    {
+      "finer_subsector": "inference",
+      "period_id": "recent_12m",
+      "reason": "Fewer than two independent reference publishing families across the comparison window."
+    },
+    {
+      "finer_subsector": "neocloud",
+      "period_id": "prior_12m",
+      "reason": "Fewer than three eligible independently selected reference episodes in this period. Fewer than two independent reference publishing families across the comparison window."
+    },
+    {
+      "finer_subsector": "neocloud",
+      "period_id": "recent_12m",
+      "reason": "Fewer than three eligible independently selected reference episodes in this period. Fewer than two independent reference publishing families across the comparison window."
+    },
+    {
+      "finer_subsector": "training",
+      "period_id": "prior_12m",
+      "reason": "Fewer than three eligible independently selected reference episodes in this period. Fewer than two independent reference publishing families across the comparison window."
+    },
+    {
+      "finer_subsector": "training",
+      "period_id": "recent_12m",
+      "reason": "Fewer than three eligible independently selected reference episodes in this period. Fewer than two independent reference publishing families across the comparison window."
+    },
+    {
+      "finer_subsector": "deployment",
+      "period_id": "prior_12m",
+      "reason": "Fewer than three eligible independently selected reference episodes in this period. Fewer than two independent reference publishing families across the comparison window."
+    },
+    {
+      "finer_subsector": "deployment",
+      "period_id": "recent_12m",
+      "reason": "Fewer than three eligible independently selected reference episodes in this period. Fewer than two independent reference publishing families across the comparison window."
+    },
+    {
+      "finer_subsector": "retrieval",
+      "period_id": "prior_12m",
+      "reason": "Fewer than three eligible independently selected reference episodes in this period."
+    },
+    {
+      "finer_subsector": "retrieval",
+      "period_id": "recent_12m",
+      "reason": "Fewer than three eligible independently selected reference episodes in this period."
+    },
+    {
+      "finer_subsector": "labeling",
+      "period_id": "prior_12m",
+      "reason": "Fewer than three eligible independently selected reference episodes in this period."
+    },
+    {
+      "finer_subsector": "labeling",
+      "period_id": "recent_12m",
+      "reason": "Fewer than three eligible independently selected reference episodes in this period."
+    },
+    {
+      "finer_subsector": "expert",
+      "period_id": "prior_12m",
+      "reason": "Fewer than three eligible independently selected reference episodes in this period. Fewer than two independent reference publishing families across the comparison window."
+    },
+    {
+      "finer_subsector": "expert",
+      "period_id": "recent_12m",
+      "reason": "Fewer than three eligible independently selected reference episodes in this period. Fewer than two independent reference publishing families across the comparison window."
+    },
+    {
+      "finer_subsector": "synthetic",
+      "period_id": "prior_12m",
+      "reason": "Fewer than three eligible independently selected reference episodes in this period. Fewer than two independent reference publishing families across the comparison window."
+    },
+    {
+      "finer_subsector": "synthetic",
+      "period_id": "recent_12m",
+      "reason": "Fewer than three eligible independently selected reference episodes in this period. Fewer than two independent reference publishing families across the comparison window."
+    },
+    {
+      "finer_subsector": "eval",
+      "period_id": "prior_12m",
+      "reason": "Fewer than three eligible independently selected reference episodes in this period."
+    },
+    {
+      "finer_subsector": "eval",
+      "period_id": "recent_12m",
+      "reason": "Fewer than three eligible independently selected reference episodes in this period."
+    },
+    {
+      "finer_subsector": "orchestration",
+      "period_id": "prior_12m",
+      "reason": "Fewer than three eligible independently selected reference episodes in this period. Fewer than two independent reference publishing families across the comparison window."
+    },
+    {
+      "finer_subsector": "orchestration",
+      "period_id": "recent_12m",
+      "reason": "Fewer than three eligible independently selected reference episodes in this period. Fewer than two independent reference publishing families across the comparison window."
+    },
+    {
+      "finer_subsector": "observability",
+      "period_id": "prior_12m",
+      "reason": "Fewer than three eligible independently selected reference episodes in this period. Fewer than two independent reference publishing families across the comparison window."
+    },
+    {
+      "finer_subsector": "observability",
+      "period_id": "recent_12m",
+      "reason": "Fewer than three eligible independently selected reference episodes in this period. Fewer than two independent reference publishing families across the comparison window."
+    },
+    {
+      "finer_subsector": "security",
+      "period_id": "prior_12m",
+      "reason": "Fewer than three eligible independently selected reference episodes in this period."
+    },
+    {
+      "finer_subsector": "coding",
+      "period_id": "recent_12m",
+      "reason": "Fewer than three eligible independently selected reference episodes in this period."
+    },
+    {
+      "finer_subsector": "assistants",
+      "period_id": "prior_12m",
+      "reason": "Fewer than three eligible independently selected reference episodes in this period. Fewer than two independent reference publishing families across the comparison window."
+    },
+    {
+      "finer_subsector": "assistants",
+      "period_id": "recent_12m",
+      "reason": "Fewer than three eligible independently selected reference episodes in this period. Fewer than two independent reference publishing families across the comparison window."
+    },
+    {
+      "finer_subsector": "search",
+      "period_id": "prior_12m",
+      "reason": "Fewer than three eligible independently selected reference episodes in this period. Fewer than two independent reference publishing families across the comparison window."
+    },
+    {
+      "finer_subsector": "search",
+      "period_id": "recent_12m",
+      "reason": "Fewer than three eligible independently selected reference episodes in this period. Fewer than two independent reference publishing families across the comparison window."
+    },
+    {
+      "finer_subsector": "workflow",
+      "period_id": "prior_12m",
+      "reason": "Fewer than two independent reference publishing families across the comparison window."
+    },
+    {
+      "finer_subsector": "workflow",
+      "period_id": "recent_12m",
+      "reason": "Fewer than three eligible independently selected reference episodes in this period. Fewer than two independent reference publishing families across the comparison window."
+    },
+    {
+      "finer_subsector": "creative",
+      "period_id": "prior_12m",
+      "reason": "Fewer than three eligible independently selected reference episodes in this period. Fewer than two independent reference publishing families across the comparison window."
+    },
+    {
+      "finer_subsector": "creative",
+      "period_id": "recent_12m",
+      "reason": "Fewer than three eligible independently selected reference episodes in this period. Fewer than two independent reference publishing families across the comparison window."
+    },
+    {
+      "finer_subsector": "legal",
+      "period_id": "recent_12m",
+      "reason": "Fewer than three eligible independently selected reference episodes in this period."
+    },
+    {
+      "finer_subsector": "finance",
+      "period_id": "prior_12m",
+      "reason": "Fewer than three eligible independently selected reference episodes in this period. Fewer than two independent reference publishing families across the comparison window."
+    },
+    {
+      "finer_subsector": "finance",
+      "period_id": "recent_12m",
+      "reason": "Fewer than three eligible independently selected reference episodes in this period. Fewer than two independent reference publishing families across the comparison window."
+    },
+    {
+      "finer_subsector": "industrial",
+      "period_id": "recent_12m",
+      "reason": "Fewer than three eligible independently selected reference episodes in this period."
+    },
+    {
+      "finer_subsector": "service",
+      "period_id": "prior_12m",
+      "reason": "Fewer than three eligible independently selected reference episodes in this period."
+    },
+    {
+      "finer_subsector": "service",
+      "period_id": "recent_12m",
+      "reason": "Fewer than three eligible independently selected reference episodes in this period."
+    },
+    {
+      "finer_subsector": "education",
+      "period_id": "prior_12m",
+      "reason": "Fewer than three eligible independently selected reference episodes in this period. Fewer than two independent reference publishing families across the comparison window."
+    },
+    {
+      "finer_subsector": "education",
+      "period_id": "recent_12m",
+      "reason": "Fewer than three eligible independently selected reference episodes in this period. Fewer than two independent reference publishing families across the comparison window."
+    },
+    {
+      "finer_subsector": "hr",
+      "period_id": "prior_12m",
+      "reason": "Fewer than three eligible independently selected reference episodes in this period. Fewer than two independent reference publishing families across the comparison window."
+    },
+    {
+      "finer_subsector": "hr",
+      "period_id": "recent_12m",
+      "reason": "Fewer than three eligible independently selected reference episodes in this period. Fewer than two independent reference publishing families across the comparison window."
+    },
+    {
+      "finer_subsector": "world-model",
+      "period_id": "prior_12m",
+      "reason": "Fewer than three eligible independently selected reference episodes in this period. Fewer than two independent reference publishing families across the comparison window."
+    },
+    {
+      "finer_subsector": "world-model",
+      "period_id": "recent_12m",
+      "reason": "Fewer than three eligible independently selected reference episodes in this period. Fewer than two independent reference publishing families across the comparison window."
+    },
+    {
+      "finer_subsector": "perception",
+      "period_id": "prior_12m",
+      "reason": "Fewer than two independent reference publishing families across the comparison window."
+    },
+    {
+      "finer_subsector": "perception",
+      "period_id": "recent_12m",
+      "reason": "Fewer than two independent reference publishing families across the comparison window."
+    },
+    {
+      "finer_subsector": "control",
+      "period_id": "prior_12m",
+      "reason": "Fewer than two independent reference publishing families across the comparison window."
+    },
+    {
+      "finer_subsector": "control",
+      "period_id": "recent_12m",
+      "reason": "Fewer than two independent reference publishing families across the comparison window."
+    },
+    {
+      "finer_subsector": "robot-data",
+      "period_id": "prior_12m",
+      "reason": "Fewer than two independent reference publishing families across the comparison window."
+    },
+    {
+      "finer_subsector": "robot-data",
+      "period_id": "recent_12m",
+      "reason": "Fewer than two independent reference publishing families across the comparison window."
+    },
+    {
+      "finer_subsector": "physical-sim",
+      "period_id": "prior_12m",
+      "reason": "Fewer than three eligible independently selected reference episodes in this period. Fewer than two independent reference publishing families across the comparison window."
+    },
+    {
+      "finer_subsector": "physical-sim",
+      "period_id": "recent_12m",
+      "reason": "Fewer than two independent reference publishing families across the comparison window."
+    },
+    {
+      "finer_subsector": "telemetry",
+      "period_id": "prior_12m",
+      "reason": "Fewer than three eligible independently selected reference episodes in this period. Fewer than two independent reference publishing families across the comparison window."
+    },
+    {
+      "finer_subsector": "telemetry",
+      "period_id": "recent_12m",
+      "reason": "Fewer than three eligible independently selected reference episodes in this period. Fewer than two independent reference publishing families across the comparison window."
+    },
+    {
+      "finer_subsector": "av",
+      "period_id": "prior_12m",
+      "reason": "Fewer than two independent reference publishing families across the comparison window."
+    },
+    {
+      "finer_subsector": "av",
+      "period_id": "recent_12m",
+      "reason": "Fewer than two independent reference publishing families across the comparison window."
+    },
+    {
+      "finer_subsector": "drone",
+      "period_id": "prior_12m",
+      "reason": "Fewer than two independent reference publishing families across the comparison window."
+    },
+    {
+      "finer_subsector": "drone",
+      "period_id": "recent_12m",
+      "reason": "Fewer than two independent reference publishing families across the comparison window."
+    },
+    {
+      "finer_subsector": "agri",
+      "period_id": "prior_12m",
+      "reason": "Fewer than two independent reference publishing families across the comparison window."
+    },
+    {
+      "finer_subsector": "agri",
+      "period_id": "recent_12m",
+      "reason": "Fewer than two independent reference publishing families across the comparison window."
+    },
+    {
+      "finer_subsector": "medical-robot",
+      "period_id": "prior_12m",
+      "reason": "Fewer than two independent reference publishing families across the comparison window."
+    },
+    {
+      "finer_subsector": "medical-robot",
+      "period_id": "recent_12m",
+      "reason": "Fewer than two independent reference publishing families across the comparison window."
+    },
+    {
+      "finer_subsector": "construction",
+      "period_id": "prior_12m",
+      "reason": "Fewer than two independent reference publishing families across the comparison window."
+    },
+    {
+      "finer_subsector": "construction",
+      "period_id": "recent_12m",
+      "reason": "Fewer than two independent reference publishing families across the comparison window."
+    },
+    {
+      "finer_subsector": "service-robot",
+      "period_id": "prior_12m",
+      "reason": "Fewer than two independent reference publishing families across the comparison window."
+    },
+    {
+      "finer_subsector": "service-robot",
+      "period_id": "recent_12m",
+      "reason": "Fewer than two independent reference publishing families across the comparison window."
+    },
+    {
+      "finer_subsector": "delivery",
+      "period_id": "prior_12m",
+      "reason": "Fewer than three eligible independently selected reference episodes in this period. Fewer than two independent reference publishing families across the comparison window."
+    },
+    {
+      "finer_subsector": "delivery",
+      "period_id": "recent_12m",
+      "reason": "Fewer than three eligible independently selected reference episodes in this period. Fewer than two independent reference publishing families across the comparison window."
+    },
+    {
+      "finer_subsector": "physics-ai",
+      "period_id": "prior_12m",
+      "reason": "Fewer than three eligible independently selected reference episodes in this period."
+    },
+    {
+      "finer_subsector": "physics-ai",
+      "period_id": "recent_12m",
+      "reason": "Fewer than three eligible independently selected reference episodes in this period."
+    },
+    {
+      "finer_subsector": "solver",
+      "period_id": "prior_12m",
+      "reason": "Fewer than three eligible independently selected reference episodes in this period. Fewer than two independent reference publishing families across the comparison window."
+    },
+    {
+      "finer_subsector": "solver",
+      "period_id": "recent_12m",
+      "reason": "Fewer than three eligible independently selected reference episodes in this period. Fewer than two independent reference publishing families across the comparison window."
+    },
+    {
+      "finer_subsector": "cad",
+      "period_id": "prior_12m",
+      "reason": "Fewer than three eligible independently selected reference episodes in this period. Fewer than two independent reference publishing families across the comparison window."
+    },
+    {
+      "finer_subsector": "cad",
+      "period_id": "recent_12m",
+      "reason": "Fewer than three eligible independently selected reference episodes in this period. Fewer than two independent reference publishing families across the comparison window."
+    },
+    {
+      "finer_subsector": "systems",
+      "period_id": "prior_12m",
+      "reason": "Fewer than three eligible independently selected reference episodes in this period. Fewer than two independent reference publishing families across the comparison window."
+    },
+    {
+      "finer_subsector": "systems",
+      "period_id": "recent_12m",
+      "reason": "Fewer than three eligible independently selected reference episodes in this period. Fewer than two independent reference publishing families across the comparison window."
+    },
+    {
+      "finer_subsector": "twin",
+      "period_id": "prior_12m",
+      "reason": "Fewer than three eligible independently selected reference episodes in this period. Fewer than two independent reference publishing families across the comparison window."
+    },
+    {
+      "finer_subsector": "twin",
+      "period_id": "recent_12m",
+      "reason": "Fewer than three eligible independently selected reference episodes in this period. Fewer than two independent reference publishing families across the comparison window."
+    },
+    {
+      "finer_subsector": "engineering-flow",
+      "period_id": "prior_12m",
+      "reason": "Fewer than three eligible independently selected reference episodes in this period. Fewer than two independent reference publishing families across the comparison window."
+    },
+    {
+      "finer_subsector": "engineering-flow",
+      "period_id": "recent_12m",
+      "reason": "Fewer than three eligible independently selected reference episodes in this period. Fewer than two independent reference publishing families across the comparison window."
+    },
+    {
+      "finer_subsector": "eda",
+      "period_id": "prior_12m",
+      "reason": "Fewer than three eligible independently selected reference episodes in this period. Fewer than two independent reference publishing families across the comparison window."
+    },
+    {
+      "finer_subsector": "eda",
+      "period_id": "recent_12m",
+      "reason": "Fewer than three eligible independently selected reference episodes in this period. Fewer than two independent reference publishing families across the comparison window."
+    },
+    {
+      "finer_subsector": "dc-chip",
+      "period_id": "prior_12m",
+      "reason": "Fewer than two independent reference publishing families across the comparison window."
+    },
+    {
+      "finer_subsector": "dc-chip",
+      "period_id": "recent_12m",
+      "reason": "Fewer than three eligible independently selected reference episodes in this period. Fewer than two independent reference publishing families across the comparison window."
+    },
+    {
+      "finer_subsector": "edge-chip",
+      "period_id": "prior_12m",
+      "reason": "Fewer than three eligible independently selected reference episodes in this period."
+    },
+    {
+      "finer_subsector": "edge-chip",
+      "period_id": "recent_12m",
+      "reason": "Fewer than three eligible independently selected reference episodes in this period."
+    },
+    {
+      "finer_subsector": "sensor",
+      "period_id": "prior_12m",
+      "reason": "Fewer than two independent reference publishing families across the comparison window."
+    },
+    {
+      "finer_subsector": "sensor",
+      "period_id": "recent_12m",
+      "reason": "Fewer than three eligible independently selected reference episodes in this period. Fewer than two independent reference publishing families across the comparison window."
+    },
+    {
+      "finer_subsector": "components",
+      "period_id": "prior_12m",
+      "reason": "Fewer than two independent reference publishing families across the comparison window."
+    },
+    {
+      "finer_subsector": "components",
+      "period_id": "recent_12m",
+      "reason": "Fewer than two independent reference publishing families across the comparison window."
+    },
+    {
+      "finer_subsector": "network",
+      "period_id": "prior_12m",
+      "reason": "Fewer than two independent reference publishing families across the comparison window."
+    },
+    {
+      "finer_subsector": "network",
+      "period_id": "recent_12m",
+      "reason": "Fewer than three eligible independently selected reference episodes in this period. Fewer than two independent reference publishing families across the comparison window."
+    },
+    {
+      "finer_subsector": "memory",
+      "period_id": "prior_12m",
+      "reason": "Fewer than three eligible independently selected reference episodes in this period. Fewer than two independent reference publishing families across the comparison window."
+    },
+    {
+      "finer_subsector": "memory",
+      "period_id": "recent_12m",
+      "reason": "Fewer than three eligible independently selected reference episodes in this period. Fewer than two independent reference publishing families across the comparison window."
+    },
+    {
+      "finer_subsector": "power-cooling",
+      "period_id": "prior_12m",
+      "reason": "Fewer than three eligible independently selected reference episodes in this period. Fewer than two independent reference publishing families across the comparison window."
+    },
+    {
+      "finer_subsector": "power-cooling",
+      "period_id": "recent_12m",
+      "reason": "Fewer than three eligible independently selected reference episodes in this period. Fewer than two independent reference publishing families across the comparison window."
+    }
+  ],
+  "reference_capture": {
+    "overall": {
+      "raw_references": 623,
+      "eligible_reference_mentions": 618,
+      "initially_captured": 363,
+      "finally_captured": 618,
+      "initial_capture_fraction": 0.587378640776699,
+      "final_capture_fraction": 1.0,
+      "distinct_financing_episodes": 602,
+      "material_references": 460,
+      "material_references_captured": 460
+    },
+    "prior_12m": {
+      "raw_references": 283,
+      "eligible_reference_mentions": 283,
+      "initially_captured": 164,
+      "finally_captured": 283,
+      "initial_capture_fraction": 0.5795053003533569,
+      "final_capture_fraction": 1.0,
+      "distinct_financing_episodes": 272,
+      "material_references": 219,
+      "material_references_captured": 219
+    },
+    "recent_12m": {
+      "raw_references": 316,
+      "eligible_reference_mentions": 316,
+      "initially_captured": 185,
+      "finally_captured": 316,
+      "initial_capture_fraction": 0.5854430379746836,
+      "final_capture_fraction": 1.0,
+      "distinct_financing_episodes": 312,
+      "material_references": 224,
+      "material_references_captured": 224
+    },
+    "october_update": {
+      "raw_references": 19,
+      "eligible_reference_mentions": 19,
+      "initially_captured": 14,
+      "finally_captured": 19,
+      "initial_capture_fraction": 0.7368421052631579,
+      "final_capture_fraction": 1.0,
+      "distinct_financing_episodes": 19,
+      "material_references": 17,
+      "material_references_captured": 17
+    }
+  },
+  "reference_dispositions": {
+    "verified_financing_added": 225,
+    "matched_existing_financing": 363,
+    "same_reference_financing_already_added": 1,
+    "excluded_from_fixed_framework": 4,
+    "recovered_existing_financing": 29,
+    "retained_combined_rounds_context": 1
+  },
+  "references_unadjudicated": 0,
+  "verified_material_findings_unfixed": 0,
+  "added_retained_records": 226,
+  "added_framework_financing_disclosures": 225,
+  "recovered_existing_framework_disclosures": 29,
+  "removed_previously_included_framework_disclosures": 1,
+  "new_framework_event_ids": [
+    5810,
+    5811,
+    5812,
+    5813,
+    5814,
+    5815,
+    5816,
+    5817,
+    5818,
+    5819,
+    5820,
+    5821,
+    5822,
+    5823,
+    5824,
+    5825,
+    5826,
+    5827,
+    5828,
+    5829,
+    5830,
+    5831,
+    5832,
+    5833,
+    5834,
+    5835,
+    5836,
+    5837,
+    5838,
+    5839,
+    5840,
+    5841,
+    5842,
+    5843,
+    5844,
+    5845,
+    5846,
+    5847,
+    5848,
+    5849,
+    5850,
+    5851,
+    5852,
+    5853,
+    5854,
+    5855,
+    5856,
+    5857,
+    5858,
+    5859,
+    5860,
+    5861,
+    5862,
+    5863,
+    5864,
+    5865,
+    5866,
+    5867,
+    5868,
+    5869,
+    5870,
+    5871,
+    5872,
+    5873,
+    5874,
+    5875,
+    5876,
+    5877,
+    5878,
+    5879,
+    5880,
+    5881,
+    5882,
+    5883,
+    5884,
+    5885,
+    5886,
+    5887,
+    5888,
+    5889,
+    5890,
+    5891,
+    5892,
+    5893,
+    5894,
+    5895,
+    5896,
+    5897,
+    5898,
+    5899,
+    5900,
+    5901,
+    5902,
+    5903,
+    5904,
+    5905,
+    5906,
+    5907,
+    5908,
+    5909,
+    5910,
+    5911,
+    5912,
+    5913,
+    5914,
+    5915,
+    5916,
+    5917,
+    5918,
+    5920,
+    5921,
+    5922,
+    5923,
+    5924,
+    5925,
+    5926,
+    5927,
+    5928,
+    5929,
+    5930,
+    5931,
+    5932,
+    5933,
+    5934,
+    5935,
+    5936,
+    5937,
+    5938,
+    5939,
+    5940,
+    5941,
+    5942,
+    5943,
+    5944,
+    5945,
+    5946,
+    5947,
+    5948,
+    5949,
+    5950,
+    5951,
+    5952,
+    5953,
+    5954,
+    5955,
+    5956,
+    5957,
+    5958,
+    5959,
+    5960,
+    5961,
+    5962,
+    5963,
+    5964,
+    5965,
+    5966,
+    5967,
+    5968,
+    5969,
+    5970,
+    5971,
+    5972,
+    5973,
+    5974,
+    5975,
+    5976,
+    5977,
+    5978,
+    5979,
+    5980,
+    5981,
+    5982,
+    5983,
+    5984,
+    5985,
+    5986,
+    5987,
+    5988,
+    5989,
+    5990,
+    5991,
+    5992,
+    5993,
+    5994,
+    5995,
+    5996,
+    5997,
+    5998,
+    5999,
+    6000,
+    6001,
+    6002,
+    6003,
+    6004,
+    6005,
+    6006,
+    6007,
+    6008,
+    6009,
+    6010,
+    6011,
+    6012,
+    6013,
+    6014,
+    6015,
+    6016,
+    6017,
+    6018,
+    6019,
+    6020,
+    6021,
+    6022,
+    6023,
+    6024,
+    6025,
+    6026,
+    6027,
+    6028,
+    6029,
+    6030,
+    6031,
+    6032,
+    6033,
+    6034,
+    6035
+  ],
+  "recovered_framework_event_ids": [
+    115,
+    521,
+    796,
+    805,
+    813,
+    967,
+    982,
+    988,
+    1015,
+    1054,
+    1126,
+    1132,
+    1181,
+    1376,
+    1410,
+    1553,
+    1663,
+    1670,
+    1672,
+    1687,
+    1961,
+    2121,
+    2241,
+    2495,
+    2508,
+    2793,
+    2959,
+    3058,
+    3560
+  ],
+  "removed_framework_event_ids": [
+    4935
+  ],
+  "existing_issuer_classification_decisions": 28,
+  "existing_record_material_source_sample": 60,
+  "sample_statuses": {
+    "verified_no_material_change": 55,
+    "verified_corrected": 5
+  },
+  "subsector_period_cells_assessed": 183,
+  "comparison_months_assessed": 24,
+  "known_discovery_claims_quarantined": 20,
+  "unresolved_supported_classification_holds": 0,
+  "counts": {
+    "events_all": 6035,
+    "observations_all": 7426,
+    "companies": 5197,
+    "credible_financing_disclosures": 3880,
+    "financing_episodes": 3847,
+    "framework_financing_disclosures": 3710,
+    "framework_financing_episodes": 3679,
+    "reviewed_framework_financing_disclosures": 2956,
+    "framework_core_equity_cutoff": 1457
+  },
+  "standard": {
+    "minimum_total_references": 200,
+    "minimum_references_per_12m": 60,
+    "minimum_october_references": 8,
+    "minimum_accuracy_sample": 60,
+    "minimum_episode_references_per_comparison_cell": 3,
+    "minimum_independent_reference_families_per_subsector": 2,
+    "minimum_capture_fraction": 0.95,
+    "all_material_reference_deals_captured": true
+  },
+  "source_selection_families": {
+    "F-Prime Robotics Roundup": 485,
+    "TechCrunch": 96,
+    "Inc42": 15,
+    "Axios": 18,
+    "TechNode": 9
+  },
+  "limits": [
+    "Reference capture is measured against the frozen finite public reference corpus, not a worldwide deal population.",
+    "Robotics dominates the reference corpus; digital small rounds and engineering categories are less independently tested.",
+    "China and India have targeted references, not exhaustive local-language or proprietary coverage.",
+    "Existing source-rule classifications remain explicit and were sampled, not all individually recertified.",
+    "Unknown funding amounts are missing values, not zero; reported packages, bounds and round components are marked.",
+    "Excluded cells must not be labeled cold, no activity, or used to infer volume growth.",
+    "For deal counts use episode first public disclosure; for financing amounts retain dated incremental disclosures and avoid adding repeated episode totals.",
+    "October 1–11 is display-only for verified disclosures."
+  ],
+  "market_recall_measured": false,
+  "market_completeness_certified": false,
+  "trends_calculated": false,
+  "comparison_month_inventory": {
+    "2024-10": 140,
+    "2024-11": 99,
+    "2024-12": 94,
+    "2025-01": 104,
+    "2025-02": 112,
+    "2025-03": 143,
+    "2025-04": 146,
+    "2025-05": 129,
+    "2025-06": 162,
+    "2025-07": 200,
+    "2025-08": 114,
+    "2025-09": 198,
+    "2025-10": 179,
+    "2025-11": 173,
+    "2025-12": 138,
+    "2026-01": 149,
+    "2026-02": 212,
+    "2026-03": 171,
+    "2026-04": 157,
+    "2026-05": 123,
+    "2026-06": 170,
+    "2026-07": 154,
+    "2026-08": 148,
+    "2026-09": 224
+  },
+  "range_disclosures_not_assigned_to_a_month": 6,
+  "geographic_inventory_by_period": [
+    {
+      "period_id": "october_update",
+      "country_iso2": "CH",
+      "financing_disclosures": 2
+    },
+    {
+      "period_id": "october_update",
+      "country_iso2": "CN",
+      "financing_disclosures": 1
+    },
+    {
+      "period_id": "october_update",
+      "country_iso2": "DE",
+      "financing_disclosures": 2
+    },
+    {
+      "period_id": "october_update",
+      "country_iso2": "DK",
+      "financing_disclosures": 2
+    },
+    {
+      "period_id": "october_update",
+      "country_iso2": "FR",
+      "financing_disclosures": 2
+    },
+    {
+      "period_id": "october_update",
+      "country_iso2": "GB",
+      "financing_disclosures": 3
+    },
+    {
+      "period_id": "october_update",
+      "country_iso2": "IN",
+      "financing_disclosures": 1
+    },
+    {
+      "period_id": "october_update",
+      "country_iso2": "IT",
+      "financing_disclosures": 2
+    },
+    {
+      "period_id": "october_update",
+      "country_iso2": "KR",
+      "financing_disclosures": 1
+    },
+    {
+      "period_id": "october_update",
+      "country_iso2": "LU",
+      "financing_disclosures": 1
+    },
+    {
+      "period_id": "october_update",
+      "country_iso2": "NL",
+      "financing_disclosures": 1
+    },
+    {
+      "period_id": "october_update",
+      "country_iso2": "UA",
+      "financing_disclosures": 1
+    },
+    {
+      "period_id": "october_update",
+      "country_iso2": "UNKNOWN",
+      "financing_disclosures": 31
+    },
+    {
+      "period_id": "october_update",
+      "country_iso2": "US",
+      "financing_disclosures": 15
+    },
+    {
+      "period_id": "prior_12m",
+      "country_iso2": "AT",
+      "financing_disclosures": 2
+    },
+    {
+      "period_id": "prior_12m",
+      "country_iso2": "AU",
+      "financing_disclosures": 3
+    },
+    {
+      "period_id": "prior_12m",
+      "country_iso2": "BE",
+      "financing_disclosures": 4
+    },
+    {
+      "period_id": "prior_12m",
+      "country_iso2": "CA",
+      "financing_disclosures": 3
+    },
+    {
+      "period_id": "prior_12m",
+      "country_iso2": "CH",
+      "financing_disclosures": 9
+    },
+    {
+      "period_id": "prior_12m",
+      "country_iso2": "CN",
+      "financing_disclosures": 18
+    },
+    {
+      "period_id": "prior_12m",
+      "country_iso2": "CZ",
+      "financing_disclosures": 2
+    },
+    {
+      "period_id": "prior_12m",
+      "country_iso2": "DE",
+      "financing_disclosures": 40
+    },
+    {
+      "period_id": "prior_12m",
+      "country_iso2": "DK",
+      "financing_disclosures": 6
+    },
+    {
+      "period_id": "prior_12m",
+      "country_iso2": "EE",
+      "financing_disclosures": 2
+    },
+    {
+      "period_id": "prior_12m",
+      "country_iso2": "ES",
+      "financing_disclosures": 11
+    },
+    {
+      "period_id": "prior_12m",
+      "country_iso2": "FI",
+      "financing_disclosures": 6
+    },
+    {
+      "period_id": "prior_12m",
+      "country_iso2": "FR",
+      "financing_disclosures": 20
+    },
+    {
+      "period_id": "prior_12m",
+      "country_iso2": "GB",
+      "financing_disclosures": 64
+    },
+    {
+      "period_id": "prior_12m",
+      "country_iso2": "GR",
+      "financing_disclosures": 1
+    },
+    {
+      "period_id": "prior_12m",
+      "country_iso2": "IE",
+      "financing_disclosures": 4
+    },
+    {
+      "period_id": "prior_12m",
+      "country_iso2": "IL",
+      "financing_disclosures": 5
+    },
+    {
+      "period_id": "prior_12m",
+      "country_iso2": "IN",
+      "financing_disclosures": 3
+    },
+    {
+      "period_id": "prior_12m",
+      "country_iso2": "IT",
+      "financing_disclosures": 5
+    },
+    {
+      "period_id": "prior_12m",
+      "country_iso2": "KR",
+      "financing_disclosures": 2
+    },
+    {
+      "period_id": "prior_12m",
+      "country_iso2": "LT",
+      "financing_disclosures": 3
+    },
+    {
+      "period_id": "prior_12m",
+      "country_iso2": "LV",
+      "financing_disclosures": 1
+    },
+    {
+      "period_id": "prior_12m",
+      "country_iso2": "NL",
+      "financing_disclosures": 11
+    },
+    {
+      "period_id": "prior_12m",
+      "country_iso2": "NO",
+      "financing_disclosures": 4
+    },
+    {
+      "period_id": "prior_12m",
+      "country_iso2": "NZ",
+      "financing_disclosures": 1
+    },
+    {
+      "period_id": "prior_12m",
+      "country_iso2": "PL",
+      "financing_disclosures": 2
+    },
+    {
+      "period_id": "prior_12m",
+      "country_iso2": "PT",
+      "financing_disclosures": 6
+    },
+    {
+      "period_id": "prior_12m",
+      "country_iso2": "RO",
+      "financing_disclosures": 1
+    },
+    {
+      "period_id": "prior_12m",
+      "country_iso2": "SE",
+      "financing_disclosures": 7
+    },
+    {
+      "period_id": "prior_12m",
+      "country_iso2": "SG",
+      "financing_disclosures": 1
+    },
+    {
+      "period_id": "prior_12m",
+      "country_iso2": "TR",
+      "financing_disclosures": 12
+    },
+    {
+      "period_id": "prior_12m",
+      "country_iso2": "UA",
+      "financing_disclosures": 1
+    },
+    {
+      "period_id": "prior_12m",
+      "country_iso2": "UNKNOWN",
+      "financing_disclosures": 1137
+    },
+    {
+      "period_id": "prior_12m",
+      "country_iso2": "US",
+      "financing_disclosures": 250
+    },
+    {
+      "period_id": "recent_12m",
+      "country_iso2": "AE",
+      "financing_disclosures": 1
+    },
+    {
+      "period_id": "recent_12m",
+      "country_iso2": "AT",
+      "financing_disclosures": 4
+    },
+    {
+      "period_id": "recent_12m",
+      "country_iso2": "AU",
+      "financing_disclosures": 11
+    },
+    {
+      "period_id": "recent_12m",
+      "country_iso2": "BE",
+      "financing_disclosures": 9
+    },
+    {
+      "period_id": "recent_12m",
+      "country_iso2": "BR",
+      "financing_disclosures": 1
+    },
+    {
+      "period_id": "recent_12m",
+      "country_iso2": "CA",
+      "financing_disclosures": 6
+    },
+    {
+      "period_id": "recent_12m",
+      "country_iso2": "CH",
+      "financing_disclosures": 21
+    },
+    {
+      "period_id": "recent_12m",
+      "country_iso2": "CN",
+      "financing_disclosures": 47
+    },
+    {
+      "period_id": "recent_12m",
+      "country_iso2": "CZ",
+      "financing_disclosures": 5
+    },
+    {
+      "period_id": "recent_12m",
+      "country_iso2": "DE",
+      "financing_disclosures": 66
+    },
+    {
+      "period_id": "recent_12m",
+      "country_iso2": "DK",
+      "financing_disclosures": 6
+    },
+    {
+      "period_id": "recent_12m",
+      "country_iso2": "EE",
+      "financing_disclosures": 5
+    },
+    {
+      "period_id": "recent_12m",
+      "country_iso2": "ES",
+      "financing_disclosures": 18
+    },
+    {
+      "period_id": "recent_12m",
+      "country_iso2": "FI",
+      "financing_disclosures": 9
+    },
+    {
+      "period_id": "recent_12m",
+      "country_iso2": "FR",
+      "financing_disclosures": 25
+    },
+    {
+      "period_id": "recent_12m",
+      "country_iso2": "GB",
+      "financing_disclosures": 110
+    },
+    {
+      "period_id": "recent_12m",
+      "country_iso2": "GR",
+      "financing_disclosures": 1
+    },
+    {
+      "period_id": "recent_12m",
+      "country_iso2": "IE",
+      "financing_disclosures": 5
+    },
+    {
+      "period_id": "recent_12m",
+      "country_iso2": "IL",
+      "financing_disclosures": 20
+    },
+    {
+      "period_id": "recent_12m",
+      "country_iso2": "IN",
+      "financing_disclosures": 9
+    },
+    {
+      "period_id": "recent_12m",
+      "country_iso2": "IS",
+      "financing_disclosures": 1
+    },
+    {
+      "period_id": "recent_12m",
+      "country_iso2": "IT",
+      "financing_disclosures": 13
+    },
+    {
+      "period_id": "recent_12m",
+      "country_iso2": "JP",
+      "financing_disclosures": 5
+    },
+    {
+      "period_id": "recent_12m",
+      "country_iso2": "KR",
+      "financing_disclosures": 7
+    },
+    {
+      "period_id": "recent_12m",
+      "country_iso2": "LT",
+      "financing_disclosures": 4
+    },
+    {
+      "period_id": "recent_12m",
+      "country_iso2": "LU",
+      "financing_disclosures": 1
+    },
+    {
+      "period_id": "recent_12m",
+      "country_iso2": "LV",
+      "financing_disclosures": 1
+    },
+    {
+      "period_id": "recent_12m",
+      "country_iso2": "NL",
+      "financing_disclosures": 20
+    },
+    {
+      "period_id": "recent_12m",
+      "country_iso2": "NO",
+      "financing_disclosures": 9
+    },
+    {
+      "period_id": "recent_12m",
+      "country_iso2": "NZ",
+      "financing_disclosures": 1
+    },
+    {
+      "period_id": "recent_12m",
+      "country_iso2": "PL",
+      "financing_disclosures": 5
+    },
+    {
+      "period_id": "recent_12m",
+      "country_iso2": "PT",
+      "financing_disclosures": 5
+    },
+    {
+      "period_id": "recent_12m",
+      "country_iso2": "RO",
+      "financing_disclosures": 2
+    },
+    {
+      "period_id": "recent_12m",
+      "country_iso2": "SE",
+      "financing_disclosures": 25
+    },
+    {
+      "period_id": "recent_12m",
+      "country_iso2": "TR",
+      "financing_disclosures": 18
+    },
+    {
+      "period_id": "recent_12m",
+      "country_iso2": "UA",
+      "financing_disclosures": 3
+    },
+    {
+      "period_id": "recent_12m",
+      "country_iso2": "UNKNOWN",
+      "financing_disclosures": 1104
+    },
+    {
+      "period_id": "recent_12m",
+      "country_iso2": "US",
+      "financing_disclosures": 395
+    }
+  ],
+  "canonical_checks_passed": 996,
+  "canonical_checks_failed": 0,
+  "database_sha256": "a59d27ffc5930a968069635bc2b32e91333cd1b8e4c574dcf8b460b07690099e",
+  "validation_state": "ALL_REQUIRED_CHECKS_PASSED",
+  "qualified_comparison_subsector_labels": [
+    "Defense autonomy",
+    "Healthcare AI",
+    "Humanoids and general robot platforms",
+    "Industrial manipulation and manufacturing",
+    "Robot foundation models",
+    "Life sciences and discovery AI",
+    "Warehouse and logistics robotics"
+  ],
+  "excluded_comparison_subsector_labels": [
+    "Agricultural robots",
+    "Horizontal assistants and knowledge tools",
+    "Audio and speech models",
+    "Autonomous vehicles",
+    "CAD and computational design",
+    "Coding applications",
+    "Robot components",
+    "Construction and mining robots",
+    "Planning, control and robotics software",
+    "Creative AI applications",
+    "Datacenter accelerators and custom ASICs",
+    "Ground delivery robots",
+    "Model deployment platforms",
+    "Drones and aerial delivery",
+    "EDA and chip-design software",
+    "Edge AI processors",
+    "Education AI",
+    "Engineering orchestration",
+    "Evaluations and training environments",
+    "Expert data and training services",
+    "Finance and accounting AI",
+    "HR and recruiting AI",
+    "Industrial and energy AI",
+    "Inference platforms",
+    "Labeling and annotation platforms",
+    "General-purpose AI labs",
+    "Specialist language and coding models",
+    "Legal AI",
+    "Medical, surgical and lab robots",
+    "AI memory and storage hardware",
+    "Neoclouds",
+    "AI networking and interconnect",
+    "AI observability",
+    "Agent orchestration and developer frameworks",
+    "Perception and localization software",
+    "Physical simulation and validation tooling",
+    "Physics models and surrogates",
+    "AI power and cooling",
+    "Retrieval and AI data infrastructure",
+    "Robot data collection and teleoperation",
+    "AI search and research",
+    "AI security and governance",
+    "Sensing hardware",
+    "Sales and customer service AI",
+    "Service and inspection robots",
+    "Numerical engineering simulation",
+    "Digital synthetic data",
+    "Systems modeling and controls",
+    "Robot fleet telemetry and operations",
+    "Training and fine-tuning platforms",
+    "Engineering digital twins",
+    "Image and video models",
+    "Enterprise workflow agents",
+    "World and spatial models"
+  ],
+  "public_export_checks_passed": 570,
+  "public_only_reconstruction_checks_passed": 557,
+  "public_only_reconstruction_verified": true,
+  "public_export_checks_failed": 0,
+  "public_only_reconstruction_checks_failed": 0,
+  "bounded_inspection_files": [
+    {
+      "path": "inspection/bounded_reference_reconciliation.csv",
+      "source_dataset": "bounded_reference_reconciliation",
+      "rows": 623,
+      "fields": [
+        "snapshot_id",
+        "reference_id",
+        "source_family",
+        "reference_url",
+        "company",
+        "reference_month",
+        "reference_amount",
+        "reference_currency",
+        "reference_amount_correction_note",
+        "disposition",
+        "eligible",
+        "canonical_event_id",
+        "financing_episode_id",
+        "announcement_date",
+        "period_id",
+        "episode_first_period",
+        "finer_subsector",
+        "initially_captured",
+        "finally_captured",
+        "material_cutoff_reference",
+        "source_urls",
+        "note",
+        "checked_at"
+      ],
+      "sha256": "ae94e1eb522a7bbdefbf75952df2f22f28938ae0bc0c97ee341eb3b6258bca97",
+      "bytes": 324489
+    },
+    {
+      "path": "inspection/bounded_readiness_cells.csv",
+      "source_dataset": "heatmap_readiness_cells",
+      "rows": 183,
+      "fields": [
+        "snapshot_id",
+        "finer_subsector",
+        "label",
+        "period_id",
+        "start_inclusive",
+        "end_exclusive",
+        "supported_financing_disclosures",
+        "financing_episodes_by_first_disclosure",
+        "cutoff_disclosures",
+        "independent_reference_mentions",
+        "independent_reference_episodes",
+        "comparison_window_reference_family_count",
+        "reference_families",
+        "eligible_reference_capture_fraction",
+        "amount_known_disclosures",
+        "amount_unknown_disclosures",
+        "classification_source_rule_disclosures",
+        "coverage_status",
+        "permitted_use",
+        "exclusion_reason",
+        "market_recall_measured"
+      ],
+      "sha256": "7a5eca8f14ead502bd0f9c58fb2b57cbe3113a90b4bf564b415dc4b606d79f2a",
+      "bytes": 69582
+    },
+    {
+      "path": "inspection/bounded_quality_sample.csv",
+      "source_dataset": "bounded_accuracy_sample",
+      "rows": 60,
+      "fields": [
+        "snapshot_id",
+        "event_id",
+        "company",
+        "original_period",
+        "original_classification_method",
+        "status",
+        "material_fields_changed",
+        "source_urls",
+        "note",
+        "checked_at"
+      ],
+      "sha256": "df3ef9fb29ba303b751984108d3948989071ec9864788c845c1c2c0d1a111949",
+      "bytes": 28258
+    }
+  ]
+}

@@ -10,7 +10,7 @@ def main():
  def check(name,ok):checks.append({'check':name,'passed':bool(ok)})
  check('manifest_hashes_sizes_counts_and_snapshot_ids',True)
  check('chunk_size_limit',all(f['bytes']<=manifest['chunk_byte_limit'] for f in manifest['files']))
- check('research_status_open',manifest['completion_scope']['research_status']=='OPEN')
+ check('bounded_assessment_complete',manifest['completion_scope']['research_status']=='COMPLETE_BOUNDED_ASSESSMENT')
  forbidden={'assertion_json','review_json','message_id','thread_id','gmail_id','email_subject','email_body','message_body','raw_source_payload'}
  check('private_payload_columns_excluded',all(not forbidden.intersection(d['fields']) for d in datasets.values()))
  with tempfile.TemporaryDirectory(prefix='ai-deals-public-check-') as td:
@@ -128,6 +128,8 @@ def main():
   for name in ('events_all','observations_all','companies','credible_financing_disclosures','financing_episodes','framework_financing_disclosures','framework_financing_episodes','reviewed_framework_financing_disclosures','framework_core_equity_cutoff','completion_reviews','queue_unverified_claims','remaining_business_scope_holds','resolved_business_scope_exclusions'):
    check('residual_current_count_matches_export:'+name,residual.get('current_counts',residual['counts'])[name]==len(datasets[name]['rows']))
   check_sweep_release(root,manifest,datasets,check)
+  from bounded_checks import check_bounded_assessment
+  check_bounded_assessment(root,manifest,datasets,check)
   actual_names={p.name for p in root.iterdir()}
   check('auditor_document_links_match_actual_filename_case','methodology.md' in actual_names and 'methodology.md' in (root/'AUDITOR_PROMPT.txt').read_text() and '(methodology.md)' in (root/'README.md').read_text())
   db.close()

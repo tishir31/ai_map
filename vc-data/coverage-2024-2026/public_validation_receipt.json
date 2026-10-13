@@ -1,11 +1,11 @@
 {
-  "snapshot_id": "ai-deals-coverage-a101d6ec0385b334e0f9",
-  "manifest_sha256": "1d1cbe65e5031dc36c1ea2bd96990e8ebcb1ac143f045d343d07c578574b1878",
-  "public_sqlite_sha256": "2af11d85d3adea301297a09a2e673c62739d527ace53c010fb69f635968645ee",
-  "datasets": 86,
-  "dataset_rows": 149825,
-  "data_files": 1406,
-  "passed": 335,
+  "snapshot_id": "ai-deals-coverage-f306b86a0dee4b8c561e",
+  "manifest_sha256": "7374408ce6b678dd0bc13ad3334895ea5e1f06485cb40d1aecdd62f26e7a0953",
+  "public_sqlite_sha256": "de58402b568fc73899b37d95b9e744bbad04776154ab8a3e642445fc921084f9",
+  "datasets": 94,
+  "dataset_rows": 155961,
+  "data_files": 1474,
+  "passed": 570,
   "failed": 0,
   "market_completeness_certified": false,
   "checks": [
@@ -25,7 +25,7 @@
       "detail": null
     },
     {
-      "check": "research_remains_open_and_no_trends",
+      "check": "bounded_assessment_complete_and_no_trends",
       "passed": true,
       "detail": null
     },
@@ -900,6 +900,86 @@
       "detail": null
     },
     {
+      "check": "csv_value_and_null_parity:claims_assessment_decisions",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "sqlite_value_type_and_null_parity:claims_assessment_decisions",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "csv_value_and_null_parity:classification_assessment_decisions",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "sqlite_value_type_and_null_parity:classification_assessment_decisions",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "csv_value_and_null_parity:assessment_event_changes",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "sqlite_value_type_and_null_parity:assessment_event_changes",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "csv_value_and_null_parity:assessment_financing_reviews",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "sqlite_value_type_and_null_parity:assessment_financing_reviews",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "csv_value_and_null_parity:bounded_subsector_period_checks",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "sqlite_value_type_and_null_parity:bounded_subsector_period_checks",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "csv_value_and_null_parity:bounded_reference_reconciliation",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "sqlite_value_type_and_null_parity:bounded_reference_reconciliation",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "csv_value_and_null_parity:bounded_accuracy_sample",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "sqlite_value_type_and_null_parity:bounded_accuracy_sample",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "csv_value_and_null_parity:heatmap_readiness_cells",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "sqlite_value_type_and_null_parity:heatmap_readiness_cells",
+      "passed": true,
+      "detail": null
+    },
+    {
       "check": "csv_value_and_null_parity:completion_reviews",
       "passed": true,
       "detail": null
@@ -1626,6 +1706,1101 @@
     },
     {
       "check": "inspection_csv_contains_no_quarantined_claim_rows",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "bounded_assessment_identifies_current_and_frozen_predecessor",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "bounded_assessment_complete_with_finite_standard",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "completion_standard_matches_frozen_digest",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "bounded_selection_has_623_final_dispositions",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "benchmark_has_minimum_period_and_update_size",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "eligible_references_resolve_to_current_framework_and_episode",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "reference_capture_recomputed:overall",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "all_material_reference_deals_captured:overall",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "reference_capture_recomputed:prior_12m",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "all_material_reference_deals_captured:prior_12m",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "reference_capture_recomputed:recent_12m",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "all_material_reference_deals_captured:recent_12m",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "reference_capture_recomputed:october_update",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "all_material_reference_deals_captured:october_update",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "benchmark_is_not_worldwide_recall_or_trend_analysis",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "all_5809_predecessor_event_ids_retained",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "all_7068_predecessor_observation_ids_retained",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "all_bounded_additions_have_public_field_and_source_provenance",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "all_bounded_corrections_and_classifications_have_sources",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "accuracy_sample_has_60_source_decisions",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "all_183_cells_have_readiness_status",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:labs:prior_12m",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:labs:recent_12m",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:labs:october_update",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:language:prior_12m",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:language:recent_12m",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:language:october_update",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:visual:prior_12m",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:visual:recent_12m",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:visual:october_update",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:audio:prior_12m",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:audio:recent_12m",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:audio:october_update",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:inference:prior_12m",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:inference:recent_12m",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:inference:october_update",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:neocloud:prior_12m",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:neocloud:recent_12m",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:neocloud:october_update",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:training:prior_12m",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:training:recent_12m",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:training:october_update",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:deployment:prior_12m",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:deployment:recent_12m",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:deployment:october_update",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:retrieval:prior_12m",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:retrieval:recent_12m",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:retrieval:october_update",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:labeling:prior_12m",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:labeling:recent_12m",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:labeling:october_update",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:expert:prior_12m",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:expert:recent_12m",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:expert:october_update",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:synthetic:prior_12m",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:synthetic:recent_12m",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:synthetic:october_update",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:eval:prior_12m",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:eval:recent_12m",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:eval:october_update",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:orchestration:prior_12m",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:orchestration:recent_12m",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:orchestration:october_update",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:observability:prior_12m",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:observability:recent_12m",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:observability:october_update",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:security:prior_12m",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:security:recent_12m",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:security:october_update",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:coding:prior_12m",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:coding:recent_12m",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:coding:october_update",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:assistants:prior_12m",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:assistants:recent_12m",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:assistants:october_update",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:search:prior_12m",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:search:recent_12m",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:search:october_update",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:workflow:prior_12m",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:workflow:recent_12m",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:workflow:october_update",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:creative:prior_12m",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:creative:recent_12m",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:creative:october_update",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:legal:prior_12m",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:legal:recent_12m",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:legal:october_update",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:health:prior_12m",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:health:recent_12m",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:health:october_update",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:finance:prior_12m",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:finance:recent_12m",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:finance:october_update",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:science:prior_12m",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:science:recent_12m",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:science:october_update",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:industrial:prior_12m",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:industrial:recent_12m",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:industrial:october_update",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:service:prior_12m",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:service:recent_12m",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:service:october_update",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:education:prior_12m",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:education:recent_12m",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:education:october_update",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:hr:prior_12m",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:hr:recent_12m",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:hr:october_update",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:robot-model:prior_12m",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:robot-model:recent_12m",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:robot-model:october_update",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:world-model:prior_12m",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:world-model:recent_12m",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:world-model:october_update",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:perception:prior_12m",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:perception:recent_12m",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:perception:october_update",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:control:prior_12m",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:control:recent_12m",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:control:october_update",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:robot-data:prior_12m",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:robot-data:recent_12m",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:robot-data:october_update",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:physical-sim:prior_12m",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:physical-sim:recent_12m",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:physical-sim:october_update",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:telemetry:prior_12m",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:telemetry:recent_12m",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:telemetry:october_update",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:humanoid:prior_12m",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:humanoid:recent_12m",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:humanoid:october_update",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:industrial-robot:prior_12m",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:industrial-robot:recent_12m",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:industrial-robot:october_update",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:warehouse:prior_12m",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:warehouse:recent_12m",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:warehouse:october_update",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:av:prior_12m",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:av:recent_12m",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:av:october_update",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:drone:prior_12m",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:drone:recent_12m",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:drone:october_update",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:defense:prior_12m",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:defense:recent_12m",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:defense:october_update",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:agri:prior_12m",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:agri:recent_12m",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:agri:october_update",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:medical-robot:prior_12m",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:medical-robot:recent_12m",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:medical-robot:october_update",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:construction:prior_12m",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:construction:recent_12m",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:construction:october_update",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:service-robot:prior_12m",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:service-robot:recent_12m",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:service-robot:october_update",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:delivery:prior_12m",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:delivery:recent_12m",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:delivery:october_update",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:physics-ai:prior_12m",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:physics-ai:recent_12m",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:physics-ai:october_update",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:solver:prior_12m",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:solver:recent_12m",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:solver:october_update",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:cad:prior_12m",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:cad:recent_12m",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:cad:october_update",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:systems:prior_12m",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:systems:recent_12m",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:systems:october_update",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:twin:prior_12m",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:twin:recent_12m",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:twin:october_update",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:engineering-flow:prior_12m",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:engineering-flow:recent_12m",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:engineering-flow:october_update",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:eda:prior_12m",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:eda:recent_12m",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:eda:october_update",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:dc-chip:prior_12m",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:dc-chip:recent_12m",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:dc-chip:october_update",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:edge-chip:prior_12m",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:edge-chip:recent_12m",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:edge-chip:october_update",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:sensor:prior_12m",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:sensor:recent_12m",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:sensor:october_update",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:components:prior_12m",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:components:recent_12m",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:components:october_update",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:network:prior_12m",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:network:recent_12m",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:network:october_update",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:memory:prior_12m",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:memory:recent_12m",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:memory:october_update",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:power-cooling:prior_12m",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:power-cooling:recent_12m",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:power-cooling:october_update",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "exact_subsector_exclusions_and_verdict_recomputed",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "added_recovered_removed_framework_counts_match",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Cellares_three_disclosures_one_327m_episode",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Sigma_alias_and_duplicate_recovered_once",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Dexory_mixed_package_not_165m_pure_equity",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Turing_111m_Series_E_recovered",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Phyraxis_original_September_CNY_without_fake_cash",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Q5D_Series_A_not_misclassified_grant",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Medra_combined_seed_total_excluded",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Askari_repeated_reference_is_one_seed",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "no_low_quality_tracker_is_new_financing_evidence",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "bounded_inspection_has_three_receipts",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "bounded_inspection_csv_hash_and_values:bounded_reference_reconciliation",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "bounded_inspection_csv_hash_and_values:heatmap_readiness_cells",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "bounded_inspection_csv_hash_and_values:bounded_accuracy_sample",
       "passed": true,
       "detail": null
     },

@@ -16,7 +16,7 @@ def check_sweep_release(root,manifest,datasets,check):
  check('all_5732_sweep_predecessor_event_ids_exported',set(range(1,5733))<=set(events))
  check('all_6965_sweep_predecessor_observation_ids_exported',set(range(1,6966))<={r['observation_id'] for r in rows('observations_all')})
  check('all_4963_sweep_predecessor_company_ids_exported',set(range(1,4964))<={r['company_id'] for r in rows('companies')})
- check('all_sweep_additions_have_field_and_source_receipts',ids==set(events)-set(range(1,5733))==set(receipt['new_event_ids']) and len(ids)==receipt['added_retained_event_records'] and all(json.loads(r['field_provenance']) and json.loads(r['source_urls']) for r in sr))
+ check('all_sweep_additions_have_field_and_source_receipts',ids=={i for i in events if 5733<=i<=5809}==set(receipt['new_event_ids']) and len(ids)==receipt['added_retained_event_records'] and all(json.loads(r['field_provenance']) and json.loads(r['source_urls']) for r in sr))
  check('sweep_new_financing_counts_match_actual_views',len(ids&set(fin))==receipt['added_source_supported_period_financing_disclosures'] and len(ids&scope)==receipt['added_in_framework_financing_disclosures'] and len(ids-set(fin))==receipt['added_period_unallocated_or_year_only_records'])
  check('all_sweep_classifications_and_corrections_have_evidence',len(sc)==receipt['existing_company_classification_repairs']==7 and {r['company_id'] for r in sc}=={754,1193,2821,1772,1789,1835,1821} and all(json.loads(r['source_urls']) and r['finer_subsector'] and r['business_scope']=='in_framework' for r in sc) and all(r['event_id'] in events and r['predecessor_snapshot_id']==receipt['predecessor_snapshot_id'] and json.loads(r['source_urls']) for r in sx))
  fine={r['finer_subsector_id'] for r in rows('finer_taxonomy')};periods={r['period_id']:(r['start_inclusive'],r['end_exclusive']) for r in rows('completion_periods')};cells={(r['finer_subsector'],r['period_id']):r for r in rows('framework_coverage_cells')}
@@ -54,6 +54,9 @@ def check_sweep_release(root,manifest,datasets,check):
  labels={r['finer_subsector_id']:r['label'] for r in rows('finer_taxonomy')};sources={r['source_id']:r['source_url'] for r in rows('sources')};urls={};notes={r['event_id']:r['note'] for r in sr}
  for r in sx:
   if r['change_kind']=='financial_source_reconciliation':notes[r['event_id']]=r['note']
+ for r in rows('assessment_financing_reviews'):notes[r['event_id']]=r['note']
+ for r in rows('assessment_event_changes'):
+  notes[r['event_id']]=' '.join(dict.fromkeys(x for x in (notes.get(r['event_id']),r['note']) if x))
  for r in sorted(rows('event_sources'),key=lambda r:(r['event_id'],r['source_id'])):
   u=sources[r['source_id']]
   if isinstance(u,str) and u.startswith(('https://','http://')):

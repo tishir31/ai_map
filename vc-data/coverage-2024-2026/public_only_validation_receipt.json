@@ -1,0 +1,2238 @@
+{
+  "snapshot_id": "ai-deals-coverage-f306b86a0dee4b8c561e",
+  "datasets": 94,
+  "dataset_rows": 155961,
+  "passed": 557,
+  "failed": 0,
+  "market_completeness_certified": false,
+  "checks": [
+    {
+      "check": "manifest_hashes_sizes_counts_and_snapshot_ids",
+      "passed": true
+    },
+    {
+      "check": "chunk_size_limit",
+      "passed": true
+    },
+    {
+      "check": "bounded_assessment_complete",
+      "passed": true
+    },
+    {
+      "check": "private_payload_columns_excluded",
+      "passed": true
+    },
+    {
+      "check": "sqlite_integrity",
+      "passed": true
+    },
+    {
+      "check": "manifest_metadata_matches",
+      "passed": true
+    },
+    {
+      "check": "csv_values_and_nulls:companies",
+      "passed": true
+    },
+    {
+      "check": "sqlite_values_types_and_nulls:companies",
+      "passed": true
+    },
+    {
+      "check": "csv_values_and_nulls:taxonomy",
+      "passed": true
+    },
+    {
+      "check": "sqlite_values_types_and_nulls:taxonomy",
+      "passed": true
+    },
+    {
+      "check": "csv_values_and_nulls:aliases",
+      "passed": true
+    },
+    {
+      "check": "sqlite_values_types_and_nulls:aliases",
+      "passed": true
+    },
+    {
+      "check": "csv_values_and_nulls:events_all",
+      "passed": true
+    },
+    {
+      "check": "sqlite_values_types_and_nulls:events_all",
+      "passed": true
+    },
+    {
+      "check": "csv_values_and_nulls:core_equity_all",
+      "passed": true
+    },
+    {
+      "check": "sqlite_values_types_and_nulls:core_equity_all",
+      "passed": true
+    },
+    {
+      "check": "csv_values_and_nulls:core_equity_display",
+      "passed": true
+    },
+    {
+      "check": "sqlite_values_types_and_nulls:core_equity_display",
+      "passed": true
+    },
+    {
+      "check": "csv_values_and_nulls:equity_round_announcements",
+      "passed": true
+    },
+    {
+      "check": "sqlite_values_types_and_nulls:equity_round_announcements",
+      "passed": true
+    },
+    {
+      "check": "csv_values_and_nulls:display_deals",
+      "passed": true
+    },
+    {
+      "check": "sqlite_values_types_and_nulls:display_deals",
+      "passed": true
+    },
+    {
+      "check": "csv_values_and_nulls:ma_all",
+      "passed": true
+    },
+    {
+      "check": "sqlite_values_types_and_nulls:ma_all",
+      "passed": true
+    },
+    {
+      "check": "csv_values_and_nulls:ma_announcements_2026",
+      "passed": true
+    },
+    {
+      "check": "sqlite_values_types_and_nulls:ma_announcements_2026",
+      "passed": true
+    },
+    {
+      "check": "csv_values_and_nulls:ma_closings_2026",
+      "passed": true
+    },
+    {
+      "check": "sqlite_values_types_and_nulls:ma_closings_2026",
+      "passed": true
+    },
+    {
+      "check": "csv_values_and_nulls:reviewed_deals",
+      "passed": true
+    },
+    {
+      "check": "sqlite_values_types_and_nulls:reviewed_deals",
+      "passed": true
+    },
+    {
+      "check": "csv_values_and_nulls:sources",
+      "passed": true
+    },
+    {
+      "check": "sqlite_values_types_and_nulls:sources",
+      "passed": true
+    },
+    {
+      "check": "csv_values_and_nulls:event_sources",
+      "passed": true
+    },
+    {
+      "check": "sqlite_values_types_and_nulls:event_sources",
+      "passed": true
+    },
+    {
+      "check": "csv_values_and_nulls:investors",
+      "passed": true
+    },
+    {
+      "check": "sqlite_values_types_and_nulls:investors",
+      "passed": true
+    },
+    {
+      "check": "csv_values_and_nulls:event_investors",
+      "passed": true
+    },
+    {
+      "check": "sqlite_values_types_and_nulls:event_investors",
+      "passed": true
+    },
+    {
+      "check": "csv_values_and_nulls:lifecycle_groups",
+      "passed": true
+    },
+    {
+      "check": "sqlite_values_types_and_nulls:lifecycle_groups",
+      "passed": true
+    },
+    {
+      "check": "csv_values_and_nulls:quality_flags",
+      "passed": true
+    },
+    {
+      "check": "sqlite_values_types_and_nulls:quality_flags",
+      "passed": true
+    },
+    {
+      "check": "csv_values_and_nulls:reviewed_event_relationships",
+      "passed": true
+    },
+    {
+      "check": "sqlite_values_types_and_nulls:reviewed_event_relationships",
+      "passed": true
+    },
+    {
+      "check": "csv_values_and_nulls:registry_records",
+      "passed": true
+    },
+    {
+      "check": "sqlite_values_types_and_nulls:registry_records",
+      "passed": true
+    },
+    {
+      "check": "csv_values_and_nulls:registry_sources",
+      "passed": true
+    },
+    {
+      "check": "sqlite_values_types_and_nulls:registry_sources",
+      "passed": true
+    },
+    {
+      "check": "csv_values_and_nulls:company_financial_snapshots",
+      "passed": true
+    },
+    {
+      "check": "sqlite_values_types_and_nulls:company_financial_snapshots",
+      "passed": true
+    },
+    {
+      "check": "csv_values_and_nulls:company_coverage",
+      "passed": true
+    },
+    {
+      "check": "sqlite_values_types_and_nulls:company_coverage",
+      "passed": true
+    },
+    {
+      "check": "csv_values_and_nulls:observations_all",
+      "passed": true
+    },
+    {
+      "check": "sqlite_values_types_and_nulls:observations_all",
+      "passed": true
+    },
+    {
+      "check": "csv_values_and_nulls:public_market_context_facts",
+      "passed": true
+    },
+    {
+      "check": "sqlite_values_types_and_nulls:public_market_context_facts",
+      "passed": true
+    },
+    {
+      "check": "csv_values_and_nulls:observation_reviews",
+      "passed": true
+    },
+    {
+      "check": "sqlite_values_types_and_nulls:observation_reviews",
+      "passed": true
+    },
+    {
+      "check": "csv_values_and_nulls:leads_all",
+      "passed": true
+    },
+    {
+      "check": "sqlite_values_types_and_nulls:leads_all",
+      "passed": true
+    },
+    {
+      "check": "csv_values_and_nulls:unresolved_leads",
+      "passed": true
+    },
+    {
+      "check": "sqlite_values_types_and_nulls:unresolved_leads",
+      "passed": true
+    },
+    {
+      "check": "csv_values_and_nulls:company_history_reviews",
+      "passed": true
+    },
+    {
+      "check": "sqlite_values_types_and_nulls:company_history_reviews",
+      "passed": true
+    },
+    {
+      "check": "csv_values_and_nulls:audited_country_assertions",
+      "passed": true
+    },
+    {
+      "check": "sqlite_values_types_and_nulls:audited_country_assertions",
+      "passed": true
+    },
+    {
+      "check": "csv_values_and_nulls:country_availability_metrics",
+      "passed": true
+    },
+    {
+      "check": "sqlite_values_types_and_nulls:country_availability_metrics",
+      "passed": true
+    },
+    {
+      "check": "csv_values_and_nulls:source_coverage",
+      "passed": true
+    },
+    {
+      "check": "sqlite_values_types_and_nulls:source_coverage",
+      "passed": true
+    },
+    {
+      "check": "csv_values_and_nulls:completion_counts",
+      "passed": true
+    },
+    {
+      "check": "sqlite_values_types_and_nulls:completion_counts",
+      "passed": true
+    },
+    {
+      "check": "csv_values_and_nulls:fx_rates",
+      "passed": true
+    },
+    {
+      "check": "sqlite_values_types_and_nulls:fx_rates",
+      "passed": true
+    },
+    {
+      "check": "csv_values_and_nulls:event_fx_conversions",
+      "passed": true
+    },
+    {
+      "check": "sqlite_values_types_and_nulls:event_fx_conversions",
+      "passed": true
+    },
+    {
+      "check": "csv_values_and_nulls:company_search_logs",
+      "passed": true
+    },
+    {
+      "check": "sqlite_values_types_and_nulls:company_search_logs",
+      "passed": true
+    },
+    {
+      "check": "csv_values_and_nulls:external_audit_response",
+      "passed": true
+    },
+    {
+      "check": "sqlite_values_types_and_nulls:external_audit_response",
+      "passed": true
+    },
+    {
+      "check": "csv_values_and_nulls:comparison_equity_announcements",
+      "passed": true
+    },
+    {
+      "check": "sqlite_values_types_and_nulls:comparison_equity_announcements",
+      "passed": true
+    },
+    {
+      "check": "csv_values_and_nulls:comparison_core_equity",
+      "passed": true
+    },
+    {
+      "check": "sqlite_values_types_and_nulls:comparison_core_equity",
+      "passed": true
+    },
+    {
+      "check": "csv_values_and_nulls:comparison_core_equity_cutoff",
+      "passed": true
+    },
+    {
+      "check": "sqlite_values_types_and_nulls:comparison_core_equity_cutoff",
+      "passed": true
+    },
+    {
+      "check": "csv_values_and_nulls:credible_financing_disclosures",
+      "passed": true
+    },
+    {
+      "check": "sqlite_values_types_and_nulls:credible_financing_disclosures",
+      "passed": true
+    },
+    {
+      "check": "csv_values_and_nulls:financing_episodes",
+      "passed": true
+    },
+    {
+      "check": "sqlite_values_types_and_nulls:financing_episodes",
+      "passed": true
+    },
+    {
+      "check": "csv_values_and_nulls:completion_periods",
+      "passed": true
+    },
+    {
+      "check": "sqlite_values_types_and_nulls:completion_periods",
+      "passed": true
+    },
+    {
+      "check": "csv_values_and_nulls:completion_event_lineage",
+      "passed": true
+    },
+    {
+      "check": "sqlite_values_types_and_nulls:completion_event_lineage",
+      "passed": true
+    },
+    {
+      "check": "csv_values_and_nulls:completion_round_components",
+      "passed": true
+    },
+    {
+      "check": "sqlite_values_types_and_nulls:completion_round_components",
+      "passed": true
+    },
+    {
+      "check": "csv_values_and_nulls:completion_financial_claims",
+      "passed": true
+    },
+    {
+      "check": "sqlite_values_types_and_nulls:completion_financial_claims",
+      "passed": true
+    },
+    {
+      "check": "csv_values_and_nulls:completion_canonical_normalizations",
+      "passed": true
+    },
+    {
+      "check": "sqlite_values_types_and_nulls:completion_canonical_normalizations",
+      "passed": true
+    },
+    {
+      "check": "csv_values_and_nulls:completion_duplicate_decisions",
+      "passed": true
+    },
+    {
+      "check": "sqlite_values_types_and_nulls:completion_duplicate_decisions",
+      "passed": true
+    },
+    {
+      "check": "csv_values_and_nulls:completion_company_classifications",
+      "passed": true
+    },
+    {
+      "check": "sqlite_values_types_and_nulls:completion_company_classifications",
+      "passed": true
+    },
+    {
+      "check": "csv_values_and_nulls:audit_event_changes",
+      "passed": true
+    },
+    {
+      "check": "sqlite_values_types_and_nulls:audit_event_changes",
+      "passed": true
+    },
+    {
+      "check": "csv_values_and_nulls:company_identity_redirects",
+      "passed": true
+    },
+    {
+      "check": "sqlite_values_types_and_nulls:company_identity_redirects",
+      "passed": true
+    },
+    {
+      "check": "csv_values_and_nulls:finer_taxonomy",
+      "passed": true
+    },
+    {
+      "check": "sqlite_values_types_and_nulls:finer_taxonomy",
+      "passed": true
+    },
+    {
+      "check": "csv_values_and_nulls:company_finer_classifications",
+      "passed": true
+    },
+    {
+      "check": "sqlite_values_types_and_nulls:company_finer_classifications",
+      "passed": true
+    },
+    {
+      "check": "csv_values_and_nulls:event_entity_classifications",
+      "passed": true
+    },
+    {
+      "check": "sqlite_values_types_and_nulls:event_entity_classifications",
+      "passed": true
+    },
+    {
+      "check": "csv_values_and_nulls:audit_input_provenance",
+      "passed": true
+    },
+    {
+      "check": "sqlite_values_types_and_nulls:audit_input_provenance",
+      "passed": true
+    },
+    {
+      "check": "csv_values_and_nulls:business_classification_reviews",
+      "passed": true
+    },
+    {
+      "check": "sqlite_values_types_and_nulls:business_classification_reviews",
+      "passed": true
+    },
+    {
+      "check": "csv_values_and_nulls:coverage_pass_event_changes",
+      "passed": true
+    },
+    {
+      "check": "sqlite_values_types_and_nulls:coverage_pass_event_changes",
+      "passed": true
+    },
+    {
+      "check": "csv_values_and_nulls:coverage_pass_financing_reviews",
+      "passed": true
+    },
+    {
+      "check": "sqlite_values_types_and_nulls:coverage_pass_financing_reviews",
+      "passed": true
+    },
+    {
+      "check": "csv_values_and_nulls:framework_financing_disclosures",
+      "passed": true
+    },
+    {
+      "check": "sqlite_values_types_and_nulls:framework_financing_disclosures",
+      "passed": true
+    },
+    {
+      "check": "csv_values_and_nulls:framework_financing_episodes",
+      "passed": true
+    },
+    {
+      "check": "sqlite_values_types_and_nulls:framework_financing_episodes",
+      "passed": true
+    },
+    {
+      "check": "csv_values_and_nulls:reviewed_framework_financing_disclosures",
+      "passed": true
+    },
+    {
+      "check": "sqlite_values_types_and_nulls:reviewed_framework_financing_disclosures",
+      "passed": true
+    },
+    {
+      "check": "csv_values_and_nulls:framework_core_equity_cutoff",
+      "passed": true
+    },
+    {
+      "check": "sqlite_values_types_and_nulls:framework_core_equity_cutoff",
+      "passed": true
+    },
+    {
+      "check": "csv_values_and_nulls:framework_coverage_cells",
+      "passed": true
+    },
+    {
+      "check": "sqlite_values_types_and_nulls:framework_coverage_cells",
+      "passed": true
+    },
+    {
+      "check": "csv_values_and_nulls:classification_hold_register",
+      "passed": true
+    },
+    {
+      "check": "sqlite_values_types_and_nulls:classification_hold_register",
+      "passed": true
+    },
+    {
+      "check": "csv_values_and_nulls:queue_resolution_decisions",
+      "passed": true
+    },
+    {
+      "check": "sqlite_values_types_and_nulls:queue_resolution_decisions",
+      "passed": true
+    },
+    {
+      "check": "csv_values_and_nulls:classification_resolution_decisions",
+      "passed": true
+    },
+    {
+      "check": "sqlite_values_types_and_nulls:classification_resolution_decisions",
+      "passed": true
+    },
+    {
+      "check": "csv_values_and_nulls:queue_resolution_event_changes",
+      "passed": true
+    },
+    {
+      "check": "sqlite_values_types_and_nulls:queue_resolution_event_changes",
+      "passed": true
+    },
+    {
+      "check": "csv_values_and_nulls:queue_resolution_financing_reviews",
+      "passed": true
+    },
+    {
+      "check": "sqlite_values_types_and_nulls:queue_resolution_financing_reviews",
+      "passed": true
+    },
+    {
+      "check": "csv_values_and_nulls:queue_unverified_claims",
+      "passed": true
+    },
+    {
+      "check": "sqlite_values_types_and_nulls:queue_unverified_claims",
+      "passed": true
+    },
+    {
+      "check": "csv_values_and_nulls:remaining_business_scope_holds",
+      "passed": true
+    },
+    {
+      "check": "sqlite_values_types_and_nulls:remaining_business_scope_holds",
+      "passed": true
+    },
+    {
+      "check": "csv_values_and_nulls:resolved_business_scope_exclusions",
+      "passed": true
+    },
+    {
+      "check": "sqlite_values_types_and_nulls:resolved_business_scope_exclusions",
+      "passed": true
+    },
+    {
+      "check": "csv_values_and_nulls:claims_followup_decisions",
+      "passed": true
+    },
+    {
+      "check": "sqlite_values_types_and_nulls:claims_followup_decisions",
+      "passed": true
+    },
+    {
+      "check": "csv_values_and_nulls:classification_followup_decisions",
+      "passed": true
+    },
+    {
+      "check": "sqlite_values_types_and_nulls:classification_followup_decisions",
+      "passed": true
+    },
+    {
+      "check": "csv_values_and_nulls:followup_event_changes",
+      "passed": true
+    },
+    {
+      "check": "sqlite_values_types_and_nulls:followup_event_changes",
+      "passed": true
+    },
+    {
+      "check": "csv_values_and_nulls:followup_financing_reviews",
+      "passed": true
+    },
+    {
+      "check": "sqlite_values_types_and_nulls:followup_financing_reviews",
+      "passed": true
+    },
+    {
+      "check": "csv_values_and_nulls:claims_residual_decisions",
+      "passed": true
+    },
+    {
+      "check": "sqlite_values_types_and_nulls:claims_residual_decisions",
+      "passed": true
+    },
+    {
+      "check": "csv_values_and_nulls:classification_residual_decisions",
+      "passed": true
+    },
+    {
+      "check": "sqlite_values_types_and_nulls:classification_residual_decisions",
+      "passed": true
+    },
+    {
+      "check": "csv_values_and_nulls:residual_event_changes",
+      "passed": true
+    },
+    {
+      "check": "sqlite_values_types_and_nulls:residual_event_changes",
+      "passed": true
+    },
+    {
+      "check": "csv_values_and_nulls:residual_financing_reviews",
+      "passed": true
+    },
+    {
+      "check": "sqlite_values_types_and_nulls:residual_financing_reviews",
+      "passed": true
+    },
+    {
+      "check": "csv_values_and_nulls:claims_sweep_decisions",
+      "passed": true
+    },
+    {
+      "check": "sqlite_values_types_and_nulls:claims_sweep_decisions",
+      "passed": true
+    },
+    {
+      "check": "csv_values_and_nulls:classification_sweep_decisions",
+      "passed": true
+    },
+    {
+      "check": "sqlite_values_types_and_nulls:classification_sweep_decisions",
+      "passed": true
+    },
+    {
+      "check": "csv_values_and_nulls:sweep_event_changes",
+      "passed": true
+    },
+    {
+      "check": "sqlite_values_types_and_nulls:sweep_event_changes",
+      "passed": true
+    },
+    {
+      "check": "csv_values_and_nulls:sweep_financing_reviews",
+      "passed": true
+    },
+    {
+      "check": "sqlite_values_types_and_nulls:sweep_financing_reviews",
+      "passed": true
+    },
+    {
+      "check": "csv_values_and_nulls:subsector_period_source_checks",
+      "passed": true
+    },
+    {
+      "check": "sqlite_values_types_and_nulls:subsector_period_source_checks",
+      "passed": true
+    },
+    {
+      "check": "csv_values_and_nulls:claims_assessment_decisions",
+      "passed": true
+    },
+    {
+      "check": "sqlite_values_types_and_nulls:claims_assessment_decisions",
+      "passed": true
+    },
+    {
+      "check": "csv_values_and_nulls:classification_assessment_decisions",
+      "passed": true
+    },
+    {
+      "check": "sqlite_values_types_and_nulls:classification_assessment_decisions",
+      "passed": true
+    },
+    {
+      "check": "csv_values_and_nulls:assessment_event_changes",
+      "passed": true
+    },
+    {
+      "check": "sqlite_values_types_and_nulls:assessment_event_changes",
+      "passed": true
+    },
+    {
+      "check": "csv_values_and_nulls:assessment_financing_reviews",
+      "passed": true
+    },
+    {
+      "check": "sqlite_values_types_and_nulls:assessment_financing_reviews",
+      "passed": true
+    },
+    {
+      "check": "csv_values_and_nulls:bounded_subsector_period_checks",
+      "passed": true
+    },
+    {
+      "check": "sqlite_values_types_and_nulls:bounded_subsector_period_checks",
+      "passed": true
+    },
+    {
+      "check": "csv_values_and_nulls:bounded_reference_reconciliation",
+      "passed": true
+    },
+    {
+      "check": "sqlite_values_types_and_nulls:bounded_reference_reconciliation",
+      "passed": true
+    },
+    {
+      "check": "csv_values_and_nulls:bounded_accuracy_sample",
+      "passed": true
+    },
+    {
+      "check": "sqlite_values_types_and_nulls:bounded_accuracy_sample",
+      "passed": true
+    },
+    {
+      "check": "csv_values_and_nulls:heatmap_readiness_cells",
+      "passed": true
+    },
+    {
+      "check": "sqlite_values_types_and_nulls:heatmap_readiness_cells",
+      "passed": true
+    },
+    {
+      "check": "csv_values_and_nulls:completion_reviews",
+      "passed": true
+    },
+    {
+      "check": "sqlite_values_types_and_nulls:completion_reviews",
+      "passed": true
+    },
+    {
+      "check": "csv_values_and_nulls:discovery_review_queue",
+      "passed": true
+    },
+    {
+      "check": "sqlite_values_types_and_nulls:discovery_review_queue",
+      "passed": true
+    },
+    {
+      "check": "episodes_partition_supported_financing",
+      "passed": true
+    },
+    {
+      "check": "explicit_duplicates_excluded",
+      "passed": true
+    },
+    {
+      "check": "supported_financing_has_public_urls",
+      "passed": true
+    },
+    {
+      "check": "all_5059_audited_event_ids_retained",
+      "passed": true
+    },
+    {
+      "check": "finer_framework_has_61_categories",
+      "passed": true
+    },
+    {
+      "check": "event_classification_links_cover_all_records",
+      "passed": true
+    },
+    {
+      "check": "event_company_links_resolve",
+      "passed": true
+    },
+    {
+      "check": "Omni_primary_funding_and_valuation_distinct",
+      "passed": true
+    },
+    {
+      "check": "Emergent_and_Partly_valuation_as_funding_errors_fixed",
+      "passed": true
+    },
+    {
+      "check": "Delos_issuers_distinct",
+      "passed": true
+    },
+    {
+      "check": "broker_claim_not_in_verified_financing",
+      "passed": true
+    },
+    {
+      "check": "auditor_schema_accepts_current_snapshot",
+      "passed": true
+    },
+    {
+      "check": "audit_response_covers_all_findings_and_current_release",
+      "passed": true
+    },
+    {
+      "check": "audit_response_event_ids_resolve",
+      "passed": true
+    },
+    {
+      "check": "coverage_completion_matches_current_release",
+      "passed": true
+    },
+    {
+      "check": "all_5117_predecessor_event_ids_retained",
+      "passed": true
+    },
+    {
+      "check": "all_183_category_period_coverage_cells",
+      "passed": true
+    },
+    {
+      "check": "framework_financing_excludes_scope_holds",
+      "passed": true
+    },
+    {
+      "check": "reviewed_framework_excludes_source_rules",
+      "passed": true
+    },
+    {
+      "check": "46_financing_backfills_have_public_source_receipts",
+      "passed": true
+    },
+    {
+      "check": "classification_hold_register_matches_receipt",
+      "passed": true
+    },
+    {
+      "check": "every_issuer_has_business_scope_decision",
+      "passed": true
+    },
+    {
+      "check": "native_currency_corrections_retained",
+      "passed": true
+    },
+    {
+      "check": "scope_joke_and_unoriginal_claims_held",
+      "passed": true
+    },
+    {
+      "check": "queue_receipt_matches_current_snapshot",
+      "passed": true
+    },
+    {
+      "check": "all_731_claims_have_unique_decisions",
+      "passed": true
+    },
+    {
+      "check": "all_discovery_claims_are_reviewed",
+      "passed": true
+    },
+    {
+      "check": "all_5163_queue_predecessor_events_preserved",
+      "passed": true
+    },
+    {
+      "check": "all_historical_queue_additions_have_public_provenance",
+      "passed": true
+    },
+    {
+      "check": "all_320_prior_classification_holds_have_decisions",
+      "passed": true
+    },
+    {
+      "check": "fund_capital_is_not_corporate_funding",
+      "passed": true
+    },
+    {
+      "check": "reviewed_unverified_claims_remain_visible",
+      "passed": true
+    },
+    {
+      "check": "unresolved_business_holds_exclude_resolved_nonfits",
+      "passed": true
+    },
+    {
+      "check": "followup_receipt_matches_current_release",
+      "passed": true
+    },
+    {
+      "check": "82_followup_claims_individually_reviewed",
+      "passed": true
+    },
+    {
+      "check": "followup_and_residual_decisions_match_latest_reviews",
+      "passed": true
+    },
+    {
+      "check": "followup_unverified_claims_explicit",
+      "passed": true
+    },
+    {
+      "check": "all_5664_followup_predecessor_events_preserved",
+      "passed": true
+    },
+    {
+      "check": "all_followup_additions_have_public_provenance",
+      "passed": true
+    },
+    {
+      "check": "all_three_original_classification_holds_resolved",
+      "passed": true
+    },
+    {
+      "check": "original_holds_absent_from_current_hold_register",
+      "passed": true
+    },
+    {
+      "check": "followup_addition_counts_match_views",
+      "passed": true
+    },
+    {
+      "check": "Monarrch_100k_source_fact_preserved",
+      "passed": true
+    },
+    {
+      "check": "X9_healthcare_scope_preserved",
+      "passed": true
+    },
+    {
+      "check": "Chai_year_only_funding_excluded_from_period_views",
+      "passed": true
+    },
+    {
+      "check": "cumulative_aitiologic_launch_funding_excluded",
+      "passed": true
+    },
+    {
+      "check": "followup_unverified_fields_remain_unknown",
+      "passed": true
+    },
+    {
+      "check": "residual_receipt_matches_snapshot_and_predecessor",
+      "passed": true
+    },
+    {
+      "check": "all_30_residual_claims_have_individual_source_decisions",
+      "passed": true
+    },
+    {
+      "check": "all_residual_decisions_match_latest_reviews",
+      "passed": true
+    },
+    {
+      "check": "current_claims_have_explicit_quarantine_dispositions",
+      "passed": true
+    },
+    {
+      "check": "residual_quarantine_is_not_proven_missing_deal_count",
+      "passed": true
+    },
+    {
+      "check": "residual_has_no_trends_or_completeness_certificate",
+      "passed": true
+    },
+    {
+      "check": "all_5711_residual_predecessor_event_ids_exported",
+      "passed": true
+    },
+    {
+      "check": "all_6938_residual_predecessor_observation_ids_exported",
+      "passed": true
+    },
+    {
+      "check": "all_4950_residual_predecessor_company_ids_exported",
+      "passed": true
+    },
+    {
+      "check": "all_21_residual_additions_have_field_and_source_provenance",
+      "passed": true
+    },
+    {
+      "check": "residual_17_period_disclosures_and_7_framework_disclosures_match",
+      "passed": true
+    },
+    {
+      "check": "residual_4_nonperiod_context_records_match",
+      "passed": true
+    },
+    {
+      "check": "both_Monarrch_and_ListenOwl_holds_have_supported_assignments",
+      "passed": true
+    },
+    {
+      "check": "both_residual_holds_absent_from_current_hold_register",
+      "passed": true
+    },
+    {
+      "check": "residual_change_receipts_link_predecessor_and_current_events",
+      "passed": true
+    },
+    {
+      "check": "Monarrch_100k_and_AI_rights_governance_preserved",
+      "passed": true
+    },
+    {
+      "check": "ListenOwl_audio_identity_inference_is_explicit",
+      "passed": true
+    },
+    {
+      "check": "ProRata_October_offering_not_assumed_an_extra_framework_round",
+      "passed": true
+    },
+    {
+      "check": "ProRata_2026_original_offering_preserved",
+      "passed": true
+    },
+    {
+      "check": "Blink_amendment_retains_only_increment_in_same_episode",
+      "passed": true
+    },
+    {
+      "check": "Blink_taxonomy_gap_not_forced_into_robotics",
+      "passed": true
+    },
+    {
+      "check": "Blaise_is_insurance_AI_not_Blaize_semiconductor",
+      "passed": true
+    },
+    {
+      "check": "4AG_government_financing_native_CAD_and_type_preserved",
+      "passed": true
+    },
+    {
+      "check": "4AG_prior_company_domain_correction_preserved",
+      "passed": true
+    },
+    {
+      "check": "GuideAI_unknown_native_currency_not_assumed_USD",
+      "passed": true
+    },
+    {
+      "check": "Tessel_award_cap_preserved_as_upper_bound",
+      "passed": true
+    },
+    {
+      "check": "Harvest_conflicting_year_and_unverified_amount_unallocated",
+      "passed": true
+    },
+    {
+      "check": "year_only_backing_excluded_from_period_counts",
+      "passed": true
+    },
+    {
+      "check": "unallocated_backing_excluded_from_framework_counts",
+      "passed": true
+    },
+    {
+      "check": "all_residual_undisclosed_valuations_remain_unknown",
+      "passed": true
+    },
+    {
+      "check": "historical_receipt_counts_and_latest_counts_distinct",
+      "passed": true
+    },
+    {
+      "check": "current_residual_documentation_and_pointer_match",
+      "passed": true
+    },
+    {
+      "check": "source_sweep_summary_matches_current_release",
+      "passed": true
+    },
+    {
+      "check": "current_methodology_has_one_residual_review_section",
+      "passed": true
+    },
+    {
+      "check": "residual_current_count_matches_export:events_all",
+      "passed": true
+    },
+    {
+      "check": "residual_current_count_matches_export:observations_all",
+      "passed": true
+    },
+    {
+      "check": "residual_current_count_matches_export:companies",
+      "passed": true
+    },
+    {
+      "check": "residual_current_count_matches_export:credible_financing_disclosures",
+      "passed": true
+    },
+    {
+      "check": "residual_current_count_matches_export:financing_episodes",
+      "passed": true
+    },
+    {
+      "check": "residual_current_count_matches_export:framework_financing_disclosures",
+      "passed": true
+    },
+    {
+      "check": "residual_current_count_matches_export:framework_financing_episodes",
+      "passed": true
+    },
+    {
+      "check": "residual_current_count_matches_export:reviewed_framework_financing_disclosures",
+      "passed": true
+    },
+    {
+      "check": "residual_current_count_matches_export:framework_core_equity_cutoff",
+      "passed": true
+    },
+    {
+      "check": "residual_current_count_matches_export:completion_reviews",
+      "passed": true
+    },
+    {
+      "check": "residual_current_count_matches_export:queue_unverified_claims",
+      "passed": true
+    },
+    {
+      "check": "residual_current_count_matches_export:remaining_business_scope_holds",
+      "passed": true
+    },
+    {
+      "check": "residual_current_count_matches_export:resolved_business_scope_exclusions",
+      "passed": true
+    },
+    {
+      "check": "sweep_receipt_identifies_current_and_frozen_predecessor",
+      "passed": true
+    },
+    {
+      "check": "all_21_sweep_claims_have_source_decisions",
+      "passed": true
+    },
+    {
+      "check": "sweep_claim_decisions_match_current_reviews",
+      "passed": true
+    },
+    {
+      "check": "20_unverified_sweep_claims_explicitly_quarantined",
+      "passed": true
+    },
+    {
+      "check": "sweep_review_is_not_completeness_or_missing_deal_certificate",
+      "passed": true
+    },
+    {
+      "check": "all_5732_sweep_predecessor_event_ids_exported",
+      "passed": true
+    },
+    {
+      "check": "all_6965_sweep_predecessor_observation_ids_exported",
+      "passed": true
+    },
+    {
+      "check": "all_4963_sweep_predecessor_company_ids_exported",
+      "passed": true
+    },
+    {
+      "check": "all_sweep_additions_have_field_and_source_receipts",
+      "passed": true
+    },
+    {
+      "check": "sweep_new_financing_counts_match_actual_views",
+      "passed": true
+    },
+    {
+      "check": "all_sweep_classifications_and_corrections_have_evidence",
+      "passed": true
+    },
+    {
+      "check": "61_categories_times_3_periods_have_actual_search_receipts",
+      "passed": true
+    },
+    {
+      "check": "source_search_receipt_windows_and_counts_match_coverage",
+      "passed": true
+    },
+    {
+      "check": "all_source_search_receipts_preserve_unmeasured_recall",
+      "passed": true
+    },
+    {
+      "check": "sweep_current_count_matches_export:events_all",
+      "passed": true
+    },
+    {
+      "check": "sweep_current_count_matches_export:observations_all",
+      "passed": true
+    },
+    {
+      "check": "sweep_current_count_matches_export:companies",
+      "passed": true
+    },
+    {
+      "check": "sweep_current_count_matches_export:credible_financing_disclosures",
+      "passed": true
+    },
+    {
+      "check": "sweep_current_count_matches_export:financing_episodes",
+      "passed": true
+    },
+    {
+      "check": "sweep_current_count_matches_export:framework_financing_disclosures",
+      "passed": true
+    },
+    {
+      "check": "sweep_current_count_matches_export:framework_financing_episodes",
+      "passed": true
+    },
+    {
+      "check": "sweep_current_count_matches_export:reviewed_framework_financing_disclosures",
+      "passed": true
+    },
+    {
+      "check": "sweep_current_count_matches_export:framework_core_equity_cutoff",
+      "passed": true
+    },
+    {
+      "check": "sweep_current_count_matches_export:completion_candidates",
+      "passed": true
+    },
+    {
+      "check": "sweep_current_count_matches_export:completion_reviews",
+      "passed": true
+    },
+    {
+      "check": "sweep_current_count_matches_export:queue_unverified_claims",
+      "passed": true
+    },
+    {
+      "check": "sweep_current_count_matches_export:remaining_business_scope_holds",
+      "passed": true
+    },
+    {
+      "check": "sweep_current_count_matches_export:resolved_business_scope_exclusions",
+      "passed": true
+    },
+    {
+      "check": "Lucent_unknown_cash_and_separate_valuation_preserved",
+      "passed": true
+    },
+    {
+      "check": "Zeroset_one_workflow_financing_not_world_model_duplicate",
+      "passed": true
+    },
+    {
+      "check": "Netsec_original_native_USD_lower_bound_preserved",
+      "passed": true
+    },
+    {
+      "check": "Polaris_original_September_networking_round_preserved",
+      "passed": true
+    },
+    {
+      "check": "Neysa_missing_historical_financing_added",
+      "passed": true
+    },
+    {
+      "check": "Majestic_current_71m_not_100m_cumulative",
+      "passed": true
+    },
+    {
+      "check": "Alloy_AUD_funding_and_valuation_not_mislabeled_USD",
+      "passed": true
+    },
+    {
+      "check": "SKAI_KRW_valuation_not_funding_and_followon_not_new_priced_round",
+      "passed": true
+    },
+    {
+      "check": "Terra_three_disclosures_one_episode_without_52m_double_count",
+      "passed": true
+    },
+    {
+      "check": "original_disclosure_dates_not_later_feed_or_repost_dates",
+      "passed": true
+    },
+    {
+      "check": "Newcode_6_5m_seed_and_derived_13_5m_A_separate",
+      "passed": true
+    },
+    {
+      "check": "RAC_offerings_preserve_unknown_stage_and_round_allocation",
+      "passed": true
+    },
+    {
+      "check": "combined_Remedy_round_context_not_period_financing",
+      "passed": true
+    },
+    {
+      "check": "outside_fixed_taxonomy_financing_stays_explicit",
+      "passed": true
+    },
+    {
+      "check": "current_sweep_pointer_and_source_summary_match",
+      "passed": true
+    },
+    {
+      "check": "current_sweep_methodology_section_appears_once",
+      "passed": true
+    },
+    {
+      "check": "inspection_csv_checksum_size_snapshot_and_headers",
+      "passed": true
+    },
+    {
+      "check": "inspection_csv_has_all_supported_disclosures_once",
+      "passed": true
+    },
+    {
+      "check": "inspection_csv_matches_every_public_value_and_unknown",
+      "passed": true
+    },
+    {
+      "check": "inspection_csv_framework_flag_matches_scoped_view",
+      "passed": true
+    },
+    {
+      "check": "inspection_csv_contains_no_quarantined_claim_rows",
+      "passed": true
+    },
+    {
+      "check": "bounded_assessment_identifies_current_and_frozen_predecessor",
+      "passed": true
+    },
+    {
+      "check": "bounded_assessment_complete_with_finite_standard",
+      "passed": true
+    },
+    {
+      "check": "completion_standard_matches_frozen_digest",
+      "passed": true
+    },
+    {
+      "check": "bounded_selection_has_623_final_dispositions",
+      "passed": true
+    },
+    {
+      "check": "benchmark_has_minimum_period_and_update_size",
+      "passed": true
+    },
+    {
+      "check": "eligible_references_resolve_to_current_framework_and_episode",
+      "passed": true
+    },
+    {
+      "check": "reference_capture_recomputed:overall",
+      "passed": true
+    },
+    {
+      "check": "all_material_reference_deals_captured:overall",
+      "passed": true
+    },
+    {
+      "check": "reference_capture_recomputed:prior_12m",
+      "passed": true
+    },
+    {
+      "check": "all_material_reference_deals_captured:prior_12m",
+      "passed": true
+    },
+    {
+      "check": "reference_capture_recomputed:recent_12m",
+      "passed": true
+    },
+    {
+      "check": "all_material_reference_deals_captured:recent_12m",
+      "passed": true
+    },
+    {
+      "check": "reference_capture_recomputed:october_update",
+      "passed": true
+    },
+    {
+      "check": "all_material_reference_deals_captured:october_update",
+      "passed": true
+    },
+    {
+      "check": "benchmark_is_not_worldwide_recall_or_trend_analysis",
+      "passed": true
+    },
+    {
+      "check": "all_5809_predecessor_event_ids_retained",
+      "passed": true
+    },
+    {
+      "check": "all_7068_predecessor_observation_ids_retained",
+      "passed": true
+    },
+    {
+      "check": "all_bounded_additions_have_public_field_and_source_provenance",
+      "passed": true
+    },
+    {
+      "check": "all_bounded_corrections_and_classifications_have_sources",
+      "passed": true
+    },
+    {
+      "check": "accuracy_sample_has_60_source_decisions",
+      "passed": true
+    },
+    {
+      "check": "all_183_cells_have_readiness_status",
+      "passed": true
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:labs:prior_12m",
+      "passed": true
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:labs:recent_12m",
+      "passed": true
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:labs:october_update",
+      "passed": true
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:language:prior_12m",
+      "passed": true
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:language:recent_12m",
+      "passed": true
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:language:october_update",
+      "passed": true
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:visual:prior_12m",
+      "passed": true
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:visual:recent_12m",
+      "passed": true
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:visual:october_update",
+      "passed": true
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:audio:prior_12m",
+      "passed": true
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:audio:recent_12m",
+      "passed": true
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:audio:october_update",
+      "passed": true
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:inference:prior_12m",
+      "passed": true
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:inference:recent_12m",
+      "passed": true
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:inference:october_update",
+      "passed": true
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:neocloud:prior_12m",
+      "passed": true
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:neocloud:recent_12m",
+      "passed": true
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:neocloud:october_update",
+      "passed": true
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:training:prior_12m",
+      "passed": true
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:training:recent_12m",
+      "passed": true
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:training:october_update",
+      "passed": true
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:deployment:prior_12m",
+      "passed": true
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:deployment:recent_12m",
+      "passed": true
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:deployment:october_update",
+      "passed": true
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:retrieval:prior_12m",
+      "passed": true
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:retrieval:recent_12m",
+      "passed": true
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:retrieval:october_update",
+      "passed": true
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:labeling:prior_12m",
+      "passed": true
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:labeling:recent_12m",
+      "passed": true
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:labeling:october_update",
+      "passed": true
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:expert:prior_12m",
+      "passed": true
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:expert:recent_12m",
+      "passed": true
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:expert:october_update",
+      "passed": true
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:synthetic:prior_12m",
+      "passed": true
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:synthetic:recent_12m",
+      "passed": true
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:synthetic:october_update",
+      "passed": true
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:eval:prior_12m",
+      "passed": true
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:eval:recent_12m",
+      "passed": true
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:eval:october_update",
+      "passed": true
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:orchestration:prior_12m",
+      "passed": true
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:orchestration:recent_12m",
+      "passed": true
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:orchestration:october_update",
+      "passed": true
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:observability:prior_12m",
+      "passed": true
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:observability:recent_12m",
+      "passed": true
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:observability:october_update",
+      "passed": true
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:security:prior_12m",
+      "passed": true
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:security:recent_12m",
+      "passed": true
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:security:october_update",
+      "passed": true
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:coding:prior_12m",
+      "passed": true
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:coding:recent_12m",
+      "passed": true
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:coding:october_update",
+      "passed": true
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:assistants:prior_12m",
+      "passed": true
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:assistants:recent_12m",
+      "passed": true
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:assistants:october_update",
+      "passed": true
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:search:prior_12m",
+      "passed": true
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:search:recent_12m",
+      "passed": true
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:search:october_update",
+      "passed": true
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:workflow:prior_12m",
+      "passed": true
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:workflow:recent_12m",
+      "passed": true
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:workflow:october_update",
+      "passed": true
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:creative:prior_12m",
+      "passed": true
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:creative:recent_12m",
+      "passed": true
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:creative:october_update",
+      "passed": true
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:legal:prior_12m",
+      "passed": true
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:legal:recent_12m",
+      "passed": true
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:legal:october_update",
+      "passed": true
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:health:prior_12m",
+      "passed": true
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:health:recent_12m",
+      "passed": true
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:health:october_update",
+      "passed": true
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:finance:prior_12m",
+      "passed": true
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:finance:recent_12m",
+      "passed": true
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:finance:october_update",
+      "passed": true
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:science:prior_12m",
+      "passed": true
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:science:recent_12m",
+      "passed": true
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:science:october_update",
+      "passed": true
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:industrial:prior_12m",
+      "passed": true
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:industrial:recent_12m",
+      "passed": true
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:industrial:october_update",
+      "passed": true
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:service:prior_12m",
+      "passed": true
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:service:recent_12m",
+      "passed": true
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:service:october_update",
+      "passed": true
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:education:prior_12m",
+      "passed": true
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:education:recent_12m",
+      "passed": true
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:education:october_update",
+      "passed": true
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:hr:prior_12m",
+      "passed": true
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:hr:recent_12m",
+      "passed": true
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:hr:october_update",
+      "passed": true
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:robot-model:prior_12m",
+      "passed": true
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:robot-model:recent_12m",
+      "passed": true
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:robot-model:october_update",
+      "passed": true
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:world-model:prior_12m",
+      "passed": true
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:world-model:recent_12m",
+      "passed": true
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:world-model:october_update",
+      "passed": true
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:perception:prior_12m",
+      "passed": true
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:perception:recent_12m",
+      "passed": true
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:perception:october_update",
+      "passed": true
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:control:prior_12m",
+      "passed": true
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:control:recent_12m",
+      "passed": true
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:control:october_update",
+      "passed": true
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:robot-data:prior_12m",
+      "passed": true
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:robot-data:recent_12m",
+      "passed": true
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:robot-data:october_update",
+      "passed": true
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:physical-sim:prior_12m",
+      "passed": true
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:physical-sim:recent_12m",
+      "passed": true
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:physical-sim:october_update",
+      "passed": true
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:telemetry:prior_12m",
+      "passed": true
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:telemetry:recent_12m",
+      "passed": true
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:telemetry:october_update",
+      "passed": true
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:humanoid:prior_12m",
+      "passed": true
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:humanoid:recent_12m",
+      "passed": true
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:humanoid:october_update",
+      "passed": true
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:industrial-robot:prior_12m",
+      "passed": true
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:industrial-robot:recent_12m",
+      "passed": true
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:industrial-robot:october_update",
+      "passed": true
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:warehouse:prior_12m",
+      "passed": true
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:warehouse:recent_12m",
+      "passed": true
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:warehouse:october_update",
+      "passed": true
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:av:prior_12m",
+      "passed": true
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:av:recent_12m",
+      "passed": true
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:av:october_update",
+      "passed": true
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:drone:prior_12m",
+      "passed": true
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:drone:recent_12m",
+      "passed": true
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:drone:october_update",
+      "passed": true
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:defense:prior_12m",
+      "passed": true
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:defense:recent_12m",
+      "passed": true
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:defense:october_update",
+      "passed": true
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:agri:prior_12m",
+      "passed": true
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:agri:recent_12m",
+      "passed": true
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:agri:october_update",
+      "passed": true
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:medical-robot:prior_12m",
+      "passed": true
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:medical-robot:recent_12m",
+      "passed": true
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:medical-robot:october_update",
+      "passed": true
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:construction:prior_12m",
+      "passed": true
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:construction:recent_12m",
+      "passed": true
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:construction:october_update",
+      "passed": true
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:service-robot:prior_12m",
+      "passed": true
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:service-robot:recent_12m",
+      "passed": true
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:service-robot:october_update",
+      "passed": true
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:delivery:prior_12m",
+      "passed": true
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:delivery:recent_12m",
+      "passed": true
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:delivery:october_update",
+      "passed": true
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:physics-ai:prior_12m",
+      "passed": true
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:physics-ai:recent_12m",
+      "passed": true
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:physics-ai:october_update",
+      "passed": true
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:solver:prior_12m",
+      "passed": true
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:solver:recent_12m",
+      "passed": true
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:solver:october_update",
+      "passed": true
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:cad:prior_12m",
+      "passed": true
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:cad:recent_12m",
+      "passed": true
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:cad:october_update",
+      "passed": true
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:systems:prior_12m",
+      "passed": true
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:systems:recent_12m",
+      "passed": true
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:systems:october_update",
+      "passed": true
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:twin:prior_12m",
+      "passed": true
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:twin:recent_12m",
+      "passed": true
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:twin:october_update",
+      "passed": true
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:engineering-flow:prior_12m",
+      "passed": true
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:engineering-flow:recent_12m",
+      "passed": true
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:engineering-flow:october_update",
+      "passed": true
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:eda:prior_12m",
+      "passed": true
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:eda:recent_12m",
+      "passed": true
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:eda:october_update",
+      "passed": true
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:dc-chip:prior_12m",
+      "passed": true
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:dc-chip:recent_12m",
+      "passed": true
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:dc-chip:october_update",
+      "passed": true
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:edge-chip:prior_12m",
+      "passed": true
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:edge-chip:recent_12m",
+      "passed": true
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:edge-chip:october_update",
+      "passed": true
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:sensor:prior_12m",
+      "passed": true
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:sensor:recent_12m",
+      "passed": true
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:sensor:october_update",
+      "passed": true
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:components:prior_12m",
+      "passed": true
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:components:recent_12m",
+      "passed": true
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:components:october_update",
+      "passed": true
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:network:prior_12m",
+      "passed": true
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:network:recent_12m",
+      "passed": true
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:network:october_update",
+      "passed": true
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:memory:prior_12m",
+      "passed": true
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:memory:recent_12m",
+      "passed": true
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:memory:october_update",
+      "passed": true
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:power-cooling:prior_12m",
+      "passed": true
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:power-cooling:recent_12m",
+      "passed": true
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:power-cooling:october_update",
+      "passed": true
+    },
+    {
+      "check": "exact_subsector_exclusions_and_verdict_recomputed",
+      "passed": true
+    },
+    {
+      "check": "added_recovered_removed_framework_counts_match",
+      "passed": true
+    },
+    {
+      "check": "Cellares_three_disclosures_one_327m_episode",
+      "passed": true
+    },
+    {
+      "check": "Sigma_alias_and_duplicate_recovered_once",
+      "passed": true
+    },
+    {
+      "check": "Dexory_mixed_package_not_165m_pure_equity",
+      "passed": true
+    },
+    {
+      "check": "Turing_111m_Series_E_recovered",
+      "passed": true
+    },
+    {
+      "check": "Phyraxis_original_September_CNY_without_fake_cash",
+      "passed": true
+    },
+    {
+      "check": "Q5D_Series_A_not_misclassified_grant",
+      "passed": true
+    },
+    {
+      "check": "Medra_combined_seed_total_excluded",
+      "passed": true
+    },
+    {
+      "check": "Askari_repeated_reference_is_one_seed",
+      "passed": true
+    },
+    {
+      "check": "no_low_quality_tracker_is_new_financing_evidence",
+      "passed": true
+    },
+    {
+      "check": "bounded_inspection_has_three_receipts",
+      "passed": true
+    },
+    {
+      "check": "bounded_inspection_csv_hash_and_values:bounded_reference_reconciliation",
+      "passed": true
+    },
+    {
+      "check": "bounded_inspection_csv_hash_and_values:heatmap_readiness_cells",
+      "passed": true
+    },
+    {
+      "check": "bounded_inspection_csv_hash_and_values:bounded_accuracy_sample",
+      "passed": true
+    },
+    {
+      "check": "auditor_document_links_match_actual_filename_case",
+      "passed": true
+    }
+  ]
+}

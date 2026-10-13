@@ -1,5 +1,5 @@
 {
-  "snapshot_id": "ai-deals-coverage-a101d6ec0385b334e0f9",
+  "snapshot_id": "ai-deals-coverage-f306b86a0dee4b8c561e",
   "predecessor_snapshot_id": "ai-deals-coverage-9ffd44b864775de2eb32",
   "predecessor_master_sha256": "28f2cc1e8542508d335735d4b4a086733b9e12affc5fc52f790ffe2deb22ea79",
   "generated_at_utc": "2026-10-13T05:27:39.771819+00:00",
@@ -446,24 +446,27 @@
   },
   "current_coverage_sweep": "COVERAGE_SWEEP_2026_10_13.json",
   "current_counts": {
-    "events_all": 5809,
-    "observations_all": 7068,
-    "companies": 5024,
-    "credible_financing_disclosures": 3628,
-    "financing_episodes": 3598,
-    "framework_financing_disclosures": 3457,
-    "framework_financing_episodes": 3429,
-    "reviewed_framework_financing_disclosures": 2696,
-    "framework_core_equity_cutoff": 1440,
-    "completion_candidates": 5766,
-    "completion_reviews": 5766,
+    "events_all": 6035,
+    "observations_all": 7426,
+    "companies": 5197,
+    "credible_financing_disclosures": 3880,
+    "financing_episodes": 3847,
+    "framework_financing_disclosures": 3710,
+    "framework_financing_episodes": 3679,
+    "reviewed_framework_financing_disclosures": 2956,
+    "framework_core_equity_cutoff": 1457,
+    "completion_candidates": 5992,
+    "completion_reviews": 5992,
     "queue_unverified_claims": 20,
     "remaining_business_scope_holds": 0,
-    "resolved_business_scope_exclusions": 138
+    "resolved_business_scope_exclusions": 139
   },
   "current_unverified_claims": 20,
   "current_unresolved_classification_disclosures": 0,
   "historical_review_decisions": true,
   "current_claims_still_unverified": 20,
-  "implemented_snapshot_id": "ai-deals-coverage-8ec6fb9ff49089dc3bf3"
+  "implemented_snapshot_id": "ai-deals-coverage-8ec6fb9ff49089dc3bf3",
+  "current_bounded_assessment": "BOUNDED_COVERAGE_ASSESSMENT_2026_10_13.json",
+  "current_bounded_assessment_status": "COMPLETE",
+  "current_heatmap_readiness": "READY_WITH_SPECIFIC_EXCLUSIONS"
 }
