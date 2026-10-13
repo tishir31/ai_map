@@ -677,6 +677,7 @@ async function adjudicateWithGemini(candidate, gate, context) {
         generationConfig: {
           temperature: 0.05,
           maxOutputTokens: 1200,
+          ...(/^gemini-2\.5-flash/.test(GEMINI_MODEL) ? { thinkingConfig: { thinkingBudget: 0 } } : {}),
           responseMimeType: "application/json"
         }
       })
@@ -726,7 +727,7 @@ async function adjudicateWithOpenAi(candidate, gate, context) {
 
 async function adjudicateWithLlm(candidate, gate, context) {
   const attempts = [];
-  const providers=context?.publicCollectionBounded?[process.env.GEMINI_API_KEY?adjudicateWithGemini:adjudicateWithOpenAi]:[adjudicateWithGemini,adjudicateWithOpenAi];
+  const providers=[adjudicateWithGemini,adjudicateWithOpenAi];
   for (const provider of providers) {
     try {
       const result = await provider(candidate, gate, context);
@@ -877,7 +878,22 @@ module.exports = async function handler(req, res) {
           try{context=await graphApi.restRequest(config,'web_collection_dedupe_context',{method:'POST',rpc:true,body:{}});}catch(error){error.phase='storage';error.provenance=provenance;throw error;}
           context.companyById=new Map((context.companies||[]).map(company=>[company.id,company.name]));context.refreshWindow=window;context.publicCollectionBounded=true;
           let staged=candidate;
-          if(llmEnabled({})){let decision;try{decision=await adjudicateWithLlm(candidate,{keep:true,reason:'llm-first'},context);}catch(error){error.phase='model';provenance.modelStatus='failed';error.provenance=provenance;throw error;}provenance.modelStatus=decision.keep?decision.status:'rejected';if(!decision.keep)return {disposition:'rejected',reason:'llm-rejected',details:decision.reason,provenance};staged=decision.candidate;}
+          if(llmEnabled({})) {
+            let decision;
+            try { decision=await adjudicateWithLlm(candidate,{keep:true,reason:'llm-first'},context); }
+            catch {
+              // Collection can stage a deterministic funding signal during provider outages.
+              // Staging is never approval; the independent public-evidence review still runs.
+              provenance.modelStatus='failed';
+              candidate.llm_status='failed';candidate.llm_model=configuredModelLabel();
+              candidate.intelligence_cautions=['Model triage unavailable; official source review required.'];
+            }
+            if(decision) {
+              provenance.modelStatus=decision.keep?decision.status:'rejected';
+              if(!decision.keep)return {disposition:'rejected',reason:'llm-rejected',details:decision.reason,provenance};
+              staged=decision.candidate;
+            }
+          }
           const gate=gateCandidate(staged,context);if(!gate.keep)return {disposition:/duplicate/.test(gate.reason)?'duplicate':'rejected',reason:gate.reason,provenance};
           if(gate.duplicateOfActivityId)staged.duplicate_of_activity_id=gate.duplicateOfActivityId;
           return {disposition:'staged',candidate:staged,provenance};

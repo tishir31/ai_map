@@ -10,7 +10,7 @@ const summarize=()=>{const items=tasks.filter(t=>t.kind==='item');run.selected=i
 global.fetch=async(raw,options={})=>{
  const url=String(raw);if(url.includes('rpc/get_physical_ai_scheduler_secret'))return{ok:true,text:async()=>JSON.stringify(secret)};
  if(url.includes('generativelanguage.googleapis.com')){modelCalls++;if(modelCalls===1)return{ok:false,status:429,json:async()=>({error:'quota'})};return{ok:true,json:async()=>({candidates:[{content:{parts:[{text:JSON.stringify({keep:false,physicalAi:false,fundingEvent:false,rejectReason:'not a funding announcement'})}]}}]})};}
- if(url.includes('api.openai.com')){openAiCalls++;throw Error('Unexpected provider fallback');}
+ if(url.includes('api.openai.com')){openAiCalls++;throw Error('Synthetic fallback unavailable');}
  const name=url.split('/rpc/')[1];assert(name,url);const body=JSON.parse(options.body||'{}');let value;
  if(name==='acquire_web_collection_run'){if(!run){run={id:'web',run_date:today,window:body.p_plan.window,status:'running',planned_queries:1,staged:0,duplicates:0,errors:0,stop_reason:'continuation-pending'};tasks=[{id:'feed',kind:'feed',status:'pending',attempts:0,input:body.p_plan.sources[0]}];}value=summarize();}
  if(name==='claim_web_collection_task'){const task=tasks.find(t=>t.status==='pending');if(task){task.status='running';task.attempts++;task.locked_by='synthetic-lock';}value=task||null;}
@@ -34,13 +34,12 @@ async function invoke(h=headers){const res={statusCode:0,setHeader(){},end(text)
 (async()=>{
  assert.equal((await invoke({})).statusCode,401);assert.equal(tasks.length,0);
  let result=await invoke();assert.equal(result.statusCode,202);assert.equal(run.selected,2);feedChanged=true;
- result=await invoke();assert.equal(result.statusCode,202);assert.equal(result.body.collection.stopReason,'provider-error');assert.equal(run.remaining,2);assert.equal(tasks[1].status,'pending');assert(tasks[1].result.provenance.captureHash);assert.equal(openAiCalls,0);
- await invoke();assert.equal(tasks[1].status,'rejected');assert.equal(run.remaining,1);
- result=await invoke();assert.equal(result.statusCode,200);assert.equal(result.body.status,'completed');assert.deepEqual(fetched,['https://publisher.example/A','https://publisher.example/A','https://publisher.example/B']);assert.equal(feedReads,1);assert.equal(modelCalls,3);await invoke();assert.equal(modelCalls,3);assert.equal(openAiCalls,0);assert(!JSON.stringify(result.body).includes('captureText'));assert(!JSON.stringify(result.body).includes('robot funding'));
+ result=await invoke();assert.equal(result.statusCode,202);assert.equal(tasks[1].status,'staged');assert.equal(run.remaining,1);assert(tasks[1].result.provenance.captureHash);assert.equal(tasks[1].result.provenance.modelStatus,'failed');assert.equal(tasks[1].result.candidate.status,'pending');assert.equal(openAiCalls,1);
+ result=await invoke();assert.equal(result.statusCode,200);assert.equal(result.body.status,'completed');assert.equal(tasks[2].status,'rejected');assert.deepEqual(fetched,['https://publisher.example/A','https://publisher.example/B']);assert.equal(feedReads,1);assert.equal(modelCalls,2);await invoke();assert.equal(modelCalls,2);assert.equal(openAiCalls,1);assert(!JSON.stringify(result.body).includes('captureText'));
  // HTTP 200 challenge/truncation is a retryable source failure; a well-formed empty RSS is complete.
  for(const invalid of ['challenge','truncated']){run=null;tasks=[];feedMode=invalid;result=await invoke();assert.equal(result.statusCode,202);assert.equal(tasks[0].status,'pending');assert.equal(tasks[0].result.reason,'source-response');}
  run=null;tasks=[];feedMode='empty';result=await invoke();assert.equal(result.statusCode,200);assert.equal(result.body.collection.selected,0);
  // A durable finish failure is a retryable request failure, never a false completed run.
  run=null;tasks=[];feedMode='items';feedChanged=false;failFinish=true;result=await invoke();assert.equal(result.statusCode,502);assert.equal(tasks[0].status,'running');assert.equal(run.status,'running');
- console.log('collector continuation tests passed: actual HMAC handler, frozen A/B, one-task request, 429 unfinished-only retry/provenance, malformed-vs-empty RSS, no fallback, no-op completion and durable finish failure');
+ console.log('collector continuation tests passed: actual HMAC handler, frozen A/B, one-task request, 429 fallback/stage-only provenance, malformed-vs-empty RSS, bounded fallback, no-op completion and durable finish failure');
 })().catch(error=>{console.error(error);process.exitCode=1;});
