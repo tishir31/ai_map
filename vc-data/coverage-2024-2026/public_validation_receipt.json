@@ -1,11 +1,11 @@
 {
-  "snapshot_id": "ai-deals-coverage-713c08df821e84c5e3ed",
-  "manifest_sha256": "91cc306f778345a7add33235e45b0c99405461e207918cf8c1b343700f019ecd",
-  "public_sqlite_sha256": "6d31d09b663d119bdb941469f4a0e0c5c0e2ea5f103584d3d6de47cbb2c5f2d8",
-  "datasets": 73,
-  "dataset_rows": 146234,
-  "data_files": 1358,
-  "passed": 189,
+  "snapshot_id": "ai-deals-coverage-9ffd44b864775de2eb32",
+  "manifest_sha256": "0b046e2a4dd1551491baed60350824ae171c7fa3a100b525410103c26a2b41a9",
+  "public_sqlite_sha256": "08434ee4d72c4d863581791984b13152c9e03958a83aab8f8b295ffd4b1bb057",
+  "datasets": 77,
+  "dataset_rows": 147302,
+  "data_files": 1372,
+  "passed": 209,
   "failed": 0,
   "market_completeness_certified": false,
   "checks": [
@@ -770,6 +770,46 @@
       "detail": null
     },
     {
+      "check": "csv_value_and_null_parity:claims_followup_decisions",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "sqlite_value_type_and_null_parity:claims_followup_decisions",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "csv_value_and_null_parity:classification_followup_decisions",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "sqlite_value_type_and_null_parity:classification_followup_decisions",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "csv_value_and_null_parity:followup_event_changes",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "sqlite_value_type_and_null_parity:followup_event_changes",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "csv_value_and_null_parity:followup_financing_reviews",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "sqlite_value_type_and_null_parity:followup_financing_reviews",
+      "passed": true,
+      "detail": null
+    },
+    {
       "check": "csv_value_and_null_parity:completion_reviews",
       "passed": true,
       "detail": null
@@ -925,7 +965,7 @@
       "detail": null
     },
     {
-      "check": "every_queue_addition_has_public_financing_receipt",
+      "check": "every_historical_queue_addition_has_public_financing_receipt",
       "passed": true,
       "detail": null
     },
@@ -941,6 +981,66 @@
     },
     {
       "check": "all_320_prior_classification_hold_reviews_exported",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "followup_receipt_matches_current_snapshot",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "all_82_followup_claim_decisions_exported",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "followup_dispositions_match_latest_review_rows",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "followup_unverified_count_is_current_and_not_a_missing_deal_count",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "all_5664_predecessor_event_ids_exported",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "all_followup_additions_have_public_field_provenance",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "all_three_original_classification_holds_resolved",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "original_holds_absent_from_current_remaining_holds",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "new_financing_and_context_counts_match_followup_receipt",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "no_followup_large_false_Monarrch_amount_in_financing_view",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "current_followup_docs_and_pointer_present",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "all_6877_predecessor_observation_values_survive_public_export",
       "passed": true,
       "detail": null
     },

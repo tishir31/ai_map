@@ -1,10 +1,10 @@
 {
-  "snapshot_id": "ai-deals-coverage-713c08df821e84c5e3ed",
+  "snapshot_id": "ai-deals-coverage-9ffd44b864775de2eb32",
   "research_status": "OPEN",
   "market_completeness_certified": false,
   "no_trends_calculated": true,
-  "candidate_records": 5682,
-  "curated_decisions": 5682,
+  "candidate_records": 5685,
+  "curated_decisions": 5685,
   "pending_claims": 0,
   "pending_count_is_missing_deal_count": false,
   "source_family_decisions": {
@@ -188,9 +188,18 @@
   "queue_resolution": {
     "receipt": "QUEUE_RESOLUTION_2026_10_12.json",
     "claims_reviewed": 731,
-    "unverified_reviewed_claims": 82,
+    "unverified_reviewed_claims": 30,
     "new_source_supported_financing_disclosures": 495,
     "classification_holds_reviewed": 320,
+    "market_recall_measured": false
+  },
+  "claims_followup": {
+    "receipt": "CLAIMS_FOLLOWUP_2026_10_12.json",
+    "claims_reviewed": 82,
+    "claims_unreviewed": 0,
+    "unverified_reviewed_claims": 30,
+    "original_classification_holds_reviewed": 3,
+    "added_financing_disclosures": 44,
     "market_recall_measured": false
   }
 }

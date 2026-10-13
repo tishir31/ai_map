@@ -1,184 +1,184 @@
 snapshot_id,finer_subsector,label,period_id,start_inclusive,end_exclusive,supported_financing_disclosures,financing_episodes,cutoff_disclosures,reviewed_business_disclosures,source_rule_disclosures,held_business_disclosures_in_broad_parent,unreconciled_discovery_claims_in_broad_parent,coverage_state,market_recall_measured,unverified_discovery_claims_in_broad_parent,unresolved_business_disclosures_in_broad_parent,resolved_scope_exclusions_in_broad_parent
-ai-deals-coverage-713c08df821e84c5e3ed,labs,General-purpose AI labs,prior_12m,2024-10-01,2025-10-01,25,23,23,25,0,0,0,observed_public_disclosures_recall_unmeasured,0,0,0,0
-ai-deals-coverage-713c08df821e84c5e3ed,labs,General-purpose AI labs,recent_12m,2025-10-01,2026-10-01,18,18,16,16,2,1,0,observed_public_disclosures_recall_unmeasured,0,0,0,1
-ai-deals-coverage-713c08df821e84c5e3ed,labs,General-purpose AI labs,october_update,2026-10-01,2026-10-12,0,0,0,0,0,0,0,no_verified_events_not_a_market_zero,0,0,0,0
-ai-deals-coverage-713c08df821e84c5e3ed,language,Specialist language and coding models,prior_12m,2024-10-01,2025-10-01,8,8,5,7,1,0,0,observed_public_disclosures_recall_unmeasured,0,0,0,0
-ai-deals-coverage-713c08df821e84c5e3ed,language,Specialist language and coding models,recent_12m,2025-10-01,2026-10-01,6,6,4,6,0,1,0,observed_public_disclosures_recall_unmeasured,0,0,0,1
-ai-deals-coverage-713c08df821e84c5e3ed,language,Specialist language and coding models,october_update,2026-10-01,2026-10-12,1,1,1,1,0,0,0,observed_public_disclosures_recall_unmeasured,0,0,0,0
-ai-deals-coverage-713c08df821e84c5e3ed,visual,Image and video models,prior_12m,2024-10-01,2025-10-01,10,10,10,10,0,0,0,observed_public_disclosures_recall_unmeasured,0,0,0,0
-ai-deals-coverage-713c08df821e84c5e3ed,visual,Image and video models,recent_12m,2025-10-01,2026-10-01,9,9,9,9,0,0,0,observed_public_disclosures_recall_unmeasured,0,0,0,0
-ai-deals-coverage-713c08df821e84c5e3ed,visual,Image and video models,october_update,2026-10-01,2026-10-12,0,0,0,0,0,0,0,no_verified_events_not_a_market_zero,0,0,0,0
-ai-deals-coverage-713c08df821e84c5e3ed,audio,Audio and speech models,prior_12m,2024-10-01,2025-10-01,11,11,5,11,0,0,0,observed_public_disclosures_recall_unmeasured,0,0,0,0
-ai-deals-coverage-713c08df821e84c5e3ed,audio,Audio and speech models,recent_12m,2025-10-01,2026-10-01,17,15,11,17,0,0,0,observed_public_disclosures_recall_unmeasured,0,0,0,0
-ai-deals-coverage-713c08df821e84c5e3ed,audio,Audio and speech models,october_update,2026-10-01,2026-10-12,0,0,0,0,0,0,0,no_verified_events_not_a_market_zero,0,0,0,0
-ai-deals-coverage-713c08df821e84c5e3ed,inference,Inference platforms,prior_12m,2024-10-01,2025-10-01,12,12,11,12,0,0,0,observed_public_disclosures_recall_unmeasured,0,0,0,0
-ai-deals-coverage-713c08df821e84c5e3ed,inference,Inference platforms,recent_12m,2025-10-01,2026-10-01,18,18,16,17,1,0,0,observed_public_disclosures_recall_unmeasured,0,0,0,0
-ai-deals-coverage-713c08df821e84c5e3ed,inference,Inference platforms,october_update,2026-10-01,2026-10-12,1,1,0,1,0,0,0,observed_public_disclosures_recall_unmeasured,0,0,0,0
-ai-deals-coverage-713c08df821e84c5e3ed,neocloud,Neoclouds,prior_12m,2024-10-01,2025-10-01,14,13,14,14,0,0,0,observed_public_disclosures_recall_unmeasured,0,0,0,0
-ai-deals-coverage-713c08df821e84c5e3ed,neocloud,Neoclouds,recent_12m,2025-10-01,2026-10-01,32,31,31,32,0,0,0,observed_public_disclosures_recall_unmeasured,0,0,0,0
-ai-deals-coverage-713c08df821e84c5e3ed,neocloud,Neoclouds,october_update,2026-10-01,2026-10-12,1,1,1,1,0,0,0,observed_public_disclosures_recall_unmeasured,0,0,0,0
-ai-deals-coverage-713c08df821e84c5e3ed,training,Training and fine-tuning platforms,prior_12m,2024-10-01,2025-10-01,10,10,5,10,0,0,0,observed_public_disclosures_recall_unmeasured,0,0,0,0
-ai-deals-coverage-713c08df821e84c5e3ed,training,Training and fine-tuning platforms,recent_12m,2025-10-01,2026-10-01,8,8,7,8,0,0,0,observed_public_disclosures_recall_unmeasured,0,0,0,0
-ai-deals-coverage-713c08df821e84c5e3ed,training,Training and fine-tuning platforms,october_update,2026-10-01,2026-10-12,0,0,0,0,0,0,0,no_verified_events_not_a_market_zero,0,0,0,0
-ai-deals-coverage-713c08df821e84c5e3ed,deployment,Model deployment platforms,prior_12m,2024-10-01,2025-10-01,16,16,9,16,0,0,0,observed_public_disclosures_recall_unmeasured,0,0,0,0
-ai-deals-coverage-713c08df821e84c5e3ed,deployment,Model deployment platforms,recent_12m,2025-10-01,2026-10-01,15,14,11,15,0,0,0,observed_public_disclosures_recall_unmeasured,0,0,0,0
-ai-deals-coverage-713c08df821e84c5e3ed,deployment,Model deployment platforms,october_update,2026-10-01,2026-10-12,1,1,1,1,0,0,0,observed_public_disclosures_recall_unmeasured,0,0,0,0
-ai-deals-coverage-713c08df821e84c5e3ed,retrieval,Retrieval and AI data infrastructure,prior_12m,2024-10-01,2025-10-01,25,25,18,23,2,4,0,observed_public_disclosures_recall_unmeasured,0,0,0,4
-ai-deals-coverage-713c08df821e84c5e3ed,retrieval,Retrieval and AI data infrastructure,recent_12m,2025-10-01,2026-10-01,25,24,14,25,0,7,0,observed_public_disclosures_recall_unmeasured,0,0,0,7
-ai-deals-coverage-713c08df821e84c5e3ed,retrieval,Retrieval and AI data infrastructure,october_update,2026-10-01,2026-10-12,0,0,0,0,0,0,0,no_verified_events_not_a_market_zero,0,0,0,0
-ai-deals-coverage-713c08df821e84c5e3ed,labeling,Labeling and annotation platforms,prior_12m,2024-10-01,2025-10-01,14,14,11,14,0,4,0,observed_public_disclosures_recall_unmeasured,0,0,0,4
-ai-deals-coverage-713c08df821e84c5e3ed,labeling,Labeling and annotation platforms,recent_12m,2025-10-01,2026-10-01,6,6,5,5,1,7,0,observed_public_disclosures_recall_unmeasured,0,0,0,7
-ai-deals-coverage-713c08df821e84c5e3ed,labeling,Labeling and annotation platforms,october_update,2026-10-01,2026-10-12,0,0,0,0,0,0,0,no_verified_events_not_a_market_zero,0,0,0,0
-ai-deals-coverage-713c08df821e84c5e3ed,expert,Expert data and training services,prior_12m,2024-10-01,2025-10-01,5,5,4,5,0,4,0,observed_public_disclosures_recall_unmeasured,0,0,0,4
-ai-deals-coverage-713c08df821e84c5e3ed,expert,Expert data and training services,recent_12m,2025-10-01,2026-10-01,5,5,2,5,0,7,0,observed_public_disclosures_recall_unmeasured,0,0,0,7
-ai-deals-coverage-713c08df821e84c5e3ed,expert,Expert data and training services,october_update,2026-10-01,2026-10-12,1,1,1,1,0,0,0,observed_public_disclosures_recall_unmeasured,0,0,0,0
-ai-deals-coverage-713c08df821e84c5e3ed,synthetic,Digital synthetic data,prior_12m,2024-10-01,2025-10-01,5,5,1,4,1,4,0,observed_public_disclosures_recall_unmeasured,0,0,0,4
-ai-deals-coverage-713c08df821e84c5e3ed,synthetic,Digital synthetic data,recent_12m,2025-10-01,2026-10-01,3,3,0,3,0,7,0,observed_public_disclosures_recall_unmeasured,0,0,0,7
-ai-deals-coverage-713c08df821e84c5e3ed,synthetic,Digital synthetic data,october_update,2026-10-01,2026-10-12,0,0,0,0,0,0,0,no_verified_events_not_a_market_zero,0,0,0,0
-ai-deals-coverage-713c08df821e84c5e3ed,eval,Evaluations and training environments,prior_12m,2024-10-01,2025-10-01,8,8,4,8,0,4,0,observed_public_disclosures_recall_unmeasured,0,0,0,4
-ai-deals-coverage-713c08df821e84c5e3ed,eval,Evaluations and training environments,recent_12m,2025-10-01,2026-10-01,12,12,9,12,0,7,0,observed_public_disclosures_recall_unmeasured,0,0,0,7
-ai-deals-coverage-713c08df821e84c5e3ed,eval,Evaluations and training environments,october_update,2026-10-01,2026-10-12,0,0,0,0,0,0,0,no_verified_events_not_a_market_zero,0,0,0,0
-ai-deals-coverage-713c08df821e84c5e3ed,orchestration,Agent orchestration and developer frameworks,prior_12m,2024-10-01,2025-10-01,32,32,18,32,0,2,0,observed_public_disclosures_recall_unmeasured,0,0,0,2
-ai-deals-coverage-713c08df821e84c5e3ed,orchestration,Agent orchestration and developer frameworks,recent_12m,2025-10-01,2026-10-01,32,32,20,31,1,2,0,observed_public_disclosures_recall_unmeasured,0,0,0,2
-ai-deals-coverage-713c08df821e84c5e3ed,orchestration,Agent orchestration and developer frameworks,october_update,2026-10-01,2026-10-12,1,1,1,1,0,0,0,observed_public_disclosures_recall_unmeasured,0,0,0,0
-ai-deals-coverage-713c08df821e84c5e3ed,observability,AI observability,prior_12m,2024-10-01,2025-10-01,11,11,9,10,1,2,0,observed_public_disclosures_recall_unmeasured,0,0,0,2
-ai-deals-coverage-713c08df821e84c5e3ed,observability,AI observability,recent_12m,2025-10-01,2026-10-01,16,16,10,11,5,2,0,observed_public_disclosures_recall_unmeasured,0,0,0,2
-ai-deals-coverage-713c08df821e84c5e3ed,observability,AI observability,october_update,2026-10-01,2026-10-12,1,1,1,1,0,0,0,observed_public_disclosures_recall_unmeasured,0,0,0,0
-ai-deals-coverage-713c08df821e84c5e3ed,security,AI security and governance,prior_12m,2024-10-01,2025-10-01,128,128,90,48,80,1,0,observed_public_disclosures_recall_unmeasured,0,0,0,1
-ai-deals-coverage-713c08df821e84c5e3ed,security,AI security and governance,recent_12m,2025-10-01,2026-10-01,170,170,115,81,89,6,0,observed_public_disclosures_recall_unmeasured,0,0,0,6
-ai-deals-coverage-713c08df821e84c5e3ed,security,AI security and governance,october_update,2026-10-01,2026-10-12,5,5,4,1,4,0,0,observed_public_disclosures_recall_unmeasured,0,0,0,0
-ai-deals-coverage-713c08df821e84c5e3ed,coding,Coding applications,prior_12m,2024-10-01,2025-10-01,34,34,21,29,5,0,0,observed_public_disclosures_recall_unmeasured,0,0,0,0
-ai-deals-coverage-713c08df821e84c5e3ed,coding,Coding applications,recent_12m,2025-10-01,2026-10-01,41,41,28,37,4,0,0,observed_public_disclosures_recall_unmeasured,0,0,0,0
-ai-deals-coverage-713c08df821e84c5e3ed,coding,Coding applications,october_update,2026-10-01,2026-10-12,0,0,0,0,0,0,0,no_verified_events_not_a_market_zero,0,0,0,0
-ai-deals-coverage-713c08df821e84c5e3ed,assistants,Horizontal assistants and knowledge tools,prior_12m,2024-10-01,2025-10-01,23,23,14,21,2,4,0,observed_public_disclosures_recall_unmeasured,0,0,0,4
-ai-deals-coverage-713c08df821e84c5e3ed,assistants,Horizontal assistants and knowledge tools,recent_12m,2025-10-01,2026-10-01,30,30,13,28,2,4,0,observed_public_disclosures_recall_unmeasured,0,0,0,4
-ai-deals-coverage-713c08df821e84c5e3ed,assistants,Horizontal assistants and knowledge tools,october_update,2026-10-01,2026-10-12,5,5,4,5,0,1,0,observed_public_disclosures_recall_unmeasured,0,0,0,1
-ai-deals-coverage-713c08df821e84c5e3ed,search,AI search and research,prior_12m,2024-10-01,2025-10-01,17,17,10,16,1,0,0,observed_public_disclosures_recall_unmeasured,0,0,0,0
-ai-deals-coverage-713c08df821e84c5e3ed,search,AI search and research,recent_12m,2025-10-01,2026-10-01,13,13,9,12,1,0,0,observed_public_disclosures_recall_unmeasured,0,0,0,0
-ai-deals-coverage-713c08df821e84c5e3ed,search,AI search and research,october_update,2026-10-01,2026-10-12,0,0,0,0,0,0,0,no_verified_events_not_a_market_zero,0,0,0,0
-ai-deals-coverage-713c08df821e84c5e3ed,workflow,Enterprise workflow agents,prior_12m,2024-10-01,2025-10-01,144,144,89,125,19,4,0,observed_public_disclosures_recall_unmeasured,0,0,0,4
-ai-deals-coverage-713c08df821e84c5e3ed,workflow,Enterprise workflow agents,recent_12m,2025-10-01,2026-10-01,185,185,113,161,24,4,0,observed_public_disclosures_recall_unmeasured,0,0,0,4
-ai-deals-coverage-713c08df821e84c5e3ed,workflow,Enterprise workflow agents,october_update,2026-10-01,2026-10-12,7,7,3,4,3,1,0,observed_public_disclosures_recall_unmeasured,0,0,0,1
-ai-deals-coverage-713c08df821e84c5e3ed,creative,Creative AI applications,prior_12m,2024-10-01,2025-10-01,43,43,22,38,5,0,0,observed_public_disclosures_recall_unmeasured,0,0,0,0
-ai-deals-coverage-713c08df821e84c5e3ed,creative,Creative AI applications,recent_12m,2025-10-01,2026-10-01,36,36,23,31,5,0,0,observed_public_disclosures_recall_unmeasured,0,0,0,0
-ai-deals-coverage-713c08df821e84c5e3ed,creative,Creative AI applications,october_update,2026-10-01,2026-10-12,2,2,1,1,1,0,0,observed_public_disclosures_recall_unmeasured,0,0,0,0
-ai-deals-coverage-713c08df821e84c5e3ed,legal,Legal AI,prior_12m,2024-10-01,2025-10-01,42,42,24,21,21,1,0,observed_public_disclosures_recall_unmeasured,0,0,0,1
-ai-deals-coverage-713c08df821e84c5e3ed,legal,Legal AI,recent_12m,2025-10-01,2026-10-01,42,42,31,26,16,0,0,observed_public_disclosures_recall_unmeasured,0,0,0,0
-ai-deals-coverage-713c08df821e84c5e3ed,legal,Legal AI,october_update,2026-10-01,2026-10-12,1,1,1,0,1,0,0,observed_public_disclosures_recall_unmeasured,0,0,0,0
-ai-deals-coverage-713c08df821e84c5e3ed,health,Healthcare AI,prior_12m,2024-10-01,2025-10-01,174,174,114,98,76,7,0,observed_public_disclosures_recall_unmeasured,0,0,0,7
-ai-deals-coverage-713c08df821e84c5e3ed,health,Healthcare AI,recent_12m,2025-10-01,2026-10-01,155,154,112,86,69,5,0,observed_public_disclosures_recall_unmeasured,0,0,0,5
-ai-deals-coverage-713c08df821e84c5e3ed,health,Healthcare AI,october_update,2026-10-01,2026-10-12,5,5,3,3,2,0,0,observed_public_disclosures_recall_unmeasured,0,0,0,0
-ai-deals-coverage-713c08df821e84c5e3ed,finance,Finance and accounting AI,prior_12m,2024-10-01,2025-10-01,128,127,82,69,59,2,0,observed_public_disclosures_recall_unmeasured,0,0,0,2
-ai-deals-coverage-713c08df821e84c5e3ed,finance,Finance and accounting AI,recent_12m,2025-10-01,2026-10-01,160,159,112,85,75,3,0,observed_public_disclosures_recall_unmeasured,0,0,0,3
-ai-deals-coverage-713c08df821e84c5e3ed,finance,Finance and accounting AI,october_update,2026-10-01,2026-10-12,5,5,2,5,0,0,0,observed_public_disclosures_recall_unmeasured,0,0,0,0
-ai-deals-coverage-713c08df821e84c5e3ed,science,Life sciences and discovery AI,prior_12m,2024-10-01,2025-10-01,40,39,27,35,5,7,0,observed_public_disclosures_recall_unmeasured,0,0,0,7
-ai-deals-coverage-713c08df821e84c5e3ed,science,Life sciences and discovery AI,recent_12m,2025-10-01,2026-10-01,56,55,40,46,10,5,0,observed_public_disclosures_recall_unmeasured,0,0,0,5
-ai-deals-coverage-713c08df821e84c5e3ed,science,Life sciences and discovery AI,october_update,2026-10-01,2026-10-12,1,1,1,1,0,0,0,observed_public_disclosures_recall_unmeasured,0,0,0,0
-ai-deals-coverage-713c08df821e84c5e3ed,industrial,Industrial and energy AI,prior_12m,2024-10-01,2025-10-01,129,129,80,118,11,16,0,observed_public_disclosures_recall_unmeasured,0,0,2,14
-ai-deals-coverage-713c08df821e84c5e3ed,industrial,Industrial and energy AI,recent_12m,2025-10-01,2026-10-01,117,117,73,114,3,21,0,observed_public_disclosures_recall_unmeasured,0,0,1,20
-ai-deals-coverage-713c08df821e84c5e3ed,industrial,Industrial and energy AI,october_update,2026-10-01,2026-10-12,2,2,2,1,1,0,0,observed_public_disclosures_recall_unmeasured,0,0,0,0
-ai-deals-coverage-713c08df821e84c5e3ed,service,Sales and customer service AI,prior_12m,2024-10-01,2025-10-01,87,87,44,73,14,0,0,observed_public_disclosures_recall_unmeasured,0,0,0,0
-ai-deals-coverage-713c08df821e84c5e3ed,service,Sales and customer service AI,recent_12m,2025-10-01,2026-10-01,82,81,46,74,8,0,0,observed_public_disclosures_recall_unmeasured,0,0,0,0
-ai-deals-coverage-713c08df821e84c5e3ed,service,Sales and customer service AI,october_update,2026-10-01,2026-10-12,3,3,2,3,0,0,0,observed_public_disclosures_recall_unmeasured,0,0,0,0
-ai-deals-coverage-713c08df821e84c5e3ed,education,Education AI,prior_12m,2024-10-01,2025-10-01,10,10,7,8,2,0,0,observed_public_disclosures_recall_unmeasured,0,0,0,0
-ai-deals-coverage-713c08df821e84c5e3ed,education,Education AI,recent_12m,2025-10-01,2026-10-01,6,6,3,4,2,0,0,observed_public_disclosures_recall_unmeasured,0,0,0,0
-ai-deals-coverage-713c08df821e84c5e3ed,education,Education AI,october_update,2026-10-01,2026-10-12,0,0,0,0,0,0,0,no_verified_events_not_a_market_zero,0,0,0,0
-ai-deals-coverage-713c08df821e84c5e3ed,hr,HR and recruiting AI,prior_12m,2024-10-01,2025-10-01,20,20,9,19,1,16,0,observed_public_disclosures_recall_unmeasured,0,0,2,14
-ai-deals-coverage-713c08df821e84c5e3ed,hr,HR and recruiting AI,recent_12m,2025-10-01,2026-10-01,22,22,10,20,2,21,0,observed_public_disclosures_recall_unmeasured,0,0,1,20
-ai-deals-coverage-713c08df821e84c5e3ed,hr,HR and recruiting AI,october_update,2026-10-01,2026-10-12,0,0,0,0,0,0,0,no_verified_events_not_a_market_zero,0,0,0,0
-ai-deals-coverage-713c08df821e84c5e3ed,robot-model,Robot foundation models,prior_12m,2024-10-01,2025-10-01,5,5,5,5,0,0,0,observed_public_disclosures_recall_unmeasured,0,0,0,0
-ai-deals-coverage-713c08df821e84c5e3ed,robot-model,Robot foundation models,recent_12m,2025-10-01,2026-10-01,18,17,13,16,2,1,0,observed_public_disclosures_recall_unmeasured,0,0,0,1
-ai-deals-coverage-713c08df821e84c5e3ed,robot-model,Robot foundation models,october_update,2026-10-01,2026-10-12,0,0,0,0,0,0,0,no_verified_events_not_a_market_zero,0,0,0,0
-ai-deals-coverage-713c08df821e84c5e3ed,world-model,World and spatial models,prior_12m,2024-10-01,2025-10-01,2,2,2,1,1,0,0,observed_public_disclosures_recall_unmeasured,0,0,0,0
-ai-deals-coverage-713c08df821e84c5e3ed,world-model,World and spatial models,recent_12m,2025-10-01,2026-10-01,14,14,14,13,1,1,0,observed_public_disclosures_recall_unmeasured,0,0,0,1
-ai-deals-coverage-713c08df821e84c5e3ed,world-model,World and spatial models,october_update,2026-10-01,2026-10-12,0,0,0,0,0,0,0,no_verified_events_not_a_market_zero,0,0,0,0
-ai-deals-coverage-713c08df821e84c5e3ed,perception,Perception and localization software,prior_12m,2024-10-01,2025-10-01,16,16,9,16,0,0,0,observed_public_disclosures_recall_unmeasured,0,0,0,0
-ai-deals-coverage-713c08df821e84c5e3ed,perception,Perception and localization software,recent_12m,2025-10-01,2026-10-01,14,14,11,14,0,1,0,observed_public_disclosures_recall_unmeasured,0,0,0,1
-ai-deals-coverage-713c08df821e84c5e3ed,perception,Perception and localization software,october_update,2026-10-01,2026-10-12,1,1,0,1,0,0,0,observed_public_disclosures_recall_unmeasured,0,0,0,0
-ai-deals-coverage-713c08df821e84c5e3ed,control,"Planning, control and robotics software",prior_12m,2024-10-01,2025-10-01,5,5,5,5,0,0,0,observed_public_disclosures_recall_unmeasured,0,0,0,0
-ai-deals-coverage-713c08df821e84c5e3ed,control,"Planning, control and robotics software",recent_12m,2025-10-01,2026-10-01,11,11,11,10,1,1,0,observed_public_disclosures_recall_unmeasured,0,0,0,1
-ai-deals-coverage-713c08df821e84c5e3ed,control,"Planning, control and robotics software",october_update,2026-10-01,2026-10-12,0,0,0,0,0,0,0,no_verified_events_not_a_market_zero,0,0,0,0
-ai-deals-coverage-713c08df821e84c5e3ed,robot-data,Robot data collection and teleoperation,prior_12m,2024-10-01,2025-10-01,2,2,2,2,0,0,0,observed_public_disclosures_recall_unmeasured,0,0,0,0
-ai-deals-coverage-713c08df821e84c5e3ed,robot-data,Robot data collection and teleoperation,recent_12m,2025-10-01,2026-10-01,4,4,3,4,0,1,0,observed_public_disclosures_recall_unmeasured,0,0,0,1
-ai-deals-coverage-713c08df821e84c5e3ed,robot-data,Robot data collection and teleoperation,october_update,2026-10-01,2026-10-12,1,1,1,1,0,0,0,observed_public_disclosures_recall_unmeasured,0,0,0,0
-ai-deals-coverage-713c08df821e84c5e3ed,physical-sim,Physical simulation and validation tooling,prior_12m,2024-10-01,2025-10-01,4,4,2,4,0,0,0,observed_public_disclosures_recall_unmeasured,0,0,0,0
-ai-deals-coverage-713c08df821e84c5e3ed,physical-sim,Physical simulation and validation tooling,recent_12m,2025-10-01,2026-10-01,8,8,5,7,1,0,0,observed_public_disclosures_recall_unmeasured,0,0,0,0
-ai-deals-coverage-713c08df821e84c5e3ed,physical-sim,Physical simulation and validation tooling,october_update,2026-10-01,2026-10-12,1,1,1,0,1,0,0,observed_public_disclosures_recall_unmeasured,0,0,0,0
-ai-deals-coverage-713c08df821e84c5e3ed,telemetry,Robot fleet telemetry and operations,prior_12m,2024-10-01,2025-10-01,2,2,1,2,0,0,0,observed_public_disclosures_recall_unmeasured,0,0,0,0
-ai-deals-coverage-713c08df821e84c5e3ed,telemetry,Robot fleet telemetry and operations,recent_12m,2025-10-01,2026-10-01,2,2,2,2,0,1,0,observed_public_disclosures_recall_unmeasured,0,0,0,1
-ai-deals-coverage-713c08df821e84c5e3ed,telemetry,Robot fleet telemetry and operations,october_update,2026-10-01,2026-10-12,0,0,0,0,0,0,0,no_verified_events_not_a_market_zero,0,0,0,0
-ai-deals-coverage-713c08df821e84c5e3ed,humanoid,Humanoids and general robot platforms,prior_12m,2024-10-01,2025-10-01,19,17,15,18,1,0,0,observed_public_disclosures_recall_unmeasured,0,0,0,0
-ai-deals-coverage-713c08df821e84c5e3ed,humanoid,Humanoids and general robot platforms,recent_12m,2025-10-01,2026-10-01,35,35,31,33,2,0,0,observed_public_disclosures_recall_unmeasured,0,0,0,0
-ai-deals-coverage-713c08df821e84c5e3ed,humanoid,Humanoids and general robot platforms,october_update,2026-10-01,2026-10-12,0,0,0,0,0,0,0,no_verified_events_not_a_market_zero,0,0,0,0
-ai-deals-coverage-713c08df821e84c5e3ed,industrial-robot,Industrial manipulation and manufacturing,prior_12m,2024-10-01,2025-10-01,9,9,5,9,0,0,0,observed_public_disclosures_recall_unmeasured,0,0,0,0
-ai-deals-coverage-713c08df821e84c5e3ed,industrial-robot,Industrial manipulation and manufacturing,recent_12m,2025-10-01,2026-10-01,14,14,13,10,4,0,0,observed_public_disclosures_recall_unmeasured,0,0,0,0
-ai-deals-coverage-713c08df821e84c5e3ed,industrial-robot,Industrial manipulation and manufacturing,october_update,2026-10-01,2026-10-12,0,0,0,0,0,0,0,no_verified_events_not_a_market_zero,0,0,0,0
-ai-deals-coverage-713c08df821e84c5e3ed,warehouse,Warehouse and logistics robotics,prior_12m,2024-10-01,2025-10-01,14,13,12,11,3,0,0,observed_public_disclosures_recall_unmeasured,0,0,0,0
-ai-deals-coverage-713c08df821e84c5e3ed,warehouse,Warehouse and logistics robotics,recent_12m,2025-10-01,2026-10-01,19,19,13,14,5,0,0,observed_public_disclosures_recall_unmeasured,0,0,0,0
-ai-deals-coverage-713c08df821e84c5e3ed,warehouse,Warehouse and logistics robotics,october_update,2026-10-01,2026-10-12,1,1,1,1,0,0,0,observed_public_disclosures_recall_unmeasured,0,0,0,0
-ai-deals-coverage-713c08df821e84c5e3ed,av,Autonomous vehicles,prior_12m,2024-10-01,2025-10-01,10,9,10,8,2,0,0,observed_public_disclosures_recall_unmeasured,0,0,0,0
-ai-deals-coverage-713c08df821e84c5e3ed,av,Autonomous vehicles,recent_12m,2025-10-01,2026-10-01,24,24,19,17,7,0,0,observed_public_disclosures_recall_unmeasured,0,0,0,0
-ai-deals-coverage-713c08df821e84c5e3ed,av,Autonomous vehicles,october_update,2026-10-01,2026-10-12,0,0,0,0,0,0,0,no_verified_events_not_a_market_zero,0,0,0,0
-ai-deals-coverage-713c08df821e84c5e3ed,drone,Drones and aerial delivery,prior_12m,2024-10-01,2025-10-01,8,6,8,7,1,0,0,observed_public_disclosures_recall_unmeasured,0,0,0,0
-ai-deals-coverage-713c08df821e84c5e3ed,drone,Drones and aerial delivery,recent_12m,2025-10-01,2026-10-01,18,17,16,12,6,2,0,observed_public_disclosures_recall_unmeasured,0,0,0,2
-ai-deals-coverage-713c08df821e84c5e3ed,drone,Drones and aerial delivery,october_update,2026-10-01,2026-10-12,0,0,0,0,0,0,0,no_verified_events_not_a_market_zero,0,0,0,0
-ai-deals-coverage-713c08df821e84c5e3ed,defense,Defense autonomy,prior_12m,2024-10-01,2025-10-01,25,24,24,20,5,0,0,observed_public_disclosures_recall_unmeasured,0,0,0,0
-ai-deals-coverage-713c08df821e84c5e3ed,defense,Defense autonomy,recent_12m,2025-10-01,2026-10-01,41,40,39,35,6,2,0,observed_public_disclosures_recall_unmeasured,0,0,0,2
-ai-deals-coverage-713c08df821e84c5e3ed,defense,Defense autonomy,october_update,2026-10-01,2026-10-12,0,0,0,0,0,0,0,no_verified_events_not_a_market_zero,0,0,0,0
-ai-deals-coverage-713c08df821e84c5e3ed,agri,Agricultural robots,prior_12m,2024-10-01,2025-10-01,13,13,11,12,1,0,0,observed_public_disclosures_recall_unmeasured,0,0,0,0
-ai-deals-coverage-713c08df821e84c5e3ed,agri,Agricultural robots,recent_12m,2025-10-01,2026-10-01,6,6,5,5,1,0,0,observed_public_disclosures_recall_unmeasured,0,0,0,0
-ai-deals-coverage-713c08df821e84c5e3ed,agri,Agricultural robots,october_update,2026-10-01,2026-10-12,0,0,0,0,0,0,0,no_verified_events_not_a_market_zero,0,0,0,0
-ai-deals-coverage-713c08df821e84c5e3ed,medical-robot,"Medical, surgical and lab robots",prior_12m,2024-10-01,2025-10-01,18,18,14,12,6,0,0,observed_public_disclosures_recall_unmeasured,0,0,0,0
-ai-deals-coverage-713c08df821e84c5e3ed,medical-robot,"Medical, surgical and lab robots",recent_12m,2025-10-01,2026-10-01,24,24,20,9,15,0,0,observed_public_disclosures_recall_unmeasured,0,0,0,0
-ai-deals-coverage-713c08df821e84c5e3ed,medical-robot,"Medical, surgical and lab robots",october_update,2026-10-01,2026-10-12,1,1,1,1,0,0,0,observed_public_disclosures_recall_unmeasured,0,0,0,0
-ai-deals-coverage-713c08df821e84c5e3ed,construction,Construction and mining robots,prior_12m,2024-10-01,2025-10-01,7,7,4,6,1,0,0,observed_public_disclosures_recall_unmeasured,0,0,0,0
-ai-deals-coverage-713c08df821e84c5e3ed,construction,Construction and mining robots,recent_12m,2025-10-01,2026-10-01,11,11,9,7,4,0,0,observed_public_disclosures_recall_unmeasured,0,0,0,0
-ai-deals-coverage-713c08df821e84c5e3ed,construction,Construction and mining robots,october_update,2026-10-01,2026-10-12,0,0,0,0,0,0,0,no_verified_events_not_a_market_zero,0,0,0,0
-ai-deals-coverage-713c08df821e84c5e3ed,service-robot,Service and inspection robots,prior_12m,2024-10-01,2025-10-01,12,11,11,12,0,0,0,observed_public_disclosures_recall_unmeasured,0,0,0,0
-ai-deals-coverage-713c08df821e84c5e3ed,service-robot,Service and inspection robots,recent_12m,2025-10-01,2026-10-01,21,21,18,21,0,0,0,observed_public_disclosures_recall_unmeasured,0,0,0,0
-ai-deals-coverage-713c08df821e84c5e3ed,service-robot,Service and inspection robots,october_update,2026-10-01,2026-10-12,0,0,0,0,0,0,0,no_verified_events_not_a_market_zero,0,0,0,0
-ai-deals-coverage-713c08df821e84c5e3ed,delivery,Ground delivery robots,prior_12m,2024-10-01,2025-10-01,2,2,2,2,0,0,0,observed_public_disclosures_recall_unmeasured,0,0,0,0
-ai-deals-coverage-713c08df821e84c5e3ed,delivery,Ground delivery robots,recent_12m,2025-10-01,2026-10-01,2,2,1,2,0,0,0,observed_public_disclosures_recall_unmeasured,0,0,0,0
-ai-deals-coverage-713c08df821e84c5e3ed,delivery,Ground delivery robots,october_update,2026-10-01,2026-10-12,0,0,0,0,0,0,0,no_verified_events_not_a_market_zero,0,0,0,0
-ai-deals-coverage-713c08df821e84c5e3ed,physics-ai,Physics models and surrogates,prior_12m,2024-10-01,2025-10-01,7,5,6,7,0,0,0,observed_public_disclosures_recall_unmeasured,0,0,0,0
-ai-deals-coverage-713c08df821e84c5e3ed,physics-ai,Physics models and surrogates,recent_12m,2025-10-01,2026-10-01,7,6,6,7,0,0,0,observed_public_disclosures_recall_unmeasured,0,0,0,0
-ai-deals-coverage-713c08df821e84c5e3ed,physics-ai,Physics models and surrogates,october_update,2026-10-01,2026-10-12,1,1,1,1,0,0,0,observed_public_disclosures_recall_unmeasured,0,0,0,0
-ai-deals-coverage-713c08df821e84c5e3ed,solver,Numerical engineering simulation,prior_12m,2024-10-01,2025-10-01,1,1,0,0,1,0,0,observed_public_disclosures_recall_unmeasured,0,0,0,0
-ai-deals-coverage-713c08df821e84c5e3ed,solver,Numerical engineering simulation,recent_12m,2025-10-01,2026-10-01,2,2,2,2,0,0,0,observed_public_disclosures_recall_unmeasured,0,0,0,0
-ai-deals-coverage-713c08df821e84c5e3ed,solver,Numerical engineering simulation,october_update,2026-10-01,2026-10-12,0,0,0,0,0,0,0,no_verified_events_not_a_market_zero,0,0,0,0
-ai-deals-coverage-713c08df821e84c5e3ed,cad,CAD and computational design,prior_12m,2024-10-01,2025-10-01,2,2,1,1,1,0,0,observed_public_disclosures_recall_unmeasured,0,0,0,0
-ai-deals-coverage-713c08df821e84c5e3ed,cad,CAD and computational design,recent_12m,2025-10-01,2026-10-01,5,5,3,5,0,0,0,observed_public_disclosures_recall_unmeasured,0,0,0,0
-ai-deals-coverage-713c08df821e84c5e3ed,cad,CAD and computational design,october_update,2026-10-01,2026-10-12,0,0,0,0,0,0,0,no_verified_events_not_a_market_zero,0,0,0,0
-ai-deals-coverage-713c08df821e84c5e3ed,systems,Systems modeling and controls,prior_12m,2024-10-01,2025-10-01,0,0,0,0,0,0,0,no_verified_events_not_a_market_zero,0,0,0,0
-ai-deals-coverage-713c08df821e84c5e3ed,systems,Systems modeling and controls,recent_12m,2025-10-01,2026-10-01,1,1,1,1,0,0,0,observed_public_disclosures_recall_unmeasured,0,0,0,0
-ai-deals-coverage-713c08df821e84c5e3ed,systems,Systems modeling and controls,october_update,2026-10-01,2026-10-12,0,0,0,0,0,0,0,no_verified_events_not_a_market_zero,0,0,0,0
-ai-deals-coverage-713c08df821e84c5e3ed,twin,Engineering digital twins,prior_12m,2024-10-01,2025-10-01,4,4,1,4,0,0,0,observed_public_disclosures_recall_unmeasured,0,0,0,0
-ai-deals-coverage-713c08df821e84c5e3ed,twin,Engineering digital twins,recent_12m,2025-10-01,2026-10-01,1,1,0,1,0,0,0,observed_public_disclosures_recall_unmeasured,0,0,0,0
-ai-deals-coverage-713c08df821e84c5e3ed,twin,Engineering digital twins,october_update,2026-10-01,2026-10-12,0,0,0,0,0,0,0,no_verified_events_not_a_market_zero,0,0,0,0
-ai-deals-coverage-713c08df821e84c5e3ed,engineering-flow,Engineering orchestration,prior_12m,2024-10-01,2025-10-01,7,7,3,7,0,0,0,observed_public_disclosures_recall_unmeasured,0,0,0,0
-ai-deals-coverage-713c08df821e84c5e3ed,engineering-flow,Engineering orchestration,recent_12m,2025-10-01,2026-10-01,13,13,8,13,0,0,0,observed_public_disclosures_recall_unmeasured,0,0,0,0
-ai-deals-coverage-713c08df821e84c5e3ed,engineering-flow,Engineering orchestration,october_update,2026-10-01,2026-10-12,0,0,0,0,0,0,0,no_verified_events_not_a_market_zero,0,0,0,0
-ai-deals-coverage-713c08df821e84c5e3ed,eda,EDA and chip-design software,prior_12m,2024-10-01,2025-10-01,3,3,3,3,0,0,0,observed_public_disclosures_recall_unmeasured,0,0,0,0
-ai-deals-coverage-713c08df821e84c5e3ed,eda,EDA and chip-design software,recent_12m,2025-10-01,2026-10-01,12,12,10,11,1,0,0,observed_public_disclosures_recall_unmeasured,0,0,0,0
-ai-deals-coverage-713c08df821e84c5e3ed,eda,EDA and chip-design software,october_update,2026-10-01,2026-10-12,1,1,0,1,0,0,0,observed_public_disclosures_recall_unmeasured,0,0,0,0
-ai-deals-coverage-713c08df821e84c5e3ed,dc-chip,Datacenter accelerators and custom ASICs,prior_12m,2024-10-01,2025-10-01,15,15,14,14,1,4,0,observed_public_disclosures_recall_unmeasured,0,0,0,4
-ai-deals-coverage-713c08df821e84c5e3ed,dc-chip,Datacenter accelerators and custom ASICs,recent_12m,2025-10-01,2026-10-01,27,27,25,25,2,9,0,observed_public_disclosures_recall_unmeasured,0,0,0,9
-ai-deals-coverage-713c08df821e84c5e3ed,dc-chip,Datacenter accelerators and custom ASICs,october_update,2026-10-01,2026-10-12,1,1,1,1,0,0,0,observed_public_disclosures_recall_unmeasured,0,0,0,0
-ai-deals-coverage-713c08df821e84c5e3ed,edge-chip,Edge AI processors,prior_12m,2024-10-01,2025-10-01,5,5,4,4,1,4,0,observed_public_disclosures_recall_unmeasured,0,0,0,4
-ai-deals-coverage-713c08df821e84c5e3ed,edge-chip,Edge AI processors,recent_12m,2025-10-01,2026-10-01,15,14,11,15,0,9,0,observed_public_disclosures_recall_unmeasured,0,0,0,9
-ai-deals-coverage-713c08df821e84c5e3ed,edge-chip,Edge AI processors,october_update,2026-10-01,2026-10-12,0,0,0,0,0,0,0,no_verified_events_not_a_market_zero,0,0,0,0
-ai-deals-coverage-713c08df821e84c5e3ed,sensor,Sensing hardware,prior_12m,2024-10-01,2025-10-01,6,6,4,5,1,2,0,observed_public_disclosures_recall_unmeasured,0,0,0,2
-ai-deals-coverage-713c08df821e84c5e3ed,sensor,Sensing hardware,recent_12m,2025-10-01,2026-10-01,17,17,12,16,1,4,0,observed_public_disclosures_recall_unmeasured,0,0,0,4
-ai-deals-coverage-713c08df821e84c5e3ed,sensor,Sensing hardware,october_update,2026-10-01,2026-10-12,0,0,0,0,0,0,0,no_verified_events_not_a_market_zero,0,0,0,0
-ai-deals-coverage-713c08df821e84c5e3ed,components,Robot components,prior_12m,2024-10-01,2025-10-01,2,2,1,2,0,2,0,observed_public_disclosures_recall_unmeasured,0,0,0,2
-ai-deals-coverage-713c08df821e84c5e3ed,components,Robot components,recent_12m,2025-10-01,2026-10-01,15,15,10,15,0,4,0,observed_public_disclosures_recall_unmeasured,0,0,0,4
-ai-deals-coverage-713c08df821e84c5e3ed,components,Robot components,october_update,2026-10-01,2026-10-12,0,0,0,0,0,0,0,no_verified_events_not_a_market_zero,0,0,0,0
-ai-deals-coverage-713c08df821e84c5e3ed,network,AI networking and interconnect,prior_12m,2024-10-01,2025-10-01,21,21,20,13,8,0,0,observed_public_disclosures_recall_unmeasured,0,0,0,0
-ai-deals-coverage-713c08df821e84c5e3ed,network,AI networking and interconnect,recent_12m,2025-10-01,2026-10-01,31,31,29,13,18,0,0,observed_public_disclosures_recall_unmeasured,0,0,0,0
-ai-deals-coverage-713c08df821e84c5e3ed,network,AI networking and interconnect,october_update,2026-10-01,2026-10-12,0,0,0,0,0,0,0,no_verified_events_not_a_market_zero,0,0,0,0
-ai-deals-coverage-713c08df821e84c5e3ed,memory,AI memory and storage hardware,prior_12m,2024-10-01,2025-10-01,3,3,3,3,0,0,0,observed_public_disclosures_recall_unmeasured,0,0,0,0
-ai-deals-coverage-713c08df821e84c5e3ed,memory,AI memory and storage hardware,recent_12m,2025-10-01,2026-10-01,5,5,5,5,0,0,0,observed_public_disclosures_recall_unmeasured,0,0,0,0
-ai-deals-coverage-713c08df821e84c5e3ed,memory,AI memory and storage hardware,october_update,2026-10-01,2026-10-12,0,0,0,0,0,0,0,no_verified_events_not_a_market_zero,0,0,0,0
-ai-deals-coverage-713c08df821e84c5e3ed,power-cooling,AI power and cooling,prior_12m,2024-10-01,2025-10-01,10,10,8,6,4,4,0,observed_public_disclosures_recall_unmeasured,0,0,0,4
-ai-deals-coverage-713c08df821e84c5e3ed,power-cooling,AI power and cooling,recent_12m,2025-10-01,2026-10-01,26,26,23,19,7,16,0,observed_public_disclosures_recall_unmeasured,0,0,0,16
-ai-deals-coverage-713c08df821e84c5e3ed,power-cooling,AI power and cooling,october_update,2026-10-01,2026-10-12,1,1,1,1,0,0,0,observed_public_disclosures_recall_unmeasured,0,0,0,0
+ai-deals-coverage-9ffd44b864775de2eb32,labs,General-purpose AI labs,prior_12m,2024-10-01,2025-10-01,25,23,23,25,0,0,0,observed_public_disclosures_recall_unmeasured,0,0,0,0
+ai-deals-coverage-9ffd44b864775de2eb32,labs,General-purpose AI labs,recent_12m,2025-10-01,2026-10-01,19,19,17,17,2,1,0,observed_public_disclosures_recall_unmeasured,0,0,0,1
+ai-deals-coverage-9ffd44b864775de2eb32,labs,General-purpose AI labs,october_update,2026-10-01,2026-10-12,0,0,0,0,0,0,0,no_verified_events_not_a_market_zero,0,0,0,0
+ai-deals-coverage-9ffd44b864775de2eb32,language,Specialist language and coding models,prior_12m,2024-10-01,2025-10-01,8,8,5,7,1,0,0,observed_public_disclosures_recall_unmeasured,0,0,0,0
+ai-deals-coverage-9ffd44b864775de2eb32,language,Specialist language and coding models,recent_12m,2025-10-01,2026-10-01,6,6,4,6,0,1,0,observed_public_disclosures_recall_unmeasured,0,0,0,1
+ai-deals-coverage-9ffd44b864775de2eb32,language,Specialist language and coding models,october_update,2026-10-01,2026-10-12,1,1,1,1,0,0,0,observed_public_disclosures_recall_unmeasured,0,0,0,0
+ai-deals-coverage-9ffd44b864775de2eb32,visual,Image and video models,prior_12m,2024-10-01,2025-10-01,10,10,10,10,0,0,0,observed_public_disclosures_recall_unmeasured,0,0,0,0
+ai-deals-coverage-9ffd44b864775de2eb32,visual,Image and video models,recent_12m,2025-10-01,2026-10-01,9,9,9,9,0,0,0,observed_public_disclosures_recall_unmeasured,0,0,0,0
+ai-deals-coverage-9ffd44b864775de2eb32,visual,Image and video models,october_update,2026-10-01,2026-10-12,0,0,0,0,0,0,0,no_verified_events_not_a_market_zero,0,0,0,0
+ai-deals-coverage-9ffd44b864775de2eb32,audio,Audio and speech models,prior_12m,2024-10-01,2025-10-01,13,13,5,13,0,0,0,observed_public_disclosures_recall_unmeasured,0,0,0,0
+ai-deals-coverage-9ffd44b864775de2eb32,audio,Audio and speech models,recent_12m,2025-10-01,2026-10-01,18,16,11,18,0,0,0,observed_public_disclosures_recall_unmeasured,0,0,0,0
+ai-deals-coverage-9ffd44b864775de2eb32,audio,Audio and speech models,october_update,2026-10-01,2026-10-12,0,0,0,0,0,0,0,no_verified_events_not_a_market_zero,0,0,0,0
+ai-deals-coverage-9ffd44b864775de2eb32,inference,Inference platforms,prior_12m,2024-10-01,2025-10-01,12,12,11,12,0,0,0,observed_public_disclosures_recall_unmeasured,0,0,0,0
+ai-deals-coverage-9ffd44b864775de2eb32,inference,Inference platforms,recent_12m,2025-10-01,2026-10-01,18,18,16,17,1,0,0,observed_public_disclosures_recall_unmeasured,0,0,0,0
+ai-deals-coverage-9ffd44b864775de2eb32,inference,Inference platforms,october_update,2026-10-01,2026-10-12,1,1,0,1,0,0,0,observed_public_disclosures_recall_unmeasured,0,0,0,0
+ai-deals-coverage-9ffd44b864775de2eb32,neocloud,Neoclouds,prior_12m,2024-10-01,2025-10-01,14,13,14,14,0,0,0,observed_public_disclosures_recall_unmeasured,0,0,0,0
+ai-deals-coverage-9ffd44b864775de2eb32,neocloud,Neoclouds,recent_12m,2025-10-01,2026-10-01,32,31,31,32,0,0,0,observed_public_disclosures_recall_unmeasured,0,0,0,0
+ai-deals-coverage-9ffd44b864775de2eb32,neocloud,Neoclouds,october_update,2026-10-01,2026-10-12,1,1,1,1,0,0,0,observed_public_disclosures_recall_unmeasured,0,0,0,0
+ai-deals-coverage-9ffd44b864775de2eb32,training,Training and fine-tuning platforms,prior_12m,2024-10-01,2025-10-01,10,10,5,10,0,0,0,observed_public_disclosures_recall_unmeasured,0,0,0,0
+ai-deals-coverage-9ffd44b864775de2eb32,training,Training and fine-tuning platforms,recent_12m,2025-10-01,2026-10-01,9,9,7,9,0,0,0,observed_public_disclosures_recall_unmeasured,0,0,0,0
+ai-deals-coverage-9ffd44b864775de2eb32,training,Training and fine-tuning platforms,october_update,2026-10-01,2026-10-12,0,0,0,0,0,0,0,no_verified_events_not_a_market_zero,0,0,0,0
+ai-deals-coverage-9ffd44b864775de2eb32,deployment,Model deployment platforms,prior_12m,2024-10-01,2025-10-01,16,16,9,16,0,0,0,observed_public_disclosures_recall_unmeasured,0,0,0,0
+ai-deals-coverage-9ffd44b864775de2eb32,deployment,Model deployment platforms,recent_12m,2025-10-01,2026-10-01,15,14,11,15,0,0,0,observed_public_disclosures_recall_unmeasured,0,0,0,0
+ai-deals-coverage-9ffd44b864775de2eb32,deployment,Model deployment platforms,october_update,2026-10-01,2026-10-12,1,1,1,1,0,0,0,observed_public_disclosures_recall_unmeasured,0,0,0,0
+ai-deals-coverage-9ffd44b864775de2eb32,retrieval,Retrieval and AI data infrastructure,prior_12m,2024-10-01,2025-10-01,25,25,18,23,2,4,0,observed_public_disclosures_recall_unmeasured,0,0,0,4
+ai-deals-coverage-9ffd44b864775de2eb32,retrieval,Retrieval and AI data infrastructure,recent_12m,2025-10-01,2026-10-01,25,24,14,25,0,7,0,observed_public_disclosures_recall_unmeasured,0,0,0,7
+ai-deals-coverage-9ffd44b864775de2eb32,retrieval,Retrieval and AI data infrastructure,october_update,2026-10-01,2026-10-12,0,0,0,0,0,0,0,no_verified_events_not_a_market_zero,0,0,0,0
+ai-deals-coverage-9ffd44b864775de2eb32,labeling,Labeling and annotation platforms,prior_12m,2024-10-01,2025-10-01,14,14,11,14,0,4,0,observed_public_disclosures_recall_unmeasured,0,0,0,4
+ai-deals-coverage-9ffd44b864775de2eb32,labeling,Labeling and annotation platforms,recent_12m,2025-10-01,2026-10-01,6,6,5,5,1,7,0,observed_public_disclosures_recall_unmeasured,0,0,0,7
+ai-deals-coverage-9ffd44b864775de2eb32,labeling,Labeling and annotation platforms,october_update,2026-10-01,2026-10-12,0,0,0,0,0,0,0,no_verified_events_not_a_market_zero,0,0,0,0
+ai-deals-coverage-9ffd44b864775de2eb32,expert,Expert data and training services,prior_12m,2024-10-01,2025-10-01,5,5,4,5,0,4,0,observed_public_disclosures_recall_unmeasured,0,0,0,4
+ai-deals-coverage-9ffd44b864775de2eb32,expert,Expert data and training services,recent_12m,2025-10-01,2026-10-01,5,5,2,5,0,7,0,observed_public_disclosures_recall_unmeasured,0,0,0,7
+ai-deals-coverage-9ffd44b864775de2eb32,expert,Expert data and training services,october_update,2026-10-01,2026-10-12,1,1,1,1,0,0,0,observed_public_disclosures_recall_unmeasured,0,0,0,0
+ai-deals-coverage-9ffd44b864775de2eb32,synthetic,Digital synthetic data,prior_12m,2024-10-01,2025-10-01,5,5,1,4,1,4,0,observed_public_disclosures_recall_unmeasured,0,0,0,4
+ai-deals-coverage-9ffd44b864775de2eb32,synthetic,Digital synthetic data,recent_12m,2025-10-01,2026-10-01,3,3,0,3,0,7,0,observed_public_disclosures_recall_unmeasured,0,0,0,7
+ai-deals-coverage-9ffd44b864775de2eb32,synthetic,Digital synthetic data,october_update,2026-10-01,2026-10-12,0,0,0,0,0,0,0,no_verified_events_not_a_market_zero,0,0,0,0
+ai-deals-coverage-9ffd44b864775de2eb32,eval,Evaluations and training environments,prior_12m,2024-10-01,2025-10-01,8,8,4,8,0,4,0,observed_public_disclosures_recall_unmeasured,0,0,0,4
+ai-deals-coverage-9ffd44b864775de2eb32,eval,Evaluations and training environments,recent_12m,2025-10-01,2026-10-01,12,12,9,12,0,7,0,observed_public_disclosures_recall_unmeasured,0,0,0,7
+ai-deals-coverage-9ffd44b864775de2eb32,eval,Evaluations and training environments,october_update,2026-10-01,2026-10-12,0,0,0,0,0,0,0,no_verified_events_not_a_market_zero,0,0,0,0
+ai-deals-coverage-9ffd44b864775de2eb32,orchestration,Agent orchestration and developer frameworks,prior_12m,2024-10-01,2025-10-01,32,32,18,32,0,2,0,observed_public_disclosures_recall_unmeasured,0,0,0,2
+ai-deals-coverage-9ffd44b864775de2eb32,orchestration,Agent orchestration and developer frameworks,recent_12m,2025-10-01,2026-10-01,33,33,20,32,1,2,0,observed_public_disclosures_recall_unmeasured,0,0,0,2
+ai-deals-coverage-9ffd44b864775de2eb32,orchestration,Agent orchestration and developer frameworks,october_update,2026-10-01,2026-10-12,1,1,1,1,0,0,0,observed_public_disclosures_recall_unmeasured,0,0,0,0
+ai-deals-coverage-9ffd44b864775de2eb32,observability,AI observability,prior_12m,2024-10-01,2025-10-01,11,11,9,10,1,2,0,observed_public_disclosures_recall_unmeasured,0,0,0,2
+ai-deals-coverage-9ffd44b864775de2eb32,observability,AI observability,recent_12m,2025-10-01,2026-10-01,16,16,10,11,5,2,0,observed_public_disclosures_recall_unmeasured,0,0,0,2
+ai-deals-coverage-9ffd44b864775de2eb32,observability,AI observability,october_update,2026-10-01,2026-10-12,1,1,1,1,0,0,0,observed_public_disclosures_recall_unmeasured,0,0,0,0
+ai-deals-coverage-9ffd44b864775de2eb32,security,AI security and governance,prior_12m,2024-10-01,2025-10-01,129,129,91,49,80,1,0,observed_public_disclosures_recall_unmeasured,0,0,0,1
+ai-deals-coverage-9ffd44b864775de2eb32,security,AI security and governance,recent_12m,2025-10-01,2026-10-01,170,170,115,81,89,6,0,observed_public_disclosures_recall_unmeasured,0,0,0,6
+ai-deals-coverage-9ffd44b864775de2eb32,security,AI security and governance,october_update,2026-10-01,2026-10-12,5,5,4,1,4,0,0,observed_public_disclosures_recall_unmeasured,0,0,0,0
+ai-deals-coverage-9ffd44b864775de2eb32,coding,Coding applications,prior_12m,2024-10-01,2025-10-01,35,35,21,30,5,0,0,observed_public_disclosures_recall_unmeasured,0,0,0,0
+ai-deals-coverage-9ffd44b864775de2eb32,coding,Coding applications,recent_12m,2025-10-01,2026-10-01,41,41,28,37,4,0,0,observed_public_disclosures_recall_unmeasured,0,0,0,0
+ai-deals-coverage-9ffd44b864775de2eb32,coding,Coding applications,october_update,2026-10-01,2026-10-12,0,0,0,0,0,0,0,no_verified_events_not_a_market_zero,0,0,0,0
+ai-deals-coverage-9ffd44b864775de2eb32,assistants,Horizontal assistants and knowledge tools,prior_12m,2024-10-01,2025-10-01,25,25,15,23,2,4,0,observed_public_disclosures_recall_unmeasured,0,0,0,4
+ai-deals-coverage-9ffd44b864775de2eb32,assistants,Horizontal assistants and knowledge tools,recent_12m,2025-10-01,2026-10-01,32,32,14,30,2,4,0,observed_public_disclosures_recall_unmeasured,0,0,0,4
+ai-deals-coverage-9ffd44b864775de2eb32,assistants,Horizontal assistants and knowledge tools,october_update,2026-10-01,2026-10-12,5,5,4,5,0,1,0,observed_public_disclosures_recall_unmeasured,0,0,0,1
+ai-deals-coverage-9ffd44b864775de2eb32,search,AI search and research,prior_12m,2024-10-01,2025-10-01,17,17,10,16,1,0,0,observed_public_disclosures_recall_unmeasured,0,0,0,0
+ai-deals-coverage-9ffd44b864775de2eb32,search,AI search and research,recent_12m,2025-10-01,2026-10-01,13,13,9,12,1,0,0,observed_public_disclosures_recall_unmeasured,0,0,0,0
+ai-deals-coverage-9ffd44b864775de2eb32,search,AI search and research,october_update,2026-10-01,2026-10-12,0,0,0,0,0,0,0,no_verified_events_not_a_market_zero,0,0,0,0
+ai-deals-coverage-9ffd44b864775de2eb32,workflow,Enterprise workflow agents,prior_12m,2024-10-01,2025-10-01,145,145,89,126,19,4,0,observed_public_disclosures_recall_unmeasured,0,0,0,4
+ai-deals-coverage-9ffd44b864775de2eb32,workflow,Enterprise workflow agents,recent_12m,2025-10-01,2026-10-01,186,186,113,162,24,4,0,observed_public_disclosures_recall_unmeasured,0,0,0,4
+ai-deals-coverage-9ffd44b864775de2eb32,workflow,Enterprise workflow agents,october_update,2026-10-01,2026-10-12,7,7,3,4,3,1,0,observed_public_disclosures_recall_unmeasured,0,0,0,1
+ai-deals-coverage-9ffd44b864775de2eb32,creative,Creative AI applications,prior_12m,2024-10-01,2025-10-01,46,46,22,41,5,0,0,observed_public_disclosures_recall_unmeasured,0,0,0,0
+ai-deals-coverage-9ffd44b864775de2eb32,creative,Creative AI applications,recent_12m,2025-10-01,2026-10-01,38,38,23,33,5,0,0,observed_public_disclosures_recall_unmeasured,0,0,0,0
+ai-deals-coverage-9ffd44b864775de2eb32,creative,Creative AI applications,october_update,2026-10-01,2026-10-12,2,2,1,1,1,0,0,observed_public_disclosures_recall_unmeasured,0,0,0,0
+ai-deals-coverage-9ffd44b864775de2eb32,legal,Legal AI,prior_12m,2024-10-01,2025-10-01,42,42,24,21,21,1,0,observed_public_disclosures_recall_unmeasured,0,0,0,1
+ai-deals-coverage-9ffd44b864775de2eb32,legal,Legal AI,recent_12m,2025-10-01,2026-10-01,42,42,31,26,16,0,0,observed_public_disclosures_recall_unmeasured,0,0,0,0
+ai-deals-coverage-9ffd44b864775de2eb32,legal,Legal AI,october_update,2026-10-01,2026-10-12,1,1,1,0,1,0,0,observed_public_disclosures_recall_unmeasured,0,0,0,0
+ai-deals-coverage-9ffd44b864775de2eb32,health,Healthcare AI,prior_12m,2024-10-01,2025-10-01,177,177,115,101,76,7,0,observed_public_disclosures_recall_unmeasured,0,0,0,7
+ai-deals-coverage-9ffd44b864775de2eb32,health,Healthcare AI,recent_12m,2025-10-01,2026-10-01,158,157,112,89,69,5,0,observed_public_disclosures_recall_unmeasured,0,0,0,5
+ai-deals-coverage-9ffd44b864775de2eb32,health,Healthcare AI,october_update,2026-10-01,2026-10-12,5,5,3,3,2,0,0,observed_public_disclosures_recall_unmeasured,0,0,0,0
+ai-deals-coverage-9ffd44b864775de2eb32,finance,Finance and accounting AI,prior_12m,2024-10-01,2025-10-01,128,127,82,69,59,2,0,observed_public_disclosures_recall_unmeasured,0,0,0,2
+ai-deals-coverage-9ffd44b864775de2eb32,finance,Finance and accounting AI,recent_12m,2025-10-01,2026-10-01,160,159,112,85,75,3,0,observed_public_disclosures_recall_unmeasured,0,0,0,3
+ai-deals-coverage-9ffd44b864775de2eb32,finance,Finance and accounting AI,october_update,2026-10-01,2026-10-12,5,5,2,5,0,0,0,observed_public_disclosures_recall_unmeasured,0,0,0,0
+ai-deals-coverage-9ffd44b864775de2eb32,science,Life sciences and discovery AI,prior_12m,2024-10-01,2025-10-01,42,41,27,37,5,7,0,observed_public_disclosures_recall_unmeasured,0,0,0,7
+ai-deals-coverage-9ffd44b864775de2eb32,science,Life sciences and discovery AI,recent_12m,2025-10-01,2026-10-01,57,56,40,47,10,5,0,observed_public_disclosures_recall_unmeasured,0,0,0,5
+ai-deals-coverage-9ffd44b864775de2eb32,science,Life sciences and discovery AI,october_update,2026-10-01,2026-10-12,1,1,1,1,0,0,0,observed_public_disclosures_recall_unmeasured,0,0,0,0
+ai-deals-coverage-9ffd44b864775de2eb32,industrial,Industrial and energy AI,prior_12m,2024-10-01,2025-10-01,129,129,80,118,11,15,0,observed_public_disclosures_recall_unmeasured,0,0,1,14
+ai-deals-coverage-9ffd44b864775de2eb32,industrial,Industrial and energy AI,recent_12m,2025-10-01,2026-10-01,118,118,73,115,3,23,0,observed_public_disclosures_recall_unmeasured,0,0,1,22
+ai-deals-coverage-9ffd44b864775de2eb32,industrial,Industrial and energy AI,october_update,2026-10-01,2026-10-12,2,2,2,1,1,0,0,observed_public_disclosures_recall_unmeasured,0,0,0,0
+ai-deals-coverage-9ffd44b864775de2eb32,service,Sales and customer service AI,prior_12m,2024-10-01,2025-10-01,91,91,44,77,14,0,0,observed_public_disclosures_recall_unmeasured,0,0,0,0
+ai-deals-coverage-9ffd44b864775de2eb32,service,Sales and customer service AI,recent_12m,2025-10-01,2026-10-01,87,86,46,79,8,0,0,observed_public_disclosures_recall_unmeasured,0,0,0,0
+ai-deals-coverage-9ffd44b864775de2eb32,service,Sales and customer service AI,october_update,2026-10-01,2026-10-12,3,3,2,3,0,0,0,observed_public_disclosures_recall_unmeasured,0,0,0,0
+ai-deals-coverage-9ffd44b864775de2eb32,education,Education AI,prior_12m,2024-10-01,2025-10-01,10,10,7,8,2,0,0,observed_public_disclosures_recall_unmeasured,0,0,0,0
+ai-deals-coverage-9ffd44b864775de2eb32,education,Education AI,recent_12m,2025-10-01,2026-10-01,6,6,3,4,2,0,0,observed_public_disclosures_recall_unmeasured,0,0,0,0
+ai-deals-coverage-9ffd44b864775de2eb32,education,Education AI,october_update,2026-10-01,2026-10-12,0,0,0,0,0,0,0,no_verified_events_not_a_market_zero,0,0,0,0
+ai-deals-coverage-9ffd44b864775de2eb32,hr,HR and recruiting AI,prior_12m,2024-10-01,2025-10-01,20,20,9,19,1,15,0,observed_public_disclosures_recall_unmeasured,0,0,1,14
+ai-deals-coverage-9ffd44b864775de2eb32,hr,HR and recruiting AI,recent_12m,2025-10-01,2026-10-01,22,22,10,20,2,23,0,observed_public_disclosures_recall_unmeasured,0,0,1,22
+ai-deals-coverage-9ffd44b864775de2eb32,hr,HR and recruiting AI,october_update,2026-10-01,2026-10-12,0,0,0,0,0,0,0,no_verified_events_not_a_market_zero,0,0,0,0
+ai-deals-coverage-9ffd44b864775de2eb32,robot-model,Robot foundation models,prior_12m,2024-10-01,2025-10-01,5,5,5,5,0,0,0,observed_public_disclosures_recall_unmeasured,0,0,0,0
+ai-deals-coverage-9ffd44b864775de2eb32,robot-model,Robot foundation models,recent_12m,2025-10-01,2026-10-01,18,17,13,16,2,1,0,observed_public_disclosures_recall_unmeasured,0,0,0,1
+ai-deals-coverage-9ffd44b864775de2eb32,robot-model,Robot foundation models,october_update,2026-10-01,2026-10-12,0,0,0,0,0,0,0,no_verified_events_not_a_market_zero,0,0,0,0
+ai-deals-coverage-9ffd44b864775de2eb32,world-model,World and spatial models,prior_12m,2024-10-01,2025-10-01,2,2,2,1,1,0,0,observed_public_disclosures_recall_unmeasured,0,0,0,0
+ai-deals-coverage-9ffd44b864775de2eb32,world-model,World and spatial models,recent_12m,2025-10-01,2026-10-01,14,14,14,13,1,1,0,observed_public_disclosures_recall_unmeasured,0,0,0,1
+ai-deals-coverage-9ffd44b864775de2eb32,world-model,World and spatial models,october_update,2026-10-01,2026-10-12,0,0,0,0,0,0,0,no_verified_events_not_a_market_zero,0,0,0,0
+ai-deals-coverage-9ffd44b864775de2eb32,perception,Perception and localization software,prior_12m,2024-10-01,2025-10-01,16,16,9,16,0,0,0,observed_public_disclosures_recall_unmeasured,0,0,0,0
+ai-deals-coverage-9ffd44b864775de2eb32,perception,Perception and localization software,recent_12m,2025-10-01,2026-10-01,14,14,11,14,0,1,0,observed_public_disclosures_recall_unmeasured,0,0,0,1
+ai-deals-coverage-9ffd44b864775de2eb32,perception,Perception and localization software,october_update,2026-10-01,2026-10-12,1,1,0,1,0,0,0,observed_public_disclosures_recall_unmeasured,0,0,0,0
+ai-deals-coverage-9ffd44b864775de2eb32,control,"Planning, control and robotics software",prior_12m,2024-10-01,2025-10-01,5,5,5,5,0,0,0,observed_public_disclosures_recall_unmeasured,0,0,0,0
+ai-deals-coverage-9ffd44b864775de2eb32,control,"Planning, control and robotics software",recent_12m,2025-10-01,2026-10-01,11,11,11,10,1,1,0,observed_public_disclosures_recall_unmeasured,0,0,0,1
+ai-deals-coverage-9ffd44b864775de2eb32,control,"Planning, control and robotics software",october_update,2026-10-01,2026-10-12,0,0,0,0,0,0,0,no_verified_events_not_a_market_zero,0,0,0,0
+ai-deals-coverage-9ffd44b864775de2eb32,robot-data,Robot data collection and teleoperation,prior_12m,2024-10-01,2025-10-01,2,2,2,2,0,0,0,observed_public_disclosures_recall_unmeasured,0,0,0,0
+ai-deals-coverage-9ffd44b864775de2eb32,robot-data,Robot data collection and teleoperation,recent_12m,2025-10-01,2026-10-01,4,4,3,4,0,1,0,observed_public_disclosures_recall_unmeasured,0,0,0,1
+ai-deals-coverage-9ffd44b864775de2eb32,robot-data,Robot data collection and teleoperation,october_update,2026-10-01,2026-10-12,1,1,1,1,0,0,0,observed_public_disclosures_recall_unmeasured,0,0,0,0
+ai-deals-coverage-9ffd44b864775de2eb32,physical-sim,Physical simulation and validation tooling,prior_12m,2024-10-01,2025-10-01,4,4,2,4,0,0,0,observed_public_disclosures_recall_unmeasured,0,0,0,0
+ai-deals-coverage-9ffd44b864775de2eb32,physical-sim,Physical simulation and validation tooling,recent_12m,2025-10-01,2026-10-01,8,8,5,7,1,0,0,observed_public_disclosures_recall_unmeasured,0,0,0,0
+ai-deals-coverage-9ffd44b864775de2eb32,physical-sim,Physical simulation and validation tooling,october_update,2026-10-01,2026-10-12,1,1,1,0,1,0,0,observed_public_disclosures_recall_unmeasured,0,0,0,0
+ai-deals-coverage-9ffd44b864775de2eb32,telemetry,Robot fleet telemetry and operations,prior_12m,2024-10-01,2025-10-01,2,2,1,2,0,0,0,observed_public_disclosures_recall_unmeasured,0,0,0,0
+ai-deals-coverage-9ffd44b864775de2eb32,telemetry,Robot fleet telemetry and operations,recent_12m,2025-10-01,2026-10-01,2,2,2,2,0,1,0,observed_public_disclosures_recall_unmeasured,0,0,0,1
+ai-deals-coverage-9ffd44b864775de2eb32,telemetry,Robot fleet telemetry and operations,october_update,2026-10-01,2026-10-12,0,0,0,0,0,0,0,no_verified_events_not_a_market_zero,0,0,0,0
+ai-deals-coverage-9ffd44b864775de2eb32,humanoid,Humanoids and general robot platforms,prior_12m,2024-10-01,2025-10-01,19,17,15,18,1,0,0,observed_public_disclosures_recall_unmeasured,0,0,0,0
+ai-deals-coverage-9ffd44b864775de2eb32,humanoid,Humanoids and general robot platforms,recent_12m,2025-10-01,2026-10-01,35,35,31,33,2,0,0,observed_public_disclosures_recall_unmeasured,0,0,0,0
+ai-deals-coverage-9ffd44b864775de2eb32,humanoid,Humanoids and general robot platforms,october_update,2026-10-01,2026-10-12,0,0,0,0,0,0,0,no_verified_events_not_a_market_zero,0,0,0,0
+ai-deals-coverage-9ffd44b864775de2eb32,industrial-robot,Industrial manipulation and manufacturing,prior_12m,2024-10-01,2025-10-01,9,9,5,9,0,0,0,observed_public_disclosures_recall_unmeasured,0,0,0,0
+ai-deals-coverage-9ffd44b864775de2eb32,industrial-robot,Industrial manipulation and manufacturing,recent_12m,2025-10-01,2026-10-01,14,14,13,10,4,0,0,observed_public_disclosures_recall_unmeasured,0,0,0,0
+ai-deals-coverage-9ffd44b864775de2eb32,industrial-robot,Industrial manipulation and manufacturing,october_update,2026-10-01,2026-10-12,0,0,0,0,0,0,0,no_verified_events_not_a_market_zero,0,0,0,0
+ai-deals-coverage-9ffd44b864775de2eb32,warehouse,Warehouse and logistics robotics,prior_12m,2024-10-01,2025-10-01,14,13,12,11,3,0,0,observed_public_disclosures_recall_unmeasured,0,0,0,0
+ai-deals-coverage-9ffd44b864775de2eb32,warehouse,Warehouse and logistics robotics,recent_12m,2025-10-01,2026-10-01,19,19,13,14,5,0,0,observed_public_disclosures_recall_unmeasured,0,0,0,0
+ai-deals-coverage-9ffd44b864775de2eb32,warehouse,Warehouse and logistics robotics,october_update,2026-10-01,2026-10-12,1,1,1,1,0,0,0,observed_public_disclosures_recall_unmeasured,0,0,0,0
+ai-deals-coverage-9ffd44b864775de2eb32,av,Autonomous vehicles,prior_12m,2024-10-01,2025-10-01,10,9,10,8,2,0,0,observed_public_disclosures_recall_unmeasured,0,0,0,0
+ai-deals-coverage-9ffd44b864775de2eb32,av,Autonomous vehicles,recent_12m,2025-10-01,2026-10-01,24,24,19,17,7,0,0,observed_public_disclosures_recall_unmeasured,0,0,0,0
+ai-deals-coverage-9ffd44b864775de2eb32,av,Autonomous vehicles,october_update,2026-10-01,2026-10-12,0,0,0,0,0,0,0,no_verified_events_not_a_market_zero,0,0,0,0
+ai-deals-coverage-9ffd44b864775de2eb32,drone,Drones and aerial delivery,prior_12m,2024-10-01,2025-10-01,8,6,8,7,1,0,0,observed_public_disclosures_recall_unmeasured,0,0,0,0
+ai-deals-coverage-9ffd44b864775de2eb32,drone,Drones and aerial delivery,recent_12m,2025-10-01,2026-10-01,18,17,16,12,6,2,0,observed_public_disclosures_recall_unmeasured,0,0,0,2
+ai-deals-coverage-9ffd44b864775de2eb32,drone,Drones and aerial delivery,october_update,2026-10-01,2026-10-12,0,0,0,0,0,0,0,no_verified_events_not_a_market_zero,0,0,0,0
+ai-deals-coverage-9ffd44b864775de2eb32,defense,Defense autonomy,prior_12m,2024-10-01,2025-10-01,25,24,24,20,5,0,0,observed_public_disclosures_recall_unmeasured,0,0,0,0
+ai-deals-coverage-9ffd44b864775de2eb32,defense,Defense autonomy,recent_12m,2025-10-01,2026-10-01,41,40,39,35,6,2,0,observed_public_disclosures_recall_unmeasured,0,0,0,2
+ai-deals-coverage-9ffd44b864775de2eb32,defense,Defense autonomy,october_update,2026-10-01,2026-10-12,0,0,0,0,0,0,0,no_verified_events_not_a_market_zero,0,0,0,0
+ai-deals-coverage-9ffd44b864775de2eb32,agri,Agricultural robots,prior_12m,2024-10-01,2025-10-01,13,13,11,12,1,0,0,observed_public_disclosures_recall_unmeasured,0,0,0,0
+ai-deals-coverage-9ffd44b864775de2eb32,agri,Agricultural robots,recent_12m,2025-10-01,2026-10-01,6,6,5,5,1,0,0,observed_public_disclosures_recall_unmeasured,0,0,0,0
+ai-deals-coverage-9ffd44b864775de2eb32,agri,Agricultural robots,october_update,2026-10-01,2026-10-12,0,0,0,0,0,0,0,no_verified_events_not_a_market_zero,0,0,0,0
+ai-deals-coverage-9ffd44b864775de2eb32,medical-robot,"Medical, surgical and lab robots",prior_12m,2024-10-01,2025-10-01,18,18,14,12,6,0,0,observed_public_disclosures_recall_unmeasured,0,0,0,0
+ai-deals-coverage-9ffd44b864775de2eb32,medical-robot,"Medical, surgical and lab robots",recent_12m,2025-10-01,2026-10-01,24,24,20,9,15,0,0,observed_public_disclosures_recall_unmeasured,0,0,0,0
+ai-deals-coverage-9ffd44b864775de2eb32,medical-robot,"Medical, surgical and lab robots",october_update,2026-10-01,2026-10-12,1,1,1,1,0,0,0,observed_public_disclosures_recall_unmeasured,0,0,0,0
+ai-deals-coverage-9ffd44b864775de2eb32,construction,Construction and mining robots,prior_12m,2024-10-01,2025-10-01,7,7,4,6,1,0,0,observed_public_disclosures_recall_unmeasured,0,0,0,0
+ai-deals-coverage-9ffd44b864775de2eb32,construction,Construction and mining robots,recent_12m,2025-10-01,2026-10-01,11,11,9,7,4,0,0,observed_public_disclosures_recall_unmeasured,0,0,0,0
+ai-deals-coverage-9ffd44b864775de2eb32,construction,Construction and mining robots,october_update,2026-10-01,2026-10-12,0,0,0,0,0,0,0,no_verified_events_not_a_market_zero,0,0,0,0
+ai-deals-coverage-9ffd44b864775de2eb32,service-robot,Service and inspection robots,prior_12m,2024-10-01,2025-10-01,12,11,11,12,0,0,0,observed_public_disclosures_recall_unmeasured,0,0,0,0
+ai-deals-coverage-9ffd44b864775de2eb32,service-robot,Service and inspection robots,recent_12m,2025-10-01,2026-10-01,21,21,18,21,0,0,0,observed_public_disclosures_recall_unmeasured,0,0,0,0
+ai-deals-coverage-9ffd44b864775de2eb32,service-robot,Service and inspection robots,october_update,2026-10-01,2026-10-12,0,0,0,0,0,0,0,no_verified_events_not_a_market_zero,0,0,0,0
+ai-deals-coverage-9ffd44b864775de2eb32,delivery,Ground delivery robots,prior_12m,2024-10-01,2025-10-01,2,2,2,2,0,0,0,observed_public_disclosures_recall_unmeasured,0,0,0,0
+ai-deals-coverage-9ffd44b864775de2eb32,delivery,Ground delivery robots,recent_12m,2025-10-01,2026-10-01,2,2,1,2,0,0,0,observed_public_disclosures_recall_unmeasured,0,0,0,0
+ai-deals-coverage-9ffd44b864775de2eb32,delivery,Ground delivery robots,october_update,2026-10-01,2026-10-12,0,0,0,0,0,0,0,no_verified_events_not_a_market_zero,0,0,0,0
+ai-deals-coverage-9ffd44b864775de2eb32,physics-ai,Physics models and surrogates,prior_12m,2024-10-01,2025-10-01,7,5,6,7,0,0,0,observed_public_disclosures_recall_unmeasured,0,0,0,0
+ai-deals-coverage-9ffd44b864775de2eb32,physics-ai,Physics models and surrogates,recent_12m,2025-10-01,2026-10-01,7,6,6,7,0,0,0,observed_public_disclosures_recall_unmeasured,0,0,0,0
+ai-deals-coverage-9ffd44b864775de2eb32,physics-ai,Physics models and surrogates,october_update,2026-10-01,2026-10-12,1,1,1,1,0,0,0,observed_public_disclosures_recall_unmeasured,0,0,0,0
+ai-deals-coverage-9ffd44b864775de2eb32,solver,Numerical engineering simulation,prior_12m,2024-10-01,2025-10-01,1,1,0,0,1,0,0,observed_public_disclosures_recall_unmeasured,0,0,0,0
+ai-deals-coverage-9ffd44b864775de2eb32,solver,Numerical engineering simulation,recent_12m,2025-10-01,2026-10-01,2,2,2,2,0,0,0,observed_public_disclosures_recall_unmeasured,0,0,0,0
+ai-deals-coverage-9ffd44b864775de2eb32,solver,Numerical engineering simulation,october_update,2026-10-01,2026-10-12,0,0,0,0,0,0,0,no_verified_events_not_a_market_zero,0,0,0,0
+ai-deals-coverage-9ffd44b864775de2eb32,cad,CAD and computational design,prior_12m,2024-10-01,2025-10-01,2,2,1,1,1,0,0,observed_public_disclosures_recall_unmeasured,0,0,0,0
+ai-deals-coverage-9ffd44b864775de2eb32,cad,CAD and computational design,recent_12m,2025-10-01,2026-10-01,5,5,3,5,0,0,0,observed_public_disclosures_recall_unmeasured,0,0,0,0
+ai-deals-coverage-9ffd44b864775de2eb32,cad,CAD and computational design,october_update,2026-10-01,2026-10-12,0,0,0,0,0,0,0,no_verified_events_not_a_market_zero,0,0,0,0
+ai-deals-coverage-9ffd44b864775de2eb32,systems,Systems modeling and controls,prior_12m,2024-10-01,2025-10-01,0,0,0,0,0,0,0,no_verified_events_not_a_market_zero,0,0,0,0
+ai-deals-coverage-9ffd44b864775de2eb32,systems,Systems modeling and controls,recent_12m,2025-10-01,2026-10-01,1,1,1,1,0,0,0,observed_public_disclosures_recall_unmeasured,0,0,0,0
+ai-deals-coverage-9ffd44b864775de2eb32,systems,Systems modeling and controls,october_update,2026-10-01,2026-10-12,0,0,0,0,0,0,0,no_verified_events_not_a_market_zero,0,0,0,0
+ai-deals-coverage-9ffd44b864775de2eb32,twin,Engineering digital twins,prior_12m,2024-10-01,2025-10-01,4,4,1,4,0,0,0,observed_public_disclosures_recall_unmeasured,0,0,0,0
+ai-deals-coverage-9ffd44b864775de2eb32,twin,Engineering digital twins,recent_12m,2025-10-01,2026-10-01,1,1,0,1,0,0,0,observed_public_disclosures_recall_unmeasured,0,0,0,0
+ai-deals-coverage-9ffd44b864775de2eb32,twin,Engineering digital twins,october_update,2026-10-01,2026-10-12,0,0,0,0,0,0,0,no_verified_events_not_a_market_zero,0,0,0,0
+ai-deals-coverage-9ffd44b864775de2eb32,engineering-flow,Engineering orchestration,prior_12m,2024-10-01,2025-10-01,7,7,3,7,0,0,0,observed_public_disclosures_recall_unmeasured,0,0,0,0
+ai-deals-coverage-9ffd44b864775de2eb32,engineering-flow,Engineering orchestration,recent_12m,2025-10-01,2026-10-01,13,13,8,13,0,0,0,observed_public_disclosures_recall_unmeasured,0,0,0,0
+ai-deals-coverage-9ffd44b864775de2eb32,engineering-flow,Engineering orchestration,october_update,2026-10-01,2026-10-12,0,0,0,0,0,0,0,no_verified_events_not_a_market_zero,0,0,0,0
+ai-deals-coverage-9ffd44b864775de2eb32,eda,EDA and chip-design software,prior_12m,2024-10-01,2025-10-01,3,3,3,3,0,0,0,observed_public_disclosures_recall_unmeasured,0,0,0,0
+ai-deals-coverage-9ffd44b864775de2eb32,eda,EDA and chip-design software,recent_12m,2025-10-01,2026-10-01,12,12,10,11,1,0,0,observed_public_disclosures_recall_unmeasured,0,0,0,0
+ai-deals-coverage-9ffd44b864775de2eb32,eda,EDA and chip-design software,october_update,2026-10-01,2026-10-12,1,1,0,1,0,0,0,observed_public_disclosures_recall_unmeasured,0,0,0,0
+ai-deals-coverage-9ffd44b864775de2eb32,dc-chip,Datacenter accelerators and custom ASICs,prior_12m,2024-10-01,2025-10-01,15,15,14,14,1,4,0,observed_public_disclosures_recall_unmeasured,0,0,0,4
+ai-deals-coverage-9ffd44b864775de2eb32,dc-chip,Datacenter accelerators and custom ASICs,recent_12m,2025-10-01,2026-10-01,27,27,25,25,2,9,0,observed_public_disclosures_recall_unmeasured,0,0,0,9
+ai-deals-coverage-9ffd44b864775de2eb32,dc-chip,Datacenter accelerators and custom ASICs,october_update,2026-10-01,2026-10-12,1,1,1,1,0,0,0,observed_public_disclosures_recall_unmeasured,0,0,0,0
+ai-deals-coverage-9ffd44b864775de2eb32,edge-chip,Edge AI processors,prior_12m,2024-10-01,2025-10-01,5,5,4,4,1,4,0,observed_public_disclosures_recall_unmeasured,0,0,0,4
+ai-deals-coverage-9ffd44b864775de2eb32,edge-chip,Edge AI processors,recent_12m,2025-10-01,2026-10-01,15,14,11,15,0,9,0,observed_public_disclosures_recall_unmeasured,0,0,0,9
+ai-deals-coverage-9ffd44b864775de2eb32,edge-chip,Edge AI processors,october_update,2026-10-01,2026-10-12,0,0,0,0,0,0,0,no_verified_events_not_a_market_zero,0,0,0,0
+ai-deals-coverage-9ffd44b864775de2eb32,sensor,Sensing hardware,prior_12m,2024-10-01,2025-10-01,6,6,4,5,1,2,0,observed_public_disclosures_recall_unmeasured,0,0,0,2
+ai-deals-coverage-9ffd44b864775de2eb32,sensor,Sensing hardware,recent_12m,2025-10-01,2026-10-01,17,17,12,16,1,4,0,observed_public_disclosures_recall_unmeasured,0,0,0,4
+ai-deals-coverage-9ffd44b864775de2eb32,sensor,Sensing hardware,october_update,2026-10-01,2026-10-12,0,0,0,0,0,0,0,no_verified_events_not_a_market_zero,0,0,0,0
+ai-deals-coverage-9ffd44b864775de2eb32,components,Robot components,prior_12m,2024-10-01,2025-10-01,2,2,1,2,0,2,0,observed_public_disclosures_recall_unmeasured,0,0,0,2
+ai-deals-coverage-9ffd44b864775de2eb32,components,Robot components,recent_12m,2025-10-01,2026-10-01,15,15,10,15,0,4,0,observed_public_disclosures_recall_unmeasured,0,0,0,4
+ai-deals-coverage-9ffd44b864775de2eb32,components,Robot components,october_update,2026-10-01,2026-10-12,0,0,0,0,0,0,0,no_verified_events_not_a_market_zero,0,0,0,0
+ai-deals-coverage-9ffd44b864775de2eb32,network,AI networking and interconnect,prior_12m,2024-10-01,2025-10-01,21,21,20,13,8,0,0,observed_public_disclosures_recall_unmeasured,0,0,0,0
+ai-deals-coverage-9ffd44b864775de2eb32,network,AI networking and interconnect,recent_12m,2025-10-01,2026-10-01,31,31,29,13,18,0,0,observed_public_disclosures_recall_unmeasured,0,0,0,0
+ai-deals-coverage-9ffd44b864775de2eb32,network,AI networking and interconnect,october_update,2026-10-01,2026-10-12,0,0,0,0,0,0,0,no_verified_events_not_a_market_zero,0,0,0,0
+ai-deals-coverage-9ffd44b864775de2eb32,memory,AI memory and storage hardware,prior_12m,2024-10-01,2025-10-01,3,3,3,3,0,0,0,observed_public_disclosures_recall_unmeasured,0,0,0,0
+ai-deals-coverage-9ffd44b864775de2eb32,memory,AI memory and storage hardware,recent_12m,2025-10-01,2026-10-01,5,5,5,5,0,0,0,observed_public_disclosures_recall_unmeasured,0,0,0,0
+ai-deals-coverage-9ffd44b864775de2eb32,memory,AI memory and storage hardware,october_update,2026-10-01,2026-10-12,0,0,0,0,0,0,0,no_verified_events_not_a_market_zero,0,0,0,0
+ai-deals-coverage-9ffd44b864775de2eb32,power-cooling,AI power and cooling,prior_12m,2024-10-01,2025-10-01,10,10,8,6,4,4,0,observed_public_disclosures_recall_unmeasured,0,0,0,4
+ai-deals-coverage-9ffd44b864775de2eb32,power-cooling,AI power and cooling,recent_12m,2025-10-01,2026-10-01,26,26,23,19,7,16,0,observed_public_disclosures_recall_unmeasured,0,0,0,16
+ai-deals-coverage-9ffd44b864775de2eb32,power-cooling,AI power and cooling,october_update,2026-10-01,2026-10-12,1,1,1,1,0,0,0,observed_public_disclosures_recall_unmeasured,0,0,0,0

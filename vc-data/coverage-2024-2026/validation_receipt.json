@@ -1,7 +1,7 @@
 {
-  "snapshot_id": "ai-deals-coverage-713c08df821e84c5e3ed",
-  "database_sha256": "cfdeda3b44523f5dbd354838d63ad89ad91f6bb2b57792eb1324707f3b44db2f",
-  "passed": 667,
+  "snapshot_id": "ai-deals-coverage-9ffd44b864775de2eb32",
+  "database_sha256": "28f2cc1e8542508d335735d4b4a086733b9e12affc5fc52f790ffe2deb22ea79",
+  "passed": 694,
   "failed": 0,
   "coverage_certified": false,
   "checks": [
@@ -3261,7 +3261,7 @@
       "detail": null
     },
     {
-      "check": "every_new_queue_event_has_field_verification",
+      "check": "every_historical_queue_event_has_field_verification",
       "passed": true,
       "detail": null
     },
@@ -3337,6 +3337,141 @@
     },
     {
       "check": "Qian_is_not_classified_as_a_drone_company",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "followup_predecessor_digest_unchanged",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "all_5664_followup_predecessor_event_ids_retained",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "all_6877_predecessor_observation_values_immutable",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "all_4916_predecessor_company_ids_retained",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "all_82_followup_claims_individually_reviewed",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "latest_claim_reviews_match_followup_decisions",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "every_followup_addition_has_financial_source_receipt",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "all_three_original_classification_holds_reviewed",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "original_three_held_issuers_absent_from_current_hold_list",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "followup_corrections_have_explicit_predecessor_and_evidence",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "remaining_claims_match_latest_review_statuses",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "followup_native_amount_matches_initial_regulatory_source:5669",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "followup_native_amount_matches_initial_regulatory_source:5670",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "followup_native_amount_matches_initial_regulatory_source:5681",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "followup_native_amount_matches_initial_regulatory_source:5689",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "followup_native_amount_matches_initial_regulatory_source:5690",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "followup_native_amount_matches_initial_regulatory_source:5699",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "followup_native_amount_matches_initial_regulatory_source:5700",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "followup_native_amount_matches_initial_regulatory_source:5702",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Monarrch_large_claim_replaced_by_verified_100k",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "X9_ml_ultrasound_is_healthcare_not_autonomous_robot",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Chai_year_only_funding_not_in_period_views",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "aitiologic_launch_cumulative_amount_not_current_cash",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Blackbird_amendment_period_unallocated_not_counted_twice",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "AskTuring_professional_ballpark_range_not_false_exact_point",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Landbase_credit_is_cad_debt_not_equity",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Counter_Service_financing_excludes_retired_robot_business",
       "passed": true,
       "detail": null
     }

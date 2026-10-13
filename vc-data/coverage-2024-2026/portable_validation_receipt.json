@@ -1,8 +1,8 @@
 {
-  "snapshot_id": "ai-deals-coverage-713c08df821e84c5e3ed",
-  "datasets": 73,
-  "dataset_rows": 146234,
-  "passed": 186,
+  "snapshot_id": "ai-deals-coverage-9ffd44b864775de2eb32",
+  "datasets": 77,
+  "dataset_rows": 147302,
+  "passed": 208,
   "failed": 0,
   "market_completeness_certified": false,
   "checks": [
@@ -599,6 +599,38 @@
       "passed": true
     },
     {
+      "check": "csv_values_and_nulls:claims_followup_decisions",
+      "passed": true
+    },
+    {
+      "check": "sqlite_values_types_and_nulls:claims_followup_decisions",
+      "passed": true
+    },
+    {
+      "check": "csv_values_and_nulls:classification_followup_decisions",
+      "passed": true
+    },
+    {
+      "check": "sqlite_values_types_and_nulls:classification_followup_decisions",
+      "passed": true
+    },
+    {
+      "check": "csv_values_and_nulls:followup_event_changes",
+      "passed": true
+    },
+    {
+      "check": "sqlite_values_types_and_nulls:followup_event_changes",
+      "passed": true
+    },
+    {
+      "check": "csv_values_and_nulls:followup_financing_reviews",
+      "passed": true
+    },
+    {
+      "check": "sqlite_values_types_and_nulls:followup_financing_reviews",
+      "passed": true
+    },
+    {
       "check": "csv_values_and_nulls:completion_reviews",
       "passed": true
     },
@@ -727,7 +759,7 @@
       "passed": true
     },
     {
-      "check": "all_queue_additions_have_public_provenance",
+      "check": "all_historical_queue_additions_have_public_provenance",
       "passed": true
     },
     {
@@ -744,6 +776,62 @@
     },
     {
       "check": "unresolved_business_holds_exclude_resolved_nonfits",
+      "passed": true
+    },
+    {
+      "check": "followup_receipt_matches_current_release",
+      "passed": true
+    },
+    {
+      "check": "82_followup_claims_individually_reviewed",
+      "passed": true
+    },
+    {
+      "check": "followup_decisions_match_latest_reviews",
+      "passed": true
+    },
+    {
+      "check": "followup_unverified_claims_explicit",
+      "passed": true
+    },
+    {
+      "check": "all_5664_followup_predecessor_events_preserved",
+      "passed": true
+    },
+    {
+      "check": "all_followup_additions_have_public_provenance",
+      "passed": true
+    },
+    {
+      "check": "all_three_original_classification_holds_resolved",
+      "passed": true
+    },
+    {
+      "check": "original_holds_absent_from_current_hold_register",
+      "passed": true
+    },
+    {
+      "check": "followup_addition_counts_match_views",
+      "passed": true
+    },
+    {
+      "check": "Monarrch_100k_source_fact_preserved",
+      "passed": true
+    },
+    {
+      "check": "X9_healthcare_scope_preserved",
+      "passed": true
+    },
+    {
+      "check": "Chai_year_only_funding_excluded_from_period_views",
+      "passed": true
+    },
+    {
+      "check": "cumulative_aitiologic_launch_funding_excluded",
+      "passed": true
+    },
+    {
+      "check": "followup_unverified_fields_remain_unknown",
       "passed": true
     },
     {

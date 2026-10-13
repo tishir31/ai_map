@@ -1,5 +1,5 @@
 {
-  "snapshot_id": "ai-deals-coverage-713c08df821e84c5e3ed",
+  "snapshot_id": "ai-deals-coverage-9ffd44b864775de2eb32",
   "audited_snapshot_id": "ai-deals-coverage-442701c0d55527e04f40",
   "audited_commit": "cfc084ac76810125200aa704745c66f99a4e2f61",
   "applied_at_utc": "2026-10-12T19:09:36.691859+00:00",
@@ -386,21 +386,22 @@
   ],
   "all_audited_event_ids_preserved": true,
   "all_audited_observations_preserved": true,
-  "event_records": 5664,
-  "observation_records": 6877,
+  "event_records": 5711,
+  "observation_records": 6938,
   "finer_category_count": 61,
   "event_finer_classification_status_counts": {
-    "inherited_framework_classification": 577,
-    "unassigned_requires_business_review": 783,
+    "inherited_framework_classification": 572,
+    "unassigned_requires_business_review": 781,
     "mapped_from_existing_broad_classification": 271,
-    "reviewed_public_business_scope": 2861,
+    "reviewed_public_business_scope": 2914,
     "source_rule_supported_business_scope": 965,
     "outside_framework": 85,
     "held_prior_framework_not_corroborated": 58,
-    "resolved_framework_taxonomy_gap": 59,
+    "resolved_framework_taxonomy_gap": 60,
     "resolved_joint_issuer_allocation": 2,
-    "quarantined_business_product_unspecified": 2,
-    "held_ai_scope_not_corroborated": 1
+    "resolved_outside_framework_non_ai": 1,
+    "held_primary_ai_product_not_disclosed": 1,
+    "held_primary_ai_product_identity_unverified": 1
   },
   "findings": [
     {
@@ -11261,5 +11262,6 @@
   ],
   "audit_implemented_snapshot_id": "ai-deals-coverage-e5302dcff6b1b4e58bc8",
   "subsequent_coverage_receipt": "QUEUE_RESOLUTION_2026_10_12.json",
-  "audit_dispositions_carried_forward": true
+  "audit_dispositions_carried_forward": true,
+  "current_claims_followup": "CLAIMS_FOLLOWUP_2026_10_12.json"
 }
