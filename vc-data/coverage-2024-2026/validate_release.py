@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Independently verify a cloned public release; Python standard library only."""
 import csv,io,json,pathlib,sqlite3,tempfile
+from sweep_checks import check_sweep_release
 from load_snapshot import verify_snapshot,load_snapshot,sql_identifier,sqlite_value
 
 def main():
@@ -73,7 +74,7 @@ def main():
   check('followup_receipt_matches_current_release',followup['snapshot_id']==manifest['snapshot_id'] and followup['trends_calculated'] is False and followup['market_completeness_certified'] is False)
   check('82_followup_claims_individually_reviewed',len(fd)==len({r['candidate_id'] for r in fd})==followup['claims_reviewed']==82 and followup['claims_unreviewed']==0)
   latest_reviews={r['candidate_id']:r for r in datasets['completion_reviews']['rows']}
-  latest_fd={r['candidate_id']:r for r in fd};latest_fd.update({r['candidate_id']:r for r in datasets['claims_residual_decisions']['rows']})
+  latest_fd={r['candidate_id']:r for r in fd};latest_fd.update({r['candidate_id']:r for r in datasets['claims_residual_decisions']['rows']});latest_fd.update({r['candidate_id']:r for r in datasets['claims_sweep_decisions']['rows']})
   check('followup_and_residual_decisions_match_latest_reviews',all(latest_reviews[r['candidate_id']]['status']==r['status'] and latest_reviews[r['candidate_id']]['event_id']==r['event_id'] for r in latest_fd.values()))
   check('followup_unverified_claims_explicit',len(datasets['queue_unverified_claims']['rows'])==followup.get('current_claims_still_unverified',followup['claims_still_unverified']) and followup['unverified_claims_are_proven_missing_deals'] is False)
   check('all_5664_followup_predecessor_events_preserved',set(range(1,5665))<=set(events))
@@ -91,14 +92,14 @@ def main():
   residual=json.loads((release_root/'RESIDUAL_CLAIMS_2026_10_12.json').read_text());rd=datasets['claims_residual_decisions']['rows'];rc=datasets['classification_residual_decisions']['rows'];rf=datasets['residual_financing_reviews']['rows'];rx=datasets['residual_event_changes']['rows'];latest_reviews={r['candidate_id']:r for r in datasets['completion_reviews']['rows']};scoped_ids={r['event_id'] for r in datasets['framework_financing_disclosures']['rows']};supported={r['event_id']:r for r in datasets['credible_financing_disclosures']['rows']};added={r['event_id'] for r in rf};unverified=datasets['queue_unverified_claims']['rows'];obs_ids={r['observation_id'] for r in datasets['observations_all']['rows']}
   check('residual_receipt_matches_snapshot_and_predecessor',residual['snapshot_id']==manifest['snapshot_id'] and residual['predecessor_snapshot_id']=='ai-deals-coverage-9ffd44b864775de2eb32' and residual['review_status']=='COMPLETE')
   check('all_30_residual_claims_have_individual_source_decisions',len(rd)==len({r['candidate_id'] for r in rd})==residual['claims_reviewed']==30 and residual['claims_unreviewed']==0 and all(r['note'] and json.loads(r['source_urls']) for r in rd))
-  check('all_residual_decisions_match_latest_reviews',all(latest_reviews[r['candidate_id']]['status']==r['status'] and latest_reviews[r['candidate_id']]['event_id']==r['event_id'] for r in rd))
-  check('remaining_21_claims_have_explicit_quarantine_dispositions',{r['candidate_id'] for r in unverified}=={r['candidate_id'] for r in rd if r['status'].startswith('quarantined')} and len(unverified)==residual['claims_still_unverified']==21 and residual['claims_resolved_or_corroborated']==9)
+  check('all_residual_decisions_match_latest_reviews',all(latest_reviews[r['candidate_id']]['status']==latest_fd[r['candidate_id']]['status'] and latest_reviews[r['candidate_id']]['event_id']==latest_fd[r['candidate_id']]['event_id'] for r in rd))
+  check('current_claims_have_explicit_quarantine_dispositions',{r['candidate_id'] for r in unverified}=={r['candidate_id'] for r in latest_fd.values() if r['status'].startswith('quarantined')} and len(unverified)==residual.get('current_claims_still_unverified',residual['claims_still_unverified'])==20 and residual['claims_resolved_or_corroborated']==9)
   check('residual_quarantine_is_not_proven_missing_deal_count',residual['unverified_claims_are_proven_missing_deals'] is False and residual['retained_event_records_are_unique_deal_count'] is False)
   check('residual_has_no_trends_or_completeness_certificate',residual['trends_calculated'] is False and residual['market_completeness_certified'] is False and residual['market_coverage_research_status']=='OPEN')
   check('all_5711_residual_predecessor_event_ids_exported',set(range(1,5712))<=set(events))
   check('all_6938_residual_predecessor_observation_ids_exported',set(range(1,6939))<=obs_ids)
   check('all_4950_residual_predecessor_company_ids_exported',set(range(1,4951))<={r['company_id'] for r in datasets['companies']['rows']})
-  check('all_21_residual_additions_have_field_and_source_provenance',added==set(events)-set(range(1,5712))==set(residual['new_event_ids']) and len(added)==residual['added_retained_event_records']==21 and all(json.loads(r['field_provenance']) and json.loads(r['source_urls']) for r in rf))
+  check('all_21_residual_additions_have_field_and_source_provenance',added==set(range(5712,5733))==set(residual['new_event_ids']) and len(added)==residual['added_retained_event_records']==21 and all(json.loads(r['field_provenance']) and json.loads(r['source_urls']) for r in rf))
   check('residual_17_period_disclosures_and_7_framework_disclosures_match',sum(eid in supported for eid in added)==residual['added_source_supported_period_financing_disclosures']==17 and len(added&scoped_ids)==residual['added_in_framework_financing_disclosures']==7)
   check('residual_4_nonperiod_context_records_match',len(added-set(supported))==residual['added_period_unallocated_or_year_only_records']==4)
   check('both_Monarrch_and_ListenOwl_holds_have_supported_assignments',len(rc)==2 and {r['company_id'] for r in rc}=={4941,4950} and all(r['business_scope']=='in_framework' and r['finer_subsector'] and json.loads(r['source_urls']) for r in rc))
@@ -119,13 +120,14 @@ def main():
   check('year_only_backing_excluded_from_period_counts',all(eid not in supported for eid in added if events[eid]['date_precision']=='year'))
   check('unallocated_backing_excluded_from_framework_counts',all(eid not in scoped_ids for eid in added if events[eid]['financing_scope']=='investor_participation_round_unallocated'))
   check('all_residual_undisclosed_valuations_remain_unknown',all(events[eid]['valuation_amount'] is None for eid in added))
-  check('historical_receipt_counts_and_latest_counts_distinct',followup['claims_still_unverified']==30 and followup['current_claims_still_unverified']==21 and followup['historical_review_decisions'] is True)
+  check('historical_receipt_counts_and_latest_counts_distinct',followup['claims_still_unverified']==30 and followup['current_claims_still_unverified']==residual['current_claims_still_unverified']==20 and followup['historical_review_decisions'] is True)
   check('current_residual_documentation_and_pointer_match',json.loads((release_root.parent/'LATEST.json').read_text())['residual_review']=='coverage-2024-2026/RESIDUAL_CLAIMS_2026_10_12.json' and 'RESIDUAL_CLAIMS_2026_10_12.json' in (release_root/'AUDITOR_PROMPT.txt').read_text())
   sweeps=json.loads((release_root/'source_sweeps.json').read_text())
-  check('source_sweep_summary_matches_current_release',sweeps['snapshot_id']==manifest['snapshot_id'] and sweeps['candidate_records']==sweeps['curated_decisions']==len(datasets['completion_reviews']['rows']) and sweeps['residual_review']['unverified_reviewed_claims']==residual['claims_still_unverified'])
+  check('source_sweep_summary_matches_current_release',sweeps['snapshot_id']==manifest['snapshot_id'] and sweeps['candidate_records']==sweeps['curated_decisions']==len(datasets['completion_reviews']['rows']) and sweeps['residual_review']['unverified_reviewed_claims']==residual.get('current_claims_still_unverified',residual['claims_still_unverified']))
   check('current_methodology_has_one_residual_review_section',(release_root/'methodology.md').read_text().count('## Historical follow-up and current residual review')==1)
   for name in ('events_all','observations_all','companies','credible_financing_disclosures','financing_episodes','framework_financing_disclosures','framework_financing_episodes','reviewed_framework_financing_disclosures','framework_core_equity_cutoff','completion_reviews','queue_unverified_claims','remaining_business_scope_holds','resolved_business_scope_exclusions'):
-   check('residual_current_count_matches_export:'+name,residual['counts'][name]==len(datasets[name]['rows']))
+   check('residual_current_count_matches_export:'+name,residual.get('current_counts',residual['counts'])[name]==len(datasets[name]['rows']))
+  check_sweep_release(root,manifest,datasets,check)
   actual_names={p.name for p in root.iterdir()}
   check('auditor_document_links_match_actual_filename_case','methodology.md' in actual_names and 'methodology.md' in (root/'AUDITOR_PROMPT.txt').read_text() and '(methodology.md)' in (root/'README.md').read_text())
   db.close()

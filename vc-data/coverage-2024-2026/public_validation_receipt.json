@@ -1,11 +1,11 @@
 {
-  "snapshot_id": "ai-deals-coverage-8ec6fb9ff49089dc3bf3",
-  "manifest_sha256": "93db07de8e9c6745fb7f97fcc8128867cd0ffba24fcd2fcd15edccb97601adb3",
-  "public_sqlite_sha256": "8c53a7a9fc4a84f667f4ce54c1d55905d4918d54c602119146b897868863b70a",
-  "datasets": 81,
-  "dataset_rows": 147768,
-  "data_files": 1382,
-  "passed": 267,
+  "snapshot_id": "ai-deals-coverage-a101d6ec0385b334e0f9",
+  "manifest_sha256": "1d1cbe65e5031dc36c1ea2bd96990e8ebcb1ac143f045d343d07c578574b1878",
+  "public_sqlite_sha256": "2af11d85d3adea301297a09a2e673c62739d527ace53c010fb69f635968645ee",
+  "datasets": 86,
+  "dataset_rows": 149825,
+  "data_files": 1406,
+  "passed": 335,
   "failed": 0,
   "market_completeness_certified": false,
   "checks": [
@@ -850,6 +850,56 @@
       "detail": null
     },
     {
+      "check": "csv_value_and_null_parity:claims_sweep_decisions",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "sqlite_value_type_and_null_parity:claims_sweep_decisions",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "csv_value_and_null_parity:classification_sweep_decisions",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "sqlite_value_type_and_null_parity:classification_sweep_decisions",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "csv_value_and_null_parity:sweep_event_changes",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "sqlite_value_type_and_null_parity:sweep_event_changes",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "csv_value_and_null_parity:sweep_financing_reviews",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "sqlite_value_type_and_null_parity:sweep_financing_reviews",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "csv_value_and_null_parity:subsector_period_source_checks",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "sqlite_value_type_and_null_parity:subsector_period_source_checks",
+      "passed": true,
+      "detail": null
+    },
+    {
       "check": "csv_value_and_null_parity:completion_reviews",
       "passed": true,
       "detail": null
@@ -1095,7 +1145,7 @@
       "detail": null
     },
     {
-      "check": "remaining_21_claims_have_explicit_quarantine_dispositions",
+      "check": "current_claims_have_explicit_quarantine_dispositions",
       "passed": true,
       "detail": null
     },
@@ -1331,6 +1381,296 @@
     },
     {
       "check": "historical_decision_values_survive_residual_export:classification_followup_decisions",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "sweep_receipt_identifies_current_and_frozen_predecessor",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "all_21_sweep_claims_have_source_decisions",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "sweep_claim_decisions_match_current_reviews",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "20_unverified_sweep_claims_explicitly_quarantined",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "sweep_review_is_not_completeness_or_missing_deal_certificate",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "all_5732_sweep_predecessor_event_ids_exported",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "all_6965_sweep_predecessor_observation_ids_exported",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "all_4963_sweep_predecessor_company_ids_exported",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "all_sweep_additions_have_field_and_source_receipts",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "sweep_new_financing_counts_match_actual_views",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "all_sweep_classifications_and_corrections_have_evidence",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "61_categories_times_3_periods_have_actual_search_receipts",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "source_search_receipt_windows_and_counts_match_coverage",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "all_source_search_receipts_preserve_unmeasured_recall",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "sweep_current_count_matches_export:events_all",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "sweep_current_count_matches_export:observations_all",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "sweep_current_count_matches_export:companies",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "sweep_current_count_matches_export:credible_financing_disclosures",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "sweep_current_count_matches_export:financing_episodes",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "sweep_current_count_matches_export:framework_financing_disclosures",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "sweep_current_count_matches_export:framework_financing_episodes",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "sweep_current_count_matches_export:reviewed_framework_financing_disclosures",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "sweep_current_count_matches_export:framework_core_equity_cutoff",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "sweep_current_count_matches_export:completion_candidates",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "sweep_current_count_matches_export:completion_reviews",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "sweep_current_count_matches_export:queue_unverified_claims",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "sweep_current_count_matches_export:remaining_business_scope_holds",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "sweep_current_count_matches_export:resolved_business_scope_exclusions",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Lucent_unknown_cash_and_separate_valuation_preserved",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Zeroset_one_workflow_financing_not_world_model_duplicate",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Netsec_original_native_USD_lower_bound_preserved",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Polaris_original_September_networking_round_preserved",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Neysa_missing_historical_financing_added",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Majestic_current_71m_not_100m_cumulative",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Alloy_AUD_funding_and_valuation_not_mislabeled_USD",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "SKAI_KRW_valuation_not_funding_and_followon_not_new_priced_round",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Terra_three_disclosures_one_episode_without_52m_double_count",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "original_disclosure_dates_not_later_feed_or_repost_dates",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Newcode_6_5m_seed_and_derived_13_5m_A_separate",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "RAC_offerings_preserve_unknown_stage_and_round_allocation",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "combined_Remedy_round_context_not_period_financing",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "outside_fixed_taxonomy_financing_stays_explicit",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "current_sweep_pointer_and_source_summary_match",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "current_sweep_methodology_section_appears_once",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "inspection_csv_checksum_size_snapshot_and_headers",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "inspection_csv_has_all_supported_disclosures_once",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "inspection_csv_matches_every_public_value_and_unknown",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "inspection_csv_framework_flag_matches_scoped_view",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "inspection_csv_contains_no_quarantined_claim_rows",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "all_6965_sweep_predecessor_observation_values_survive_export",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "historical_review_values_survive_sweep_export:claims_followup_decisions",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "historical_review_values_survive_sweep_export:classification_followup_decisions",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "historical_review_values_survive_sweep_export:followup_event_changes",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "historical_review_values_survive_sweep_export:followup_financing_reviews",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "historical_review_values_survive_sweep_export:claims_residual_decisions",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "historical_review_values_survive_sweep_export:classification_residual_decisions",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "historical_review_values_survive_sweep_export:residual_event_changes",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "historical_review_values_survive_sweep_export:residual_financing_reviews",
       "passed": true,
       "detail": null
     },

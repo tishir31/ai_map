@@ -1,7 +1,7 @@
 {
-  "snapshot_id": "ai-deals-coverage-8ec6fb9ff49089dc3bf3",
-  "database_sha256": "6342ada732a7438e576aa1e9ceb5f8427ccfbbe93c301dc9a9df8c6a304c7665",
-  "passed": 722,
+  "snapshot_id": "ai-deals-coverage-a101d6ec0385b334e0f9",
+  "database_sha256": "d99b2acb89877da7a51ba87d345e25cb460d5d74b3e853b55c1df3fd6e07cd6e",
+  "passed": 781,
   "failed": 0,
   "coverage_certified": false,
   "checks": [
@@ -3501,7 +3501,7 @@
       "detail": null
     },
     {
-      "check": "residual_dispositions_match_latest_reviews",
+      "check": "residual_dispositions_have_preserved_history_and_latest_review",
       "passed": true,
       "detail": null
     },
@@ -3612,6 +3612,301 @@
     },
     {
       "check": "all_residual_undisclosed_valuations_remain_unknown",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "sweep_frozen_predecessor_digest_unchanged",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "all_5732_sweep_predecessor_events_retained",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "all_6965_sweep_predecessor_observations_immutable",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "all_4963_sweep_predecessor_issuer_ids_retained",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "sweep_preserves_historical_review_values:claims_followup_decisions",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "sweep_preserves_historical_review_values:classification_followup_decisions",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "sweep_preserves_historical_review_values:followup_event_changes",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "sweep_preserves_historical_review_values:followup_financing_reviews",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "sweep_preserves_historical_review_values:claims_residual_decisions",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "sweep_preserves_historical_review_values:classification_residual_decisions",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "sweep_preserves_historical_review_values:residual_event_changes",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "sweep_preserves_historical_review_values:residual_financing_reviews",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "all_21_sweep_claims_individually_reviewed",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "all_sweep_claim_dispositions_match_current_reviews",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "20_sweep_claims_remain_quarantined_not_missing_deals",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "all_sweep_additions_have_financial_field_provenance",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "sweep_changes_have_frozen_predecessor_and_sources",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "all_sweep_classification_repairs_have_product_sources",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "all_183_category_period_public_searches_recorded",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "all_search_queries_resolve_to_actual_archived_results",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "source_check_coverage_counts_match_baseline_and_current_views",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "public_searches_do_not_certify_recall_or_zero_activity",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "new_sweep_financings_have_no_low_quality_tracker_factual_sources",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Lucent_seed_corrobated_without_invented_cash_or_October_date",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Zeroset_existing_seed_is_workflow_and_counted_once",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Netsec_original_USD_lower_bound_replaces_EUR_estimate",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Polaris_one_50m_Series_B_on_original_September_date",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Neysa_historical_30m_not_missing_or_repeated_as_2026",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Majestic_71m_current_round_not_100m_cumulative",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Alloy_native_AUD_rounds_and_valuation_preserved",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Hestus_earlier_raise_and_new_7_4m_seed_not_cumulative",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "SKAI_KRW_valuation_not_funding_amount",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "SKAI_followon_linked_conservatively_not_extra_priced_round",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Partner_year_only_angel_does_not_invent_Q4_deal",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Partner_eight_figure_CNY_round_retains_range_not_cumulative_100m",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Dogtooth_package_bound_not_exact_equity",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "SolidVue_KRW_16_3bn_not_USD_16_3bn",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Helicon_original_September_USD_seed_not_October_EUR_repeat",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "CoLoop_current_raise_not_cumulative_total",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Shyld_seed_disclosure_not_duplicate_later_article",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "XDOF_70m_funding_not_September_in_talks",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "hexafarms_greenhouse_software_not_forced_to_agri_robot",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Rapidata_original_February_not_June_indexing",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Voxshell_original_July_GBP_not_later_August_headline",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Buildcheck_prior_seed_and_existing_A_are_separate",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Newcode_prior_seed_current_A_and_total_distinct",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Terra_three_verified_disclosures_form_one_seed_episode",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Harrison_112m_USD_not_total_capital_or_subsidiary_deal",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "ORO_and_Winn_missing_rounds_are_independent_issuers",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "DOD_and_Prodoc_October_reposts_do_not_move_rounds",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Foundation_quarter_only_raise_keeps_amount_unknown",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Locus_Lock_historical_and_2026_financings_kept_separate",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Remedy_combined_seed_A_context_not_current_round",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Arceus_announced_total_is_allocation_uncertain",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Samba_30m_initial_facility_not_full_60m_accordion",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "fixed_taxonomy_exclusions_not_forced_to_audio_or_security",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "RAC_original_regulatory_cash_and_timing:rac-20250225",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "RAC_original_regulatory_cash_and_timing:rac-20250414",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "RAC_original_regulatory_cash_and_timing:rac-20260401",
       "passed": true,
       "detail": null
     }

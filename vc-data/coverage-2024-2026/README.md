@@ -1,24 +1,30 @@
 # AI / Physical AI financing coverage database
 
-Current snapshot: `ai-deals-coverage-8ec6fb9ff49089dc3bf3`. [Latest 30-claim review and limits](RESIDUAL_CLAIMS_2026_10_12.json).
+Current snapshot: `ai-deals-coverage-a101d6ec0385b334e0f9`. [October 13 coverage sweep and limits](COVERAGE_SWEEP_2026_10_13.json).
 
-All **30 residual claims** were individually reassessed: **9 corroborated or reconciled**, **21 remain unverified**. Both Monarrch and ListenOwl classification holds are assigned. ListenOwl's current-product identity is an explicitly documented inference from founder and investor sources.
+All **21 carried-forward claims** were reassessed: **1 corroborated seed disclosure**, **20 remain unverified**. The sweep completed **61 categories × 3 periods = 183 targeted public searches**, with source checks and explicit limits in `subsector_period_source_checks`.
 
-This pass adds **7 source-supported financing disclosures to the fixed 61-category framework**, plus other financing and backing context. **21 retained records** were added in total; those records are not all new priced deals. Year-only backing, disputed financing years, unallocated participation, fixed-taxonomy exclusions and public-listing financings retain separate scopes.
+This pass adds **68 source-supported period financing disclosures to the fixed framework** and recovers **6 existing framework disclosures** through source repairs. It adds **77 retained event records** in total, including excluded or period-unallocated context. Those records are not all new priced deals. Seven existing issuer classifications were repaired, with duplicate and round-component decisions retained separately.
 
-The database retains **5,732 event records**, **6,965 observations** and **4,963 issuer registry IDs**. All **5,711 predecessor event IDs, 6,938 observation values and 4,950 company IDs** survive. Historical audit decisions are preserved in their original review tables and separate receipts.
+The database retains **5,809 event records**, **7,068 observations** and **5,024 issuer registry IDs**. All **5,732 predecessor event IDs, 6,965 observation values and 4,963 company IDs** survive. Historical audit decisions remain in their original review tables and receipts.
 
-There are **3,547 supported period financing disclosures** and **3,520 linked episodes**. The fixed framework has **3,383 disclosures**, **3,358 episodes**, and **1,427** records in its narrower core-equity cutoff view. Use `framework_financing_disclosures` and its evidence limits for scoped financing, `framework_financing_episodes` for linked observations, and `reviewed_framework_financing_disclosures` to omit older source-rule classifications.
+There are **3,628 supported period financing disclosures** and **3,598 linked episodes**. The framework has **3,457 disclosures**, **3,429 episodes**, and **1,440 records** in its narrower core-equity cutoff view. These are coverage inventories; no growth rates, rankings or trend conclusions are calculated.
 
-Coverage spans **October 2024–September 2025**, **October 2025–September 2026**, and **October 1–11, 2026**. All 61 categories × 3 periods have coverage receipts. A cell with no verified observations is not a measured market zero. Broad-parent hold/claim counts repeat across sibling categories and must not be summed. Market recall remains unmeasured.
+## Inspect the CSV
 
-**21 financing claims remain quarantined**; the current period-financing classification hold register has **0 unresolved records**. There are **134** separate resolved non-AI, fixed-taxonomy or allocation exclusions. Neither completed review nor passing validation certifies worldwide completeness.
+[Download the single inspection CSV](inspection/ai_financing_deals.csv): **3,628 rows**, sorted by subsector, period, date and company. It includes company, fine subsector, period, date precision and bounds, reported amounts and currency, qualifiers, valuation, framework inclusion, evidence notes, source URLs and record IDs. Unknown amounts remain blank. Filter `in_61_category_framework` to `yes` for the scoped view; use `financing_episode_id` to see linked components. A disclosure row is not always a distinct priced round.
+
+The [inspection receipt](inspection/inspection_receipt.json) identifies the snapshot, row count and file checksum. This convenience CSV is larger than the individual manifest chunks; it is checked separately against canonical values. The manifest's machine-readable CSV chunks use `\N` for nulls, while the inspection CSV uses blank fields.
+
+Coverage spans **October 2024–September 2025**, **October 2025–September 2026**, and **October 1–11, 2026**. A cell without verified observations is not a measured market zero. Search date filters are not authoritative financing dates. Broad-parent hold/claim counts repeat across siblings and must not be summed.
+
+**20 claims remain quarantined**, with **0 unresolved source-supported period-financing classification holds**. Resolved exclusions, unallocated regulatory offerings, combined historical rounds and year-only observations retain explicit scopes. Older source-rule classifications are identified separately; `reviewed_framework_financing_disclosures` contains **2,696** individually reviewed scope disclosures.
 
 ```sh
 python3 validate_release.py
 python3 load_snapshot.py --output /tmp/ai_deals_coverage.sqlite
 ```
 
-JSON and CSV preserve values, nulls and types. Parts are at most 250,000 bytes. Private raw assertions, research caches, local database files and source payloads are excluded.
+Manifest JSON/CSV parts preserve nulls and types and are at most 250,000 bytes. Private raw assertions, research caches, local SQLite files and source payloads are excluded. See [methodology](methodology.md), [coverage audit](coverage_audit.json), [current decisions](COVERAGE_SWEEP_2026_10_13.json), and [auditor prompt](AUDITOR_PROMPT.txt).
 
-Read [methodology](methodology.md), [coverage audit](coverage_audit.json), [current decisions](RESIDUAL_CLAIMS_2026_10_12.json), [historical 82-claim follow-up](CLAIMS_FOLLOWUP_2026_10_12.json), [historical 731-claim review](QUEUE_RESOLUTION_2026_10_12.json), [audit response](AUDIT_RESPONSE_2026_10_12.json) and [auditor prompt](AUDITOR_PROMPT.txt). Research remains **OPEN**. **No trend analysis, heat map, sector ranking or investment recommendation is included.**
+Market recall remains unmeasured; no independent comprehensive commercial export was available. Research remains **OPEN**. **No trend analysis or heat map is included.**

@@ -1,10 +1,10 @@
 {
-  "snapshot_id": "ai-deals-coverage-8ec6fb9ff49089dc3bf3",
+  "snapshot_id": "ai-deals-coverage-a101d6ec0385b334e0f9",
   "research_status": "OPEN",
   "market_completeness_certified": false,
   "no_trends_calculated": true,
-  "candidate_records": 5690,
-  "curated_decisions": 5690,
+  "candidate_records": 5766,
+  "curated_decisions": 5766,
   "pending_claims": 0,
   "pending_count_is_missing_deal_count": false,
   "source_family_decisions": {
@@ -88,7 +88,7 @@
       "quarantined_specific_followon_round_unverified": 1,
       "accepted_corroborated_investor_participation": 1,
       "resolved_secondary_access_not_new_issuer_round": 1,
-      "quarantined_exact_round_and_date_unverified": 1,
+      "accepted_founder_interview_seed_disclosure_reconciled": 1,
       "not_completed_financing": 2,
       "accepted_corroborated_project_financing_allocation_unresolved": 1,
       "resolved_existing_verified_financing_scope_excluded": 1,
@@ -169,6 +169,9 @@
     },
     "residual-extra": {
       "accepted_verified_related_backfill": 5
+    },
+    "sweep-extra": {
+      "accepted_verified_related_backfill": 76
     }
   },
   "source_scope_notes": [
@@ -240,26 +243,39 @@
     "receipt": "RESIDUAL_CLAIMS_2026_10_12.json",
     "claims_reviewed": 30,
     "claims_unreviewed": 0,
-    "unverified_reviewed_claims": 21,
+    "unverified_reviewed_claims": 20,
     "original_classification_holds_reviewed": 2,
     "original_classification_holds_resolved": 2,
     "added_in_framework_financing_disclosures": 7,
     "market_recall_measured": false
   },
   "current_counts": {
-    "events_all": 5732,
-    "observations_all": 6965,
-    "companies": 4963,
-    "credible_financing_disclosures": 3547,
-    "financing_episodes": 3520,
-    "framework_financing_disclosures": 3383,
-    "framework_financing_episodes": 3358,
-    "reviewed_framework_financing_disclosures": 2622,
-    "framework_core_equity_cutoff": 1427,
-    "completion_candidates": 5690,
-    "completion_reviews": 5690,
-    "queue_unverified_claims": 21,
+    "events_all": 5809,
+    "observations_all": 7068,
+    "companies": 5024,
+    "credible_financing_disclosures": 3628,
+    "financing_episodes": 3598,
+    "framework_financing_disclosures": 3457,
+    "framework_financing_episodes": 3429,
+    "reviewed_framework_financing_disclosures": 2696,
+    "framework_core_equity_cutoff": 1440,
+    "completion_candidates": 5766,
+    "completion_reviews": 5766,
+    "queue_unverified_claims": 20,
     "remaining_business_scope_holds": 0,
-    "resolved_business_scope_exclusions": 134
+    "resolved_business_scope_exclusions": 138
+  },
+  "coverage_sweep": {
+    "receipt": "COVERAGE_SWEEP_2026_10_13.json",
+    "claims_reviewed": 21,
+    "claims_unreviewed": 0,
+    "unverified_reviewed_claims": 20,
+    "categories": 61,
+    "periods": 3,
+    "public_searches_completed": 183,
+    "source_check_dataset": "subsector_period_source_checks",
+    "added_in_framework_financing_disclosures": 68,
+    "existing_financing_disclosures_recovered": 6,
+    "market_recall_measured": false
   }
 }

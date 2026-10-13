@@ -1,5 +1,5 @@
 {
-  "snapshot_id": "ai-deals-coverage-8ec6fb9ff49089dc3bf3",
+  "snapshot_id": "ai-deals-coverage-a101d6ec0385b334e0f9",
   "audited_snapshot_id": "ai-deals-coverage-442701c0d55527e04f40",
   "audited_commit": "cfc084ac76810125200aa704745c66f99a4e2f61",
   "applied_at_utc": "2026-10-12T19:09:36.691859+00:00",
@@ -386,8 +386,8 @@
   ],
   "all_audited_event_ids_preserved": true,
   "all_audited_observations_preserved": true,
-  "event_records": 5732,
-  "observation_records": 6965,
+  "event_records": 5809,
+  "observation_records": 7068,
   "finer_category_count": 61,
   "event_finer_classification_status_counts": {
     "inherited_framework_classification": 572,
@@ -11267,22 +11267,23 @@
   "historical_counts": null,
   "current_residual_review": "RESIDUAL_CLAIMS_2026_10_12.json",
   "current_counts": {
-    "events_all": 5732,
-    "observations_all": 6965,
-    "companies": 4963,
-    "credible_financing_disclosures": 3547,
-    "financing_episodes": 3520,
-    "framework_financing_disclosures": 3383,
-    "framework_financing_episodes": 3358,
-    "reviewed_framework_financing_disclosures": 2622,
-    "framework_core_equity_cutoff": 1427,
-    "completion_candidates": 5690,
-    "completion_reviews": 5690,
-    "queue_unverified_claims": 21,
+    "events_all": 5809,
+    "observations_all": 7068,
+    "companies": 5024,
+    "credible_financing_disclosures": 3628,
+    "financing_episodes": 3598,
+    "framework_financing_disclosures": 3457,
+    "framework_financing_episodes": 3429,
+    "reviewed_framework_financing_disclosures": 2696,
+    "framework_core_equity_cutoff": 1440,
+    "completion_candidates": 5766,
+    "completion_reviews": 5766,
+    "queue_unverified_claims": 20,
     "remaining_business_scope_holds": 0,
-    "resolved_business_scope_exclusions": 134
+    "resolved_business_scope_exclusions": 138
   },
-  "current_unverified_claims": 21,
+  "current_unverified_claims": 20,
   "current_unresolved_classification_disclosures": 0,
-  "historical_review_decisions": true
+  "historical_review_decisions": true,
+  "current_coverage_sweep": "COVERAGE_SWEEP_2026_10_13.json"
 }
