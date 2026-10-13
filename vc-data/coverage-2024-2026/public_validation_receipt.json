@@ -1,11 +1,11 @@
 {
-  "snapshot_id": "ai-deals-coverage-9ffd44b864775de2eb32",
-  "manifest_sha256": "0b046e2a4dd1551491baed60350824ae171c7fa3a100b525410103c26a2b41a9",
-  "public_sqlite_sha256": "08434ee4d72c4d863581791984b13152c9e03958a83aab8f8b295ffd4b1bb057",
-  "datasets": 77,
-  "dataset_rows": 147302,
-  "data_files": 1372,
-  "passed": 209,
+  "snapshot_id": "ai-deals-coverage-8ec6fb9ff49089dc3bf3",
+  "manifest_sha256": "93db07de8e9c6745fb7f97fcc8128867cd0ffba24fcd2fcd15edccb97601adb3",
+  "public_sqlite_sha256": "8c53a7a9fc4a84f667f4ce54c1d55905d4918d54c602119146b897868863b70a",
+  "datasets": 81,
+  "dataset_rows": 147768,
+  "data_files": 1382,
+  "passed": 267,
   "failed": 0,
   "market_completeness_certified": false,
   "checks": [
@@ -810,6 +810,46 @@
       "detail": null
     },
     {
+      "check": "csv_value_and_null_parity:claims_residual_decisions",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "sqlite_value_type_and_null_parity:claims_residual_decisions",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "csv_value_and_null_parity:classification_residual_decisions",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "sqlite_value_type_and_null_parity:classification_residual_decisions",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "csv_value_and_null_parity:residual_event_changes",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "sqlite_value_type_and_null_parity:residual_event_changes",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "csv_value_and_null_parity:residual_financing_reviews",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "sqlite_value_type_and_null_parity:residual_financing_reviews",
+      "passed": true,
+      "detail": null
+    },
+    {
       "check": "csv_value_and_null_parity:completion_reviews",
       "passed": true,
       "detail": null
@@ -995,7 +1035,7 @@
       "detail": null
     },
     {
-      "check": "followup_dispositions_match_latest_review_rows",
+      "check": "followup_and_residual_dispositions_match_latest_review_rows",
       "passed": true,
       "detail": null
     },
@@ -1040,7 +1080,257 @@
       "detail": null
     },
     {
+      "check": "residual_receipt_matches_snapshot_and_predecessor",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "all_30_residual_claims_have_individual_source_decisions",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "all_residual_decisions_match_latest_reviews",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "remaining_21_claims_have_explicit_quarantine_dispositions",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "residual_quarantine_is_not_proven_missing_deal_count",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "residual_has_no_trends_or_completeness_certificate",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "all_5711_residual_predecessor_event_ids_exported",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "all_6938_residual_predecessor_observation_ids_exported",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "all_4950_residual_predecessor_company_ids_exported",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "all_21_residual_additions_have_field_and_source_provenance",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "residual_17_period_disclosures_and_7_framework_disclosures_match",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "residual_4_nonperiod_context_records_match",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "both_Monarrch_and_ListenOwl_holds_have_supported_assignments",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "both_residual_holds_absent_from_current_hold_register",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "residual_change_receipts_link_predecessor_and_current_events",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Monarrch_100k_and_AI_rights_governance_preserved",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "ListenOwl_audio_identity_inference_is_explicit",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "ProRata_October_offering_not_assumed_an_extra_framework_round",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "ProRata_2026_original_offering_preserved",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Blink_amendment_retains_only_increment_in_same_episode",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Blink_taxonomy_gap_not_forced_into_robotics",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Blaise_is_insurance_AI_not_Blaize_semiconductor",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "4AG_government_financing_native_CAD_and_type_preserved",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "4AG_prior_company_domain_correction_preserved",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "GuideAI_unknown_native_currency_not_assumed_USD",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Tessel_award_cap_preserved_as_upper_bound",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Harvest_conflicting_year_and_unverified_amount_unallocated",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "year_only_backing_excluded_from_period_counts",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "unallocated_backing_excluded_from_framework_counts",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "all_residual_undisclosed_valuations_remain_unknown",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "historical_receipt_counts_and_latest_counts_distinct",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "current_residual_documentation_and_pointer_match",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "source_sweep_summary_matches_current_release",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "current_methodology_has_one_residual_review_section",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "residual_current_count_matches_export:events_all",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "residual_current_count_matches_export:observations_all",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "residual_current_count_matches_export:companies",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "residual_current_count_matches_export:credible_financing_disclosures",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "residual_current_count_matches_export:financing_episodes",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "residual_current_count_matches_export:framework_financing_disclosures",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "residual_current_count_matches_export:framework_financing_episodes",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "residual_current_count_matches_export:reviewed_framework_financing_disclosures",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "residual_current_count_matches_export:framework_core_equity_cutoff",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "residual_current_count_matches_export:completion_reviews",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "residual_current_count_matches_export:queue_unverified_claims",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "residual_current_count_matches_export:remaining_business_scope_holds",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "residual_current_count_matches_export:resolved_business_scope_exclusions",
+      "passed": true,
+      "detail": null
+    },
+    {
       "check": "all_6877_predecessor_observation_values_survive_public_export",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "all_6938_residual_predecessor_observation_values_survive_public_export",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "historical_decision_values_survive_residual_export:claims_followup_decisions",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "historical_decision_values_survive_residual_export:classification_followup_decisions",
       "passed": true,
       "detail": null
     },

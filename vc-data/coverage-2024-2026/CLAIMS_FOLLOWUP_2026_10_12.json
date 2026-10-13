@@ -1,5 +1,5 @@
 {
-  "snapshot_id": "ai-deals-coverage-9ffd44b864775de2eb32",
+  "snapshot_id": "ai-deals-coverage-8ec6fb9ff49089dc3bf3",
   "predecessor_snapshot_id": "ai-deals-coverage-713c08df821e84c5e3ed",
   "predecessor_master_sha256": "cfdeda3b44523f5dbd354838d63ad89ad91f6bb2b57792eb1324707f3b44db2f",
   "generated_at_utc": "2026-10-13T04:28:26.521114+00:00",
@@ -597,5 +597,43 @@
     "X9 is an ML ultrasound guidance system; the disclosed device does not establish an autonomous medical robot.",
     "AskTuring conflicting credible figures are represented by a $10m–$13m range.",
     "Landbase December financing is C$4m private credit, distinct from its equity rounds."
-  ]
+  ],
+  "historical_counts": {
+    "events_all": 5711,
+    "observations_all": 6938,
+    "companies": 4950,
+    "credible_financing_disclosures": 3530,
+    "financing_episodes": 3505,
+    "framework_financing_disclosures": 3374,
+    "framework_financing_episodes": 3349,
+    "reviewed_framework_financing_disclosures": 2613,
+    "framework_core_equity_cutoff": 1427,
+    "completion_candidates": 5685,
+    "completion_reviews": 5685,
+    "queue_unverified_claims": 30,
+    "remaining_business_scope_holds": 2,
+    "resolved_business_scope_exclusions": 129
+  },
+  "current_residual_review": "RESIDUAL_CLAIMS_2026_10_12.json",
+  "current_counts": {
+    "events_all": 5732,
+    "observations_all": 6965,
+    "companies": 4963,
+    "credible_financing_disclosures": 3547,
+    "financing_episodes": 3520,
+    "framework_financing_disclosures": 3383,
+    "framework_financing_episodes": 3358,
+    "reviewed_framework_financing_disclosures": 2622,
+    "framework_core_equity_cutoff": 1427,
+    "completion_candidates": 5690,
+    "completion_reviews": 5690,
+    "queue_unverified_claims": 21,
+    "remaining_business_scope_holds": 0,
+    "resolved_business_scope_exclusions": 134
+  },
+  "current_unverified_claims": 21,
+  "current_unresolved_classification_disclosures": 0,
+  "historical_review_decisions": true,
+  "implemented_snapshot_id": "ai-deals-coverage-9ffd44b864775de2eb32",
+  "current_claims_still_unverified": 21
 }

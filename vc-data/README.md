@@ -1,23 +1,14 @@
-# AI and Physical AI deal database
+# AI / Physical AI financing database
 
-The current expanded release is [coverage-2024-2026](coverage-2024-2026/README.md): **5,711 retained events**, covering both October-September comparison years and the October 1-11, 2026 update. The latest pass adds **44 supported financing disclosures** plus **3 context records**. Its manifest contains matching JSON/CSV datasets and a portable Python SQLite loader.
+The [current coverage release](coverage-2024-2026/README.md) retains **5,732 event records** for research across the two comparison periods and the October 1–11, 2026 update. The [latest 30-claim review](coverage-2024-2026/RESIDUAL_CLAIMS_2026_10_12.json) adds **7 financing disclosures to the 61-category framework** and resolves both classification holds. **21 additional-financing claims remain unverified.**
 
-Start with the expanded release's coverage audit, source decisions and validation receipts. Research remains OPEN; corpus counts do not establish a complete worldwide denominator. No trend analysis is included.
+Use [LATEST.json](LATEST.json) to find the current manifest and [methodology](coverage-2024-2026/methodology.md) to understand scopes and evidence limits. [Historical 82-claim decisions](coverage-2024-2026/CLAIMS_FOLLOWUP_2026_10_12.json), [731-claim decisions](coverage-2024-2026/QUEUE_RESOLUTION_2026_10_12.json), and the [independent-audit response](coverage-2024-2026/AUDIT_RESPONSE_2026_10_12.json) remain auditable.
 
-The root files retain the previous fixed 2026 snapshot and its original hashes for recovery and comparison. Its [START_HERE.md](START_HERE.md) describes that earlier snapshot. Use the expanded release for the latest canonical revisions and historical backfill.
+Event records are not a unique-deal count. Market completeness remains unmeasured. **No trend analysis is included.**
 
-## October 12 audit revision
+```sh
+python3 coverage-2024-2026/validate_release.py
+python3 coverage-2024-2026/load_snapshot.py --output /tmp/ai_deals_coverage.sqlite
+```
 
-The expanded release now includes the verified Claude audit corrections, source-backed missing rounds, explicit duplicate links, and company/event links to the original 61-category framework. See [decisions for all 67 findings](coverage-2024-2026/AUDIT_RESPONSE_2026_10_12.json). Original event IDs and observations are preserved. Research remains open and no trends have been calculated.
-
-## October 12 coverage continuation
-
-The earlier coverage continuation added 46 verified financing disclosures, recorded business scope and provenance across the 61-category framework, and published category/period coverage cells plus explicit classification holds. See [coverage completion and remaining limits](coverage-2024-2026/COVERAGE_COMPLETION_2026_10_12.json). All predecessor event IDs and observation values remain preserved.
-
-## October 12 queue resolution
-
-All 731 discovery claims and 320 prior held issuer classifications were individually reviewed. That historical pass added 495 supported financing disclosures and preserves all predecessor records. See [decisions and remaining evidence limits](coverage-2024-2026/QUEUE_RESOLUTION_2026_10_12.json). No trend analysis is included.
-
-## Remaining-claim follow-up
-
-All 82 remaining claims and three original classification holds were reassessed. The update retains 5,711 events and adds 44 supported financing disclosures plus 3 context records. 30 claims remain unverified; two new product classifications remain held outside category totals. See [current decisions and limits](coverage-2024-2026/CLAIMS_FOLLOWUP_2026_10_12.json). No trend analysis is included.
+The earlier January–October 2026 snapshot remains in the root data files for reproducibility; its [legacy methodology](methodology.md) and loader remain available. Current work should use `coverage-2024-2026`.

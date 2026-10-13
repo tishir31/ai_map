@@ -1,7 +1,7 @@
 {
-  "snapshot_id": "ai-deals-coverage-9ffd44b864775de2eb32",
-  "database_sha256": "28f2cc1e8542508d335735d4b4a086733b9e12affc5fc52f790ffe2deb22ea79",
-  "passed": 694,
+  "snapshot_id": "ai-deals-coverage-8ec6fb9ff49089dc3bf3",
+  "database_sha256": "6342ada732a7438e576aa1e9ceb5f8427ccfbbe93c301dc9a9df8c6a304c7665",
+  "passed": 722,
   "failed": 0,
   "coverage_certified": false,
   "checks": [
@@ -3366,7 +3366,7 @@
       "detail": null
     },
     {
-      "check": "latest_claim_reviews_match_followup_decisions",
+      "check": "latest_claim_reviews_match_followup_and_residual_decisions",
       "passed": true,
       "detail": null
     },
@@ -3472,6 +3472,146 @@
     },
     {
       "check": "Counter_Service_financing_excludes_retired_robot_business",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "residual_predecessor_digest_unchanged",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "all_5711_residual_predecessor_events_retained",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "all_6938_residual_predecessor_observations_immutable",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "all_4950_residual_predecessor_issuer_ids_retained",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "all_30_residual_claims_individually_reviewed",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "residual_dispositions_match_latest_reviews",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "every_residual_addition_has_source_and_field_receipt",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "both_residual_classification_holds_resolved",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "residual_original_holds_absent_from_hold_register",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "residual_changes_have_frozen_predecessor_and_evidence",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "historical_82_claim_decision_values_preserved",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "historical_3_classification_decision_values_preserved",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "residual_amount_and_first_sale_match_original_filing:5714",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "residual_amount_and_first_sale_match_original_filing:5718",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "residual_amount_and_first_sale_match_original_filing:5719",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Blink_amendment_only_increment_retained",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Blink_initial_and_increment_one_episode",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Blink_gaze_platform_not_forced_into_robot_leaf",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Blaise_insurance_issuer_not_Blaize_chip_company",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "ProRata_October_offering_not_assumed_extra_comparison_round",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "4AG_government_loan_not_an_extra_equity_round",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "GuideAI_unspecified_dollars_not_assumed_USD",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Tessel_award_upper_bound_not_full_cash_point",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "year_only_backing_excluded_from_comparison_counts",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Harvest_conflicting_year_unallocated",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "backing_only_records_excluded_from_framework_rounds",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "ListenOwl_classification_identity_inference_explicit",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "all_residual_undisclosed_valuations_remain_unknown",
       "passed": true,
       "detail": null
     }

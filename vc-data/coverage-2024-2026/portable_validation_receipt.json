@@ -1,8 +1,8 @@
 {
-  "snapshot_id": "ai-deals-coverage-9ffd44b864775de2eb32",
-  "datasets": 77,
-  "dataset_rows": 147302,
-  "passed": 208,
+  "snapshot_id": "ai-deals-coverage-8ec6fb9ff49089dc3bf3",
+  "datasets": 81,
+  "dataset_rows": 147768,
+  "passed": 263,
   "failed": 0,
   "market_completeness_certified": false,
   "checks": [
@@ -631,6 +631,38 @@
       "passed": true
     },
     {
+      "check": "csv_values_and_nulls:claims_residual_decisions",
+      "passed": true
+    },
+    {
+      "check": "sqlite_values_types_and_nulls:claims_residual_decisions",
+      "passed": true
+    },
+    {
+      "check": "csv_values_and_nulls:classification_residual_decisions",
+      "passed": true
+    },
+    {
+      "check": "sqlite_values_types_and_nulls:classification_residual_decisions",
+      "passed": true
+    },
+    {
+      "check": "csv_values_and_nulls:residual_event_changes",
+      "passed": true
+    },
+    {
+      "check": "sqlite_values_types_and_nulls:residual_event_changes",
+      "passed": true
+    },
+    {
+      "check": "csv_values_and_nulls:residual_financing_reviews",
+      "passed": true
+    },
+    {
+      "check": "sqlite_values_types_and_nulls:residual_financing_reviews",
+      "passed": true
+    },
+    {
       "check": "csv_values_and_nulls:completion_reviews",
       "passed": true
     },
@@ -787,7 +819,7 @@
       "passed": true
     },
     {
-      "check": "followup_decisions_match_latest_reviews",
+      "check": "followup_and_residual_decisions_match_latest_reviews",
       "passed": true
     },
     {
@@ -832,6 +864,194 @@
     },
     {
       "check": "followup_unverified_fields_remain_unknown",
+      "passed": true
+    },
+    {
+      "check": "residual_receipt_matches_snapshot_and_predecessor",
+      "passed": true
+    },
+    {
+      "check": "all_30_residual_claims_have_individual_source_decisions",
+      "passed": true
+    },
+    {
+      "check": "all_residual_decisions_match_latest_reviews",
+      "passed": true
+    },
+    {
+      "check": "remaining_21_claims_have_explicit_quarantine_dispositions",
+      "passed": true
+    },
+    {
+      "check": "residual_quarantine_is_not_proven_missing_deal_count",
+      "passed": true
+    },
+    {
+      "check": "residual_has_no_trends_or_completeness_certificate",
+      "passed": true
+    },
+    {
+      "check": "all_5711_residual_predecessor_event_ids_exported",
+      "passed": true
+    },
+    {
+      "check": "all_6938_residual_predecessor_observation_ids_exported",
+      "passed": true
+    },
+    {
+      "check": "all_4950_residual_predecessor_company_ids_exported",
+      "passed": true
+    },
+    {
+      "check": "all_21_residual_additions_have_field_and_source_provenance",
+      "passed": true
+    },
+    {
+      "check": "residual_17_period_disclosures_and_7_framework_disclosures_match",
+      "passed": true
+    },
+    {
+      "check": "residual_4_nonperiod_context_records_match",
+      "passed": true
+    },
+    {
+      "check": "both_Monarrch_and_ListenOwl_holds_have_supported_assignments",
+      "passed": true
+    },
+    {
+      "check": "both_residual_holds_absent_from_current_hold_register",
+      "passed": true
+    },
+    {
+      "check": "residual_change_receipts_link_predecessor_and_current_events",
+      "passed": true
+    },
+    {
+      "check": "Monarrch_100k_and_AI_rights_governance_preserved",
+      "passed": true
+    },
+    {
+      "check": "ListenOwl_audio_identity_inference_is_explicit",
+      "passed": true
+    },
+    {
+      "check": "ProRata_October_offering_not_assumed_an_extra_framework_round",
+      "passed": true
+    },
+    {
+      "check": "ProRata_2026_original_offering_preserved",
+      "passed": true
+    },
+    {
+      "check": "Blink_amendment_retains_only_increment_in_same_episode",
+      "passed": true
+    },
+    {
+      "check": "Blink_taxonomy_gap_not_forced_into_robotics",
+      "passed": true
+    },
+    {
+      "check": "Blaise_is_insurance_AI_not_Blaize_semiconductor",
+      "passed": true
+    },
+    {
+      "check": "4AG_government_financing_native_CAD_and_type_preserved",
+      "passed": true
+    },
+    {
+      "check": "4AG_prior_company_domain_correction_preserved",
+      "passed": true
+    },
+    {
+      "check": "GuideAI_unknown_native_currency_not_assumed_USD",
+      "passed": true
+    },
+    {
+      "check": "Tessel_award_cap_preserved_as_upper_bound",
+      "passed": true
+    },
+    {
+      "check": "Harvest_conflicting_year_and_unverified_amount_unallocated",
+      "passed": true
+    },
+    {
+      "check": "year_only_backing_excluded_from_period_counts",
+      "passed": true
+    },
+    {
+      "check": "unallocated_backing_excluded_from_framework_counts",
+      "passed": true
+    },
+    {
+      "check": "all_residual_undisclosed_valuations_remain_unknown",
+      "passed": true
+    },
+    {
+      "check": "historical_receipt_counts_and_latest_counts_distinct",
+      "passed": true
+    },
+    {
+      "check": "current_residual_documentation_and_pointer_match",
+      "passed": true
+    },
+    {
+      "check": "source_sweep_summary_matches_current_release",
+      "passed": true
+    },
+    {
+      "check": "current_methodology_has_one_residual_review_section",
+      "passed": true
+    },
+    {
+      "check": "residual_current_count_matches_export:events_all",
+      "passed": true
+    },
+    {
+      "check": "residual_current_count_matches_export:observations_all",
+      "passed": true
+    },
+    {
+      "check": "residual_current_count_matches_export:companies",
+      "passed": true
+    },
+    {
+      "check": "residual_current_count_matches_export:credible_financing_disclosures",
+      "passed": true
+    },
+    {
+      "check": "residual_current_count_matches_export:financing_episodes",
+      "passed": true
+    },
+    {
+      "check": "residual_current_count_matches_export:framework_financing_disclosures",
+      "passed": true
+    },
+    {
+      "check": "residual_current_count_matches_export:framework_financing_episodes",
+      "passed": true
+    },
+    {
+      "check": "residual_current_count_matches_export:reviewed_framework_financing_disclosures",
+      "passed": true
+    },
+    {
+      "check": "residual_current_count_matches_export:framework_core_equity_cutoff",
+      "passed": true
+    },
+    {
+      "check": "residual_current_count_matches_export:completion_reviews",
+      "passed": true
+    },
+    {
+      "check": "residual_current_count_matches_export:queue_unverified_claims",
+      "passed": true
+    },
+    {
+      "check": "residual_current_count_matches_export:remaining_business_scope_holds",
+      "passed": true
+    },
+    {
+      "check": "residual_current_count_matches_export:resolved_business_scope_exclusions",
       "passed": true
     },
     {
