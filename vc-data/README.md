@@ -13,3 +13,7 @@ The expanded release now includes the verified Claude audit corrections, source-
 ## October 12 coverage continuation
 
 The latest release adds 46 verified financing disclosures, records business scope and provenance across the 61-category framework, and publishes category/period coverage cells plus explicit classification holds. See [coverage completion and remaining limits](coverage-2024-2026/COVERAGE_COMPLETION_2026_10_12.json). All predecessor event IDs and observation values remain preserved.
+
+## October 12 queue resolution
+
+All 731 discovery claims and 320 prior held issuer classifications were individually reviewed. The updated release adds 495 supported financing disclosures and preserves all predecessor records. See [decisions and remaining evidence limits](coverage-2024-2026/QUEUE_RESOLUTION_2026_10_12.json). No trend analysis is included.

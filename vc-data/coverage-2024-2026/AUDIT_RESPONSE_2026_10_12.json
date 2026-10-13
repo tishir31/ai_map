@@ -1,5 +1,5 @@
 {
-  "snapshot_id": "ai-deals-coverage-48c97d7d968118d8f6a2",
+  "snapshot_id": "ai-deals-coverage-713c08df821e84c5e3ed",
   "audited_snapshot_id": "ai-deals-coverage-442701c0d55527e04f40",
   "audited_commit": "cfc084ac76810125200aa704745c66f99a4e2f61",
   "applied_at_utc": "2026-10-12T19:09:36.691859+00:00",
@@ -386,22 +386,21 @@
   ],
   "all_audited_event_ids_preserved": true,
   "all_audited_observations_preserved": true,
-  "event_records": 5163,
-  "observation_records": 5864,
+  "event_records": 5664,
+  "observation_records": 6877,
   "finer_category_count": 61,
   "event_finer_classification_status_counts": {
-    "inherited_framework_classification": 601,
-    "unassigned_requires_business_review": 786,
-    "mapped_from_existing_broad_classification": 517,
-    "reviewed_public_business_scope": 2031,
-    "source_rule_supported_business_scope": 990,
-    "outside_framework": 50,
-    "held_prior_framework_not_corroborated": 61,
-    "held_ai_scope_not_established": 94,
-    "held_framework_fit_not_established": 26,
-    "held_business_source_access": 3,
-    "held_joint_issuer_allocation": 2,
-    "held_original_business_corroboration": 2
+    "inherited_framework_classification": 577,
+    "unassigned_requires_business_review": 783,
+    "mapped_from_existing_broad_classification": 271,
+    "reviewed_public_business_scope": 2861,
+    "source_rule_supported_business_scope": 965,
+    "outside_framework": 85,
+    "held_prior_framework_not_corroborated": 58,
+    "resolved_framework_taxonomy_gap": 59,
+    "resolved_joint_issuer_allocation": 2,
+    "quarantined_business_product_unspecified": 2,
+    "held_ai_scope_not_corroborated": 1
   },
   "findings": [
     {
@@ -3781,9 +3780,9 @@
           "company_id": 835,
           "company": "Crux AI",
           "company_domain": null,
-          "primary_subsector": "training_compute",
-          "finer_subsector": "training",
-          "finer_classification_status": "mapped_from_existing_broad_classification",
+          "primary_subsector": "neocloud_gpu_capacity",
+          "finer_subsector": "neocloud",
+          "finer_classification_status": "reviewed_public_business_scope",
           "announcement_date": "2026-09-11",
           "date_precision": "day",
           "date_basis": "source_explicit",
@@ -3810,17 +3809,17 @@
           "review_status": "source_supported",
           "lifecycle_rank": 1,
           "lifecycle_group_id": null,
-          "business_scope": "held_prior_assignment_not_corroborated",
-          "classification_method": "retained_unverified_prior_assignment"
+          "business_scope": "in_framework",
+          "classification_method": "individual_issuer_product_review"
         },
         {
           "event_id": 675,
           "company_id": 835,
           "company": "Crux AI",
           "company_domain": null,
-          "primary_subsector": "training_compute",
-          "finer_subsector": "training",
-          "finer_classification_status": "mapped_from_existing_broad_classification",
+          "primary_subsector": "neocloud_gpu_capacity",
+          "finer_subsector": "neocloud",
+          "finer_classification_status": "reviewed_public_business_scope",
           "announcement_date": "2026-09-16",
           "date_precision": "day",
           "date_basis": "publication_proxy",
@@ -3847,8 +3846,8 @@
           "review_status": "source_supported",
           "lifecycle_rank": 1,
           "lifecycle_group_id": 419,
-          "business_scope": "held_prior_assignment_not_corroborated",
-          "classification_method": "retained_unverified_prior_assignment"
+          "business_scope": "in_framework",
+          "classification_method": "individual_issuer_product_review"
         }
       ],
       "source_urls": [
@@ -4648,7 +4647,7 @@
           "company_domain": "hadrius.com",
           "primary_subsector": "finance",
           "finer_subsector": "finance",
-          "finer_classification_status": "mapped_from_existing_broad_classification",
+          "finer_classification_status": "reviewed_public_business_scope",
           "announcement_date": "2026-07-14",
           "date_precision": "day",
           "date_basis": "publication_proxy",
@@ -4675,8 +4674,8 @@
           "review_status": "source_supported",
           "lifecycle_rank": 1,
           "lifecycle_group_id": 1938,
-          "business_scope": "held_prior_assignment_not_corroborated",
-          "classification_method": "retained_unverified_prior_assignment"
+          "business_scope": "in_framework",
+          "classification_method": "individual_issuer_product_review"
         },
         {
           "event_id": 399,
@@ -5906,7 +5905,7 @@
           "company_domain": "hadrius.com",
           "primary_subsector": "finance",
           "finer_subsector": "finance",
-          "finer_classification_status": "mapped_from_existing_broad_classification",
+          "finer_classification_status": "reviewed_public_business_scope",
           "announcement_date": "2026-07-14",
           "date_precision": "day",
           "date_basis": "source_explicit",
@@ -5933,8 +5932,8 @@
           "review_status": "source_supported",
           "lifecycle_rank": 3,
           "lifecycle_group_id": 1938,
-          "business_scope": "held_prior_assignment_not_corroborated",
-          "classification_method": "retained_unverified_prior_assignment"
+          "business_scope": "in_framework",
+          "classification_method": "individual_issuer_product_review"
         },
         {
           "event_id": 4980,
@@ -7298,7 +7297,7 @@
           "lifecycle_rank": 1,
           "lifecycle_group_id": 124,
           "business_scope": "in_framework",
-          "classification_method": "retained_prior_source_review"
+          "classification_method": "individual_issuer_product_review"
         },
         {
           "event_id": 221,
@@ -8149,7 +8148,7 @@
           "lifecycle_rank": 2,
           "lifecycle_group_id": 1824,
           "business_scope": "in_framework",
-          "classification_method": "retained_prior_source_review"
+          "classification_method": "individual_issuer_product_review"
         },
         {
           "event_id": 838,
@@ -9074,7 +9073,7 @@
           "lifecycle_rank": 3,
           "lifecycle_group_id": 1824,
           "business_scope": "in_framework",
-          "classification_method": "retained_prior_source_review"
+          "classification_method": "individual_issuer_product_review"
         },
         {
           "event_id": 2441,
@@ -9111,7 +9110,7 @@
           "lifecycle_rank": 2,
           "lifecycle_group_id": 2152,
           "business_scope": "in_framework",
-          "classification_method": "retained_prior_source_review"
+          "classification_method": "individual_issuer_product_review"
         },
         {
           "event_id": 2442,
@@ -9148,7 +9147,7 @@
           "lifecycle_rank": 1,
           "lifecycle_group_id": null,
           "business_scope": "in_framework",
-          "classification_method": "retained_prior_source_review"
+          "classification_method": "individual_issuer_product_review"
         },
         {
           "event_id": 2457,
@@ -9185,7 +9184,7 @@
           "lifecycle_rank": 4,
           "lifecycle_group_id": 2152,
           "business_scope": "in_framework",
-          "classification_method": "retained_prior_source_review"
+          "classification_method": "individual_issuer_product_review"
         },
         {
           "event_id": 2510,
@@ -11261,6 +11260,6 @@
     "Unassigned fine categories and unreconciled discovery claims remain explicit; internal validation does not establish market completeness."
   ],
   "audit_implemented_snapshot_id": "ai-deals-coverage-e5302dcff6b1b4e58bc8",
-  "subsequent_coverage_receipt": "COVERAGE_COMPLETION_2026_10_12.json",
+  "subsequent_coverage_receipt": "QUEUE_RESOLUTION_2026_10_12.json",
   "audit_dispositions_carried_forward": true
 }

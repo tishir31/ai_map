@@ -1,11 +1,11 @@
 {
-  "snapshot_id": "ai-deals-coverage-48c97d7d968118d8f6a2",
-  "manifest_sha256": "192aa22586dd5ad5ee09d796668fd0ef08097fe6436094735486c5388960a9eb",
-  "public_sqlite_sha256": "c489ba80d360fcf9f0c0f64a7bb5eac575b234c35f222fa7b992848414e3d212",
-  "datasets": 66,
-  "dataset_rows": 128308,
-  "data_files": 1218,
-  "passed": 166,
+  "snapshot_id": "ai-deals-coverage-713c08df821e84c5e3ed",
+  "manifest_sha256": "91cc306f778345a7add33235e45b0c99405461e207918cf8c1b343700f019ecd",
+  "public_sqlite_sha256": "6d31d09b663d119bdb941469f4a0e0c5c0e2ea5f103584d3d6de47cbb2c5f2d8",
+  "datasets": 73,
+  "dataset_rows": 146234,
+  "data_files": 1358,
+  "passed": 189,
   "failed": 0,
   "market_completeness_certified": false,
   "checks": [
@@ -700,6 +700,76 @@
       "detail": null
     },
     {
+      "check": "csv_value_and_null_parity:queue_resolution_decisions",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "sqlite_value_type_and_null_parity:queue_resolution_decisions",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "csv_value_and_null_parity:classification_resolution_decisions",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "sqlite_value_type_and_null_parity:classification_resolution_decisions",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "csv_value_and_null_parity:queue_resolution_event_changes",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "sqlite_value_type_and_null_parity:queue_resolution_event_changes",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "csv_value_and_null_parity:queue_resolution_financing_reviews",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "sqlite_value_type_and_null_parity:queue_resolution_financing_reviews",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "csv_value_and_null_parity:queue_unverified_claims",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "sqlite_value_type_and_null_parity:queue_unverified_claims",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "csv_value_and_null_parity:remaining_business_scope_holds",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "sqlite_value_type_and_null_parity:remaining_business_scope_holds",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "csv_value_and_null_parity:resolved_business_scope_exclusions",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "sqlite_value_type_and_null_parity:resolved_business_scope_exclusions",
+      "passed": true,
+      "detail": null
+    },
+    {
       "check": "csv_value_and_null_parity:completion_reviews",
       "passed": true,
       "detail": null
@@ -826,6 +896,51 @@
     },
     {
       "check": "exported_episode_and_source_counts_match_documentation",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "queue_receipt_matches_release_and_731_decisions",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "every_public_discovery_claim_has_a_review",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "queue_unverified_claims_are_explicit_not_missing_deal_count",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "queue_business_holds_and_resolved_exclusions_disjoint",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "all_5163_queue_predecessor_event_ids_exported",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "every_queue_addition_has_public_financing_receipt",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Abundance_fund_assets_excluded_in_public_views",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Unitree_alias_keeps_original_registry_ids",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "all_320_prior_classification_hold_reviews_exported",
       "passed": true,
       "detail": null
     },

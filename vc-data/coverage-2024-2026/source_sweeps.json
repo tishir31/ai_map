@@ -1,11 +1,11 @@
 {
-  "snapshot_id": "ai-deals-coverage-48c97d7d968118d8f6a2",
+  "snapshot_id": "ai-deals-coverage-713c08df821e84c5e3ed",
   "research_status": "OPEN",
   "market_completeness_certified": false,
   "no_trends_calculated": true,
-  "candidate_records": 5669,
-  "curated_decisions": 4938,
-  "pending_claims": 731,
+  "candidate_records": 5682,
+  "curated_decisions": 5682,
+  "pending_claims": 0,
   "pending_count_is_missing_deal_count": false,
   "source_family_decisions": {
     "v39": {
@@ -34,28 +34,69 @@
     "tech_eu": {
       "duplicate_disclosure": 88,
       "accepted_with_limits": 148,
-      "awaiting_source_reconciliation": 354,
       "accepted": 4,
       "needs_round_reconciliation": 2,
       "out_of_scope_public_market_financing": 4,
       "needs_timing_and_amount": 1,
       "scope_review_required": 2,
       "needs_access_or_corroboration": 3,
+      "out_of_scope_non_dilutive_award": 1,
       "reconciled_original_public_disclosure": 2,
-      "out_of_scope_non_dilutive_award": 1
+      "accepted_editorial_financing": 310,
+      "reconciled_existing_financing": 23,
+      "retained_editorial_financing_scope_exclusion": 20,
+      "accepted_source_supported_financing": 1
     },
     "silverwood": {
       "duplicate_disclosure": 214,
-      "awaiting_source_reconciliation": 377,
       "accepted_with_limits": 88,
       "needs_access_or_corroboration": 2,
-      "reconciled_original_public_disclosure": 32,
       "needs_round_reconciliation": 13,
       "not_completed_financing": 2,
       "accepted": 28,
       "needs_timing_and_amount": 4,
+      "out_of_scope_period": 2,
       "reconciled_audit_backfill": 1,
-      "out_of_scope_period": 2
+      "reconciled_original_public_disclosure": 32,
+      "accepted_new_financing": 3,
+      "reconciled_existing_financing": 49,
+      "reconciled_conflicting_report_to_issuer_disclosure": 1,
+      "accepted_financing_with_allocation_limit": 1,
+      "quarantined_original_financing_unverified": 18,
+      "excluded_business_outside_framework": 24,
+      "accepted_source_supported_financing": 151,
+      "excluded_secondary_investor_transaction": 1,
+      "excluded_employee_secondary_tender": 1,
+      "excluded_disclosure_before_comparison_window": 1,
+      "proposal_not_confirmed_completed_financing": 1,
+      "reconciled_reported_package_existing_equity": 1,
+      "reconciled_same_review_pass_financing": 5,
+      "reconciled_regulatory_disclosure_same_round": 1,
+      "reconciled_same_review_pass_offering": 1,
+      "rejected_fundraising_target_not_completed": 1,
+      "quarantined_financing_and_taxonomy_fit": 1,
+      "proposal_not_completed_financing": 37,
+      "excluded_business_or_period_scope": 12,
+      "quarantined_original_financing_or_identity_unverified": 13,
+      "held_verified_financing_business_unresolved": 1,
+      "quarantined_period_or_original_financing_unverified": 1,
+      "quarantined_additional_financing_unverified": 12,
+      "excluded_outside_framework": 1,
+      "quarantined_dated_financing_unverified": 15,
+      "quarantined_offering_increment_unresolved": 1,
+      "quarantined_identity_or_financing_unverified": 10,
+      "rejected_wrong_financing_recipient": 1,
+      "quarantined_wrong_issuer_or_additional_financing": 1,
+      "quarantined_financing_or_identity_unverified": 1,
+      "quarantined_new_primary_cash_unverified": 1,
+      "held_verified_financing_framework_taxonomy_gap": 1,
+      "held_primary_secondary_allocation_unresolved": 1,
+      "quarantined_issuer_identity_unverified": 1,
+      "quarantined_primary_financing_unverified": 1,
+      "rejected_new_round_claim": 2,
+      "quarantined_offering_increment_and_timing": 1,
+      "quarantined_period_allocation_unresolved": 1,
+      "quarantined_mixed_amount_period_allocation": 1
     },
     "vca": {
       "accepted": 802,
@@ -66,12 +107,12 @@
       "out_of_scope_fund_vehicle": 60,
       "accepted_with_limits": 1131,
       "screened_no_issuer_ai_evidence": 742,
-      "reconciled_audit_backfill": 11,
       "needs_timing_and_amount": 1,
       "needs_round_reconciliation": 2,
       "needs_company_identity_corroboration": 2,
       "not_a_company_financing": 21,
-      "out_of_scope_period": 1
+      "out_of_scope_period": 1,
+      "reconciled_audit_backfill": 11
     },
     "verified": {
       "accepted": 9,
@@ -91,6 +132,9 @@
     },
     "coverage-pass": {
       "accepted_verified_backfill": 46
+    },
+    "queue-extra": {
+      "accepted_verified_related_backfill": 13
     }
   },
   "source_scope_notes": [
@@ -140,5 +184,13 @@
     "fine_category_period_cells": 183,
     "individual_business_review_and_source_rule_separate": true,
     "per_category_independent_recall_measured": false
+  },
+  "queue_resolution": {
+    "receipt": "QUEUE_RESOLUTION_2026_10_12.json",
+    "claims_reviewed": 731,
+    "unverified_reviewed_claims": 82,
+    "new_source_supported_financing_disclosures": 495,
+    "classification_holds_reviewed": 320,
+    "market_recall_measured": false
   }
 }

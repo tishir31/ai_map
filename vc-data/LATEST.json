@@ -1,5 +1,5 @@
 {
-  "snapshot_id": "ai-deals-coverage-48c97d7d968118d8f6a2",
+  "snapshot_id": "ai-deals-coverage-713c08df821e84c5e3ed",
   "path": "coverage-2024-2026",
   "manifest": "coverage-2024-2026/manifest.json",
   "scope": {
@@ -10,6 +10,9 @@
   "no_trends_calculated": true,
   "audited_previous_snapshot_id": "ai-deals-coverage-442701c0d55527e04f40",
   "audit_response": "coverage-2024-2026/AUDIT_RESPONSE_2026_10_12.json",
-  "predecessor_snapshot_id": "ai-deals-coverage-e5302dcff6b1b4e58bc8",
-  "coverage_completion": "coverage-2024-2026/COVERAGE_COMPLETION_2026_10_12.json"
+  "predecessor_snapshot_id": "ai-deals-coverage-48c97d7d968118d8f6a2",
+  "coverage_completion": "coverage-2024-2026/COVERAGE_COMPLETION_2026_10_12.json",
+  "queue_resolution": "coverage-2024-2026/QUEUE_RESOLUTION_2026_10_12.json",
+  "queue_resolution_status": "COMPLETE",
+  "claims_unreviewed": 0
 }

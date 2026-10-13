@@ -58,7 +58,17 @@ def main():
   check('classification_hold_register_matches_receipt',len(datasets['classification_hold_register']['rows'])==completion['held_financing_classification_records'])
   check('every_issuer_has_business_scope_decision',{r['company_id'] for r in datasets['business_classification_reviews']['rows']}==company_ids)
   check('native_currency_corrections_retained',events[5122]['raised_currency']=='EUR' and events[5143]['raised_currency']=='PLN')
-  check('scope_joke_and_unoriginal_claims_held',events[4918]['business_scope']=='held_ai_scope_not_established' and 2598 not in disclosed)
+  check('scope_joke_and_unoriginal_claims_held',events[4918]['business_scope'] in ('held_ai_scope_not_established','outside_framework') and events[4918]['finer_subsector'] is None and 2598 not in disclosed)
+  queue=json.loads((root/'QUEUE_RESOLUTION_2026_10_12.json').read_text());qr=datasets['queue_resolution_decisions']['rows']
+  check('queue_receipt_matches_current_snapshot',queue['snapshot_id']==manifest['snapshot_id'] and queue['trends_calculated'] is False)
+  check('all_731_claims_have_unique_decisions',len(qr)==len({r['candidate_id'] for r in qr})==731 and queue['claims_unreviewed']==0)
+  check('all_discovery_claims_are_reviewed',{r['candidate_id'] for r in datasets['discovery_review_queue']['rows']}=={r['candidate_id'] for r in datasets['completion_reviews']['rows']})
+  check('all_5163_queue_predecessor_events_preserved',set(range(1,5164))<=set(events))
+  check('all_queue_additions_have_public_provenance',{r['event_id'] for r in datasets['queue_resolution_financing_reviews']['rows']}==set(events)-set(range(1,5164)))
+  check('all_320_prior_classification_holds_have_decisions',queue['original_classification_hold_issuers_reviewed']==320 and len(datasets['classification_resolution_decisions']['rows'])>=320)
+  check('fund_capital_is_not_corporate_funding',events[631]['event_type']=='fund_capital_context' and 631 not in disclosed)
+  check('reviewed_unverified_claims_remain_visible',len(datasets['queue_unverified_claims']['rows'])==queue['counts']['queue_unverified_claims'] and queue['unverified_claims_are_missing_deal_count'] is False)
+  check('unresolved_business_holds_exclude_resolved_nonfits',not ({r['event_id'] for r in datasets['remaining_business_scope_holds']['rows']}&{r['event_id'] for r in datasets['resolved_business_scope_exclusions']['rows']}))
   actual_names={p.name for p in root.iterdir()}
   check('auditor_document_links_match_actual_filename_case','methodology.md' in actual_names and 'methodology.md' in (root/'AUDITOR_PROMPT.txt').read_text() and '(methodology.md)' in (root/'README.md').read_text())
   db.close()

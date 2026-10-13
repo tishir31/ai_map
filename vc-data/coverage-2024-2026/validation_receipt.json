@@ -1,7 +1,7 @@
 {
-  "snapshot_id": "ai-deals-coverage-48c97d7d968118d8f6a2",
-  "database_sha256": "79019393bc4ea991e85b50aef6744ea9abdb1a1b503801df36be3a5465bd9e7c",
-  "passed": 638,
+  "snapshot_id": "ai-deals-coverage-713c08df821e84c5e3ed",
+  "database_sha256": "cfdeda3b44523f5dbd354838d63ad89ad91f6bb2b57792eb1324707f3b44db2f",
+  "passed": 667,
   "failed": 0,
   "coverage_certified": false,
   "checks": [
@@ -2476,6 +2476,36 @@
       "detail": null
     },
     {
+      "check": "duplicate_link:silverwood:5fa885a2eab774aa61be",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "duplicate_link:silverwood:52c44aea0ace7f205ad9",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "duplicate_link:silverwood:84ef73258617e5fe3585",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "duplicate_link:silverwood:f6cdfd14b20a10a722c4",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "duplicate_link:silverwood:6f7204bb691832bccae2",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "duplicate_link:silverwood:7d633e5013381f59cd78",
+      "passed": true,
+      "detail": null
+    },
+    {
       "check": "user_requested_periods_exact",
       "passed": true,
       "detail": null
@@ -3192,6 +3222,121 @@
     },
     {
       "check": "coverage_changes_have_prior_namespace_and_public_evidence",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "queue_published_predecessor_byte_digest_unchanged",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "all_5163_queue_predecessor_event_ids_retained",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "all_5864_queue_predecessor_observations_immutable",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "all_4482_queue_predecessor_company_ids_retained",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "all_731_discovery_claims_have_unique_review_decisions",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "all_731_decisions_have_specific_notes_and_public_evidence",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "no_unreviewed_discovery_candidates",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "every_new_queue_event_has_field_verification",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "all_320_prior_classification_holds_have_business_review_decisions",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "all_queue_in_framework_assignments_have_fixed_category_and_source",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Abundance_fund_assets_excluded_from_corporate_funding",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "queue_source_fact:silverwood:34d4d43d577c0e1ff504:raised_amount",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "queue_source_fact:silverwood:bc5b848c2f73a2a2a8b4:raised_amount",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "queue_source_fact:silverwood:bc5b848c2f73a2a2a8b4:raised_amount_lower",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "queue_source_fact:silverwood:d925451e6e798019a975:raised_amount",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "queue_source_fact:silverwood:d925451e6e798019a975:raised_amount_lower",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "queue_source_fact:silverwood:d925451e6e798019a975:raised_amount_upper",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "queue_source_fact:silverwood:44a81ccdcce0c4e209d2:raised_amount",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "queue_source_fact:queue-extra:gumloop-20250110:raised_amount",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "queue_source_fact:queue-extra:appliedcompute-20260408:valuation_amount",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Skild_reannouncement_not_double_counted",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Unitree_original_registry_ids_retained_and_events_reconciled",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Qian_is_not_classified_as_a_drone_company",
       "passed": true,
       "detail": null
     }
