@@ -1,118 +1,96 @@
 {
-  "snapshot_id": "ai-deals-coverage-e5302dcff6b1b4e58bc8",
+  "snapshot_id": "ai-deals-coverage-48c97d7d968118d8f6a2",
   "research_status": "OPEN",
   "market_completeness_certified": false,
   "no_trends_calculated": true,
-  "candidate_records": 5623,
-  "curated_decisions": 4858,
-  "pending_claims": 765,
+  "candidate_records": 5669,
+  "curated_decisions": 4938,
+  "pending_claims": 731,
   "pending_count_is_missing_deal_count": false,
   "source_family_decisions": {
-    "audit-20261012": {
-      "candidates": 58,
-      "decisions": {
-        "accepted_with_limits": 29,
-        "accepted": 29
-      }
-    },
-    "gmi_debt_component": {
-      "candidates": 1,
-      "decisions": {
-        "accepted_with_limits": 1
-      }
-    },
-    "original_index": {
-      "candidates": 67,
-      "decisions": {
-        "accepted_with_limits": 12,
-        "duplicate_disclosure": 55
-      }
+    "v39": {
+      "accepted": 193,
+      "accepted_with_limits": 29,
+      "not_completed_financing": 2,
+      "needs_original_financing_corroboration": 1,
+      "duplicate_disclosure": 1
     },
     "robo2u": {
-      "candidates": 604,
-      "decisions": {
-        "accepted": 18,
-        "accepted_with_limits": 141,
-        "out_of_scope_public_market": 16,
-        "duplicate_reconciled": 6,
-        "cohort_or_award_context": 238,
-        "below_material_discovery_threshold": 106,
-        "scope_review_required": 1,
-        "needs_round_reconciliation": 13,
-        "not_completed_financing": 2,
-        "needs_access_or_corroboration": 19,
-        "duplicate_disclosure": 39,
-        "not_a_company_financing": 3,
-        "out_of_scope_secondary": 1,
-        "out_of_scope_non_dilutive_award": 1
-      }
-    },
-    "silverwood": {
-      "candidates": 763,
-      "decisions": {
-        "duplicate_disclosure": 214,
-        "awaiting_source_reconciliation": 409,
-        "accepted_with_limits": 88,
-        "needs_access_or_corroboration": 2,
-        "needs_round_reconciliation": 13,
-        "not_completed_financing": 2,
-        "accepted": 28,
-        "needs_timing_and_amount": 4,
-        "reconciled_audit_backfill": 1,
-        "out_of_scope_period": 2
-      }
+      "accepted": 18,
+      "accepted_with_limits": 141,
+      "out_of_scope_public_market": 16,
+      "duplicate_reconciled": 6,
+      "cohort_or_award_context": 238,
+      "below_material_discovery_threshold": 106,
+      "scope_review_required": 1,
+      "needs_round_reconciliation": 13,
+      "not_completed_financing": 2,
+      "needs_access_or_corroboration": 19,
+      "duplicate_disclosure": 39,
+      "not_a_company_financing": 3,
+      "out_of_scope_secondary": 1,
+      "out_of_scope_non_dilutive_award": 1
     },
     "tech_eu": {
-      "candidates": 609,
-      "decisions": {
-        "duplicate_disclosure": 88,
-        "accepted_with_limits": 148,
-        "awaiting_source_reconciliation": 356,
-        "accepted": 4,
-        "needs_round_reconciliation": 2,
-        "out_of_scope_public_market_financing": 4,
-        "needs_timing_and_amount": 1,
-        "scope_review_required": 2,
-        "needs_access_or_corroboration": 3,
-        "out_of_scope_non_dilutive_award": 1
-      }
+      "duplicate_disclosure": 88,
+      "accepted_with_limits": 148,
+      "awaiting_source_reconciliation": 354,
+      "accepted": 4,
+      "needs_round_reconciliation": 2,
+      "out_of_scope_public_market_financing": 4,
+      "needs_timing_and_amount": 1,
+      "scope_review_required": 2,
+      "needs_access_or_corroboration": 3,
+      "reconciled_original_public_disclosure": 2,
+      "out_of_scope_non_dilutive_award": 1
     },
-    "v39": {
-      "candidates": 226,
-      "decisions": {
-        "accepted": 193,
-        "accepted_with_limits": 29,
-        "not_completed_financing": 2,
-        "needs_original_financing_corroboration": 1,
-        "duplicate_disclosure": 1
-      }
+    "silverwood": {
+      "duplicate_disclosure": 214,
+      "awaiting_source_reconciliation": 377,
+      "accepted_with_limits": 88,
+      "needs_access_or_corroboration": 2,
+      "reconciled_original_public_disclosure": 32,
+      "needs_round_reconciliation": 13,
+      "not_completed_financing": 2,
+      "accepted": 28,
+      "needs_timing_and_amount": 4,
+      "reconciled_audit_backfill": 1,
+      "out_of_scope_period": 2
     },
     "vca": {
-      "candidates": 3269,
-      "decisions": {
-        "accepted": 802,
-        "scope_review_required": 278,
-        "duplicate_disclosure": 144,
-        "needs_access_or_corroboration": 43,
-        "out_of_ai_scope": 31,
-        "out_of_scope_fund_vehicle": 60,
-        "accepted_with_limits": 1131,
-        "screened_no_issuer_ai_evidence": 742,
-        "reconciled_audit_backfill": 11,
-        "needs_timing_and_amount": 1,
-        "needs_round_reconciliation": 2,
-        "needs_company_identity_corroboration": 2,
-        "not_a_company_financing": 21,
-        "out_of_scope_period": 1
-      }
+      "accepted": 802,
+      "scope_review_required": 278,
+      "duplicate_disclosure": 144,
+      "needs_access_or_corroboration": 43,
+      "out_of_ai_scope": 31,
+      "out_of_scope_fund_vehicle": 60,
+      "accepted_with_limits": 1131,
+      "screened_no_issuer_ai_evidence": 742,
+      "reconciled_audit_backfill": 11,
+      "needs_timing_and_amount": 1,
+      "needs_round_reconciliation": 2,
+      "needs_company_identity_corroboration": 2,
+      "not_a_company_financing": 21,
+      "out_of_scope_period": 1
     },
     "verified": {
-      "candidates": 26,
-      "decisions": {
-        "accepted": 9,
-        "accepted_with_limits": 15,
-        "duplicate_disclosure": 2
-      }
+      "accepted": 9,
+      "accepted_with_limits": 15,
+      "duplicate_disclosure": 2
+    },
+    "original_index": {
+      "accepted_with_limits": 12,
+      "duplicate_disclosure": 55
+    },
+    "gmi_debt_component": {
+      "accepted_with_limits": 1
+    },
+    "audit-20261012": {
+      "accepted_with_limits": 29,
+      "accepted": 29
+    },
+    "coverage-pass": {
+      "accepted_verified_backfill": 46
     }
   },
   "source_scope_notes": [
@@ -154,5 +132,13 @@
     "new_retained_records": 58,
     "explicit_duplicate_relationships": 28,
     "blanket_promotion_of_excluded_candidates": false
+  },
+  "coverage_continuation": {
+    "receipt": "COVERAGE_COMPLETION_2026_10_12.json",
+    "new_financing_disclosures": 46,
+    "business_classification_decisions": 4482,
+    "fine_category_period_cells": 183,
+    "individual_business_review_and_source_rule_separate": true,
+    "per_category_independent_recall_measured": false
   }
 }

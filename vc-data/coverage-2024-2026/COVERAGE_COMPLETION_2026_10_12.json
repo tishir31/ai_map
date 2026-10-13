@@ -1,0 +1,162 @@
+{
+  "snapshot_id": "ai-deals-coverage-48c97d7d968118d8f6a2",
+  "predecessor_snapshot_id": "ai-deals-coverage-e5302dcff6b1b4e58bc8",
+  "predecessor_master_sha256": "c2fa01637bcd542807d8fa6d68869efd6ebe4119dc2082757e9dbc9bf92b0b28",
+  "published_at_utc": "2026-10-13T00:33:14.452196+00:00",
+  "periods": [
+    {
+      "period_id": "prior_12m",
+      "start_inclusive": "2024-10-01",
+      "end_exclusive": "2025-10-01"
+    },
+    {
+      "period_id": "recent_12m",
+      "start_inclusive": "2025-10-01",
+      "end_exclusive": "2026-10-01"
+    },
+    {
+      "period_id": "october_update",
+      "start_inclusive": "2026-10-01",
+      "end_exclusive": "2026-10-12"
+    }
+  ],
+  "counts": {
+    "events_all": 5163,
+    "observations_all": 5864,
+    "credible_financing_disclosures": 2992,
+    "financing_episodes": 2970,
+    "framework_financing_disclosures": 2638,
+    "framework_financing_episodes": 2616,
+    "reviewed_framework_financing_disclosures": 1871,
+    "framework_core_equity_cutoff": 1299,
+    "completion_candidates": 5669,
+    "completion_reviews": 4938
+  },
+  "added_financing_disclosures": 46,
+  "backfill_event_ids": [
+    5118,
+    5119,
+    5120,
+    5121,
+    5122,
+    5123,
+    5124,
+    5125,
+    5126,
+    5127,
+    5128,
+    5129,
+    5130,
+    5131,
+    5132,
+    5133,
+    5134,
+    5135,
+    5136,
+    5137,
+    5138,
+    5139,
+    5140,
+    5141,
+    5142,
+    5143,
+    5144,
+    5145,
+    5146,
+    5147,
+    5148,
+    5149,
+    5150,
+    5151,
+    5152,
+    5153,
+    5154,
+    5155,
+    5156,
+    5157,
+    5158,
+    5159,
+    5160,
+    5161,
+    5162,
+    5163
+  ],
+  "new_fine_assignments_to_previously_unassigned_events": 1865,
+  "event_records_with_fine_category": 4200,
+  "event_fine_classification_status_counts": {
+    "inherited_framework_classification": 601,
+    "unassigned_requires_business_review": 786,
+    "mapped_from_existing_broad_classification": 517,
+    "reviewed_public_business_scope": 2031,
+    "source_rule_supported_business_scope": 990,
+    "outside_framework": 50,
+    "held_prior_framework_not_corroborated": 61,
+    "held_ai_scope_not_established": 94,
+    "held_framework_fit_not_established": 26,
+    "held_business_source_access": 3,
+    "held_joint_issuer_allocation": 2,
+    "held_original_business_corroboration": 2
+  },
+  "business_review_method_counts": {
+    "retained_unverified_prior_assignment": 443,
+    "registry_context": 964,
+    "reviewed_issuer_business": 1390,
+    "retained_prior_source_review": 329,
+    "unresolved": 615,
+    "unambiguous_source_text_rule": 734,
+    "reviewed_registry_redirect": 7
+  },
+  "financing_business_scope_counts": {
+    "in_framework": 2645,
+    "held_prior_assignment_not_corroborated": 188,
+    "outside_framework": 37,
+    "held_ai_scope_not_established": 92,
+    "held_joint_issuer_allocation": 1,
+    "held_framework_fit_not_established": 24,
+    "held_business_evidence": 1,
+    "held_business_source_access": 2,
+    "held_original_business_corroboration": 2
+  },
+  "framework_coverage_by_period": {
+    "prior_12m": {
+      "disclosures": 1181,
+      "reviewed": 835,
+      "source_rule": 346
+    },
+    "recent_12m": {
+      "disclosures": 1416,
+      "reviewed": 1008,
+      "source_rule": 408
+    },
+    "october_update": {
+      "disclosures": 41,
+      "reviewed": 28,
+      "source_rule": 13
+    }
+  },
+  "held_financing_classification_records": 347,
+  "pending_discovery_claims": 731,
+  "pending_claims_are_missing_deal_count": false,
+  "source_rule_classifications_are_individually_reviewed": false,
+  "all_predecessor_event_ids_preserved": true,
+  "all_predecessor_observation_values_preserved": true,
+  "new_duplicate_decisions": 3,
+  "new_identity_split_decisions": 5,
+  "new_identity_alias_decisions": 7,
+  "discovery_claims_reconciled": 34,
+  "canonical_checks_passed": 638,
+  "trends_calculated": false,
+  "market_completeness_certified": false,
+  "remaining_limits": [
+    "Public-source recall is unmeasured; no independent commercial deal-level export or market denominator was available.",
+    "Rule-supported business assignments remain identifiable and can be excluded with the reviewed-framework view.",
+    "Classification holds cover missing primary business evidence, uncertain material AI scope, framework fit and joint issuer allocation; they are not silently assigned to the most convenient category.",
+    "Current product pages do not certify the date of a historical business pivot.",
+    "Discovery claims include duplicates, ordinary industry companies, currency/unit mistakes and uncorroborated round/date claims; they are not additional verified deals.",
+    "Retained observations can include weak or private prior assertions. Only the explicit evidence/scope cohorts should be used for subsequent comparisons."
+  ],
+  "public_export_checks_passed": 166,
+  "portable_checks_passed": 163,
+  "manifest_sha256": "192aa22586dd5ad5ee09d796668fd0ef08097fe6436094735486c5388960a9eb",
+  "database_sha256": "79019393bc4ea991e85b50aef6744ea9abdb1a1b503801df36be3a5465bd9e7c"
+}

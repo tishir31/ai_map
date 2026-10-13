@@ -1,11 +1,11 @@
 {
-  "snapshot_id": "ai-deals-coverage-e5302dcff6b1b4e58bc8",
-  "manifest_sha256": "3a816b4ba42aa90e44becf05a35ae4b3d03d1d08d993703d1e24d7b58cdf2687",
-  "public_sqlite_sha256": "e13d27f2572d1170b763317625659b41f6c4e5cdfdab6179e49c3a13d29e6b57",
-  "datasets": 57,
-  "dataset_rows": 113756,
-  "data_files": 980,
-  "passed": 137,
+  "snapshot_id": "ai-deals-coverage-48c97d7d968118d8f6a2",
+  "manifest_sha256": "192aa22586dd5ad5ee09d796668fd0ef08097fe6436094735486c5388960a9eb",
+  "public_sqlite_sha256": "c489ba80d360fcf9f0c0f64a7bb5eac575b234c35f222fa7b992848414e3d212",
+  "datasets": 66,
+  "dataset_rows": 128308,
+  "data_files": 1218,
+  "passed": 166,
   "failed": 0,
   "market_completeness_certified": false,
   "checks": [
@@ -610,6 +610,96 @@
       "detail": null
     },
     {
+      "check": "csv_value_and_null_parity:business_classification_reviews",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "sqlite_value_type_and_null_parity:business_classification_reviews",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "csv_value_and_null_parity:coverage_pass_event_changes",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "sqlite_value_type_and_null_parity:coverage_pass_event_changes",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "csv_value_and_null_parity:coverage_pass_financing_reviews",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "sqlite_value_type_and_null_parity:coverage_pass_financing_reviews",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "csv_value_and_null_parity:framework_financing_disclosures",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "sqlite_value_type_and_null_parity:framework_financing_disclosures",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "csv_value_and_null_parity:framework_financing_episodes",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "sqlite_value_type_and_null_parity:framework_financing_episodes",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "csv_value_and_null_parity:reviewed_framework_financing_disclosures",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "sqlite_value_type_and_null_parity:reviewed_framework_financing_disclosures",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "csv_value_and_null_parity:framework_core_equity_cutoff",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "sqlite_value_type_and_null_parity:framework_core_equity_cutoff",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "csv_value_and_null_parity:framework_coverage_cells",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "sqlite_value_type_and_null_parity:framework_coverage_cells",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "csv_value_and_null_parity:classification_hold_register",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "sqlite_value_type_and_null_parity:classification_hold_register",
+      "passed": true,
+      "detail": null
+    },
+    {
       "check": "csv_value_and_null_parity:completion_reviews",
       "passed": true,
       "detail": null
@@ -681,6 +771,61 @@
     },
     {
       "check": "Tech_eu_license_attributed",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "coverage_completion_matches_current_snapshot",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "all_predecessor_event_ids_preserved_in_export",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "all_61_category_period_receipts_exported",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "scoped_finance_excludes_business_and_identity_holds",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "every_company_has_exported_business_review",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "classification_hold_counts_match_public_receipt",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "manual_view_has_no_automatic_rule_assignments",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "46_backfills_have_exported_field_provenance",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "native_currency_corrections_survive_export",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Photon_joke_claim_is_held_in_export",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "exported_episode_and_source_counts_match_documentation",
       "passed": true,
       "detail": null
     },

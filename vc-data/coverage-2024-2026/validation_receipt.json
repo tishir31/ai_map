@@ -1,7 +1,7 @@
 {
-  "snapshot_id": "ai-deals-coverage-e5302dcff6b1b4e58bc8",
-  "database_sha256": "c2fa01637bcd542807d8fa6d68869efd6ebe4119dc2082757e9dbc9bf92b0b28",
-  "passed": 595,
+  "snapshot_id": "ai-deals-coverage-48c97d7d968118d8f6a2",
+  "database_sha256": "79019393bc4ea991e85b50aef6744ea9abdb1a1b503801df36be3a5465bd9e7c",
+  "passed": 638,
   "failed": 0,
   "coverage_certified": false,
   "checks": [
@@ -2977,6 +2977,221 @@
     },
     {
       "check": "audit_changes_reference_retained_events_and_prior_snapshot",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "published_predecessor_byte_digest_unchanged",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "all_5117_predecessor_event_ids_retained",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "all_5793_predecessor_observation_values_preserved",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "all_published_company_ids_retained",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "46_coverage_backfills_have_financial_receipts",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "new_backfill_field_evidence_and_public_urls",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "coverage_original_fact:vapi-20241212:raised_amount",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "coverage_original_fact:sunday-20251119:raised_amount",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "coverage_original_fact:openart-20260130:raised_amount",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "coverage_original_fact:scintil-20250909:raised_currency",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "coverage_original_fact:solacecare-20260825:raised_amount",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "coverage_original_fact:solacecare-20260825:raised_currency",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "coverage_original_fact:automee-20260930:raised_currency",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "coverage_original_fact:aviwell-20260123:raised_currency",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "coverage_original_fact:netomi-20251118:raised_amount",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "coverage_original_fact:netomi-20260430:raised_amount",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "coverage_original_fact:beep-20250701:announcement_date",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "coverage_original_fact:dashverse-20250812:announcement_date",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "coverage_original_fact:ares-20251009:raised_amount",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "coverage_original_fact:ares-20251009:raised_amount_lower",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "small_native_currency_corrections_not_assumed_cutoff_eligible",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "BlastPoint_extension_increments_only_two_million",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "converted_notes_do_not_become_exact_fresh_cash",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Kontext_advertising_is_distinct_from_cybersecurity",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Giga_support_is_distinct_from_Chinese_world_models",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Ando_hourly_and_team_messaging_issuers_separate",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Photon_agent_and_prescription_issuers_separate",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Photon_April_Fools_AI_claim_does_not_establish_framework_scope",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Photon_unoriginal_financing_claim_is_held",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Articul8_initial_and_final_close_same_episode",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Seahi_June_round_counts_once",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Cognition_old_and_new_domain_same_issuer",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Lyzr_original_2026_follow_on_reporting_used",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "every_registry_issuer_has_explicit_classification_decision",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "in_framework_decisions_have_category_and_public_business_provenance",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "automatic_business_rules_identified_separately",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "framework_view_excludes_scope_holds_and_project_capital",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "manually_reviewed_view_excludes_automatic_rules",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "all_61_categories_and_three_periods_have_coverage_receipts",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "coverage_cells_count_source_supported_framework_records",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "zero_cells_and_internal_checks_do_not_certify_market_absence",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "company_coverage_counts_by_id_not_ambiguous_name",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "coverage_changes_have_prior_namespace_and_public_evidence",
       "passed": true,
       "detail": null
     }

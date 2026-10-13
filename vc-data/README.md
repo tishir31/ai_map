@@ -9,3 +9,7 @@ The root files retain the previous fixed 2026 snapshot and its original hashes f
 ## October 12 audit revision
 
 The expanded release now includes the verified Claude audit corrections, source-backed missing rounds, explicit duplicate links, and company/event links to the original 61-category framework. See [decisions for all 67 findings](coverage-2024-2026/AUDIT_RESPONSE_2026_10_12.json). Original event IDs and observations are preserved. Research remains open and no trends have been calculated.
+
+## October 12 coverage continuation
+
+The latest release adds 46 verified financing disclosures, records business scope and provenance across the 61-category framework, and publishes category/period coverage cells plus explicit classification holds. See [coverage completion and remaining limits](coverage-2024-2026/COVERAGE_COMPLETION_2026_10_12.json). All predecessor event IDs and observation values remain preserved.

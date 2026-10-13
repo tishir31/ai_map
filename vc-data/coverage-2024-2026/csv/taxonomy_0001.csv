@@ -1,33 +1,33 @@
 snapshot_id,default_ai_scope,label,subsector_id
-ai-deals-coverage-e5302dcff6b1b4e58bc8,digital_ai,Foundation models,foundation_models
-ai-deals-coverage-e5302dcff6b1b4e58bc8,enabling_infrastructure,Inference compute,inference_compute
-ai-deals-coverage-e5302dcff6b1b4e58bc8,enabling_infrastructure,Training compute,training_compute
-ai-deals-coverage-e5302dcff6b1b4e58bc8,enabling_infrastructure,AI chips,ai_chips
-ai-deals-coverage-e5302dcff6b1b4e58bc8,enabling_infrastructure,Interconnect and memory,interconnect_memory
-ai-deals-coverage-e5302dcff6b1b4e58bc8,enabling_infrastructure,Data centers and power,data_centers_power
-ai-deals-coverage-e5302dcff6b1b4e58bc8,digital_ai,Developer tools,developer_tools
-ai-deals-coverage-e5302dcff6b1b4e58bc8,digital_ai,"Data, training, and evaluation",data_training_evaluation
-ai-deals-coverage-e5302dcff6b1b4e58bc8,digital_ai,Enterprise agents,enterprise_agents
-ai-deals-coverage-e5302dcff6b1b4e58bc8,digital_ai,Coding agents,coding_agents
-ai-deals-coverage-e5302dcff6b1b4e58bc8,digital_ai,Customer support and voice,customer_support_voice
-ai-deals-coverage-e5302dcff6b1b4e58bc8,digital_ai,Cybersecurity,cybersecurity
-ai-deals-coverage-e5302dcff6b1b4e58bc8,digital_ai,Search and knowledge,search_knowledge
-ai-deals-coverage-e5302dcff6b1b4e58bc8,digital_ai,Creative media,creative_media
-ai-deals-coverage-e5302dcff6b1b4e58bc8,digital_ai,Healthcare and biotech,healthcare_biotech
-ai-deals-coverage-e5302dcff6b1b4e58bc8,digital_ai,Legal,legal
-ai-deals-coverage-e5302dcff6b1b4e58bc8,digital_ai,Finance,finance
-ai-deals-coverage-e5302dcff6b1b4e58bc8,digital_ai,Sales and marketing,sales_marketing
-ai-deals-coverage-e5302dcff6b1b4e58bc8,digital_ai,Education,education
-ai-deals-coverage-e5302dcff6b1b4e58bc8,digital_ai,General applications,general_applications
-ai-deals-coverage-e5302dcff6b1b4e58bc8,physical_ai,Robotics foundation models,robotics_foundation_models
-ai-deals-coverage-e5302dcff6b1b4e58bc8,physical_ai,Humanoid robotics,humanoid_robotics
-ai-deals-coverage-e5302dcff6b1b4e58bc8,physical_ai,Industrial and logistics robotics,industrial_logistics_robotics
-ai-deals-coverage-e5302dcff6b1b4e58bc8,physical_ai,Consumer and service robotics,consumer_service_robotics
-ai-deals-coverage-e5302dcff6b1b4e58bc8,physical_ai,Autonomous vehicles,autonomous_vehicles
-ai-deals-coverage-e5302dcff6b1b4e58bc8,physical_ai,Drones and defense,drones_defense
-ai-deals-coverage-e5302dcff6b1b4e58bc8,physical_ai,Agricultural robotics,agricultural_robotics
-ai-deals-coverage-e5302dcff6b1b4e58bc8,physical_ai,Medical robotics,medical_robotics
-ai-deals-coverage-e5302dcff6b1b4e58bc8,physical_ai,Maritime robotics,maritime_robotics
-ai-deals-coverage-e5302dcff6b1b4e58bc8,physical_ai,Robotic components,robotic_components
-ai-deals-coverage-e5302dcff6b1b4e58bc8,physical_ai,Simulation and digital twins,simulation_digital_twins
-ai-deals-coverage-e5302dcff6b1b4e58bc8,enabling_infrastructure,Neocloud GPU capacity,neocloud_gpu_capacity
+ai-deals-coverage-48c97d7d968118d8f6a2,digital_ai,Foundation models,foundation_models
+ai-deals-coverage-48c97d7d968118d8f6a2,enabling_infrastructure,Inference compute,inference_compute
+ai-deals-coverage-48c97d7d968118d8f6a2,enabling_infrastructure,Training compute,training_compute
+ai-deals-coverage-48c97d7d968118d8f6a2,enabling_infrastructure,AI chips,ai_chips
+ai-deals-coverage-48c97d7d968118d8f6a2,enabling_infrastructure,Interconnect and memory,interconnect_memory
+ai-deals-coverage-48c97d7d968118d8f6a2,enabling_infrastructure,Data centers and power,data_centers_power
+ai-deals-coverage-48c97d7d968118d8f6a2,digital_ai,Developer tools,developer_tools
+ai-deals-coverage-48c97d7d968118d8f6a2,digital_ai,"Data, training, and evaluation",data_training_evaluation
+ai-deals-coverage-48c97d7d968118d8f6a2,digital_ai,Enterprise agents,enterprise_agents
+ai-deals-coverage-48c97d7d968118d8f6a2,digital_ai,Coding agents,coding_agents
+ai-deals-coverage-48c97d7d968118d8f6a2,digital_ai,Customer support and voice,customer_support_voice
+ai-deals-coverage-48c97d7d968118d8f6a2,digital_ai,Cybersecurity,cybersecurity
+ai-deals-coverage-48c97d7d968118d8f6a2,digital_ai,Search and knowledge,search_knowledge
+ai-deals-coverage-48c97d7d968118d8f6a2,digital_ai,Creative media,creative_media
+ai-deals-coverage-48c97d7d968118d8f6a2,digital_ai,Healthcare and biotech,healthcare_biotech
+ai-deals-coverage-48c97d7d968118d8f6a2,digital_ai,Legal,legal
+ai-deals-coverage-48c97d7d968118d8f6a2,digital_ai,Finance,finance
+ai-deals-coverage-48c97d7d968118d8f6a2,digital_ai,Sales and marketing,sales_marketing
+ai-deals-coverage-48c97d7d968118d8f6a2,digital_ai,Education,education
+ai-deals-coverage-48c97d7d968118d8f6a2,digital_ai,General applications,general_applications
+ai-deals-coverage-48c97d7d968118d8f6a2,physical_ai,Robotics foundation models,robotics_foundation_models
+ai-deals-coverage-48c97d7d968118d8f6a2,physical_ai,Humanoid robotics,humanoid_robotics
+ai-deals-coverage-48c97d7d968118d8f6a2,physical_ai,Industrial and logistics robotics,industrial_logistics_robotics
+ai-deals-coverage-48c97d7d968118d8f6a2,physical_ai,Consumer and service robotics,consumer_service_robotics
+ai-deals-coverage-48c97d7d968118d8f6a2,physical_ai,Autonomous vehicles,autonomous_vehicles
+ai-deals-coverage-48c97d7d968118d8f6a2,physical_ai,Drones and defense,drones_defense
+ai-deals-coverage-48c97d7d968118d8f6a2,physical_ai,Agricultural robotics,agricultural_robotics
+ai-deals-coverage-48c97d7d968118d8f6a2,physical_ai,Medical robotics,medical_robotics
+ai-deals-coverage-48c97d7d968118d8f6a2,physical_ai,Maritime robotics,maritime_robotics
+ai-deals-coverage-48c97d7d968118d8f6a2,physical_ai,Robotic components,robotic_components
+ai-deals-coverage-48c97d7d968118d8f6a2,physical_ai,Simulation and digital twins,simulation_digital_twins
+ai-deals-coverage-48c97d7d968118d8f6a2,enabling_infrastructure,Neocloud GPU capacity,neocloud_gpu_capacity
