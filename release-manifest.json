@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "release": "physical-ai-ecosystem-2026-10-13",
-  "builtAt": "2026-10-13T21:34:55.203Z",
+  "builtAt": "2026-10-13T21:37:22.478Z",
   "sourceCommit": "6534a670f43457d5d70e598e73d6af5a4a0087f6",
   "backendBaseCommit": "99195fed320fb7f4ac192d0f8c53c5f95fc94adc",
   "graphAsOf": "2026-09-07",
@@ -46,7 +46,7 @@
     "lib/graph-snapshot.js": "a2564c02d4d4c7e8d9f5a0f97adfb591f14a6e5b1650b000f45752667393919a",
     "lib/ingest-adjudication.js": "83f3641403104834eb3ec20dd9b47b330aede2ba0cc16a5bd7509ef99f17d672",
     "lib/ingest-auth.js": "f4d56c2070ef7d39e25236ed1c78f69a0e8f3e64de2ddc00429631768e2caedb",
-    "lib/market-financing-evidence.js": "1273d4694c909e3e8a0c7790d3ffd094dfa7ade27e1b7b41dde1c1fcc64a55e5",
+    "lib/market-financing-evidence.js": "b6a7c576558af4ff3f56b27046bde6bda3186ec15d6d82bf5698be2c42b31d26",
     "lib/market-review-health.js": "f19e990ab5db02b806a93807cf550e0533ad74279b87ba596507c535b3dc236b",
     "lib/market-review-worker.js": "622788e6f8f5e2187035e1baa07de97da12a0330f9b6194bb13ec121836cfd67",
     "lib/market-snapshot.js": "fda5bbd72802a9abd6c7b849d32a71de0b5d37bbba1633fa654cae4d8cd8ea30",

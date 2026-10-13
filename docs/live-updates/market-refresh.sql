@@ -181,7 +181,7 @@ declare t public.market_review_tasks;q public.review_queue_items;c public.compan
    -- Only deterministic attributed prose may be published, never the untrusted model description/operations.
    a:=jsonb_populate_record(null::public.activities,payload||jsonb_build_object('entered_by',actor,'approved_by',actor,'entered_at',stamp,'approved_at',stamp,'last_updated',(stamp at time zone'utc')::date,'merged_from_candidate_ids',jsonb_build_array(t.candidate_id)));
    a.description:=c.name||' announced $'||(q.deal_value_usd/1000000)::text||' million in '||coalesce(ev->>'round'||' ','')||'financing'||case when ev->>'lead'is null then''else' led by '||(ev->>'lead')end||'. This is a company-reported financing announcement.';
-   a.counterparty:=coalesce(ev->>'lead','Not disclosed in reviewed source');a.subsector:=c.subsector;a.geography:=c.geography;
+   a.counterparty:=coalesce(ev->>'lead','N/A');a.subsector:=c.subsector;a.geography:=c.geography;
    a.source_reference:=c.name||' financing announcement';a.additional_sources:='[]'::jsonb;
    if a.description~*'(gmail:|@|forwarded message|begin forwarded)'or a.counterparty~*'(gmail:|@)'then raise exception 'Public text privacy gate';end if;
    insert into public.sources(id,activity_id,type,url,title)values(sid,aid,'press release',ev->>'canonicalUrl',c.name||' financing announcement');
