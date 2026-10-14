@@ -1,0 +1,26 @@
+{
+  "snapshot_id": "ai-deals-coverage-f1aefd5696e41b8783b3",
+  "database_sha256": "b0494c9b1b7ddba8b7374cb4dbcafceeb65b3f450a68f1142aaa79c356aac777",
+  "predecessor_snapshot_id": "ai-deals-coverage-f306b86a0dee4b8c561e",
+  "predecessor_commit": "f430906f94206519c9fd08cead427ee482da6640",
+  "audit_response": "INDEPENDENT_AUDIT_2026_10_14.json",
+  "numeric_checks": "NUMERIC_CHECKS.json",
+  "canonical_validation_passed": true,
+  "canonical_checks_passed": 9014,
+  "readiness_verdict": "NOT_READY_FOR_COMPREHENSIVE_HEATMAP",
+  "publication_commit_record": "PUBLICATION_VERIFICATION.json",
+  "no_trends_calculated": true,
+  "market_completeness_certified": false,
+  "public_validation": {
+    "passed": 115,
+    "failed": 0,
+    "manifest_sha256": "84638f509dda98606fe280d4cfe6d924515ebc06d1203bf3b5dcee84de56b070"
+  },
+  "public_only_validation": {
+    "passed": 8954,
+    "failed": 0,
+    "datasets": 115
+  },
+  "data_commit": "363e1968e6b50ae4187441f506e87b0d92770dbc",
+  "publication_verified": true
+}

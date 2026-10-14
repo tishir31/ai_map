@@ -1,18 +1,15 @@
-# AI and Physical AI financing database
+AI and Physical AI financing records
 
-Current snapshot `ai-deals-coverage-f1aefd5696e41b8783b3`. The bounded independent audit is complete and the public release is validated. **A comprehensive heat map is still unsupported by the measured coverage.** See [readiness](HEATMAP_READINESS.md).
+Snapshot `ai-deals-coverage-f7d2e123fce91505fdb3`. [Inspect all retained records](inspection/all_deal_records.csv). [Review the corrections](audit/change_log.csv).
 
-6,093 event records and 7,791 observations are retained. 58 new records were added, and 303 existing records were corrected. H01 contains 2,740 equity episodes; 27 fine subsectors meet the ten-per-period sample-size rule. This is not a completeness claim.
+Hammerspace’s April2025 Series B is included. AppZen’s September2025 Series D financing label is corrected. Public-source candidates were reconciled to retained records, new financing records, repeat disclosures or non-company reference articles. Source-backed duplicates are marked rather than deleted.
 
-[Inspect financing CSV](inspection/ai_financing_deals.csv) · [Acquisition CSV](inspection/acquisition_deals.csv) · [Subsector counts](inspection/subsector_period_coverage.csv) · [Filled audit reviews and change log](audit/) · [Numeric checks](NUMERIC_CHECKS.json) · [Current audit receipt](audit_release_receipt.json) · [Remaining limits](UNRESOLVED.json).
+The inspection CSV is unfiltered. Use verification status, event status, duplicate/component links, source evidence, amount qualifiers and subsector fields to make your exclusions. No deal totals, period comparisons, trend scores or rankings were calculated for this release.
 
-Each financing CSV row is one counted equity episode. Unknown amounts are blank. The two 12-month periods are October 2024–September 2025 and October 2025–September 2026; October 1–11, 2026 is display-only. Acquisitions count by announcement and remain split into private-startup, context and license-and-hire buckets. Raw and legacy projections preserve historical claims and must not be counted as authoritative deal lists.
+A source-reported package/heading amount is separate from the recorded cash allocation. Unknown values are blank in the inspection CSV and null in JSON. Date ranges preserve publication-week and month uncertainty. Generic attached URLs may relate to another round; `verified_source_url` identifies the specific corroborating report.
 
-```sh
-python3 validate_release.py
-python3 load_snapshot.py --output /tmp/ai_deals_coverage.sqlite
-```
+Current factual audit tables are `coverage_fact_changes`, `financing_source_reports`, `candidate_verification_reviews`, `reference_fact_reviews`, `record_source_checks` and `acquisition_fact_reviews`. Earlier review tables preserve decision history. Prior market-count projections are available in the frozen [f1 release](history/f1/HISTORY.md).
 
-[Methodology](methodology.md) · [Current completion standard](BOUNDED_COMPLETION_STANDARD.md) · [Auditor prompt](AUDITOR_PROMPT.txt) · [Reproducible predecessor](history/f306/HISTORY.md).
+All supplied financing and acquisition review groups were checked against the saved public research and fresh targeted searches. Claims lacking specific credible public evidence remain visibly unverified. This is a completed review of the known candidate corpus and reference sources, without a claim of exhaustive worldwide recall.
 
-No trend analysis is included.
+Reconstruct SQLite with `python3 load_snapshot.py --help`. Validation receipts and the file manifest support independent reproduction.

@@ -1,4 +1,4 @@
 snapshot_id,period_id,start_inclusive,end_exclusive
-ai-deals-coverage-f1aefd5696e41b8783b3,prior_12m,2024-10-01,2025-10-01
-ai-deals-coverage-f1aefd5696e41b8783b3,recent_12m,2025-10-01,2026-10-01
-ai-deals-coverage-f1aefd5696e41b8783b3,october_update,2026-10-01,2026-10-12
+ai-deals-coverage-f7d2e123fce91505fdb3,prior_12m,2024-10-01,2025-10-01
+ai-deals-coverage-f7d2e123fce91505fdb3,recent_12m,2025-10-01,2026-10-01
+ai-deals-coverage-f7d2e123fce91505fdb3,october_update,2026-10-01,2026-10-12

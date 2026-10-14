@@ -1,5 +1,0 @@
-snapshot_id,dataset,known_label_without_single_iso,known_multiple_country_labels,missing_raw_country,null_iso_rows,raw_country_available_percent,raw_country_available_rows,single_iso_country,total_rows
-ai-deals-coverage-f1aefd5696e41b8783b3,companies,9,65,1170,1244,59.03,1686,1612,2856
-ai-deals-coverage-f1aefd5696e41b8783b3,display_deals,0,3,600,603,46.95,531,528,1131
-ai-deals-coverage-f1aefd5696e41b8783b3,core_equity_all,0,3,717,720,43.32,548,545,1265
-ai-deals-coverage-f1aefd5696e41b8783b3,equity_round_announcements,0,3,719,722,44.82,584,581,1303

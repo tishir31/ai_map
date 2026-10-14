@@ -1,0 +1,471 @@
+{
+  "snapshot_id": "ai-deals-coverage-f1aefd5696e41b8783b3",
+  "database_sha256": "b0494c9b1b7ddba8b7374cb4dbcafceeb65b3f450a68f1142aaa79c356aac777",
+  "manifest_sha256": "84638f509dda98606fe280d4cfe6d924515ebc06d1203bf3b5dcee84de56b070",
+  "passed": 115,
+  "failed": 0,
+  "checks": [
+    {
+      "check": "canonical_public_value_parity:companies",
+      "passed": true
+    },
+    {
+      "check": "canonical_public_value_parity:taxonomy",
+      "passed": true
+    },
+    {
+      "check": "canonical_public_value_parity:aliases",
+      "passed": true
+    },
+    {
+      "check": "canonical_public_value_parity:events_all",
+      "passed": true
+    },
+    {
+      "check": "canonical_public_value_parity:core_equity_all",
+      "passed": true
+    },
+    {
+      "check": "canonical_public_value_parity:core_equity_display",
+      "passed": true
+    },
+    {
+      "check": "canonical_public_value_parity:equity_round_announcements",
+      "passed": true
+    },
+    {
+      "check": "canonical_public_value_parity:display_deals",
+      "passed": true
+    },
+    {
+      "check": "canonical_public_value_parity:ma_all",
+      "passed": true
+    },
+    {
+      "check": "canonical_public_value_parity:ma_announcements_2026",
+      "passed": true
+    },
+    {
+      "check": "canonical_public_value_parity:ma_closings_2026",
+      "passed": true
+    },
+    {
+      "check": "canonical_public_value_parity:reviewed_deals",
+      "passed": true
+    },
+    {
+      "check": "canonical_public_value_parity:sources",
+      "passed": true
+    },
+    {
+      "check": "canonical_public_value_parity:event_sources",
+      "passed": true
+    },
+    {
+      "check": "canonical_public_value_parity:investors",
+      "passed": true
+    },
+    {
+      "check": "canonical_public_value_parity:event_investors",
+      "passed": true
+    },
+    {
+      "check": "canonical_public_value_parity:lifecycle_groups",
+      "passed": true
+    },
+    {
+      "check": "canonical_public_value_parity:quality_flags",
+      "passed": true
+    },
+    {
+      "check": "canonical_public_value_parity:reviewed_event_relationships",
+      "passed": true
+    },
+    {
+      "check": "canonical_public_value_parity:registry_records",
+      "passed": true
+    },
+    {
+      "check": "canonical_public_value_parity:registry_sources",
+      "passed": true
+    },
+    {
+      "check": "canonical_public_value_parity:company_financial_snapshots",
+      "passed": true
+    },
+    {
+      "check": "canonical_public_value_parity:company_coverage",
+      "passed": true
+    },
+    {
+      "check": "canonical_public_value_parity:observations_all",
+      "passed": true
+    },
+    {
+      "check": "canonical_public_value_parity:public_market_context_facts",
+      "passed": true
+    },
+    {
+      "check": "canonical_public_value_parity:observation_reviews",
+      "passed": true
+    },
+    {
+      "check": "canonical_public_value_parity:leads_all",
+      "passed": true
+    },
+    {
+      "check": "canonical_public_value_parity:unresolved_leads",
+      "passed": true
+    },
+    {
+      "check": "canonical_public_value_parity:company_history_reviews",
+      "passed": true
+    },
+    {
+      "check": "canonical_public_value_parity:audited_country_assertions",
+      "passed": true
+    },
+    {
+      "check": "canonical_public_value_parity:country_availability_metrics",
+      "passed": true
+    },
+    {
+      "check": "canonical_public_value_parity:source_coverage",
+      "passed": true
+    },
+    {
+      "check": "canonical_public_value_parity:completion_counts",
+      "passed": true
+    },
+    {
+      "check": "canonical_public_value_parity:fx_rates",
+      "passed": true
+    },
+    {
+      "check": "canonical_public_value_parity:event_fx_conversions",
+      "passed": true
+    },
+    {
+      "check": "canonical_public_value_parity:company_search_logs",
+      "passed": true
+    },
+    {
+      "check": "canonical_public_value_parity:external_audit_response",
+      "passed": true
+    },
+    {
+      "check": "canonical_public_value_parity:comparison_equity_announcements",
+      "passed": true
+    },
+    {
+      "check": "canonical_public_value_parity:comparison_core_equity",
+      "passed": true
+    },
+    {
+      "check": "canonical_public_value_parity:comparison_core_equity_cutoff",
+      "passed": true
+    },
+    {
+      "check": "canonical_public_value_parity:credible_financing_disclosures",
+      "passed": true
+    },
+    {
+      "check": "canonical_public_value_parity:financing_episodes",
+      "passed": true
+    },
+    {
+      "check": "canonical_public_value_parity:completion_periods",
+      "passed": true
+    },
+    {
+      "check": "canonical_public_value_parity:completion_event_lineage",
+      "passed": true
+    },
+    {
+      "check": "canonical_public_value_parity:completion_round_components",
+      "passed": true
+    },
+    {
+      "check": "canonical_public_value_parity:completion_financial_claims",
+      "passed": true
+    },
+    {
+      "check": "canonical_public_value_parity:completion_canonical_normalizations",
+      "passed": true
+    },
+    {
+      "check": "canonical_public_value_parity:completion_duplicate_decisions",
+      "passed": true
+    },
+    {
+      "check": "canonical_public_value_parity:completion_company_classifications",
+      "passed": true
+    },
+    {
+      "check": "canonical_public_value_parity:audit_event_changes",
+      "passed": true
+    },
+    {
+      "check": "canonical_public_value_parity:company_identity_redirects",
+      "passed": true
+    },
+    {
+      "check": "canonical_public_value_parity:finer_taxonomy",
+      "passed": true
+    },
+    {
+      "check": "canonical_public_value_parity:company_finer_classifications",
+      "passed": true
+    },
+    {
+      "check": "canonical_public_value_parity:event_entity_classifications",
+      "passed": true
+    },
+    {
+      "check": "canonical_public_value_parity:audit_input_provenance",
+      "passed": true
+    },
+    {
+      "check": "canonical_public_value_parity:business_classification_reviews",
+      "passed": true
+    },
+    {
+      "check": "canonical_public_value_parity:coverage_pass_event_changes",
+      "passed": true
+    },
+    {
+      "check": "canonical_public_value_parity:coverage_pass_financing_reviews",
+      "passed": true
+    },
+    {
+      "check": "canonical_public_value_parity:framework_financing_disclosures",
+      "passed": true
+    },
+    {
+      "check": "canonical_public_value_parity:framework_financing_episodes",
+      "passed": true
+    },
+    {
+      "check": "canonical_public_value_parity:reviewed_framework_financing_disclosures",
+      "passed": true
+    },
+    {
+      "check": "canonical_public_value_parity:framework_core_equity_cutoff",
+      "passed": true
+    },
+    {
+      "check": "canonical_public_value_parity:framework_coverage_cells",
+      "passed": true
+    },
+    {
+      "check": "canonical_public_value_parity:classification_hold_register",
+      "passed": true
+    },
+    {
+      "check": "canonical_public_value_parity:queue_resolution_decisions",
+      "passed": true
+    },
+    {
+      "check": "canonical_public_value_parity:classification_resolution_decisions",
+      "passed": true
+    },
+    {
+      "check": "canonical_public_value_parity:queue_resolution_event_changes",
+      "passed": true
+    },
+    {
+      "check": "canonical_public_value_parity:queue_resolution_financing_reviews",
+      "passed": true
+    },
+    {
+      "check": "canonical_public_value_parity:queue_unverified_claims",
+      "passed": true
+    },
+    {
+      "check": "canonical_public_value_parity:remaining_business_scope_holds",
+      "passed": true
+    },
+    {
+      "check": "canonical_public_value_parity:resolved_business_scope_exclusions",
+      "passed": true
+    },
+    {
+      "check": "canonical_public_value_parity:claims_followup_decisions",
+      "passed": true
+    },
+    {
+      "check": "canonical_public_value_parity:classification_followup_decisions",
+      "passed": true
+    },
+    {
+      "check": "canonical_public_value_parity:followup_event_changes",
+      "passed": true
+    },
+    {
+      "check": "canonical_public_value_parity:followup_financing_reviews",
+      "passed": true
+    },
+    {
+      "check": "canonical_public_value_parity:claims_residual_decisions",
+      "passed": true
+    },
+    {
+      "check": "canonical_public_value_parity:classification_residual_decisions",
+      "passed": true
+    },
+    {
+      "check": "canonical_public_value_parity:residual_event_changes",
+      "passed": true
+    },
+    {
+      "check": "canonical_public_value_parity:residual_financing_reviews",
+      "passed": true
+    },
+    {
+      "check": "canonical_public_value_parity:claims_sweep_decisions",
+      "passed": true
+    },
+    {
+      "check": "canonical_public_value_parity:classification_sweep_decisions",
+      "passed": true
+    },
+    {
+      "check": "canonical_public_value_parity:sweep_event_changes",
+      "passed": true
+    },
+    {
+      "check": "canonical_public_value_parity:sweep_financing_reviews",
+      "passed": true
+    },
+    {
+      "check": "canonical_public_value_parity:subsector_period_source_checks",
+      "passed": true
+    },
+    {
+      "check": "canonical_public_value_parity:claims_assessment_decisions",
+      "passed": true
+    },
+    {
+      "check": "canonical_public_value_parity:classification_assessment_decisions",
+      "passed": true
+    },
+    {
+      "check": "canonical_public_value_parity:assessment_event_changes",
+      "passed": true
+    },
+    {
+      "check": "canonical_public_value_parity:assessment_financing_reviews",
+      "passed": true
+    },
+    {
+      "check": "canonical_public_value_parity:bounded_subsector_period_checks",
+      "passed": true
+    },
+    {
+      "check": "canonical_public_value_parity:bounded_reference_reconciliation",
+      "passed": true
+    },
+    {
+      "check": "canonical_public_value_parity:bounded_accuracy_sample",
+      "passed": true
+    },
+    {
+      "check": "canonical_public_value_parity:heatmap_readiness_cells",
+      "passed": true
+    },
+    {
+      "check": "canonical_public_value_parity:historical_heatmap_readiness_cells_f306",
+      "passed": true
+    },
+    {
+      "check": "canonical_public_value_parity:acquisition_deals",
+      "passed": true
+    },
+    {
+      "check": "canonical_public_value_parity:acquisition_review_decisions",
+      "passed": true
+    },
+    {
+      "check": "canonical_public_value_parity:acquisition_missing_candidate_decisions",
+      "passed": true
+    },
+    {
+      "check": "canonical_public_value_parity:heatmap_equity_disclosures",
+      "passed": true
+    },
+    {
+      "check": "canonical_public_value_parity:heatmap_equity_episodes",
+      "passed": true
+    },
+    {
+      "check": "canonical_public_value_parity:heatmap_equity_inspection",
+      "passed": true
+    },
+    {
+      "check": "canonical_public_value_parity:heatmap_equity_exclusions",
+      "passed": true
+    },
+    {
+      "check": "canonical_public_value_parity:heatmap_near_duplicate_holds",
+      "passed": true
+    },
+    {
+      "check": "canonical_public_value_parity:independent_audit_changes",
+      "passed": true
+    },
+    {
+      "check": "canonical_public_value_parity:independent_audit_financing_dispositions",
+      "passed": true
+    },
+    {
+      "check": "canonical_public_value_parity:heatmap_parent_coverage_cells",
+      "passed": true
+    },
+    {
+      "check": "canonical_public_value_parity:heatmap_display_groups",
+      "passed": true
+    },
+    {
+      "check": "canonical_public_value_parity:audit_financing_review_decisions",
+      "passed": true
+    },
+    {
+      "check": "canonical_public_value_parity:audit_acquisition_group_reviews",
+      "passed": true
+    },
+    {
+      "check": "canonical_public_value_parity:digital_reference_reconciliation",
+      "passed": true
+    },
+    {
+      "check": "canonical_public_value_parity:digital_reference_source_receipts",
+      "passed": true
+    },
+    {
+      "check": "canonical_public_value_parity:historical_reference_H01_reconciliation",
+      "passed": true
+    },
+    {
+      "check": "canonical_public_value_parity:out_of_sample_reconciliation",
+      "passed": true
+    },
+    {
+      "check": "canonical_public_value_parity:independent_acquirer_source_sweeps",
+      "passed": true
+    },
+    {
+      "check": "canonical_public_value_parity:independent_financing_context",
+      "passed": true
+    },
+    {
+      "check": "canonical_public_value_parity:completion_reviews",
+      "passed": true
+    },
+    {
+      "check": "all_exported_tables_match_master_except_derived_discovery_queue",
+      "passed": true
+    }
+  ],
+  "no_trends_calculated": true,
+  "market_completeness_certified": false
+}

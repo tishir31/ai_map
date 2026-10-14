@@ -1,27 +1,269 @@
 snapshot_id,lifecycle_group_id,lifecycle_key,link_basis
-ai-deals-coverage-f1aefd5696e41b8783b3,5421,independent-audit:A01-paradox,Public source-reconciled disclosure; observations preserved.
-ai-deals-coverage-f1aefd5696e41b8783b3,5422,independent-audit:A01-pangea,Public source-reconciled disclosure; observations preserved.
-ai-deals-coverage-f1aefd5696e41b8783b3,5423,independent-audit:A01-eppo,Public source-reconciled disclosure; observations preserved.
-ai-deals-coverage-f1aefd5696e41b8783b3,5424,independent-audit:A01-photoneo,Public source-reconciled disclosure; observations preserved.
-ai-deals-coverage-f1aefd5696e41b8783b3,5425,independent-audit:A01-walmartadvancedsystems,Public source-reconciled disclosure; observations preserved.
-ai-deals-coverage-f1aefd5696e41b8783b3,5426,independent-audit:A01-convergence,Public source-reconciled disclosure; observations preserved.
-ai-deals-coverage-f1aefd5696e41b8783b3,5427,independent-audit:A01-vlex,Public source-reconciled disclosure; observations preserved.
-ai-deals-coverage-f1aefd5696e41b8783b3,5428,independent-audit:A01-ztsystems,Public source-reconciled disclosure; observations preserved.
-ai-deals-coverage-f1aefd5696e41b8783b3,5429,independent-audit:A01-moonhub,Public source-reconciled disclosure; observations preserved.
-ai-deals-coverage-f1aefd5696e41b8783b3,5430,independent-audit:A01-tecton,Public source-reconciled disclosure; observations preserved.
-ai-deals-coverage-f1aefd5696e41b8783b3,5431,independent-audit:A01-onum,Public source-reconciled disclosure; observations preserved.
-ai-deals-coverage-f1aefd5696e41b8783b3,5432,independent-audit:A01-abbrobotics,Public source-reconciled disclosure; observations preserved.
-ai-deals-coverage-f1aefd5696e41b8783b3,5433,independent-audit:A01-groq,Public source-reconciled disclosure; observations preserved.
-ai-deals-coverage-f1aefd5696e41b8783b3,5434,independent-audit:A01-graphite,Public source-reconciled disclosure; observations preserved.
-ai-deals-coverage-f1aefd5696e41b8783b3,5435,independent-audit:A01-bun,Public source-reconciled disclosure; observations preserved.
-ai-deals-coverage-f1aefd5696e41b8783b3,5436,independent-audit:A01-neptune,Public source-reconciled disclosure; observations preserved.
-ai-deals-coverage-f1aefd5696e41b8783b3,5437,independent-audit:A01-securiti,Public source-reconciled disclosure; observations preserved.
-ai-deals-coverage-f1aefd5696e41b8783b3,5438,independent-audit:A01-io,Public source-reconciled disclosure; observations preserved.
-ai-deals-coverage-f1aefd5696e41b8783b3,5439,independent-audit:A01-datastax,Public source-reconciled disclosure; observations preserved.
-ai-deals-coverage-f1aefd5696e41b8783b3,5440,independent-audit:A01-peak,Public source-reconciled disclosure; observations preserved.
-ai-deals-coverage-f1aefd5696e41b8783b3,5441,independent-audit:A01-marimo,Public source-reconciled disclosure; observations preserved.
-ai-deals-coverage-f1aefd5696e41b8783b3,5442,independent-audit:A01-softwareapplications,Public source-reconciled disclosure; observations preserved.
-ai-deals-coverage-f1aefd5696e41b8783b3,5443,independent-audit:A01-manus,Public source-reconciled disclosure; observations preserved.
-ai-deals-coverage-f1aefd5696e41b8783b3,5444,independent-audit:A01-windsurf,Public source-reconciled disclosure; observations preserved.
-ai-deals-coverage-f1aefd5696e41b8783b3,5445,independent-audit:A01-playai,Public source-reconciled disclosure; observations preserved.
-ai-deals-coverage-f1aefd5696e41b8783b3,5446,independent-audit:A01-untether,Public source-reconciled disclosure; observations preserved.
+ai-deals-coverage-f7d2e123fce91505fdb3,5421,independent-audit:A01-paradox,Public source-reconciled disclosure; observations preserved.
+ai-deals-coverage-f7d2e123fce91505fdb3,5422,independent-audit:A01-pangea,Public source-reconciled disclosure; observations preserved.
+ai-deals-coverage-f7d2e123fce91505fdb3,5423,independent-audit:A01-eppo,Public source-reconciled disclosure; observations preserved.
+ai-deals-coverage-f7d2e123fce91505fdb3,5424,independent-audit:A01-photoneo,Public source-reconciled disclosure; observations preserved.
+ai-deals-coverage-f7d2e123fce91505fdb3,5425,independent-audit:A01-walmartadvancedsystems,Public source-reconciled disclosure; observations preserved.
+ai-deals-coverage-f7d2e123fce91505fdb3,5426,independent-audit:A01-convergence,Public source-reconciled disclosure; observations preserved.
+ai-deals-coverage-f7d2e123fce91505fdb3,5427,independent-audit:A01-vlex,Public source-reconciled disclosure; observations preserved.
+ai-deals-coverage-f7d2e123fce91505fdb3,5428,independent-audit:A01-ztsystems,Public source-reconciled disclosure; observations preserved.
+ai-deals-coverage-f7d2e123fce91505fdb3,5429,independent-audit:A01-moonhub,Public source-reconciled disclosure; observations preserved.
+ai-deals-coverage-f7d2e123fce91505fdb3,5430,independent-audit:A01-tecton,Public source-reconciled disclosure; observations preserved.
+ai-deals-coverage-f7d2e123fce91505fdb3,5431,independent-audit:A01-onum,Public source-reconciled disclosure; observations preserved.
+ai-deals-coverage-f7d2e123fce91505fdb3,5432,independent-audit:A01-abbrobotics,Public source-reconciled disclosure; observations preserved.
+ai-deals-coverage-f7d2e123fce91505fdb3,5433,independent-audit:A01-groq,Public source-reconciled disclosure; observations preserved.
+ai-deals-coverage-f7d2e123fce91505fdb3,5434,independent-audit:A01-graphite,Public source-reconciled disclosure; observations preserved.
+ai-deals-coverage-f7d2e123fce91505fdb3,5435,independent-audit:A01-bun,Public source-reconciled disclosure; observations preserved.
+ai-deals-coverage-f7d2e123fce91505fdb3,5436,independent-audit:A01-neptune,Public source-reconciled disclosure; observations preserved.
+ai-deals-coverage-f7d2e123fce91505fdb3,5437,independent-audit:A01-securiti,Public source-reconciled disclosure; observations preserved.
+ai-deals-coverage-f7d2e123fce91505fdb3,5438,independent-audit:A01-io,Public source-reconciled disclosure; observations preserved.
+ai-deals-coverage-f7d2e123fce91505fdb3,5439,independent-audit:A01-datastax,Public source-reconciled disclosure; observations preserved.
+ai-deals-coverage-f7d2e123fce91505fdb3,5440,independent-audit:A01-peak,Public source-reconciled disclosure; observations preserved.
+ai-deals-coverage-f7d2e123fce91505fdb3,5441,independent-audit:A01-marimo,Public source-reconciled disclosure; observations preserved.
+ai-deals-coverage-f7d2e123fce91505fdb3,5442,independent-audit:A01-softwareapplications,Public source-reconciled disclosure; observations preserved.
+ai-deals-coverage-f7d2e123fce91505fdb3,5443,independent-audit:A01-manus,Public source-reconciled disclosure; observations preserved.
+ai-deals-coverage-f7d2e123fce91505fdb3,5444,independent-audit:A01-windsurf,Public source-reconciled disclosure; observations preserved.
+ai-deals-coverage-f7d2e123fce91505fdb3,5445,independent-audit:A01-playai,Public source-reconciled disclosure; observations preserved.
+ai-deals-coverage-f7d2e123fce91505fdb3,5446,independent-audit:A01-untether,Public source-reconciled disclosure; observations preserved.
+ai-deals-coverage-f7d2e123fce91505fdb3,5447,coverage-facts:COVERAGE-HAMMERSPACE-2025,Specific public financing disclosure; prior observations retained.
+ai-deals-coverage-f7d2e123fce91505fdb3,5448,coverage-facts:REFERENCE-digital-b8da117993d3db5c0407,Specific public financing disclosure; prior observations retained.
+ai-deals-coverage-f7d2e123fce91505fdb3,5449,coverage-facts:REFERENCE-digital-776f69524a4bb2f8640a,Specific public financing disclosure; prior observations retained.
+ai-deals-coverage-f7d2e123fce91505fdb3,5450,coverage-facts:REFERENCE-digital-b9a0b35498da7405764f,Specific public financing disclosure; prior observations retained.
+ai-deals-coverage-f7d2e123fce91505fdb3,5451,coverage-facts:REFERENCE-digital-07ba9ca6bdaaf6c3467a,Specific public financing disclosure; prior observations retained.
+ai-deals-coverage-f7d2e123fce91505fdb3,5452,coverage-facts:REFERENCE-digital-2ea6fe6086b91a8b8952,Specific public financing disclosure; prior observations retained.
+ai-deals-coverage-f7d2e123fce91505fdb3,5453,coverage-facts:REFERENCE-digital-85c4fff65039df808884,Specific public financing disclosure; prior observations retained.
+ai-deals-coverage-f7d2e123fce91505fdb3,5454,coverage-facts:REFERENCE-digital-a8868434ed830ad4f51a,Specific public financing disclosure; prior observations retained.
+ai-deals-coverage-f7d2e123fce91505fdb3,5455,coverage-facts:REFERENCE-digital-ca3f36688f7241fd52b5,Specific public financing disclosure; prior observations retained.
+ai-deals-coverage-f7d2e123fce91505fdb3,5456,coverage-facts:REFERENCE-digital-e9317dd9cc7218a9b8bb,Specific public financing disclosure; prior observations retained.
+ai-deals-coverage-f7d2e123fce91505fdb3,5457,coverage-facts:REFERENCE-digital-2be2daf26a5c49c50bde,Specific public financing disclosure; prior observations retained.
+ai-deals-coverage-f7d2e123fce91505fdb3,5458,coverage-facts:REFERENCE-digital-333953ccfcb0a0ce019b,Specific public financing disclosure; prior observations retained.
+ai-deals-coverage-f7d2e123fce91505fdb3,5459,coverage-facts:REFERENCE-digital-e09310c365f2a61df7f0,Specific public financing disclosure; prior observations retained.
+ai-deals-coverage-f7d2e123fce91505fdb3,5460,coverage-facts:REFERENCE-digital-8e2a5b38b4ffd763ba10,Specific public financing disclosure; prior observations retained.
+ai-deals-coverage-f7d2e123fce91505fdb3,5461,coverage-facts:REFERENCE-digital-c6c86c9928a7a6c051d7,Specific public financing disclosure; prior observations retained.
+ai-deals-coverage-f7d2e123fce91505fdb3,5462,coverage-facts:REFERENCE-digital-29ab105e590983fb4e70,Specific public financing disclosure; prior observations retained.
+ai-deals-coverage-f7d2e123fce91505fdb3,5463,coverage-facts:REFERENCE-digital-7de701d71487eef9584d,Specific public financing disclosure; prior observations retained.
+ai-deals-coverage-f7d2e123fce91505fdb3,5464,coverage-facts:REFERENCE-digital-1f191d087aba4f837598,Specific public financing disclosure; prior observations retained.
+ai-deals-coverage-f7d2e123fce91505fdb3,5465,coverage-facts:REFERENCE-digital-78c5792487be8c305833,Specific public financing disclosure; prior observations retained.
+ai-deals-coverage-f7d2e123fce91505fdb3,5466,coverage-facts:REFERENCE-digital-6baee63c8103e090199c,Specific public financing disclosure; prior observations retained.
+ai-deals-coverage-f7d2e123fce91505fdb3,5467,coverage-facts:REFERENCE-digital-a68348de1c66eb0cd9af,Specific public financing disclosure; prior observations retained.
+ai-deals-coverage-f7d2e123fce91505fdb3,5468,coverage-facts:REFERENCE-digital-3e89d4767da7692596f9,Specific public financing disclosure; prior observations retained.
+ai-deals-coverage-f7d2e123fce91505fdb3,5469,coverage-facts:REFERENCE-digital-4459cf7763680488fe31,Specific public financing disclosure; prior observations retained.
+ai-deals-coverage-f7d2e123fce91505fdb3,5470,coverage-facts:REFERENCE-digital-6b853bf509f890ecc67b,Specific public financing disclosure; prior observations retained.
+ai-deals-coverage-f7d2e123fce91505fdb3,5471,coverage-facts:REFERENCE-digital-9876fc2caedcaa1e4b80,Specific public financing disclosure; prior observations retained.
+ai-deals-coverage-f7d2e123fce91505fdb3,5472,coverage-facts:REFERENCE-digital-445f6cca1400ecc2e464,Specific public financing disclosure; prior observations retained.
+ai-deals-coverage-f7d2e123fce91505fdb3,5473,coverage-facts:REFERENCE-digital-bc0b8668c5708e8ed703,Specific public financing disclosure; prior observations retained.
+ai-deals-coverage-f7d2e123fce91505fdb3,5474,coverage-facts:REFERENCE-digital-6be4ff2e2873b2fd5ce3,Specific public financing disclosure; prior observations retained.
+ai-deals-coverage-f7d2e123fce91505fdb3,5475,coverage-facts:REFERENCE-digital-c7c4bd4f6b50adcaa66c,Specific public financing disclosure; prior observations retained.
+ai-deals-coverage-f7d2e123fce91505fdb3,5476,coverage-facts:REFERENCE-digital-e4547872b3870ba988dd,Specific public financing disclosure; prior observations retained.
+ai-deals-coverage-f7d2e123fce91505fdb3,5477,coverage-facts:REFERENCE-digital-1d2b9f82afe11ab9ef0e,Specific public financing disclosure; prior observations retained.
+ai-deals-coverage-f7d2e123fce91505fdb3,5478,coverage-facts:REFERENCE-digital-2f3688b326c76cbe0469,Specific public financing disclosure; prior observations retained.
+ai-deals-coverage-f7d2e123fce91505fdb3,5479,coverage-facts:REFERENCE-digital-b4611f6d975e0b7f07dd,Specific public financing disclosure; prior observations retained.
+ai-deals-coverage-f7d2e123fce91505fdb3,5480,coverage-facts:REFERENCE-digital-6dac164b08f5295b4a1a,Specific public financing disclosure; prior observations retained.
+ai-deals-coverage-f7d2e123fce91505fdb3,5481,coverage-facts:REFERENCE-digital-9452942a3722c0b4ed85,Specific public financing disclosure; prior observations retained.
+ai-deals-coverage-f7d2e123fce91505fdb3,5482,coverage-facts:REFERENCE-digital-c7da25b56650787f62f7,Specific public financing disclosure; prior observations retained.
+ai-deals-coverage-f7d2e123fce91505fdb3,5483,coverage-facts:REFERENCE-digital-2bc4d9f4e69d5b01c044,Specific public financing disclosure; prior observations retained.
+ai-deals-coverage-f7d2e123fce91505fdb3,5484,coverage-facts:REFERENCE-digital-7c807ea57190ef863fd7,Specific public financing disclosure; prior observations retained.
+ai-deals-coverage-f7d2e123fce91505fdb3,5485,coverage-facts:REFERENCE-digital-e9ce9fa51f0c1aea0710,Specific public financing disclosure; prior observations retained.
+ai-deals-coverage-f7d2e123fce91505fdb3,5486,coverage-facts:REFERENCE-digital-e31a1ef07490545d4f61,Specific public financing disclosure; prior observations retained.
+ai-deals-coverage-f7d2e123fce91505fdb3,5487,coverage-facts:REFERENCE-digital-126c8ad0e3c6b0a3e437,Specific public financing disclosure; prior observations retained.
+ai-deals-coverage-f7d2e123fce91505fdb3,5488,coverage-facts:REFERENCE-digital-e3dab72f05d71709b479,Specific public financing disclosure; prior observations retained.
+ai-deals-coverage-f7d2e123fce91505fdb3,5489,coverage-facts:REFERENCE-digital-1134436644e23c466d78,Specific public financing disclosure; prior observations retained.
+ai-deals-coverage-f7d2e123fce91505fdb3,5490,coverage-facts:REFERENCE-digital-a6ec37c499f3918fd5eb,Specific public financing disclosure; prior observations retained.
+ai-deals-coverage-f7d2e123fce91505fdb3,5491,coverage-facts:REFERENCE-digital-527f49be206f9280e414,Specific public financing disclosure; prior observations retained.
+ai-deals-coverage-f7d2e123fce91505fdb3,5492,coverage-facts:REFERENCE-digital-d22abd58eb740ab312ea,Specific public financing disclosure; prior observations retained.
+ai-deals-coverage-f7d2e123fce91505fdb3,5493,coverage-facts:REFERENCE-digital-09f1e10e6ab03e4a5208,Specific public financing disclosure; prior observations retained.
+ai-deals-coverage-f7d2e123fce91505fdb3,5494,coverage-facts:REFERENCE-digital-658cd0856bde1febc150,Specific public financing disclosure; prior observations retained.
+ai-deals-coverage-f7d2e123fce91505fdb3,5495,coverage-facts:REFERENCE-digital-1612fa8c7a0dc42fc2a6,Specific public financing disclosure; prior observations retained.
+ai-deals-coverage-f7d2e123fce91505fdb3,5496,coverage-facts:REFERENCE-digital-e22d807051bd2eac31f8,Specific public financing disclosure; prior observations retained.
+ai-deals-coverage-f7d2e123fce91505fdb3,5497,coverage-facts:REFERENCE-digital-722d7e32a1897e97e1e7,Specific public financing disclosure; prior observations retained.
+ai-deals-coverage-f7d2e123fce91505fdb3,5498,coverage-facts:REFERENCE-digital-30e7d94d58c2f3934456,Specific public financing disclosure; prior observations retained.
+ai-deals-coverage-f7d2e123fce91505fdb3,5499,coverage-facts:REFERENCE-digital-0fb7783b5b593054cd0a,Specific public financing disclosure; prior observations retained.
+ai-deals-coverage-f7d2e123fce91505fdb3,5500,coverage-facts:REFERENCE-digital-303893718669eb750d5f,Specific public financing disclosure; prior observations retained.
+ai-deals-coverage-f7d2e123fce91505fdb3,5501,coverage-facts:REFERENCE-digital-3305f510a59ee727a812,Specific public financing disclosure; prior observations retained.
+ai-deals-coverage-f7d2e123fce91505fdb3,5502,coverage-facts:REFERENCE-digital-9407d37f1f6bdc9dc892,Specific public financing disclosure; prior observations retained.
+ai-deals-coverage-f7d2e123fce91505fdb3,5503,coverage-facts:REFERENCE-digital-20c52be0e14a1979711f,Specific public financing disclosure; prior observations retained.
+ai-deals-coverage-f7d2e123fce91505fdb3,5504,coverage-facts:REFERENCE-digital-4d64e2198f0f70c5d68b,Specific public financing disclosure; prior observations retained.
+ai-deals-coverage-f7d2e123fce91505fdb3,5505,coverage-facts:REFERENCE-digital-e7a4a988a46482f7db9a,Specific public financing disclosure; prior observations retained.
+ai-deals-coverage-f7d2e123fce91505fdb3,5506,coverage-facts:REFERENCE-digital-ac570ffbe628fc88f8a0,Specific public financing disclosure; prior observations retained.
+ai-deals-coverage-f7d2e123fce91505fdb3,5507,coverage-facts:REFERENCE-digital-e326a45586ffcad31fbd,Specific public financing disclosure; prior observations retained.
+ai-deals-coverage-f7d2e123fce91505fdb3,5508,coverage-facts:REFERENCE-digital-62c39374260b1679f7fe,Specific public financing disclosure; prior observations retained.
+ai-deals-coverage-f7d2e123fce91505fdb3,5509,coverage-facts:REFERENCE-digital-78cbfc3ecced143ca9a6,Specific public financing disclosure; prior observations retained.
+ai-deals-coverage-f7d2e123fce91505fdb3,5510,coverage-facts:REFERENCE-digital-86f9fa7e12d01b9ce817,Specific public financing disclosure; prior observations retained.
+ai-deals-coverage-f7d2e123fce91505fdb3,5511,coverage-facts:REFERENCE-digital-de8ddd5134af7d268326,Specific public financing disclosure; prior observations retained.
+ai-deals-coverage-f7d2e123fce91505fdb3,5512,coverage-facts:REFERENCE-digital-4d623c9e9081faa5dff0,Specific public financing disclosure; prior observations retained.
+ai-deals-coverage-f7d2e123fce91505fdb3,5513,coverage-facts:REFERENCE-digital-d5b6abbe8d80042c21c9,Specific public financing disclosure; prior observations retained.
+ai-deals-coverage-f7d2e123fce91505fdb3,5514,coverage-facts:REFERENCE-digital-9079878b5fc0a37b1c50,Specific public financing disclosure; prior observations retained.
+ai-deals-coverage-f7d2e123fce91505fdb3,5515,coverage-facts:REFERENCE-digital-10c6f3b8bf4a794c8f2f,Specific public financing disclosure; prior observations retained.
+ai-deals-coverage-f7d2e123fce91505fdb3,5516,coverage-facts:REFERENCE-digital-e3c652dacebb0e807f2d,Specific public financing disclosure; prior observations retained.
+ai-deals-coverage-f7d2e123fce91505fdb3,5517,coverage-facts:REFERENCE-digital-535294c0a49265b06379,Specific public financing disclosure; prior observations retained.
+ai-deals-coverage-f7d2e123fce91505fdb3,5518,coverage-facts:REFERENCE-digital-d63064598c73b648be12,Specific public financing disclosure; prior observations retained.
+ai-deals-coverage-f7d2e123fce91505fdb3,5519,coverage-facts:REFERENCE-digital-c9731f35683bd64ca96e,Specific public financing disclosure; prior observations retained.
+ai-deals-coverage-f7d2e123fce91505fdb3,5520,coverage-facts:REFERENCE-digital-aef95a3b62d7148f7bdf,Specific public financing disclosure; prior observations retained.
+ai-deals-coverage-f7d2e123fce91505fdb3,5521,coverage-facts:REFERENCE-digital-8135cd8977c9b59ffdda,Specific public financing disclosure; prior observations retained.
+ai-deals-coverage-f7d2e123fce91505fdb3,5522,coverage-facts:REFERENCE-digital-9ed5e2ab8abc28b6eac8,Specific public financing disclosure; prior observations retained.
+ai-deals-coverage-f7d2e123fce91505fdb3,5523,coverage-facts:REFERENCE-digital-357ec3bfcd200e243502,Specific public financing disclosure; prior observations retained.
+ai-deals-coverage-f7d2e123fce91505fdb3,5524,coverage-facts:REFERENCE-digital-55d6db7a2e0035f62784,Specific public financing disclosure; prior observations retained.
+ai-deals-coverage-f7d2e123fce91505fdb3,5525,coverage-facts:REFERENCE-digital-5a166b31da60353cad37,Specific public financing disclosure; prior observations retained.
+ai-deals-coverage-f7d2e123fce91505fdb3,5526,coverage-facts:REFERENCE-digital-1a6a0f82921863a9fe35,Specific public financing disclosure; prior observations retained.
+ai-deals-coverage-f7d2e123fce91505fdb3,5527,coverage-facts:REFERENCE-digital-6eae093807852e48c65f,Specific public financing disclosure; prior observations retained.
+ai-deals-coverage-f7d2e123fce91505fdb3,5528,coverage-facts:REFERENCE-digital-1fe41d8895d17a809d73,Specific public financing disclosure; prior observations retained.
+ai-deals-coverage-f7d2e123fce91505fdb3,5529,coverage-facts:REFERENCE-digital-58965d1acf4da29dbdc6,Specific public financing disclosure; prior observations retained.
+ai-deals-coverage-f7d2e123fce91505fdb3,5530,coverage-facts:REFERENCE-digital-4e2913c063158f2cb9e7,Specific public financing disclosure; prior observations retained.
+ai-deals-coverage-f7d2e123fce91505fdb3,5531,coverage-facts:REFERENCE-digital-e78d8bf1d933c0776a9f,Specific public financing disclosure; prior observations retained.
+ai-deals-coverage-f7d2e123fce91505fdb3,5532,coverage-facts:REFERENCE-digital-f4ae526d74e921bfaa58,Specific public financing disclosure; prior observations retained.
+ai-deals-coverage-f7d2e123fce91505fdb3,5533,coverage-facts:REFERENCE-digital-e090b7db26dbbd9d72aa,Specific public financing disclosure; prior observations retained.
+ai-deals-coverage-f7d2e123fce91505fdb3,5534,coverage-facts:REFERENCE-digital-7b31e54ca6acc4e1fee8,Specific public financing disclosure; prior observations retained.
+ai-deals-coverage-f7d2e123fce91505fdb3,5535,coverage-facts:REFERENCE-digital-06396757134a2c6b8d1c,Specific public financing disclosure; prior observations retained.
+ai-deals-coverage-f7d2e123fce91505fdb3,5536,coverage-facts:REFERENCE-digital-9360ee62b19e935624fc,Specific public financing disclosure; prior observations retained.
+ai-deals-coverage-f7d2e123fce91505fdb3,5537,coverage-facts:REFERENCE-digital-a24d9c80177815ae11e8,Specific public financing disclosure; prior observations retained.
+ai-deals-coverage-f7d2e123fce91505fdb3,5538,coverage-facts:REFERENCE-digital-51d651a09d8d60f4a87b,Specific public financing disclosure; prior observations retained.
+ai-deals-coverage-f7d2e123fce91505fdb3,5539,coverage-facts:REFERENCE-digital-4b9343ceebd412147737,Specific public financing disclosure; prior observations retained.
+ai-deals-coverage-f7d2e123fce91505fdb3,5540,coverage-facts:REFERENCE-digital-2ed1fd1c57a2ccfa67d9,Specific public financing disclosure; prior observations retained.
+ai-deals-coverage-f7d2e123fce91505fdb3,5541,coverage-facts:REFERENCE-digital-1d705571ba348f024cdf,Specific public financing disclosure; prior observations retained.
+ai-deals-coverage-f7d2e123fce91505fdb3,5542,coverage-facts:REFERENCE-digital-9dd33468c36aecb49cba,Specific public financing disclosure; prior observations retained.
+ai-deals-coverage-f7d2e123fce91505fdb3,5543,coverage-facts:REFERENCE-digital-fdbd7d3650a263faefc1,Specific public financing disclosure; prior observations retained.
+ai-deals-coverage-f7d2e123fce91505fdb3,5544,coverage-facts:REFERENCE-digital-04067522ee1adf33b63a,Specific public financing disclosure; prior observations retained.
+ai-deals-coverage-f7d2e123fce91505fdb3,5545,coverage-facts:REFERENCE-digital-26be53b4e3aa2ec5774a,Specific public financing disclosure; prior observations retained.
+ai-deals-coverage-f7d2e123fce91505fdb3,5546,coverage-facts:REFERENCE-digital-04bcb841f1b3e461ca99,Specific public financing disclosure; prior observations retained.
+ai-deals-coverage-f7d2e123fce91505fdb3,5547,coverage-facts:REFERENCE-digital-0717f019045a1ed8948c,Specific public financing disclosure; prior observations retained.
+ai-deals-coverage-f7d2e123fce91505fdb3,5548,coverage-facts:REFERENCE-digital-db04d015ec16a6bdb365,Specific public financing disclosure; prior observations retained.
+ai-deals-coverage-f7d2e123fce91505fdb3,5549,coverage-facts:REFERENCE-digital-7b9bce74c437ef89d988,Specific public financing disclosure; prior observations retained.
+ai-deals-coverage-f7d2e123fce91505fdb3,5550,coverage-facts:REFERENCE-digital-90468f2472abd0fead48,Specific public financing disclosure; prior observations retained.
+ai-deals-coverage-f7d2e123fce91505fdb3,5551,coverage-facts:REFERENCE-digital-7f5a05808407a0157e1d,Specific public financing disclosure; prior observations retained.
+ai-deals-coverage-f7d2e123fce91505fdb3,5552,coverage-facts:REFERENCE-digital-032af66102404d6e1c16,Specific public financing disclosure; prior observations retained.
+ai-deals-coverage-f7d2e123fce91505fdb3,5553,coverage-facts:REFERENCE-digital-d4467d1c2336632010ca,Specific public financing disclosure; prior observations retained.
+ai-deals-coverage-f7d2e123fce91505fdb3,5554,coverage-facts:REFERENCE-digital-e6e2e02685017fc6afc4,Specific public financing disclosure; prior observations retained.
+ai-deals-coverage-f7d2e123fce91505fdb3,5555,coverage-facts:REFERENCE-digital-b8259da108205550456d,Specific public financing disclosure; prior observations retained.
+ai-deals-coverage-f7d2e123fce91505fdb3,5556,coverage-facts:REFERENCE-digital-2f30ad83727a6b3647c1,Specific public financing disclosure; prior observations retained.
+ai-deals-coverage-f7d2e123fce91505fdb3,5557,coverage-facts:REFERENCE-digital-3b71041aaf646b394dd5,Specific public financing disclosure; prior observations retained.
+ai-deals-coverage-f7d2e123fce91505fdb3,5558,coverage-facts:REFERENCE-digital-5b0f52e7575c7ee40c9e,Specific public financing disclosure; prior observations retained.
+ai-deals-coverage-f7d2e123fce91505fdb3,5559,coverage-facts:REFERENCE-digital-e5816051b2c9367dc252,Specific public financing disclosure; prior observations retained.
+ai-deals-coverage-f7d2e123fce91505fdb3,5560,coverage-facts:REFERENCE-digital-03b5118e3ce90de2ebdc,Specific public financing disclosure; prior observations retained.
+ai-deals-coverage-f7d2e123fce91505fdb3,5561,coverage-facts:REFERENCE-digital-f3bcb581abe902800140,Specific public financing disclosure; prior observations retained.
+ai-deals-coverage-f7d2e123fce91505fdb3,5562,coverage-facts:REFERENCE-digital-fb13a08d05b1bd2da78c,Specific public financing disclosure; prior observations retained.
+ai-deals-coverage-f7d2e123fce91505fdb3,5563,coverage-facts:REFERENCE-digital-93daa97e05ff4b797212,Specific public financing disclosure; prior observations retained.
+ai-deals-coverage-f7d2e123fce91505fdb3,5564,coverage-facts:REFERENCE-digital-91319dd8f5b662891c40,Specific public financing disclosure; prior observations retained.
+ai-deals-coverage-f7d2e123fce91505fdb3,5565,coverage-facts:REFERENCE-digital-349733cb1caaa1b822f8,Specific public financing disclosure; prior observations retained.
+ai-deals-coverage-f7d2e123fce91505fdb3,5566,coverage-facts:REFERENCE-digital-712b603eb07391a84788,Specific public financing disclosure; prior observations retained.
+ai-deals-coverage-f7d2e123fce91505fdb3,5567,coverage-facts:REFERENCE-digital-5f70efc7c07fd790a781,Specific public financing disclosure; prior observations retained.
+ai-deals-coverage-f7d2e123fce91505fdb3,5568,coverage-facts:REFERENCE-digital-35564dfc138214d3138c,Specific public financing disclosure; prior observations retained.
+ai-deals-coverage-f7d2e123fce91505fdb3,5569,coverage-facts:REFERENCE-digital-c3cb146ae842b8a46ee5,Specific public financing disclosure; prior observations retained.
+ai-deals-coverage-f7d2e123fce91505fdb3,5570,coverage-facts:REFERENCE-digital-0bf753465b58605a694f,Specific public financing disclosure; prior observations retained.
+ai-deals-coverage-f7d2e123fce91505fdb3,5571,coverage-facts:REFERENCE-digital-201f9c6309bae244443e,Specific public financing disclosure; prior observations retained.
+ai-deals-coverage-f7d2e123fce91505fdb3,5572,coverage-facts:REFERENCE-digital-df449e4522271c5d2616,Specific public financing disclosure; prior observations retained.
+ai-deals-coverage-f7d2e123fce91505fdb3,5573,coverage-facts:REFERENCE-digital-fd9f6019cf582be05b06,Specific public financing disclosure; prior observations retained.
+ai-deals-coverage-f7d2e123fce91505fdb3,5574,coverage-facts:REFERENCE-digital-4c6d1df90a3535a2533d,Specific public financing disclosure; prior observations retained.
+ai-deals-coverage-f7d2e123fce91505fdb3,5575,coverage-facts:REFERENCE-digital-a7a033cb1c86b9fd5dfb,Specific public financing disclosure; prior observations retained.
+ai-deals-coverage-f7d2e123fce91505fdb3,5576,coverage-facts:REFERENCE-digital-6fd706603a6d7667fd4e,Specific public financing disclosure; prior observations retained.
+ai-deals-coverage-f7d2e123fce91505fdb3,5577,coverage-facts:REFERENCE-digital-ac1ca6b04c061e5e07df,Specific public financing disclosure; prior observations retained.
+ai-deals-coverage-f7d2e123fce91505fdb3,5578,coverage-facts:REFERENCE-digital-7be0b52fc70b5ae2ae8b,Specific public financing disclosure; prior observations retained.
+ai-deals-coverage-f7d2e123fce91505fdb3,5579,coverage-facts:REFERENCE-digital-4ad2327337250c75d81b,Specific public financing disclosure; prior observations retained.
+ai-deals-coverage-f7d2e123fce91505fdb3,5580,coverage-facts:REFERENCE-digital-8525dad6d00aab12d052,Specific public financing disclosure; prior observations retained.
+ai-deals-coverage-f7d2e123fce91505fdb3,5581,coverage-facts:REFERENCE-digital-542b8884a2f89b84a617,Specific public financing disclosure; prior observations retained.
+ai-deals-coverage-f7d2e123fce91505fdb3,5582,coverage-facts:REFERENCE-digital-cb38014eefd21bf0f7ea,Specific public financing disclosure; prior observations retained.
+ai-deals-coverage-f7d2e123fce91505fdb3,5583,coverage-facts:REFERENCE-digital-2ce29110d065d9d1a0e5,Specific public financing disclosure; prior observations retained.
+ai-deals-coverage-f7d2e123fce91505fdb3,5584,coverage-facts:REFERENCE-digital-b32657eea08840bbe397,Specific public financing disclosure; prior observations retained.
+ai-deals-coverage-f7d2e123fce91505fdb3,5585,coverage-facts:REFERENCE-digital-b0e9856e475e288e533d,Specific public financing disclosure; prior observations retained.
+ai-deals-coverage-f7d2e123fce91505fdb3,5586,coverage-facts:REFERENCE-digital-a4cfb18daee2746543e8,Specific public financing disclosure; prior observations retained.
+ai-deals-coverage-f7d2e123fce91505fdb3,5587,coverage-facts:REFERENCE-digital-c8f3608a58eaaee61057,Specific public financing disclosure; prior observations retained.
+ai-deals-coverage-f7d2e123fce91505fdb3,5588,coverage-facts:REFERENCE-digital-2bfa5fbbc764a7432b6d,Specific public financing disclosure; prior observations retained.
+ai-deals-coverage-f7d2e123fce91505fdb3,5589,coverage-facts:REFERENCE-digital-1738b1fe0bddc14f2142,Specific public financing disclosure; prior observations retained.
+ai-deals-coverage-f7d2e123fce91505fdb3,5590,coverage-facts:REFERENCE-digital-cd3708f9f2512143917e,Specific public financing disclosure; prior observations retained.
+ai-deals-coverage-f7d2e123fce91505fdb3,5591,coverage-facts:REFERENCE-digital-e1221e885c446bd649ab,Specific public financing disclosure; prior observations retained.
+ai-deals-coverage-f7d2e123fce91505fdb3,5592,coverage-facts:REFERENCE-digital-a41c4e6d55ea29ff83d0,Specific public financing disclosure; prior observations retained.
+ai-deals-coverage-f7d2e123fce91505fdb3,5593,coverage-facts:REFERENCE-digital-6b1368810df8bd9fd8ec,Specific public financing disclosure; prior observations retained.
+ai-deals-coverage-f7d2e123fce91505fdb3,5594,coverage-facts:REFERENCE-digital-950b3a130c1ea823524b,Specific public financing disclosure; prior observations retained.
+ai-deals-coverage-f7d2e123fce91505fdb3,5595,coverage-facts:REFERENCE-digital-7e4955c7a3a1dbc28a1f,Specific public financing disclosure; prior observations retained.
+ai-deals-coverage-f7d2e123fce91505fdb3,5596,coverage-facts:REFERENCE-digital-cfacb614624570721e00,Specific public financing disclosure; prior observations retained.
+ai-deals-coverage-f7d2e123fce91505fdb3,5597,coverage-facts:REFERENCE-digital-47036be4acf2a2676c86,Specific public financing disclosure; prior observations retained.
+ai-deals-coverage-f7d2e123fce91505fdb3,5598,coverage-facts:REFERENCE-digital-40cb032d816eaf914750,Specific public financing disclosure; prior observations retained.
+ai-deals-coverage-f7d2e123fce91505fdb3,5599,coverage-facts:REFERENCE-digital-22d839f29f4bd7e209c8,Specific public financing disclosure; prior observations retained.
+ai-deals-coverage-f7d2e123fce91505fdb3,5600,coverage-facts:REFERENCE-digital-28b94225e4d940a800ab,Specific public financing disclosure; prior observations retained.
+ai-deals-coverage-f7d2e123fce91505fdb3,5601,coverage-facts:REFERENCE-digital-efa6119254a4a6715453,Specific public financing disclosure; prior observations retained.
+ai-deals-coverage-f7d2e123fce91505fdb3,5602,coverage-facts:REFERENCE-digital-19b6fcb4df1c605d58ce,Specific public financing disclosure; prior observations retained.
+ai-deals-coverage-f7d2e123fce91505fdb3,5603,coverage-facts:REFERENCE-digital-4c73474d33e08ec29fb3,Specific public financing disclosure; prior observations retained.
+ai-deals-coverage-f7d2e123fce91505fdb3,5604,coverage-facts:REFERENCE-digital-e5499ec2c3f74d3207b8,Specific public financing disclosure; prior observations retained.
+ai-deals-coverage-f7d2e123fce91505fdb3,5605,coverage-facts:REFERENCE-digital-b2841419ef672cad5017,Specific public financing disclosure; prior observations retained.
+ai-deals-coverage-f7d2e123fce91505fdb3,5606,coverage-facts:REFERENCE-digital-d7c2d588eb2e038bb259,Specific public financing disclosure; prior observations retained.
+ai-deals-coverage-f7d2e123fce91505fdb3,5607,coverage-facts:REFERENCE-digital-715451c5c206b1428aad,Specific public financing disclosure; prior observations retained.
+ai-deals-coverage-f7d2e123fce91505fdb3,5608,coverage-facts:REFERENCE-digital-6d9dbe80c6b99fa70822,Specific public financing disclosure; prior observations retained.
+ai-deals-coverage-f7d2e123fce91505fdb3,5609,coverage-facts:REFERENCE-digital-d797a75e1a856eafae4c,Specific public financing disclosure; prior observations retained.
+ai-deals-coverage-f7d2e123fce91505fdb3,5610,coverage-facts:REFERENCE-digital-a2ff45db4e4d9ffdc7d8,Specific public financing disclosure; prior observations retained.
+ai-deals-coverage-f7d2e123fce91505fdb3,5611,coverage-facts:REFERENCE-digital-c8bf4035505ae14dd074,Specific public financing disclosure; prior observations retained.
+ai-deals-coverage-f7d2e123fce91505fdb3,5612,coverage-facts:REFERENCE-digital-8958b389588d949a91ad,Specific public financing disclosure; prior observations retained.
+ai-deals-coverage-f7d2e123fce91505fdb3,5613,coverage-facts:REFERENCE-digital-ab74637319a57d1d9a4c,Specific public financing disclosure; prior observations retained.
+ai-deals-coverage-f7d2e123fce91505fdb3,5614,coverage-facts:REFERENCE-digital-9d9323f0398a045be214,Specific public financing disclosure; prior observations retained.
+ai-deals-coverage-f7d2e123fce91505fdb3,5615,coverage-facts:REFERENCE-digital-9d90ab1072b6da5bdcad,Specific public financing disclosure; prior observations retained.
+ai-deals-coverage-f7d2e123fce91505fdb3,5616,coverage-facts:REFERENCE-digital-4faba086ff0d70f4df06,Specific public financing disclosure; prior observations retained.
+ai-deals-coverage-f7d2e123fce91505fdb3,5617,coverage-facts:REFERENCE-digital-99e1f5dbfda4d19da2e9,Specific public financing disclosure; prior observations retained.
+ai-deals-coverage-f7d2e123fce91505fdb3,5618,coverage-facts:REFERENCE-digital-ca418850aa2a5e7cf010,Specific public financing disclosure; prior observations retained.
+ai-deals-coverage-f7d2e123fce91505fdb3,5619,coverage-facts:REFERENCE-digital-36ce43e5e9c724c1a1c2,Specific public financing disclosure; prior observations retained.
+ai-deals-coverage-f7d2e123fce91505fdb3,5620,coverage-facts:REFERENCE-digital-21846be55c16d3c0a1c2,Specific public financing disclosure; prior observations retained.
+ai-deals-coverage-f7d2e123fce91505fdb3,5621,coverage-facts:REFERENCE-digital-e6a69a0432e33ebcf656,Specific public financing disclosure; prior observations retained.
+ai-deals-coverage-f7d2e123fce91505fdb3,5622,coverage-facts:REFERENCE-digital-bf97a9b579f41db7dd54,Specific public financing disclosure; prior observations retained.
+ai-deals-coverage-f7d2e123fce91505fdb3,5623,coverage-facts:REFERENCE-digital-4132b2b7b6147c2cc0b8,Specific public financing disclosure; prior observations retained.
+ai-deals-coverage-f7d2e123fce91505fdb3,5624,coverage-facts:REFERENCE-digital-0d8d7628a025e6f4d653,Specific public financing disclosure; prior observations retained.
+ai-deals-coverage-f7d2e123fce91505fdb3,5625,coverage-facts:REFERENCE-digital-7687db893f0cfe6eec2f,Specific public financing disclosure; prior observations retained.
+ai-deals-coverage-f7d2e123fce91505fdb3,5626,coverage-facts:REFERENCE-digital-3fd0b466338959cf5a3b,Specific public financing disclosure; prior observations retained.
+ai-deals-coverage-f7d2e123fce91505fdb3,5627,coverage-facts:REFERENCE-digital-2c88b1cea3e724f0ef5c,Specific public financing disclosure; prior observations retained.
+ai-deals-coverage-f7d2e123fce91505fdb3,5628,coverage-facts:REFERENCE-digital-3f661bc8a66b7257b29f,Specific public financing disclosure; prior observations retained.
+ai-deals-coverage-f7d2e123fce91505fdb3,5629,coverage-facts:REFERENCE-digital-8b3654c361bd36ac2fc8,Specific public financing disclosure; prior observations retained.
+ai-deals-coverage-f7d2e123fce91505fdb3,5630,coverage-facts:REFERENCE-digital-b4c1c9a68a07253fe7a8,Specific public financing disclosure; prior observations retained.
+ai-deals-coverage-f7d2e123fce91505fdb3,5631,coverage-facts:REFERENCE-digital-6a41571a5c36929579b4,Specific public financing disclosure; prior observations retained.
+ai-deals-coverage-f7d2e123fce91505fdb3,5632,coverage-facts:REFERENCE-digital-ce5b5d7a5d1024e695c5,Specific public financing disclosure; prior observations retained.
+ai-deals-coverage-f7d2e123fce91505fdb3,5633,coverage-facts:REFERENCE-digital-9770ade3abd457b73993,Specific public financing disclosure; prior observations retained.
+ai-deals-coverage-f7d2e123fce91505fdb3,5634,coverage-facts:REFERENCE-digital-6119175cc625c8e54cb5,Specific public financing disclosure; prior observations retained.
+ai-deals-coverage-f7d2e123fce91505fdb3,5635,coverage-facts:REFERENCE-digital-d03a22020588d1f6b723,Specific public financing disclosure; prior observations retained.
+ai-deals-coverage-f7d2e123fce91505fdb3,5636,coverage-facts:REFERENCE-digital-3cde35dbfb5b1441dad4,Specific public financing disclosure; prior observations retained.
+ai-deals-coverage-f7d2e123fce91505fdb3,5637,coverage-facts:REFERENCE-digital-a8dd8cfd9921539cfbd9,Specific public financing disclosure; prior observations retained.
+ai-deals-coverage-f7d2e123fce91505fdb3,5638,coverage-facts:REFERENCE-digital-d7c06f479d7d947ab1da,Specific public financing disclosure; prior observations retained.
+ai-deals-coverage-f7d2e123fce91505fdb3,5639,coverage-facts:REFERENCE-digital-9b08f881186170a38115,Specific public financing disclosure; prior observations retained.
+ai-deals-coverage-f7d2e123fce91505fdb3,5640,coverage-facts:REFERENCE-digital-540a1215c7e54b5c355a,Specific public financing disclosure; prior observations retained.
+ai-deals-coverage-f7d2e123fce91505fdb3,5641,coverage-facts:REFERENCE-digital-4f026bb0ac49cf75b7ba,Specific public financing disclosure; prior observations retained.
+ai-deals-coverage-f7d2e123fce91505fdb3,5642,coverage-facts:REFERENCE-digital-0ef02b57891e1c051b00,Specific public financing disclosure; prior observations retained.
+ai-deals-coverage-f7d2e123fce91505fdb3,5643,coverage-facts:REFERENCE-digital-832ba1206aeafd31f441,Specific public financing disclosure; prior observations retained.
+ai-deals-coverage-f7d2e123fce91505fdb3,5644,coverage-facts:REFERENCE-digital-37d2202f04be0a08ec1f,Specific public financing disclosure; prior observations retained.
+ai-deals-coverage-f7d2e123fce91505fdb3,5645,coverage-facts:REFERENCE-digital-cba8073414769698de4f,Specific public financing disclosure; prior observations retained.
+ai-deals-coverage-f7d2e123fce91505fdb3,5646,coverage-facts:REFERENCE-digital-46eb5ef1428e8dd36606,Specific public financing disclosure; prior observations retained.
+ai-deals-coverage-f7d2e123fce91505fdb3,5647,coverage-facts:REFERENCE-digital-e17023c67f2886472e62,Specific public financing disclosure; prior observations retained.
+ai-deals-coverage-f7d2e123fce91505fdb3,5648,coverage-facts:REFERENCE-digital-121cfefde32ab76ba543,Specific public financing disclosure; prior observations retained.
+ai-deals-coverage-f7d2e123fce91505fdb3,5649,coverage-facts:REFERENCE-digital-93a8548bf99ed546a3b2,Specific public financing disclosure; prior observations retained.
+ai-deals-coverage-f7d2e123fce91505fdb3,5650,coverage-facts:REFERENCE-digital-9e420dc6fe39e0b194c0,Specific public financing disclosure; prior observations retained.
+ai-deals-coverage-f7d2e123fce91505fdb3,5651,coverage-facts:REFERENCE-digital-ed63b7068135051c11be,Specific public financing disclosure; prior observations retained.
+ai-deals-coverage-f7d2e123fce91505fdb3,5652,coverage-facts:REFERENCE-digital-3f8c342092122bc0080a,Specific public financing disclosure; prior observations retained.
+ai-deals-coverage-f7d2e123fce91505fdb3,5653,coverage-facts:REFERENCE-digital-2cd9b50cc8b8be78d002,Specific public financing disclosure; prior observations retained.
+ai-deals-coverage-f7d2e123fce91505fdb3,5654,coverage-facts:REFERENCE-digital-0512da45e4af1ec90ed1,Specific public financing disclosure; prior observations retained.
+ai-deals-coverage-f7d2e123fce91505fdb3,5655,coverage-facts:REFERENCE-digital-85375de535e218b0e84d,Specific public financing disclosure; prior observations retained.
+ai-deals-coverage-f7d2e123fce91505fdb3,5656,coverage-facts:REFERENCE-digital-ab2522b9b91217c623f7,Specific public financing disclosure; prior observations retained.
+ai-deals-coverage-f7d2e123fce91505fdb3,5657,coverage-facts:REFERENCE-digital-bb98d4ffbd0cdc37bbe3,Specific public financing disclosure; prior observations retained.
+ai-deals-coverage-f7d2e123fce91505fdb3,5658,coverage-facts:REFERENCE-digital-e4a388fd360fedbf19e2,Specific public financing disclosure; prior observations retained.
+ai-deals-coverage-f7d2e123fce91505fdb3,5659,coverage-facts:REFERENCE-digital-a585bf877107cf37878d,Specific public financing disclosure; prior observations retained.
+ai-deals-coverage-f7d2e123fce91505fdb3,5660,coverage-facts:REFERENCE-digital-4a70595a32dbc4811baf,Specific public financing disclosure; prior observations retained.
+ai-deals-coverage-f7d2e123fce91505fdb3,5661,coverage-facts:REFERENCE-digital-baea5e1dc32f45ebe9a7,Specific public financing disclosure; prior observations retained.
+ai-deals-coverage-f7d2e123fce91505fdb3,5662,coverage-facts:REFERENCE-digital-0de0712d6b2e9f2335c5,Specific public financing disclosure; prior observations retained.
+ai-deals-coverage-f7d2e123fce91505fdb3,5663,coverage-facts:REFERENCE-digital-e7d03318aa17375e035f,Specific public financing disclosure; prior observations retained.
+ai-deals-coverage-f7d2e123fce91505fdb3,5664,coverage-facts:REFERENCE-digital-700440b669d6037ea35e,Specific public financing disclosure; prior observations retained.
+ai-deals-coverage-f7d2e123fce91505fdb3,5665,coverage-facts:MANUAL-digital-840da4a986325b2373f6,Specific public financing disclosure; prior observations retained.
+ai-deals-coverage-f7d2e123fce91505fdb3,5666,coverage-facts:MANUAL-digital-1af2e542409eca146083,Specific public financing disclosure; prior observations retained.
+ai-deals-coverage-f7d2e123fce91505fdb3,5667,coverage-facts:MANUAL-digital-ba5339d03fbebbf63017,Specific public financing disclosure; prior observations retained.
+ai-deals-coverage-f7d2e123fce91505fdb3,5668,coverage-facts:MANUAL-digital-2844ac96239a5422368d,Specific public financing disclosure; prior observations retained.
+ai-deals-coverage-f7d2e123fce91505fdb3,5669,coverage-facts:MANUAL-digital-fe703446b4f07e9689b5,Specific public financing disclosure; prior observations retained.
+ai-deals-coverage-f7d2e123fce91505fdb3,5670,coverage-facts:MANUAL-digital-86bc9fea1ea6bc70bd59,Specific public financing disclosure; prior observations retained.
+ai-deals-coverage-f7d2e123fce91505fdb3,5671,coverage-facts:MANUAL-digital-07f4462576c63edc8ae0,Specific public financing disclosure; prior observations retained.
+ai-deals-coverage-f7d2e123fce91505fdb3,5672,coverage-facts:MANUAL-digital-8216f5af97e7533f1cf3,Specific public financing disclosure; prior observations retained.
+ai-deals-coverage-f7d2e123fce91505fdb3,5673,coverage-facts:MANUAL-digital-80ced9b0e466ae5d256c,Specific public financing disclosure; prior observations retained.
+ai-deals-coverage-f7d2e123fce91505fdb3,5674,coverage-facts:MANUAL-digital-6e8bedc8a7ab0f79baeb,Specific public financing disclosure; prior observations retained.
+ai-deals-coverage-f7d2e123fce91505fdb3,5675,coverage-facts:MANUAL-digital-ca2e6e48d28d19ff2abd,Specific public financing disclosure; prior observations retained.
+ai-deals-coverage-f7d2e123fce91505fdb3,5676,coverage-facts:MANUAL-digital-d323c6241251968fa619,Specific public financing disclosure; prior observations retained.
+ai-deals-coverage-f7d2e123fce91505fdb3,5677,coverage-facts:MANUAL-digital-840a5840abb91047615f,Specific public financing disclosure; prior observations retained.
+ai-deals-coverage-f7d2e123fce91505fdb3,5678,coverage-facts:MANUAL-digital-bfc5a4f5154c48c5ddfd,Specific public financing disclosure; prior observations retained.
+ai-deals-coverage-f7d2e123fce91505fdb3,5679,coverage-facts:MANUAL-digital-2ae891b020d9d21bc0d3,Specific public financing disclosure; prior observations retained.
+ai-deals-coverage-f7d2e123fce91505fdb3,5680,coverage-facts:MANUAL-digital-582ecf6540d7c96eac87,Specific public financing disclosure; prior observations retained.
+ai-deals-coverage-f7d2e123fce91505fdb3,5681,coverage-facts:MANUAL-digital-ebbff9721494cb218764,Specific public financing disclosure; prior observations retained.
+ai-deals-coverage-f7d2e123fce91505fdb3,5682,coverage-facts:MANUAL-digital-339e03c9cdeb0d780f9a,Specific public financing disclosure; prior observations retained.
+ai-deals-coverage-f7d2e123fce91505fdb3,5683,coverage-facts:MANUAL-digital-4f1baeadb9258f6274b6,Specific public financing disclosure; prior observations retained.
+ai-deals-coverage-f7d2e123fce91505fdb3,5684,coverage-facts:MANUAL-digital-035ce50df59aba19e4c3,Specific public financing disclosure; prior observations retained.
+ai-deals-coverage-f7d2e123fce91505fdb3,5685,coverage-facts:MA-GRETEL-2025,Specific public financing disclosure; prior observations retained.
+ai-deals-coverage-f7d2e123fce91505fdb3,5686,coverage-facts:MA-GALILEO-UI-2025,Specific public financing disclosure; prior observations retained.
+ai-deals-coverage-f7d2e123fce91505fdb3,5687,coverage-facts:MA-RUNAI-2024,Specific public financing disclosure; prior observations retained.
+ai-deals-coverage-f7d2e123fce91505fdb3,5688,coverage-facts:MA-LEPTON-TALKS-2025,Specific public financing disclosure; prior observations retained.
