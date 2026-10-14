@@ -101,6 +101,7 @@ begin
  if not found or public.market_candidate_snapshot(q)is distinct from t.input->'candidate'then return public.finish_market_review_task_v2(p_task_id,p_lock,jsonb_build_object('disposition','held','reason','candidate_changed'));end if;
  ev:=p_result->'evidence';payload:=p_result->'activity';
  if t.input->'company'='null'::jsonb then
+  if public.market_resolve_company(q.candidate_company)is not null then return public.finish_market_review_task_v2(p_task_id,p_lock,jsonb_build_object('disposition','held','reason','company_changed_or_ambiguous'));end if;
   proposal:=p_result->'proposedCompany';c:=jsonb_populate_record(null::public.companies,proposal);
   if q.status<>'pending'or q.gmail_message_id is not null or public.market_resolve_company(q.candidate_company)is not null or c.name!~'^[^@<>]{3,100}$'or c.geography is distinct from'N/A'or c.subsector is distinct from'other'or c.is_sample is distinct from false or c.overview is distinct from c.name||' develops technology for physical-world automation. Detailed sector classification is pending.'
    or c.id is distinct from'c-verified-'||left(encode(extensions.digest(lower(substring(c.website from'^https://([a-zA-Z0-9.-]+)$')),'sha256'),'hex'),16)
@@ -134,6 +135,7 @@ begin
  a:=jsonb_populate_record(null::public.activities,payload);
  a.entered_by:=actor;a.approved_by:=actor;a.entered_at:=stamp;a.approved_at:=stamp;a.last_updated:=(stamp at time zone'utc')::date;a.merged_from_candidate_ids:=array[q.id];a.additional_sources:='[]'::jsonb;a.subsector:=c.subsector;a.geography:=c.geography;
  amount_label:=case when ev->>'currency'='USD'then'$'||trim_scale((ev->>'amountNative')::numeric/case when(ev->>'amountNative')::numeric>=1000000000 then 1000000000 else 1000000 end)::text||case when(ev->>'amountNative')::numeric>=1000000000 then' billion'else' million'end else(ev->>'currency')||' '||trim_scale((ev->>'amountNative')::numeric)::text end;
+ amount_label:=coalesce(substring(ev->>'amountQuote'from'(?i)\m(approximately|about|nearly|over|more than)\M\s*(?:US\$|USD|\$|GBP|£|JPY|¥|EUR|€)')||' ','')||amount_label;
  if q.activity_type='m&a'then
   a.description:=(ev->>'counterpartyQuote')||case when ev->>'category'='acquisition-closed'then' completed its acquisition of 'else' announced a definitive agreement to acquire 'end||c.name||' for '||amount_label||'. '||case when ev->>'category'='acquisition-announced'then'The transaction is announced and remains subject to closing conditions. 'else''end||'This is a company-reported transaction.';
   a.counterparty:=ev->>'counterpartyQuote';
@@ -143,6 +145,7 @@ begin
  end if;
  if a.description~*'(gmail:|@|forwarded message|begin forwarded)'or a.counterparty~*'(gmail:|@)'then raise exception 'Public text privacy gate';end if;
  if q.activity_type='financing'and ev->>'eventQuote'~*'\mas part of\M.*\mround\M'then a.description:=a.description||' Capital secured is part of a larger round; only the secured amount is recorded.';end if;
+ if q.activity_type='financing'and ev->>'round'is not null and substring(ev->>'captureText'from position(ev->>'eventQuote'in ev->>'captureText')for 2500)~*'\minitial tranche announced earlier this year\M'then a.description:=a.description||' Total round value includes an initial tranche announced earlier this year.';end if;
  a.source_reference:=c.name||' transaction announcement';
  insert into public.sources(id,activity_id,type,url,title)values(a.source_id,a.id,'press release',a.source_url,a.source_reference);
  insert into public.activities select a.*;
@@ -208,10 +211,12 @@ begin
   a:=jsonb_populate_record(null::public.activities,payload);
   a.review_status:='approved';a.confidence:='reported';a.source_type:='press release';a.is_sample:=false;a.entered_by:=actor;a.approved_by:=actor;a.entered_at:=stamp;a.approved_at:=stamp;a.last_updated:=(stamp at time zone'utc')::date;a.merged_from_candidate_ids:=array[q.id];a.additional_sources:='[]'::jsonb;a.subsector:=c.subsector;a.geography:=c.geography;
   amount_label:=case when ev->>'currency'='USD'then'$'||trim_scale((ev->>'amountNative')::numeric/case when(ev->>'amountNative')::numeric>=1000000000 then 1000000000 else 1000000 end)::text||case when(ev->>'amountNative')::numeric>=1000000000 then' billion'else' million'end else(ev->>'currency')||' '||trim_scale((ev->>'amountNative')::numeric)::text end;
+ amount_label:=coalesce(substring(ev->>'amountQuote'from'(?i)\m(approximately|about|nearly|over|more than)\M\s*(?:US\$|USD|\$|GBP|£|JPY|¥|EUR|€)')||' ','')||amount_label;
   if q.activity_type='m&a'then
    a.description:=(ev->>'counterpartyQuote')||case when ev->>'category'='acquisition-closed'then' completed its acquisition of 'else' announced a definitive agreement to acquire 'end||c.name||' for '||amount_label||'. '||case when ev->>'category'='acquisition-announced'then'The transaction is announced and remains subject to closing conditions. 'else''end||'This is a company-reported transaction.';a.counterparty:=ev->>'counterpartyQuote';
   else a.description:=c.name||case when ev->>'category'='debt'then' closed '||amount_label||' in debt financing'else' announced '||amount_label||' in '||coalesce(ev->>'round'||' ','')||'financing'end||'. This is a company-reported financing announcement.';a.counterparty:='N/A';end if;
   if q.activity_type='financing'and ev->>'eventQuote'~*'\mas part of\M.*\mround\M'then a.description:=a.description||' Capital secured is part of a larger round; only the secured amount is recorded.';end if;
+ if q.activity_type='financing'and ev->>'round'is not null and substring(ev->>'captureText'from position(ev->>'eventQuote'in ev->>'captureText')for 2500)~*'\minitial tranche announced earlier this year\M'then a.description:=a.description||' Total round value includes an initial tranche announced earlier this year.';end if;
  a.source_reference:=c.name||' transaction announcement';
   if a.description~*'(gmail:|@|forwarded message|begin forwarded)'or a.counterparty~*'(gmail:|@)'then raise exception 'Recovery privacy gate';end if;
   insert into public.sources(id,activity_id,type,url,title)values(a.source_id,a.id,a.source_type,a.source_url,a.source_reference);insert into public.activities select a.*;existing_id:=a.id;
