@@ -85,28 +85,33 @@ async function run() {
     headers: {},
   });
   assert.equal(mutationOnReadRoute.status, 405);
+  let newlyApprovedActivity = null;
   global.fetch = async (input) => {
     const url = new URL(String(input));
     const table = url.pathname.split("/").at(-1);
-    if (table === "activities") return response([{
-      id: "a-public",
-      date_announced: "2026-09-04",
-      company_id: "c-public",
-      counterparty: "Investor",
-      activity_type: "financing",
-      subsector: "robotics",
-      deal_value_usd: 100,
-      geography: "United States",
-      description: "Public announcement.",
-      source_id: "s-public",
-      source_url: "https://public.example/announcement",
-      source_reference: "Company announcement",
-      source_type: "company blog",
-      additional_sources: [],
-      confidence: "confirmed",
-      review_status: "approved",
-      is_sample: false,
-    }]);
+    if (table === "activities") {
+      const activities = [{
+        id: "a-public",
+        date_announced: "2026-09-04",
+        company_id: "c-public",
+        counterparty: "Investor",
+        activity_type: "financing",
+        subsector: "robotics",
+        deal_value_usd: 100,
+        geography: "United States",
+        description: "Public announcement.",
+        source_id: "s-public",
+        source_url: "https://public.example/announcement",
+        source_reference: "Company announcement",
+        source_type: "company blog",
+        additional_sources: [],
+        confidence: "confirmed",
+        review_status: "approved",
+        is_sample: false,
+      }];
+      if (newlyApprovedActivity) activities.push({ ...activities[0], ...newlyApprovedActivity });
+      return response(activities);
+    }
     if (table === "companies") return response([{
       id: "c-public",
       name: "Public Robotics",
@@ -138,6 +143,30 @@ async function run() {
     const payload = JSON.parse(body);
     assert.equal(payload.source, "supabase-public-projection");
     assert.equal(payload.snapshot.counts.activities, 1);
+    assert.equal(res.headers["Cache-Control"], "no-store");
+    assert.equal(res.headers["CDN-Cache-Control"], "no-store");
+
+    // A publication between two polls must appear through the same rewritten
+    // endpoint, rather than reusing the first successful snapshot.
+    newlyApprovedActivity = {
+      id: "a-newly-approved",
+      date_announced: "2026-10-13",
+      source_id: "s-newly-approved",
+      source_url: "https://public.example/new-announcement",
+    };
+    await pipelineHealth({
+      method: "GET",
+      query: { physicalAiRoute: "market-snapshot" },
+      url: "/api/pipeline-health?physicalAiRoute=market-snapshot",
+      headers: {},
+    }, res);
+    assert.equal(res.statusCode, 200);
+    const refreshed = JSON.parse(body);
+    assert.equal(refreshed.snapshot.counts.activities, 2);
+    assert.equal(refreshed.snapshot.latestActivityDate, "2026-10-13");
+    assert.ok(refreshed.snapshot.activities.some((activity) => activity.id === "a-newly-approved"));
+    assert.equal(res.headers["Cache-Control"], "no-store");
+    assert.equal(res.headers["CDN-Cache-Control"], "no-store");
   } finally {
     global.fetch = savedFetch;
     if (savedUrl === undefined) delete process.env.SUPABASE_URL;
