@@ -49,5 +49,7 @@
   "sample_size_qualified_is_coverage_certified": false,
   "unverified_financing_review_rows_excluded": 871,
   "no_trends_calculated": true,
-  "market_completeness_certified": false
+  "market_completeness_certified": false,
+  "data_commit": "363e1968e6b50ae4187441f506e87b0d92770dbc",
+  "publication_verification": "coverage-2024-2026/PUBLICATION_VERIFICATION.json"
 }

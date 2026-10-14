@@ -1,0 +1,357 @@
+{
+  "snapshot_id": "ai-deals-coverage-f1aefd5696e41b8783b3",
+  "data_commit": "363e1968e6b50ae4187441f506e87b0d92770dbc",
+  "branch": "ai-vc-deals-2026",
+  "verified_at": "2026-10-14T16:33:44.172962+00:00",
+  "verification_status": "PASSED",
+  "remote_branch_matches_published_commit": true,
+  "all_public_git_blobs_matched": 2264,
+  "all_manifest_data_files_confirmed_in_remote_git_tree": 1662,
+  "commit_pinned_raw_sha256_checks_passed": 57,
+  "checks": [
+    {
+      "path": "vc-data/LATEST.json",
+      "sha256": "49079d887ba0cc2c5366d8a4b12280186b01c59dc139f55af9f85b9adc088f97",
+      "bytes": 1591,
+      "matches_local": true
+    },
+    {
+      "path": "vc-data/coverage-2024-2026/manifest.json",
+      "sha256": "84638f509dda98606fe280d4cfe6d924515ebc06d1203bf3b5dcee84de56b070",
+      "bytes": 530248,
+      "matches_local": true
+    },
+    {
+      "path": "vc-data/coverage-2024-2026/README.md",
+      "sha256": "e9294cd1d05fb2e2101b4898886ba481e903aae9bc3f3c11ac8102bf3a420527",
+      "bytes": 1675,
+      "matches_local": true
+    },
+    {
+      "path": "vc-data/coverage-2024-2026/HEATMAP_READINESS.md",
+      "sha256": "98c0b1535b1ef09f9bc35506e1d3e0bdeb08f8fe97bd2e6719bd63f7b40e1f38",
+      "bytes": 3558,
+      "matches_local": true
+    },
+    {
+      "path": "vc-data/coverage-2024-2026/methodology.md",
+      "sha256": "ace224ec5365757f53d4f2a3ec55a0aa359ce2dbc4a1dfe5b13420b6af3af9c6",
+      "bytes": 4725,
+      "matches_local": true
+    },
+    {
+      "path": "vc-data/coverage-2024-2026/audit_release_receipt.json",
+      "sha256": "1a9b9fe85acdf86ad4ad3e69a5d52928b678bcda752a377214300fc62dcf04d7",
+      "bytes": 912,
+      "matches_local": true
+    },
+    {
+      "path": "vc-data/coverage-2024-2026/INDEPENDENT_AUDIT_2026_10_14.json",
+      "sha256": "2abe905d7a0448ece34620ff5223cbf65e9b7a3cc11e24ddef823eae6d1ebcaa",
+      "bytes": 16291,
+      "matches_local": true
+    },
+    {
+      "path": "vc-data/coverage-2024-2026/NUMERIC_CHECKS.json",
+      "sha256": "1e5614c2cd8db7ced6914a28ed62b319734fdf3fbc3e900593f2b7faeb876f77",
+      "bytes": 134660,
+      "matches_local": true
+    },
+    {
+      "path": "vc-data/coverage-2024-2026/UNRESOLVED.json",
+      "sha256": "0a53ab7549701198c1d290dc61afc73e07dd747ce0929d69916b9b9224c2eb55",
+      "bytes": 2499,
+      "matches_local": true
+    },
+    {
+      "path": "vc-data/coverage-2024-2026/build_receipt.json",
+      "sha256": "b5b6b9f9fc7183154046d2d0e43290285ff417818532f0209a87d19b86a7968d",
+      "bytes": 5673,
+      "matches_local": true
+    },
+    {
+      "path": "vc-data/coverage-2024-2026/validation_receipt.json",
+      "sha256": "bd303ef8b8192ee0c369dd83acaeac78b5253fa908c98c52cb8c2ea339d379ca",
+      "bytes": 1145729,
+      "matches_local": true
+    },
+    {
+      "path": "vc-data/coverage-2024-2026/public_validation_receipt.json",
+      "sha256": "e8f5beaf8e94ae2c087dfdeca615ff264d5748349bb7c56599ad37013495e5a8",
+      "bytes": 12692,
+      "matches_local": true
+    },
+    {
+      "path": "vc-data/coverage-2024-2026/public_only_validation_receipt.json",
+      "sha256": "cc98fa34ae330335ff7e0203c710ee2264ee0919fdc58473fe17a2d92d48b645",
+      "bytes": 1139543,
+      "matches_local": true
+    },
+    {
+      "path": "vc-data/coverage-2024-2026/AUDITOR_PROMPT.txt",
+      "sha256": "508e39cd8442bac2cfcd0e84074a79b51971eb71f860d27cc17281d69871cfb5",
+      "bytes": 1311,
+      "matches_local": true
+    },
+    {
+      "path": "vc-data/coverage-2024-2026/load_snapshot.py",
+      "sha256": "a01a660313e77cec893d188841a9bed8969acbc76d701d20bfbd7a972b0fc4f7",
+      "bytes": 10559,
+      "matches_local": true
+    },
+    {
+      "path": "vc-data/coverage-2024-2026/validate_release.py",
+      "sha256": "a5e8972072cd3f223760533d141db1fbdb4b4bfc91c774259d5103687a3cc945",
+      "bytes": 6507,
+      "matches_local": true
+    },
+    {
+      "path": "vc-data/coverage-2024-2026/independent_checks.py",
+      "sha256": "e51ea8c8fa22ef319ab8f81b0864aba974251a3a72e1580fbfbafbf3f4a87183",
+      "bytes": 20613,
+      "matches_local": true
+    },
+    {
+      "path": "vc-data/coverage-2024-2026/inspection/ai_financing_deals.csv",
+      "sha256": "8a2c7a8b61b5475371234f0b3c5e898027291d9d3a3e67e5c115dc3c34376b01",
+      "bytes": 1673843,
+      "matches_local": true
+    },
+    {
+      "path": "vc-data/coverage-2024-2026/inspection/acquisition_deals.csv",
+      "sha256": "c5fe44dff8212f8465c8e37f960800ad68379d1b2b981a0daf67fb8e73c2fbe9",
+      "bytes": 77663,
+      "matches_local": true
+    },
+    {
+      "path": "vc-data/coverage-2024-2026/inspection/inspection_receipt.json",
+      "sha256": "1347856b7421edc01a77b669cc4ac7ccce32703a677faae9bf9a9adaef359217",
+      "bytes": 10401,
+      "matches_local": true
+    },
+    {
+      "path": "vc-data/coverage-2024-2026/audit/change_log.csv",
+      "sha256": "bf946867d277398476f1f8611f7447f8ee784522663dcd45789a2cb330ee0c6f",
+      "bytes": 513123,
+      "matches_local": true
+    },
+    {
+      "path": "vc-data/coverage-2024-2026/audit/held_financing_review.csv",
+      "sha256": "89b6724770bf760417a3d908e3a8b995948de02e1892f1a26ba7f4594a32daa8",
+      "bytes": 419332,
+      "matches_local": true
+    },
+    {
+      "path": "vc-data/coverage-2024-2026/audit/uncounted_in_framework_review.csv",
+      "sha256": "4988001e0db6ff5d7244bbe8442a85b54ef02a72cd23b690e08209e6ccdd046d",
+      "bytes": 242700,
+      "matches_local": true
+    },
+    {
+      "path": "vc-data/coverage-2024-2026/audit/acquisitions_dedupe.csv",
+      "sha256": "60ff536408da8377728807ad3cb747073a97d232647e903e7df9781753f203dc",
+      "bytes": 198653,
+      "matches_local": true
+    },
+    {
+      "path": "vc-data/coverage-2024-2026/audit/acquisitions_missing_candidates.csv",
+      "sha256": "772c8c55f09d035472391737ce52ff7a8600ad32c3f8f1373f8cacdfd23a9d88",
+      "bytes": 28260,
+      "matches_local": true
+    },
+    {
+      "path": "vc-data/coverage-2024-2026/audit/out_of_sample_check.csv",
+      "sha256": "56b9c259afaaca680b2a9f6d8d5619cf1d7bff91a6bc630414a95491b334f8f3",
+      "bytes": 69507,
+      "matches_local": true
+    },
+    {
+      "path": "vc-data/coverage-2024-2026/audit/updated_database_review_files.zip",
+      "sha256": "e6f4729875df23f761ed3d54b441996f22aa455c8b7566202705c609d9bcc495",
+      "bytes": 463887,
+      "matches_local": true
+    },
+    {
+      "path": "vc-data/coverage-2024-2026/json/events_all_0001.json",
+      "sha256": "79ab50183b2e982f193da4060ab49618766044f1b17ac3586c7163f88eac7901",
+      "bytes": 249003,
+      "matches_local": true
+    },
+    {
+      "path": "vc-data/coverage-2024-2026/json/events_all_0077.json",
+      "sha256": "74a13a9e27f7119a8171296676455ebe66405a8f9502a9d7348a08f81db1d6a2",
+      "bytes": 111988,
+      "matches_local": true
+    },
+    {
+      "path": "vc-data/coverage-2024-2026/csv/events_all_0001.csv",
+      "sha256": "7f82f2b88116e74e5230278a269fc6d5ec7b451cdf1f162179779cf1e8b3ca77",
+      "bytes": 73195,
+      "matches_local": true
+    },
+    {
+      "path": "vc-data/coverage-2024-2026/csv/events_all_0077.csv",
+      "sha256": "770bf9cffaf65346b950fae8ccc15c114d7cd9b1d79c2b532348f13c4a7081e4",
+      "bytes": 32604,
+      "matches_local": true
+    },
+    {
+      "path": "vc-data/coverage-2024-2026/json/observations_all_0001.json",
+      "sha256": "42695821942d8a8e2821f0f27ccba6f7b4556ba479935adb48b471ed6ac8b778",
+      "bytes": 249990,
+      "matches_local": true
+    },
+    {
+      "path": "vc-data/coverage-2024-2026/json/observations_all_0050.json",
+      "sha256": "caaa190dd0a68c6fccddffd08dfdfa39d0574f551371f3e33dc5605de2f679c4",
+      "bytes": 224859,
+      "matches_local": true
+    },
+    {
+      "path": "vc-data/coverage-2024-2026/csv/observations_all_0001.csv",
+      "sha256": "4898b882536f5d3b8c8eb968b46c18e17a8cc3b86952797a743eeca5f650d509",
+      "bytes": 59164,
+      "matches_local": true
+    },
+    {
+      "path": "vc-data/coverage-2024-2026/csv/observations_all_0050.csv",
+      "sha256": "d9f9abb4b12a59306bfe234e3ba98e96c0052896b9c40c94535f9ffd82c0b932",
+      "bytes": 67936,
+      "matches_local": true
+    },
+    {
+      "path": "vc-data/coverage-2024-2026/json/heatmap_equity_episodes_0001.json",
+      "sha256": "52f3f0f5a8e88f8f6ef80afd7b518e0e428642eaf348b7d67cc35628686a9dfa",
+      "bytes": 249727,
+      "matches_local": true
+    },
+    {
+      "path": "vc-data/coverage-2024-2026/json/heatmap_equity_episodes_0007.json",
+      "sha256": "d8f5fd5c43febe71cdff188c271e3f7634b0a25f035d37b314b5e40622759dd5",
+      "bytes": 44258,
+      "matches_local": true
+    },
+    {
+      "path": "vc-data/coverage-2024-2026/csv/heatmap_equity_episodes_0001.csv",
+      "sha256": "169c671d001926eb34f292b198c3bfffca754f5bb8025a32dbefd1cb774ba145",
+      "bytes": 92283,
+      "matches_local": true
+    },
+    {
+      "path": "vc-data/coverage-2024-2026/csv/heatmap_equity_episodes_0007.csv",
+      "sha256": "540d1bdc3f7877d2c899ff2ec62ef6c921c28b62769f664a538e050f04013172",
+      "bytes": 16770,
+      "matches_local": true
+    },
+    {
+      "path": "vc-data/coverage-2024-2026/json/acquisition_deals_0001.json",
+      "sha256": "5bc03d4b936f424a0561bfd77a866c0af44a26bce87b3e83de7959420bc03e4f",
+      "bytes": 150620,
+      "matches_local": true
+    },
+    {
+      "path": "vc-data/coverage-2024-2026/csv/acquisition_deals_0001.csv",
+      "sha256": "c54ebd34cf2a20afa87116518959956b8717e42fa3a34acd1dcb69b96813f90a",
+      "bytes": 75726,
+      "matches_local": true
+    },
+    {
+      "path": "vc-data/coverage-2024-2026/json/heatmap_readiness_cells_0001.json",
+      "sha256": "54af1a67d8eeaebc49bf3f38c220b2b3315214fa9fb0609d197f687612632fcd",
+      "bytes": 60944,
+      "matches_local": true
+    },
+    {
+      "path": "vc-data/coverage-2024-2026/csv/heatmap_readiness_cells_0001.csv",
+      "sha256": "5ecd6cb582a5661d4caa95f34efaf0ad7591c97433e943c954d3c5e443fac4c4",
+      "bytes": 24700,
+      "matches_local": true
+    },
+    {
+      "path": "vc-data/coverage-2024-2026/json/independent_audit_changes_0001.json",
+      "sha256": "55fbb1b57ebb0b7d30495286a53b810c600927ee47896ae33eee61164fc48a22",
+      "bytes": 249942,
+      "matches_local": true
+    },
+    {
+      "path": "vc-data/coverage-2024-2026/json/independent_audit_changes_0003.json",
+      "sha256": "eb4b4d65927e4cc26c8484fc427532c2cfb3aaed2e9199c2a23747104e6232bb",
+      "bytes": 178436,
+      "matches_local": true
+    },
+    {
+      "path": "vc-data/coverage-2024-2026/csv/independent_audit_changes_0001.csv",
+      "sha256": "88787a98e35bb4a2605f89c8a893303ba0b5490eca256f5162a3e97fca947021",
+      "bytes": 218921,
+      "matches_local": true
+    },
+    {
+      "path": "vc-data/coverage-2024-2026/csv/independent_audit_changes_0003.csv",
+      "sha256": "527db589579ccf4cf2aadd0480206bbc6c3802a0b9dadcf3650d570bd3f44609",
+      "bytes": 147694,
+      "matches_local": true
+    },
+    {
+      "path": "vc-data/coverage-2024-2026/json/audit_financing_review_decisions_0001.json",
+      "sha256": "c92264b9162656ea361f36048198b21f9902f8ac2133c910765dc9130c559f59",
+      "bytes": 249864,
+      "matches_local": true
+    },
+    {
+      "path": "vc-data/coverage-2024-2026/json/audit_financing_review_decisions_0006.json",
+      "sha256": "b317935d956e546fcd9f3318e8026dc4d389273578b6e8c1219363800ab3335e",
+      "bytes": 138261,
+      "matches_local": true
+    },
+    {
+      "path": "vc-data/coverage-2024-2026/csv/audit_financing_review_decisions_0001.csv",
+      "sha256": "371e0058ad4572f133d0835d4ba3c5b94a076cfbaf2fbb505a94194e455242f2",
+      "bytes": 106130,
+      "matches_local": true
+    },
+    {
+      "path": "vc-data/coverage-2024-2026/csv/audit_financing_review_decisions_0006.csv",
+      "sha256": "9e0442257453569c0170f8b08c54e292c272b718a0c651a332ee2adb8b2b06dd",
+      "bytes": 71180,
+      "matches_local": true
+    },
+    {
+      "path": "vc-data/coverage-2024-2026/json/digital_reference_reconciliation_0001.json",
+      "sha256": "e2ec5442283f4d1130accdcbcedc8b227719080a4abafc2afb2ec8d1083a628d",
+      "bytes": 249250,
+      "matches_local": true
+    },
+    {
+      "path": "vc-data/coverage-2024-2026/json/digital_reference_reconciliation_0009.json",
+      "sha256": "35b55dd91fe5f216d9ff27297d940ba7a59df78f797dcaaecf7b1e8d064ad013",
+      "bytes": 58832,
+      "matches_local": true
+    },
+    {
+      "path": "vc-data/coverage-2024-2026/csv/digital_reference_reconciliation_0001.csv",
+      "sha256": "53c9cd648e69ffc8c17fa780cc31e7fc80b647050239d794f61aaa7bdd01d8d2",
+      "bytes": 128775,
+      "matches_local": true
+    },
+    {
+      "path": "vc-data/coverage-2024-2026/csv/digital_reference_reconciliation_0009.csv",
+      "sha256": "2ed83e391a04ba912541a8887ca5530c70e21753ef18711902f30407425be82e",
+      "bytes": 30452,
+      "matches_local": true
+    },
+    {
+      "path": "vc-data/coverage-2024-2026/json/out_of_sample_reconciliation_0001.json",
+      "sha256": "cb04000506c1cf04ffd99ce05e602b5dcab35f2920c8afb03d8b4933c56af004",
+      "bytes": 126002,
+      "matches_local": true
+    },
+    {
+      "path": "vc-data/coverage-2024-2026/csv/out_of_sample_reconciliation_0001.csv",
+      "sha256": "c55e24a338b3b8bb648e0097130983cdb5e5ed5103e882debb3a4a51786c4dbe",
+      "bytes": 63202,
+      "matches_local": true
+    }
+  ],
+  "market_completeness_certified": false,
+  "no_trends_calculated": true
+}
