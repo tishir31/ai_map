@@ -26,6 +26,9 @@ const ma=verified('Buyer Corp announced a definitive agreement to acquire Known 
  const wire={status:200,finalUrl:q.source_url,text:`${day}. New Robotics announced US$4 million in Series A financing. New Robotics builds autonomous industrial robots. About New Robotics Learn more at https://new-robotics.com`};
  const home={status:200,finalUrl:'https://new-robotics.com/',text:'New Robotics builds autonomous industrial robots.'};
  const issuer=await f.verifyWireIssuer(q,async url=>url===q.source_url?wire:home);assert(issuer);assert.equal(issuer.company.geography,'N/A');
+ const googleUrl='https://news.google.com/rss/articles/CBMi1234567890';
+ const recovered=await require('../lib/market-review-worker').reviewTask({input:{candidate:{...q,source_url:googleUrl},company:null}},day,{readPublicPage:async url=>url===googleUrl?{status:200,finalUrl:googleUrl,text:'Google redirect'}:url===q.source_url?wire:home,resolveGoogleSource:async()=>q.source_url,modelJson:async()=>{throw Error('deterministic recovery must not call model');}});
+ assert.equal(recovered.disposition,'published');assert(recovered.proposedCompany);assert.equal(recovered.activity.source_url,q.source_url);
  assert.equal(await f.verifyWireIssuer(q,async url=>url===q.source_url?wire:{...home,text:'Other company'}),null);
  assert.equal(await f.verifyWireIssuer({...q,source_url:'https://untrusted.example/news'},()=>{throw Error('must not fetch');}),null);
  const page={status:200,finalUrl:'https://news.google.com/rss/articles/CBMi1234567890',text:'<div data-n-a-ts="1791958432" data-n-a-sg="signatureABC">'};
