@@ -18,17 +18,29 @@ const { PGlite } = require(process.env.ECOSYSTEM_PGLITE_PATH || '@electric-sql/p
   }
   const query = async (sql) => (await db.query(sql)).rows;
   const resume = async () => (await query('select private.resume_physical_ai_market_review() as id'))[0].id;
+  const backlog = async () => (await query('select public.backlog_triage_summary() as counts'))[0].counts;
   await db.exec(`insert into review_queue_items(id,candidate_company,candidate_counterparty,candidate_date,activity_type,subsector,geography,description,source_type,source_url,snippet,extracted_text,confidence)
     values('rq-new','Unfamiliar Robotics','Buyer Corp',current_date,'m&a','robotics','N/A','Public acquisition','press release','https://www.prnewswire.com/news/new','Public','Public','reported')`);
   assert.equal(await resume(), 1, 'new public acquisition with an unfamiliar issuer must continue');
+  await db.exec("update review_queue_items set candidate_date=current_date-20 where id='rq-new'");
+  assert.equal((await backlog()).recentPublicPending, 1, '20-day-old public event belongs to the review lane');
+  assert.equal((await backlog()).oldPublicPending, 0);
+  assert.equal((await backlog()).dailyReviewSelectable, 1);
+  await db.exec("update review_queue_items set candidate_date=current_date-31 where id='rq-new'");
+  assert.equal((await backlog()).oldPublicPending, 1);
+  assert.equal((await backlog()).dailyReviewSelectable, 0);
+  await db.exec("update review_queue_items set candidate_date=current_date where id='rq-new'");
   await db.exec(`insert into market_review_runs(id,run_date,status,collector_window_status)values('prior',current_date-1,'completed','unknown');
     insert into market_review_tasks(id,run_id,candidate_id,input,status,updated_at)
       select 'held','prior',q.id,market_review_input(q)||jsonb_build_object('selectionOrder',1),'held',now() from review_queue_items q;`);
   assert.equal(await resume(), null, 'unchanged held input must not keep dispatching');
+  assert.equal((await backlog()).dailyReviewSelectable, 0);
   await db.exec("update review_queue_items set deal_value_usd=10000000 where id='rq-new'");
   assert.equal(await resume(), 2, 'changed input must be reconsidered');
+  assert.equal((await backlog()).dailyReviewSelectable, 1);
   await db.exec("insert into market_review_runs(id,run_date,status,selected,collector_window_status)values('today',current_date,'completed',10,'unknown')");
   assert.equal(await resume(), null, 'completed daily cap must stop new work');
+  assert.equal((await backlog()).dailyReviewSelectable, 0);
   await db.exec("update market_review_runs set status='running' where id='today'");
   assert.equal(await resume(), 3, 'already selected unfinished work must continue');
   for (const role of ['anon', 'authenticated', 'service_role']) {
