@@ -2,12 +2,14 @@
   "snapshot_id": "ai-deals-coverage-f7d2e123fce91505fdb3",
   "predecessor_snapshot_id": "ai-deals-coverage-f1aefd5696e41b8783b3",
   "predecessor_commit": "3b4e82113262e894f2c2e38d022d155f7f09a8cf",
-  "status": "VALIDATED_FOR_PUBLICATION",
+  "status": "PUBLISHED_AND_VERIFIED",
   "user_controls_exclusions": true,
   "inspection_is_unfiltered": true,
   "canonical_validation": "PASSED",
   "public_only_validation": "PASSED",
   "no_trends_calculated": true,
   "no_deal_count_calculations": true,
-  "unverifiable_claims_remain_flagged": true
+  "unverifiable_claims_remain_flagged": true,
+  "data_commit": "034c198896e7d1d6bd6e53ba732895b968ca85f9",
+  "publication_verification": "PUBLICATION_VERIFICATION.json"
 }

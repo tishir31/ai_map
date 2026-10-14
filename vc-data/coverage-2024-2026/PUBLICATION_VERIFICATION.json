@@ -1,0 +1,256 @@
+{
+  "snapshot_id": "ai-deals-coverage-f7d2e123fce91505fdb3",
+  "branch": "ai-vc-deals-2026",
+  "verification_status": "PASSED",
+  "verified_at": "2026-10-14T19:20:01.583253+00:00",
+  "all_public_git_blobs_match": true,
+  "all_manifest_file_bytes_match_remote_git_blobs": true,
+  "remote_branch_matches_published_commit": true,
+  "selected_raw_file_sha256_checks": [
+    {
+      "path": "vc-data/LATEST.json",
+      "sha256": "48155c8f3344e97a62ac04ec5b01b48fced8c240ce2d7e3d56d3e28724284332",
+      "matches_validated_local_bytes": true
+    },
+    {
+      "path": "vc-data/README.md",
+      "sha256": "b249eb7644360168851d20ea73746db9c14cd6ee09a8dd465093b8e78f628713",
+      "matches_validated_local_bytes": true
+    },
+    {
+      "path": "vc-data/coverage-2024-2026/manifest.json",
+      "sha256": "907ce81487a3d909359d4f83302a36aa3e69235c6616511858f192840cd8c4d8",
+      "matches_validated_local_bytes": true
+    },
+    {
+      "path": "vc-data/coverage-2024-2026/README.md",
+      "sha256": "7797a1098dcb753c1e0f1f68f79dc4b06e305e9c8674ee75b5cae58877b2f86e",
+      "matches_validated_local_bytes": true
+    },
+    {
+      "path": "vc-data/coverage-2024-2026/methodology.md",
+      "sha256": "0f30806ee5044b8ff1926a69f0144f6f81e8d34fa36bc66dfbd08c4432667fbf",
+      "matches_validated_local_bytes": true
+    },
+    {
+      "path": "vc-data/coverage-2024-2026/AUDITOR_PROMPT.txt",
+      "sha256": "b3a79868160763dcf5871816ca58c50461c28ab0517ff4a6e8f86384a56cf94d",
+      "matches_validated_local_bytes": true
+    },
+    {
+      "path": "vc-data/coverage-2024-2026/load_snapshot.py",
+      "sha256": "a01a660313e77cec893d188841a9bed8969acbc76d701d20bfbd7a972b0fc4f7",
+      "matches_validated_local_bytes": true
+    },
+    {
+      "path": "vc-data/coverage-2024-2026/validate_release.py",
+      "sha256": "eb0f9c6214fc92454f99bf0ef074a3019fddb4c28aed31c25f4245cb7fe1237a",
+      "matches_validated_local_bytes": true
+    },
+    {
+      "path": "vc-data/coverage-2024-2026/build_receipt.json",
+      "sha256": "9975c42f6d9224ec5971b182b9f0ed425e905704d205f7fc9040628591bafc4e",
+      "matches_validated_local_bytes": true
+    },
+    {
+      "path": "vc-data/coverage-2024-2026/validation_receipt.json",
+      "sha256": "ca9d175fbcfbade4a693a3645bbe40aa1b706d2458d0bece1212e2042d8d202a",
+      "matches_validated_local_bytes": true
+    },
+    {
+      "path": "vc-data/coverage-2024-2026/public_validation_receipt.json",
+      "sha256": "7c36aa437896de5cd19c5fd4fda26060838c1651cfd2d951e8712ac1e8cb67fd",
+      "matches_validated_local_bytes": true
+    },
+    {
+      "path": "vc-data/coverage-2024-2026/audit_release_receipt.json",
+      "sha256": "158f8526b11f95486b18dc6d98ffb0de68cf9ab0c3ab4b6d7eefd9fdbef82634",
+      "matches_validated_local_bytes": true
+    },
+    {
+      "path": "vc-data/coverage-2024-2026/inspection/all_deal_records.csv",
+      "sha256": "e1ced08d604cfc2efeff8cc0d69b5e5936446a497f94d9815b50b0ecd43123e0",
+      "matches_validated_local_bytes": true
+    },
+    {
+      "path": "vc-data/coverage-2024-2026/inspection/inspection_receipt.json",
+      "sha256": "cc4f5bd830e6459a449d88dc7b7677d0d6bda64c15caf158a45c6b48ff7b8164",
+      "matches_validated_local_bytes": true
+    },
+    {
+      "path": "vc-data/coverage-2024-2026/audit/change_log.csv",
+      "sha256": "babb0e9b92a35655df5a69dba3bc2ac250c7ac7bf017d2c890b4b021f30b2bdc",
+      "matches_validated_local_bytes": true
+    },
+    {
+      "path": "vc-data/coverage-2024-2026/audit/updated_database_review_files.zip",
+      "sha256": "f2e23f774251325c502af10354f760bc0983c4ac3aead07d51435549af77bc81",
+      "matches_validated_local_bytes": true
+    },
+    {
+      "path": "vc-data/coverage-2024-2026/json/events_all_0001.json",
+      "sha256": "1d3ad68f0f2f58d0ae678c1a3791e408dd8860727ab99b7874fd28d085c3ca1b",
+      "matches_validated_local_bytes": true
+    },
+    {
+      "path": "vc-data/coverage-2024-2026/json/events_all_0080.json",
+      "sha256": "fc3cc9e728fdafb7ac41972805aeb190e4b612af861c7fd6b475e3d35acf5802",
+      "matches_validated_local_bytes": true
+    },
+    {
+      "path": "vc-data/coverage-2024-2026/csv/events_all_0001.csv",
+      "sha256": "d5a1d379cb7ecba3e26c1b37a094019c0e6835533804e3e6ae01873b3d72c19c",
+      "matches_validated_local_bytes": true
+    },
+    {
+      "path": "vc-data/coverage-2024-2026/csv/events_all_0080.csv",
+      "sha256": "fc4d2b44a2a373c3332635865ba9f642c0df8534f347dba393430db3100d71f4",
+      "matches_validated_local_bytes": true
+    },
+    {
+      "path": "vc-data/coverage-2024-2026/json/observations_all_0001.json",
+      "sha256": "25e98c8e343ef24e441b748baf7e9b02a0a6025646931e7100a52c95acf42922",
+      "matches_validated_local_bytes": true
+    },
+    {
+      "path": "vc-data/coverage-2024-2026/json/observations_all_0056.json",
+      "sha256": "18b2588a22f81afb3f805ccf4dd8185837cfc54767d6a648b60797ec07ecaa38",
+      "matches_validated_local_bytes": true
+    },
+    {
+      "path": "vc-data/coverage-2024-2026/csv/observations_all_0001.csv",
+      "sha256": "82286554cb40c8c6e538ae9564090982e2ab91fa61a185b838563b21d173712c",
+      "matches_validated_local_bytes": true
+    },
+    {
+      "path": "vc-data/coverage-2024-2026/csv/observations_all_0056.csv",
+      "sha256": "72441ae19753a2aad2a6439a251226e05bd187eb703481c42aee015ce275612a",
+      "matches_validated_local_bytes": true
+    },
+    {
+      "path": "vc-data/coverage-2024-2026/json/coverage_fact_changes_0001.json",
+      "sha256": "3261692542e1dbfd1c5daa40e117d502ecb9f64ee89cc6aa10152d3b9abd0b51",
+      "matches_validated_local_bytes": true
+    },
+    {
+      "path": "vc-data/coverage-2024-2026/json/coverage_fact_changes_0009.json",
+      "sha256": "7619c98bf454da69fffd43c57497d2d7b111bc2aa1372c5024a7497fcc8446cb",
+      "matches_validated_local_bytes": true
+    },
+    {
+      "path": "vc-data/coverage-2024-2026/csv/coverage_fact_changes_0001.csv",
+      "sha256": "446be15de091fababebcdbcfe6a3142e6711824a405b2471c47ca58906687cf5",
+      "matches_validated_local_bytes": true
+    },
+    {
+      "path": "vc-data/coverage-2024-2026/csv/coverage_fact_changes_0009.csv",
+      "sha256": "675ede3672413e399ac41f5f82917ecc33922687ae06a8abab3e38cd5f607aad",
+      "matches_validated_local_bytes": true
+    },
+    {
+      "path": "vc-data/coverage-2024-2026/json/financing_source_reports_0001.json",
+      "sha256": "e80996f97f034ab4318478f9c4de2bd667a792e06e4bb0af40e2e4b50608ae4a",
+      "matches_validated_local_bytes": true
+    },
+    {
+      "path": "vc-data/coverage-2024-2026/json/financing_source_reports_0004.json",
+      "sha256": "6e6c6d266ef2b0057d8e0c433c49ebd406287d8f13477205f31e20c38366e804",
+      "matches_validated_local_bytes": true
+    },
+    {
+      "path": "vc-data/coverage-2024-2026/csv/financing_source_reports_0001.csv",
+      "sha256": "63770006b1fba490aab71419e6019885b7cfbaca8e588542204c3cb76ec2a64d",
+      "matches_validated_local_bytes": true
+    },
+    {
+      "path": "vc-data/coverage-2024-2026/csv/financing_source_reports_0004.csv",
+      "sha256": "e8e2b22ea83e2f715b63f335d269e110355bc7aff1d605dfb6e0208dc42694fe",
+      "matches_validated_local_bytes": true
+    },
+    {
+      "path": "vc-data/coverage-2024-2026/json/coverage_duplicate_fixes_0001.json",
+      "sha256": "a3c87ea85fc74d409a6ec8a5154495de533dbb320b4169d9bf1b9e8907a9d58c",
+      "matches_validated_local_bytes": true
+    },
+    {
+      "path": "vc-data/coverage-2024-2026/csv/coverage_duplicate_fixes_0001.csv",
+      "sha256": "c56d5b886dfc5a17da1569aba09b5433091167f9c66ce76ae0c2f3a198fcf9e9",
+      "matches_validated_local_bytes": true
+    },
+    {
+      "path": "vc-data/coverage-2024-2026/json/candidate_verification_reviews_0001.json",
+      "sha256": "4ddf22f4ac4f9cd918e69f8b468080e659e645e1e78bdf74add9b77548b58b13",
+      "matches_validated_local_bytes": true
+    },
+    {
+      "path": "vc-data/coverage-2024-2026/json/candidate_verification_reviews_0003.json",
+      "sha256": "c68ffb05df60c1f81560a016f23e8e19eec276cfd8baacf16ee186660016b9f5",
+      "matches_validated_local_bytes": true
+    },
+    {
+      "path": "vc-data/coverage-2024-2026/csv/candidate_verification_reviews_0001.csv",
+      "sha256": "85e0fcabc34bfd1c16169d8c3217db9afd92f3641040f1b7ce050984898560fb",
+      "matches_validated_local_bytes": true
+    },
+    {
+      "path": "vc-data/coverage-2024-2026/csv/candidate_verification_reviews_0003.csv",
+      "sha256": "8c3a6b4832fd04b465573f16a73771d18660f47e0518a86c542dd0984240a738",
+      "matches_validated_local_bytes": true
+    },
+    {
+      "path": "vc-data/coverage-2024-2026/json/reference_fact_reviews_0001.json",
+      "sha256": "0cdb8747a0996cdfb668a08ac7daee0b70adfd9ca342c70608b8b65294afccf8",
+      "matches_validated_local_bytes": true
+    },
+    {
+      "path": "vc-data/coverage-2024-2026/json/reference_fact_reviews_0002.json",
+      "sha256": "92e92cd7be5f17b4886874d4e3b527d4fbf577c972e0011ff66b56b556e4865f",
+      "matches_validated_local_bytes": true
+    },
+    {
+      "path": "vc-data/coverage-2024-2026/csv/reference_fact_reviews_0001.csv",
+      "sha256": "849375cb04fe5c4b2b5cf55667a1f212e762fa122318056073dd211651b4c116",
+      "matches_validated_local_bytes": true
+    },
+    {
+      "path": "vc-data/coverage-2024-2026/csv/reference_fact_reviews_0002.csv",
+      "sha256": "f1fe2c1c6df3d61f551c63c7e3fbfac34b0a3e7affc9524829ddf7656e8ef36b",
+      "matches_validated_local_bytes": true
+    },
+    {
+      "path": "vc-data/coverage-2024-2026/json/record_source_checks_0001.json",
+      "sha256": "dc6ebae8b473fdd8073f1ae3c6dd317bb535437fedd432f48d28972498b10ee8",
+      "matches_validated_local_bytes": true
+    },
+    {
+      "path": "vc-data/coverage-2024-2026/json/record_source_checks_0013.json",
+      "sha256": "fe2bcdf9344da1148987270d6fefddad584a906feae603bcec690e7eb4419d8e",
+      "matches_validated_local_bytes": true
+    },
+    {
+      "path": "vc-data/coverage-2024-2026/csv/record_source_checks_0001.csv",
+      "sha256": "25edc4be67b88eedc2540dedc2410285200bd802be2c9a1fcba4ce6e565d04df",
+      "matches_validated_local_bytes": true
+    },
+    {
+      "path": "vc-data/coverage-2024-2026/csv/record_source_checks_0013.csv",
+      "sha256": "969bff062c33746e4e2d45ccb8c19c40456c626de5b275a105daeb770d0e5e13",
+      "matches_validated_local_bytes": true
+    },
+    {
+      "path": "vc-data/coverage-2024-2026/json/acquisition_fact_reviews_0001.json",
+      "sha256": "d230ba3fb766bf1a508a11d89bd2f8c5ab340d4ecffefec9e24212b273d2e91b",
+      "matches_validated_local_bytes": true
+    },
+    {
+      "path": "vc-data/coverage-2024-2026/csv/acquisition_fact_reviews_0001.csv",
+      "sha256": "bb3d5d43e28a43cd56fb8df3b6c0b63521ea46037f7ba1445af4ecdfbfe09948",
+      "matches_validated_local_bytes": true
+    }
+  ],
+  "user_controls_exclusions": true,
+  "no_trends_calculated": true,
+  "no_deal_count_calculations": true,
+  "verified_data_commit": "034c198896e7d1d6bd6e53ba732895b968ca85f9",
+  "note": "This receipt verifies the data commit. A subsequent metadata-only commit publishes the receipt and updated bundle."
+}

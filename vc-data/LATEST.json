@@ -14,5 +14,7 @@
   "change_log": "coverage-2024-2026/audit/change_log.csv",
   "user_controls_exclusions": true,
   "no_trends_calculated": true,
-  "no_deal_count_calculations": true
+  "no_deal_count_calculations": true,
+  "data_commit": "034c198896e7d1d6bd6e53ba732895b968ca85f9",
+  "publication_verification": "coverage-2024-2026/PUBLICATION_VERIFICATION.json"
 }
