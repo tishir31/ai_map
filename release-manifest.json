@@ -1,9 +1,9 @@
 {
   "schemaVersion": 1,
-  "release": "physical-ai-ecosystem-2026-10-13",
-  "builtAt": "2026-10-13T22:13:11.891Z",
+  "release": "physical-ai-ecosystem-2026-10-14",
+  "builtAt": "2026-10-14T05:26:10.071Z",
   "sourceCommit": "0c4f4bec318dae2cd35a3f9dd7443cefe53eabe4",
-  "backendBaseCommit": "b63085b84d156a2e4c08ecd91231a4414490cc52",
+  "backendBaseCommit": "cee147397288aaa02c2a342d6e33ee48fc7d73f3",
   "graphAsOf": "2026-09-07",
   "publicRoutes": [
     "ecosystem",
@@ -50,7 +50,7 @@
     "lib/market-review-health.js": "f19e990ab5db02b806a93807cf550e0533ad74279b87ba596507c535b3dc236b",
     "lib/market-review-worker.js": "622788e6f8f5e2187035e1baa07de97da12a0330f9b6194bb13ec121836cfd67",
     "lib/market-snapshot.js": "fda5bbd72802a9abd6c7b849d32a71de0b5d37bbba1633fa654cae4d8cd8ea30",
-    "lib/physical-ai-router.js": "b29dd6d2a9f912d8fa785443f530dfe45b4ca4d75829f6c65e34f4a476ad2a03",
+    "lib/physical-ai-router.js": "e742f281b0d9e8fdf13d2fb99ca4c3d92ba32608dd293974132c9af11d65c7a7",
     "lib/public-actions.js": "e290b3575b26271115e646825a80eada9554550a43e324794720003aae5b27ca",
     "lib/public-research-worker.js": "8d59191661de2b27053cbcb37c0c144a7595cf912eb611edfd5f32f21c4f9f4e",
     "lib/public-web.js": "214b8b5655f8fc65d66cbe6efd78b64f7a893587f92c0cd1c68e64557dd6e017",
