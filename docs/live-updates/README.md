@@ -1,6 +1,6 @@
 # Live update repair
 
-Public market snapshots and maintenance status refresh every 30 seconds while the page is visible, and on focus and reconnect. Requests bypass browser caches. In-flight refreshes do not overlap; cleanup removes listeners and timers. Public workspace overlays and editor recovery boundaries remain intact.
+Public market snapshots and maintenance status refresh every 30 seconds while the page is visible, and on focus and reconnect. Market snapshots bypass browser and CDN caches so newly approved database records appear on the next successful poll. In-flight refreshes do not overlap; cleanup removes listeners and timers. Public workspace overlays and editor recovery boundaries remain intact.
 
 The public collector tries configured providers with a bounded timeout, disables unnecessary Gemini thinking for JSON triage, and can stage deterministic funding signals during a model outage. Staging does not approve or publish records.
 
