@@ -77,6 +77,14 @@ const DEFAULT_QUERIES = [
   {
     name: "Maritime autonomy sensing funding",
     query: `(maritime OR vessel OR ship OR ocean OR "maritime autonomy" OR "ocean intelligence") (raises OR raised OR funding OR financing OR investment OR "Series A" OR "Series B" OR seed) when:${MAX_LOOKBACK_DAYS}d`
+  },
+  {
+    name: "Physical AI acquisitions",
+    query: `(robotics OR "physical AI" OR autonomy OR simulation OR "world models" OR "engineering software") (acquire OR acquires OR acquired OR acquisition OR merger) when:${MAX_LOOKBACK_DAYS}d`
+  },
+  {
+    name: "Engineering and world-model financing",
+    query: `("AI engineering" OR "hardware engineering" OR "world model" OR physics OR simulation) (raises OR funding OR financing OR "Series A" OR "Series B") when:${MAX_LOOKBACK_DAYS}d`
   }
 ];
 
@@ -95,6 +103,7 @@ const PHYSICAL_AI_RULES = [
   /\brfid|inventory sensing|retail intelligence\b/i,
   /\bmaritime|vessel|ship|ocean|smartmast\b/i,
   /\bconstruction robotics|jobsite automation\b/i
+  ,/\bworld models?|hardware engineering|physics simulation|AI engineering\b/i
 ];
 
 const FUNDING_RULES = [
@@ -217,7 +226,7 @@ function isFundingSignal(text, dealValueUsd) {
   const physicalScore = scoreRules(text, PHYSICAL_AI_RULES);
   const fundingScore = scoreRules(text, FUNDING_RULES);
   const negativeScore = scoreRules(text, NEGATIVE_RULES);
-  return physicalScore >= 1 && fundingScore >= 1 && negativeScore === 0 && (dealValueUsd || /\bseries\s+[a-z]\b|\bseed round|pre-seed\b/i.test(text));
+  return physicalScore >= 1 && fundingScore >= 1 && negativeScore === 0 && (dealValueUsd || /\bseries\s+[a-z]\b|\bseed round|pre-seed|funding round|financing round|debt financing|credit facility|secured financing\b/i.test(text));
 }
 
 function llmEnabled(body) {
@@ -344,7 +353,17 @@ async function googleNewsSearch(query, maxResults, bounded = false) {
 }
 
 async function fetchArticleSnapshot(url, bounded = false) {
-  if(bounded){const page=await publicWeb.readPublicPage(url);if(page.status<200||page.status>=300)throw Error(`Source HTTP ${page.status}`);return {ok:true,status:page.status,url:page.finalUrl,title:htmlMeta(page.text,/<title[^>]*>([\s\S]*?)<\/title>/i),text:stripHtml(page.text).slice(0,8000)};}
+  if(bounded){
+    const deadline=Date.now()+16000;
+    let page=await publicWeb.readPublicPage(url,0,Math.min(deadline,Date.now()+7000));
+    if(page.status<200||page.status>=300)throw Error(`Source HTTP ${page.status}`);
+    if(new URL(page.finalUrl).hostname==='news.google.com'){
+      const original=await require('../lib/google-news-source').resolveGoogleSource(page,{deadline:Math.min(deadline,Date.now()+4000)});
+      page=await publicWeb.readPublicPage(original,0,deadline);
+      if(page.status<200||page.status>=300)throw Error(`Source HTTP ${page.status}`);
+    }
+    return {ok:true,status:page.status,url:page.finalUrl,title:htmlMeta(page.text,/<title[^>]*>([\s\S]*?)<\/title>/i),text:stripHtml(page.text).slice(0,8000)};
+  }
   const controller = new AbortController();
   const timer = setTimeout(() => controller.abort(), 7000);
   try {
@@ -524,12 +543,15 @@ function gateCandidate(candidate, context) {
   const text = `${candidate.candidate_company}. ${candidate.description}. ${candidate.snippet}. ${sourceText}. ${evidence}`;
   if (!candidateIsInWindow(candidate.candidate_date, context)) return { keep: false, reason: "outside-lookback" };
   if (!candidate.candidate_company || candidate.candidate_company === "N/A") return { keep: false, reason: "company-unresolved" };
-  if (!isFundingSignal(text, candidate.deal_value_usd)) return { keep: false, reason: "low-relevance" };
+  const transaction = candidate.activity_type === 'm&a'
+    ? scoreRules(text, PHYSICAL_AI_RULES) >= 1 && scoreRules(text, NEGATIVE_RULES) === 0 && /\b(?:acquir(?:e[sd]?|ing)|acquisition|merger|definitive agreement)\b/i.test(text)
+    : candidate.activity_type === 'financing' && isFundingSignal(text, candidate.deal_value_usd);
+  if (!transaction) return { keep: false, reason: "low-relevance" };
   if (pendingDuplicate(candidate, context)) return { keep: false, reason: "pending-duplicate" };
   const existing = findExistingActivity(candidate, context);
   if (existing?.exact) return { keep: false, reason: "approved-duplicate" };
   if (existing?.activity) return { keep: true, reason: "existing-activity-update", duplicateOfActivityId: existing.activity.id };
-  return { keep: true, reason: "new-financing" };
+  return { keep: true, reason: candidate.activity_type === 'm&a' ? 'new-acquisition' : "new-financing" };
 }
 
 function activityContext(activity, context) {
@@ -557,10 +579,10 @@ Your job is to adjudicate ONE public RSS/news candidate before it enters a priva
 
 Hard rules:
 - Today's date for this run is ${window.endDate}. The valid ingestion window is ${window.startDate} through ${window.endDate}. Treat event dates inside that window as current, not future.
-- Keep only Physical AI funding events from that valid ingestion window.
+- Keep only Physical AI financing or acquisition announcements from that valid ingestion window. Preserve activityType: financing or m&a. Announced acquisitions are not completed acquisitions.
 - Physical AI includes robotics, humanoids, autonomous vehicles, drones, defense autonomy, industrial automation, embodied AI, edge AI hardware, sensing/perception/autonomy infrastructure.
 - Sensor, lidar, computer-vision, RFID, inventory-sensing, retail-intelligence, maritime-sensing, construction-automation, and edge-hardware companies should be kept when they enable physical-world automation.
-- Reject stock news, earnings, opinion pieces, conference/newsletter promos, hiring, generic AI software, crypto, and non-funding stories.
+- Reject stock news, earnings, opinion pieces, conference/newsletter promos, hiring, generic AI software, crypto, and stories without a financing or acquisition event.
 - Never invent missing company names, investors, dates, or dollar values.
 - If this is an update to an existing activity, return action "update_existing" and preserve the matching duplicateOfActivityId when appropriate.
 
@@ -593,7 +615,7 @@ Return strict JSON only:
   "candidateCompany": "official company name or N/A",
   "candidateCounterparty": "lead/key investors if present, comma-separated, or N/A",
   "candidateDate": "YYYY-MM-DD",
-  "activityType": "financing",
+  "activityType": "financing" | "m&a",
   "subsector": "one of ${ALLOWED_SUBSECTORS.join(" | ")}",
   "dealValueUsd": null,
   "geography": "country/region or N/A",
@@ -625,7 +647,7 @@ function buildAdjudicatedCandidate(parsed, candidate, context, modelLabel) {
   if (boundedText(parsed.candidateCompany, 140) && parsed.candidateCompany !== "N/A") next.candidate_company = boundedText(parsed.candidateCompany, 140);
   if (boundedText(parsed.candidateCounterparty, 240)) next.candidate_counterparty = boundedText(parsed.candidateCounterparty, 240);
   if (validDate(parsed.candidateDate) && candidateIsInWindow(parsed.candidateDate, context)) next.candidate_date = parsed.candidateDate;
-  next.activity_type = "financing";
+  next.activity_type = normalizeAllowed(parsed.activityType, ['financing','m&a'], candidate.activity_type);
   next.subsector = normalizeAllowed(parsed.subsector, ALLOWED_SUBSECTORS, next.subsector);
   const evidence = Array.isArray(parsed.evidence) ? parsed.evidence.map((x) => boundedText(x, 160)).filter(Boolean).slice(0, 4) : [];
   next.deal_value_usd = sourceBackedDealValueUsd(
@@ -756,17 +778,18 @@ function stripIntelligenceColumns(row) {
 function buildCandidate(item, sourceName, article) {
   const text = `${item.title}. ${item.source}. ${article?.title || ""}. ${article?.text || ""}`;
   const dealValueUsd = parseMoneyToUsd(text);
-  const company = inferCompany(text);
+  const acquisition = item.title.match(/^(.{2,100}?)\s+(?:to acquire|acquires?|has acquired|announces acquisition of)\s+(.{2,120}?)(?=\s+(?:for|to|in|[-–—])|$)/i);
+  const company = acquisition ? acquisition[2].trim() : inferCompany(text);
   const row = {
     id: `rq-web-${hash(normalizeUrl(article?.url || item.link) || item.title)}`,
     candidate_company: company,
-    candidate_counterparty: inferCounterparty(text),
+    candidate_counterparty: acquisition ? acquisition[1].trim() : inferCounterparty(text),
     candidate_date: item.pubDate,
-    activity_type: "financing",
+    activity_type: acquisition || /\b(?:acquisition|merger|acquire[sd]?)\b/i.test(item.title) ? "m&a" : "financing",
     subsector: inferSubsector(text),
     deal_value_usd: dealValueUsd,
     geography: "N/A",
-    description: `Public web funding signal from ${sourceName}: ${item.title}`,
+    description: `Public web transaction signal from ${sourceName}: ${item.title}`,
     source_type: "article",
     source_url: article?.url || item.link,
     gmail_message_id: null,
@@ -1153,6 +1176,7 @@ module.exports = async function handler(req, res) {
 };
 
 module.exports._test = {
+  buildCandidate,
   buildAdjudicatedCandidate,
   findExistingActivity,
   gateCandidate
