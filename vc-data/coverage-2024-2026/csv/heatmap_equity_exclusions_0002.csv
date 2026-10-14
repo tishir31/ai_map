@@ -1,0 +1,1126 @@
+snapshot_id,event_id,company,period_id,exclusion_reason,review_decision
+ai-deals-coverage-f1aefd5696e41b8783b3,459,Instinct,recent_12m,in_talks_or_rumor,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,2011,Instinct,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,2683,Instinct,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,2743,Instinct,recent_12m,in_talks_or_rumor,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,2072,CADDi,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,2773,CADDi,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,464,Buildots,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,469,TAR,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,888,Mistral AI,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,2554,Mistral AI,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,471,Mistral AI,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,473,Mistral AI,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,2104,Mistral AI,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,2788,Mistral AI,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,2128,Aitan,recent_12m,specific_public_financing_evidence_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,475,Aitan,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,476,Tripo AI,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,909,Tripo AI,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,2123,Cornerstone Robotics,recent_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,478,Cornerstone Robotics,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,479,Nscale,recent_12m,excluded_instrument_or_non_financing_event,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,2131,Nscale,recent_12m,excluded_instrument_or_non_financing_event,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,480,Apate.AI,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,489,Deep Cogito,recent_12m,unverified,unverified
+ai-deals-coverage-f1aefd5696e41b8783b3,481,Deep Cogito,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,490,Emerald AI,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,2175,Network Bio,recent_12m,unverified,unverified
+ai-deals-coverage-f1aefd5696e41b8783b3,492,Network Bio,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,494,Mercor,recent_12m,in_talks_or_rumor,in_talks_do_not_count
+ai-deals-coverage-f1aefd5696e41b8783b3,2196,Skan AI,recent_12m,unverified,unverified
+ai-deals-coverage-f1aefd5696e41b8783b3,498,Skan AI,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,499,ChipAgents,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,2229,Obsidian Security,recent_12m,unverified,unverified
+ai-deals-coverage-f1aefd5696e41b8783b3,500,Obsidian Security,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,501,Corma,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,617,River AI,recent_12m,unverified_probable_duplicate,unverified_probable_duplicate
+ai-deals-coverage-f1aefd5696e41b8783b3,504,River AI,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,706,Kling AI,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,2367,Kling AI,\N,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,2479,Kling AI,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,556,Modal Labs,recent_12m,in_talks_or_rumor,in_talks_do_not_count
+ai-deals-coverage-f1aefd5696e41b8783b3,2426,Modal Labs,recent_12m,in_talks_or_rumor,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,2810,Modal Labs,recent_12m,in_talks_or_rumor,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,2679,Modal Labs,recent_12m,in_talks_or_rumor,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,557,Euclyd,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,2069,Euclyd,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,558,Conveo,recent_12m,unverified,unverified
+ai-deals-coverage-f1aefd5696e41b8783b3,2126,Conveo,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,2466,Conveo,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,559,Wonderful,recent_12m,unverified,unverified
+ai-deals-coverage-f1aefd5696e41b8783b3,901,Wonderful,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,2124,Wonderful,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,2467,Wonderful,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,2557,Wonderful,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,561,Wrtn Technologies,recent_12m,unverified,unverified
+ai-deals-coverage-f1aefd5696e41b8783b3,926,Wrtn Technologies,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,2149,Wrtn Technologies,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,2158,Stability AI,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,2482,Modal Labs,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,1698,Hightouch,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,1692,Parallel Web Systems,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,571,Juicebox,recent_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,1528,Juicebox,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,585,Melius,october_update,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,1156,Melius,october_update,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,2830,Melius,october_update,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,2530,Melius,october_update,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,1189,Melius,october_update,unverified_probable_duplicate,unverified_probable_duplicate
+ai-deals-coverage-f1aefd5696e41b8783b3,586,Melius,\N,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,587,Aranya,recent_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,920,Aranya,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,2136,Aranya,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,589,Agentrys,recent_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,2152,Agentrys,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,591,SolveAI,recent_12m,unverified,unverified
+ai-deals-coverage-f1aefd5696e41b8783b3,1485,SolveAI,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,616,Helion,recent_12m,framework_scope_or_subsector_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,615,Helion,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,2210,Firmus,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,618,Firmus,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,2278,Enigma Robotics,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,2572,Enigma Robotics,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,622,Upstage,recent_12m,unverified,unverified
+ai-deals-coverage-f1aefd5696e41b8783b3,789,Upstage,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,2641,PaleBlueDot AI,october_update,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,1988,PaleBlueDot AI,october_update,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,2345,TypeSafe AI,recent_12m,in_talks_or_rumor,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,2518,TypeSafe AI,october_update,in_talks_or_rumor,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,2824,TypeSafe AI,recent_12m,in_talks_or_rumor,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,2868,TypeSafe AI,october_update,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,1849,Taktile,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,642,Mind Robotics,recent_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,1022,Mind Robotics,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,1741,Mind Robotics,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,644,Supabase,october_update,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,2635,Supabase,october_update,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,2445,Supabase,october_update,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,2016,PicoJool,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,2805,PicoJool,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,2073,Delos Data,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,2768,Delos Data,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,1606,Kestra,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,2917,Arivihan,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,2668,Arivihan,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,2022,Brahma AI,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,2708,Brahma AI,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,671,Sela,recent_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,2719,Sela,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,2037,Sela,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,853,Sela,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,676,Apex Intelligence,recent_12m,unverified,unverified
+ai-deals-coverage-f1aefd5696e41b8783b3,2776,Apex Intelligence,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,2054,Apex Intelligence,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,677,SignSplit,october_update,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,2620,SignSplit,october_update,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,678,Ortet,recent_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,2645,Ortet,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,679,GMI Cloud,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,2421,GMI Cloud,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,816,GMI Cloud,october_update,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,680,GMI Cloud,recent_12m,excluded_instrument_or_non_financing_event,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,2703,GMI Cloud,recent_12m,excluded_instrument_or_non_financing_event,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,2422,GMI Cloud,recent_12m,excluded_instrument_or_non_financing_event,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,1190,GMI Cloud,october_update,excluded_instrument_or_non_financing_event,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,683,iris labs,october_update,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,2854,iris labs,october_update,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,808,iris labs,october_update,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,684,Rebel Audio,october_update,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,2871,Rebel Audio,october_update,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,685,Reactor,october_update,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,2626,Reactor,october_update,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,2415,Reactor,october_update,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,686,Helix Digital Infrastructure,recent_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,2673,Helix Digital Infrastructure,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,688,Realset AI and Flatkey,recent_12m,framework_scope_or_subsector_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,2663,Realset AI and Flatkey,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,689,RobCo,october_update,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,2616,RobCo,october_update,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,2667,Efficient Computer,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,2003,Efficient Computer,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,2612,Vocca,october_update,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,1282,Armadin Security,october_update,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,1987,Armadin Security,october_update,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,2652,Armadin Security,october_update,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,703,DayOne Data Centers,recent_12m,framework_scope_or_subsector_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,702,DayOne Data Centers,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,1321,DayOne Data Centers,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,708,DeepSeek,recent_12m,unverified,unverified
+ai-deals-coverage-f1aefd5696e41b8783b3,1904,DeepSeek,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,709,Recare,recent_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,1138,Recare,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,710,Soma Energy,recent_12m,unverified,unverified
+ai-deals-coverage-f1aefd5696e41b8783b3,1053,Soma Energy,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,715,The OpenAI Deployment Co.,recent_12m,excluded_instrument_or_non_financing_event,outside_framework
+ai-deals-coverage-f1aefd5696e41b8783b3,1701,The OpenAI Deployment Co.,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,1034,The OpenAI Deployment Co.,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,864,Treble Technologies,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,2545,Treble Technologies,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,2755,Treble Technologies,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,1123,Mesh Optical Technologies,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,1455,Mesh Optical Technologies,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,722,Ampersand,october_update,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,804,Ampersand,october_update,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,1969,Ampersand,october_update,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,2141,Physical Superintelligence,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,910,Physical Superintelligence,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,2151,Transfyr,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,924,Transfyr,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,965,Wordsmith AI,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,2224,Wordsmith AI,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,972,Genius AI,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,2289,Genius AI,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,727,Proxima,recent_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,1148,Proxima,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,1329,Proxima,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,1617,Alcatraz AI,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,1225,Alcatraz AI,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,797,Mecka AI,october_update,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,2849,Mecka AI,october_update,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,2591,Gushwork AI,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,1496,Gushwork AI,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,1084,Corridor (coding security),recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,1559,Corridor (coding security),recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,1038,Phonely,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,1651,Phonely,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,1160,Proximal,recent_12m,unverified,unverified
+ai-deals-coverage-f1aefd5696e41b8783b3,738,Proximal,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,2660,Proximal,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,756,PixVerse,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,1881,PixVerse,recent_12m,in_talks_or_rumor,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,2850,Gallatin AI,october_update,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,799,Trmeric,october_update,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,2845,Trmeric,october_update,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,802,Nous Research,october_update,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,2529,Nous Research,october_update,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,2835,Nous Research,october_update,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,803,Stuut,october_update,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,1962,Stuut,october_update,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,806,Etched,october_update,in_talks_or_rumor,in_talks_do_not_count
+ai-deals-coverage-f1aefd5696e41b8783b3,2424,Etched,october_update,in_talks_or_rumor,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,807,Multiply Labs,october_update,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,2836,Multiply Labs,october_update,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,2531,Ghost (personal AI),october_update,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,2623,Ghost (personal AI),october_update,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,810,UpSmith,october_update,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,2624,UpSmith,october_update,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,811,Comparables.ai,october_update,unverified,unverified
+ai-deals-coverage-f1aefd5696e41b8783b3,2613,Comparables.ai,october_update,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,812,OneByZero,october_update,unverified,unverified
+ai-deals-coverage-f1aefd5696e41b8783b3,1983,OneByZero,october_update,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,2628,OneByZero,october_update,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,1985,SafeWorld,october_update,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,2622,SafeWorld,october_update,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,815,Fleuret AI,october_update,unverified,unverified
+ai-deals-coverage-f1aefd5696e41b8783b3,2630,Fleuret AI,october_update,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,817,Flow Engineering,october_update,unverified,unverified
+ai-deals-coverage-f1aefd5696e41b8783b3,1993,Flow Engineering,october_update,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,2657,Flow Engineering,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,820,Ascerta,october_update,specific_public_financing_evidence_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,1992,Metaview,october_update,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,2658,Metaview,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,830,Kanu AI,recent_12m,unverified,unverified
+ai-deals-coverage-f1aefd5696e41b8783b3,1996,Kanu AI,october_update,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,831,Inbolt,recent_12m,unverified,unverified
+ai-deals-coverage-f1aefd5696e41b8783b3,1997,Inbolt,october_update,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,2651,Inbolt,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,2440,OpenAI,recent_12m,in_talks_or_rumor,in_talks_do_not_count
+ai-deals-coverage-f1aefd5696e41b8783b3,866,OpenAI,recent_12m,in_talks_or_rumor,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,2536,OpenAI,recent_12m,in_talks_or_rumor,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,832,OpenAI,recent_12m,in_talks_or_rumor,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,2770,OpenAI,recent_12m,in_talks_or_rumor,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,2665,OpenAI,recent_12m,in_talks_or_rumor,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,833,OpenEvidence,recent_12m,unverified,unverified
+ai-deals-coverage-f1aefd5696e41b8783b3,2014,OpenEvidence,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,2646,OpenEvidence,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,835,Dextr AI,recent_12m,unverified,unverified
+ai-deals-coverage-f1aefd5696e41b8783b3,2823,Dextr AI,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,836,Kontext,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,2814,Kontext,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,838,Nscale,recent_12m,excluded_instrument_or_non_financing_event,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,2816,Nscale,recent_12m,excluded_instrument_or_non_financing_event,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,2696,Basecamp Research,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,841,Baseten,recent_12m,in_talks_or_rumor,in_talks_do_not_count
+ai-deals-coverage-f1aefd5696e41b8783b3,2427,Baseten,recent_12m,in_talks_or_rumor,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,2822,Baseten,recent_12m,in_talks_or_rumor,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,842,Tekever,recent_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,2707,Tekever,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,843,Snorkel AI,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,2724,Snorkel AI,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,2431,Mirendil,recent_12m,in_talks_or_rumor,in_talks_do_not_count
+ai-deals-coverage-f1aefd5696e41b8783b3,844,Mirendil,recent_12m,in_talks_or_rumor,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,2723,Mirendil,recent_12m,in_talks_or_rumor,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,846,SOL,recent_12m,unverified,unverified
+ai-deals-coverage-f1aefd5696e41b8783b3,2807,SOL,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,2678,SOL,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,2444,Go.AI,recent_12m,unverified,unverified
+ai-deals-coverage-f1aefd5696e41b8783b3,849,Go.AI,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,2715,Go.AI,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,850,Firecrawl,recent_12m,unverified,unverified
+ai-deals-coverage-f1aefd5696e41b8783b3,2030,Firecrawl,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,2036,Chamelio,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,857,Hang Ten Systems,recent_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,2052,Hang Ten Systems,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,2772,Hang Ten Systems,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,858,Noetive,recent_12m,unverified_probable_duplicate,unverified_probable_duplicate
+ai-deals-coverage-f1aefd5696e41b8783b3,2775,Noetive,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,2731,Rune,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,2057,TypeSafe AI,recent_12m,unverified_probable_duplicate,unverified_probable_duplicate
+ai-deals-coverage-f1aefd5696e41b8783b3,860,TypeSafe AI,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,2774,TypeSafe AI,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,861,Comp AI,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,863,Magentic,recent_12m,unverified,unverified
+ai-deals-coverage-f1aefd5696e41b8783b3,2049,Magentic,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,867,Factory,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,2769,Factory,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,868,Footprint,recent_12m,unverified,unverified
+ai-deals-coverage-f1aefd5696e41b8783b3,2041,Footprint,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,870,Artificial Intelligence Underwriting Company,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,2547,Artificial Intelligence Underwriting Company,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,2767,Artificial Intelligence Underwriting Company,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,871,Cornelis Networks,recent_12m,unverified,unverified
+ai-deals-coverage-f1aefd5696e41b8783b3,2826,Cornelis Networks,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,872,Profound,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,2071,Profound,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,2740,Profound,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,875,Planted,recent_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,2034,Planted,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,876,Mithrl,recent_12m,unverified,unverified
+ai-deals-coverage-f1aefd5696e41b8783b3,2059,Mithrl,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,881,Maven Robotics,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,2007,Maven Robotics,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,2105,Celero Communications,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,2098,Euno,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,2792,Euno,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,889,Forus,recent_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,2106,Forus,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,890,AI Score,recent_12m,unverified,unverified
+ai-deals-coverage-f1aefd5696e41b8783b3,1263,AI Score,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,893,Thinking Machines,recent_12m,in_talks_or_rumor,in_talks_do_not_count
+ai-deals-coverage-f1aefd5696e41b8783b3,2556,Thinking Machines,recent_12m,in_talks_or_rumor,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,2113,Gimlet Labs,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,902,Lyte,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,904,HiddenLayer,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,905,Aslan,recent_12m,unverified,unverified
+ai-deals-coverage-f1aefd5696e41b8783b3,2135,Aslan,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,906,Atira,recent_12m,unverified_probable_duplicate,unverified_probable_duplicate
+ai-deals-coverage-f1aefd5696e41b8783b3,923,Owner,recent_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,2145,Owner,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,2560,Instinct,recent_12m,unverified_probable_duplicate,unverified_probable_duplicate
+ai-deals-coverage-f1aefd5696e41b8783b3,925,Instinct,recent_12m,in_talks_or_rumor,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,2001,General Intuition,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,2563,General Intuition,recent_12m,in_talks_or_rumor,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,932,General Intuition,recent_12m,in_talks_or_rumor,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,2662,General Intuition,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,933,Starcloud,recent_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,2168,Starcloud,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,935,Alice,recent_12m,unverified,unverified
+ai-deals-coverage-f1aefd5696e41b8783b3,2157,Alice,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,937,Airbound,recent_12m,unverified_probable_duplicate,unverified_probable_duplicate
+ai-deals-coverage-f1aefd5696e41b8783b3,2159,Airbound,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,2507,Airbound,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,938,Keenable,recent_12m,unverified,unverified
+ai-deals-coverage-f1aefd5696e41b8783b3,2562,Keenable,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,2162,Keenable,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,2166,Quintessent,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,2192,Mindgard,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,970,Humanoid,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,2312,Applied Computing,recent_12m,unverified,unverified
+ai-deals-coverage-f1aefd5696e41b8783b3,976,Applied Computing,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,2327,Norm AI,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,2576,Venice AI,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,1000,Scaled Cognition,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,1861,Patronus AI,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,1007,ZeroDrift,recent_12m,unverified,unverified
+ai-deals-coverage-f1aefd5696e41b8783b3,1804,ZeroDrift,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,1124,C2i Semiconductors,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,1013,C2i Semiconductors,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,1020,Recursive Superintelligence,recent_12m,unverified,unverified
+ai-deals-coverage-f1aefd5696e41b8783b3,1740,Recursive Superintelligence,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,1031,Exaforce,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,1036,Moonshot AI,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,1648,Parasail,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,1634,Patlytics,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,1059,Depthfirst,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,1603,Depthfirst,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,1592,Rebellions,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,2587,Rebellions,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,2588,Starcloud,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,1065,Starcloud,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,2486,Starcloud,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,1889,Physical Intelligence,recent_12m,in_talks_or_rumor,in_talks_do_not_count
+ai-deals-coverage-f1aefd5696e41b8783b3,1071,Physical Intelligence,recent_12m,in_talks_or_rumor,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,1074,Cowboy Space,recent_12m,in_talks_or_rumor,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,1593,Cowboy Space,recent_12m,in_talks_or_rumor,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,1082,RunSybil,recent_12m,unverified,unverified
+ai-deals-coverage-f1aefd5696e41b8783b3,1557,RunSybil,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,1089,Advanced Navigation,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,1548,Niv-AI,recent_12m,unverified,unverified
+ai-deals-coverage-f1aefd5696e41b8783b3,1092,Niv-AI,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,1549,Surf AI,recent_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,1097,Surf AI,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,1102,Mind Robotics,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,2911,Neura Robotics,recent_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,1106,Neura Robotics,recent_12m,in_talks_or_rumor,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,2497,Neura Robotics,recent_12m,in_talks_or_rumor,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,1115,Subject,recent_12m,unverified,unverified
+ai-deals-coverage-f1aefd5696e41b8783b3,1474,Subject,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,2441,ElevenLabs,\N,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,2457,ElevenLabs,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,1130,Resolve AI,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,2450,Resolve AI,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,1377,Decagon,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,1139,Northslope,recent_12m,unverified,unverified
+ai-deals-coverage-f1aefd5696e41b8783b3,1390,Northslope,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,1330,WebAI,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,1155,Catalyst,october_update,unverified,unverified
+ai-deals-coverage-f1aefd5696e41b8783b3,2857,Catalyst,october_update,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,2866,Zeroset,october_update,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,2664,Zenithon,recent_12m,unverified,unverified
+ai-deals-coverage-f1aefd5696e41b8783b3,1998,Zenithon,october_update,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,1161,Zenithon,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,2640,Beltic,recent_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,1999,Beltic,october_update,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,1162,Beltic,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,1163,Ema,recent_12m,unverified,unverified
+ai-deals-coverage-f1aefd5696e41b8783b3,2542,Ema,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,2024,Ema,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,1164,F13,recent_12m,unverified,unverified
+ai-deals-coverage-f1aefd5696e41b8783b3,2712,F13,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,2134,AIR Security,recent_12m,unverified_probable_duplicate,unverified_probable_duplicate
+ai-deals-coverage-f1aefd5696e41b8783b3,1166,AIR Security,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,1746,Nectar Social,recent_12m,unverified,unverified
+ai-deals-coverage-f1aefd5696e41b8783b3,1172,Nectar Social,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,2437,Wispr,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,1174,Wispr,recent_12m,in_talks_or_rumor,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,2483,Wispr,recent_12m,in_talks_or_rumor,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,1178,Normal Computing,recent_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,1587,Normal Computing,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,1180,Notch,recent_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,1588,Notch,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,1191,Deepgram,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,1192,Crosby,recent_12m,unverified,unverified
+ai-deals-coverage-f1aefd5696e41b8783b3,1604,Crosby,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,2068,Exein,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,2548,Exein,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,2763,Exein,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,2899,OpenAI,recent_12m,cumulative_target_or_unallocated_context,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,1886,OpenAI,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,1203,OpenAI,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,1890,OpenAI,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,2488,OpenAI,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,2593,OpenAI,recent_12m,in_talks_or_rumor,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,1381,Outtake,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,1209,Reco,recent_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,2539,Reco,\N,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,2448,Cogent Security,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,2245,Onyx Security,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,2176,Prevalent AI,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,2129,Lasso Security,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,1261,Huskeys,recent_12m,framework_scope_or_subsector_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,2130,Huskeys,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,2761,Mind Security,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,2038,Outerlimit,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,1285,Modulate,recent_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,2540,Modulate,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,2681,Modulate,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,2654,Osavul,october_update,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,1873,XAI,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,2525,XAI,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,1320,XAI,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,1355,Inferact,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,1391,Waymo,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,2505,Waymo,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,1417,Goodfire,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,1426,Bretton AI,recent_12m,unverified,unverified
+ai-deals-coverage-f1aefd5696e41b8783b3,2449,Bretton AI,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,1444,Anthropic,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,2595,DG Matrix,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,2521,Ineffable Intelligence,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,1460,Ineffable Intelligence,recent_12m,in_talks_or_rumor,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,2498,Ineffable Intelligence,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,1463,Kana,recent_12m,unverified,unverified
+ai-deals-coverage-f1aefd5696e41b8783b3,2594,Kana,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,2455,Taalas,recent_12m,unverified,unverified
+ai-deals-coverage-f1aefd5696e41b8783b3,1466,Taalas,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,2456,Basis,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,2501,AMI Labs,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,1516,Dify,recent_12m,unverified,unverified
+ai-deals-coverage-f1aefd5696e41b8783b3,1529,Dify,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,2522,Rhoda AI,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,2493,Dash0,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,2526,Harvey,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,1584,Harvey,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,1591,Mistral AI,recent_12m,excluded_instrument_or_non_financing_event,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,2485,Mistral AI,recent_12m,excluded_instrument_or_non_financing_event,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,2589,Qodo,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,2586,ScaleOps,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,1610,Cognichip,recent_12m,unverified,unverified
+ai-deals-coverage-f1aefd5696e41b8783b3,2585,Cognichip,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,2584,Hermeus,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,1675,Petual,recent_12m,unverified_probable_duplicate,unverified_probable_duplicate
+ai-deals-coverage-f1aefd5696e41b8783b3,1765,Stilta,recent_12m,unverified,unverified
+ai-deals-coverage-f1aefd5696e41b8783b3,1774,Stilta,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,1767,Hark,recent_12m,unverified_probable_duplicate,unverified_probable_duplicate
+ai-deals-coverage-f1aefd5696e41b8783b3,2582,Hark,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,2481,Hark,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,1775,OpenRouter,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,1957,Anthropic,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,1958,Anthropic,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,2519,Anthropic,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,1788,Anthropic,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,1868,Quantifind,recent_12m,unverified,unverified
+ai-deals-coverage-f1aefd5696e41b8783b3,2336,Quantifind,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,1871,Open Vision Engineering,recent_12m,unverified,unverified
+ai-deals-coverage-f1aefd5696e41b8783b3,2337,Open Vision Engineering,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,1879,World Labs,recent_12m,in_talks_or_rumor,in_talks_do_not_count
+ai-deals-coverage-f1aefd5696e41b8783b3,1902,Baseten,recent_12m,in_talks_or_rumor,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,1909,Baseten,recent_12m,in_talks_or_rumor,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,1906,Ayar Labs,recent_12m,in_talks_or_rumor,in_talks_do_not_count
+ai-deals-coverage-f1aefd5696e41b8783b3,2363,Ayar Labs,recent_12m,in_talks_or_rumor,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,2304,Fireworks AI,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,2516,Fireworks AI,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,1910,Fireworks AI,recent_12m,in_talks_or_rumor,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,1963,Hadrian (cybersecurity),october_update,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,2606,Vinci,october_update,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,2000,GMI Cloud,recent_12m,excluded_instrument_or_non_financing_event,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,2672,EliseAI,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,2541,Outmarket AI,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,2671,Outmarket AI,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,2697,Enveda,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,2549,Cornelis,recent_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,2077,Cornelis,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,2783,Positron,recent_12m,duplicate_or_component_disclosure,component_of:4450
+ai-deals-coverage-f1aefd5696e41b8783b3,2082,Positron,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,2083,Ayar Labs,recent_12m,unverified_probable_duplicate,unverified_probable_duplicate
+ai-deals-coverage-f1aefd5696e41b8783b3,2784,Ayar Labs,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,2561,Gatik,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,2179,Etched,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,2566,Etched,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,2565,Rillet,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,2517,Databricks,recent_12m,in_talks_or_rumor,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,2236,Zenity,recent_12m,unverified_probable_duplicate,unverified_probable_duplicate
+ai-deals-coverage-f1aefd5696e41b8783b3,2246,Simile,recent_12m,unverified,unverified
+ai-deals-coverage-f1aefd5696e41b8783b3,2570,Simile,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,2573,Atoms,recent_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,2287,Atoms,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,2904,Walden Robotics,recent_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,2314,Walden Robotics,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,2414,Moonshot AI,october_update,unverified,unverified
+ai-deals-coverage-f1aefd5696e41b8783b3,2605,Moonshot AI,october_update,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,2417,Lambda,october_update,in_talks_or_rumor,in_talks_do_not_count
+ai-deals-coverage-f1aefd5696e41b8783b3,2827,Lambda,october_update,in_talks_or_rumor,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,2419,Lambda,\N,excluded_instrument_or_non_financing_event,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,2558,Lambda,recent_12m,excluded_instrument_or_non_financing_event,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,2425,DeepSeek,october_update,in_talks_or_rumor,in_talks_do_not_count
+ai-deals-coverage-f1aefd5696e41b8783b3,2817,DeepSeek,recent_12m,in_talks_or_rumor,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,2604,DeepSeek,october_update,in_talks_or_rumor,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,2430,DensityAI,recent_12m,in_talks_or_rumor,in_talks_do_not_count
+ai-deals-coverage-f1aefd5696e41b8783b3,2687,DensityAI,recent_12m,in_talks_or_rumor,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,2432,SiMa.ai,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,2684,SiMa.ai,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,2434,Harvey,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,2785,Harvey,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,2446,Baseten,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,2856,LMArena,october_update,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,2676,Atomic,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,2598,Photon (agents),october_update,unverified,unverified
+ai-deals-coverage-f1aefd5696e41b8783b3,2656,Photon (agents),october_update,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,2928,GMI Cloud,prior_12m,excluded_instrument_or_non_financing_event,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,2933,Cosmo Tech,prior_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,2961,Reflection AI,prior_12m,unverified_probable_duplicate,unverified_probable_duplicate
+ai-deals-coverage-f1aefd5696e41b8783b3,2965,OpenAI,prior_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,2976,Skild AI,prior_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,2980,Coco Robotics,prior_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,2982,Helsing,prior_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,2990,XAI,prior_12m,excluded_instrument_or_non_financing_event,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,3002,Field AI,prior_12m,unverified_probable_duplicate,unverified_probable_duplicate
+ai-deals-coverage-f1aefd5696e41b8783b3,3008,Cognition,prior_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,3011,Perplexity,prior_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,3016,Figure AI,prior_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,3025,Nscale,recent_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,3036,Prometheus,recent_12m,commitment_capitalization_or_other_scope,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,3049,Black Forest Labs,recent_12m,unverified_probable_duplicate,unverified_probable_duplicate
+ai-deals-coverage-f1aefd5696e41b8783b3,3055,Physical Intelligence,recent_12m,unverified,unverified
+ai-deals-coverage-f1aefd5696e41b8783b3,3060,Runware,prior_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,3063,Vara,prior_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,3066,Mindgard,prior_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,3070,nexos.ai,prior_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,3071,Nobi,prior_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,3080,cartagon.ai,prior_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,3081,TurinTech,prior_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,3088,Rulemapping Group,prior_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,3093,Tekever,prior_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,3096,Toloka,prior_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,3097,Xoople,prior_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,3115,Magentic,prior_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,3116,Aiphoria,prior_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,3118,AGIBOT,prior_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,3121,SiMa.ai,prior_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,3122,Xoople,prior_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,3129,DRUID AI,prior_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,3131,StratifAI,prior_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,3133,Einride,recent_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,3134,Havoc,recent_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,3136,Tihive,recent_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,3140,Aeva Technologies,recent_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,3141,CHAOS Industries,recent_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,3142,Cornerstone Robotics,recent_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,3143,Linkerbot,recent_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,3145,Teradar,recent_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,3151,Galbot,recent_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,3164,Reface,recent_12m,excluded_instrument_or_non_financing_event,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,3165,Cypien AI,recent_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,3166,Fractile,recent_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,3167,HOLYWATER,recent_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,3168,AI2 Robotics,recent_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,3170,Axelera AI,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,3171,Beijing Innovation Center of Humanoid Robotics (X-Humanoid),recent_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,3172,Draganfly,recent_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,3173,Polaron,recent_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,3175,Electric Twin,recent_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,3178,Callosum,recent_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,3183,Fortem Technologies,recent_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,3184,Robotera,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,3185,Nesto,recent_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,3188,BLP Digital,recent_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,3190,Xynova (Xynova Future),recent_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,3191,Qutwo,recent_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,3193,Fifth Dimension AI,recent_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,3194,Unframe,recent_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,3196,AI2 Robotics,recent_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,3197,Anyverse Dynamics,recent_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,3200,Shihang Intelligent,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,3201,STARK Defence,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,3202,Theker,recent_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,3203,Westmag,prior_12m,unverified,unverified
+ai-deals-coverage-f1aefd5696e41b8783b3,3204,X Square Robot,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,3209,Promake,recent_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,3211,ElevenLabs,recent_12m,cumulative_target_or_unallocated_context,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,3212,Axis Robotics,recent_12m,specific_public_financing_evidence_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,3213,Cytronic,recent_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,3214,FPF Defense,recent_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,3215,Foundational Industries,recent_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,3216,Greenjets,recent_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,3217,Magnendo,recent_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,3218,RoboParty,recent_12m,specific_public_financing_evidence_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,3219,Robotruck,recent_12m,specific_public_financing_evidence_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,3220,Ronovo Surgical,recent_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,3221,Sereact,recent_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,3222,Sinian Smart Driving (Sinoauto),recent_12m,specific_public_financing_evidence_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,3223,T2,recent_12m,specific_public_financing_evidence_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,3225,Yimu Technology,recent_12m,specific_public_financing_evidence_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,3227,Andercore,recent_12m,excluded_instrument_or_non_financing_event,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,3231,Mach42,recent_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,3232,Arrakis,recent_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,3234,Intropy,recent_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,3236,Andromeda Surgical,recent_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,3237,Atlas Motion,recent_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,3238,Cambridge Aerospace,recent_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,3239,Deep Sea Homo Sapiens,recent_12m,specific_public_financing_evidence_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,3240,Demark Precision,recent_12m,specific_public_financing_evidence_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,3241,Dogotix (XPeng Robotics),recent_12m,specific_public_financing_evidence_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,3242,Dronus,recent_12m,specific_public_financing_evidence_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,3243,Guao Technology,recent_12m,specific_public_financing_evidence_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,3244,INFIFORCE,recent_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,3245,Jiangsu Yiyou Robot Technology,recent_12m,specific_public_financing_evidence_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,3246,Knowin (Nuoyin Intelligent),recent_12m,specific_public_financing_evidence_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,3247,LINXAI Robotics,recent_12m,specific_public_financing_evidence_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,3248,Linghou Robot,recent_12m,specific_public_financing_evidence_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,3249,Lingkong Electronic Technology,recent_12m,specific_public_financing_evidence_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,3250,Lupin Dental,recent_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,3251,MileBot Robotics,recent_12m,specific_public_financing_evidence_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,3252,NdotLight,recent_12m,specific_public_financing_evidence_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,3253,Neros Technologies,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,3254,Noosphere Labs,recent_12m,specific_public_financing_evidence_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,3255,Ommo Technologies,recent_12m,specific_public_financing_evidence_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,3256,Qi'an Technology,recent_12m,framework_scope_or_subsector_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,3257,Reframe Systems,recent_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,3258,Shanghai Moushen Intelligent Technology,recent_12m,specific_public_financing_evidence_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,3259,Sharpa,recent_12m,specific_public_financing_evidence_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,3261,Talls Intelligent,recent_12m,specific_public_financing_evidence_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,3262,Weifan Intelligent,recent_12m,specific_public_financing_evidence_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,3263,Wonik Robotics,recent_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,3266,AIDIN Robotics,recent_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,3267,Algomatic Dynamics,recent_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,3268,Deneb Medical,recent_12m,specific_public_financing_evidence_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,3269,ENCOS,recent_12m,specific_public_financing_evidence_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,3270,Excelland Robotics,recent_12m,specific_public_financing_evidence_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,3271,Gongzhi Marine,recent_12m,specific_public_financing_evidence_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,3272,Kinetix AI,recent_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,3273,Medical Microinstruments (MMI),recent_12m,specific_public_financing_evidence_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,3274,Orcauboat (OrcaTech),recent_12m,specific_public_financing_evidence_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,3275,Poseidon Aerospace,recent_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,3276,Qubot,recent_12m,specific_public_financing_evidence_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,3277,Shutu Technology,recent_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,3278,Viabot,recent_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,3279,Watney Robotics,recent_12m,specific_public_financing_evidence_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,3280,Yincheng Intelligence,recent_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,3281,Zhongyi Embodied Intelligence,recent_12m,specific_public_financing_evidence_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,3289,Edison Scientific,recent_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,3291,Gravis Robotics,recent_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,3294,Tachyum,recent_12m,excluded_instrument_or_non_financing_event,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,3296,Prezent,recent_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,3297,Atomic Industries,prior_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,3298,Comfy,prior_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,3308,Forterra,prior_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,3309,ZeroClick,prior_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,3320,Perplexity,prior_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,3323,Sword Health,prior_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,3335,Outcomes4me,prior_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,3338,Catena Labs,prior_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,3340,Samaya AI,prior_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,3345,VSORA,prior_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,3350,Isomorphic Labs,prior_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,3354,Norm AI,prior_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,3357,Aescape,prior_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,3359,Prime Intellect,prior_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,3363,Twelve Labs,prior_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,3378,Mediaire,prior_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,3386,Highlight,prior_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,3391,TensorWave,prior_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,3445,Vecna Robotics,prior_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,3466,PhotoniCare,prior_12m,framework_scope_or_subsector_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,3479,Azimuth AI,prior_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,3484,Precision Neuroscience,prior_12m,framework_scope_or_subsector_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,3500,Pipe17,prior_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,3525,Bluwhale,prior_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,3547,Pendulum,prior_12m,unverified,unverified
+ai-deals-coverage-f1aefd5696e41b8783b3,3556,Keychain,prior_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,3557,Positron,prior_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,3572,Loxo,prior_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,3581,Turing (theturingcompany.com),prior_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,3590,Auxia,prior_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,3592,Zeitview,prior_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,3593,Knostic,prior_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,3598,Peer Global,prior_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,3611,Proscia,prior_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,3623,Straiker,prior_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,3632,Gable,prior_12m,framework_scope_or_subsector_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,3637,Hydrolix,prior_12m,framework_scope_or_subsector_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,3640,Unframe,prior_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,3642,Aurascape,prior_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,3644,BRINC,prior_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,3652,Thoughtful.ai,prior_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,3655,Virtue AI,prior_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,3658,IUNU,prior_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,3662,Assort Health,prior_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,3674,Manychat,prior_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,3675,Reco,prior_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,3680,Instrumentl,prior_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,3681,Channel Factory,prior_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,3686,Basil Systems,prior_12m,unverified,unverified
+ai-deals-coverage-f1aefd5696e41b8783b3,3687,VOC.AI,prior_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,3688,Sennos,prior_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,3712,Stackpack,prior_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,3723,RoboForce,prior_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,3731,StackHawk,prior_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,3733,AgileBlue,prior_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,3748,Matterworks,prior_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,3751,Ciroos,prior_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,3760,AIM Intelligent Machines,prior_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,3766,Wandercraft,prior_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,3796,PhotoDay,prior_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,3797,Mandolin,prior_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,3798,OpenRouter,prior_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,3801,Ubie,prior_12m,unverified,unverified
+ai-deals-coverage-f1aefd5696e41b8783b3,3811,Phil,prior_12m,excluded_instrument_or_non_financing_event,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,3820,Virtru,prior_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,3822,Cogent Security,prior_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,3823,Callidus Legal AI,prior_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,3827,Felt,prior_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,3840,Confident Security,prior_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,3853,UgenticAI,prior_12m,framework_scope_or_subsector_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,3863,Planted Solar,prior_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,3867,lakeFS,prior_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,3873,Motive,prior_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,3882,Moonshine AI,prior_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,3885,Cline,prior_12m,duplicate_or_component_disclosure,duplicate_of:3311
+ai-deals-coverage-f1aefd5696e41b8783b3,3887,Carbyne,prior_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,3899,Elion,prior_12m,framework_scope_or_subsector_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,3907,Tahoe Therapeutics,prior_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,3908,Laurel (laurel.ai),prior_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,3918,XOPS,prior_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,3920,Tote.ai,prior_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,3922,Medallion,prior_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,3923,Eight Sleep,prior_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,3942,Splight,prior_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,3965,Fiveonefour,prior_12m,unverified,unverified
+ai-deals-coverage-f1aefd5696e41b8783b3,3968,Atolio,prior_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,3993,WorkFusion,prior_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,3994,Airia,prior_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,4006,InCountry,prior_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,4007,AppZen,prior_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,4008,Salt AI,prior_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,4012,Judi Health (Capital Rx),prior_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,4015,Signal AI,prior_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,4024,Price.com,prior_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,4035,Baselane,recent_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,4040,Oath Surgical,recent_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,4041,Bee Maps,recent_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,4042,Peer AI,recent_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,4047,HiOctave,recent_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,4048,QuoteWell,recent_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,4049,375ai,recent_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,4055,Planera,recent_12m,framework_scope_or_subsector_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,4060,Vertical Semiconductor,recent_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,4064,Vantaca,recent_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,4065,Bexorg,recent_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,4070,Counsel Health,recent_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,4071,Aboon,recent_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,4072,Armstrong,recent_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,4073,Sage Care,recent_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,4076,Arbor Energy,recent_12m,framework_scope_or_subsector_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,4078,Estuary,recent_12m,framework_scope_or_subsector_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,4081,Hyro,recent_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,4082,UnifyApps,recent_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,4092,Syllo,recent_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,4095,Uptiq.ai,recent_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,4096,Electric Mind,recent_12m,framework_scope_or_subsector_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,4098,VeroSkills,recent_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,4100,xMEMS,recent_12m,framework_scope_or_subsector_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,4103,Ruli.ai,recent_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,4104,Reevo,recent_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,4105,Creekstone Energy,recent_12m,framework_scope_or_subsector_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,4109,Inception,recent_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,4110,DualBird,recent_12m,framework_scope_or_subsector_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,4114,Iambic,recent_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,4117,1mind,recent_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,4120,BoomPop,recent_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,4127,OnRamp,recent_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,4128,Theo Ai,recent_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,4129,Beacon Biosignals,recent_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,4134,Fabric8Labs,recent_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,4135,Exowatt,recent_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,4138,Celero Communications,recent_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,4140,Span,recent_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,4143,PicoJool,recent_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,4144,Barker,recent_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,4154,Orion,recent_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,4156,Synthio Labs,recent_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,4158,Profluent,recent_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,4168,Onton,recent_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,4170,Mixx Technologies,recent_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,4171,Nevis,recent_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,4175,PermitFlow,recent_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,4176,Angle Health,recent_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,4177,Excelsior Sciences,recent_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,4181,Autolane,recent_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,4184,imper.ai,recent_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,4188,Resemble AI,recent_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,4193,Boom Supersonic,recent_12m,framework_scope_or_subsector_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,4194,BoodleBox,recent_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,4196,Surf,recent_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,4205,Nanit,recent_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,4206,Drive Health,recent_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,4212,Cyera,recent_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,4214,Corgi Insurance,recent_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,4217,VieCure,recent_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,4220,Pinch AI,recent_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,4230,Yuki,recent_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,4231,Cambio,recent_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,4233,Railway,recent_12m,framework_scope_or_subsector_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,4237,Fiddler AI,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,4241,Eliyan,recent_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,4245,CloudForge,recent_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,4248,Positron,recent_12m,duplicate_or_component_disclosure,duplicate_of:1396
+ai-deals-coverage-f1aefd5696e41b8783b3,4251,Lunar Energy,recent_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,4253,Urban SDK,recent_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,4254,Lema AI,recent_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,4258,Smart Bricks,recent_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,4260,Anterior,recent_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,4261,Archimetis,recent_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,4262,Santé,recent_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,4270,Venice Security,recent_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,4274,NEWITY,recent_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,4277,Potpie AI,recent_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,4279,Astelia,recent_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,4281,BrainCheck,recent_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,4282,Third Way Health,recent_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,4283,KeyCare,recent_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,4284,ArmorCode,recent_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,4286,Roboze,recent_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,4287,Levitate,recent_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,4289,DiligenceSquared,recent_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,4290,Saisystems Health,recent_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,4294,Nyad,recent_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,4295,Option Circle,recent_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,4300,Understood Care,recent_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,4302,Native,recent_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,4303,RAVEN.IO,recent_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,4304,Respan,recent_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,4306,Dimer Health,recent_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,4318,Sygaldry,recent_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,4319,Ratio,recent_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,4321,Auctor,recent_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,4323,Sennos,recent_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,4324,Creao AI,recent_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,4325,Afresh,recent_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,4326,Amperos Health,recent_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,4332,Almanac Health,recent_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,4337,Windmill,recent_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,4340,Chord,recent_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,4341,Creati,recent_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,4343,ANELLO Photonics,recent_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,4344,Spring Labs,recent_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,4345,Altara,recent_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,4346,Moment Energy,recent_12m,framework_scope_or_subsector_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,4351,Novella,recent_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,4354,Gradiant,recent_12m,framework_scope_or_subsector_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,4355,Blink,recent_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,4357,Ocean,recent_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,4360,Commure,recent_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,4368,Phosio,recent_12m,framework_scope_or_subsector_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,4369,Ilant Health,recent_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,4373,Arpio,recent_12m,framework_scope_or_subsector_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,4374,InCharge Energy,recent_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,4375,Opal Security,recent_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,4379,Flux (engineering intelligence),recent_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,4385,Aston Power,recent_12m,framework_scope_or_subsector_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,4387,NeuralTrust,recent_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,4390,Channel Robotics,recent_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,4397,8090 Labs,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,4398,Pie,recent_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,4399,Queue,recent_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,4401,LeapXpert,recent_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,4402,Taxwire,recent_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,4405,Katalyze AI,recent_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,4409,Emergent,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,4410,Alpaca,recent_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,4414,Vikk AI,recent_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,4416,Workstreet,recent_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,4417,Enigma Robotics,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,4419,Frenos,recent_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,4421,UNIT AI,recent_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,4425,Ellis,recent_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,4426,Dili,recent_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,4427,Smallest.ai,recent_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,4429,Horizon3.ai,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,4434,Lumilens,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,4438,Rundoo,recent_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,4441,Apollo Atomics,recent_12m,framework_scope_or_subsector_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,4443,Mara,recent_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,4446,Clipto,recent_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,4447,Odyssey Energy Solutions,recent_12m,framework_scope_or_subsector_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,4450,Positron,recent_12m,equity_instrument_not_established,count
+ai-deals-coverage-f1aefd5696e41b8783b3,4452,Nara Health,recent_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,4454,Ferry Health,recent_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,4455,Mainstay,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,4459,CorePower Magnetics,recent_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,4462,Mesa Quantum,recent_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,4463,Menos AI,recent_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,4464,Destro AI,recent_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,4483,MiLaboratories,prior_12m,framework_scope_or_subsector_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,4489,Monogoto,prior_12m,framework_scope_or_subsector_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,4493,Everstage,prior_12m,framework_scope_or_subsector_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,4512,Latii,prior_12m,framework_scope_or_subsector_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,4515,Talli,prior_12m,framework_scope_or_subsector_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,4517,Outbuild,prior_12m,framework_scope_or_subsector_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,4522,JobNimbus,prior_12m,framework_scope_or_subsector_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,4523,Radiant,prior_12m,framework_scope_or_subsector_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,4532,Zitadel,prior_12m,framework_scope_or_subsector_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,4542,Acceleron Fusion,prior_12m,framework_scope_or_subsector_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,4556,Culina Health,prior_12m,framework_scope_or_subsector_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,4559,A2 Biotherapeutics,prior_12m,framework_scope_or_subsector_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,4568,Gravity,prior_12m,framework_scope_or_subsector_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,4590,Lucidity,prior_12m,framework_scope_or_subsector_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,4596,AheadComputing,prior_12m,framework_scope_or_subsector_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,4611,CoverForce,prior_12m,framework_scope_or_subsector_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,4620,Ditto,prior_12m,framework_scope_or_subsector_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,4636,IceMOS Technology,prior_12m,framework_scope_or_subsector_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,4638,Turbine Finance,prior_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,4647,Mainspring,prior_12m,framework_scope_or_subsector_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,4679,RevenueCat,prior_12m,framework_scope_or_subsector_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,4683,FarmQA,prior_12m,framework_scope_or_subsector_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,4686,TAE Technologies,prior_12m,framework_scope_or_subsector_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,4687,dataplor,prior_12m,framework_scope_or_subsector_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,4703,Xona Space Systems,prior_12m,framework_scope_or_subsector_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,4725,xLight,prior_12m,framework_scope_or_subsector_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,4726,Phlow,prior_12m,framework_scope_or_subsector_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,4733,Multibeam,prior_12m,framework_scope_or_subsector_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,4734,Reach Security,prior_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,4735,Wingspan,prior_12m,framework_scope_or_subsector_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,4738,Wattch,prior_12m,framework_scope_or_subsector_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,4776,Cyvl,recent_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,4780,RunBuggy,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,4793,Janta Power,recent_12m,framework_scope_or_subsector_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,4800,Kaizen,recent_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,4803,MiSalud Health,recent_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,4804,Humanix,recent_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,4807,Gopuff,recent_12m,framework_scope_or_subsector_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,4826,Esusu,recent_12m,framework_scope_or_subsector_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,4829,Last Energy,recent_12m,framework_scope_or_subsector_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,4830,HEN Technologies,recent_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,4834,Traini,recent_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,4836,Array Labs,recent_12m,framework_scope_or_subsector_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,4837,GSME,recent_12m,framework_scope_or_subsector_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,4841,SkyFi,recent_12m,framework_scope_or_subsector_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,4848,Upwind Security,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,4849,Standard Nuclear,recent_12m,framework_scope_or_subsector_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,4856,Sentra.app,recent_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,4859,CesiumAstro,recent_12m,framework_scope_or_subsector_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,4860,Shield (IT platform),recent_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,4861,Forerunner,recent_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,4862,Garner Health,recent_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,4874,Ownwell,recent_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,4883,HawkEye 360,recent_12m,framework_scope_or_subsector_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,4888,Unreasonable Labs,recent_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,4899,Censys,recent_12m,duplicate_or_component_disclosure,component_total_of:654
+ai-deals-coverage-f1aefd5696e41b8783b3,4902,Pipe,recent_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,4904,Sigma Automate,recent_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,4909,GetWhys,recent_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,4913,Qualitate,recent_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,4914,Blue Energy,recent_12m,framework_scope_or_subsector_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,4917,Axoft,recent_12m,framework_scope_or_subsector_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,4918,Photon (prescriptions),recent_12m,framework_scope_or_subsector_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,4919,Village,recent_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,4921,Checker,recent_12m,framework_scope_or_subsector_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,4922,Mercury,recent_12m,framework_scope_or_subsector_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,4930,HLRBO,recent_12m,framework_scope_or_subsector_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,4935,Current,recent_12m,framework_scope_or_subsector_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,4937,Copia,recent_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,4947,Adaptive Insurance,recent_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,4948,Databento,recent_12m,framework_scope_or_subsector_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,4952,Hadrius,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,4953,Bunkerhill Health,recent_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,4968,InfiniG,recent_12m,framework_scope_or_subsector_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,4972,CivilGrid,recent_12m,framework_scope_or_subsector_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,4978,Angle Health,recent_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,4980,Supabase,october_update,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,4981,Rebel Audio,october_update,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,4982,Neuraspace,recent_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,4984,Verda (datacrunch.io),recent_12m,excluded_instrument_or_non_financing_event,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,4985,Raxio,recent_12m,framework_scope_or_subsector_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,4987,Openchip,recent_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,4988,Ubotica,recent_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,4989,Pure Data Centres (Pure DC),recent_12m,excluded_instrument_or_non_financing_event,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,4990,Nscale,recent_12m,excluded_instrument_or_non_financing_event,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,4992,Nscale,recent_12m,excluded_instrument_or_non_financing_event,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,4995,Equal1,recent_12m,framework_scope_or_subsector_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,4996,Aidoptation,recent_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,4997,Generative Bionics,recent_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,5007,Remora Robotics,prior_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,5014,Converge,prior_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,5018,Lumai,prior_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,5020,Openchip,prior_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,5025,Submer,prior_12m,excluded_instrument_or_non_financing_event,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,5027,IADYS,prior_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,5028,FarmDroid ApS,prior_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,5031,Chef Robotics,prior_12m,excluded_instrument_or_non_financing_event,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,5033,Tacta Systems,prior_12m,unverified_probable_duplicate,unverified_probable_duplicate
+ai-deals-coverage-f1aefd5696e41b8783b3,5035,Parallel Web Systems,recent_12m,duplicate_or_component_disclosure,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,5042,Reka,prior_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,5047,Merge Labs,recent_12m,framework_scope_or_subsector_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,5048,Mythic,recent_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,5059,Norm AI (norm.ai),recent_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,5060,Anthropic,prior_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,5061,Scale AI,prior_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,5063,Zhipu AI,prior_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,5064,Zhipu AI,prior_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,5065,Zhipu AI,prior_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,5070,The Bot Company,prior_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,5071,Galbot,prior_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,5079,Dataminr,prior_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,5089,Filevine,prior_12m,unverified,unverified
+ai-deals-coverage-f1aefd5696e41b8783b3,5097,AGIBOT,prior_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,5098,Ecorobotix,\N,timing_not_contained_in_one_period,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,5151,Phind,recent_12m,specific_public_financing_evidence_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,5153,Oxa,recent_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,5158,Ares Materials,recent_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,5166,AMGINE,recent_12m,commitment_capitalization_or_other_scope,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,5176,Phase Change Software,prior_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,5180,AI One,recent_12m,specific_public_financing_evidence_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,5238,Stability AI,prior_12m,commitment_capitalization_or_other_scope,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,5309,Literal Labs,prior_12m,framework_scope_or_subsector_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,5310,Artificialy,prior_12m,framework_scope_or_subsector_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,5443,Artificialy,recent_12m,framework_scope_or_subsector_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,5445,Qalzy,recent_12m,framework_scope_or_subsector_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,5504,Vangrid,recent_12m,framework_scope_or_subsector_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,5507,Assaia,recent_12m,commitment_capitalization_or_other_scope,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,5509,Aventix,recent_12m,framework_scope_or_subsector_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,5516,SenseNet,recent_12m,specific_public_financing_evidence_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,5518,Intelligent Locations,recent_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,5537,Fable Studio (Showrunner),prior_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,5544,Mapped,prior_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,5549,Blackbird.AI,prior_12m,unverified_probable_duplicate,unverified_probable_duplicate
+ai-deals-coverage-f1aefd5696e41b8783b3,5550,Clyx,prior_12m,framework_scope_or_subsector_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,5552,Field AI,recent_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,5553,BioReact,recent_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,5558,Ryght AI,recent_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,5559,Rithmik Solutions,recent_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,5560,WEVO,recent_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,5561,May Mobility,recent_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,5562,Helm.ai,recent_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,5564,LandingAI,prior_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,5565,Gumloop,prior_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,5566,YearOne,prior_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,5567,1910 Genetics,prior_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,5568,Orbital Materials,prior_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,5569,Liquid AI Japan,prior_12m,commitment_capitalization_or_other_scope,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,5579,HowToRobot,recent_12m,framework_scope_or_subsector_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,5586,S2.dev,recent_12m,framework_scope_or_subsector_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,5587,ElevenLabs,recent_12m,commitment_capitalization_or_other_scope,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,5588,World Labs,recent_12m,commitment_capitalization_or_other_scope,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,5589,Litmus,recent_12m,framework_scope_or_subsector_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,5596,AMGINE,recent_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,5597,Somatix,recent_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,5604,BranchLab,prior_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,5610,Moonrise Medical,prior_12m,commitment_capitalization_or_other_scope,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,5612,Atarraya (Shrimpbox),prior_12m,framework_scope_or_subsector_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,5618,North.Cloud,prior_12m,framework_scope_or_subsector_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,5624,DigitalCNC,prior_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,5640,Voicing.AI,prior_12m,commitment_capitalization_or_other_scope,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,5645,Synlico,prior_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,5646,Omniscope,prior_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,5647,Syntiant,prior_12m,commitment_capitalization_or_other_scope,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,5648,Machines With Vision,prior_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,5649,Inevitable Technology,prior_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,5652,Promise (AI studio),prior_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,5655,ISTARI.AI (market intelligence),prior_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,5657,Abstractive Health,prior_12m,commitment_capitalization_or_other_scope,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,5658,iLoF,prior_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,5659,Voxela,prior_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,5662,ALL3D,prior_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,5663,Ubie,prior_12m,commitment_capitalization_or_other_scope,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,5664,AI Tech Dragons,prior_12m,framework_scope_or_subsector_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,5666,Blackbird.AI,recent_12m,unverified,unverified
+ai-deals-coverage-f1aefd5696e41b8783b3,5667,Marvis,prior_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,5669,Perfumeo,recent_12m,framework_scope_or_subsector_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,5673,Landbase,prior_12m,excluded_instrument_or_non_financing_event,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,5674,Perplexity,prior_12m,commitment_capitalization_or_other_scope,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,5676,Synapticon,prior_12m,commitment_capitalization_or_other_scope,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,5677,Maverick AI (Psistar),recent_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,5679,Moonrise Medical,prior_12m,commitment_capitalization_or_other_scope,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,5680,aitiologic,prior_12m,unverified,unverified
+ai-deals-coverage-f1aefd5696e41b8783b3,5693,Emojot,prior_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,5694,Cogvis,prior_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,5699,Counter Service (Kernel Foods),recent_12m,framework_scope_or_subsector_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,5701,Marvis,recent_12m,commitment_capitalization_or_other_scope,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,5713,Blink Technologies,recent_12m,framework_scope_or_subsector_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,5717,Spectral Labs,\N,commitment_capitalization_or_other_scope,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,5719,Blink Technologies,recent_12m,framework_scope_or_subsector_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,5720,Civio.ai,recent_12m,commitment_capitalization_or_other_scope,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,5722,Linotype,recent_12m,framework_scope_or_subsector_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,5723,Reap Tech,recent_12m,commitment_capitalization_or_other_scope,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,5724,Floot,prior_12m,unverified,unverified
+ai-deals-coverage-f1aefd5696e41b8783b3,5725,Optifye.ai,prior_12m,unverified,unverified
+ai-deals-coverage-f1aefd5696e41b8783b3,5727,Rota Health,prior_12m,commitment_capitalization_or_other_scope,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,5728,Harvest CROO Robotics,prior_12m,unverified,unverified
+ai-deals-coverage-f1aefd5696e41b8783b3,5730,4AG Robotics,prior_12m,excluded_instrument_or_non_financing_event,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,5740,AuthMind,prior_12m,framework_scope_or_subsector_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,5769,Meteomatics,prior_12m,framework_scope_or_subsector_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,5776,Partner Robotics,\N,timing_not_contained_in_one_period,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,5780,Phyraxis AI,recent_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,5789,Remedy Robotics,recent_12m,unverified,unverified
+ai-deals-coverage-f1aefd5696e41b8783b3,5790,Samba TV,recent_12m,excluded_instrument_or_non_financing_event,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,5815,Agtonomy,prior_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,5819,Ample,prior_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,5822,Xavveo,prior_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,5824,Luum,prior_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,5825,Skydio,prior_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,5865,Theseus,prior_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,5898,Quadsat,prior_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,5924,Avride,recent_12m,excluded_instrument_or_non_financing_event,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,5940,Appetronix,recent_12m,equity_instrument_not_established,\N
+ai-deals-coverage-f1aefd5696e41b8783b3,5966,Haply Robotics,recent_12m,equity_instrument_not_established,\N

@@ -1,0 +1,479 @@
+{
+  "snapshot_id": "ai-deals-coverage-f1aefd5696e41b8783b3",
+  "predecessor_snapshot_id": "ai-deals-coverage-f306b86a0dee4b8c561e",
+  "predecessor_commit": "f430906f94206519c9fd08cead427ee482da6640",
+  "database_sha256": "b0494c9b1b7ddba8b7374cb4dbcafceeb65b3f450a68f1142aaa79c356aac777",
+  "assessment_status": "COMPLETE_BOUNDED_INDEPENDENT_AUDIT",
+  "readiness_verdict": "NOT_READY_FOR_COMPREHENSIVE_HEATMAP",
+  "sample_size_rule": "At least ten counted equity episodes in each 12-month period. October is display-only.",
+  "sample_size_qualified_fine_subsectors": [
+    "labs",
+    "audio",
+    "inference",
+    "neocloud",
+    "deployment",
+    "retrieval",
+    "orchestration",
+    "observability",
+    "security",
+    "coding",
+    "assistants",
+    "workflow",
+    "creative",
+    "legal",
+    "health",
+    "finance",
+    "science",
+    "industrial",
+    "service",
+    "hr",
+    "humanoid",
+    "warehouse",
+    "defense",
+    "medical-robot",
+    "dc-chip",
+    "network",
+    "power-cooling"
+  ],
+  "sample_size_qualified_is_coverage_certified": false,
+  "full_61_subsector_heatmap_ready": false,
+  "bounded_work": {
+    "status": "COMPLETE_BOUNDED_INDEPENDENT_AUDIT",
+    "predecessor_snapshot_id": "ai-deals-coverage-f306b86a0dee4b8c561e",
+    "predecessor_commit": "f430906f94206519c9fd08cead427ee482da6640",
+    "financing_review_rows": 952,
+    "held_rows": 682,
+    "uncounted_rows": 270,
+    "acquisition_name_groups": 275,
+    "acquisition_candidates": 46,
+    "fixed_out_of_sample_rows": 145,
+    "fixed_buyers": 55,
+    "buyer_period_queries": 110,
+    "digital_families": 6,
+    "digital_family_month_queries": 144,
+    "fixed_weekly_urls": 104,
+    "all_review_rows_have_dispositions": true,
+    "unsupported_dispositions_are_not_verified_missing_deals": true,
+    "no_trends_calculated": true
+  },
+  "build": {
+    "snapshot_id": "ai-deals-coverage-f1aefd5696e41b8783b3",
+    "predecessor_snapshot_id": "ai-deals-coverage-f306b86a0dee4b8c561e",
+    "predecessor_master_sha256": "a59d27ffc5930a968069635bc2b32e91333cd1b8e4c574dcf8b460b07690099e",
+    "predecessor_commit": "f430906f94206519c9fd08cead427ee482da6640",
+    "base_event_records": 6035,
+    "base_observation_records": 7426,
+    "event_records": 6093,
+    "retained_observations": 7791,
+    "added_event_records": 58,
+    "changed_verified_fact_rows": 471,
+    "unique_changed_existing_events": 303,
+    "heatmap_equity_episodes": 2740,
+    "acquisition_deals": 100,
+    "no_trends_calculated": true,
+    "market_completeness_certified": false,
+    "database_sha256": "b0494c9b1b7ddba8b7374cb4dbcafceeb65b3f450a68f1142aaa79c356aac777"
+  },
+  "numeric_checks_file": "NUMERIC_CHECKS.json",
+  "coverage_diagnostics": {
+    "snapshot_id": "ai-deals-coverage-f1aefd5696e41b8783b3",
+    "digital_reference_mentions": 2272,
+    "digital_eligible_in_sample_mentions": 901,
+    "digital_captured_in_sample_mentions": 451,
+    "historical_eligible_in_sample_mentions": 581,
+    "historical_captured_in_sample_mentions": 293,
+    "fixed_out_of_sample_rows": 145,
+    "fixed_out_of_sample_captured": 101,
+    "fixed_test_period_boundary_matches": 9,
+    "acquirer_queries_completed": 110,
+    "no_trends_calculated": true,
+    "market_completeness_certified": false
+  },
+  "financing_review_rows_unverified_excluded": 871,
+  "acquisition_name_groups_unverified_excluded": 217,
+  "acquisition_candidates_unverified_excluded": 4,
+  "canonical_validation": {
+    "passed": 9014,
+    "failed": 0,
+    "exact_quote_failures": 0
+  },
+  "no_trends_calculated": true,
+  "market_completeness_certified": false,
+  "publication_commit_record": "PUBLICATION_VERIFICATION.json",
+  "findings": [
+    {
+      "fix_id": "F01",
+      "decision": "implemented_with_explicit_limits",
+      "note": "One Positron financing episode; separately disclosed tranches retained as components and bounds, not $875m confirmed cash.",
+      "evidence": [
+        {
+          "event_ids": [
+            4450
+          ],
+          "source_url": "https://www.prnewswire.com/news-releases/positron-ai-raises-875-million-at-a-5-billion-valuation-to-bring-its-next-generation-inference-silicon-to-market-302874601.html",
+          "source_quote": [
+            "$875 million Series C financing",
+            "$375 million",
+            "up to $500 million",
+            "$5 billion post-money valuation"
+          ]
+        },
+        {
+          "event_ids": [
+            2783
+          ],
+          "source_url": "https://www.prnewswire.com/news-releases/positron-ai-raises-875-million-at-a-5-billion-valuation-to-bring-its-next-generation-inference-silicon-to-market-302874601.html",
+          "source_quote": [
+            "financing was raised in two tranches",
+            "$375 million",
+            "up to $500 million"
+          ]
+        },
+        {
+          "event_ids": [
+            2799
+          ],
+          "source_url": "https://www.prnewswire.com/news-releases/positron-ai-raises-875-million-at-a-5-billion-valuation-to-bring-its-next-generation-inference-silicon-to-market-302874601.html",
+          "source_quote": [
+            "financing was raised in two tranches",
+            "$375 million",
+            "up to $500 million"
+          ]
+        }
+      ]
+    },
+    {
+      "fix_id": "F02",
+      "decision": "implemented",
+      "note": "February Positron duplicate linked and excluded.",
+      "evidence": [
+        {
+          "event_ids": [
+            4248
+          ],
+          "source_url": "https://www.lw.com/en/news/2026/02/latham-advises-positron-ai-in-us-230-million-series-b-funding-round",
+          "source_quote": [
+            "US$230 million Series B financing"
+          ]
+        }
+      ]
+    },
+    {
+      "fix_id": "F03",
+      "decision": "implemented",
+      "note": "Censys equity/debt/total separated; debt and aggregate are not extra equity rounds.",
+      "evidence": [
+        {
+          "event_ids": [
+            4899
+          ],
+          "source_url": "https://censys.com/newsroom/censys-raises-70-million-in-strategic-funding-to-expand-its-internet-intelligence-platform/",
+          "source_quote": [
+            "$40 million Series D round and $30 million debt financing"
+          ]
+        },
+        {
+          "event_ids": [
+            655
+          ],
+          "source_url": "https://censys.com/newsroom/censys-raises-70-million-in-strategic-funding-to-expand-its-internet-intelligence-platform/",
+          "source_quote": [
+            "$40 million Series D round and $30 million debt financing"
+          ]
+        }
+      ]
+    },
+    {
+      "fix_id": "F04",
+      "decision": "implemented_with_explicit_limits",
+      "note": "Cline issuer and duplicate corrected. $32m is cumulative Seed plus Series A; current Series A proceeds remain unknown.",
+      "evidence": [
+        {
+          "event_ids": [
+            3311
+          ],
+          "source_url": "https://www.globenewswire.com/en/news-release/2025/07/31/3125274/0/en/Cline-Raises-32M-in-Seed-and-Series-A-Funding-to-Bring-Agentic-AI-Coding-to-Enterprise-Software-Teams.html",
+          "source_quote": [
+            "leading open-source AI coding agent",
+            "$32M in total funding",
+            "most recent Series A round"
+          ]
+        },
+        {
+          "event_ids": [
+            3885
+          ],
+          "source_url": "https://www.globenewswire.com/en/news-release/2025/07/31/3125274/0/en/Cline-Raises-32M-in-Seed-and-Series-A-Funding-to-Bring-Agentic-AI-Coding-to-Enterprise-Software-Teams.html",
+          "source_quote": [
+            "leading open-source AI coding agent",
+            "$32M in total funding",
+            "most recent Series A round"
+          ]
+        },
+        {
+          "event_ids": [
+            3885
+          ],
+          "source_url": "https://www.globenewswire.com/en/news-release/2025/07/31/3125274/0/en/Cline-Raises-32M-in-Seed-and-Series-A-Funding-to-Bring-Agentic-AI-Coding-to-Enterprise-Software-Teams.html",
+          "source_quote": [
+            "Cline, the leading open-source AI coding agent",
+            "$32M in total funding"
+          ]
+        }
+      ]
+    },
+    {
+      "fix_id": "F05",
+      "decision": "implemented",
+      "note": "Arena linked to LMArena and evaluation subsector.",
+      "evidence": [
+        {
+          "event_ids": [
+            2527
+          ],
+          "source_url": "https://arena.ai/blog/series-b",
+          "source_quote": [
+            "$200 million Series B at a $3.1 billion valuation",
+            "real-world AI evaluation"
+          ]
+        }
+      ]
+    },
+    {
+      "fix_id": "F06",
+      "decision": "implemented",
+      "note": "Deployment Company capitalization excluded from VC. Unverified old valuation removed from canonical fields; observations retained.",
+      "evidence": [
+        {
+          "event_ids": [
+            715
+          ],
+          "source_url": "https://openai.com/index/openai-launches-the-deployment-company/",
+          "source_quote": [
+            "more than $4 billion of initial investment",
+            "OpenAI Deployment Company"
+          ]
+        }
+      ]
+    },
+    {
+      "fix_id": "F07",
+      "decision": "implemented_with_explicit_limits",
+      "note": "Crusoe initial close counts once. Anticipated total is context; funded proceeds remain unknown.",
+      "evidence": [
+        {
+          "event_ids": [
+            3031
+          ],
+          "source_url": "https://www.crusoe.ai/resources/newsroom/crusoe-announces-series-e-funding",
+          "source_quote": [
+            "initial closing of its anticipated $1.375 billion Series E round",
+            "expected valuation to over $10 billion"
+          ]
+        }
+      ]
+    },
+    {
+      "fix_id": "F08",
+      "decision": "implemented",
+      "note": "Lambda lower-bound qualifier normalized.",
+      "evidence": [
+        {
+          "event_ids": [
+            3043
+          ],
+          "source_url": "https://lambda.ai/blog/lambda-raises-over-1.5b-from-twg-global-usit-to-build-superintelligence-cloud-infrastructure",
+          "source_quote": [
+            "raised over $1.5B in Series E funding"
+          ]
+        }
+      ]
+    },
+    {
+      "fix_id": "F09",
+      "decision": "implemented",
+      "note": "Runway source-stated $308m retained.",
+      "evidence": [
+        {
+          "event_ids": [
+            2967
+          ],
+          "source_url": "https://techcrunch.com/2025/04/03/runway-best-known-for-its-video-generating-models-raises-308m/",
+          "source_quote": [
+            "raised $308 million in a Series D funding round"
+          ]
+        }
+      ]
+    },
+    {
+      "fix_id": "F10",
+      "decision": "implemented",
+      "note": "StepFun native-currency lower bound retained.",
+      "evidence": [
+        {
+          "event_ids": [
+            1360
+          ],
+          "source_url": "https://technode.com/2026/01/26/shanghai-ai-unicorn-stepfun-raises-over-718-million-in-b-round/",
+          "source_quote": [
+            "exceeding RMB 5 billion"
+          ]
+        }
+      ]
+    },
+    {
+      "fix_id": "F11",
+      "decision": "implemented",
+      "note": "Anaconda lower bound retained.",
+      "evidence": [
+        {
+          "event_ids": [
+            3878
+          ],
+          "source_url": "https://www.anaconda.com/press/anaconda-raises-150m-series-c-funding-ai-enterprise",
+          "source_quote": [
+            "raised over $150M in a Series C funding round"
+          ]
+        }
+      ]
+    },
+    {
+      "fix_id": "F12",
+      "decision": "implemented",
+      "note": "Axelera lower bound retained.",
+      "evidence": [
+        {
+          "event_ids": [
+            14
+          ],
+          "source_url": "https://axelera.ai/news/axelera-ai-secures-more-than-250-million-funding-on-global-commercial-growth",
+          "source_quote": [
+            "more than $250 million investment"
+          ]
+        }
+      ]
+    },
+    {
+      "fix_id": "F13",
+      "decision": "implemented_with_explicit_limits",
+      "note": "Delos lower bound retained; equity instrument remains unverified and excluded.",
+      "evidence": [
+        {
+          "event_ids": [
+            650
+          ],
+          "source_url": "https://www.delosdata.com/newsroom/delos-data-closes-over-100-million-to-deliver-delos-nonstop-aitm-for-faster-stronger-more-efficient-ai-capacity",
+          "source_quote": [
+            "Raised over $100M"
+          ]
+        }
+      ]
+    },
+    {
+      "fix_id": "F14",
+      "decision": "implemented",
+      "note": "DYNA classified as a robot foundation model company.",
+      "evidence": [
+        {
+          "event_ids": [
+            3618,
+            3125
+          ],
+          "source_url": "https://www.prnewswire.com/news-releases/dyna-robotics-raises-120-million-to-advance-robotic-foundation-models-on-the-path-to-physical-artificial-general-intelligence-302556817.html",
+          "source_quote": [
+            "general-purpose robots powered by a proprietary embodied AI foundation model"
+          ]
+        }
+      ]
+    },
+    {
+      "fix_id": "F15",
+      "decision": "implemented",
+      "note": "Serval December Series B added with company evidence.",
+      "evidence": [
+        {
+          "event_ids": [
+            6036
+          ],
+          "source_url": "https://www.serval.com/blog/serval%E2%80%99s-next-chapter-raising-75m-to-build-the-new-era-of-enterprise-automation-and-service-management",
+          "source_quote": [
+            "$75 million in Series B funding",
+            "$1 billion valuation",
+            "AI-native system of record",
+            "Dec 11, 2025"
+          ]
+        }
+      ]
+    },
+    {
+      "fix_id": "F16",
+      "decision": "implemented",
+      "note": "Current release receipt regenerated against the new snapshot and master digest.",
+      "evidence": []
+    },
+    {
+      "fix_id": "S01",
+      "decision": "implemented_with_explicit_limits",
+      "note": "Six digital families searched at equal monthly query depth; references added. Extracted mentions remain heavily AlleyWatch/US weighted.",
+      "evidence": []
+    },
+    {
+      "fix_id": "S02",
+      "decision": "implemented_with_explicit_limits",
+      "note": "All 952 financing review rows have dispositions; uncorroborated rounds remain unverified and excluded.",
+      "evidence": []
+    },
+    {
+      "fix_id": "S03",
+      "decision": "implemented_with_explicit_limits",
+      "note": "The fixed 145-row test was re-run. Targeted repairs are disclosed; the result is a post-repair diagnostic, not an untouched blind holdout.",
+      "evidence": []
+    },
+    {
+      "fix_id": "S04",
+      "decision": "implemented",
+      "note": "Ten-episode rule re-run across all periods, with nonoverlapping fine and residual-parent groups.",
+      "evidence": []
+    },
+    {
+      "fix_id": "A01",
+      "decision": "implemented_with_explicit_limits",
+      "note": "All supplied verified candidates reconciled; identical 55-buyer press/SEC search depth in both comparison periods. This is bounded search, not an exhaustive acquisition census.",
+      "evidence": []
+    },
+    {
+      "fix_id": "A02",
+      "decision": "implemented_with_explicit_limits",
+      "note": "One counted record per verified deal; every original name group has a disposition, including unsupported groups.",
+      "evidence": []
+    },
+    {
+      "fix_id": "A03",
+      "decision": "implemented_with_explicit_limits",
+      "note": "Source-stated prices and types recorded; basis, stake, closing and consideration fields stay unknown when not stated.",
+      "evidence": []
+    },
+    {
+      "fix_id": "A04",
+      "decision": "implemented",
+      "note": "Private-startup, public/carve-out context and license-and-hire buckets separated.",
+      "evidence": []
+    },
+    {
+      "fix_id": "H01",
+      "decision": "implemented",
+      "note": "One common equity-episode policy, excluding debt, commitments, capitalizations and talks. Unallocated equity packages count once with unknown equity cash.",
+      "evidence": []
+    }
+  ],
+  "public_validation": {
+    "passed": 115,
+    "failed": 0,
+    "manifest_sha256": "84638f509dda98606fe280d4cfe6d924515ebc06d1203bf3b5dcee84de56b070"
+  },
+  "public_only_validation": {
+    "passed": 8954,
+    "failed": 0,
+    "datasets": 115
+  }
+}

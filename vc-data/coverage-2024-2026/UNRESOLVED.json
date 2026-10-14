@@ -1,0 +1,42 @@
+{
+  "snapshot_id": "ai-deals-coverage-f1aefd5696e41b8783b3",
+  "undecided_financing_rows": 0,
+  "unverified_financing_review_rows_excluded": 871,
+  "unverified_acquisition_name_groups_excluded": 217,
+  "unverified_acquisition_candidates_excluded": 4,
+  "name_variant_groups": 105,
+  "limitations": [
+    {
+      "issue": "Specific public financing evidence",
+      "detail": "Many supplied private-newsletter claims could not be corroborated for the specific round. A completed disposition is not completed factual verification. Details remain in both filled financing CSVs."
+    },
+    {
+      "issue": "Digital coverage",
+      "detail": "Only 451 of 901 eligible in-sample digital reference mentions map to counted equity episodes. Unmatched references include genuine gaps, instrument/scope holds, proxy timing and unresolved issuer names; they are not all verified missing deals."
+    },
+    {
+      "issue": "Historical reference reclassification",
+      "detail": "293 of 581 historical in-sample candidate references map to the stricter H01 equity view. Old broader financing capture cannot be reused as current equity capture."
+    },
+    {
+      "issue": "Independent test",
+      "detail": "101 of 145 fixed test rows count in their requested period; 9 match a different source period. The test includes potentially ineligible instruments and list proxy dates. Targeted repairs mean it is no longer untouched."
+    },
+    {
+      "issue": "Issuer identity",
+      "detail": "Normalized name collisions include both possible aliases and genuine homonyms. Every remaining group is listed; unsupported merges were avoided."
+    },
+    {
+      "issue": "Geographic and publisher coverage",
+      "detail": "All six digital source families were searched, but successfully extracted mentions are concentrated in AlleyWatch. China/India/Europe coverage is not demonstrated comprehensive; source search failures and unparsed lists remain visible."
+    },
+    {
+      "issue": "Acquisition census and price meaning",
+      "detail": "The equal-depth acquirer sweep is finite. Unverified candidate/group claims are excluded. Undisclosed prices and source-unstated valuation basis remain unknown."
+    },
+    {
+      "issue": "Legacy factual fields",
+      "detail": "Retained raw and historical projections include original assertions. The current count/amount tables are authoritative for this audit; a public-source URL alone is not verification of every historical valuation field."
+    }
+  ]
+}

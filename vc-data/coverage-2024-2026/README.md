@@ -1,20 +1,18 @@
-# AI / Physical AI financing database
+# AI and Physical AI financing database
 
-Current snapshot: `ai-deals-coverage-f306b86a0dee4b8c561e`. The [bounded coverage assessment](HEATMAP_READINESS.md) is **complete**.
+Current snapshot `ai-deals-coverage-f1aefd5696e41b8783b3`. The bounded independent audit is complete and the public release is validated. **A comprehensive heat map is still unsupported by the measured coverage.** See [readiness](HEATMAP_READINESS.md).
 
-**Verdict: ready with specific exclusions. The full 61-subsector heat map is not ready.** Seven subsectors meet the frozen coverage standard in both comparison periods: Defense autonomy; Healthcare AI; Humanoids and general robot platforms; Industrial manipulation and manufacturing; Robot foundation models; Life sciences and discovery AI; Warehouse and logistics robotics. The other 54 are excluded from comparisons; use the [exact readiness cells](inspection/bounded_readiness_cells.csv) to see why.
+6,093 event records and 7,791 observations are retained. 58 new records were added, and 303 existing records were corrected. H01 contains 2,740 equity episodes; 27 fine subsectors meet the ten-per-period sample-size rule. This is not a completeness claim.
 
-Added **225 framework financing disclosures**, recovered **29 existing ones**, and completed all **623 reference dispositions**, **60 quality checks** and **183 cell assessments**. All **618 eligible references** are now captured. This is reference-set capture, not measured worldwide recall. The database has **3,710 framework disclosures** and **3,679 linked episodes**.
+[Inspect financing CSV](inspection/ai_financing_deals.csv) · [Acquisition CSV](inspection/acquisition_deals.csv) · [Subsector counts](inspection/subsector_period_coverage.csv) · [Filled audit reviews and change log](audit/) · [Numeric checks](NUMERIC_CHECKS.json) · [Current audit receipt](audit_release_receipt.json) · [Remaining limits](UNRESOLVED.json).
 
-[Inspect the main CSV](inspection/ai_financing_deals.csv): **3,880 supported financing disclosures**, with source links, amounts, precision, categories and scope flags. Filter `in_61_category_framework` to `yes`; use `financing_episode_id` for linked records. Unknown amounts remain blank. A row is not always a separate priced round.
-
-Coverage: October 2024–September 2025; October 2025–September 2026; and October 1–11, 2026. October is a display update. Excluded or empty cells are not zero-activity findings.
-
-[Readiness verdict and exclusions](HEATMAP_READINESS.md) · [Assessment receipt](BOUNDED_COVERAGE_ASSESSMENT_2026_10_13.json) · [Frozen standard](BOUNDED_COMPLETION_STANDARD.md) · [Methodology](methodology.md) · [Auditor prompt](AUDITOR_PROMPT.txt)
+Each financing CSV row is one counted equity episode. Unknown amounts are blank. The two 12-month periods are October 2024–September 2025 and October 2025–September 2026; October 1–11, 2026 is display-only. Acquisitions count by announcement and remain split into private-startup, context and license-and-hire buckets. Raw and legacy projections preserve historical claims and must not be counted as authoritative deal lists.
 
 ```sh
 python3 validate_release.py
 python3 load_snapshot.py --output /tmp/ai_deals_coverage.sqlite
 ```
 
-JSON/CSV manifest datasets preserve types, nulls and provenance. Public SQLite is reconstructed from those files. Private research caches and raw assertions are excluded. Historical review tables remain auditable. No trend analysis is included.
+[Methodology](methodology.md) · [Current completion standard](BOUNDED_COMPLETION_STANDARD.md) · [Auditor prompt](AUDITOR_PROMPT.txt) · [Reproducible predecessor](history/f306/HISTORY.md).
+
+No trend analysis is included.

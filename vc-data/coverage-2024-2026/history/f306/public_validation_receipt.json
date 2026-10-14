@@ -1,0 +1,2863 @@
+{
+  "snapshot_id": "ai-deals-coverage-f306b86a0dee4b8c561e",
+  "manifest_sha256": "7374408ce6b678dd0bc13ad3334895ea5e1f06485cb40d1aecdd62f26e7a0953",
+  "public_sqlite_sha256": "de58402b568fc73899b37d95b9e744bbad04776154ab8a3e642445fc921084f9",
+  "datasets": 94,
+  "dataset_rows": 155961,
+  "data_files": 1474,
+  "passed": 570,
+  "failed": 0,
+  "market_completeness_certified": false,
+  "checks": [
+    {
+      "check": "all_manifest_hashes_sizes_rows_and_snapshot_ids",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "all_data_chunks_within_declared_byte_limit",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "expanded_scope_exact",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "bounded_assessment_complete_and_no_trends",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "private_payload_columns_excluded",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "raw_private_candidate_table_excluded",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "no_private_mail_links_or_identifier_fields",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "no_local_private_workspace_paths",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "reconstructed_sqlite_integrity",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "reconstructed_metadata_manifest_hash",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "csv_value_and_null_parity:companies",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "sqlite_value_type_and_null_parity:companies",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "csv_value_and_null_parity:taxonomy",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "sqlite_value_type_and_null_parity:taxonomy",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "csv_value_and_null_parity:aliases",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "sqlite_value_type_and_null_parity:aliases",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "csv_value_and_null_parity:events_all",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "sqlite_value_type_and_null_parity:events_all",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "csv_value_and_null_parity:core_equity_all",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "sqlite_value_type_and_null_parity:core_equity_all",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "csv_value_and_null_parity:core_equity_display",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "sqlite_value_type_and_null_parity:core_equity_display",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "csv_value_and_null_parity:equity_round_announcements",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "sqlite_value_type_and_null_parity:equity_round_announcements",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "csv_value_and_null_parity:display_deals",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "sqlite_value_type_and_null_parity:display_deals",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "csv_value_and_null_parity:ma_all",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "sqlite_value_type_and_null_parity:ma_all",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "csv_value_and_null_parity:ma_announcements_2026",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "sqlite_value_type_and_null_parity:ma_announcements_2026",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "csv_value_and_null_parity:ma_closings_2026",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "sqlite_value_type_and_null_parity:ma_closings_2026",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "csv_value_and_null_parity:reviewed_deals",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "sqlite_value_type_and_null_parity:reviewed_deals",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "csv_value_and_null_parity:sources",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "sqlite_value_type_and_null_parity:sources",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "csv_value_and_null_parity:event_sources",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "sqlite_value_type_and_null_parity:event_sources",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "csv_value_and_null_parity:investors",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "sqlite_value_type_and_null_parity:investors",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "csv_value_and_null_parity:event_investors",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "sqlite_value_type_and_null_parity:event_investors",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "csv_value_and_null_parity:lifecycle_groups",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "sqlite_value_type_and_null_parity:lifecycle_groups",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "csv_value_and_null_parity:quality_flags",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "sqlite_value_type_and_null_parity:quality_flags",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "csv_value_and_null_parity:reviewed_event_relationships",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "sqlite_value_type_and_null_parity:reviewed_event_relationships",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "csv_value_and_null_parity:registry_records",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "sqlite_value_type_and_null_parity:registry_records",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "csv_value_and_null_parity:registry_sources",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "sqlite_value_type_and_null_parity:registry_sources",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "csv_value_and_null_parity:company_financial_snapshots",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "sqlite_value_type_and_null_parity:company_financial_snapshots",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "csv_value_and_null_parity:company_coverage",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "sqlite_value_type_and_null_parity:company_coverage",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "csv_value_and_null_parity:observations_all",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "sqlite_value_type_and_null_parity:observations_all",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "csv_value_and_null_parity:public_market_context_facts",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "sqlite_value_type_and_null_parity:public_market_context_facts",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "csv_value_and_null_parity:observation_reviews",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "sqlite_value_type_and_null_parity:observation_reviews",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "csv_value_and_null_parity:leads_all",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "sqlite_value_type_and_null_parity:leads_all",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "csv_value_and_null_parity:unresolved_leads",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "sqlite_value_type_and_null_parity:unresolved_leads",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "csv_value_and_null_parity:company_history_reviews",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "sqlite_value_type_and_null_parity:company_history_reviews",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "csv_value_and_null_parity:audited_country_assertions",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "sqlite_value_type_and_null_parity:audited_country_assertions",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "csv_value_and_null_parity:country_availability_metrics",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "sqlite_value_type_and_null_parity:country_availability_metrics",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "csv_value_and_null_parity:source_coverage",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "sqlite_value_type_and_null_parity:source_coverage",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "csv_value_and_null_parity:completion_counts",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "sqlite_value_type_and_null_parity:completion_counts",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "csv_value_and_null_parity:fx_rates",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "sqlite_value_type_and_null_parity:fx_rates",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "csv_value_and_null_parity:event_fx_conversions",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "sqlite_value_type_and_null_parity:event_fx_conversions",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "csv_value_and_null_parity:company_search_logs",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "sqlite_value_type_and_null_parity:company_search_logs",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "csv_value_and_null_parity:external_audit_response",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "sqlite_value_type_and_null_parity:external_audit_response",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "csv_value_and_null_parity:comparison_equity_announcements",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "sqlite_value_type_and_null_parity:comparison_equity_announcements",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "csv_value_and_null_parity:comparison_core_equity",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "sqlite_value_type_and_null_parity:comparison_core_equity",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "csv_value_and_null_parity:comparison_core_equity_cutoff",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "sqlite_value_type_and_null_parity:comparison_core_equity_cutoff",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "csv_value_and_null_parity:credible_financing_disclosures",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "sqlite_value_type_and_null_parity:credible_financing_disclosures",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "csv_value_and_null_parity:financing_episodes",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "sqlite_value_type_and_null_parity:financing_episodes",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "csv_value_and_null_parity:completion_periods",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "sqlite_value_type_and_null_parity:completion_periods",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "csv_value_and_null_parity:completion_event_lineage",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "sqlite_value_type_and_null_parity:completion_event_lineage",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "csv_value_and_null_parity:completion_round_components",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "sqlite_value_type_and_null_parity:completion_round_components",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "csv_value_and_null_parity:completion_financial_claims",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "sqlite_value_type_and_null_parity:completion_financial_claims",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "csv_value_and_null_parity:completion_canonical_normalizations",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "sqlite_value_type_and_null_parity:completion_canonical_normalizations",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "csv_value_and_null_parity:completion_duplicate_decisions",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "sqlite_value_type_and_null_parity:completion_duplicate_decisions",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "csv_value_and_null_parity:completion_company_classifications",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "sqlite_value_type_and_null_parity:completion_company_classifications",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "csv_value_and_null_parity:audit_event_changes",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "sqlite_value_type_and_null_parity:audit_event_changes",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "csv_value_and_null_parity:company_identity_redirects",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "sqlite_value_type_and_null_parity:company_identity_redirects",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "csv_value_and_null_parity:finer_taxonomy",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "sqlite_value_type_and_null_parity:finer_taxonomy",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "csv_value_and_null_parity:company_finer_classifications",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "sqlite_value_type_and_null_parity:company_finer_classifications",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "csv_value_and_null_parity:event_entity_classifications",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "sqlite_value_type_and_null_parity:event_entity_classifications",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "csv_value_and_null_parity:audit_input_provenance",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "sqlite_value_type_and_null_parity:audit_input_provenance",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "csv_value_and_null_parity:business_classification_reviews",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "sqlite_value_type_and_null_parity:business_classification_reviews",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "csv_value_and_null_parity:coverage_pass_event_changes",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "sqlite_value_type_and_null_parity:coverage_pass_event_changes",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "csv_value_and_null_parity:coverage_pass_financing_reviews",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "sqlite_value_type_and_null_parity:coverage_pass_financing_reviews",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "csv_value_and_null_parity:framework_financing_disclosures",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "sqlite_value_type_and_null_parity:framework_financing_disclosures",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "csv_value_and_null_parity:framework_financing_episodes",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "sqlite_value_type_and_null_parity:framework_financing_episodes",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "csv_value_and_null_parity:reviewed_framework_financing_disclosures",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "sqlite_value_type_and_null_parity:reviewed_framework_financing_disclosures",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "csv_value_and_null_parity:framework_core_equity_cutoff",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "sqlite_value_type_and_null_parity:framework_core_equity_cutoff",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "csv_value_and_null_parity:framework_coverage_cells",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "sqlite_value_type_and_null_parity:framework_coverage_cells",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "csv_value_and_null_parity:classification_hold_register",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "sqlite_value_type_and_null_parity:classification_hold_register",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "csv_value_and_null_parity:queue_resolution_decisions",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "sqlite_value_type_and_null_parity:queue_resolution_decisions",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "csv_value_and_null_parity:classification_resolution_decisions",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "sqlite_value_type_and_null_parity:classification_resolution_decisions",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "csv_value_and_null_parity:queue_resolution_event_changes",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "sqlite_value_type_and_null_parity:queue_resolution_event_changes",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "csv_value_and_null_parity:queue_resolution_financing_reviews",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "sqlite_value_type_and_null_parity:queue_resolution_financing_reviews",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "csv_value_and_null_parity:queue_unverified_claims",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "sqlite_value_type_and_null_parity:queue_unverified_claims",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "csv_value_and_null_parity:remaining_business_scope_holds",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "sqlite_value_type_and_null_parity:remaining_business_scope_holds",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "csv_value_and_null_parity:resolved_business_scope_exclusions",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "sqlite_value_type_and_null_parity:resolved_business_scope_exclusions",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "csv_value_and_null_parity:claims_followup_decisions",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "sqlite_value_type_and_null_parity:claims_followup_decisions",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "csv_value_and_null_parity:classification_followup_decisions",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "sqlite_value_type_and_null_parity:classification_followup_decisions",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "csv_value_and_null_parity:followup_event_changes",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "sqlite_value_type_and_null_parity:followup_event_changes",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "csv_value_and_null_parity:followup_financing_reviews",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "sqlite_value_type_and_null_parity:followup_financing_reviews",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "csv_value_and_null_parity:claims_residual_decisions",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "sqlite_value_type_and_null_parity:claims_residual_decisions",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "csv_value_and_null_parity:classification_residual_decisions",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "sqlite_value_type_and_null_parity:classification_residual_decisions",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "csv_value_and_null_parity:residual_event_changes",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "sqlite_value_type_and_null_parity:residual_event_changes",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "csv_value_and_null_parity:residual_financing_reviews",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "sqlite_value_type_and_null_parity:residual_financing_reviews",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "csv_value_and_null_parity:claims_sweep_decisions",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "sqlite_value_type_and_null_parity:claims_sweep_decisions",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "csv_value_and_null_parity:classification_sweep_decisions",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "sqlite_value_type_and_null_parity:classification_sweep_decisions",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "csv_value_and_null_parity:sweep_event_changes",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "sqlite_value_type_and_null_parity:sweep_event_changes",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "csv_value_and_null_parity:sweep_financing_reviews",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "sqlite_value_type_and_null_parity:sweep_financing_reviews",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "csv_value_and_null_parity:subsector_period_source_checks",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "sqlite_value_type_and_null_parity:subsector_period_source_checks",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "csv_value_and_null_parity:claims_assessment_decisions",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "sqlite_value_type_and_null_parity:claims_assessment_decisions",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "csv_value_and_null_parity:classification_assessment_decisions",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "sqlite_value_type_and_null_parity:classification_assessment_decisions",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "csv_value_and_null_parity:assessment_event_changes",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "sqlite_value_type_and_null_parity:assessment_event_changes",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "csv_value_and_null_parity:assessment_financing_reviews",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "sqlite_value_type_and_null_parity:assessment_financing_reviews",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "csv_value_and_null_parity:bounded_subsector_period_checks",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "sqlite_value_type_and_null_parity:bounded_subsector_period_checks",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "csv_value_and_null_parity:bounded_reference_reconciliation",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "sqlite_value_type_and_null_parity:bounded_reference_reconciliation",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "csv_value_and_null_parity:bounded_accuracy_sample",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "sqlite_value_type_and_null_parity:bounded_accuracy_sample",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "csv_value_and_null_parity:heatmap_readiness_cells",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "sqlite_value_type_and_null_parity:heatmap_readiness_cells",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "csv_value_and_null_parity:completion_reviews",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "sqlite_value_type_and_null_parity:completion_reviews",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "csv_value_and_null_parity:discovery_review_queue",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "sqlite_value_type_and_null_parity:discovery_review_queue",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "all_original_events_retained",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "all_original_observation_values_retained",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "all_5059_audited_event_ids_retained",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "all_5618_audited_observations_preserved_in_public_export",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "all_61_finer_taxonomy_categories_exported",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "public_finer_classification_provenance_covers_all_events",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "auditor_schema_no_obsolete_snapshot_constant",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "all_67_audit_findings_have_release_decisions",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "episode_members_resolve_and_partition_disclosures",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "explicit_duplicates_absent_from_financing_views",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Tech_eu_license_attributed",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "coverage_completion_matches_current_snapshot",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "all_predecessor_event_ids_preserved_in_export",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "all_61_category_period_receipts_exported",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "scoped_finance_excludes_business_and_identity_holds",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "every_company_has_exported_business_review",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "classification_hold_counts_match_public_receipt",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "manual_view_has_no_automatic_rule_assignments",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "46_backfills_have_exported_field_provenance",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "native_currency_corrections_survive_export",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Photon_joke_claim_is_held_in_export",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "exported_episode_and_source_counts_match_documentation",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "queue_receipt_matches_release_and_731_decisions",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "every_public_discovery_claim_has_a_review",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "queue_unverified_claims_are_explicit_not_missing_deal_count",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "queue_business_holds_and_resolved_exclusions_disjoint",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "all_5163_queue_predecessor_event_ids_exported",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "every_historical_queue_addition_has_public_financing_receipt",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Abundance_fund_assets_excluded_in_public_views",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Unitree_alias_keeps_original_registry_ids",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "all_320_prior_classification_hold_reviews_exported",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "followup_receipt_matches_current_snapshot",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "all_82_followup_claim_decisions_exported",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "followup_and_residual_dispositions_match_latest_review_rows",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "followup_unverified_count_is_current_and_not_a_missing_deal_count",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "all_5664_predecessor_event_ids_exported",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "all_followup_additions_have_public_field_provenance",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "all_three_original_classification_holds_resolved",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "original_holds_absent_from_current_remaining_holds",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "new_financing_and_context_counts_match_followup_receipt",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "no_followup_large_false_Monarrch_amount_in_financing_view",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "current_followup_docs_and_pointer_present",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "residual_receipt_matches_snapshot_and_predecessor",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "all_30_residual_claims_have_individual_source_decisions",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "all_residual_decisions_match_latest_reviews",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "current_claims_have_explicit_quarantine_dispositions",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "residual_quarantine_is_not_proven_missing_deal_count",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "residual_has_no_trends_or_completeness_certificate",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "all_5711_residual_predecessor_event_ids_exported",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "all_6938_residual_predecessor_observation_ids_exported",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "all_4950_residual_predecessor_company_ids_exported",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "all_21_residual_additions_have_field_and_source_provenance",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "residual_17_period_disclosures_and_7_framework_disclosures_match",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "residual_4_nonperiod_context_records_match",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "both_Monarrch_and_ListenOwl_holds_have_supported_assignments",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "both_residual_holds_absent_from_current_hold_register",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "residual_change_receipts_link_predecessor_and_current_events",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Monarrch_100k_and_AI_rights_governance_preserved",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "ListenOwl_audio_identity_inference_is_explicit",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "ProRata_October_offering_not_assumed_an_extra_framework_round",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "ProRata_2026_original_offering_preserved",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Blink_amendment_retains_only_increment_in_same_episode",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Blink_taxonomy_gap_not_forced_into_robotics",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Blaise_is_insurance_AI_not_Blaize_semiconductor",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "4AG_government_financing_native_CAD_and_type_preserved",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "4AG_prior_company_domain_correction_preserved",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "GuideAI_unknown_native_currency_not_assumed_USD",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Tessel_award_cap_preserved_as_upper_bound",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Harvest_conflicting_year_and_unverified_amount_unallocated",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "year_only_backing_excluded_from_period_counts",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "unallocated_backing_excluded_from_framework_counts",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "all_residual_undisclosed_valuations_remain_unknown",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "historical_receipt_counts_and_latest_counts_distinct",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "current_residual_documentation_and_pointer_match",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "source_sweep_summary_matches_current_release",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "current_methodology_has_one_residual_review_section",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "residual_current_count_matches_export:events_all",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "residual_current_count_matches_export:observations_all",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "residual_current_count_matches_export:companies",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "residual_current_count_matches_export:credible_financing_disclosures",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "residual_current_count_matches_export:financing_episodes",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "residual_current_count_matches_export:framework_financing_disclosures",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "residual_current_count_matches_export:framework_financing_episodes",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "residual_current_count_matches_export:reviewed_framework_financing_disclosures",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "residual_current_count_matches_export:framework_core_equity_cutoff",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "residual_current_count_matches_export:completion_reviews",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "residual_current_count_matches_export:queue_unverified_claims",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "residual_current_count_matches_export:remaining_business_scope_holds",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "residual_current_count_matches_export:resolved_business_scope_exclusions",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "all_6877_predecessor_observation_values_survive_public_export",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "all_6938_residual_predecessor_observation_values_survive_public_export",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "historical_decision_values_survive_residual_export:claims_followup_decisions",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "historical_decision_values_survive_residual_export:classification_followup_decisions",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "sweep_receipt_identifies_current_and_frozen_predecessor",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "all_21_sweep_claims_have_source_decisions",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "sweep_claim_decisions_match_current_reviews",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "20_unverified_sweep_claims_explicitly_quarantined",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "sweep_review_is_not_completeness_or_missing_deal_certificate",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "all_5732_sweep_predecessor_event_ids_exported",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "all_6965_sweep_predecessor_observation_ids_exported",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "all_4963_sweep_predecessor_company_ids_exported",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "all_sweep_additions_have_field_and_source_receipts",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "sweep_new_financing_counts_match_actual_views",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "all_sweep_classifications_and_corrections_have_evidence",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "61_categories_times_3_periods_have_actual_search_receipts",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "source_search_receipt_windows_and_counts_match_coverage",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "all_source_search_receipts_preserve_unmeasured_recall",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "sweep_current_count_matches_export:events_all",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "sweep_current_count_matches_export:observations_all",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "sweep_current_count_matches_export:companies",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "sweep_current_count_matches_export:credible_financing_disclosures",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "sweep_current_count_matches_export:financing_episodes",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "sweep_current_count_matches_export:framework_financing_disclosures",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "sweep_current_count_matches_export:framework_financing_episodes",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "sweep_current_count_matches_export:reviewed_framework_financing_disclosures",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "sweep_current_count_matches_export:framework_core_equity_cutoff",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "sweep_current_count_matches_export:completion_candidates",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "sweep_current_count_matches_export:completion_reviews",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "sweep_current_count_matches_export:queue_unverified_claims",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "sweep_current_count_matches_export:remaining_business_scope_holds",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "sweep_current_count_matches_export:resolved_business_scope_exclusions",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Lucent_unknown_cash_and_separate_valuation_preserved",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Zeroset_one_workflow_financing_not_world_model_duplicate",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Netsec_original_native_USD_lower_bound_preserved",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Polaris_original_September_networking_round_preserved",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Neysa_missing_historical_financing_added",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Majestic_current_71m_not_100m_cumulative",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Alloy_AUD_funding_and_valuation_not_mislabeled_USD",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "SKAI_KRW_valuation_not_funding_and_followon_not_new_priced_round",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Terra_three_disclosures_one_episode_without_52m_double_count",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "original_disclosure_dates_not_later_feed_or_repost_dates",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Newcode_6_5m_seed_and_derived_13_5m_A_separate",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "RAC_offerings_preserve_unknown_stage_and_round_allocation",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "combined_Remedy_round_context_not_period_financing",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "outside_fixed_taxonomy_financing_stays_explicit",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "current_sweep_pointer_and_source_summary_match",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "current_sweep_methodology_section_appears_once",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "inspection_csv_checksum_size_snapshot_and_headers",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "inspection_csv_has_all_supported_disclosures_once",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "inspection_csv_matches_every_public_value_and_unknown",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "inspection_csv_framework_flag_matches_scoped_view",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "inspection_csv_contains_no_quarantined_claim_rows",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "bounded_assessment_identifies_current_and_frozen_predecessor",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "bounded_assessment_complete_with_finite_standard",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "completion_standard_matches_frozen_digest",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "bounded_selection_has_623_final_dispositions",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "benchmark_has_minimum_period_and_update_size",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "eligible_references_resolve_to_current_framework_and_episode",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "reference_capture_recomputed:overall",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "all_material_reference_deals_captured:overall",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "reference_capture_recomputed:prior_12m",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "all_material_reference_deals_captured:prior_12m",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "reference_capture_recomputed:recent_12m",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "all_material_reference_deals_captured:recent_12m",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "reference_capture_recomputed:october_update",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "all_material_reference_deals_captured:october_update",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "benchmark_is_not_worldwide_recall_or_trend_analysis",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "all_5809_predecessor_event_ids_retained",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "all_7068_predecessor_observation_ids_retained",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "all_bounded_additions_have_public_field_and_source_provenance",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "all_bounded_corrections_and_classifications_have_sources",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "accuracy_sample_has_60_source_decisions",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "all_183_cells_have_readiness_status",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:labs:prior_12m",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:labs:recent_12m",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:labs:october_update",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:language:prior_12m",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:language:recent_12m",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:language:october_update",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:visual:prior_12m",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:visual:recent_12m",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:visual:october_update",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:audio:prior_12m",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:audio:recent_12m",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:audio:october_update",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:inference:prior_12m",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:inference:recent_12m",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:inference:october_update",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:neocloud:prior_12m",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:neocloud:recent_12m",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:neocloud:october_update",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:training:prior_12m",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:training:recent_12m",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:training:october_update",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:deployment:prior_12m",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:deployment:recent_12m",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:deployment:october_update",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:retrieval:prior_12m",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:retrieval:recent_12m",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:retrieval:october_update",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:labeling:prior_12m",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:labeling:recent_12m",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:labeling:october_update",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:expert:prior_12m",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:expert:recent_12m",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:expert:october_update",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:synthetic:prior_12m",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:synthetic:recent_12m",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:synthetic:october_update",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:eval:prior_12m",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:eval:recent_12m",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:eval:october_update",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:orchestration:prior_12m",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:orchestration:recent_12m",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:orchestration:october_update",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:observability:prior_12m",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:observability:recent_12m",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:observability:october_update",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:security:prior_12m",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:security:recent_12m",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:security:october_update",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:coding:prior_12m",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:coding:recent_12m",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:coding:october_update",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:assistants:prior_12m",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:assistants:recent_12m",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:assistants:october_update",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:search:prior_12m",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:search:recent_12m",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:search:october_update",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:workflow:prior_12m",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:workflow:recent_12m",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:workflow:october_update",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:creative:prior_12m",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:creative:recent_12m",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:creative:october_update",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:legal:prior_12m",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:legal:recent_12m",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:legal:october_update",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:health:prior_12m",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:health:recent_12m",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:health:october_update",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:finance:prior_12m",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:finance:recent_12m",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:finance:october_update",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:science:prior_12m",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:science:recent_12m",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:science:october_update",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:industrial:prior_12m",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:industrial:recent_12m",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:industrial:october_update",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:service:prior_12m",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:service:recent_12m",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:service:october_update",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:education:prior_12m",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:education:recent_12m",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:education:october_update",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:hr:prior_12m",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:hr:recent_12m",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:hr:october_update",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:robot-model:prior_12m",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:robot-model:recent_12m",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:robot-model:october_update",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:world-model:prior_12m",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:world-model:recent_12m",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:world-model:october_update",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:perception:prior_12m",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:perception:recent_12m",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:perception:october_update",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:control:prior_12m",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:control:recent_12m",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:control:october_update",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:robot-data:prior_12m",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:robot-data:recent_12m",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:robot-data:october_update",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:physical-sim:prior_12m",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:physical-sim:recent_12m",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:physical-sim:october_update",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:telemetry:prior_12m",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:telemetry:recent_12m",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:telemetry:october_update",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:humanoid:prior_12m",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:humanoid:recent_12m",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:humanoid:october_update",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:industrial-robot:prior_12m",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:industrial-robot:recent_12m",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:industrial-robot:october_update",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:warehouse:prior_12m",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:warehouse:recent_12m",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:warehouse:october_update",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:av:prior_12m",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:av:recent_12m",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:av:october_update",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:drone:prior_12m",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:drone:recent_12m",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:drone:october_update",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:defense:prior_12m",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:defense:recent_12m",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:defense:october_update",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:agri:prior_12m",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:agri:recent_12m",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:agri:october_update",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:medical-robot:prior_12m",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:medical-robot:recent_12m",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:medical-robot:october_update",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:construction:prior_12m",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:construction:recent_12m",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:construction:october_update",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:service-robot:prior_12m",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:service-robot:recent_12m",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:service-robot:october_update",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:delivery:prior_12m",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:delivery:recent_12m",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:delivery:october_update",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:physics-ai:prior_12m",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:physics-ai:recent_12m",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:physics-ai:october_update",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:solver:prior_12m",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:solver:recent_12m",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:solver:october_update",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:cad:prior_12m",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:cad:recent_12m",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:cad:october_update",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:systems:prior_12m",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:systems:recent_12m",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:systems:october_update",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:twin:prior_12m",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:twin:recent_12m",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:twin:october_update",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:engineering-flow:prior_12m",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:engineering-flow:recent_12m",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:engineering-flow:october_update",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:eda:prior_12m",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:eda:recent_12m",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:eda:october_update",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:dc-chip:prior_12m",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:dc-chip:recent_12m",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:dc-chip:october_update",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:edge-chip:prior_12m",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:edge-chip:recent_12m",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:edge-chip:october_update",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:sensor:prior_12m",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:sensor:recent_12m",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:sensor:october_update",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:components:prior_12m",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:components:recent_12m",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:components:october_update",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:network:prior_12m",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:network:recent_12m",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:network:october_update",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:memory:prior_12m",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:memory:recent_12m",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:memory:october_update",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:power-cooling:prior_12m",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:power-cooling:recent_12m",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readiness_cell_coverage_evidence:power-cooling:october_update",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "exact_subsector_exclusions_and_verdict_recomputed",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "added_recovered_removed_framework_counts_match",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Cellares_three_disclosures_one_327m_episode",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Sigma_alias_and_duplicate_recovered_once",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Dexory_mixed_package_not_165m_pure_equity",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Turing_111m_Series_E_recovered",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Phyraxis_original_September_CNY_without_fake_cash",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Q5D_Series_A_not_misclassified_grant",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Medra_combined_seed_total_excluded",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Askari_repeated_reference_is_one_seed",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "no_low_quality_tracker_is_new_financing_evidence",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "bounded_inspection_has_three_receipts",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "bounded_inspection_csv_hash_and_values:bounded_reference_reconciliation",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "bounded_inspection_csv_hash_and_values:heatmap_readiness_cells",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "bounded_inspection_csv_hash_and_values:bounded_accuracy_sample",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "all_6965_sweep_predecessor_observation_values_survive_export",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "historical_review_values_survive_sweep_export:claims_followup_decisions",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "historical_review_values_survive_sweep_export:classification_followup_decisions",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "historical_review_values_survive_sweep_export:followup_event_changes",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "historical_review_values_survive_sweep_export:followup_financing_reviews",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "historical_review_values_survive_sweep_export:claims_residual_decisions",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "historical_review_values_survive_sweep_export:classification_residual_decisions",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "historical_review_values_survive_sweep_export:residual_event_changes",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "historical_review_values_survive_sweep_export:residual_financing_reviews",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "loader_rejects_corrupted_file_hash",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "loader_rejects_manifest_path_escape",
+      "passed": true,
+      "detail": null
+    }
+  ]
+}

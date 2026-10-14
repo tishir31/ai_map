@@ -1,0 +1,130 @@
+snapshot_id,display_group_id,label,level,primary_subsector,member_finer_subsectors,period_id,counted_equity_episodes,comparison_ready,display_only
+ai-deals-coverage-f1aefd5696e41b8783b3,fine:labs,General-purpose AI labs,fine,foundation_models,"[""labs""]",prior_12m,17,1,0
+ai-deals-coverage-f1aefd5696e41b8783b3,fine:labs,General-purpose AI labs,fine,foundation_models,"[""labs""]",recent_12m,19,1,0
+ai-deals-coverage-f1aefd5696e41b8783b3,fine:labs,General-purpose AI labs,fine,foundation_models,"[""labs""]",october_update,0,1,1
+ai-deals-coverage-f1aefd5696e41b8783b3,fine:audio,Audio and speech models,fine,creative_media,"[""audio""]",prior_12m,11,1,0
+ai-deals-coverage-f1aefd5696e41b8783b3,fine:audio,Audio and speech models,fine,creative_media,"[""audio""]",recent_12m,13,1,0
+ai-deals-coverage-f1aefd5696e41b8783b3,fine:audio,Audio and speech models,fine,creative_media,"[""audio""]",october_update,0,1,1
+ai-deals-coverage-f1aefd5696e41b8783b3,fine:inference,Inference platforms,fine,inference_compute,"[""inference""]",prior_12m,11,1,0
+ai-deals-coverage-f1aefd5696e41b8783b3,fine:inference,Inference platforms,fine,inference_compute,"[""inference""]",recent_12m,19,1,0
+ai-deals-coverage-f1aefd5696e41b8783b3,fine:inference,Inference platforms,fine,inference_compute,"[""inference""]",october_update,0,1,1
+ai-deals-coverage-f1aefd5696e41b8783b3,fine:neocloud,Neoclouds,fine,neocloud_gpu_capacity,"[""neocloud""]",prior_12m,12,1,0
+ai-deals-coverage-f1aefd5696e41b8783b3,fine:neocloud,Neoclouds,fine,neocloud_gpu_capacity,"[""neocloud""]",recent_12m,21,1,0
+ai-deals-coverage-f1aefd5696e41b8783b3,fine:neocloud,Neoclouds,fine,neocloud_gpu_capacity,"[""neocloud""]",october_update,1,1,1
+ai-deals-coverage-f1aefd5696e41b8783b3,fine:deployment,Model deployment platforms,fine,inference_compute,"[""deployment""]",prior_12m,14,1,0
+ai-deals-coverage-f1aefd5696e41b8783b3,fine:deployment,Model deployment platforms,fine,inference_compute,"[""deployment""]",recent_12m,12,1,0
+ai-deals-coverage-f1aefd5696e41b8783b3,fine:deployment,Model deployment platforms,fine,inference_compute,"[""deployment""]",october_update,1,1,1
+ai-deals-coverage-f1aefd5696e41b8783b3,fine:retrieval,Retrieval and AI data infrastructure,fine,data_training_evaluation,"[""retrieval""]",prior_12m,25,1,0
+ai-deals-coverage-f1aefd5696e41b8783b3,fine:retrieval,Retrieval and AI data infrastructure,fine,data_training_evaluation,"[""retrieval""]",recent_12m,24,1,0
+ai-deals-coverage-f1aefd5696e41b8783b3,fine:retrieval,Retrieval and AI data infrastructure,fine,data_training_evaluation,"[""retrieval""]",october_update,1,1,1
+ai-deals-coverage-f1aefd5696e41b8783b3,fine:orchestration,Agent orchestration and developer frameworks,fine,developer_tools,"[""orchestration""]",prior_12m,26,1,0
+ai-deals-coverage-f1aefd5696e41b8783b3,fine:orchestration,Agent orchestration and developer frameworks,fine,developer_tools,"[""orchestration""]",recent_12m,29,1,0
+ai-deals-coverage-f1aefd5696e41b8783b3,fine:orchestration,Agent orchestration and developer frameworks,fine,developer_tools,"[""orchestration""]",october_update,1,1,1
+ai-deals-coverage-f1aefd5696e41b8783b3,fine:observability,AI observability,fine,developer_tools,"[""observability""]",prior_12m,11,1,0
+ai-deals-coverage-f1aefd5696e41b8783b3,fine:observability,AI observability,fine,developer_tools,"[""observability""]",recent_12m,14,1,0
+ai-deals-coverage-f1aefd5696e41b8783b3,fine:observability,AI observability,fine,developer_tools,"[""observability""]",october_update,0,1,1
+ai-deals-coverage-f1aefd5696e41b8783b3,fine:security,AI security and governance,fine,cybersecurity,"[""security""]",prior_12m,113,1,0
+ai-deals-coverage-f1aefd5696e41b8783b3,fine:security,AI security and governance,fine,cybersecurity,"[""security""]",recent_12m,136,1,0
+ai-deals-coverage-f1aefd5696e41b8783b3,fine:security,AI security and governance,fine,cybersecurity,"[""security""]",october_update,5,1,1
+ai-deals-coverage-f1aefd5696e41b8783b3,fine:coding,Coding applications,fine,coding_agents,"[""coding""]",prior_12m,30,1,0
+ai-deals-coverage-f1aefd5696e41b8783b3,fine:coding,Coding applications,fine,coding_agents,"[""coding""]",recent_12m,33,1,0
+ai-deals-coverage-f1aefd5696e41b8783b3,fine:coding,Coding applications,fine,coding_agents,"[""coding""]",october_update,0,1,1
+ai-deals-coverage-f1aefd5696e41b8783b3,fine:assistants,Horizontal assistants and knowledge tools,fine,enterprise_agents,"[""assistants""]",prior_12m,19,1,0
+ai-deals-coverage-f1aefd5696e41b8783b3,fine:assistants,Horizontal assistants and knowledge tools,fine,enterprise_agents,"[""assistants""]",recent_12m,26,1,0
+ai-deals-coverage-f1aefd5696e41b8783b3,fine:assistants,Horizontal assistants and knowledge tools,fine,enterprise_agents,"[""assistants""]",october_update,3,1,1
+ai-deals-coverage-f1aefd5696e41b8783b3,fine:workflow,Enterprise workflow agents,fine,enterprise_agents,"[""workflow""]",prior_12m,125,1,0
+ai-deals-coverage-f1aefd5696e41b8783b3,fine:workflow,Enterprise workflow agents,fine,enterprise_agents,"[""workflow""]",recent_12m,142,1,0
+ai-deals-coverage-f1aefd5696e41b8783b3,fine:workflow,Enterprise workflow agents,fine,enterprise_agents,"[""workflow""]",october_update,7,1,1
+ai-deals-coverage-f1aefd5696e41b8783b3,fine:creative,Creative AI applications,fine,creative_media,"[""creative""]",prior_12m,36,1,0
+ai-deals-coverage-f1aefd5696e41b8783b3,fine:creative,Creative AI applications,fine,creative_media,"[""creative""]",recent_12m,31,1,0
+ai-deals-coverage-f1aefd5696e41b8783b3,fine:creative,Creative AI applications,fine,creative_media,"[""creative""]",october_update,0,1,1
+ai-deals-coverage-f1aefd5696e41b8783b3,fine:legal,Legal AI,fine,legal,"[""legal""]",prior_12m,38,1,0
+ai-deals-coverage-f1aefd5696e41b8783b3,fine:legal,Legal AI,fine,legal,"[""legal""]",recent_12m,32,1,0
+ai-deals-coverage-f1aefd5696e41b8783b3,fine:legal,Legal AI,fine,legal,"[""legal""]",october_update,1,1,1
+ai-deals-coverage-f1aefd5696e41b8783b3,fine:health,Healthcare AI,fine,healthcare_biotech,"[""health""]",prior_12m,158,1,0
+ai-deals-coverage-f1aefd5696e41b8783b3,fine:health,Healthcare AI,fine,healthcare_biotech,"[""health""]",recent_12m,123,1,0
+ai-deals-coverage-f1aefd5696e41b8783b3,fine:health,Healthcare AI,fine,healthcare_biotech,"[""health""]",october_update,5,1,1
+ai-deals-coverage-f1aefd5696e41b8783b3,fine:finance,Finance and accounting AI,fine,finance,"[""finance""]",prior_12m,122,1,0
+ai-deals-coverage-f1aefd5696e41b8783b3,fine:finance,Finance and accounting AI,fine,finance,"[""finance""]",recent_12m,123,1,0
+ai-deals-coverage-f1aefd5696e41b8783b3,fine:finance,Finance and accounting AI,fine,finance,"[""finance""]",october_update,5,1,1
+ai-deals-coverage-f1aefd5696e41b8783b3,fine:science,Life sciences and discovery AI,fine,healthcare_biotech,"[""science""]",prior_12m,33,1,0
+ai-deals-coverage-f1aefd5696e41b8783b3,fine:science,Life sciences and discovery AI,fine,healthcare_biotech,"[""science""]",recent_12m,45,1,0
+ai-deals-coverage-f1aefd5696e41b8783b3,fine:science,Life sciences and discovery AI,fine,healthcare_biotech,"[""science""]",october_update,1,1,1
+ai-deals-coverage-f1aefd5696e41b8783b3,fine:industrial,Industrial and energy AI,fine,general_applications,"[""industrial""]",prior_12m,106,1,0
+ai-deals-coverage-f1aefd5696e41b8783b3,fine:industrial,Industrial and energy AI,fine,general_applications,"[""industrial""]",recent_12m,87,1,0
+ai-deals-coverage-f1aefd5696e41b8783b3,fine:industrial,Industrial and energy AI,fine,general_applications,"[""industrial""]",october_update,1,1,1
+ai-deals-coverage-f1aefd5696e41b8783b3,fine:service,Sales and customer service AI,fine,customer_support_voice,"[""service""]",prior_12m,82,1,0
+ai-deals-coverage-f1aefd5696e41b8783b3,fine:service,Sales and customer service AI,fine,customer_support_voice,"[""service""]",recent_12m,61,1,0
+ai-deals-coverage-f1aefd5696e41b8783b3,fine:service,Sales and customer service AI,fine,customer_support_voice,"[""service""]",october_update,2,1,1
+ai-deals-coverage-f1aefd5696e41b8783b3,fine:hr,HR and recruiting AI,fine,general_applications,"[""hr""]",prior_12m,22,1,0
+ai-deals-coverage-f1aefd5696e41b8783b3,fine:hr,HR and recruiting AI,fine,general_applications,"[""hr""]",recent_12m,15,1,0
+ai-deals-coverage-f1aefd5696e41b8783b3,fine:hr,HR and recruiting AI,fine,general_applications,"[""hr""]",october_update,0,1,1
+ai-deals-coverage-f1aefd5696e41b8783b3,fine:humanoid,Humanoids and general robot platforms,fine,humanoid_robotics,"[""humanoid""]",prior_12m,11,1,0
+ai-deals-coverage-f1aefd5696e41b8783b3,fine:humanoid,Humanoids and general robot platforms,fine,humanoid_robotics,"[""humanoid""]",recent_12m,20,1,0
+ai-deals-coverage-f1aefd5696e41b8783b3,fine:humanoid,Humanoids and general robot platforms,fine,humanoid_robotics,"[""humanoid""]",october_update,0,1,1
+ai-deals-coverage-f1aefd5696e41b8783b3,fine:warehouse,Warehouse and logistics robotics,fine,industrial_logistics_robotics,"[""warehouse""]",prior_12m,13,1,0
+ai-deals-coverage-f1aefd5696e41b8783b3,fine:warehouse,Warehouse and logistics robotics,fine,industrial_logistics_robotics,"[""warehouse""]",recent_12m,10,1,0
+ai-deals-coverage-f1aefd5696e41b8783b3,fine:warehouse,Warehouse and logistics robotics,fine,industrial_logistics_robotics,"[""warehouse""]",october_update,0,1,1
+ai-deals-coverage-f1aefd5696e41b8783b3,fine:defense,Defense autonomy,fine,drones_defense,"[""defense""]",prior_12m,23,1,0
+ai-deals-coverage-f1aefd5696e41b8783b3,fine:defense,Defense autonomy,fine,drones_defense,"[""defense""]",recent_12m,29,1,0
+ai-deals-coverage-f1aefd5696e41b8783b3,fine:defense,Defense autonomy,fine,drones_defense,"[""defense""]",october_update,1,1,1
+ai-deals-coverage-f1aefd5696e41b8783b3,fine:medical-robot,"Medical, surgical and lab robots",fine,medical_robotics,"[""medical-robot""]",prior_12m,16,1,0
+ai-deals-coverage-f1aefd5696e41b8783b3,fine:medical-robot,"Medical, surgical and lab robots",fine,medical_robotics,"[""medical-robot""]",recent_12m,15,1,0
+ai-deals-coverage-f1aefd5696e41b8783b3,fine:medical-robot,"Medical, surgical and lab robots",fine,medical_robotics,"[""medical-robot""]",october_update,2,1,1
+ai-deals-coverage-f1aefd5696e41b8783b3,fine:dc-chip,Datacenter accelerators and custom ASICs,fine,ai_chips,"[""dc-chip""]",prior_12m,11,1,0
+ai-deals-coverage-f1aefd5696e41b8783b3,fine:dc-chip,Datacenter accelerators and custom ASICs,fine,ai_chips,"[""dc-chip""]",recent_12m,18,1,0
+ai-deals-coverage-f1aefd5696e41b8783b3,fine:dc-chip,Datacenter accelerators and custom ASICs,fine,ai_chips,"[""dc-chip""]",october_update,1,1,1
+ai-deals-coverage-f1aefd5696e41b8783b3,fine:network,AI networking and interconnect,fine,interconnect_memory,"[""network""]",prior_12m,21,1,0
+ai-deals-coverage-f1aefd5696e41b8783b3,fine:network,AI networking and interconnect,fine,interconnect_memory,"[""network""]",recent_12m,29,1,0
+ai-deals-coverage-f1aefd5696e41b8783b3,fine:network,AI networking and interconnect,fine,interconnect_memory,"[""network""]",october_update,0,1,1
+ai-deals-coverage-f1aefd5696e41b8783b3,fine:power-cooling,AI power and cooling,fine,data_centers_power,"[""power-cooling""]",prior_12m,10,1,0
+ai-deals-coverage-f1aefd5696e41b8783b3,fine:power-cooling,AI power and cooling,fine,data_centers_power,"[""power-cooling""]",recent_12m,22,1,0
+ai-deals-coverage-f1aefd5696e41b8783b3,fine:power-cooling,AI power and cooling,fine,data_centers_power,"[""power-cooling""]",october_update,1,1,1
+ai-deals-coverage-f1aefd5696e41b8783b3,parent-residual:foundation_models,Foundation models (smaller subsectors),parent_residual,foundation_models,"[""language""]",prior_12m,7,0,0
+ai-deals-coverage-f1aefd5696e41b8783b3,parent-residual:foundation_models,Foundation models (smaller subsectors),parent_residual,foundation_models,"[""language""]",recent_12m,2,0,0
+ai-deals-coverage-f1aefd5696e41b8783b3,parent-residual:foundation_models,Foundation models (smaller subsectors),parent_residual,foundation_models,"[""language""]",october_update,2,0,1
+ai-deals-coverage-f1aefd5696e41b8783b3,parent-residual:training_compute,Training compute (smaller subsectors),parent_residual,training_compute,"[""training""]",prior_12m,7,0,0
+ai-deals-coverage-f1aefd5696e41b8783b3,parent-residual:training_compute,Training compute (smaller subsectors),parent_residual,training_compute,"[""training""]",recent_12m,8,0,0
+ai-deals-coverage-f1aefd5696e41b8783b3,parent-residual:training_compute,Training compute (smaller subsectors),parent_residual,training_compute,"[""training""]",october_update,0,0,1
+ai-deals-coverage-f1aefd5696e41b8783b3,parent-residual:ai_chips,AI chips (smaller subsectors),parent_residual,ai_chips,"[""edge-chip""]",prior_12m,4,0,0
+ai-deals-coverage-f1aefd5696e41b8783b3,parent-residual:ai_chips,AI chips (smaller subsectors),parent_residual,ai_chips,"[""edge-chip""]",recent_12m,9,0,0
+ai-deals-coverage-f1aefd5696e41b8783b3,parent-residual:ai_chips,AI chips (smaller subsectors),parent_residual,ai_chips,"[""edge-chip""]",october_update,0,0,1
+ai-deals-coverage-f1aefd5696e41b8783b3,parent-residual:interconnect_memory,Interconnect and memory (smaller subsectors),parent_residual,interconnect_memory,"[""memory""]",prior_12m,2,0,0
+ai-deals-coverage-f1aefd5696e41b8783b3,parent-residual:interconnect_memory,Interconnect and memory (smaller subsectors),parent_residual,interconnect_memory,"[""memory""]",recent_12m,4,0,0
+ai-deals-coverage-f1aefd5696e41b8783b3,parent-residual:interconnect_memory,Interconnect and memory (smaller subsectors),parent_residual,interconnect_memory,"[""memory""]",october_update,0,0,1
+ai-deals-coverage-f1aefd5696e41b8783b3,parent-residual:data_training_evaluation,"Data, training, and evaluation (smaller subsectors)",parent_residual,data_training_evaluation,"[""labeling"",""expert"",""synthetic"",""eval""]",prior_12m,27,1,0
+ai-deals-coverage-f1aefd5696e41b8783b3,parent-residual:data_training_evaluation,"Data, training, and evaluation (smaller subsectors)",parent_residual,data_training_evaluation,"[""labeling"",""expert"",""synthetic"",""eval""]",recent_12m,24,1,0
+ai-deals-coverage-f1aefd5696e41b8783b3,parent-residual:data_training_evaluation,"Data, training, and evaluation (smaller subsectors)",parent_residual,data_training_evaluation,"[""labeling"",""expert"",""synthetic"",""eval""]",october_update,1,1,1
+ai-deals-coverage-f1aefd5696e41b8783b3,parent-residual:search_knowledge,Search and knowledge (smaller subsectors),parent_residual,search_knowledge,"[""search""]",prior_12m,14,0,0
+ai-deals-coverage-f1aefd5696e41b8783b3,parent-residual:search_knowledge,Search and knowledge (smaller subsectors),parent_residual,search_knowledge,"[""search""]",recent_12m,8,0,0
+ai-deals-coverage-f1aefd5696e41b8783b3,parent-residual:search_knowledge,Search and knowledge (smaller subsectors),parent_residual,search_knowledge,"[""search""]",october_update,0,0,1
+ai-deals-coverage-f1aefd5696e41b8783b3,parent-residual:creative_media,Creative media (smaller subsectors),parent_residual,creative_media,"[""visual""]",prior_12m,9,0,0
+ai-deals-coverage-f1aefd5696e41b8783b3,parent-residual:creative_media,Creative media (smaller subsectors),parent_residual,creative_media,"[""visual""]",recent_12m,11,0,0
+ai-deals-coverage-f1aefd5696e41b8783b3,parent-residual:creative_media,Creative media (smaller subsectors),parent_residual,creative_media,"[""visual""]",october_update,0,0,1
+ai-deals-coverage-f1aefd5696e41b8783b3,parent-residual:education,Education (smaller subsectors),parent_residual,education,"[""education""]",prior_12m,10,0,0
+ai-deals-coverage-f1aefd5696e41b8783b3,parent-residual:education,Education (smaller subsectors),parent_residual,education,"[""education""]",recent_12m,6,0,0
+ai-deals-coverage-f1aefd5696e41b8783b3,parent-residual:education,Education (smaller subsectors),parent_residual,education,"[""education""]",october_update,0,0,1
+ai-deals-coverage-f1aefd5696e41b8783b3,parent-residual:robotics_foundation_models,Robotics foundation models (smaller subsectors),parent_residual,robotics_foundation_models,"[""robot-model"",""world-model"",""perception"",""control"",""robot-data"",""telemetry""]",prior_12m,32,1,0
+ai-deals-coverage-f1aefd5696e41b8783b3,parent-residual:robotics_foundation_models,Robotics foundation models (smaller subsectors),parent_residual,robotics_foundation_models,"[""robot-model"",""world-model"",""perception"",""control"",""robot-data"",""telemetry""]",recent_12m,48,1,0
+ai-deals-coverage-f1aefd5696e41b8783b3,parent-residual:robotics_foundation_models,Robotics foundation models (smaller subsectors),parent_residual,robotics_foundation_models,"[""robot-model"",""world-model"",""perception"",""control"",""robot-data"",""telemetry""]",october_update,2,1,1
+ai-deals-coverage-f1aefd5696e41b8783b3,parent-residual:industrial_logistics_robotics,Industrial and logistics robotics (smaller subsectors),parent_residual,industrial_logistics_robotics,"[""industrial-robot"",""construction"",""delivery""]",prior_12m,17,1,0
+ai-deals-coverage-f1aefd5696e41b8783b3,parent-residual:industrial_logistics_robotics,Industrial and logistics robotics (smaller subsectors),parent_residual,industrial_logistics_robotics,"[""industrial-robot"",""construction"",""delivery""]",recent_12m,18,1,0
+ai-deals-coverage-f1aefd5696e41b8783b3,parent-residual:industrial_logistics_robotics,Industrial and logistics robotics (smaller subsectors),parent_residual,industrial_logistics_robotics,"[""industrial-robot"",""construction"",""delivery""]",october_update,0,1,1
+ai-deals-coverage-f1aefd5696e41b8783b3,parent-residual:consumer_service_robotics,Consumer and service robotics (smaller subsectors),parent_residual,consumer_service_robotics,"[""service-robot""]",prior_12m,8,0,0
+ai-deals-coverage-f1aefd5696e41b8783b3,parent-residual:consumer_service_robotics,Consumer and service robotics (smaller subsectors),parent_residual,consumer_service_robotics,"[""service-robot""]",recent_12m,15,0,0
+ai-deals-coverage-f1aefd5696e41b8783b3,parent-residual:consumer_service_robotics,Consumer and service robotics (smaller subsectors),parent_residual,consumer_service_robotics,"[""service-robot""]",october_update,0,0,1
+ai-deals-coverage-f1aefd5696e41b8783b3,parent-residual:autonomous_vehicles,Autonomous vehicles (smaller subsectors),parent_residual,autonomous_vehicles,"[""av""]",prior_12m,8,0,0
+ai-deals-coverage-f1aefd5696e41b8783b3,parent-residual:autonomous_vehicles,Autonomous vehicles (smaller subsectors),parent_residual,autonomous_vehicles,"[""av""]",recent_12m,12,0,0
+ai-deals-coverage-f1aefd5696e41b8783b3,parent-residual:autonomous_vehicles,Autonomous vehicles (smaller subsectors),parent_residual,autonomous_vehicles,"[""av""]",october_update,1,0,1
+ai-deals-coverage-f1aefd5696e41b8783b3,parent-residual:drones_defense,Drones and defense (smaller subsectors),parent_residual,drones_defense,"[""drone""]",prior_12m,6,0,0
+ai-deals-coverage-f1aefd5696e41b8783b3,parent-residual:drones_defense,Drones and defense (smaller subsectors),parent_residual,drones_defense,"[""drone""]",recent_12m,13,0,0
+ai-deals-coverage-f1aefd5696e41b8783b3,parent-residual:drones_defense,Drones and defense (smaller subsectors),parent_residual,drones_defense,"[""drone""]",october_update,0,0,1
+ai-deals-coverage-f1aefd5696e41b8783b3,parent-residual:agricultural_robotics,Agricultural robotics (smaller subsectors),parent_residual,agricultural_robotics,"[""agri""]",prior_12m,12,0,0
+ai-deals-coverage-f1aefd5696e41b8783b3,parent-residual:agricultural_robotics,Agricultural robotics (smaller subsectors),parent_residual,agricultural_robotics,"[""agri""]",recent_12m,7,0,0
+ai-deals-coverage-f1aefd5696e41b8783b3,parent-residual:agricultural_robotics,Agricultural robotics (smaller subsectors),parent_residual,agricultural_robotics,"[""agri""]",october_update,0,0,1
+ai-deals-coverage-f1aefd5696e41b8783b3,parent-residual:robotic_components,Robotic components (smaller subsectors),parent_residual,robotic_components,"[""sensor"",""components""]",prior_12m,8,0,0
+ai-deals-coverage-f1aefd5696e41b8783b3,parent-residual:robotic_components,Robotic components (smaller subsectors),parent_residual,robotic_components,"[""sensor"",""components""]",recent_12m,6,0,0
+ai-deals-coverage-f1aefd5696e41b8783b3,parent-residual:robotic_components,Robotic components (smaller subsectors),parent_residual,robotic_components,"[""sensor"",""components""]",october_update,0,0,1
+ai-deals-coverage-f1aefd5696e41b8783b3,parent-residual:simulation_digital_twins,Simulation and digital twins (smaller subsectors),parent_residual,simulation_digital_twins,"[""physical-sim"",""physics-ai"",""solver"",""cad"",""systems"",""twin"",""engineering-flow"",""eda""]",prior_12m,24,1,0
+ai-deals-coverage-f1aefd5696e41b8783b3,parent-residual:simulation_digital_twins,Simulation and digital twins (smaller subsectors),parent_residual,simulation_digital_twins,"[""physical-sim"",""physics-ai"",""solver"",""cad"",""systems"",""twin"",""engineering-flow"",""eda""]",recent_12m,41,1,0
+ai-deals-coverage-f1aefd5696e41b8783b3,parent-residual:simulation_digital_twins,Simulation and digital twins (smaller subsectors),parent_residual,simulation_digital_twins,"[""physical-sim"",""physics-ai"",""solver"",""cad"",""systems"",""twin"",""engineering-flow"",""eda""]",october_update,4,1,1
