@@ -227,7 +227,7 @@ function isFundingSignal(text, dealValueUsd) {
   const physicalScore = scoreRules(text, PHYSICAL_AI_RULES);
   const fundingScore = scoreRules(text, FUNDING_RULES);
   const negativeScore = scoreRules(text, NEGATIVE_RULES);
-  return physicalScore >= 1 && fundingScore >= 1 && negativeScore === 0 && (dealValueUsd || /\bseries\s+[a-z]\b|\bseed round|pre-seed|funding round|financing round|debt financing|credit facility|secured financing\b/i.test(text));
+  return physicalScore >= 1 && fundingScore >= 1 && negativeScore === 0 && (dealValueUsd || /\bseries\s+[a-z]\b|\bseed round|pre-seed|angel funding|funding|financing|credit facility\b/i.test(text));
 }
 
 function llmEnabled(body) {
@@ -340,7 +340,11 @@ async function googleNewsSearch(query, maxResults, bounded = false) {
   const feed=primaryFeedUrl(query);
   if(feed){
     const page=await publicWeb.readPublicPage(feed,0,Date.now()+9000,{allowXml:true});
-    if(page.status!==200 || !/<rss(?:\s|>)/i.test(page.text) || !/<\/rss\s*>/i.test(page.text))throw Error('Primary RSS response unavailable');
+    if(page.status!==200 || !/<rss(?:\s|>)/i.test(page.text) || !/<\/rss\s*>/i.test(page.text)){
+      const error=Error('Primary RSS response unavailable');
+      error.provenance={sourceUrl:feed,canonicalUrl:page.finalUrl,sourceStatus:page.status,contentType:page.contentType||null,characters:page.text.length,responseKind:/<html/i.test(page.text)?'html':/<rss/i.test(page.text)?'rss':'other'};
+      console.warn('[market-source] primary-feed-unavailable',error.provenance);throw error;
+    }
     return parseRss(page.text,300,true).filter(isPrimaryMarketItem).filter(item=>{
       try{const u=publicWeb.parsePublicUrl(item.link);return u.protocol==='https:'&&/^(?:www\.|rss\.)?globenewswire\.com$/.test(u.hostname)&&u.pathname.includes('/news-release/');}catch{return false;}
     }).slice(0,maxResults).map(({title,link,pubDate,source})=>({title,link,pubDate,source:source||'GlobeNewswire issuer announcement'}));
@@ -550,7 +554,10 @@ function candidateRunKey(candidate) {
 function gateCandidate(candidate, context) {
   const evidence = Array.isArray(candidate.intelligence_evidence) ? candidate.intelligence_evidence.join(" ") : "";
   const sourceText = candidate.llm_status === "enriched" ? "" : candidate.extracted_text || "";
-  const text = `${candidate.candidate_company}. ${candidate.description}. ${candidate.snippet}. ${sourceText}. ${evidence}`;
+  const headline = `${candidate.candidate_company}. ${candidate.subject||''}. ${candidate.description}. ${candidate.snippet}.`;
+  // Article chrome often includes stock quotes, job listings and podcasts.
+  // A sourced financing headline must not be rejected because of that footer.
+  const text = isFundingSignal(headline,candidate.deal_value_usd) ? headline : `${headline} ${sourceText}. ${evidence}`;
   if (!candidateIsInWindow(candidate.candidate_date, context)) return { keep: false, reason: "outside-lookback" };
   if (!candidate.candidate_company || candidate.candidate_company === "N/A") return { keep: false, reason: "company-unresolved" };
   const transaction = candidate.activity_type === 'm&a'
@@ -900,7 +907,12 @@ async function processPublicCollectionItem(item,sourceName,window,config=graphAp
               }else staged=decision.candidate;
             }
           }
-          const gate=gateCandidate(staged,context);if(!gate.keep)return {disposition:/duplicate/.test(gate.reason)?'duplicate':'rejected',reason:gate.reason,provenance};
+          let gate=gateCandidate(staged,context);
+          if(!gate.keep && staged!==candidate){
+            const originalGate=gateCandidate(candidate,context);
+            if(originalGate.keep){staged=candidate;gate=originalGate;staged.intelligence_cautions=['Model enrichment changed a qualifying source signal; independent source review required.'];}
+          }
+          if(!gate.keep)return {disposition:/duplicate/.test(gate.reason)?'duplicate':'rejected',reason:gate.reason,provenance};
           if(gate.duplicateOfActivityId)staged.duplicate_of_activity_id=gate.duplicateOfActivityId;
           return {disposition:'staged',candidate:staged,provenance};
 }
