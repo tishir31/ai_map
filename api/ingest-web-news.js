@@ -21,6 +21,7 @@ const { authorizeIngestRequest } = require("../lib/ingest-auth");
 const publicWeb = require("../lib/public-web");
 const graphApi = require("../lib/graph-api");
 const crypto=require("node:crypto");
+const {PRIMARY_MARKET_FEEDS,isPrimaryMarketItem,primaryFeedUrl}=require('../lib/primary-market-feeds');
 const {
   deterministicDuplicateAgreement,
   sourceBackedDealValueUsd
@@ -318,7 +319,7 @@ function normalizeUrl(url) {
   }
 }
 
-function parseRss(xml, maxResults) {
+function parseRss(xml, maxResults, includeSummary = false) {
   const items = [];
   for (const match of String(xml || "").matchAll(/<item\b[\s\S]*?<\/item>/gi)) {
     const raw = match[0];
@@ -328,13 +329,22 @@ function parseRss(xml, maxResults) {
     const source = decodeXml((raw.match(/<source[^>]*>([\s\S]*?)<\/source>/i) || [])[1]);
     const dateTime=pubDateRaw?new Date(pubDateRaw):null;
     const pubDate=dateTime && Number.isFinite(dateTime.valueOf())?dateTime.toISOString().slice(0,10):null;
-    if (title && link) items.push({ title, link, pubDate, source });
+    const summary=decodeXml((raw.match(/<description>([\s\S]*?)<\/description>/i)||[])[1]);
+    if (title && link) items.push({ title, link, pubDate, source, ...(includeSummary&&summary?{summary:stripHtml(summary)}:{}) });
     if (items.length >= maxResults) break;
   }
   return items;
 }
 
 async function googleNewsSearch(query, maxResults, bounded = false) {
+  const feed=primaryFeedUrl(query);
+  if(feed){
+    const page=await publicWeb.readPublicPage(feed,0,Date.now()+9000,{allowXml:true});
+    if(page.status!==200 || !/<rss(?:\s|>)/i.test(page.text) || !/<\/rss\s*>/i.test(page.text))throw Error('Primary RSS response unavailable');
+    return parseRss(page.text,300,true).filter(isPrimaryMarketItem).filter(item=>{
+      try{const u=publicWeb.parsePublicUrl(item.link);return u.protocol==='https:'&&/^(?:www\.|rss\.)?globenewswire\.com$/.test(u.hostname)&&u.pathname.includes('/news-release/');}catch{return false;}
+    }).slice(0,maxResults).map(({title,link,pubDate,source})=>({title,link,pubDate,source:source||'GlobeNewswire issuer announcement'}));
+  }
   const url = new URL("https://news.google.com/rss/search");
   url.searchParams.set("q", query);
   url.searchParams.set("hl", "en-US");
@@ -888,7 +898,7 @@ module.exports = async function handler(req, res) {
       let publicSources=DEFAULT_QUERIES;
       if(process.env.INGEST_WEB_SOURCES){const parsed=JSON.parse(process.env.INGEST_WEB_SOURCES);if(!Array.isArray(parsed)||!parsed.length||parsed.length>8)throw Error('Invalid bounded public source configuration');publicSources=parsed;}
       const rotation=buildRotationPlan(publicSources,date,{provider:'web',baseLookbackDays:MAX_LOOKBACK_DAYS});
-      const plan={sources:rotation.queries.slice(0,8),window:{...refreshWindow(date,rotation.effectiveLookbackDays),rotationCycleDays:rotation.rotationCycleDays}};
+      const plan={sources:[...rotation.queries.slice(0,4),...PRIMARY_MARKET_FEEDS],window:{...refreshWindow(date,rotation.effectiveLookbackDays),rotationCycleDays:rotation.rotationCycleDays}};
       const config=graphApi.getConfig();
       const result=await require('../lib/web-collection-worker').runWebCollection(config,asOf,plan,{
         search:(query,max)=>googleNewsSearch(query,max,true),
@@ -913,8 +923,15 @@ module.exports = async function handler(req, res) {
             }
             if(decision) {
               provenance.modelStatus=decision.keep?decision.status:'rejected';
-              if(!decision.keep)return {disposition:'rejected',reason:'llm-rejected',details:decision.reason,provenance};
-              staged=decision.candidate;
+              if(!decision.keep){
+                // A model's negative triage must not silently discard an
+                // independently qualifying public transaction signal. Keep it
+                // private and let the source-bound publication gate decide.
+                const deterministic=gateCandidate(candidate,context);
+                if(!deterministic.keep)return {disposition:'rejected',reason:deterministic.reason,provenance};
+                candidate.llm_status='rejected';
+                candidate.intelligence_cautions=['Model triage disagreed; independent official-source review required.'];
+              }else staged=decision.candidate;
             }
           }
           const gate=gateCandidate(staged,context);if(!gate.keep)return {disposition:/duplicate/.test(gate.reason)?'duplicate':'rejected',reason:gate.reason,provenance};
@@ -1176,6 +1193,8 @@ module.exports = async function handler(req, res) {
 };
 
 module.exports._test = {
+  parseRss,
+  googleNewsSearch,
   buildCandidate,
   buildAdjudicatedCandidate,
   findExistingActivity,

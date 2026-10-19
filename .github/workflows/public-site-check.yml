@@ -23,6 +23,7 @@ jobs:
           node scripts/test-market-review.js
           node scripts/test-market-live-updates.js
           node scripts/test-market-transactions.js
+          node scripts/test-atlas-live-refresh.cjs
           node scripts/test-market-review-auth.js
           node scripts/test-pipeline-health.js
           node scripts/test-collector-retry.js
