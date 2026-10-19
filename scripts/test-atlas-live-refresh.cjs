@@ -4,6 +4,9 @@ const {PRIMARY_MARKET_FEEDS,isPrimaryMarketItem,primaryFeedUrl}=require('../lib/
 const {primaryText}=require('../lib/market-financing-evidence');
 const {extractTransaction,verifyTransaction,verifyWireIssuer}=require('../lib/market-transaction-evidence');
 const {parseRss}=require('../api/ingest-web-news')._test;
+const {gateCandidate}=require('../api/ingest-web-news')._test;
+const collectionContext={companies:[],activities:[],pending:[],companyById:new Map(),refreshWindow:{startDate:'2026-10-13',endDate:'2026-10-19'}};
+assert(gateCandidate({candidate_company:'120ft',candidate_date:'2026-10-15',activity_type:'financing',deal_value_usd:null,subject:'120ft raises angel funding for humanoid robot factories',description:'120ft raises angel funding for humanoid robot factories',snippet:'€576,000 angel funding',extracted_text:'Stock prices. Job openings. Subscribe to our podcast.'},collectionContext).keep,'A native-currency financing headline must survive unrelated article chrome; publication still requires independent source evidence');
 const company={id:'c-surgical',name:'Surgical Robotics',website:'https://surgical-robotics.com',geography:'United States',subsector:'robotics',is_sample:false};
 const candidate={id:'rq-surgical',candidate_company:company.name,candidate_date:'2026-10-19',activity_type:'financing',deal_value_usd:36000000};
 const text='October 19, 2026. Surgical Robotics, a leader in non-invasive robotic brain surgery, today announced it has secured $36 million in financing led by Fund One. Surgical Robotics develops a robotic radiosurgery platform.';
