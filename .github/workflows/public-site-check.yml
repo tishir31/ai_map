@@ -24,6 +24,7 @@ jobs:
           node scripts/test-market-live-updates.js
           node scripts/test-market-transactions.js
           node scripts/test-atlas-live-refresh.cjs
+          node scripts/test-market-recovery-auth.cjs
           node scripts/test-market-review-auth.js
           node scripts/test-pipeline-health.js
           node scripts/test-collector-retry.js
@@ -38,5 +39,6 @@ jobs:
           ECOSYSTEM_PGLITE_PATH="$RUNNER_TEMP/ecosystem-sql/node_modules/@electric-sql/pglite" node scripts/test-market-transactions-sql.js
           ECOSYSTEM_PGLITE_PATH="$RUNNER_TEMP/ecosystem-sql/node_modules/@electric-sql/pglite" node scripts/test-market-review-resume.cjs
           ECOSYSTEM_PGLITE_PATH="$RUNNER_TEMP/ecosystem-sql/node_modules/@electric-sql/pglite" node scripts/test-web-collection-sql.js
+          ECOSYSTEM_PGLITE_PATH="$RUNNER_TEMP/ecosystem-sql/node_modules/@electric-sql/pglite" node scripts/test-market-recovery-sql.cjs
       - name: Check release artifact
         run: node scripts/check-public-release.cjs

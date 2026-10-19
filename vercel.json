@@ -22,6 +22,10 @@
       "destination": "/api/pipeline-health?physicalAiRoute=atlas-export"
     },
     {
+      "source": "/api/market-recovery",
+      "destination": "/api/pipeline-health?physicalAiRoute=market-recovery"
+    },
+    {
       "source": "/api/market-review-daily",
       "destination": "/api/pipeline-health?physicalAiRoute=market-review-daily"
     },
