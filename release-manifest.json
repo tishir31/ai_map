@@ -1,9 +1,9 @@
 {
   "schemaVersion": 1,
   "release": "physical-ai-ecosystem-2026-10-19",
-  "builtAt": "2026-10-19T22:37:36.070Z",
+  "builtAt": "2026-10-19T23:09:21.258Z",
   "sourceCommit": "ac4730c3af9d8ea449f185406ba6300a90df5263",
-  "backendBaseCommit": "79ebac01a5c7f81b2433dafb01f63470076c89a8",
+  "backendBaseCommit": "81e9016feddf6948bb029201ccc45b2818bd6827",
   "graphAsOf": "2026-09-07",
   "publicRoutes": [
     "ecosystem",
@@ -27,7 +27,7 @@
     "api/gap-check.js": "edd48b8b1fe2d1f1bc415abcd6b2ce49d4827961a5576a50136d753202f656be",
     "api/gemini.js": "da954f459f8f31c086a17393939e40e3e12a7e65fcee37491d8d54498606aebf",
     "api/ingest-gmail.js": "6731d68d268fc64deed0b905989ac330cce46acd41fc9e93b1ff9573bbc3e1d3",
-    "api/ingest-web-news.js": "7b426b6d084d9e9f06d381be72211681207aa341d0af875f26b2183c50091c45",
+    "api/ingest-web-news.js": "b5c4e988c7e7ce922a44f0917c138f9c19248bd1460dba479235be4a6ace1343",
     "api/normalize-investors.js": "e3ddec8945e172671321cef1c25002af79dfb4f0c8c701d5db782da300b3ab40",
     "api/pipeline-health.js": "10aca317c86f60729371eb833228daea30239a2763a9609eff1da7a94033deb7",
     "api/research-company.js": "d67f6df69e5dc873c2f88b434f4c1744f77f77a93f53fad7af72fd2c3e84540d",
@@ -50,15 +50,16 @@
     "lib/ingest-adjudication.js": "83f3641403104834eb3ec20dd9b47b330aede2ba0cc16a5bd7509ef99f17d672",
     "lib/ingest-auth.js": "f4d56c2070ef7d39e25236ed1c78f69a0e8f3e64de2ddc00429631768e2caedb",
     "lib/market-financing-evidence.js": "79ce61364ddb66755bafd4bf1f1c2812ec41d739299b45563542b10e97bd4fa7",
+    "lib/market-recovery-worker.js": "633a9ff562e3fa90cfa553ab392d562eb47bec7b25762be5f6ad86aaafc67359",
     "lib/market-review-health.js": "9b60ca270450e1204904e5a62e961df9fe102b20c9e84e1c557466f6e9746b98",
     "lib/market-review-worker.js": "de7c48e627be0e7c30097903ca9f6930c7b9472246745f750799a73a8594ccdd",
     "lib/market-snapshot.js": "6613dc77fc62f34f4967f4a8f1f2102bd26b40e1687b0f98d1140481a342b08e",
     "lib/market-transaction-evidence.js": "015afe7e6e6be658eb736d4b94702b77aefc1eda38ecb90cac39ac8f7d0e64b7",
-    "lib/physical-ai-router.js": "6329e0c1fc2583dd2d7cdad20307634b34d78b8a9f83f0edb573728e18738df1",
+    "lib/physical-ai-router.js": "fc6e1ca4682ac06c3d4df3c8d0170ef7d2d445bdaa56292e3ea7750f0a21b1e3",
     "lib/primary-market-feeds.js": "88f9d11bc1c654be395fad6e7301c49b05021a4c25aacd16a9e7b8a722d50ea2",
     "lib/public-actions.js": "e290b3575b26271115e646825a80eada9554550a43e324794720003aae5b27ca",
     "lib/public-research-worker.js": "8d59191661de2b27053cbcb37c0c144a7595cf912eb611edfd5f32f21c4f9f4e",
-    "lib/public-web.js": "6cb7d2fa0fbcad618a70882cfd297d15f93b0a149df057d2d601882b26ef09cf",
+    "lib/public-web.js": "3b76cf049ad654d04579af279eb28d99efe17923cb69d5096336588e900085f2",
     "lib/query-rotation.js": "2d7d7dfa813bb57af5dce51b85a84d46acc2b8e68a832871ad71dbd70bddd120",
     "lib/research-agents.cjs": "d80b2d7ed0e816c77df60da0731233ad565c65bfc0b6b788a8a3367c7bd1e275",
     "lib/scheduler-auth.js": "08eb5e625d2d8c89e25328a3d4efed870be4b412090533444dfe540a303ce7af",
@@ -517,7 +518,7 @@
     "physical-ai/og-v3.png": "7a628f0885ad4d8c28b422b7a7bd8a7e2fd508f63b21b948c1add8a210a4cb0a",
     "supabase/migrations/20260910065510_physical_ai_ecosystem_v3.sql": "554afd62bc27a9b6b38d7941b2862b47fbea8e0c30bce98a9c84ac92364e01e9",
     "supabase/migrations/20260910074154_physical_ai_ecosystem_bootstrap_upload.sql": "52aa249e4c9accb9f019a666e6402ae42aa2f38b767f1538cf9d38941570d50f",
-    "vercel.json": "f8b7a42d41731dc3ec340db4d761b4dffe6b10535fc620cb2f8970e9e8c20a1a"
+    "vercel.json": "26065e86c9acba12ff2beb6d6572f52f1de40c807ef39422d73759b0d19c9e40"
   },
   "researchRuntime": "public leased tasks; immediate step execution and bounded six-hour worker; findings unverified",
   "schemaMigrations": [
