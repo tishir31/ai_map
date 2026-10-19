@@ -867,6 +867,44 @@ async function supabaseInsertRun(supabaseUrl, serviceRoleKey, run) {
   if (!r.ok) throw new Error(`Run telemetry write failed (${r.status})`);
 }
 
+
+async function processPublicCollectionItem(item,sourceName,window,config=graphApi.getConfig()) {
+          let article;
+          try{article=await fetchArticleSnapshot(item.link,true);}catch(error){error.phase='source';throw error;}
+          const candidate=buildCandidate(item,sourceName,article);
+          const provenance={sourceUrl:item.link,canonicalUrl:article.url,status:article.status,checkedAt:new Date().toISOString(),captureHash:crypto.createHash('sha256').update(article.text).digest('hex'),captureText:article.text};
+          let context;
+          try{context=await graphApi.restRequest(config,'web_collection_dedupe_context',{method:'POST',rpc:true,body:{}});}catch(error){error.phase='storage';error.provenance=provenance;throw error;}
+          context.companyById=new Map((context.companies||[]).map(company=>[company.id,company.name]));context.refreshWindow=window;context.publicCollectionBounded=true;
+          let staged=candidate;
+          if(llmEnabled({})) {
+            let decision;
+            try { decision=await adjudicateWithLlm(candidate,{keep:true,reason:'llm-first'},context); }
+            catch {
+              // Collection can stage a deterministic funding signal during provider outages.
+              // Staging is never approval; the independent public-evidence review still runs.
+              provenance.modelStatus='failed';
+              candidate.llm_status='failed';candidate.llm_model=configuredModelLabel();
+              candidate.intelligence_cautions=['Model triage unavailable; official source review required.'];
+            }
+            if(decision) {
+              provenance.modelStatus=decision.keep?decision.status:'rejected';
+              if(!decision.keep){
+                // A model's negative triage must not silently discard an
+                // independently qualifying public transaction signal. Keep it
+                // private and let the source-bound publication gate decide.
+                const deterministic=gateCandidate(candidate,context);
+                if(!deterministic.keep)return {disposition:'rejected',reason:deterministic.reason,provenance};
+                candidate.llm_status='rejected';
+                candidate.intelligence_cautions=['Model triage disagreed; independent official-source review required.'];
+              }else staged=decision.candidate;
+            }
+          }
+          const gate=gateCandidate(staged,context);if(!gate.keep)return {disposition:/duplicate/.test(gate.reason)?'duplicate':'rejected',reason:gate.reason,provenance};
+          if(gate.duplicateOfActivityId)staged.duplicate_of_activity_id=gate.duplicateOfActivityId;
+          return {disposition:'staged',candidate:staged,provenance};
+}
+
 module.exports = async function handler(req, res) {
   setCors(req, res);
   if (req.method === "OPTIONS") {
@@ -902,42 +940,7 @@ module.exports = async function handler(req, res) {
       const config=graphApi.getConfig();
       const result=await require('../lib/web-collection-worker').runWebCollection(config,asOf,plan,{
         search:(query,max)=>googleNewsSearch(query,max,true),
-        process:async(item,sourceName,window)=>{
-          let article;
-          try{article=await fetchArticleSnapshot(item.link,true);}catch(error){error.phase='source';throw error;}
-          const candidate=buildCandidate(item,sourceName,article);
-          const provenance={sourceUrl:item.link,canonicalUrl:article.url,status:article.status,checkedAt:new Date().toISOString(),captureHash:crypto.createHash('sha256').update(article.text).digest('hex'),captureText:article.text};
-          let context;
-          try{context=await graphApi.restRequest(config,'web_collection_dedupe_context',{method:'POST',rpc:true,body:{}});}catch(error){error.phase='storage';error.provenance=provenance;throw error;}
-          context.companyById=new Map((context.companies||[]).map(company=>[company.id,company.name]));context.refreshWindow=window;context.publicCollectionBounded=true;
-          let staged=candidate;
-          if(llmEnabled({})) {
-            let decision;
-            try { decision=await adjudicateWithLlm(candidate,{keep:true,reason:'llm-first'},context); }
-            catch {
-              // Collection can stage a deterministic funding signal during provider outages.
-              // Staging is never approval; the independent public-evidence review still runs.
-              provenance.modelStatus='failed';
-              candidate.llm_status='failed';candidate.llm_model=configuredModelLabel();
-              candidate.intelligence_cautions=['Model triage unavailable; official source review required.'];
-            }
-            if(decision) {
-              provenance.modelStatus=decision.keep?decision.status:'rejected';
-              if(!decision.keep){
-                // A model's negative triage must not silently discard an
-                // independently qualifying public transaction signal. Keep it
-                // private and let the source-bound publication gate decide.
-                const deterministic=gateCandidate(candidate,context);
-                if(!deterministic.keep)return {disposition:'rejected',reason:deterministic.reason,provenance};
-                candidate.llm_status='rejected';
-                candidate.intelligence_cautions=['Model triage disagreed; independent official-source review required.'];
-              }else staged=decision.candidate;
-            }
-          }
-          const gate=gateCandidate(staged,context);if(!gate.keep)return {disposition:/duplicate/.test(gate.reason)?'duplicate':'rejected',reason:gate.reason,provenance};
-          if(gate.duplicateOfActivityId)staged.duplicate_of_activity_id=gate.duplicateOfActivityId;
-          return {disposition:'staged',candidate:staged,provenance};
-        }
+        process:(item,sourceName,window)=>processPublicCollectionItem(item,sourceName,window,config)
       });
       res.statusCode=result.status==='running'?202:200;res.setHeader('Content-Type','application/json');
       return res.end(JSON.stringify({ok:true,status:result.status,legacy:Boolean(result.legacy),retryable:result.status==='running',collection:require('../lib/web-collection-health').summarizeWebRun(result)}));
@@ -1200,3 +1203,5 @@ module.exports._test = {
   findExistingActivity,
   gateCandidate
 };
+
+module.exports.publicCollection = { search:(query,max)=>googleNewsSearch(query,max,true), process:processPublicCollectionItem };
