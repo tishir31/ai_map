@@ -38,7 +38,7 @@ begin
  if quoted_date is distinct from d then raise exception 'Quoted transaction date conflict';end if;
  pos:=position(ev->>'eventQuote'in ev->>'captureText');
  if position(ev->>'dateQuote'in ev->>'captureText')>pos or pos-position(ev->>'dateQuote'in ev->>'captureText')>5000 then raise exception 'Date must precede transaction passage';end if;
- if ev->>'physicalQuote'!~*'\m(robots?|robotics|humanoids?|autonomous|autonomy|simulation|physics|physical AI|hardware engineering|sensors?|sensing|drones?|manufacturing|tactile)\M' then raise exception 'Physical application evidence required';end if;
+ if ev->>'physicalQuote'!~*'\m(robots?|robotic|robotics|humanoids?|autonomous|autonomy|simulation|physics|physical AI|hardware engineering|sensors?|sensing|drones?|manufacturing|tactile)\M' then raise exception 'Physical application evidence required';end if;
  if position(lower(c.name)in lower(ev->>'physicalQuote'))=0 and position(lower(ev->>'issuerQuote')in lower(ev->>'physicalQuote'))=0
   and not(position(ev->>'physicalQuote'in ev->>'captureText')between pos and pos+2500 and ev->>'physicalQuote'~*'\m(our|we|the company|this capital)\M')then raise exception 'Issuer physical application binding required';end if;
  issuer:=ev->>'issuerQuote';
@@ -46,7 +46,7 @@ begin
  if q.activity_type='financing'then
   if ev->>'category'not in('equity','debt') or position(ev->>'amountQuote'in ev->>'eventQuote')=0 or ev->>'eventQuote'!~*'\m(funding|financing|series|round|term loan)\M'then raise exception 'Financing category/passage conflict';end if;
   app:='(?:\s*\([^)]{1,100}\))?(?:\s*,\s*[^;:]{1,240}?,)?\s+';
-  verbs:='(?:(?:(?:today|has|have|now|successfully)\s+){0,3}(?:raised|raises|secured|closed|closes|announced|announces|announcing)\s+(?:(?:(?:that\s+)?it\s+has\s+raised|has\s+raised|the\s+(?:close|closing|completion)\s+of|its|a|an|approximately|about|nearly|over|more\s+than)\s+){0,5}|(?:(?:today|has)\s+){0,2}(?:emerged|emerges)\s+from\s+stealth\s+with\s+|(?:(?:today|has)\s+){0,2}closed\s+(?:its|the|a)\s+Series\s+[A-Z][0-9]?\s+(?:funding\s+)?round\s+with\s+)';
+  verbs:='(?:(?:(?:today|has|have|now|successfully)\s+){0,3}(?:raised|raises|secured|closed|closes|announced|announces|announcing)\s+(?:(?:(?:that\s+)?it\s+has\s+(?:raised|secured|closed)|has\s+(?:raised|secured|closed)|the\s+(?:close|closing|completion)\s+of|its|a|an|approximately|about|nearly|over|more\s+than)\s+){0,5}|(?:(?:today|has)\s+){0,2}(?:emerged|emerges)\s+from\s+stealth\s+with\s+|(?:(?:today|has)\s+){0,2}closed\s+(?:its|the|a)\s+Series\s+[A-Z][0-9]?\s+(?:funding\s+)?round\s+with\s+)';
   binding:='^'||statement||app||verbs||'(?:US\$|USD\s*|\$|GBP\s*|£|JPY\s*|¥|EUR\s*|€)\s*[0-9,]+(?:\.[0-9]+)?(?:\s*(?:billion|million|bn|b|m))?$';
   if ev->>'amountQuote'!~*binding then raise exception 'Issuer-led financing amount required';end if;
   if substring(ev->>'eventQuote'from length(ev->>'amountQuote')+1)~*'^\s*(?:in\s+)?(?:total|cumulative|valuation|revenue|investment in\M|investment into\M)'then raise exception 'Current financing episode required';end if;
@@ -69,7 +69,7 @@ language plpgsql security invoker set search_path='' as $$
 declare h text;root text;home text;about_pos integer;link_pos integer;
 begin
  h:=lower(substring(proof->>'wireUrl'from'^https://([a-zA-Z0-9.-]+)/'));
- if h not in('prnewswire.com','www.prnewswire.com','businesswire.com','www.businesswire.com','globenewswire.com','www.globenewswire.com')or proof->>'wireUrl'is distinct from ev->>'canonicalUrl'or proof->>'website'is distinct from c.website then raise exception 'Issuer wire authority required';end if;
+ if h not in('prnewswire.com','www.prnewswire.com','businesswire.com','www.businesswire.com','globenewswire.com','www.globenewswire.com','rss.globenewswire.com')or proof->>'wireUrl'is distinct from ev->>'canonicalUrl'or proof->>'website'is distinct from c.website then raise exception 'Issuer wire authority required';end if;
  if proof->>'sourceText'is distinct from ev->>'captureText'or proof->>'sourceHash'is distinct from ev->>'captureHash'or length(proof->>'homepageText')not between 10 and 100000 or proof->>'homepageHash'is distinct from encode(extensions.digest(proof->>'homepageText','sha256'),'hex')then raise exception 'Issuer capture integrity required';end if;
  root:=regexp_replace(lower(substring(c.website from'^https://([a-zA-Z0-9.-]+)(?:/|$)')),'^www\.','');
  home:=regexp_replace(lower(substring(proof->>'homepageUrl'from'^https://([a-zA-Z0-9.-]+)(?:/|$)')),'^www\.','');
@@ -157,7 +157,7 @@ end $$;
 -- Unchanged holds are reconsidered weekly; changed sources, profiles or candidates retry immediately.
 create or replace function public.market_review_input(q public.review_queue_items)returns jsonb
 language sql stable security invoker set search_path='' as $$
- select jsonb_build_object('policyVersion','transactions-v3','candidate',public.market_candidate_snapshot(q),'company',public.market_resolve_company(q.candidate_company),'aliases',jsonb_build_array(q.candidate_company,public.market_resolve_company(q.candidate_company)->>'name'),'registeredSources',coalesce((select jsonb_agg(s.url order by s.url)from public.market_official_sources s where s.company_id=public.market_resolve_company(q.candidate_company)->>'id'),'[]'::jsonb));
+ select jsonb_build_object('reviewEngineVersion','atlas-source-resolution-20261019','policyVersion','transactions-v3','candidate',public.market_candidate_snapshot(q),'company',public.market_resolve_company(q.candidate_company),'aliases',jsonb_build_array(q.candidate_company,public.market_resolve_company(q.candidate_company)->>'name'),'registeredSources',coalesce((select jsonb_agg(s.url order by s.url)from public.market_official_sources s where s.company_id=public.market_resolve_company(q.candidate_company)->>'id'),'[]'::jsonb));
 $$;
 create or replace function public.acquire_market_review_run(p_run_date date) returns jsonb
 language plpgsql security invoker set search_path='' as $$
