@@ -18,6 +18,14 @@
   ],
   "rewrites": [
     {
+      "source": "/api/market-news",
+      "destination": "/api/pipeline-health?physicalAiRoute=market-news"
+    },
+    {
+      "source": "/api/tyrant-news-enrich",
+      "destination": "/api/pipeline-health?physicalAiRoute=tyrant-news-enrich"
+    },
+    {
       "source": "/api/atlas-export",
       "destination": "/api/pipeline-health?physicalAiRoute=atlas-export"
     },
