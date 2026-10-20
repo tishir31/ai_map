@@ -1,3 +1,9 @@
+## Current collection and review capacity (2026-10-20)
+
+The current public review limit is 32 candidates and 64 leased attempts per UTC day, matching the collector's 32-item batch. Each candidate still gets at most two attempts, with the existing lease, retry delay, private-source exclusion and independent SQL publication checks. Existing runs and budgets are retained. The migration is `20261020012846_market_review_collection_capacity.sql`; the v1 activation contract below records the historical 10/20 limits.
+
+When an article is inaccessible, a qualifying RSS headline is retained only as a private, unverified lead. It has an explicit source-unavailable caution, no model enrichment and no approval. Review must independently recover the issuer, source, date, amount and physical application before publication. Feed failures remain errors; article failures are visible in private provenance and held research counts.
+
 # Bounded daily public market review
 
 Activated in production on 2026-09-18 after source PR13 and deploy PR19 merged; production commit `37c39fe`. Schema migration `20260918225507` and scheduler migration `20260918231042` are applied. The first bounded dispatch completed with no selected candidates; positive publication is demonstrated by isolated fixtures, not by this live run.
