@@ -30,6 +30,7 @@ jobs:
           node scripts/test-collector-retry.js
           node scripts/test-web-collection-health.js
           node scripts/test-gmail-collector-retry.js
+          node scripts/test-gmail-prefix-recovery.cjs
       - name: Validate ecosystem SQL in isolated PostgreSQL
         run: |
           npm install --prefix "$RUNNER_TEMP/ecosystem-sql" @electric-sql/pglite@0.3.14 --no-audit --no-fund
@@ -41,5 +42,6 @@ jobs:
           ECOSYSTEM_PGLITE_PATH="$RUNNER_TEMP/ecosystem-sql/node_modules/@electric-sql/pglite" node scripts/test-web-collection-sql.js
           ECOSYSTEM_PGLITE_PATH="$RUNNER_TEMP/ecosystem-sql/node_modules/@electric-sql/pglite" node scripts/test-market-recovery-sql.cjs
           ECOSYSTEM_PGLITE_PATH="$RUNNER_TEMP/ecosystem-sql/node_modules/@electric-sql/pglite" node scripts/test-market-review-capacity.cjs
+          ECOSYSTEM_PGLITE_PATH="$RUNNER_TEMP/ecosystem-sql/node_modules/@electric-sql/pglite" node scripts/test-hourly-refresh-sql.cjs
       - name: Check release artifact
         run: node scripts/check-public-release.cjs

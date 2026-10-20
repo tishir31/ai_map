@@ -48,6 +48,10 @@ const ALLOWED_ORIGINS = new Set([
   "http://localhost:5173"
 ]);
 
+function boundedFetch(url, options = {}) {
+  return globalThis.fetch(url, {...options, signal: options.signal || AbortSignal.timeout(8000)});
+}
+
 function boundedInt(value, fallback, min, max) {
   const parsed = Number(value);
   if (!Number.isFinite(parsed)) return fallback;
@@ -55,7 +59,7 @@ function boundedInt(value, fallback, min, max) {
 }
 
 const MAX_LOOKBACK_DAYS = boundedInt(process.env.INGEST_LOOKBACK_DAYS, 2, 1, 30);
-const DEFAULT_TIME_BUDGET_MS = boundedInt(process.env.INGEST_TIME_BUDGET_MS, 45000, 10000, 240000);
+const DEFAULT_TIME_BUDGET_MS = boundedInt(process.env.INGEST_TIME_BUDGET_MS, 20000, 10000, 20000);
 const DEFAULT_MAX_ITEMS = boundedInt(process.env.INGEST_MAX_ITEMS, 18, 1, 80);
 const DEFAULT_QUERIES = [
   {
@@ -379,9 +383,10 @@ async function getGmailAccessToken() {
     refresh_token: process.env.GMAIL_REFRESH_TOKEN,
     grant_type: "refresh_token"
   });
-  const r = await fetch("https://oauth2.googleapis.com/token", {
+  const r = await boundedFetch("https://oauth2.googleapis.com/token", {
     method: "POST",
     headers: { "Content-Type": "application/x-www-form-urlencoded" },
+    signal: AbortSignal.timeout(8000),
     body: params.toString()
   });
   if (!r.ok) {
@@ -396,7 +401,7 @@ async function gmailList(accessToken, query, maxResults) {
   const url = new URL("https://gmail.googleapis.com/gmail/v1/users/me/messages");
   url.searchParams.set("q", query);
   url.searchParams.set("maxResults", String(maxResults));
-  const r = await fetch(url.toString(), { headers: { Authorization: `Bearer ${accessToken}` } });
+  const r = await boundedFetch(url.toString(), { headers: { Authorization: `Bearer ${accessToken}` }, signal: AbortSignal.timeout(8000) });
   if (!r.ok) {
     const detail = await r.text();
     throw new Error(`Gmail list failed (${r.status}): ${detail.slice(0, 300)}`);
@@ -407,7 +412,7 @@ async function gmailList(accessToken, query, maxResults) {
 
 async function gmailGet(accessToken, messageId) {
   const url = `https://gmail.googleapis.com/gmail/v1/users/me/messages/${messageId}?format=full`;
-  const r = await fetch(url, { headers: { Authorization: `Bearer ${accessToken}` } });
+  const r = await boundedFetch(url, { headers: { Authorization: `Bearer ${accessToken}` }, signal: AbortSignal.timeout(8000) });
   if (!r.ok) {
     const detail = await r.text();
     throw new Error(`Gmail get failed (${r.status}): ${detail.slice(0, 300)}`);
@@ -465,13 +470,13 @@ function buildCandidate(message, sourceName) {
 async function supabaseUpsertReviewQueue(supabaseUrl, serviceRoleKey, rows) {
   if (rows.length === 0) return 0;
   async function post(payload) {
-    return fetch(`${supabaseUrl}/rest/v1/review_queue_items?on_conflict=id`, {
+    return boundedFetch(`${supabaseUrl}/rest/v1/review_queue_items?on_conflict=id&select=id`, {
       method: "POST",
       headers: {
         apikey: serviceRoleKey,
         Authorization: `Bearer ${serviceRoleKey}`,
         "Content-Type": "application/json",
-        Prefer: "resolution=merge-duplicates,return=minimal"
+        Prefer: "resolution=ignore-duplicates,return=representation"
       },
       body: JSON.stringify(payload.map(stripTransientColumns))
     });
@@ -481,16 +486,16 @@ async function supabaseUpsertReviewQueue(supabaseUrl, serviceRoleKey, rows) {
     const detail = await r.text();
     if (/intelligence_|llm_/i.test(detail)) {
       r = await post(rows.map(stripIntelligenceColumns));
-      if (r.ok) return rows.length;
+      if (r.ok) return (await r.json()).length;
       throw new Error(`Supabase upsert fallback failed (${r.status}): ${(await r.text()).slice(0, 200)}`);
     }
     throw new Error(`Supabase upsert failed (${r.status}): ${detail.slice(0, 200)}`);
   }
-  return rows.length;
+  return (await r.json()).length;
 }
 
 async function supabasePostRun(supabaseUrl, serviceRoleKey, run) {
-  return fetch(`${supabaseUrl}/rest/v1/ingestion_runs?on_conflict=id`, {
+  return boundedFetch(`${supabaseUrl}/rest/v1/ingestion_runs?on_conflict=id`, {
     method: "POST",
     headers: {
       apikey: serviceRoleKey,
@@ -503,7 +508,7 @@ async function supabasePostRun(supabaseUrl, serviceRoleKey, run) {
 }
 
 async function supabaseGet(supabaseUrl, serviceRoleKey, path) {
-  const r = await fetch(`${supabaseUrl}/rest/v1/${path}`, {
+  const r = await boundedFetch(`${supabaseUrl}/rest/v1/${path}`, {
     headers: {
       apikey: serviceRoleKey,
       Authorization: `Bearer ${serviceRoleKey}`
@@ -821,17 +826,19 @@ function buildAdjudicatedCandidates(parsed, candidate, context, modelLabel) {
 async function adjudicateWithGemini(candidate, gate, context) {
   const apiKey = process.env.GEMINI_API_KEY;
   if (!apiKey) return null;
-  const response = await fetch(
+  const response = await boundedFetch(
     `https://generativelanguage.googleapis.com/v1beta/models/${GEMINI_MODEL}:generateContent?key=${apiKey}`,
     {
       method: "POST",
       headers: { "Content-Type": "application/json" },
+      signal: AbortSignal.timeout(10000),
       body: JSON.stringify({
         contents: [{ parts: [{ text: intelligencePrompt(candidate, gate, context) }] }],
         generationConfig: {
           temperature: 0.05,
           maxOutputTokens: 3000,
-          responseMimeType: "application/json"
+          responseMimeType: "application/json",
+          ...(/^gemini-2\.5-flash/.test(GEMINI_MODEL) ? { thinkingConfig: { thinkingBudget: 0 } } : {})
         }
       })
     }
@@ -856,8 +863,9 @@ function extractOpenAiText(data) {
 async function adjudicateWithOpenAi(candidate, gate, context) {
   const apiKey = process.env.OPENAI_API_KEY;
   if (!apiKey) return null;
-  const response = await fetch("https://api.openai.com/v1/responses", {
+  const response = await boundedFetch("https://api.openai.com/v1/responses", {
     method: "POST",
+    signal: AbortSignal.timeout(10000),
     headers: {
       Authorization: `Bearer ${apiKey}`,
       "Content-Type": "application/json"
@@ -917,6 +925,7 @@ async function supabaseInsertRun(supabaseUrl, serviceRoleKey, run) {
 }
 
 module.exports = async function handler(req, res) {
+  const requestStartedMs = Date.now();
   setCors(req, res);
   if (req.method === "OPTIONS") {
     res.statusCode = 204;
@@ -955,7 +964,7 @@ module.exports = async function handler(req, res) {
   }
   const maxResults = Math.min(Number(body.maxResults || process.env.INGEST_MAX || MAX_DEFAULT_RESULTS), 100);
   const maxItems = boundedInt(body.maxItems || process.env.INGEST_MAX_ITEMS, DEFAULT_MAX_ITEMS, 1, 100);
-  const timeBudgetMs = boundedInt(body.timeBudgetMs || process.env.INGEST_TIME_BUDGET_MS, DEFAULT_TIME_BUDGET_MS, 10000, 300000);
+  const timeBudgetMs = boundedInt(body.timeBudgetMs || process.env.INGEST_TIME_BUDGET_MS, DEFAULT_TIME_BUDGET_MS, 10000, 20000);
 
   let sources = DEFAULT_QUERIES;
   if (process.env.INGEST_SOURCES) {
@@ -991,7 +1000,7 @@ module.exports = async function handler(req, res) {
     : `run-gmail-${Date.now().toString(36)}`;
   let checkpoint = { processed: {}, completed: [] };
   if (authorization.schedulerRunDate) {
-    const previous = await fetch(`${SUPABASE_URL}/rest/v1/collector_checkpoints?id=eq.${encodeURIComponent(runId)}&select=checkpoint,status&limit=1`, { headers: { apikey: SUPABASE_SERVICE_ROLE_KEY, Authorization: `Bearer ${SUPABASE_SERVICE_ROLE_KEY}` } });
+    const previous = await boundedFetch(`${SUPABASE_URL}/rest/v1/collector_checkpoints?id=eq.${encodeURIComponent(runId)}&select=checkpoint,status&limit=1`, { headers: { apikey: SUPABASE_SERVICE_ROLE_KEY, Authorization: `Bearer ${SUPABASE_SERVICE_ROLE_KEY}` } });
     if (!previous.ok) { res.statusCode = 502; return res.end(JSON.stringify({ ok: false, error: "Collector checkpoint read failed; retry without restarting the window." })); }
     const rows = await previous.json();
     if (rows[0]?.status === "completed") { res.statusCode = 200; return res.end(JSON.stringify({ ok: true, runId, duplicate: true, status: "completed" })); }
@@ -1005,7 +1014,7 @@ module.exports = async function handler(req, res) {
   checkpoint.startedAt = checkpoint.startedAt || startedAt;
   checkpoint.selected = checkpoint.selected || {};
   async function saveCheckpoint(status) {
-    const response = await fetch(`${SUPABASE_URL}/rest/v1/collector_checkpoints?on_conflict=id`, {
+    const response = await boundedFetch(`${SUPABASE_URL}/rest/v1/collector_checkpoints?on_conflict=id`, {
       method: "POST", headers: { apikey: SUPABASE_SERVICE_ROLE_KEY, Authorization: `Bearer ${SUPABASE_SERVICE_ROLE_KEY}`, "Content-Type": "application/json", Prefer: "resolution=merge-duplicates,return=minimal" },
       body: JSON.stringify({ id: runId, checkpoint, status, updated_at: new Date().toISOString() })
     });
@@ -1054,18 +1063,28 @@ module.exports = async function handler(req, res) {
     }
   }
 
+  const priorTotals = checkpoint.totals || {};
+  function syncTotals() {
+    checkpoint.totals = {
+      candidates: (priorTotals.candidates || 0) + totalCandidates,
+      deduped: (priorTotals.deduped || 0) + dedupedCount,
+      enriched: (priorTotals.enriched || 0) + intelligence.enriched,
+      rejected: (priorTotals.rejected || 0) + intelligence.rejected,
+      failed: (priorTotals.failed || 0) + intelligence.failed,
+      processed: Object.values(checkpoint.processed).reduce((n, ids) => n + ids.length, 0),
+      requested: Object.values(checkpoint.selected).reduce((n, ids) => n + ids.length, 0)
+    };
+  }
   try {
     const context = await loadDedupeContext(SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY);
     context.refreshWindow = window;
     const accessToken = await getGmailAccessToken();
-    const startedMs = Date.now();
     function budgetExceeded() {
-      return Date.now() - startedMs > timeBudgetMs || processedItems >= maxItems;
+      return Date.now() - requestStartedMs > timeBudgetMs || processedItems >= maxItems;
     }
     for (const src of sources) {
       if (checkpoint.completed.includes(src.query)) continue;
       const processedKeys = new Set(checkpoint.processed[src.query] || []);
-      const newlyProcessed = [];
       if (budgetExceeded()) {
         stopReason = processedItems >= maxItems ? "max-items" : "time-budget";
         runStatus = "partial";
@@ -1077,18 +1096,12 @@ module.exports = async function handler(req, res) {
         if (authorization.schedulerRunDate) await saveCheckpoint("partial");
       }
       const messages = checkpoint.selected[src.query];
-      const candidates = [];
       const sourceStats = { source: src.name, query: src.query, found: messages.length, processed: 0, written: 0, skipped: 0, stagedNew: 0, stagedUpdates: 0, skippedByReason: {} };
-      for (const m of messages) {
-        if (processedKeys.has(m.id)) continue;
-        if (budgetExceeded()) {
-          stopReason = processedItems >= maxItems ? "max-items" : "time-budget";
-          runStatus = "partial";
-          break;
-        }
-        newlyProcessed.push(m.id);
-        processedItems += 1;
-        sourceStats.processed += 1;
+      perSource.push(sourceStats);
+      checkpoint.requestedBySource = checkpoint.requestedBySource || {};
+      checkpoint.requestedBySource[src.query] = messages.length;
+      async function processMessage(m) {
+        const candidates = [];
         const detail = await gmailGet(accessToken, m.id);
         const candidate = buildCandidate(detail, src.name);
         let staged = candidate;
@@ -1099,7 +1112,7 @@ module.exports = async function handler(req, res) {
             if (!adjudicated.keep) {
               intelligence.rejected += 1;
               recordSkip(adjudicated.reason, sourceStats, true);
-              continue;
+              return [];
             }
             stagedCandidates = adjudicated.candidates;
             if (adjudicated.status === "enriched") intelligence.enriched += stagedCandidates.length;
@@ -1131,14 +1144,31 @@ module.exports = async function handler(req, res) {
           recordStage(staged, sourceStats);
           candidates.push(staged);
         }
+        return candidates;
       }
-      const written = await supabaseUpsertReviewQueue(SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY, candidates);
-      checkpoint.processed[src.query] = [...processedKeys, ...newlyProcessed].slice(-100);
+      for (const m of messages) {
+        if (processedKeys.has(m.id)) continue;
+        if (budgetExceeded()) {
+          stopReason = processedItems >= maxItems ? "max-items" : "time-budget";
+          runStatus = "partial";
+          break;
+        }
+        const candidates = await processMessage(m);
+        const written = await supabaseUpsertReviewQueue(SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY, candidates);
+        processedKeys.add(m.id);
+        processedItems += 1;
+        sourceStats.processed += 1;
+        totalCandidates += written;
+        sourceStats.written += written;
+        sourceStats.skipped = sourceStats.processed - sourceStats.written;
+        checkpoint.processed[src.query] = [...processedKeys];
+        // Persist after each committed message, including rejections. A later
+        // provider/storage failure cannot restart the successful source prefix.
+        syncTotals();
+        if (authorization.schedulerRunDate) await saveCheckpoint("partial");
+      }
       if (!stopReason) checkpoint.completed.push(src.query);
-      totalCandidates += written;
-      sourceStats.written = written;
-      sourceStats.skipped = sourceStats.processed - written;
-      perSource.push(sourceStats);
+      if (authorization.schedulerRunDate) await saveCheckpoint("partial");
       if (stopReason) break;
     }
   } catch (err) {
@@ -1147,19 +1177,7 @@ module.exports = async function handler(req, res) {
     res.statusCode = 502;
   }
 
-  const priorTotals = checkpoint.totals || {};
-  checkpoint.startedAt = checkpoint.startedAt || startedAt;
-  checkpoint.requestedBySource = checkpoint.requestedBySource || {};
-  for (const source of perSource) checkpoint.requestedBySource[source.query] = Math.max(checkpoint.requestedBySource[source.query] || 0, source.found);
-  checkpoint.totals = {
-    candidates: (priorTotals.candidates || 0) + totalCandidates,
-    deduped: (priorTotals.deduped || 0) + dedupedCount,
-    enriched: (priorTotals.enriched || 0) + intelligence.enriched,
-    rejected: (priorTotals.rejected || 0) + intelligence.rejected,
-    failed: (priorTotals.failed || 0) + intelligence.failed,
-    processed: (priorTotals.processed || 0) + processedItems,
-    requested: Object.values(checkpoint.requestedBySource).reduce((sum, value) => sum + value, 0)
-  };
+  syncTotals();
   await supabaseInsertRun(SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY, {
     id: runId,
     source_name: "Gmail",
@@ -1190,7 +1208,7 @@ module.exports = async function handler(req, res) {
       runId,
       duplicateSafe: Boolean(authorization.schedulerRunDate),
       status: runStatus,
-      retryable: runStatus === "partial",
+      retryable: runStatus === "partial" || runStatus === "failed",
       window,
       candidates: totalCandidates,
       deduped: dedupedCount,

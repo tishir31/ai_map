@@ -42,6 +42,10 @@
       "destination": "/api/pipeline-health?physicalAiRoute=market-snapshot"
     },
     {
+      "source": "/api/market-source-reports",
+      "destination": "/api/pipeline-health?physicalAiRoute=market-source-reports"
+    },
+    {
       "source": "/api/graph-search",
       "destination": "/api/pipeline-health?physicalAiRoute=graph-search"
     },
@@ -140,6 +144,9 @@
       "maxDuration": 90
     },
     "api/pipeline-health.js": {
+      "maxDuration": 90
+    },
+    "api/ingest-gmail.js": {
       "maxDuration": 90
     }
   }

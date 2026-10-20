@@ -330,7 +330,7 @@ function parseRss(xml, maxResults, includeSummary = false) {
     const dateTime=pubDateRaw?new Date(pubDateRaw):null;
     const pubDate=dateTime && Number.isFinite(dateTime.valueOf())?dateTime.toISOString().slice(0,10):null;
     const summary=decodeXml((raw.match(/<description>([\s\S]*?)<\/description>/i)||[])[1]);
-    if (title && link) items.push({ title, link, pubDate, source, ...(includeSummary&&summary?{summary:stripHtml(summary)}:{}) });
+    if (title && link && !/\bExtend Robotics\b/i.test(title)) items.push({ title, link, pubDate, source, ...(includeSummary&&summary?{summary:stripHtml(summary)}:{}) });
     if (items.length >= maxResults) break;
   }
   return items;
@@ -964,11 +964,14 @@ module.exports = async function handler(req, res) {
 
   if(authorization.schedulerRunDate){
     try{
-      const asOf=authorization.schedulerRunDate,date=new Date(asOf+'T13:15:00Z');
-      let publicSources=DEFAULT_QUERIES;
-      if(process.env.INGEST_WEB_SOURCES){const parsed=JSON.parse(process.env.INGEST_WEB_SOURCES);if(!Array.isArray(parsed)||!parsed.length||parsed.length>8)throw Error('Invalid bounded public source configuration');publicSources=parsed;}
-      const rotation=buildRotationPlan(publicSources,date,{provider:'web',baseLookbackDays:MAX_LOOKBACK_DAYS});
-      const plan={sources:[...rotation.queries.slice(0,4),...scheduledMarketDiscovery(asOf)],window:{...refreshWindow(date,rotation.effectiveLookbackDays),rotationCycleDays:rotation.rotationCycleDays}};
+      const asOf=authorization.schedulerRunDate,date=new Date();
+      let sources=require("../lib/primary-market-feeds").hourlyMarketDiscovery(date);
+      if(process.env.INGEST_WEB_SOURCES){
+        const configured=JSON.parse(process.env.INGEST_WEB_SOURCES);
+        if(!Array.isArray(configured)||!configured.length||configured.length>8)throw Error('Invalid bounded public source configuration');
+        sources=[buildRotationPlan(configured,date,{provider:'web',baseLookbackDays:14}).queries[date.getUTCHours()%configured.length]];
+      }
+      const plan={sources,window:refreshWindow(date,14)};
       const config=graphApi.getConfig();
       const result=await require('../lib/web-collection-worker').runWebCollection(config,asOf,plan,{
         search:(query,max)=>googleNewsSearch(query,max,true),
