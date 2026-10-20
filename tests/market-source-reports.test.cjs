@@ -8,7 +8,7 @@ test('public source-report projection excludes internal data, withdrawn, unsafe 
 });
 test('real public route returns source reports with no-store and sanitized fields',async()=>{
  process.env.SUPABASE_URL='https://db.example';process.env.SUPABASE_SERVICE_ROLE_KEY='fixture';
- global.fetch=async(url)=>{assert(String(url).includes('/rest/v1/market_source_reports?'));return {ok:true,status:200,text:async()=>JSON.stringify([row])}};
+ global.fetch=async(url)=>{assert(String(url).includes('/rest/v1/market_source_reports?'));assert.equal(new URL(url).searchParams.get('order'),'reported_date.desc.nullslast,first_seen_at.desc,id.asc');return {ok:true,status:200,text:async()=>JSON.stringify([row])}};
  const res={headers:{},setHeader(k,v){this.headers[k]=v},end(s){this.body=JSON.parse(s)}};
  await router.handlePhysicalAiRoute({method:'GET',headers:{},query:{physicalAiRoute:'market-source-reports'}},res);
  assert.equal(res.statusCode,200);assert.equal(res.headers['Cache-Control'],'no-store');assert.equal(res.body.news.length,1);assert.equal(res.body.news[0].verification,'source_report');assert(!JSON.stringify(res.body).includes('PRIVATE'));
