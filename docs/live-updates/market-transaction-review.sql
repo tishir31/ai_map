@@ -38,7 +38,7 @@ begin
  if quoted_date is distinct from d then raise exception 'Quoted transaction date conflict';end if;
  pos:=position(ev->>'eventQuote'in ev->>'captureText');
  if position(ev->>'dateQuote'in ev->>'captureText')>pos or pos-position(ev->>'dateQuote'in ev->>'captureText')>5000 then raise exception 'Date must precede transaction passage';end if;
- if ev->>'physicalQuote'!~*'\m(robots?|robotic|robotics|humanoids?|autonomous|autonomy|simulation|physics|physical AI|hardware engineering|sensors?|sensing|drones?|manufacturing|tactile)\M' then raise exception 'Physical application evidence required';end if;
+ if ev->>'physicalQuote'!~*'\m(robots?|robotic|robotics|humanoids?|autonomous|autonomy|simulation|physics|physical AI|hardware engineering|sensors?|sensing|drones?|uncrewed|unmanned|manufacturing|tactile)\M' then raise exception 'Physical application evidence required';end if;
  if position(lower(c.name)in lower(ev->>'physicalQuote'))=0 and position(lower(ev->>'issuerQuote')in lower(ev->>'physicalQuote'))=0
   and not(position(ev->>'physicalQuote'in ev->>'captureText')between pos and pos+2500 and ev->>'physicalQuote'~*'\m(our|we|the company|this capital)\M')then raise exception 'Issuer physical application binding required';end if;
  issuer:=ev->>'issuerQuote';
