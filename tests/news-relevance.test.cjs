@@ -12,10 +12,12 @@ test('an unavailable article retains a qualifying private RSS lead without manuf
  web.readPublicPage=async()=>({status:403,finalUrl:'https://issuer.example/financing',text:'Access denied'});
  graph.restRequest=async(_config,name)=>{assert.equal(name,'web_collection_dedupe_context');return{companies:[],activities:[],pending:[]};};
  try{
-  const result=await collector.publicCollection.process({title:'Kodama raises $7 million to scale physical AI for forestry',link:'https://issuer.example/financing',pubDate:'2026-10-19'},'Public RSS',{startDate:'2026-10-13',endDate:'2026-10-20'},{});
-  assert.equal(result.disposition,'staged');assert.equal(result.candidate.status,'pending');
+  for(const [title,name]of [['Kodama raises $7 million to scale physical AI for forestry','Kodama'],['Dream Labs Raises $90M Seed to Build the Brain for Everyday Robots','Dream Labs']]){
+  const result=await collector.publicCollection.process({title,link:'https://issuer.example/financing',pubDate:'2026-10-19'},'Public RSS',{startDate:'2026-10-13',endDate:'2026-10-20'},{});
+  assert.equal(result.disposition,'staged');assert.equal(result.candidate.status,'pending');assert.equal(result.candidate.candidate_company,name);
   assert.equal(result.provenance.sourceUnavailable,true);assert.equal(result.provenance.captureKind,'rss-headline-only');
   assert.match(result.candidate.intelligence_cautions.join(' '),/Independent issuer evidence/);
   assert.equal(isPublicSafeActivity(result.candidate),false);assert.equal(result.activity,undefined);
+  }
  }finally{web.readPublicPage=originalRead;graph.restRequest=originalRest;}
 });

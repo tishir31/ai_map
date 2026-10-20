@@ -279,7 +279,7 @@ function safeJson(text) {
 function inferCompany(title) {
   const text = String(title || "");
   const patterns = [
-    /\b([A-Z][A-Za-z0-9&.'\-]*(?:\s+[A-Z0-9][A-Za-z0-9&.'\-]*){0,5})\s+(?:has\s+)?(?:raises?|raised|secures?|secured|closes?|closed|announces?|announced)\b/,
+    /\b([A-Z][A-Za-z0-9&.'\-]*(?:\s+[A-Z0-9][A-Za-z0-9&.'\-]*){0,5})\s+(?:[Hh]as\s+)?(?:[Rr]aise[sd]?|[Ss]ecure[sd]?|[Cc]lose[sd]?|[Aa]nnounce[sd]?)\b/,
     /\b([A-Z][A-Za-z0-9&.'\-]*(?:\s+[A-Z0-9][A-Za-z0-9&.'\-]*){0,5}),?\s+(?:an?|the)?\s*(?:robotics|humanoid|autonomous|drone|industrial|embodied AI|physical AI)[^.!?]{0,120}\b(?:raises?|raised|secures?|closed)\b/i
   ];
   for (const pattern of patterns) {
