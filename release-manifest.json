@@ -1,9 +1,9 @@
 {
   "schemaVersion": 1,
   "release": "physical-ai-ecosystem-2026-10-20",
-  "builtAt": "2026-10-20T04:06:44.043Z",
+  "builtAt": "2026-10-20T04:09:25.888Z",
   "sourceCommit": "1ed03dee44b68bc944d872f0f4a9c2271cc20ef1",
-  "backendBaseCommit": "2ac78187e416b9dad7a27b22c89e0e010f7bfce8",
+  "backendBaseCommit": "fe4e77b9b16954160c44c7681ab92238234fd00b",
   "graphAsOf": "2026-09-07",
   "publicRoutes": [
     "ecosystem",
@@ -26,7 +26,7 @@
     "api/data-quality.js": "8b989d1bbee37b83a8a706eae90cacac9915cfb17b8b85348fe9f58b93c6d7fd",
     "api/gap-check.js": "edd48b8b1fe2d1f1bc415abcd6b2ce49d4827961a5576a50136d753202f656be",
     "api/gemini.js": "da954f459f8f31c086a17393939e40e3e12a7e65fcee37491d8d54498606aebf",
-    "api/ingest-gmail.js": "c15fdea1acaaf8fcfbb968869c48ef9eb6cddc71b3a5a6a50818fa0425116d62",
+    "api/ingest-gmail.js": "2ac54e344337b66bfb079563270251a0a781013b2e853db4da685a904e2defdc",
     "api/ingest-web-news.js": "e856c6d41d7bb3e6b822b48113b5864475daeebb5a1fe79378f988b79aa135ac",
     "api/normalize-investors.js": "e3ddec8945e172671321cef1c25002af79dfb4f0c8c701d5db782da300b3ab40",
     "api/pipeline-health.js": "a63706ef57898e6cfe09a1d7da2f091e76da9a1876a57ce1f17a9ab00224c251",
