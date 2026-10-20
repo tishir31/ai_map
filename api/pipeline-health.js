@@ -20,7 +20,7 @@ const ALLOWED_ORIGINS = new Set([
 
 const EXPECTED_SOURCES = [
   { sourceName: "Gmail", maxAgeHours: 30, hour: 13, minute: 0 },
-  { sourceName: "Public web news", maxAgeHours: 30, hour: 13, minute: 15 }
+  { sourceName: "Public web news", maxAgeHours: 2, hour: 13, minute: 15 }
 ];
 const RETIRED_SOURCES = new Set([
   "Gmail attachment: physical_ai_mna_deals.xlsx",
@@ -115,7 +115,7 @@ function summarizeRuns(runs) {
         stopReason: ["max-items", "time-budget", "provider-error"].includes(run.stop_reason) ? run.stop_reason : null,
         processedItems: Number.isFinite(run.processed_items) ? run.processed_items : null,
         requestedItems: Number.isFinite(run.requested_items) ? run.requested_items : null,
-        nextExpectedCheck: nextDailyCheck(EXPECTED_SOURCES.find(x => x.sourceName === source)),
+        nextExpectedCheck: source === "Public web news" ? require("../lib/web-collection-health").nextCollectionRun(null,new Date()) : nextDailyCheck(EXPECTED_SOURCES.find(x => x.sourceName === source)),
       };
     }
   }
