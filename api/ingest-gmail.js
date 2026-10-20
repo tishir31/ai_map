@@ -49,7 +49,7 @@ const ALLOWED_ORIGINS = new Set([
 ]);
 
 function boundedFetch(url, options = {}) {
-  return globalThis.fetch(url, {...options, signal: options.signal || AbortSignal.timeout(10000)});
+  return globalThis.fetch(url, {...options, signal: options.signal || AbortSignal.timeout(8000)});
 }
 
 function boundedInt(value, fallback, min, max) {
@@ -59,7 +59,7 @@ function boundedInt(value, fallback, min, max) {
 }
 
 const MAX_LOOKBACK_DAYS = boundedInt(process.env.INGEST_LOOKBACK_DAYS, 2, 1, 30);
-const DEFAULT_TIME_BUDGET_MS = boundedInt(process.env.INGEST_TIME_BUDGET_MS, 45000, 10000, 240000);
+const DEFAULT_TIME_BUDGET_MS = boundedInt(process.env.INGEST_TIME_BUDGET_MS, 20000, 10000, 20000);
 const DEFAULT_MAX_ITEMS = boundedInt(process.env.INGEST_MAX_ITEMS, 18, 1, 80);
 const DEFAULT_QUERIES = [
   {
@@ -386,7 +386,7 @@ async function getGmailAccessToken() {
   const r = await boundedFetch("https://oauth2.googleapis.com/token", {
     method: "POST",
     headers: { "Content-Type": "application/x-www-form-urlencoded" },
-    signal: AbortSignal.timeout(10000),
+    signal: AbortSignal.timeout(8000),
     body: params.toString()
   });
   if (!r.ok) {
@@ -401,7 +401,7 @@ async function gmailList(accessToken, query, maxResults) {
   const url = new URL("https://gmail.googleapis.com/gmail/v1/users/me/messages");
   url.searchParams.set("q", query);
   url.searchParams.set("maxResults", String(maxResults));
-  const r = await boundedFetch(url.toString(), { headers: { Authorization: `Bearer ${accessToken}` }, signal: AbortSignal.timeout(10000) });
+  const r = await boundedFetch(url.toString(), { headers: { Authorization: `Bearer ${accessToken}` }, signal: AbortSignal.timeout(8000) });
   if (!r.ok) {
     const detail = await r.text();
     throw new Error(`Gmail list failed (${r.status}): ${detail.slice(0, 300)}`);
@@ -412,7 +412,7 @@ async function gmailList(accessToken, query, maxResults) {
 
 async function gmailGet(accessToken, messageId) {
   const url = `https://gmail.googleapis.com/gmail/v1/users/me/messages/${messageId}?format=full`;
-  const r = await boundedFetch(url, { headers: { Authorization: `Bearer ${accessToken}` }, signal: AbortSignal.timeout(10000) });
+  const r = await boundedFetch(url, { headers: { Authorization: `Bearer ${accessToken}` }, signal: AbortSignal.timeout(8000) });
   if (!r.ok) {
     const detail = await r.text();
     throw new Error(`Gmail get failed (${r.status}): ${detail.slice(0, 300)}`);
@@ -831,7 +831,7 @@ async function adjudicateWithGemini(candidate, gate, context) {
     {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      signal: AbortSignal.timeout(15000),
+      signal: AbortSignal.timeout(10000),
       body: JSON.stringify({
         contents: [{ parts: [{ text: intelligencePrompt(candidate, gate, context) }] }],
         generationConfig: {
@@ -865,7 +865,7 @@ async function adjudicateWithOpenAi(candidate, gate, context) {
   if (!apiKey) return null;
   const response = await boundedFetch("https://api.openai.com/v1/responses", {
     method: "POST",
-    signal: AbortSignal.timeout(15000),
+    signal: AbortSignal.timeout(10000),
     headers: {
       Authorization: `Bearer ${apiKey}`,
       "Content-Type": "application/json"
@@ -925,6 +925,7 @@ async function supabaseInsertRun(supabaseUrl, serviceRoleKey, run) {
 }
 
 module.exports = async function handler(req, res) {
+  const requestStartedMs = Date.now();
   setCors(req, res);
   if (req.method === "OPTIONS") {
     res.statusCode = 204;
@@ -963,7 +964,7 @@ module.exports = async function handler(req, res) {
   }
   const maxResults = Math.min(Number(body.maxResults || process.env.INGEST_MAX || MAX_DEFAULT_RESULTS), 100);
   const maxItems = boundedInt(body.maxItems || process.env.INGEST_MAX_ITEMS, DEFAULT_MAX_ITEMS, 1, 100);
-  const timeBudgetMs = boundedInt(body.timeBudgetMs || process.env.INGEST_TIME_BUDGET_MS, DEFAULT_TIME_BUDGET_MS, 10000, 300000);
+  const timeBudgetMs = boundedInt(body.timeBudgetMs || process.env.INGEST_TIME_BUDGET_MS, DEFAULT_TIME_BUDGET_MS, 10000, 20000);
 
   let sources = DEFAULT_QUERIES;
   if (process.env.INGEST_SOURCES) {
@@ -1078,9 +1079,8 @@ module.exports = async function handler(req, res) {
     const context = await loadDedupeContext(SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY);
     context.refreshWindow = window;
     const accessToken = await getGmailAccessToken();
-    const startedMs = Date.now();
     function budgetExceeded() {
-      return Date.now() - startedMs > timeBudgetMs || processedItems >= maxItems;
+      return Date.now() - requestStartedMs > timeBudgetMs || processedItems >= maxItems;
     }
     for (const src of sources) {
       if (checkpoint.completed.includes(src.query)) continue;
