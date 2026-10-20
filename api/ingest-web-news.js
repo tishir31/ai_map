@@ -370,11 +370,11 @@ async function fetchArticleSnapshot(url, bounded = false) {
   if(bounded){
     const deadline=Date.now()+16000;
     let page=await publicWeb.readPublicPage(url,0,Math.min(deadline,Date.now()+7000));
-    if(page.status<200||page.status>=300)throw Error(`Source HTTP ${page.status}`);
+    if(page.status<200||page.status>=300){const error=Error(`Source HTTP ${page.status}`);error.sourceResponse={url:page.finalUrl,status:page.status};throw error;}
     if(new URL(page.finalUrl).hostname==='news.google.com'){
       const original=await require('../lib/google-news-source').resolveGoogleSource(page,{deadline:Math.min(deadline,Date.now()+4000)});
       page=await publicWeb.readPublicPage(original,0,deadline);
-      if(page.status<200||page.status>=300)throw Error(`Source HTTP ${page.status}`);
+      if(page.status<200||page.status>=300){const error=Error(`Source HTTP ${page.status}`);error.sourceResponse={url:page.finalUrl,status:page.status};throw error;}
     }
     return {ok:true,status:page.status,url:page.finalUrl,title:htmlMeta(page.text,/<title[^>]*>([\s\S]*?)<\/title>/i),text:stripHtml(page.text).slice(0,8000)};
   }
@@ -882,14 +882,28 @@ function isSoftwareOnlyCyberHeadline(title) {
 
 async function processPublicCollectionItem(item,sourceName,window,config=graphApi.getConfig()) {
           if (isSoftwareOnlyCyberHeadline(item.title)) return {disposition:'rejected',reason:'software-only-cybersecurity'};
-          let article;
-          try{article=await fetchArticleSnapshot(item.link,true);}catch(error){error.phase='source';throw error;}
+          publicWeb.parsePublicUrl(item.link);
+          let article,sourceFailure;
+          try{article=await fetchArticleSnapshot(item.link,true);}catch(error){
+            sourceFailure=error;
+            const url=error.sourceResponse?.url||item.link;
+            publicWeb.parsePublicUrl(url);
+            article={url,status:error.sourceResponse?.status||null,title:item.title,text:''};
+          }
           const candidate=buildCandidate(item,sourceName,article);
           const provenance={sourceUrl:item.link,canonicalUrl:article.url,status:article.status,checkedAt:new Date().toISOString(),captureHash:crypto.createHash('sha256').update(article.text).digest('hex'),captureText:article.text};
           let context;
           try{context=await graphApi.restRequest(config,'web_collection_dedupe_context',{method:'POST',rpc:true,body:{}});}catch(error){error.phase='storage';error.provenance=provenance;throw error;}
           context.companyById=new Map((context.companies||[]).map(company=>[company.id,company.name]));context.refreshWindow=window;context.publicCollectionBounded=true;
           let staged=candidate;
+          if(sourceFailure){
+            const gate=gateCandidate(candidate,context);
+            provenance.captureKind='rss-headline-only';provenance.sourceUnavailable=true;
+            provenance.captureText=item.title;provenance.captureHash=crypto.createHash('sha256').update(item.title).digest('hex');
+            if(!gate.keep)return {disposition:/duplicate/.test(gate.reason)?'duplicate':'rejected',reason:gate.reason,provenance};
+            candidate.intelligence_cautions=['Article unavailable; RSS headline only. Independent issuer evidence is required before publication.'];
+            return {disposition:'staged',candidate,provenance};
+          }
           if(llmEnabled({})) {
             let decision;
             try { decision=await adjudicateWithLlm(candidate,{keep:true,reason:'llm-first'},context); }
