@@ -1,6 +1,6 @@
 'use strict';
 const assert=require('node:assert/strict');
-const {PRIMARY_MARKET_FEEDS,isPrimaryMarketItem,primaryFeedUrl}=require('../lib/primary-market-feeds');
+const {PRIMARY_MARKET_FEEDS,scheduledMarketDiscovery,isPrimaryMarketItem,primaryFeedUrl}=require('../lib/primary-market-feeds');
 const {primaryText}=require('../lib/market-financing-evidence');
 const {extractTransaction,verifyTransaction,verifyWireIssuer}=require('../lib/market-transaction-evidence');
 const {parseRss}=require('../api/ingest-web-news')._test;
@@ -49,3 +49,5 @@ assert.match(projection.activities[0].id,/^public-[a-f0-9]{24}$/);
 const {renderPublicDossier}=require('../lib/atlas-export-model.cjs');
 const fixtureGraph={metadata:{asOf:'2026-10-19',counts:{}},entities:[{id:'ENT-9900010',kind:'company',canonicalName:'Public Robotics',displayName:'Public Robotics',aliases:[],externalIds:{}},{id:'ENT-9900011',kind:'person',canonicalName:'Public Founder',displayName:'Public Founder',aliases:[],externalIds:{}}],relationships:[{id:'public-founding',subjectId:'ENT-9900011',predicate:'founded',objectId:'ENT-9900010',layer:'company',temporal:{startYear:2024,endYear:null,precision:'exact_start'},evidenceIds:['public-source'],status:'published',derived:false,revision:1}],evidence:[{id:'public-source',url:'https://issuer.org/founder',publisher:'Issuer',tier:'official',retrievedAt:'2026-10-19',stance:'supports',locator:'Founder biography'}],facts:[],collections:[],authorMentions:[],signalDefinitions:[],coverage:[]};
 assert.match(renderPublicDossier(fixtureGraph,'ENT-9900010',2,'2026-10-19'),/https:\/\/issuer.org\/founder/,'Delivered dossier must contain source URLs, not only evidence IDs');
+
+assert.equal(scheduledMarketDiscovery('2026-10-19').length,4);for(const s of scheduledMarketDiscovery('2026-10-19')){assert(!s.query.startsWith('feed:'));assert.match(s.query,/after:2026-10-05 before:2026-10-20$/);}

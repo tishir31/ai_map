@@ -21,7 +21,7 @@ const { authorizeIngestRequest } = require("../lib/ingest-auth");
 const publicWeb = require("../lib/public-web");
 const graphApi = require("../lib/graph-api");
 const crypto=require("node:crypto");
-const {PRIMARY_MARKET_FEEDS,isPrimaryMarketItem,primaryFeedUrl}=require('../lib/primary-market-feeds');
+const {scheduledMarketDiscovery,isPrimaryMarketItem,primaryFeedUrl}=require('../lib/primary-market-feeds');
 const {
   deterministicDuplicateAgreement,
   sourceBackedDealValueUsd
@@ -948,7 +948,7 @@ module.exports = async function handler(req, res) {
       let publicSources=DEFAULT_QUERIES;
       if(process.env.INGEST_WEB_SOURCES){const parsed=JSON.parse(process.env.INGEST_WEB_SOURCES);if(!Array.isArray(parsed)||!parsed.length||parsed.length>8)throw Error('Invalid bounded public source configuration');publicSources=parsed;}
       const rotation=buildRotationPlan(publicSources,date,{provider:'web',baseLookbackDays:MAX_LOOKBACK_DAYS});
-      const plan={sources:[...rotation.queries.slice(0,4),...PRIMARY_MARKET_FEEDS],window:{...refreshWindow(date,rotation.effectiveLookbackDays),rotationCycleDays:rotation.rotationCycleDays}};
+      const plan={sources:[...rotation.queries.slice(0,4),...scheduledMarketDiscovery(asOf)],window:{...refreshWindow(date,rotation.effectiveLookbackDays),rotationCycleDays:rotation.rotationCycleDays}};
       const config=graphApi.getConfig();
       const result=await require('../lib/web-collection-worker').runWebCollection(config,asOf,plan,{
         search:(query,max)=>googleNewsSearch(query,max,true),

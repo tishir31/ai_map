@@ -46,12 +46,13 @@ begin
  if q.activity_type='financing'then
   if ev->>'category'not in('equity','debt') or position(ev->>'amountQuote'in ev->>'eventQuote')=0 or ev->>'eventQuote'!~*'\m(funding|financing|series|round|term loan)\M'then raise exception 'Financing category/passage conflict';end if;
   app:='(?:\s*\([^)]{1,100}\))?(?:\s*,\s*[^;:]{1,240}?,)?\s+';
-  verbs:='(?:(?:(?:today|has|have|now|successfully)\s+){0,3}(?:raised|raises|secured|closed|closes|announced|announces|announcing)\s+(?:(?:(?:that\s+)?it\s+has\s+(?:raised|secured|closed)|has\s+(?:raised|secured|closed)|the\s+(?:close|closing|completion)\s+of|its|a|an|approximately|about|nearly|over|more\s+than)\s+){0,5}|(?:(?:today|has)\s+){0,2}(?:emerged|emerges)\s+from\s+stealth\s+with\s+|(?:(?:today|has)\s+){0,2}closed\s+(?:its|the|a)\s+Series\s+[A-Z][0-9]?\s+(?:funding\s+)?round\s+with\s+)';
+  verbs:='(?:(?:(?:today|has|have|now|successfully)\s+){0,3}(?:raised|raises|secured|closed|closes|announced|announces|announcing)\s+(?:(?:(?:that\s+)?it\s+has\s+(?:raised|secured|closed)|has\s+(?:raised|secured|closed)|the\s+(?:close|closing|completion)\s+of|its|a|an|approximately|about|nearly|over|more\s+than)\s+){0,5}|(?:(?:today|has)\s+){0,2}(?:emerged|emerges)\s+from\s+stealth\s+with\s+|(?:(?:today|has)\s+){0,2}closed\s+(?:its|the|a)\s+Series\s+[A-Z][0-9]?\s+(?:funding\s+)?round\s+with\s+|(?:(?:today|has)\s+){0,2}entered\s+into\s+(?:a|an)\s+)';
   binding:='^'||statement||app||verbs||'(?:US\$|USD\s*|\$|GBP\s*|£|JPY\s*|¥|EUR\s*|€)\s*[0-9,]+(?:\.[0-9]+)?(?:\s*(?:billion|million|bn|b|m))?$';
   if ev->>'amountQuote'!~*binding then raise exception 'Issuer-led financing amount required';end if;
+  if ev->>'amountQuote'~*'\mentered\s+into\M' and substring(ev->>'eventQuote'from length(ev->>'amountQuote')+1)!~*'^\s*(?:(?:unsecured|secured)\s+)?financing\s+facility\M'then raise exception 'Financing facility binding required';end if;
   if substring(ev->>'eventQuote'from length(ev->>'amountQuote')+1)~*'^\s*(?:in\s+)?(?:total|cumulative|valuation|revenue|investment in\M|investment into\M)'then raise exception 'Current financing episode required';end if;
   if (select count(*)from regexp_matches(ev->>'amountQuote','(?:US\$|USD\s*|\$|GBP\s*|£|JPY\s*|¥|EUR\s*|€)\s*[0-9,]+(?:\.[0-9]+)?(?:\s*(?:billion|million|bn|b|m))?','gi'))<>1 then raise exception 'Single bound amount required';end if;
-  if (ev->>'category'='debt')is distinct from (ev->>'eventQuote'~*'\m(term loan|debt financing|credit facility|loan facility)\M') then raise exception 'Debt/equity classification conflict';end if;
+  if (ev->>'category'='debt')is distinct from (ev->>'eventQuote'~*'\m(term loan|debt financing|credit facility|loan facility|financing facility)\M') then raise exception 'Debt/equity classification conflict';end if;
   if ev->>'round'is not null and(ev->>'category'<>'equity' or ev->>'round'!~*'^(Series [A-Z][0-9]?|Pre-A|pre-seed|seed)$'or position(lower(ev->>'round')in lower(ev->>'eventQuote'))=0)then raise exception 'Unsupported financing round';end if;
   if substring(q.description from '(?i)\m(Series [A-Z][0-9]?|Pre-A|pre-seed|seed)\M')is not null and lower(substring(q.description from '(?i)\m(Series [A-Z][0-9]?|Pre-A|pre-seed|seed)\M'))is distinct from lower(ev->>'round')then raise exception 'Candidate financing round conflict';end if;
  elsif q.activity_type='m&a'then
@@ -140,7 +141,7 @@ begin
   a.description:=(ev->>'counterpartyQuote')||case when ev->>'category'='acquisition-closed'then' completed its acquisition of 'else' announced a definitive agreement to acquire 'end||c.name||' for '||amount_label||'. '||case when ev->>'category'='acquisition-announced'then'The transaction is announced and remains subject to closing conditions. 'else''end||'This is a company-reported transaction.';
   a.counterparty:=ev->>'counterpartyQuote';
  else
-  a.description:=c.name||case when ev->>'category'='debt'then' closed '||amount_label||' in debt financing'else' announced '||amount_label||' in '||coalesce(ev->>'round'||' ','')||'financing'end||'. This is a company-reported financing announcement.';
+  a.description:=c.name||case when ev->>'category'='debt'then' announced '||amount_label||' in debt financing'else' announced '||amount_label||' in '||coalesce(ev->>'round'||' ','')||'financing'end||'. This is a company-reported financing announcement.';
   a.counterparty:='N/A';
  end if;
  if a.description~*'(gmail:|@|forwarded message|begin forwarded)'or a.counterparty~*'(gmail:|@)'then raise exception 'Public text privacy gate';end if;
@@ -214,7 +215,7 @@ begin
  amount_label:=coalesce(substring(ev->>'amountQuote'from'(?i)\m(approximately|about|nearly|over|more than)\M\s*(?:US\$|USD|\$|GBP|£|JPY|¥|EUR|€)')||' ','')||amount_label;
   if q.activity_type='m&a'then
    a.description:=(ev->>'counterpartyQuote')||case when ev->>'category'='acquisition-closed'then' completed its acquisition of 'else' announced a definitive agreement to acquire 'end||c.name||' for '||amount_label||'. '||case when ev->>'category'='acquisition-announced'then'The transaction is announced and remains subject to closing conditions. 'else''end||'This is a company-reported transaction.';a.counterparty:=ev->>'counterpartyQuote';
-  else a.description:=c.name||case when ev->>'category'='debt'then' closed '||amount_label||' in debt financing'else' announced '||amount_label||' in '||coalesce(ev->>'round'||' ','')||'financing'end||'. This is a company-reported financing announcement.';a.counterparty:='N/A';end if;
+  else a.description:=c.name||case when ev->>'category'='debt'then' announced '||amount_label||' in debt financing'else' announced '||amount_label||' in '||coalesce(ev->>'round'||' ','')||'financing'end||'. This is a company-reported financing announcement.';a.counterparty:='N/A';end if;
   if q.activity_type='financing'and ev->>'eventQuote'~*'\mas part of\M.*\mround\M'then a.description:=a.description||' Capital secured is part of a larger round; only the secured amount is recorded.';end if;
  if q.activity_type='financing'and ev->>'round'is not null and substring(ev->>'captureText'from position(ev->>'eventQuote'in ev->>'captureText')for 2500)~*'\minitial tranche announced earlier this year\M'then a.description:=a.description||' Total round value includes an initial tranche announced earlier this year.';end if;
  a.source_reference:=c.name||' transaction announcement';
@@ -228,9 +229,9 @@ end $$;
 
 create or replace function public.market_publication_coverage()returns jsonb
 language sql stable security invoker set search_path='' as $$
- with q as(select *from public.review_queue_items where status='pending'and gmail_message_id is null and source_url~'^https?://'and candidate_date between(now()at time zone'utc')::date-30 and(now()at time zone'utc')::date and activity_type in('financing','m&a')and duplicate_of_activity_id is null),
- counts as(select count(*)as candidates,count(*)filter(where public.market_resolve_company(candidate_company)is null)as unresolved_issuers,count(*)filter(where source_url~'^https?://news\.google\.com/')as aggregator_sources,min(candidate_date)as oldest_candidate from q)
- select jsonb_build_object('complete',true,'asOf',now(),'scope','public-financing-and-ma-candidates-last-30-days','pendingCandidates',candidates,'unresolvedIssuers',unresolved_issuers,'unresolvedSourceLinks',aggregator_sources,'oldestCandidateDate',oldest_candidate,'marketCompleteness','not-established')from counts;
+ with q as(select *from public.review_queue_items where status in('pending','held')and gmail_message_id is null and source_url~'^https?://'and candidate_date between(now()at time zone'utc')::date-30 and(now()at time zone'utc')::date and activity_type in('financing','m&a')and duplicate_of_activity_id is null),
+ counts as(select count(*)filter(where status='pending')as candidates,count(*)filter(where status='held')as held_candidates,count(*)filter(where public.market_resolve_company(candidate_company)is null)as unresolved_issuers,count(*)filter(where source_url~'^https?://news\.google\.com/')as aggregator_sources,min(candidate_date)as oldest_candidate from q)
+ select jsonb_build_object('complete',true,'asOf',now(),'scope','public-financing-and-ma-candidates-last-30-days','pendingCandidates',candidates,'heldCandidates',held_candidates,'unresolvedIssuers',unresolved_issuers,'unresolvedSourceLinks',aggregator_sources,'oldestCandidateDate',oldest_candidate,'marketCompleteness','not-established')from counts;
 $$;
 
 revoke all on function public.market_review_input(public.review_queue_items),public.acquire_market_review_run(date),public.assert_market_issuer(public.review_queue_items,public.companies,jsonb,jsonb),public.assert_market_transaction(public.review_queue_items,public.companies,jsonb),public.finish_market_review_task(text,uuid,jsonb),public.finish_market_review_task_v2(text,uuid,jsonb),public.publish_market_recovery(text,text,jsonb),public.market_publication_coverage()from public,anon,authenticated;
