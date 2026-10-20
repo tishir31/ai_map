@@ -7,7 +7,7 @@ async function setup(){
  await db.exec("create role anon;create role authenticated;create role service_role bypassrls;create schema private;create schema extensions;create function extensions.digest(text,text)returns bytea language sql immutable as $$select sha256(convert_to($1,'UTF8'))$$;");
  await db.exec(fs.readFileSync('docs/daily-market-review/test-base-schema.sql','utf8'));
  await db.exec('create table ingestion_runs(id text primary key,source_name text,source_type text,query text,started_at timestamptz,completed_at timestamptz,candidates_found integer,deduped_count integer,status text,llm_enriched_count integer,llm_rejected_count integer,llm_failed_count integer,stop_reason text,processed_items integer,requested_items integer);');
- for(const f of ['docs/daily-market-review/review-schema.sql','docs/live-updates/market-refresh.sql','docs/live-updates/market-transaction-review.sql','supabase/migrations/20261019214026_atlas_live_refresh_source_resolution.sql','docs/collector-reliability/schema.sql','docs/live-updates/market-recovery-cycle.sql'])await db.exec(fs.readFileSync(f,'utf8'));
+ for(const f of ['docs/daily-market-review/review-schema.sql','docs/live-updates/market-refresh.sql','docs/live-updates/market-transaction-review.sql','supabase/migrations/20261019214026_atlas_live_refresh_source_resolution.sql','supabase/migrations/20261020001800_market_uncrewed_application_evidence.sql','docs/collector-reliability/schema.sql','docs/live-updates/market-recovery-cycle.sql','docs/live-updates/market-recovery-facility-wording.sql'])await db.exec(fs.readFileSync(f,'utf8'));
  const q=async(s,p=[]) =>(await db.query(s,p)).rows;
  return {db,q,day:(await q('select current_date::text d'))[0].d};
 }
@@ -23,11 +23,11 @@ async function stage(x,id,extra={}){const row={id,candidate_company:'Known Robot
  await begin(x);assert.equal((await x.q('select count(*)::int n from web_recovery_tasks'))[0].n,1,'rerun must not replace frozen source tasks');
  await x.q('select acquire_market_recovery_review($1)',[id]);assert.equal((await x.q('select selected from market_recovery_runs'))[0].selected,2);
  let t=(await x.q('select claim_market_recovery_task($1)t',[id]))[0].t;assert.equal(t.candidate_id,'rq-proof');assert.equal((await x.q('select claim_market_recovery_task($1)t',[id]))[0].t,null,'one live lease');
- const company=t.input.company,page={status:200,finalUrl:company.website+'/news/round',text:`${x.day}. Known Robotics announced $75 million in Series B financing. Known Robotics builds autonomous industrial robots.`};
+ const company=t.input.company,page={status:200,finalUrl:company.website+'/news/round',text:`${x.day}. Known Robotics has entered into a $75 million unsecured financing facility to support the development of its uncrewed surface vessel technology. Known Robotics builds autonomous industrial robots.`};
  const result=transaction.verifyTransaction(t.input.candidate,company,page,transaction.extractTransaction(page,company,x.day),x.day);assert.equal(result.disposition,'published');
  await assert.rejects(x.q('select finish_market_recovery_task($1,$2,$3)',[t.id,t.locked_by,JSON.stringify({...result,evidence:{...result.evidence,amountNative:90000000}})]));
  await x.q('select finish_market_recovery_task($1,$2,$3)',[t.id,t.locked_by,JSON.stringify(result)]);await x.q('select finish_market_recovery_task($1,$2,$3)',[t.id,t.locked_by,JSON.stringify(result)]);
- assert.equal((await x.q('select count(*)::int n from activities'))[0].n,1,'idempotent source-gated publication');
+ assert.equal((await x.q('select count(*)::int n from activities'))[0].n,1,'idempotent source-gated publication');assert.match((await x.q('select description from activities'))[0].description,/announced .*debt financing/);assert.doesNotMatch((await x.q('select description from activities'))[0].description,/closed/);
  t=(await x.q('select claim_market_recovery_task($1)t',[id]))[0].t;await x.q('select finish_market_recovery_task($1,$2,$3)',[t.id,t.locked_by,JSON.stringify({disposition:'held',reason:'historical_source_review_required'})]);
  await x.q('select close_market_recovery_batch($1)',[id]);await x.q('select close_market_recovery_batch($1)',[id]);assert.equal((await x.q("select status from review_queue_items where id='rq-held'"))[0].status,'held');
  assert.equal((await x.q("select status from review_queue_items where id='rq-private'"))[0].status,'pending','private queue unchanged');

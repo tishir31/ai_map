@@ -875,7 +875,13 @@ async function supabaseInsertRun(supabaseUrl, serviceRoleKey, run) {
 }
 
 
+function isSoftwareOnlyCyberHeadline(title) {
+  return /\b(?:offensive[ -]security|cybersecurity|attack[ -]surface|pentest\w*|penetration[ -]testing)\b/i.test(title || '')
+    && !/\b(?:robots?|robotics|humanoids?|sensors?|hardware|embedded|vehicles?|drones?|industrial|manufacturing|cyber[ -]physical)\b/i.test(title || '');
+}
+
 async function processPublicCollectionItem(item,sourceName,window,config=graphApi.getConfig()) {
+          if (isSoftwareOnlyCyberHeadline(item.title)) return {disposition:'rejected',reason:'software-only-cybersecurity'};
           let article;
           try{article=await fetchArticleSnapshot(item.link,true);}catch(error){error.phase='source';throw error;}
           const candidate=buildCandidate(item,sourceName,article);
@@ -1213,7 +1219,8 @@ module.exports._test = {
   buildCandidate,
   buildAdjudicatedCandidate,
   findExistingActivity,
-  gateCandidate
+  gateCandidate,
+  isSoftwareOnlyCyberHeadline
 };
 
 module.exports.publicCollection = { search:(query,max)=>googleNewsSearch(query,max,true), process:processPublicCollectionItem };
