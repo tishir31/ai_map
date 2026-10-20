@@ -43,5 +43,6 @@ jobs:
           ECOSYSTEM_PGLITE_PATH="$RUNNER_TEMP/ecosystem-sql/node_modules/@electric-sql/pglite" node scripts/test-market-recovery-sql.cjs
           ECOSYSTEM_PGLITE_PATH="$RUNNER_TEMP/ecosystem-sql/node_modules/@electric-sql/pglite" node scripts/test-market-review-capacity.cjs
           ECOSYSTEM_PGLITE_PATH="$RUNNER_TEMP/ecosystem-sql/node_modules/@electric-sql/pglite" node scripts/test-hourly-refresh-sql.cjs
+          ECOSYSTEM_PGLITE_PATH="$RUNNER_TEMP/ecosystem-sql/node_modules/@electric-sql/pglite" node scripts/test-tyrant-news-sql.cjs
       - name: Check release artifact
         run: node scripts/check-public-release.cjs
