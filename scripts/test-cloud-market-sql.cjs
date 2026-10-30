@@ -11,7 +11,7 @@ async function setup(){
  create table net.requests(id bigserial,url text,headers jsonb);
  create function net.http_get(url text,headers jsonb,timeout_milliseconds int)returns bigint language sql as $$insert into net.requests(url,headers)values($1,$2)returning id$$;
  create table public.audit_log(id bigserial,table_name text,row_id text,action text,"before"jsonb,"after"jsonb);`);
- for(const p of ['docs/daily-market-review/test-base-schema.sql','docs/daily-market-review/review-schema.sql','docs/live-updates/market-refresh.sql','docs/live-updates/market-transaction-review.sql','docs/live-updates/market-review-dispositions.sql','docs/cloud-market-research/schema.sql']){
+ for(const p of ['docs/daily-market-review/test-base-schema.sql','docs/daily-market-review/review-schema.sql','docs/live-updates/market-refresh.sql','docs/live-updates/market-transaction-review.sql','docs/live-updates/market-review-dispositions.sql','docs/cloud-market-research/wire-issuer-sections.sql','docs/cloud-market-research/schema.sql']){
   if(p.includes('review-schema'))await db.exec('create table ingestion_runs(id text,status text)');
   await db.exec(fs.readFileSync(p,'utf8'));
  }
@@ -46,6 +46,26 @@ async function setup(){
  assert.equal((await x.q('select count(*)::int n from activities'))[0].n,1);assert.equal((await x.q('select deal_value_usd from activities'))[0].deal_value_usd,null);
  assert.equal((await x.q('select count(*)::int n from audit_log'))[0].n,1);
  assert.equal((await x.q('select status from review_queue_items where id=$1',[t.candidate_id]))[0].status,'approved');
+ // A wire's explicit legal-name/brand binding must survive independent SQL validation.
+ const wireUrl='https://www.globenewswire.com/news/new',brandEvent='New announced a robot product planned for 2027.',brandPhysical='New develops autonomous warehouse robots.';
+ const wire={status:200,finalUrl:wireUrl,text:`${x.day}. New Industries https://www.globenewswire.com/tracker ("New" or the "Company") develops robots. ${brandEvent} ${brandPhysical} For more information visit https://new-robotics.com About New ${brandPhysical}`};
+ const home={status:200,finalUrl:'https://new-robotics.com/',text:'New Industries builds autonomous warehouse robots.'};
+ await x.q("insert into review_queue_items select(jsonb_populate_record(null::review_queue_items,to_jsonb(q)||$1::jsonb)).*from review_queue_items q limit 1",[JSON.stringify({id:'rq-cloud-new',candidate_company:'New Industries',source_url:wireUrl,status:'pending'})]);
+ await x.q("insert into cloud_market_tasks(id,run_id,candidate_id,kind,input)values('new-issuer',$1,'rq-cloud-new','review','{}')",[t.run_id]);
+ const newTask=(await x.q('select claim_cloud_market_task()t'))[0].t;assert.equal(newTask.id,'new-issuer');assert.equal(newTask.input.company,null);
+ const brandData={...e,issuerQuote:'New',eventQuote:brandEvent,physicalQuote:brandPhysical,type:'product launch',counterparty:'N/A',summary:'New announced a warehouse robot product planned for 2027.'};let modelCalls=0;
+ const brandResult=await worker.review(newTask,x.day,{read:async u=>u===wireUrl?wire:home,model:async()=>({data:modelCalls++===0?brandData:check,model:'fixture'})});assert.equal(brandResult.disposition,'published');assert.equal(brandResult.issuerProof.aboutName,'New');
+ for(const field of ['nameBindingQuote','aboutName','homepageText']){
+  const broken=structuredClone(brandResult);broken.issuerProof[field]='Unrelated';
+  if(field==='homepageText')broken.issuerProof.homepageHash=require('node:crypto').createHash('sha256').update('Unrelated').digest('hex');
+  await assert.rejects(x.q('select finish_cloud_market_task($1,$2,$3)',[newTask.id,newTask.locked_by,JSON.stringify(broken)]));
+  assert.equal((await x.q('select count(*)::int n from activities'))[0].n,1);assert.equal((await x.q('select count(*)::int n from market_company_aliases'))[0].n,0);
+ }
+ await x.db.exec("insert into market_company_aliases(alias_key,company_id)values('new','c-test')");
+ await assert.rejects(x.q('select finish_cloud_market_task($1,$2,$3)',[newTask.id,newTask.locked_by,JSON.stringify(brandResult)]),/alias identity conflict/);
+ await x.db.exec("delete from market_company_aliases where alias_key='new'");
+ await x.q('select finish_cloud_market_task($1,$2,$3)',[newTask.id,newTask.locked_by,JSON.stringify(brandResult)]);
+ assert.equal((await x.q("select market_resolve_company('New')->>'id' as id"))[0].id,brandResult.proposedCompany.id);assert.equal((await x.q('select count(*)::int n from activities'))[0].n,2);
  // Lease recovery is bounded, and running work is never claimed twice.
  await x.q("insert into cloud_market_tasks(id,run_id,kind,input,status,attempts,lease_until)values('expired',$1,'discover',$2,'running',2,now()-interval'1 second')",[t.run_id,JSON.stringify({topic:0,window:{start:x.day,end:x.day}})]);
  t=(await x.q('select claim_cloud_market_task()t'))[0].t;assert.equal(t.id,'expired');assert.equal(t.attempts,3);
