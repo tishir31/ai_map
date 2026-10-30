@@ -22,7 +22,10 @@ const candidate = {id:'rq-atlas',candidate_company:company.name,candidate_date:'
 const official = {status:200,finalUrl:company.website+'/news/round',text:'October 30, 2026. Atlas Robotics announced $40 million in Series A financing. Atlas Robotics builds industrial robots.'};
 test('known issuer can publish verified official evidence even when Google redirect fails', async () => {
   const result = await reviewTask({input:{candidate,company,registeredSources:[official.finalUrl]}},'2026-10-30',{
-    readPublicPage:async url => url===candidate.source_url ? {status:200,finalUrl:url,text:'unavailable redirect'} : official,
+    readPublicPage:async (url,_redirects,deadline) => {
+      assert.ok(deadline-Date.now()<=9000, 'a failed fetch must leave time for official-source fallback');
+      return url===candidate.source_url ? {status:200,finalUrl:url,text:'unavailable redirect'} : official;
+    },
     resolveGoogleSource:async()=>{throw Error('source timeout');},
     modelJson:async()=>{throw Error('must use verified evidence');}
   });
