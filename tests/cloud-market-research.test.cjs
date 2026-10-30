@@ -27,3 +27,14 @@ test('cloud model override uses current-model parameters without changing legacy
   return {ok:true,json:async()=>({candidates:[{finishReason:'STOP',content:{parts:[{text:'{"items":[]}'}]}}]})};
  }});}finally{if(saved===undefined)delete process.env.GEMINI_API_KEY;else process.env.GEMINI_API_KEY=saved;}
 });
+test('OpenAI research requires real search output and keeps provider storage disabled',async()=>{
+ const body={status:'completed',output:[{type:'web_search_call',status:'completed',action:{sources:[{url:'https://testrobotics.com/news/pilot'}]}},{type:'message',content:[{type:'output_text',text:'{"items":[]}'}]}]};
+ const fetchImpl=async(u,o)=>{assert.equal(u,'https://api.openai.com/v1/responses');const request=JSON.parse(o.body);assert.equal(request.store,false);assert.equal(request.tool_choice,'required');assert.deepEqual(request.tools,[{type:'web_search'}]);return{ok:true,json:async()=>body};};
+ const options={search:true,env:{OPENAI_API_KEY:'fixture'},fetchImpl};
+ const result=await f.openAiModel('Return JSON',options);assert.equal(result.groundedUrls[0],'https://testrobotics.com/news/pilot');assert.equal(result.model,'openai:gpt-4.1-mini');
+ body.output.shift();await assert.rejects(f.openAiModel('Return JSON',options),/grounding/);
+ body.status='incomplete';await assert.rejects(f.openAiModel('Return JSON',options),/Incomplete/);
+});
+test('OpenAI provider errors preserve only safe diagnostics',async()=>{
+ await assert.rejects(f.openAiModel('Return JSON',{env:{OPENAI_API_KEY:'fixture'},fetchImpl:async()=>({ok:false,status:429,json:async()=>({error:{code:'insufficient_quota',message:'secret prompt',param:null}})})}),e=>e.providerDiagnostics.code==='insufficient_quota'&&!JSON.stringify(e.providerDiagnostics).includes('secret'));
+});
