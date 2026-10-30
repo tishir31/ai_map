@@ -16,3 +16,14 @@ test('discovery must actually use grounded web search',async()=>{await assert.re
 test('worker persists failures for retry and always validates finish lease',async()=>{const calls=[];const t={id:'task',locked_by:'lock',kind:'discover',input:{topic:1,window:{start:day,end:day}}};await f.run({}, {rpc:async(c,name,body)=>{calls.push({name,body});return name==='claim_cloud_market_task'?t:{};},model:async()=>{throw Error('HTTP 429');}});assert.equal(calls[1].body.p_result.reason,'provider_rate_limit');assert.equal(calls[1].body.p_lock,'lock');});
 test('read-only/private candidate cannot fetch or call models',async()=>{const r=await f.review({input:{candidate:{gmail_message_id:'private',source_url:'https://testrobotics.com/news'}}},day,{read:()=>{throw Error('should not fetch');}});assert.equal(r.reason,'private_or_invalid_candidate');});
 test('unknown issuer is held for source discovery, not fabricated',async()=>{const r=await f.review({input:{candidate:{source_url:'https://unrecognized.example.org/news',candidate_company:'Unknown'}}},day);assert.equal(r.disposition,'needs_source');});
+test('provider diagnostics retain quota identity without raw errors or credentials',()=>{
+ const d=f.providerDiagnostics(429,{error:{status:'RESOURCE_EXHAUSTED',message:'secret credential and source text',details:[{violations:[{quotaMetric:'generativelanguage.googleapis.com/generate_content_free_tier_requests',quotaId:'GenerateRequestsPerDayPerProjectPerModel-FreeTier',quotaValue:'0',secret:'hidden'}]},{retryDelay:'45s'}]}},'gemini-3.5-flash-lite');
+ assert.equal(d.quotas[0].value,0);assert.equal(d.retryDelay,'45s');assert.equal(JSON.stringify(d).includes('secret'),false);
+});
+test('cloud model override uses current-model parameters without changing legacy defaults',async()=>{
+ const saved=process.env.GEMINI_API_KEY;process.env.GEMINI_API_KEY='fixture';
+ try{await require('../lib/ecosystem-worker').modelJson('test',{model:'gemini-3.5-flash-lite',search:true,fetchImpl:async(u,o)=>{
+  assert.match(u,/gemini-3\.5-flash-lite:generateContent/);const body=JSON.parse(o.body);assert.deepEqual(body.tools,[{google_search:{}}]);assert.equal(body.generationConfig.temperature,undefined);assert.equal(body.generationConfig.thinkingConfig,undefined);
+  return {ok:true,json:async()=>({candidates:[{finishReason:'STOP',content:{parts:[{text:'{"items":[]}'}]}}]})};
+ }});}finally{if(saved===undefined)delete process.env.GEMINI_API_KEY;else process.env.GEMINI_API_KEY=saved;}
+});
