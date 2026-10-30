@@ -43,3 +43,15 @@ test('OpenAI research requires real search output and keeps provider storage dis
 test('OpenAI provider errors preserve only safe diagnostics',async()=>{
  await assert.rejects(f.openAiModel('Return JSON',{env:{OPENAI_API_KEY:'fixture'},fetchImpl:async()=>({ok:false,status:429,json:async()=>({error:{code:'insufficient_quota',message:'secret prompt',param:null}})})}),e=>e.providerDiagnostics.code==='insufficient_quota'&&!JSON.stringify(e.providerDiagnostics).includes('secret'));
 });
+test('search prose is structured within the same deadline while preserving actual search evidence',async()=>{
+ const requests=[];const actual='https://testrobotics.com/news/pilot';
+ const result=await f.openAiModel('Return JSON {"urls":[],"reason":"source findings"}',{search:true,env:{OPENAI_API_KEY:'fixture'},fetchImpl:async(u,o)=>{
+  const request=JSON.parse(o.body);requests.push(request);assert.equal(request.store,false);
+  return{ok:true,json:async()=>requests.length===1?{status:'completed',output:[{type:'web_search_call',status:'completed',action:{sources:[{url:actual}]}},{type:'message',content:[{type:'output_text',text:'The original announcement is at '+actual}]}]}:{status:'completed',output_text:JSON.stringify({urls:[actual],reason:'Original announcement',groundedUrls:['https://invented.example']})}};
+ }});
+ assert.equal(requests.length,2);assert.equal(requests[1].tools,undefined);assert.deepEqual(requests[1].text,{format:{type:'json_object'}});assert.equal(result.jsonRepaired,true);assert.equal(result.searchPerformed,true);assert.deepEqual(result.groundedUrls,[actual]);assert.deepEqual(result.data.urls,[actual]);
+});
+test('JSON repair cannot recurse and an unexecuted search cannot be repaired',async()=>{
+ let calls=0;await assert.rejects(f.openAiModel('Return JSON',{search:true,env:{OPENAI_API_KEY:'fixture'},fetchImpl:async()=>{calls++;return{ok:true,json:async()=>({status:'completed',output_text:'prose',output:calls===1?[{type:'web_search_call',status:'completed',action:{sources:[]}}]:[]})};}}),/Invalid model JSON/);assert.equal(calls,2);
+ calls=0;await assert.rejects(f.openAiModel('Return JSON',{search:true,env:{OPENAI_API_KEY:'fixture'},fetchImpl:async()=>{calls++;return{ok:true,json:async()=>({status:'completed',output_text:'prose',output:[]})};}}),/grounding/);assert.equal(calls,1);
+});

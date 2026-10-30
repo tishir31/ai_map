@@ -131,6 +131,11 @@ begin
    perform public.assert_market_issuer(q,c,ev,p_result->'issuerProof');
    if exists(select 1 from public.market_official_sources where url=ev->>'canonicalUrl'and company_id<>cid)then raise exception 'Source identity conflict';end if;
    insert into public.market_official_sources(url,company_id)values(ev->>'canonicalUrl',cid)on conflict do nothing;
+   if p_result->'issuerProof'->>'aboutName' is not null then
+    k:=regexp_replace(lower(p_result->'issuerProof'->>'aboutName'),'[^a-z0-9]','','g');
+    if k=''or exists(select 1 from public.market_company_aliases where alias_key=k and company_id<>cid)or exists(select 1 from public.companies where id<>cid and regexp_replace(lower(name),'[^a-z0-9]','','g')=k)then raise exception 'Issuer alias identity conflict';end if;
+    insert into public.market_company_aliases(alias_key,company_id)values(k,cid)on conflict do nothing;
+   end if;
   end if;
   a:=jsonb_populate_record(null::public.activities,p_result->'activity');
   if a.source_url is distinct from ev->>'canonicalUrl'or a.company_id is distinct from ev->>'companyId'or a.review_status<>'approved'or a.confidence<>'reported'or a.is_sample is distinct from false or a.source_type<>'press release'or a.source_url!~'^https://[A-Za-z0-9.-]+/'then raise exception 'Public projection mismatch';end if;
