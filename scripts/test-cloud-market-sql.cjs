@@ -49,6 +49,6 @@ async function setup(){
  await assert.rejects(x.q('select finish_cloud_market_task($1,$2,$3)',[t.id,'11111111-1111-1111-1111-111111111111',JSON.stringify({disposition:'error',reason:'provider_timeout'})]));
  await x.q('select finish_cloud_market_task($1,$2,$3)',[t.id,t.locked_by,JSON.stringify({disposition:'error',reason:'provider_timeout'})]);
  assert.equal((await x.q("select status from cloud_market_tasks where id='expired'"))[0].status,'pending');
- const state=(await x.q('select cloud_market_status()s'))[0].s;assert.equal(state.execution,'cloud');assert.equal(state.cadenceHours,4);
+ const state=(await x.q('select cloud_market_status()s'))[0].s;assert.equal(state.execution,'cloud');assert.equal(state.cadenceHours,4);assert.ok(state.attention.some(x=>x.reason==='provider_timeout'),'Retrying provider errors are visible before retries are exhausted');assert.ok(state.lastSuccessfulSearchAt);
  await x.db.close();console.log('Cloud SQL checks passed: discovery, private ACL, serial leases, publication, independent evidence gates, exact audit, idempotency, retries and status.');
 })().catch(e=>{console.error(e.message);process.exit(1);});
