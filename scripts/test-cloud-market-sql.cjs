@@ -27,7 +27,10 @@ async function setup(){
  await x.q('select finish_cloud_market_task($1,$2,$3)',[task.id,task.locked_by,JSON.stringify({disposition:'discovered',items:[{company:'Test Robotics',date:x.day,type:'partnership',url:'https://testrobotics.com/news/pilot',summary:'A robotics pilot',title:'Test pilot'}]})]);
  assert.equal((await x.q('select count(*)::int n from review_queue_items'))[0].n,1);
  await x.db.exec("update cloud_market_tasks set status='completed'where kind='discover';insert into companies(id,name,overview,subsector,geography,website)values('c-test','Test Robotics','Autonomous robots','robotics','United States','https://testrobotics.com');");
- let t=(await x.q('select claim_cloud_market_task()t'))[0].t;assert.equal(t.input.company.id,'c-test');
+ await x.db.exec("insert into review_queue_items select(jsonb_populate_record(null::review_queue_items,to_jsonb(q)||'{\"id\":\"rq-old-held\"}'::jsonb)).*from review_queue_items q limit 1;");
+ await x.q("insert into cloud_market_tasks(id,run_id,candidate_id,kind,input,created_at)values('old-held-task',$1,'rq-old-held','review','{}',now()-interval'1 day')",[task.run_id]);
+ let t=(await x.q('select claim_cloud_market_task()t'))[0].t;assert.equal(t.input.company.id,'c-test');assert.ok(t.candidate_id.startsWith('rq-cloud-'),'Fresh discoveries are reviewed before older held exceptions');
+ await x.db.exec("update cloud_market_tasks set status='held'where id='old-held-task'");
  const event='Test Robotics announced a partnership with Acme to pilot autonomous warehouse robots in 2027.',physical='Test Robotics develops autonomous warehouse robots.';
  const page={status:200,finalUrl:'https://testrobotics.com/news/pilot',text:`${x.day}. ${event} ${physical}`};
  const e={qualifying:true,date:x.day,dateQuote:x.day,issuerQuote:'Test Robotics',eventQuote:event,physicalQuote:physical,type:'partnership',counterparty:'Acme',summary:'Test Robotics announced a warehouse robotics pilot with Acme planned for 2027. The source does not establish an operating deployment.',status:'planned'};
@@ -42,7 +45,7 @@ async function setup(){
  await x.q('select finish_cloud_market_task($1,$2,$3)',[t.id,t.locked_by,JSON.stringify(result)]);
  assert.equal((await x.q('select count(*)::int n from activities'))[0].n,1);assert.equal((await x.q('select deal_value_usd from activities'))[0].deal_value_usd,null);
  assert.equal((await x.q('select count(*)::int n from audit_log'))[0].n,1);
- assert.equal((await x.q('select status from review_queue_items'))[0].status,'approved');
+ assert.equal((await x.q('select status from review_queue_items where id=$1',[t.candidate_id]))[0].status,'approved');
  // Lease recovery is bounded, and running work is never claimed twice.
  await x.q("insert into cloud_market_tasks(id,run_id,kind,input,status,attempts,lease_until)values('expired',$1,'discover',$2,'running',2,now()-interval'1 second')",[t.run_id,JSON.stringify({topic:0,window:{start:x.day,end:x.day}})]);
  t=(await x.q('select claim_cloud_market_task()t'))[0].t;assert.equal(t.id,'expired');assert.equal(t.attempts,3);
