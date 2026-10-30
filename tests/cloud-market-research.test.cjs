@@ -21,6 +21,11 @@ test('completed searches may find zero events but cannot invent uncited events',
 test('worker persists failures for retry and always validates finish lease',async()=>{const calls=[];const t={id:'task',locked_by:'lock',kind:'discover',input:{topic:1,window:{start:day,end:day}}};await f.run({}, {rpc:async(c,name,body)=>{calls.push({name,body});return name==='claim_cloud_market_task'?t:{};},model:async()=>{throw Error('HTTP 429');}});assert.equal(calls[1].body.p_result.reason,'provider_rate_limit');assert.equal(calls[1].body.p_lock,'lock');});
 test('read-only/private candidate cannot fetch or call models',async()=>{const r=await f.review({input:{candidate:{gmail_message_id:'private',source_url:'https://testrobotics.com/news'}}},day,{read:()=>{throw Error('should not fetch');}});assert.equal(r.reason,'private_or_invalid_candidate');});
 test('unknown issuer is held for source discovery, not fabricated',async()=>{const r=await f.review({input:{candidate:{source_url:'https://unrecognized.example.org/news',candidate_company:'Unknown'}}},day);assert.equal(r.disposition,'needs_source');});
+test('source failures retain bounded operational evidence without raw response or error text',async()=>{
+ const q={source_url:'https://www.globenewswire.com/news/fixture',candidate_company:'Example Industries'};
+ const r=await f.review({input:{candidate:q}},day,{read:async()=>{throw Object.assign(Error('private response text'),{code:'ENETUNREACH'});}});assert.deepEqual(r.sourceChecks,[{host:'www.globenewswire.com',error:'ENETUNREACH'}]);assert.equal(JSON.stringify(r).includes('private response'),false);
+ const denied=await f.review({input:{candidate:q}},day,{read:async()=>({status:403,finalUrl:q.source_url,text:'Denied'})});assert.equal(denied.sourceChecks[0].status,403);
+});
 test('provider diagnostics retain quota identity without raw errors or credentials',()=>{
  const d=f.providerDiagnostics(429,{error:{status:'RESOURCE_EXHAUSTED',message:'secret credential and source text',details:[{violations:[{quotaMetric:'generativelanguage.googleapis.com/generate_content_free_tier_requests',quotaId:'GenerateRequestsPerDayPerProjectPerModel-FreeTier',quotaValue:'0',secret:'hidden'}]},{retryDelay:'45s'}]}},'gemini-3.5-flash-lite');
  assert.equal(d.quotas[0].value,0);assert.equal(d.retryDelay,'45s');assert.equal(JSON.stringify(d).includes('secret'),false);
