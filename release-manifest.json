@@ -1,9 +1,9 @@
 {
   "schemaVersion": 1,
   "release": "physical-ai-ecosystem-2026-10-30",
-  "builtAt": "2026-10-30T23:02:04.004Z",
+  "builtAt": "2026-10-30T23:06:06.822Z",
   "sourceCommit": "7cd5da7f0a946e505ff170b3103230a275b5d5bd",
-  "backendBaseCommit": "b2ad326a4a0b03ed91df478d05477f2927fa201d",
+  "backendBaseCommit": "7391f31efe1ca800c145cf0b8f5aa5e89046e932",
   "graphAsOf": "2026-09-07",
   "publicRoutes": [
     "ecosystem",
@@ -37,7 +37,7 @@
     "index.html": "49422e2ef5943396cc6ef75cab9ad92619c72434ce78864bbdc7ee9193801cbc",
     "lib/atlas-export-model.cjs": "051fb69697542a41da25dc6725acc36a8d77984dc74b3927a11472b70bb87a19",
     "lib/atlas-export.js": "130fbb539d1077349d9f1faef2d93f3655656fb123a86081ad63b9e08ea59996",
-    "lib/cloud-market-research.js": "d27c03f8df3785ede5d6004dce17bc4469d246fd5df95c60bc20aed413ccf1df",
+    "lib/cloud-market-research.js": "83d26decabc6caf0ee78f601715d3c28e725112a123f2bf1178a5ecb9bc8284c",
     "lib/ecosystem-policy.js": "d7a125d679eaa3f110eb7444d3889a19d4ca00945499b6de642b6376aaf1b2db",
     "lib/ecosystem-publication-parser.js": "bce685f7d39d18f20082590f3dec585efd5e66ca67b18e626ec282b8d3d1e044",
     "lib/ecosystem-registry-parser.js": "f3ca9658cef942d94399ab7997d55b181ab222351b4eacaeb399397ad6db4ec6",
