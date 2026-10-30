@@ -19,6 +19,7 @@
 const { buildRotationPlan, isDateInWindow } = require("../lib/query-rotation");
 const { authorizeIngestRequest } = require("../lib/ingest-auth");
 const publicWeb = require("../lib/public-web");
+const {articleText} = require("../lib/public-article");
 const graphApi = require("../lib/graph-api");
 const crypto=require("node:crypto");
 const {scheduledMarketDiscovery,isPrimaryMarketItem,primaryFeedUrl}=require('../lib/primary-market-feeds');
@@ -376,7 +377,7 @@ async function fetchArticleSnapshot(url, bounded = false) {
       page=await publicWeb.readPublicPage(original,0,deadline);
       if(page.status<200||page.status>=300){const error=Error(`Source HTTP ${page.status}`);error.sourceResponse={url:page.finalUrl,status:page.status};throw error;}
     }
-    return {ok:true,status:page.status,url:page.finalUrl,title:htmlMeta(page.text,/<title[^>]*>([\s\S]*?)<\/title>/i),text:stripHtml(page.text).slice(0,8000)};
+    return {ok:true,status:page.status,url:page.finalUrl,title:htmlMeta(page.text,/<title[^>]*>([\s\S]*?)<\/title>/i),text:articleText(page.text).slice(0,8000)};
   }
   const controller = new AbortController();
   const timer = setTimeout(() => controller.abort(), 7000);
@@ -396,7 +397,7 @@ async function fetchArticleSnapshot(url, bounded = false) {
     const title =
       htmlMeta(raw, /<meta[^>]+property=["']og:title["'][^>]+content=["']([^"']+)["']/i) ||
       htmlMeta(raw, /<title[^>]*>([\s\S]*?)<\/title>/i);
-    const text = contentType.includes("text/html") ? stripHtml(raw) : raw.replace(/\s+/g, " ").trim();
+    const text = contentType.includes("text/html") ? articleText(raw) : raw.replace(/\s+/g, " ").trim();
     return {
       ok: response.ok,
       status: response.status,
@@ -796,7 +797,8 @@ function buildCandidate(item, sourceName, article) {
   const text = `${item.title}. ${item.source}. ${article?.title || ""}. ${article?.text || ""}`;
   const dealValueUsd = parseMoneyToUsd(text);
   const acquisition = item.title.match(/^(.{2,100}?)\s+(?:to acquire|acquires?|has acquired|announces acquisition of)\s+(.{2,120}?)(?=\s+(?:for|to|in|[-–—])|$)/i);
-  const company = acquisition ? acquisition[2].trim() : inferCompany(text);
+  const company = acquisition ? acquisition[2].trim() :
+    [item.title, article?.title, article?.text].map(inferCompany).find(name => name !== "N/A") || "N/A";
   const row = {
     id: `rq-web-${hash(normalizeUrl(article?.url || item.link) || item.title)}`,
     candidate_company: company,
