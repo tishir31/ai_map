@@ -18,6 +18,14 @@
   ],
   "rewrites": [
     {
+      "source": "/api/cloud-market-research",
+      "destination": "/api/pipeline-health?physicalAiRoute=cloud-market-research"
+    },
+    {
+      "source": "/api/cloud-market-research-status",
+      "destination": "/api/pipeline-health?physicalAiRoute=cloud-market-research-status"
+    },
+    {
       "source": "/api/market-news",
       "destination": "/api/pipeline-health?physicalAiRoute=market-news"
     },

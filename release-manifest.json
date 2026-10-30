@@ -1,9 +1,9 @@
 {
   "schemaVersion": 1,
   "release": "physical-ai-ecosystem-2026-10-30",
-  "builtAt": "2026-10-30T19:27:45.916Z",
+  "builtAt": "2026-10-30T22:56:11.904Z",
   "sourceCommit": "7cd5da7f0a946e505ff170b3103230a275b5d5bd",
-  "backendBaseCommit": "40b404b72a24bad23454edc3785e418f35a9d728",
+  "backendBaseCommit": "487f77688cd1cd79af408dcec04c641f9a881870",
   "graphAsOf": "2026-09-07",
   "publicRoutes": [
     "ecosystem",
@@ -29,7 +29,7 @@
     "api/ingest-gmail.js": "2ac54e344337b66bfb079563270251a0a781013b2e853db4da685a904e2defdc",
     "api/ingest-web-news.js": "27164e06fe71688f3a67373028d2c39c1101f8d7ea6830c964de5b66e7c7e597",
     "api/normalize-investors.js": "e3ddec8945e172671321cef1c25002af79dfb4f0c8c701d5db782da300b3ab40",
-    "api/pipeline-health.js": "a63706ef57898e6cfe09a1d7da2f091e76da9a1876a57ce1f17a9ab00224c251",
+    "api/pipeline-health.js": "2296895ad88baeb7c6db82bd87d4017dd3007a92dd0e216d0b67d64c3547d311",
     "api/research-company.js": "d67f6df69e5dc873c2f88b434f4c1744f77f77a93f53fad7af72fd2c3e84540d",
     "api/research-source.js": "53f2d63d84f12f7fcd28a5ce8f4f5d9db8877c542d87c88fb4fc4dd9b8a7629f",
     "api/run-digest.js": "7bf6e1f386e738f4661eabe146882da1e1ae5bf6ce32bff06724909a49311d8a",
@@ -37,6 +37,7 @@
     "index.html": "49422e2ef5943396cc6ef75cab9ad92619c72434ce78864bbdc7ee9193801cbc",
     "lib/atlas-export-model.cjs": "051fb69697542a41da25dc6725acc36a8d77984dc74b3927a11472b70bb87a19",
     "lib/atlas-export.js": "130fbb539d1077349d9f1faef2d93f3655656fb123a86081ad63b9e08ea59996",
+    "lib/cloud-market-research.js": "5a9f9322dae24d5df0348a738e8921d4da44a68bb87035380dd141398bb57dc8",
     "lib/ecosystem-policy.js": "d7a125d679eaa3f110eb7444d3889a19d4ca00945499b6de642b6376aaf1b2db",
     "lib/ecosystem-publication-parser.js": "bce685f7d39d18f20082590f3dec585efd5e66ca67b18e626ec282b8d3d1e044",
     "lib/ecosystem-registry-parser.js": "f3ca9658cef942d94399ab7997d55b181ab222351b4eacaeb399397ad6db4ec6",
@@ -56,7 +57,7 @@
     "lib/market-snapshot.js": "6613dc77fc62f34f4967f4a8f1f2102bd26b40e1687b0f98d1140481a342b08e",
     "lib/market-source-reports.js": "5a12b13c4449046f343fda3e1d956c7663bc6d463af67f7a7929511a85911cf0",
     "lib/market-transaction-evidence.js": "f629f078a285b1dd05640978d8296ffc4108173a7c656f34f3f50b27259884d1",
-    "lib/physical-ai-router.js": "72e3e72ed8b51ccf9ed296d3a0e02e5bde4a02d0bd683bfa2d9b57e8f36df1f1",
+    "lib/physical-ai-router.js": "de3937943f9bc25135ae5fddca51dcb3820add2bd5d54da2b1c8764b456e21c2",
     "lib/primary-market-feeds.js": "2774a12610154ead4846ed7c5c51314403da46e540afa661817d7359005991b9",
     "lib/public-actions.js": "e290b3575b26271115e646825a80eada9554550a43e324794720003aae5b27ca",
     "lib/public-article.js": "b0de3581a50554f46ec9a018cdde78bb81c97451aca068cffd9d7566a3bb0fc4",
@@ -64,7 +65,7 @@
     "lib/public-web.js": "4dbfe786b8d0ec4e5ff6e9d9ff65f97e31270eac898c92d1d2d31eb4c003f3df",
     "lib/query-rotation.js": "2d7d7dfa813bb57af5dce51b85a84d46acc2b8e68a832871ad71dbd70bddd120",
     "lib/research-agents.cjs": "d80b2d7ed0e816c77df60da0731233ad565c65bfc0b6b788a8a3367c7bd1e275",
-    "lib/scheduler-auth.js": "f2780cb9273707691f151c94ebba2da2f8872f1d12c35e36e50231c5a2b12b36",
+    "lib/scheduler-auth.js": "a71cc6b7be276d288f7d723f2b8ee2f7c638a90ebdfe5157adacb2c4c34a382b",
     "lib/tyrant-news.js": "a0e1d9cac8f689d98f6fff6a750621c9b617b8da8adf2c0d13d4abc03115c830",
     "lib/web-collection-health.js": "8078810fca2a515c1d83d8232dae6b463eb6af229d45763c69ba798968407399",
     "lib/web-collection-worker.js": "c1ddb6a588cff26ea46005577f1faf0ddf81649a060462ab8d2d30e10ef76d03",
@@ -521,7 +522,7 @@
     "physical-ai/og-v3.png": "7a628f0885ad4d8c28b422b7a7bd8a7e2fd508f63b21b948c1add8a210a4cb0a",
     "supabase/migrations/20260910065510_physical_ai_ecosystem_v3.sql": "554afd62bc27a9b6b38d7941b2862b47fbea8e0c30bce98a9c84ac92364e01e9",
     "supabase/migrations/20260910074154_physical_ai_ecosystem_bootstrap_upload.sql": "52aa249e4c9accb9f019a666e6402ae42aa2f38b767f1538cf9d38941570d50f",
-    "vercel.json": "46508bc0209922e88044dd619e591f44e6e31f79d8ac816632d6e4456b175cbe"
+    "vercel.json": "49906ac870cf78a370de1615b40f1abaf68b5e8a8c5af648ce2c9e9d00b3ab75"
   },
   "researchRuntime": "public leased tasks; immediate step execution and bounded six-hour worker; findings unverified",
   "schemaMigrations": [
