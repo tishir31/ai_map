@@ -301,10 +301,11 @@ module.exports = async function handler(req, res) {
     if (!queueRead.ok) throw new Error(queueRead.error);
     const runs = runsRead.data || [];
     const queue = queueRead.data || [];
-    const [publicReviewRead,reviewSchedulerRead,publicationCoverageRead] = await Promise.all([
+    const [publicReviewRead,reviewSchedulerRead,publicationCoverageRead,cloudResearchRead] = await Promise.all([
       optionalRead(SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY, "market_review_runs?select=run_date,status,selected,reviewed,published,held,duplicates,nonqualifying,errors,collector_window_status,started_at,last_review_at,completed_at&order=run_date.desc&limit=1"),
       optionalRead(SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY, "rpc/market_review_scheduler_status"),
-      optionalRead(SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY, "rpc/market_publication_coverage")
+      optionalRead(SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY, "rpc/market_publication_coverage"),
+      optionalRead(SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY, "rpc/cloud_market_status")
     ]);
     const publicMarketReview = require("../lib/market-review-health").reviewHealth(publicReviewRead, new Date(), reviewSchedulerRead);
     const latestBySource = summarizeRuns(runs);
@@ -391,6 +392,7 @@ module.exports = async function handler(req, res) {
         sourceUniverse: "public-safe approved activities after active exclusions and company joins"
       },
       investorNormalization: investorStatus,
+      cloudMarketResearch: cloudResearchRead.ok ? cloudResearchRead.data : { configured: false, warning: "cloud-research-telemetry-unavailable" },
       intelligence: {
         llmConfigured,
         model: process.env.INGEST_LLM_MODEL || "gemini-2.5-flash",
